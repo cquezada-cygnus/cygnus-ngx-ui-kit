@@ -11,7 +11,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "ngx-cygnus-ui": [
-        "./dist/ngx-cygnus-ui"
+        "./projects/ngx-cygnus-ui/src/public-api.ts"
       ]
     },
     "skipLibCheck": true,
