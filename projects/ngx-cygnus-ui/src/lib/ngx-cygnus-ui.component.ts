@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'lib-ngx-cygnus-ui',
   imports: [],
   template: `
-    <p>
-      ngx-cygnus-ui works!
-    </p>
+      <h1 class="text-3xl font-bold underline">
+        Hello ngx-cygnus-ui!
+      </h1>
   `,
   styles: ``
 })

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgxCygnusUiComponent } from 'ngx-cygnus-ui';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [NgxCygnusUiComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
