@@ -5,7 +5,6 @@ import { CygnusButtonComponent } from 'ngx-cygnus-ui/button';
   selector: 'app-root',
   imports: [CygnusButtonComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'showcase';
