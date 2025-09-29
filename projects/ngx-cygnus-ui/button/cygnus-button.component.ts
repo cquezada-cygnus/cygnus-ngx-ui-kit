@@ -23,7 +23,7 @@ export class CygnusButtonComponent {
   BTN_PURPLE: string = 'flex items-center justify-center transition-all border border-purple-500 text-white bg-purple-500 hover:bg-purple-600 focus:bg-purple-700 focus:ring-purple-200 active:bg-purple-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
   BTN_INDIGO: string = 'flex items-center justify-center transition-all border border-indigo-500 text-white bg-indigo-500 hover:bg-indigo-600 focus:bg-indigo-700 focus:ring-indigo-200 active:bg-indigo-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
   BTN_PINK: string = 'flex items-center justify-center transition-all border border-pink-500 text-white bg-pink-500 hover:bg-pink-600 focus:bg-pink-700 focus:ring-pink-200 active:bg-pink-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
-  BTN_CIRCLE: string = '!p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 rounded-full text-white disabled:pointer-events-none';
+  BTN_CIRCLE: string = '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 text-white disabled:pointer-events-none';
   BTN_GHOST: string = 'text-gray-800 bg-transparent shadow-none hover:bg-gray-200 focus:ring-gray-300 focus:border-gray-800 transition-all border-0 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
   BTN_DISABLED: string = 'text-white bg-primary-400 cursor-not-allowed font-medium rounded-lg text-center';
 
@@ -52,7 +52,7 @@ export class CygnusButtonComponent {
       case 'btn-pink':
         return this.BTN + ' ' + this.BTN_PINK;
       case 'btn-circle':
-        return this.BTN + ' ' + this.BTN_CIRCLE;
+        return this.BTN + ' ' + this.BTN_SIMPLE + ' ' + this.BTN_CIRCLE;
       case 'btn-ghost':
         return this.BTN + ' ' + this.BTN_GHOST;
       case 'btn-disabled':
