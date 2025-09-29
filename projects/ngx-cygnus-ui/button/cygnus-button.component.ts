@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, input, OnInit, signal, WritableSignal } from '@angular/core';
-// import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { Component, input, OnInit, signal, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'cygnus-button',
@@ -27,6 +26,10 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
   BTN_GHOST: string = 'text-gray-800 bg-transparent shadow-none hover:bg-gray-200 focus:ring-gray-300 focus:border-gray-800 transition-all border-0 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
   BTN_DISABLED: string = 'text-white bg-primary-400 cursor-not-allowed font-medium rounded-lg text-center';
   BTN_BLOCK: string = 'w-full';
+  BTN_SIZE_XS: string = '!py-2 !px-3 !text-xs';
+  BTN_SIZE_SM: string = '!py-2 !px-3 !text-sm';
+  BTN_SIZE_LG: string = '!px-5 !py-3 !text-base';
+  BTN_SIZE_XL: string = '!px-5 !py-3.5 !text-base';
 
   btnTypes = input<string>('btn');
   btnAllClasses:WritableSignal<string> = signal<string>('');
@@ -80,6 +83,14 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
         return this.BTN_DISABLED;
       case 'btn-block':
         return this.BTN_BLOCK;
+      case 'btn-size-xs':
+        return this.BTN_SIZE_XS;
+      case 'btn-size-sm':
+        return this.BTN_SIZE_SM;
+      case 'btn-size-lg':
+        return this.BTN_SIZE_LG;
+      case 'btn-size-xl':
+        return this.BTN_SIZE_XL;
       default:
         return '';
     }
