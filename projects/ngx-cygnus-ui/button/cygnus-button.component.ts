@@ -1,17 +1,17 @@
-import { Component, input } from '@angular/core';
+import { AfterViewInit, Component, input, OnInit, signal, WritableSignal } from '@angular/core';
 // import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
 @Component({
   selector: 'cygnus-button',
   imports: [],
   template: `
-      <button [class]="addTailwindClasses()" type="button">
+      <button [class]="btnAllClasses()" type="button">
           <ng-content></ng-content>
       </button>
   `,
   styleUrls: ['cygnus-button.component.css'],
 })
-export class CygnusButtonComponent {
+export class CygnusButtonComponent implements OnInit {
   BTN: string = 'btn text-sm px-5 py-2.5 rounded-lg font-medium focus:ring-4 focus:outline-none';
   BTN_SIMPLE: string = 'text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300';
   BTN_PRIMARY: string = 'text-white bg-primary-700 border border-none hover:bg-primary-600 hover:text-white focus:ring-primary-300 active:bg-primary-700';
@@ -28,43 +28,61 @@ export class CygnusButtonComponent {
   BTN_DISABLED: string = 'text-white bg-primary-400 cursor-not-allowed font-medium rounded-lg text-center';
   BTN_BLOCK: string = 'w-full';
 
-  btnType = input<string>('btn');
+  btnTypes = input<string>('btn');
+  btnAllClasses:WritableSignal<string> = signal<string>('');
 
-  addTailwindClasses(): string {
-    switch (this.btnType()) {
+  ngOnInit(){
+    const setClasses = this.setBtnClasses(this.getBtnClasses(this.btnTypes()));
+    this.btnAllClasses.set(setClasses);
+  }
+
+
+  getBtnClasses(stringClasses: string): string[] {
+    return stringClasses.split(' ');
+  }
+
+  setBtnClasses(arrStringClasses: string[]): string {
+    let stringClasses = this.BTN + ' ';
+    for (let i = 0; i < arrStringClasses.length; i++) {
+      const elem = arrStringClasses[i];
+      stringClasses = stringClasses + (this.addTailwindClasses(elem) + ' ');
+    }
+    return stringClasses;
+  }
+
+  addTailwindClasses(customClass: string): string {
+    switch (customClass) {
       case 'btn':
-        return this.BTN + ' ' + this.BTN_SIMPLE;
+        return this.BTN_SIMPLE;
       case 'btn-primary':
-        return this.BTN + ' ' + this.BTN_PRIMARY;
+        return this.BTN_PRIMARY;
       case 'btn-secondary':
-        return this.BTN + ' ' + this.BTN_SECONDARY;
+        return this.BTN_SECONDARY;
       case 'btn-accent':
-        return this.BTN + ' ' + this.BTN_ACCENT;
+        return this.BTN_ACCENT;
       case 'btn-success':
-        return this.BTN + ' ' + this.BTN_SUCCESS;
+        return this.BTN_SUCCESS;
       case 'btn-warning':
-        return this.BTN + ' ' + this.BTN_WARNING;
+        return this.BTN_WARNING;
       case 'btn-error':
-        return this.BTN + ' ' + this.BTN_ERROR;
+        return this.BTN_ERROR;
       case 'btn-purple':
-        return this.BTN + ' ' + this.BTN_PURPLE;
+        return this.BTN_PURPLE;
       case 'btn-indigo':
-        return this.BTN + ' ' + this.BTN_INDIGO;
+        return this.BTN_INDIGO;
       case 'btn-pink':
-        return this.BTN + ' ' + this.BTN_PINK;
+        return this.BTN_PINK;
       case 'btn-circle':
-        return this.BTN + ' ' + this.BTN_SIMPLE + ' ' + this.BTN_CIRCLE;
+        return this.BTN_CIRCLE;
       case 'btn-ghost':
-        return this.BTN + ' ' + this.BTN_GHOST;
+        return this.BTN_GHOST;
       case 'btn-disabled':
-        return this.BTN + ' ' + this.BTN_DISABLED;
+        return this.BTN_DISABLED;
       case 'btn-block':
-        return this.BTN + ' ' + this.BTN_BLOCK;
+        return this.BTN_BLOCK;
       default:
         return '';
     }
-
-
   }
 }
 
