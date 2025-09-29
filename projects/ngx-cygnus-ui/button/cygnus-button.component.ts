@@ -26,6 +26,7 @@ export class CygnusButtonComponent {
   BTN_CIRCLE: string = '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 text-white disabled:pointer-events-none';
   BTN_GHOST: string = 'text-gray-800 bg-transparent shadow-none hover:bg-gray-200 focus:ring-gray-300 focus:border-gray-800 transition-all border-0 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
   BTN_DISABLED: string = 'text-white bg-primary-400 cursor-not-allowed font-medium rounded-lg text-center';
+  BTN_BLOCK: string = 'w-full';
 
   btnType = input<string>('btn');
 
@@ -57,6 +58,8 @@ export class CygnusButtonComponent {
         return this.BTN + ' ' + this.BTN_GHOST;
       case 'btn-disabled':
         return this.BTN + ' ' + this.BTN_DISABLED;
+      case 'btn-block':
+        return this.BTN + ' ' + this.BTN_BLOCK;
       default:
         return '';
     }
