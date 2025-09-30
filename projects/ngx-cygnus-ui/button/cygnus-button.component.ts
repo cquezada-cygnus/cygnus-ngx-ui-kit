@@ -1,11 +1,29 @@
 import { Component, input, OnInit, signal, WritableSignal } from '@angular/core';
+import { IconBtnColor, IconBtnSize, IconPosition } from './icon.types';
+import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
 @Component({
   selector: 'cygnus-button',
-  imports: [],
+  imports: [NgxCygnusIconsComponent],
   template: `
       <button [class]="btnAllClasses()" type="button">
+        @if (btnIconExist && btnIconPosition == 'left') {
+          <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
+            [width]="btnIconSize"
+            [height]="btnIconSize"
+            [color]="btnIconColor"
+            [route]="btnIconRoute()"
+          /> <!-- 'assets/icons/svg/Users/user-square.svg' -->
+        }
           <ng-content></ng-content>
+        @if (btnIconExist && btnIconPosition == 'right') {
+          <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
+            [width]="btnIconSize"
+            [height]="btnIconSize"
+            [color]="btnIconColor"
+            [route]="btnIconRoute()"
+          />
+        }
       </button>
   `,
   styleUrls: ['cygnus-button.component.css'],
@@ -30,11 +48,24 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
   BTN_SIZE_SM: string = '!py-2 !px-3 !text-sm';
   BTN_SIZE_LG: string = '!px-5 !py-3 !text-base';
   BTN_SIZE_XL: string = '!px-5 !py-3.5 !text-base';
+  BTN_ICON_XS: string = 'p-2 flex items-center';
+  BTN_ICON_SM: string = 'p-2 flex items-center';
+  BTN_ICON: string = 'inline-flex items-center justify-between';
+  BTN_ICON_LG: string = 'p-4 flex items-center';
+  BTN_ICON_ONLY: string = '!p-2.5 flex items-center transition-all disabled:pointer-events-none disabled:opacity-50 border-0';
 
   btnTypes = input<string>('btn');
   btnAllClasses:WritableSignal<string> = signal<string>('');
+  btnIconExist: boolean = false;
+  btnIconOnly: boolean = false;
+  btnIconPosition: IconPosition = 'left';
+  btnIconColor: IconBtnColor = '#ffffff';
+  btnIconSize: IconBtnSize = '1.25rem';
+  btnIconRoute = input<string>('');
 
   ngOnInit(){
+    this.btnIconExist = false;
+    this.btnIconOnly = false;
     const setClasses = this.setBtnClasses(this.getBtnClasses(this.btnTypes()));
     this.btnAllClasses.set(setClasses);
   }
@@ -54,35 +85,48 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
   }
 
   addTailwindClasses(customClass: string): string {
+    this.btnIconOnly = false;
     switch (customClass) {
       case 'btn':
+        this.btnIconColor = '#ffffff';
         return this.BTN_SIMPLE;
       case 'btn-primary':
+        this.btnIconColor = '#ffffff';
         return this.BTN_PRIMARY;
       case 'btn-secondary':
+        this.btnIconColor = '#1d2939';
         return this.BTN_SECONDARY;
       case 'btn-accent':
+        this.btnIconColor = '#2970ff';
         return this.BTN_ACCENT;
       case 'btn-success':
+        this.btnIconColor = '#ffffff';
         return this.BTN_SUCCESS;
       case 'btn-warning':
+        this.btnIconColor = '#ffffff';
         return this.BTN_WARNING;
       case 'btn-error':
+        this.btnIconColor = '#ffffff';
         return this.BTN_ERROR;
       case 'btn-purple':
+        this.btnIconColor = '#ffffff';
         return this.BTN_PURPLE;
       case 'btn-indigo':
+        this.btnIconColor = '#ffffff';
         return this.BTN_INDIGO;
       case 'btn-pink':
+        this.btnIconColor = '#ffffff';
         return this.BTN_PINK;
-      case 'btn-circle':
-        return this.BTN_CIRCLE;
       case 'btn-ghost':
+        this.btnIconColor = '#1d2939';
         return this.BTN_GHOST;
       case 'btn-disabled':
+        this.btnIconColor = '#ffffff';
         return this.BTN_DISABLED;
       case 'btn-block':
         return this.BTN_BLOCK;
+      case 'btn-circle':
+        return this.BTN_CIRCLE;
       case 'btn-size-xs':
         return this.BTN_SIZE_XS;
       case 'btn-size-sm':
@@ -91,6 +135,26 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
         return this.BTN_SIZE_LG;
       case 'btn-size-xl':
         return this.BTN_SIZE_XL;
+      case 'btn-icon-xs':
+        this.btnIconSize = '0.75rem';
+        this.btnIconExist = true;
+        return this.BTN_ICON_XS;
+      case 'btn-icon-sm':
+        this.btnIconSize = '0.875rem';
+        this.btnIconExist = true;
+        return this.BTN_ICON_SM;
+      case 'btn-icon':
+        this.btnIconSize = '1rem';
+        this.btnIconExist = true;
+        return this.BTN_ICON;
+      case 'btn-icon-lg':
+        this.btnIconSize = '1.25rem';
+        this.btnIconExist = true;
+        return this.BTN_ICON_LG;
+      case 'btn-icon-only':
+        this.btnIconExist = true;
+        this.btnIconOnly = true;
+        return this.BTN_ICON_ONLY;
       default:
         return '';
     }
