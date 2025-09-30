@@ -1,1 +1,1 @@
-export * from './cygnus-button.component';
+export * from './cygnus-button/cygnus-button.component';

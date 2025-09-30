@@ -1,32 +1,12 @@
 import { Component, input, OnInit, signal, WritableSignal } from '@angular/core';
 import { IconBtnColor, IconBtnSize, IconPosition } from 'ngx-cygnus-ui/types';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconLoadingSize } from 'ngx-cygnus-ui/types';
 
 @Component({
   selector: 'cygnus-button',
   imports: [NgxCygnusIconsComponent],
-  template: `
-      <button [class]="btnAllClasses()" type="button">
-        @if (btnIconExist && btnIconPosition == 'left') {
-          <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
-            [width]="btnIconSize"
-            [height]="btnIconSize"
-            [color]="btnIconColor"
-            [route]="btnIconRoute()"
-          /> <!-- 'assets/icons/svg/Users/user-square.svg' -->
-        }
-          <ng-content></ng-content>
-        @if (btnIconExist && btnIconPosition == 'right') {
-          <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
-            [width]="btnIconSize"
-            [height]="btnIconSize"
-            [color]="btnIconColor"
-            [route]="btnIconRoute()"
-          />
-        }
-      </button>
-  `,
-  styleUrls: ['cygnus-button.component.css'],
+  templateUrl: 'cygnus-button.component.html',
 })
 export class CygnusButtonComponent implements OnInit { // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
   BTN: string = 'btn text-sm px-5 py-2.5 rounded-lg font-medium focus:ring-4 focus:outline-none';
@@ -53,6 +33,7 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
   BTN_ICON: string = 'inline-flex items-center justify-between';
   BTN_ICON_LG: string = 'p-4 flex items-center';
   BTN_ICON_ONLY: string = '!p-2.5 flex items-center transition-all disabled:pointer-events-none disabled:opacity-50 border-0';
+  BTN_ICON_LOADING: string = 'animate-spin inline-block border-3 border-t-transparent rounded-full';
 
   btnTypes = input<string>('btn');
   btnAllClasses:WritableSignal<string> = signal<string>('');
@@ -62,6 +43,8 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
   btnIconColor: IconBtnColor = '#ffffff';
   btnIconSize: IconBtnSize = '1.25rem';
   btnIconRoute = input<string>('');
+  btnIsLoading = input<boolean>(false);
+  btnIconLoadingSize = input<IconLoadingSize>('size-5');
 
   ngOnInit(){
     this.btnIconExist = false;
