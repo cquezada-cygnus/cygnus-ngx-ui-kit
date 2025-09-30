@@ -34,6 +34,9 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
   BTN_ICON_LG: string = 'p-4 flex items-center';
   BTN_ICON_ONLY: string = '!p-2.5 flex items-center transition-all disabled:pointer-events-none disabled:opacity-50 border-0';
   BTN_ICON_LOADING: string = 'animate-spin inline-block border-3 border-t-transparent rounded-full';
+  BTN_GROUP_LEFT: string = 'px-4 py-2 text-sm text-center transition-all border border-r-0 rounded-md rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
+  BTN_GROUP_MIDDLE: string = 'px-4 py-2 text-sm text-center transition-all border rounded-md rounded-l-none rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
+  BTN_GROUP_RIGHT: string = 'px-4 py-2 text-sm text-center transition-all border border-l-0 rounded-md rounded-l-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none';
 
   btnTypes = input<string>('btn');
   btnAllClasses:WritableSignal<string> = signal<string>('');
@@ -138,6 +141,12 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
         this.btnIconExist = true;
         this.btnIconOnly = true;
         return this.BTN_ICON_ONLY;
+      case 'btn-group-left':
+        return this.BTN_GROUP_LEFT;
+      case 'btn-group-middle':
+        return this.BTN_GROUP_MIDDLE;
+      case 'btn-group-right':
+        return this.BTN_GROUP_RIGHT;
       default:
         return '';
     }
