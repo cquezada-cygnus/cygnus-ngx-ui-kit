@@ -1,0 +1,344 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+  <header class="mb-12">
+      <h1 class="text-4xl font-bold">Botones</h1>
+      <p class="mt-4 text-gray-600 text-md">Los botones son un elemento esencial del diseño web. Básicamente,
+          son
+          enlaces con estilo que captan la atención del
+          usuario. Ayudan a los usuarios a navegar por nuestros sitios web o aplicaciones y los llevan a
+          realizar una
+          acción en
+          particular, como enviar un formulario de contacto o realizar un pedido de la forma más sencilla
+          posible.
+
+          Vea a continuación nuestros ejemplos de componentes de botones.</p>
+  </header>
+
+  <section id="button-simple">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Botón simple</h2>
+              <p class="mb-6 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
+                  texto
+                  blanco, esquinas
+                  redondeadas y un efecto
+                  de sombra al pasar el mouse, mostrando interactividad.</p>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- COMPONENTE: Botón simple -->
+                  <cygnus-button [btnTypes]="'btn'" >simple button</cygnus-button>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- boton fantasma -->
+  <section id="button-ghost">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Botón fantasma</h2>
+              <p class="mb-6 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
+                  texto
+                  blanco, esquinas
+                  redondeadas y un efecto
+                  de sombra al pasar el mouse, mostrando interactividad.</p>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- COMPONENTE: Botón fantasma -->
+                  <cygnus-button [btnTypes]="'btn-ghost'" >ghost button</cygnus-button>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Botones primarios -->
+  <section id="button-colours">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Colores de Botones</h2>
+
+              <div class="flex flex-wrap items-end w-full gap-2 mb-4">
+                <cygnus-button [btnTypes]="'btn-primary'" >Primario</cygnus-button>
+                <cygnus-button [btnTypes]="'btn-secondary'" >Secundario</cygnus-button>
+                <cygnus-button [btnTypes]="'btn-accent'" >Accent</cygnus-button>
+                <cygnus-button [btnTypes]="'btn-success'" >Éxito</cygnus-button>
+                <cygnus-button [btnTypes]="'btn-warning'" >Advertencia</cygnus-button>
+                <cygnus-button [btnTypes]="'btn-error'" >Error</cygnus-button>
+                <cygnus-button [btnTypes]="'btn-purple'" >Púrpura</cygnus-button>
+                <cygnus-button [btnTypes]="'btn-indigo'" >Indigo</cygnus-button>
+                <cygnus-button [btnTypes]="'btn-pink'" >Rosado</cygnus-button>
+
+                <a href="" class="btn btn-link">Enlace de texto</a> <!-- No he hecho este -->
+
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Botones secoundarios grises -->
+  <section id="button-size">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Tamaño de botones</h2>
+              <div class="flex items-end justify-center w-full gap-4 mb-4">
+
+                  <cygnus-button [btnTypes]="'btn btn-size-xs'" >Extra small</cygnus-button>
+                  <cygnus-button [btnTypes]="'btn btn-size-sm'" >Small</cygnus-button>
+                  <cygnus-button [btnTypes]="'btn'" >Medium</cygnus-button>
+                  <cygnus-button [btnTypes]="'btn btn-size-lg'" >Large</cygnus-button>
+                  <cygnus-button [btnTypes]="'btn btn-size-xl'" >Extra Large</cygnus-button>
+
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Botones secoundarios grises -->
+  <section id="button-size">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Tamaño de botone con íconos</h2>
+              <div class="flex items-end justify-center w-full gap-4 mb-4">
+
+                  <cygnus-button
+                    [btnTypes]="'btn-accent btn-size-xs btn-icon-sm'"
+                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                  >
+                    Extra small
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-accent btn-size-sm btn-icon-sm'"
+                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                  >
+                    Small
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-accent btn-icon'"
+                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                  >
+                    Medium
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-accent btn-size-lg btn-icon-lg'"
+                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                  >
+                    Large
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-accent btn-size-xl btn-icon-lg'"
+                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                  >
+                    Extra Large
+                  </cygnus-button>
+
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Botones iconos -->
+  <section id="button-icons">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Botones con íconos</h2>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- COMPONENTE: Botón con ícono izquierdo -->
+                  <button class="btn btn-icon" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="!w-5 !h-5 mr-2" viewBox="0 -960 960 960">
+                          <path
+                              d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM205-801h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Z" />
+                      </svg>
+                      Botón con ícono izquierdo
+                  </button>
+
+                  <!-- COMPONENTE: Botón con ícono derecho -->
+                  <button class="btn btn-icon" type="button">
+                      Botón con ícono derecho
+                      <svg xmlns="http://www.w3.org/2000/svg" class="!w-5 !h-5 ms-2" viewBox="0 -960 960 960">
+                          <path
+                              d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM205-801h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Z" />
+                      </svg>
+                  </button>
+              </div>
+
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Botones deshabilitados -->
+  <section id="button-disabled">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Botón Deshabilitado</h2>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- COMPONENTE: Botón Deshabilitado -->
+                  <button class="btn-disabled" disabled="">
+                      Botón Deshabilitado
+                  </button>
+
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Botones secoundarios grises -->
+  <section id="button-block">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Botón de bloque</h2>
+              <div class="flex items-end w-full gap-4 mb-4">
+                  <div
+                      class="grid w-full py-4 overflow-x-scroll rounded-lg place-items-center lg:overflow-visible">
+
+                      <!-- COMPONENTE: Botón de bloque -->
+                      <button class="btn btn-block" type="button">
+                          Botón de bloque
+                      </button>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Button loading icons -->
+  <section id="button-loading-icons">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-2 text-xl font-semibold">Cargando</h2>
+              <p class="mb-8 text-gray-600 text-md">Utilice indicadores dentro de los botones para indicar que
+                  una acción se está procesando o llevando a cabo en ese
+                  momento. También se puede cambiar el texto del elemento indicador y utilizar el texto del
+                  botón
+                  según sea necesario..</p>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- Botón con solo loading -->
+                  <button type="button"
+                      class="flex items-center justify-center h-12 btn-primary btn-lg btn-icon gap-x-2">
+                      <span class="!border-t-transparent border-current spin-loading" role="status"
+                          aria-label="Cargando">
+                          <span class="sr-only">Cargando...</span>
+                      </span>
+                  </button>
+
+                  <!-- Botón con loading + texto -->
+                  <button type="button"
+                      class="flex items-center justify-center h-12 btn-primary btn-lg btn-icon gap-x-2">
+                      <span class="!border-t-transparent border-current spin-loading" role="status"
+                          aria-label="Cargando"></span>
+                      <span>Cargando</span>
+                  </button>
+
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Button only icon -->
+  <section id="button-icon-only">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-2 text-xl font-semibold">Botón icono simple</h2>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <button class="btn btn-icon-only" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="size-5" viewBox="0 0 24 24"
+                          stroke-width="2" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                      </svg>
+                  </button>
+
+                  <button class="btn btn-secondary btn-circle" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="size-5 text-primary-600"
+                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                      </svg>
+                  </button>
+
+                  <button class="btn btn-ghost btn-icon-only btn-circle" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                          class="w-5 h-5">
+                          <path
+                              d="M7.493 18.5c-.425 0-.82-.236-.975-.632A7.48 7.48 0 0 1 6 15.125c0-1.75.599-3.358 1.602-4.634.151-.192.373-.309.6-.397.473-.183.89-.514 1.212-.924a9.042 9.042 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75A.75.75 0 0 1 15 2a2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H14.23c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23h-.777ZM2.331 10.727a11.969 11.969 0 0 0-.831 4.398 12 12 0 0 0 .52 3.507C2.28 19.482 3.105 20 3.994 20H4.9c.445 0 .72-.498.523-.898a8.963 8.963 0 0 1-.924-3.977c0-1.708.476-3.305 1.302-4.666.245-.403-.028-.959-.5-.959H4.25c-.832 0-1.612.453-1.918 1.227Z" />
+                      </svg>
+
+                  </button>
+
+                  <button class="btn btn-success btn-icon-only btn-circle" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="text-white size-5"
+                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                      </svg>
+                  </button>
+
+                  <button type="button" class="inline-flex items-center btn btn-primary">
+                      Messages
+                      <span
+                          class="inline-flex items-center justify-center w-4 h-4 text-xs badge ms-2">2</span>
+                      <!-- <span
+                          class="inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full ms-2">
+                          2
+                      </span> -->
+                  </button>
+
+                  <button type="button" class="inline-flex items-center btn btn-primary">
+                      Messages
+                      <span
+                          class="inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full ms-2">
+                          2
+                      </span>
+                  </button>
+
+
+                  <button class="btn btn-circle" type="button">1</button>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <section id="button-group">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-2 text-xl font-semibold">Grupo de botones predeterminado</h2>
+              <p class="mb-8 text-gray-600 text-md">Este ejemplo de componente muestra un grupo de botones
+                  interactivo con control detallado sobre la apariencia y el
+                  diseño. El uso de clases de utilidad facilita la personalización de cada aspecto del diseño
+                  del grupo de botones.</p>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+                  <div class="flex row">
+                      <button class="btn btn-secondary btn-group-left" type="button">Uno</button>
+                      <button class="btn btn-secondary btn-group-middle" type="button">Dos</button>
+                      <button class="btn btn-secondary btn-group-right" type="button">Tres</button>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+</main>
