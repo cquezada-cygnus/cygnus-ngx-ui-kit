@@ -1,7 +1,7 @@
 <button [class]="btnAllClasses()" type="button">
   @if (btnIconExist && btnIconPosition == 'left') {
     @if (btnIsLoading()) {
-      <div [class]="BTN_ICON_LOADING + ' mr-2 ' + btnIconLoadingSize()"  role="status" aria-label="loading">
+      <div [class]="BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize() "  role="status" aria-label="loading">
         <span class="sr-only">Cargando...</span>
       </div>
     } @else {
@@ -17,7 +17,7 @@
     <ng-content></ng-content>
   @if (btnIconExist && btnIconPosition == 'right') {
     @if (btnIsLoading()) {
-      <div [class]="BTN_ICON_LOADING + ' mr-2 ' + btnIconLoadingSize()"  role="status" aria-label="loading">
+      <div [class]="BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize()"  role="status" aria-label="loading">
         <span class="sr-only">Cargando...</span>
       </div>
     } @else {
