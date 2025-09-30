@@ -12,6 +12,18 @@
     "paths": {
       "ngx-cygnus-ui": [
         "./projects/ngx-cygnus-ui/index.ts"
+      ],
+      "ngx-cygnus-ui/button/*": [
+        "./projects/ngx-cygnus-ui/button/*",
+      ],
+      "ngx-cygnus-ui/button": [
+        "./projects/ngx-cygnus-ui/button",
+      ],
+       "ngx-cygnus-ui/types/*": [
+        "./projects/ngx-cygnus-ui/types/*",
+      ],
+      "ngx-cygnus-ui/types": [
+        "./projects/ngx-cygnus-ui/types",
       ]
     },
     "skipLibCheck": true,

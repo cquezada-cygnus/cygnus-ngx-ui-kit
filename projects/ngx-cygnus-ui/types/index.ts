@@ -1,1 +1,1 @@
-export * from './icon.types';
+export * from './public-api';

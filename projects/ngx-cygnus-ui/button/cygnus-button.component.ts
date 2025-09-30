@@ -1,5 +1,5 @@
 import { Component, input, OnInit, signal, WritableSignal } from '@angular/core';
-import { IconBtnColor, IconBtnSize, IconPosition } from './icon.types';
+import { IconBtnColor, IconBtnSize, IconPosition } from 'ngx-cygnus-ui/types';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
 @Component({
