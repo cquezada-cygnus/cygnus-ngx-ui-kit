@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { CygnusButtonComponent } from 'ngx-cygnus-ui/button';
+import { Component, input } from '@angular/core';
 import { ButtonContentComponent } from './button-content/button-content.component';
+import { CygnusInputComponent } from 'ngx-cygnus-ui/input';
 
 @Component({
   selector: 'app-root',
   imports: [
-    CygnusButtonComponent,
+    CygnusInputComponent,
     ButtonContentComponent,
   ],
   templateUrl: './app.component.html',
