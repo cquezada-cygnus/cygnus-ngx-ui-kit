@@ -154,22 +154,27 @@
               <div class="flex items-center justify-center w-full gap-4 mb-4">
 
                   <!-- COMPONENTE: Botón con ícono izquierdo -->
-                  <button class="btn btn-icon" type="button">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="!w-5 !h-5 mr-2" viewBox="0 -960 960 960">
-                          <path
-                              d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM205-801h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Z" />
-                      </svg>
-                      Botón con ícono izquierdo
-                  </button>
+                  <cygnus-button
+                    [btnTypes]="'btn-indigo btn-icon'"
+                    [btnIconPosition]="'left'"
+                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                  >
+                    Botón con ícono izquierdo
+                  </cygnus-button>
 
                   <!-- COMPONENTE: Botón con ícono derecho -->
-                  <button class="btn btn-icon" type="button">
-                      Botón con ícono derecho
-                      <svg xmlns="http://www.w3.org/2000/svg" class="!w-5 !h-5 ms-2" viewBox="0 -960 960 960">
-                          <path
-                              d="M286.79-81Q257-81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21Zm400 0Q657-81 636-102.21t-21-51Q615-183 636.21-204t51-21Q717-225 738-203.79t21 51Q759-123 737.79-102t-51 21ZM205-801h589.07q22.97 0 34.95 21 11.98 21-.02 42L694-495q-11 19-28.56 30.5T627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Z" />
-                      </svg>
-                  </button>
+                   <cygnus-button
+                    [btnTypes]="'btn-indigo btn-icon'"
+                    [btnIconPosition]="'right'"
+                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                  >
+                    Botón con ícono derecho
+                  </cygnus-button>
+
+
+              </div>
+              <div>
+                <p>Por defecto, la posición del ícono es izquierda.</p>
               </div>
 
           </div>
@@ -185,10 +190,8 @@
               <h2 class="mb-4 text-xl font-semibold">Botón Deshabilitado</h2>
               <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-                  <!-- COMPONENTE: Botón Deshabilitado -->
-                  <button class="btn-disabled" disabled="">
-                      Botón Deshabilitado
-                  </button>
+                    <!-- COMPONENTE: Botón Deshabilitado -->
+                    <cygnus-button [btnTypes]="'btn-disabled'" >Botón Deshabilitado</cygnus-button>
 
               </div>
           </div>
@@ -201,17 +204,12 @@
           class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
           <div class="p-4">
               <h2 class="mb-4 text-xl font-semibold">Botón de bloque</h2>
-              <div class="flex items-end w-full gap-4 mb-4">
-                  <div
-                      class="grid w-full py-4 overflow-x-scroll rounded-lg place-items-center lg:overflow-visible">
 
-                      <!-- COMPONENTE: Botón de bloque -->
-                      <button class="btn btn-block" type="button">
-                          Botón de bloque
-                      </button>
-                  </div>
+                  <!-- COMPONENTE: Botón de bloque -->
+                  <cygnus-button [btnTypes]="'btn-primary btn-block'" >Botón de bloque</cygnus-button>
+                  <cygnus-button [btnTypes]="'btn-indigo btn-block'" >Botón de bloque</cygnus-button>
+                  <cygnus-button [btnTypes]="'btn-accent btn-block'" >Botón de bloque</cygnus-button>
 
-              </div>
           </div>
 
       </div>
@@ -230,22 +228,50 @@
                   según sea necesario..</p>
               <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-                  <!-- Botón con solo loading -->
-                  <button type="button"
-                      class="flex items-center justify-center h-12 btn-primary btn-lg btn-icon gap-x-2">
-                      <span class="!border-t-transparent border-current spin-loading" role="status"
-                          aria-label="Cargando">
-                          <span class="sr-only">Cargando...</span>
-                      </span>
-                  </button>
-
                   <!-- Botón con loading + texto -->
-                  <button type="button"
-                      class="flex items-center justify-center h-12 btn-primary btn-lg btn-icon gap-x-2">
-                      <span class="!border-t-transparent border-current spin-loading" role="status"
-                          aria-label="Cargando"></span>
-                      <span>Cargando</span>
-                  </button>
+                  <cygnus-button
+                    [btnTypes]="'btn-success btn-size-sm btn-icon'"
+                    [btnIsLoading]="true"
+                    [btnIconLoadingSize]="'size-4'"
+                  >
+                    Cargando
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-warning btn-size-sm btn-icon'"
+                    [btnIsLoading]="true"
+                    [btnIconLoadingSize]="'size-5'"
+                  >
+                    Cargando
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-error btn-size-sm btn-icon'"
+                    [btnIsLoading]="true"
+                    [btnIconLoadingSize]="'size-6'"
+                  >
+                    Cargando
+                  </cygnus-button>
+
+                  <!-- Botón con solo loading -->
+                  <cygnus-button
+                    [btnTypes]="'btn-pink btn-size-sm btn-icon btn-icon-only'"
+                    [btnIsLoading]="true"
+                    [btnIconLoadingSize]="'size-6'"
+                  >
+                  </cygnus-button>
+
+                  <cygnus-button
+                    [btnTypes]="'btn-purple btn-size-sm btn-icon btn-icon-only'"
+                    [btnIsLoading]="true"
+                    [btnIconLoadingSize]="'size-5'"
+                  >
+                  </cygnus-button>
+
+                  <cygnus-button
+                    [btnTypes]="'btn-indigo btn-size-sm btn-icon btn-icon-only'"
+                    [btnIsLoading]="true"
+                    [btnIconLoadingSize]="'size-4'"
+                  >
+                  </cygnus-button>
 
               </div>
           </div>
@@ -261,59 +287,49 @@
               <h2 class="mb-2 text-xl font-semibold">Botón icono simple</h2>
               <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-                  <button class="btn btn-icon-only" type="button">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="size-5" viewBox="0 0 24 24"
-                          stroke-width="2" stroke="currentColor" class="size-6">
-                          <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                      </svg>
-                  </button>
+                <cygnus-button
+                  [btnTypes]="'btn btn-icon-only'"
+                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-accent btn-circle btn-icon-only'"
+                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-ghost btn-circle btn-icon-only'"
+                  [btnIconRoute]="'assets/icons/svg/Alerts&Feedback/thumbs-up.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-success btn-circle btn-icon-only'"
+                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                >
+                </cygnus-button>
 
-                  <button class="btn btn-secondary btn-circle" type="button">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="size-5 text-primary-600"
-                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                      </svg>
-                  </button>
+                <cygnus-button
+                  [btnTypes]="'btn-primary '"
+                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                >
+                  Messages
+                  <span class="inline-flex items-center justify-center w-4 h-4 text-xs badge ms-2">2</span> <!-- BADGE TODO -->
+                </cygnus-button>
 
-                  <button class="btn btn-ghost btn-icon-only btn-circle" type="button">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                          class="w-5 h-5">
-                          <path
-                              d="M7.493 18.5c-.425 0-.82-.236-.975-.632A7.48 7.48 0 0 1 6 15.125c0-1.75.599-3.358 1.602-4.634.151-.192.373-.309.6-.397.473-.183.89-.514 1.212-.924a9.042 9.042 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75A.75.75 0 0 1 15 2a2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H14.23c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23h-.777ZM2.331 10.727a11.969 11.969 0 0 0-.831 4.398 12 12 0 0 0 .52 3.507C2.28 19.482 3.105 20 3.994 20H4.9c.445 0 .72-.498.523-.898a8.963 8.963 0 0 1-.924-3.977c0-1.708.476-3.305 1.302-4.666.245-.403-.028-.959-.5-.959H4.25c-.832 0-1.612.453-1.918 1.227Z" />
-                      </svg>
+                <cygnus-button
+                  [btnTypes]="'btn-primary '"
+                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                >
+                  Messages
+                  <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full ms-2"> 2 </span> <!-- BADGE TODO -->
+                </cygnus-button>
 
-                  </button>
+                <cygnus-button
+                  [btnTypes]="'btn btn-circle'"
+                >
+                1
+                </cygnus-button>
 
-                  <button class="btn btn-success btn-icon-only btn-circle" type="button">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="text-white size-5"
-                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-                          <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                      </svg>
-                  </button>
-
-                  <button type="button" class="inline-flex items-center btn btn-primary">
-                      Messages
-                      <span
-                          class="inline-flex items-center justify-center w-4 h-4 text-xs badge ms-2">2</span>
-                      <!-- <span
-                          class="inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full ms-2">
-                          2
-                      </span> -->
-                  </button>
-
-                  <button type="button" class="inline-flex items-center btn btn-primary">
-                      Messages
-                      <span
-                          class="inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full ms-2">
-                          2
-                      </span>
-                  </button>
-
-
-                  <button class="btn btn-circle" type="button">1</button>
               </div>
           </div>
 
@@ -329,13 +345,72 @@
                   interactivo con control detallado sobre la apariencia y el
                   diseño. El uso de clases de utilidad facilita la personalización de cada aspecto del diseño
                   del grupo de botones.</p>
+
               <div class="flex items-center justify-center w-full gap-4 mb-4">
-                  <div class="flex row">
-                      <button class="btn btn-secondary btn-group-left" type="button">Uno</button>
-                      <button class="btn btn-secondary btn-group-middle" type="button">Dos</button>
-                      <button class="btn btn-secondary btn-group-right" type="button">Tres</button>
-                  </div>
+                <div class="flex row">
+                  <cygnus-button
+                    [btnTypes]="'btn-secondary btn-group-left'"
+                  >
+                    left btn
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-secondary btn-group-middle'"
+                  >
+                    middle btn
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-secondary btn-group-right'"
+                  >
+                    right btn
+                  </cygnus-button>
+                </div>
               </div>
+
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+                <div class="flex row">
+                  <cygnus-button
+                    [btnTypes]="'btn-indigo btn-group-left'"
+                  >
+                    left btn
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-indigo btn-group-middle'"
+                  >
+                    middle btn
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-indigo btn-group-right'"
+                  >
+                    right btn
+                  </cygnus-button>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+                <div class="flex row">
+                  <cygnus-button
+                    [btnTypes]="'btn-success btn-group-left'"
+                  >
+                    left btn
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-warning btn-group-middle'"
+                  >
+                    middle btn
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-error btn-group-middle'"
+                  >
+                    middle btn
+                  </cygnus-button>
+                  <cygnus-button
+                    [btnTypes]="'btn-purple btn-group-right'"
+                  >
+                    right btn
+                  </cygnus-button>
+                </div>
+              </div>
+
           </div>
 
       </div>

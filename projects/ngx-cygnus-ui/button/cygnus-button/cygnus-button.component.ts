@@ -42,7 +42,7 @@ export class CygnusButtonComponent implements OnInit { // esto fue creado para r
   btnAllClasses:WritableSignal<string> = signal<string>('');
   btnIconExist: boolean = false;
   btnIconOnly: boolean = false;
-  btnIconPosition: IconPosition = 'left';
+  btnIconPosition = input<IconPosition>('left');
   btnIconColor: IconBtnColor = '#ffffff';
   btnIconSize: IconBtnSize = '1.25rem';
   btnIconRoute = input<string>('');
