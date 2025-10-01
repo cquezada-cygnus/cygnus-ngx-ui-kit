@@ -1,13 +1,61 @@
 <!-- COMPONENTE: Input floating -->
 <div class="flex items-center justify-center w-full gap-4 mb-4">
   <div class="w-full max-w-sm min-w-[200px] space-y-6">
+
+    <!-- input base -->
+    <input type="text" [class]="INPUT_BASE" placeholder="Este es el placecholder..." />
+
+    <!-- input base + label + texto ayuda -->
+    <fieldset class="fieldset">
+      <label [class]="FIELDSET_LEGEND">Label</label>
+      <input type="text" [class]="INPUT_BASE" placeholder="Este es el placeholder..." />
+      <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
+    </fieldset>
+
+
+
+
+
+
     <fieldset class="fieldset">
       <div class="relative">
-        <input id="cg-floating-inset" type="text" [class]="INPUT_BASE + ' ' + ('peer ' + INPUT_FLOATING) + ' ' + 'input-floating'"
-            placeholder=" ">
-        <!-- class="peer input-floating" -->
-        <label for="cg-floating-inset" [class]="'label-floating ' + LABEL_FLOATING">Email</label>
+        <input id="cg-floating-inset" type="text"
+          [class]="
+            INPUT_BASE + ' ' +
+            ('peer ' + INPUT_FLOATING) + ' ' +
+            'input-floating'
+          "
+          placeholder=" "
+        >
+        <label for="cg-floating-inset"
+          [class]="
+            LABEL_BASE + ' ' +
+            LABEL_FLOATING
+          "
+        >Email</label>
         <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
+      </div>
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <div class="relative">
+        <input id="cg-floating-inset" type="text"
+          [class]="
+            INPUT_BASE + ' ' +
+            ('peer ' + INPUT_FLOATING) + ' ' +
+            'input-floating' + ' ' +
+            INPUT_SUCCESS
+          "
+          placeholder=" "
+        >
+        <label for="cg-floating-inset"
+          [class]="
+            LABEL_BASE + ' ' +
+            LABEL_FLOATING + ' ' +
+            LABEL_SUCCESS
+          "
+        >Email</label>
+        <p [class]="HINT_TEXT + ' ' + HINT_SUCCESS">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
   </div>
