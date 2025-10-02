@@ -15,8 +15,82 @@
     <!-- input label top -->
     <fieldset class="fieldset">
       <div class="relative">
-        <input id="cg-input-floating" [class]="INPUT_BASE + ' peer'" type="text" placeholder=" " />
-        <label for="cg-input-floating" [class]="LABEL_INTERACTIVE">Email</label>
+        <input id="cg-input-floating"
+          [class]="
+            INPUT_BASE + ' peer'
+          "
+          type="text"
+          placeholder=" "
+        />
+        <label for="cg-input-floating"
+          [class]="
+            LABEL_INTERACTIVE_BASE + ' ' +
+            LABEL_INTERACTIVE_COLOR_BASE
+          "
+        >Email</label>
+        <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
+      </div>
+    </fieldset>
+
+    <!-- input label top success -->
+    <fieldset class="fieldset">
+      <div class="relative">
+        <input id="cg-input-floating"
+          [class]="
+            INPUT_BASE + ' peer ' +
+            INPUT_SUCCESS
+          "
+          type="text"
+          placeholder=" "
+        />
+        <label for="cg-input-floating"
+          [class]="
+            LABEL_INTERACTIVE_BASE + ' ' +
+            LABEL_INTERACTIVE_COLOR_SUCCESS
+          "
+        >Email</label>
+        <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
+      </div>
+    </fieldset>
+
+    <!-- input label top warning -->
+    <fieldset class="fieldset">
+      <div class="relative">
+        <input id="cg-input-floating"
+          [class]="
+            INPUT_BASE + ' peer ' +
+            INPUT_WARNING
+          "
+          type="text"
+          placeholder=" "
+        />
+        <label for="cg-input-floating"
+          [class]="
+            LABEL_INTERACTIVE_BASE + ' ' +
+            LABEL_INTERACTIVE_COLOR_WARNING
+          "
+        >Email</label>
+        <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
+      </div>
+    </fieldset>
+
+    <!-- input label top error -->
+    <fieldset class="fieldset">
+      <div class="relative">
+        <input id="cg-input-floating"
+          [class]="
+            INPUT_BASE + ' peer ' +
+            INPUT_ERROR
+          "
+          type="text"
+          placeholder=" "
+        />
+        <label for="cg-input-floating"
+          [class]="
+            LABEL_INTERACTIVE_BASE + ' ' +
+            LABEL_INTERACTIVE_COLOR_ERROR
+          "
+        >Email</label>
         <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
