@@ -15,7 +15,7 @@
             (inputType()==='floating' ? INPUT_FLOATING : '') + ' ' +
             inputGetColor()
           "
-          placeholder=" "
+          [placeholder]="inputSetPlaceholder()"
         >
         <label for="cg-floating-inset"
           [class]="
@@ -52,25 +52,34 @@
 
 
 
+
+
 <!-- INPUTS MUESTRA -->
+<!--
 <h2 class="mb-1 text-xl font-semibold">INPUT MUESTRA</h2>
 <p class="mb-8 text-gray-600 text-md">Esta es una muestra de distintos input muestra.</p>
+-->
 
 
+<!--
 <div class="flex items-center justify-center w-full gap-4 mb-4">
   <div class="w-full max-w-sm min-w-[200px] space-y-6">
+-->
 
     <!-- input base -->
-    <input type="text" [class]="INPUT_BASE" placeholder="Este es el placecholder..." />
+    <!-- <input type="text" [class]="INPUT_BASE" placeholder="Este es el placecholder..." /> -->
 
     <!-- input base + label + texto ayuda -->
+    <!--
     <fieldset class="fieldset">
       <label [class]="FIELDSET_LEGEND">Label</label>
       <input type="text" [class]="INPUT_BASE" placeholder="Este es el placeholder..." />
       <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
     </fieldset>
+     -->
 
     <!-- input label interactive -->
+    <!--
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-input-floating"
@@ -89,8 +98,10 @@
         <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
+     -->
 
     <!-- input label interactive success -->
+    <!--
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-input-floating"
@@ -118,8 +129,10 @@
         <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
+     -->
 
     <!-- input label interactive warning -->
+    <!--
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-input-floating"
@@ -147,8 +160,10 @@
         <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
+     -->
 
     <!-- input label interactive error -->
+    <!--
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-input-floating"
@@ -176,8 +191,10 @@
         <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
+     -->
 
     <!-- input-floating base -->
+    <!--
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-floating-inset" type="text"
@@ -197,8 +214,10 @@
         <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
+     -->
 
     <!-- input-floating success -->
+    <!--
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-floating-inset" type="text"
@@ -226,9 +245,10 @@
         </div>
         <p [class]="HINT_TEXT + ' ' + HINT_SUCCESS">Este es un texto de ayuda para el usuario.</p>
       </div>
-    </fieldset>
+    </fieldset> -->
 
     <!-- input-floating warning -->
+    <!--
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-floating-inset" type="text"
@@ -257,8 +277,10 @@
         <p [class]="HINT_TEXT + ' ' + HINT_WARNING">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
+    -->
 
     <!-- input-floating error -->
+    <!--
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-floating-inset" type="text"
@@ -287,5 +309,10 @@
         <p [class]="HINT_TEXT + ' ' + HINT_ERROR">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
+    -->
+
+
+  <!--
   </div>
 </div>
+-->

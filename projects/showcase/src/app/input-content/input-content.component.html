@@ -1,0 +1,444 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+    <header class="mb-12">
+        <h1 class="text-4xl font-bold">Inputs</h1>
+        <p class="mt-4 text-gray-600 text-md">Los campos de entrada permiten a los usuarios introducir texto
+            en
+            una interfaz de usuario. Suelen aparecer en
+            formularios y cuadros de diálogo. Los campos de entrada en móviles deben tener un tamaño de
+            texto de
+            al menos 16px para evitar el zoom automático en los navegadores móviles.</p>
+    </header>
+
+    <!-- Input simple -->
+    <section id="input-simple">
+        <div
+            class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+            <div class="p-4 pb-4">
+                <h2 class="mb-1 text-xl font-semibold">Input simple</h2>
+                <p class="mb-8 text-gray-600 text-md">Utilice este ejemplo de "input" para comenzar fácilmente.
+                    Es
+                    perfecto para formularios que requieren la entrada de
+                    texto, como el registro de usuarios, formularios de inicio de sesión o cualquier formulario
+                    en
+                    el que los usuarios
+                    necesiten ingresar un nombre de usuario.</p>
+                <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                    <div class="w-full max-w-sm min-w-[200px]">
+
+                        <!-- COMPONENTE: Input default -->
+                        <cygnus-input [inputType]="'base'" [textLabel]="'esto es un placeholder'" />
+
+                        <input type="text" placeholder="Este es el placecholder..." />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <!-- Input with label -->
+            <section id="input-with-label">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-1 text-xl font-semibold">Input con label</h2>
+                        <p class="mb-8 text-gray-600 text-md">Utilice este ejemplo de "input" con el texto de
+                            marcador de
+                            posición "Este es el placeholder", guiando al usuario para que
+                            introduzca su nombre. La etiqueta se coloca encima del campo de entrada para obtener
+                            claridad
+                            sobre qué información se
+                            requiere.</p>
+                        <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+
+                            <div class="w-full max-w-sm">
+
+                                <!-- COMPONENTE: Input con label -->
+                                <fieldset class="fieldset">
+                                    <label class="fieldset-legend">Label</label>
+                                    <input type="text" placeholder="Este es el placeholder..." />
+                                    <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
+                                </fieldset>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input size -->
+            <section id="input-size">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-1 text-xl font-semibold">Tamaños</h2>
+                        <p class="mb-8 text-gray-600 text-md">Input apilados de tamaños pequeños a grandes..</p>
+                        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                            <div class="max-w-sm space-y-3 w-full min-w-[200px]">
+
+                                <!-- COMPONENTE: Tamaño SM -->
+                                <fieldset>
+                                    <label>Label</label>
+                                    <input type="text" class="input-sm" placeholder="Tamaño SM">
+                                    <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
+                                </fieldset>
+
+                                <!-- COMPONENTE: Tamaño default -->
+                                <fieldset>
+                                    <label>Label</label>
+                                    <input type="text" placeholder="Tamaño Normal">
+                                    <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
+                                </fieldset>
+
+                                <!-- COMPONENTE: Tamaño LG -->
+                                <fieldset>
+                                    <label>Label</label>
+                                    <input type="text" class="input-lg" placeholder="Tamaño LG">
+                                    <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
+                                </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input interactive -->
+            <section id="input-interactive">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-1 text-xl font-semibold">Label interactivo top</h2>
+                        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
+                            texto
+                            blanco, esquinas
+                            redondeadas y un efecto
+                            de sombra al pasar el mouse, mostrando interactividad.</p>
+                        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                            <div class="w-full max-w-sm min-w-[200px] space-y-6">
+
+                                <!-- COMPONENTE: Input interactivo -->
+                                <fieldset class="fieldset">
+                                    <div class="relative">
+                                        <input id="cg-input-floating" class="peer" type="text" placeholder=" " />
+                                        <label for="cg-input-floating" class="label-interactive">Email</label>
+                                        <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
+                                    </div>
+                                </fieldset>
+
+                                <!-- COMPONENTE: Input interactivo -->
+                                <fieldset class="fieldset">
+                                    <div class="relative">
+                                        <input id="cg-input-floating" class="peer input-interactive-success" type="text"
+                                            placeholder=" " />
+                                        <label for="cg-input-floating" class="label-interactive-success">Email</label>
+                                        <div class="absolute flex items-center h-6 pointer-events-none inset-y-3 end-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor"
+                                                class="size-6 text-success-500">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </div>
+                                        <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
+                                    </div>
+                                </fieldset>
+
+                                <!-- COMPONENTE: Input interactivo -->
+                                <fieldset class="fieldset">
+                                    <div class="relative">
+                                        <input id="cg-input-floating" class="peer input-interactive-warning" type="text"
+                                            placeholder=" " />
+                                        <label for="cg-input-floating" class="label-interactive-warning">Email</label>
+                                        <div class="absolute flex items-center h-6 pointer-events-none inset-y-3 end-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor"
+                                                class="size-6 text-warning-500">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                                            </svg>
+                                        </div>
+                                        <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
+                                    </div>
+                                </fieldset>
+
+                                <!-- COMPONENTE: Input interactivo -->
+                                <fieldset class="fieldset">
+                                    <div class="relative">
+                                        <input id="cg-input-floating" class="peer input-interactive-error" type="text"
+                                            placeholder=" " />
+                                        <label for="cg-input-floating" class="label-interactive-error">Email</label>
+                                        <div class="absolute flex items-center h-6 pointer-events-none inset-y-3 end-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6 text-error-500">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                                            </svg>
+                                        </div>
+                                        <p class="hint-text text-error-500">Este es un texto de ayuda para el usuario.
+                                        </p>
+                                    </div>
+                                </fieldset>
+
+                                <!-- COMPONENTE: Input floating -->
+                                <fieldset class="fieldset">
+                                    <div class="relative">
+                                        <input id="cg-floating-inset" type="text" class="peer input-floating"
+                                            placeholder=" ">
+                                        <label for="cg-floating-inset" class="label-floating">Email</label>
+                                        <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input validations -->
+            <section id="input-validations">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-1 text-xl font-semibold">Validaciones</h2>
+                        <p class="mb-8 text-gray-600 text-md">Proporciona información valiosa y procesable a los
+                            usuarios con la validación de formularios HTML5.</p>
+                        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
+
+                            <div class="flex-col w-full max-w-sm space-y-4">
+
+                                <!-- COMPONENTE: Input éxito -->
+                                <fieldset>
+                                    <label for="" class="fieldset-legend">Label</label>
+                                    <div class="relative">
+                                        <input type="text" class="pr-9 input-success" placeholder="Escribe aquí..." />
+                                        <div
+                                            class="absolute inset-y-0 end-2 flex items-center ps-3.5 pointer-events-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor"
+                                                class="size-6 text-success-500">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="hint-text text-success-600" id="cg-validation-name-success-helper"
+                                        role="alert">
+                                        Ingreso exitoso</p>
+                                </fieldset>
+
+                                <!-- COMPONENTE: Input advertencia -->
+                                <fieldset>
+                                    <label for="" class="fieldset-legend">Label</label>
+                                    <div class="relative">
+                                        <input type="text" class="pr-9 input-warning" placeholder="Escribe aquí..." />
+                                        <div
+                                            class="absolute inset-y-0 end-2 flex items-center ps-3.5 pointer-events-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor"
+                                                class="size-6 text-warning-600">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="hint-text text-warning-600" id="cg-validation-name-success-helper"
+                                        role="alert">
+                                        Este formato puede requerir revisión.</p>
+                                </fieldset>
+
+                                <!-- COMPONENTE: Input error -->
+                                <fieldset>
+                                    <label for="" class="fieldset-legend">Label</label>
+                                    <div class="relative">
+                                        <input type="text" class="pr-9 input-error" placeholder="Escribe aquí..." />
+                                        <div
+                                            class="absolute inset-y-0 end-2 flex items-center ps-3.5 pointer-events-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6 text-error-600">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="hint-text text-error-600" id="cg-validation-name-success-helper"
+                                        role="alert">
+                                        Por favor introduzca un número de teléfono válido.</p>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input icon -->
+            <section id="input-icon">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-1 text-xl font-semibold">Input con icono</h2>
+                        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                            <div class="flex-col w-full max-w-sm space-y-4">
+
+                                <!-- COMPONENTE: Input con icono a la derecha -->
+                                <div class="relative">
+                                    <input type="text" class="pr-9" placeholder="Escribe aquí..." />
+                                    <div class="absolute inset-y-0 end-2 flex items-center ps-3.5 pointer-events-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <!-- inset-y-0 flex items-center pointer-events-none element-right end-0 pe-2 -->
+                                    </div>
+
+                                </div>
+
+                                <!-- COMPONENTE: Input con icono a la izquierda -->
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <!-- inset-y-0 flex items-center pointer-events-none element-right end-0 pe-2 -->
+                                    </div>
+                                    <input type="text" class="pl-9" placeholder="Escribe aquí..." />
+                                </div>
+
+                                <div class="relative">
+                                    <div
+                                        class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2 append">
+                                        +56
+                                    </div>
+                                    <input type="text" class="pl-9" placeholder="Escribe aquí..." />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Input group -->
+            <section id="input-group">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-1 text-xl font-semibold">Grupo de inputs</h2>
+                        <p class="mb-8 text-gray-600 text-md">Utilice este ejemplo de entrada de teléfono con un ícono
+                            de teléfono a la izquierda de la entrada, agregando una señal
+                            visual para el tipo de entrada requerida.</p>
+                        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
+
+                            <div class="flex-col w-full max-w-sm space-y-4">
+
+                                <!-- COMPONENTE: Input agrupado con icono -->
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <!-- inset-y-0 flex items-center pointer-events-none element-right end-0 pe-2 -->
+                                    </div>
+                                    <input type="text" class="pl-9" placeholder="Escribe aquí..." />
+                                </div>
+
+                                <!-- COMPONENTE: Input agrupado con texto -->
+                                <div class="relative">
+                                    <span class="element-left append">+56</span>
+                                    <input type="text" class="pl-10" placeholder="123-45 6789"
+                                        pattern="^\+\d{1,3}\s\d{1,3}-\d{3}-\d{4}$"
+                                        title="El número de teléfono debe tener al menos 7 números" maxlength="9" />
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input disabled -->
+            <section id="input-disabled">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-6 text-xl font-semibold">Inputs deshabilitados</h2>
+                        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
+
+                            <div class="flex-col w-full max-w-sm space-y-4">
+
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <!-- inset-y-0 flex items-center pointer-events-none element-right end-0 pe-2 -->
+                                    </div>
+                                    <input type="text" class="pl-9 input-disabled" placeholder="123-45 6789" disabled=""
+                                        readonly="" />
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Código -->
+                    <pre class="p-4 pl-4 overflow-auto text-white rounded-b-lg bg-secondary-900 ">
+                        <code class="language-html">
+
+
+
+                        </code>
+                    </pre>
+                </div>
+            </section>
+
+            <!-- Input validations -->
+            <section id="file-input">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-1 text-xl font-semibold">File input</h2>
+                        <p class="mb-8 text-gray-600 text-md">Una entrada de archivo estándar para cargar archivos.</p>
+                        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
+
+                            <div class="max-w-sm space-y-4 w-full min-w-[200px]">
+                                <form class="max-w-sm">
+                                    <label for="file-input" class="sr-only">Subir imagen</label>
+                                    <input type="file" name="file-input" id="file-input"
+                                        class="block w-full text-sm border border-gray-200 rounded-lg shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4">
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Código -->
+                    <pre class="p-4 pl-4 overflow-auto text-white rounded-b-lg bg-secondary-900 ">
+                        <code class="language-html">
+
+                        </code>
+                    </pre>
+                </div>
+            </section>
+
+</main>

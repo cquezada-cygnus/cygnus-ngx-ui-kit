@@ -53,7 +53,15 @@ export class CygnusInputComponent {
   hintColor = input<boolean>(false);
   textLabel = input<string>('Email');
   textHint = input<string>('Este es un texto de ayuda para el usuario.');
+  setPlaceholder:string = ' ';
 
+  inputSetPlaceholder() {
+    if (this.inputType()==='base' || this.inputType()==='fieldset-legend-label') {
+      this.setPlaceholder = this.textLabel();
+    } else {
+      this.setPlaceholder = ' ';
+    }
+  }
 
   inputGetColor():string {
     switch (this.inputColor()) {
