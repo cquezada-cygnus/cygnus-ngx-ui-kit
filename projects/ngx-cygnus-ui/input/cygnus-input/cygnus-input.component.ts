@@ -25,6 +25,14 @@ export class CygnusInputComponent {
 
   LABEL_SUCCESS: string = '!text-success-600 !peer-focus:text-gray-500 !peer-[:not(:placeholder-shown)]:text-gray-500';
 
+ t:string = 'absolute text-sm text-gray-600 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+
+
+  LABEL_INTERACTIVE        : string = 'absolute cursor-text bg-white left-2.5 -top-2 text-gray-600 text-xs scale-90 transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-gray-600 peer-focus:scale-90 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-600';
+  LABEL_INTERACTIVE_SUCCESS: string = 'absolute cursor-text bg-white px-1 left-2 top-3 text-success-600 text-sm transition-all transform origin-left peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-success-700 peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-success-600 peer-focus:scale-90 peer-focus:-translate-y-4';
+  LABEL_INTERACTIVE_WARNING: string = 'absolute cursor-text bg-white px-1 left-2 top-3 text-warning-600 text-sm transition-all transform origin-left peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-warning-700 peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-warning-600 peer-focus:scale-90';
+  LABEL_INTERACTIVE_ERROR  : string = 'absolute cursor-text bg-white px-1 left-2 top-3 text-error-600 text-sm transition-all transform origin-left peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-error-700 peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-error-600 peer-focus:scale-90';
+
   FIELDSET_LEGEND: string = 'block mb-1 text-sm font-medium text-gray-800';
 
   HINT_TEXT   : string = 'mt-1 text-sm text-gray-500';
