@@ -1,4 +1,21 @@
 <app-button-content />
 
 
-<cygnus-input />
+<cygnus-input
+  [inputType]="'label-interactive'"
+  [iconAsset]="'assets/icons/svg/General/eye.svg'"
+  [iconColor]="'#12b76a'"
+  [textLabel]="'Probando'"
+  [textHint]="'holap, estoy probando...'"
+/>
+<!--
+inputType = input<InputType>('base');
+inputColor = input<InputColor>('base');
+iconAsset = input<string>('');
+iconPosition = input<IconPosition>('right');
+iconColor = input<IconInputColor>('#101828');
+iconSize = input<string>('19px');
+hintColor = input<boolean>(false);
+textLabel = input<string>('Email');
+textHint = input<string>('Este es un texto de ayuda para el usuario.');
+-->

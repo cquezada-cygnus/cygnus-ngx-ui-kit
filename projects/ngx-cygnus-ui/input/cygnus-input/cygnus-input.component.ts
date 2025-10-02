@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { InputColor, InputType } from 'ngx-cygnus-ui/types';
+import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
 
 @Component({
   selector: 'cygnus-input',
@@ -37,9 +39,91 @@ export class CygnusInputComponent {
   FIELDSET_LEGEND: string = 'block mb-1 text-sm font-medium text-gray-800';
 
   HINT_TEXT   : string = 'mt-1 text-sm text-gray-500';
-  HINT_SUCCESS: string = 'text-success-600';
-  HINT_WARNING: string = 'text-warning-600';
+  HINT_SUCCESS: string = '!text-success-600';
+  HINT_WARNING: string = '!text-warning-600';
   HINT_ERROR  : string = '!text-error-600';
+
+
+  inputType = input<InputType>('base');
+  inputColor = input<InputColor>('base');
+  iconAsset = input<string>('');
+  iconPosition = input<IconPosition>('right');
+  iconColor = input<IconInputColor>('#101828');
+  iconSize = input<string>('19px');
+  hintColor = input<boolean>(false);
+  textLabel = input<string>('Email');
+  textHint = input<string>('Este es un texto de ayuda para el usuario.');
+
+
+  inputGetColor():string {
+    switch (this.inputColor()) {
+      case 'success':
+        return this.INPUT_SUCCESS;
+      case 'warning':
+        return this.INPUT_WARNING;
+      case 'error':
+        return this.INPUT_ERROR;
+      default:
+        return '';
+    }
+  }
+
+  labelFloatingGetColor():string {
+    switch (this.inputColor()) {
+      case 'success':
+        return this.LABEL_FLOATING_SUCCESS;
+      case 'warning':
+        return this.LABEL_FLOATING_WARNING;
+      case 'error':
+        return this.LABEL_FLOATING_ERROR;
+      default:
+        return '';
+    }
+  }
+
+  labelInteractiveGetColor():string {
+    switch (this.inputColor()) {
+      case 'success':
+        return this.LABEL_INTERACTIVE_COLOR_SUCCESS;
+      case 'warning':
+        return this.LABEL_INTERACTIVE_COLOR_WARNING;
+      case 'error':
+        return this.LABEL_INTERACTIVE_COLOR_ERROR;
+      default:
+        return this.LABEL_INTERACTIVE_COLOR_BASE;
+    }
+  }
+
+  hintGetColor():string {
+    if (this.hintColor()) {
+      switch (this.inputColor()) {
+        case 'success':
+          return this.HINT_SUCCESS;
+        case 'warning':
+          return this.HINT_WARNING;
+        case 'error':
+          return this.HINT_ERROR;
+        default:
+          return '';
+      }
+    }
+    return '';
+  }
+
+  labelColorGetType() {
+    if (this.inputType()==='floating') return this.labelFloatingGetColor();
+    if (this,this.inputType()==='label-interactive') return this.labelInteractiveGetColor();
+    return '';
+  }
+
+  labelGetType():string {
+    if (this.inputType()==='fieldset-legend-label') return this.FIELDSET_LEGEND;
+    if (this.inputType()==='label-interactive') return this.LABEL_INTERACTIVE_BASE;
+    if (this.inputType()==='floating') return (this.LABEL_BASE + ' ' + this.LABEL_FLOATING_BASE);
+    return '';
+  }
+
+
 
 
 }

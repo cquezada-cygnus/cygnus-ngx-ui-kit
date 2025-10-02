@@ -1,4 +1,62 @@
-<!-- COMPONENTE: Input floating -->
+<!-- INPUT ENTREGABLE -->
+
+<h2 class="mb-1 text-xl font-semibold">INPUT ENTREGABLE</h2>
+<p class="mb-8 text-gray-600 text-md">Esta es una muestra del input entregable.</p>
+
+
+<div class="flex items-center justify-center w-full gap-4 mb-4">
+  <div class="w-full max-w-sm min-w-[200px] space-y-6">
+    <fieldset class="fieldset">
+      <div class="relative">
+        <input id="cg-floating-inset" type="text"
+          [class]="
+            INPUT_BASE +
+            (inputType()!=='base' ? ' peer ' : ' ') +
+            (inputType()==='floating' ? INPUT_FLOATING : '') + ' ' +
+            inputGetColor()
+          "
+          placeholder=" "
+        >
+        <label for="cg-floating-inset"
+          [class]="
+            labelGetType() + ' ' +
+            labelColorGetType()
+          "
+        >{{ textLabel() }}</label>
+        @if (iconAsset()!=='' && iconPosition()==='right') {
+          <div [class]="'absolute flex items-center h-6 inset-y-3 end-2 ' + ( inputType()==='floating' ? 'pt-1' : '')">
+            <lib-ngx-cygnus-icons
+              [width]="iconSize()"
+              [height]="iconSize()"
+              [color]="iconColor()"
+              [route]="iconAsset()"
+            />
+          </div>
+        } @else if (iconAsset()!=='' && iconPosition()==='left') {
+          <div class="absolute flex items-center pointer-events-none ps-2 inset-y-0 start-0">
+            <lib-ngx-cygnus-icons
+              [width]="iconSize()"
+              [height]="iconSize()"
+              [color]="iconColor()"
+              [route]="iconAsset()"
+            />
+          </div>
+        }
+
+        <p [class]="HINT_TEXT + ' ' + hintGetColor()">{{ textHint() }}</p>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+
+
+
+<!-- INPUTS MUESTRA -->
+<h2 class="mb-1 text-xl font-semibold">INPUT MUESTRA</h2>
+<p class="mb-8 text-gray-600 text-md">Esta es una muestra de distintos input muestra.</p>
+
+
 <div class="flex items-center justify-center w-full gap-4 mb-4">
   <div class="w-full max-w-sm min-w-[200px] space-y-6">
 
@@ -12,7 +70,7 @@
       <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
     </fieldset>
 
-    <!-- input label top -->
+    <!-- input label interactive -->
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-input-floating"
@@ -32,7 +90,7 @@
       </div>
     </fieldset>
 
-    <!-- input label top success -->
+    <!-- input label interactive success -->
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-input-floating"
@@ -61,7 +119,7 @@
       </div>
     </fieldset>
 
-    <!-- input label top warning -->
+    <!-- input label interactive warning -->
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-input-floating"
@@ -90,7 +148,7 @@
       </div>
     </fieldset>
 
-    <!-- input label top error -->
+    <!-- input label interactive error -->
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-input-floating"
