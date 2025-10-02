@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
 @Component({
   selector: 'cygnus-input',
-  imports: [],
+  imports: [NgxCygnusIconsComponent],
   templateUrl: './cygnus-input.component.html',
   styleUrl: './cygnus-input.component.css'
 })
