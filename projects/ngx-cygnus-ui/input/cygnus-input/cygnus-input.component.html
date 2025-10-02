@@ -95,7 +95,7 @@
       </div>
     </fieldset>
 
-
+    <!-- input-floating base -->
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-floating-inset" type="text"
@@ -109,20 +109,20 @@
         <label for="cg-floating-inset"
           [class]="
             LABEL_BASE + ' ' +
-            LABEL_FLOATING
+            LABEL_FLOATING_BASE
           "
         >Email</label>
         <p [class]="HINT_TEXT">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
 
+    <!-- input-floating success -->
     <fieldset class="fieldset">
       <div class="relative">
         <input id="cg-floating-inset" type="text"
           [class]="
             INPUT_BASE + ' peer ' +
             INPUT_FLOATING + ' ' +
-            'input-floating' + ' ' +
             INPUT_SUCCESS
           "
           placeholder=" "
@@ -130,11 +130,55 @@
         <label for="cg-floating-inset"
           [class]="
             LABEL_BASE + ' ' +
-            LABEL_FLOATING + ' ' +
-            LABEL_SUCCESS
+            LABEL_FLOATING_BASE + ' ' +
+            LABEL_FLOATING_SUCCESS
           "
         >Email</label>
         <p [class]="HINT_TEXT + ' ' + HINT_SUCCESS">Este es un texto de ayuda para el usuario.</p>
+      </div>
+    </fieldset>
+
+    <!-- input-floating warning -->
+    <fieldset class="fieldset">
+      <div class="relative">
+        <input id="cg-floating-inset" type="text"
+          [class]="
+            INPUT_BASE + ' peer ' +
+            INPUT_FLOATING + ' ' +
+            INPUT_WARNING
+          "
+          placeholder=" "
+        >
+        <label for="cg-floating-inset"
+          [class]="
+            LABEL_BASE + ' ' +
+            LABEL_FLOATING_BASE + ' ' +
+            LABEL_FLOATING_WARNING
+          "
+        >Email</label>
+        <p [class]="HINT_TEXT + ' ' + HINT_WARNING">Este es un texto de ayuda para el usuario.</p>
+      </div>
+    </fieldset>
+
+    <!-- input-floating error -->
+    <fieldset class="fieldset">
+      <div class="relative">
+        <input id="cg-floating-inset" type="text"
+          [class]="
+            INPUT_BASE + ' peer ' +
+            INPUT_FLOATING + ' ' +
+            INPUT_ERROR
+          "
+          placeholder=" "
+        >
+        <label for="cg-floating-inset"
+          [class]="
+            LABEL_BASE + ' ' +
+            LABEL_FLOATING_BASE + ' ' +
+            LABEL_FLOATING_ERROR
+          "
+        >Email</label>
+        <p [class]="HINT_TEXT + ' ' + HINT_ERROR">Este es un texto de ayuda para el usuario.</p>
       </div>
     </fieldset>
   </div>
