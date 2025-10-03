@@ -92,7 +92,7 @@
 
                                 <!-- COMPONENTE: Tamaño default -->
                                 <cygnus-input
-                                  [inputId]="'cg-floating-inset-02'"
+                                  [inputId]="'cg-floating-inset-03'"
                                   [inputType]="'fieldset-legend-label'"
                                   [textPlaceholder]="'Tamaño Normal'"
                                   [textHint]="'Este es un texto de ayuda para el usuario.'"
@@ -102,7 +102,7 @@
 
                                 <!-- COMPONENTE: Tamaño LG -->
                                 <cygnus-input
-                                  [inputId]="'cg-floating-inset-02'"
+                                  [inputId]="'cg-floating-inset-04'"
                                   [inputType]="'fieldset-legend-label'"
                                   [textPlaceholder]="'Tamaño LG'"
                                   [textHint]="'Este es un texto de ayuda para el usuario.'"
@@ -129,80 +129,58 @@
                             de sombra al pasar el mouse, mostrando interactividad.</p>
                         <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-                            <div class="w-full max-w-sm min-w-[200px] space-y-6">
+                            <div class="space-y-6 w-full max-w-sm min-w-[200px]">
 
-                                <!-- COMPONENTE: Input interactivo -->
-                                <fieldset class="fieldset">
-                                    <div class="relative">
-                                        <input id="cg-input-floating" class="peer" type="text" placeholder=" " />
-                                        <label for="cg-input-floating" class="label-interactive">Email</label>
-                                        <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
-                                    </div>
-                                </fieldset>
+                                <!-- COMPONENTE: Input interactivo simple -->
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-05'"
+                                  [inputType]="'label-interactive'"
+                                  [textLabel]="'Email'"
+                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
+                                />
 
-                                <!-- COMPONENTE: Input interactivo -->
-                                <fieldset class="fieldset">
-                                    <div class="relative">
-                                        <input id="cg-input-floating" class="peer input-interactive-success" type="text"
-                                            placeholder=" " />
-                                        <label for="cg-input-floating" class="label-interactive-success">Email</label>
-                                        <div class="absolute flex items-center h-6 pointer-events-none inset-y-3 end-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor"
-                                                class="size-6 text-success-500">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                            </svg>
-                                        </div>
-                                        <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
-                                    </div>
-                                </fieldset>
+                                <!-- COMPONENTE: Input interactivo success -->
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-06'"
+                                  [inputType]="'label-interactive'"
+                                  [inputColor]="'success'"
+                                  [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
+                                  [iconColor]="'#12b76a'"
+                                  [textLabel]="'Email'"
+                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
+                                />
 
-                                <!-- COMPONENTE: Input interactivo -->
-                                <fieldset class="fieldset">
-                                    <div class="relative">
-                                        <input id="cg-input-floating" class="peer input-interactive-warning" type="text"
-                                            placeholder=" " />
-                                        <label for="cg-input-floating" class="label-interactive-warning">Email</label>
-                                        <div class="absolute flex items-center h-6 pointer-events-none inset-y-3 end-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor"
-                                                class="size-6 text-warning-500">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-                                            </svg>
-                                        </div>
-                                        <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
-                                    </div>
-                                </fieldset>
+                                <!-- COMPONENTE: Input interactivo warning -->
+                                 <cygnus-input
+                                  [inputId]="'cg-floating-inset-07'"
+                                  [inputType]="'label-interactive'"
+                                  [inputColor]="'warning'"
+                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
+                                  [iconColor]="'#f79009'"
+                                  [textLabel]="'Email'"
+                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
+                                />
 
-                                <!-- COMPONENTE: Input interactivo -->
-                                <fieldset class="fieldset">
-                                    <div class="relative">
-                                        <input id="cg-input-floating" class="peer input-interactive-error" type="text"
-                                            placeholder=" " />
-                                        <label for="cg-input-floating" class="label-interactive-error">Email</label>
-                                        <div class="absolute flex items-center h-6 pointer-events-none inset-y-3 end-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6 text-error-500">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-                                            </svg>
-                                        </div>
-                                        <p class="hint-text text-error-500">Este es un texto de ayuda para el usuario.
-                                        </p>
-                                    </div>
-                                </fieldset>
+                                <!-- COMPONENTE: Input interactivo error -->
+                                 <cygnus-input
+                                  [inputId]="'cg-floating-inset-08'"
+                                  [inputType]="'label-interactive'"
+                                  [inputColor]="'error'"
+                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg.svg'"
+                                  [iconColor]="'#f04438'"
+                                  [textLabel]="'Email'"
+                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
+                                />
 
                                 <!-- COMPONENTE: Input floating -->
-                                <fieldset class="fieldset">
-                                    <div class="relative">
-                                        <input id="cg-floating-inset" type="text" class="peer input-floating"
-                                            placeholder=" ">
-                                        <label for="cg-floating-inset" class="label-floating">Email</label>
-                                        <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
-                                    </div>
-                                </fieldset>
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-09'"
+                                  [inputType]="'floating'"
+                                  [textPlaceholder]="'...'"
+                                  [textLabel]="'Email'"
+                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
+                                />
+
                             </div>
                         </div>
                     </div>

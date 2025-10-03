@@ -15,8 +15,10 @@
       [class]="
         INPUT_BASE +
         (inputType()!=='base' ? ' peer ' : ' ') +
+        (inputType()==='label-interactive' ? LABEL_INTERACTIVE_COLOR_BASE : '') + ' ' +
         (inputType()==='floating' ? INPUT_FLOATING : '') + ' ' +
         inputGetColor() + ' ' +
+        inputGetInteractiveColor() + ' ' +
         inputGetSize()
       "
       [placeholder]="textPlaceholder()"

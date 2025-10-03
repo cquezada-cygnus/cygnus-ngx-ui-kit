@@ -20,6 +20,11 @@ export class CygnusInputComponent {
   INPUT_DISABLED: string = 'bg-neutral-50 text-neutral-400 cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none focus:outline-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none';
   INPUT_FLOATING: string = '!pb-2 !pt-6 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none focus:pt-6 focus:pb-2 [&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2';
 
+  INPUT_INTERACTIVE_BASE: string = 'px-4 py-3 block w-full text-sm transition duration-300 border rounded-lg shadow-sm focus:outline-none';
+  INPUT_INTERACTIVE_SUCCESS: string = 'placeholder:text-success-500 placeholder:bg-gray-50 text-gray-700 border-success-600 focus:ring-success-700 focus:border-success-700 focus:shadow active:bg-white';
+  INPUT_INTERACTIVE_WARNING: string = 'placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 border-warning-600 focus:ring-warning-700 focus:border-warning-700  focus:shadow active:bg-white';
+  INPUT_INTERACTIVE_ERROR: string = 'placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 border-error-600 focus:ring-error-700 focus:border-error-700 focus:shadow active:bg-white';
+
   LABEL_BASE: string = 'block mb-1 text-sm font-medium text-gray-800';
 
   LABEL_FLOATING_BASE: string = 'absolute top-0 start-0 !p-4 !pl-3 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500 peer-[:not(:placeholder-shown)]:scale-90 peer-[:not(:placeholder-shown)]:translate-x-0.5 peer-[:not(:placeholder-shown)]:-translate-y-1.5 peer-[:not(:placeholder-shown)]:text-gray-500';
@@ -82,6 +87,21 @@ export class CygnusInputComponent {
       default:
         return '';
     }
+  }
+
+  inputGetInteractiveColor():string {
+    if (this.inputType()==='label-interactive') {
+      switch (this.inputColor()) {
+        case 'success':
+          return (this.INPUT_INTERACTIVE_BASE + ' ' + this.INPUT_INTERACTIVE_SUCCESS);
+        case 'warning':
+          return (this.INPUT_INTERACTIVE_BASE + ' ' + this.INPUT_INTERACTIVE_WARNING);
+        case 'error':
+          return (this.INPUT_INTERACTIVE_BASE + ' ' + this.INPUT_INTERACTIVE_ERROR);
+        default:
+          return '';
+      }
+    } else return '';
   }
 
   labelFloatingGetColor():string {
