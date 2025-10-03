@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input, signal, WritableSignal } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
@@ -53,13 +53,12 @@ export class CygnusInputComponent {
   hintColor = input<boolean>(false);
   textLabel = input<string>('Email');
   textHint = input<string>('Este es un texto de ayuda para el usuario.');
-  setPlaceholder:string = ' ';
 
   inputSetPlaceholder() {
     if (this.inputType()==='base' || this.inputType()==='fieldset-legend-label') {
-      this.setPlaceholder = this.textLabel();
+      return this.textLabel();
     } else {
-      this.setPlaceholder = ' ';
+      return ' ';
     }
   }
 
