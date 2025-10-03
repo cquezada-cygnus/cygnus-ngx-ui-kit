@@ -43,7 +43,7 @@ export class CygnusInputComponent {
   HINT_WARNING: string = '!text-warning-600';
   HINT_ERROR  : string = '!text-error-600';
 
-
+  inputId = input<string>('cg-floating-inset');
   inputType = input<InputType>('base');
   inputColor = input<InputColor>('base');
   iconAsset = input<string>('');

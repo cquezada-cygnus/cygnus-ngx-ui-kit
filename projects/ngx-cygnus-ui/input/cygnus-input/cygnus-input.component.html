@@ -1,7 +1,17 @@
 
 <fieldset class="fieldset">
   <div class="relative">
-    <input id="cg-floating-inset" type="text"
+    @if (inputType()==='fieldset-legend-label' ) {
+      <label [for]="inputId()"
+        [class]="
+          labelGetType() + ' ' +
+          labelColorGetType()
+        "
+      >
+        {{ textLabel() }}
+      </label>
+    }
+    <input [id]="inputId()" type="text"
       [class]="
         INPUT_BASE +
         (inputType()!=='base' ? ' peer ' : ' ') +
@@ -10,8 +20,8 @@
       "
       [placeholder]="textPlaceholder()"
     >
-    @if (inputType()!=='base' ) {
-      <label for="cg-floating-inset"
+    @if (inputType()!=='base' && inputType()!=='fieldset-legend-label' ) {
+      <label [for]="inputId()"
         [class]="
           labelGetType() + ' ' +
           labelColorGetType()

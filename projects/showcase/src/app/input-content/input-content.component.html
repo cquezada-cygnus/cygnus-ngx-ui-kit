@@ -54,11 +54,13 @@
                             <div class="w-full max-w-sm">
 
                                 <!-- COMPONENTE: Input con label -->
-                                <fieldset class="fieldset">
-                                    <label class="fieldset-legend">Label</label>
-                                    <input type="text" placeholder="Este es el placeholder..." />
-                                    <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
-                                </fieldset>
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-01'"
+                                  [inputType]="'fieldset-legend-label'"
+                                  [textPlaceholder]="'esto es un placeholder'"
+                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
+                                  [textLabel]="'Custom label'"
+                                />
 
                             </div>
 
