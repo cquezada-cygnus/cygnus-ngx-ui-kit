@@ -16,7 +16,8 @@
         INPUT_BASE +
         (inputType()!=='base' ? ' peer ' : ' ') +
         (inputType()==='floating' ? INPUT_FLOATING : '') + ' ' +
-        inputGetColor()
+        inputGetColor() + ' ' +
+        inputGetSize()
       "
       [placeholder]="textPlaceholder()"
     >

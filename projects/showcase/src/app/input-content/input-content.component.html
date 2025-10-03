@@ -81,25 +81,34 @@
                             <div class="max-w-sm space-y-3 w-full min-w-[200px]">
 
                                 <!-- COMPONENTE: Tamaño SM -->
-                                <fieldset>
-                                    <label>Label</label>
-                                    <input type="text" class="input-sm" placeholder="Tamaño SM">
-                                    <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
-                                </fieldset>
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-02'"
+                                  [inputType]="'fieldset-legend-label'"
+                                  [textPlaceholder]="'Tamaño SM'"
+                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
+                                  [textLabel]="'Label'"
+                                  [inputSize]="'sm'"
+                                />
 
                                 <!-- COMPONENTE: Tamaño default -->
-                                <fieldset>
-                                    <label>Label</label>
-                                    <input type="text" placeholder="Tamaño Normal">
-                                    <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
-                                </fieldset>
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-02'"
+                                  [inputType]="'fieldset-legend-label'"
+                                  [textPlaceholder]="'Tamaño Normal'"
+                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
+                                  [textLabel]="'Label'"
+                                  [inputSize]="''"
+                                />
 
                                 <!-- COMPONENTE: Tamaño LG -->
-                                <fieldset>
-                                    <label>Label</label>
-                                    <input type="text" class="input-lg" placeholder="Tamaño LG">
-                                    <p class="hint-text">Este es un texto de ayuda para el usuario.</p>
-                                </fieldset>
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-02'"
+                                  [inputType]="'fieldset-legend-label'"
+                                  [textPlaceholder]="'Tamaño LG'"
+                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
+                                  [textLabel]="'Label'"
+                                  [inputSize]="'lg'"
+                                />
 
                             </div>
                         </div>
