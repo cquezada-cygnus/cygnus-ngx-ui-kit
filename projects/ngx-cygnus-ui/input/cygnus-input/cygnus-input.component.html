@@ -19,7 +19,8 @@
         (inputType()==='floating' ? INPUT_FLOATING : '') + ' ' +
         inputGetColor() + ' ' +
         inputGetInteractiveColor() + ' ' +
-        inputGetSize()
+        inputGetSize() + ' ' +
+        (iconPosition()==='left' ? 'pl-9' : '')
       "
       [placeholder]="textPlaceholder()"
     >

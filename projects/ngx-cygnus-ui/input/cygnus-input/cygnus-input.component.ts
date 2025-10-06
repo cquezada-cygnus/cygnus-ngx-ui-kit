@@ -62,8 +62,8 @@ export class CygnusInputComponent {
   iconColor = input<IconInputColor>('#101828');
   iconSize = input<string>('19px');
   hintColor = input<boolean>(false);
-  textLabel = input<string>('Email');
-  textHint = input<string>('Este es un texto de ayuda para el usuario.');
+  textLabel = input<string>('');
+  textHint = input<string>('');
   textPlaceholder = input<string>(' ');
 
 
