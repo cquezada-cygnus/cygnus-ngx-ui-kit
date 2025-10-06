@@ -66,6 +66,7 @@ export class CygnusInputComponent {
   textLabel = input<string>('');
   textHint = input<string>('');
   textPlaceholder = input<string>(' ');
+  inputDisabled = input<boolean>(false);
 
 
   inputGetSize():string {

@@ -25,9 +25,12 @@
         inputGetColor() + ' ' +
         inputGetInteractiveColor() + ' ' +
         inputGetSize() + ' ' +
-        (iconPosition()==='left' ? 'pl-9' : '')
+        (iconPosition()==='left' ? 'pl-9' : '') + ' ' +
+        (inputDisabled()? INPUT_DISABLED : '')
       "
       [placeholder]="textPlaceholder()"
+      [disabled]="inputDisabled()"
+      [readOnly]="!inputDisabled()"
     >
     @if (inputType()!=='base' && inputType()!=='fieldset-legend-label' ) {
       <label [for]="inputId()"
