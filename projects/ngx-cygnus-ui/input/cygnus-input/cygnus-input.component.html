@@ -23,7 +23,7 @@
         INPUT_BASE +
         (inputType()!=='base' ? ' peer ' : ' ') +
         (inputType()==='label-interactive' ? LABEL_INTERACTIVE_COLOR_BASE : '') + ' ' +
-        (inputType()==='floating' ? INPUT_FLOATING : '') + ' ' +
+        (inputType()==='floating' ? ((iconAsset() || pseudoIconCLPPhone()) ? INPUT_FLOATING_ICON : INPUT_FLOATING)  : '') + ' ' +
         (inputType()==='file' ? INPUT_FILE : '') + ' ' +
         inputGetColor() + ' ' +
         inputGetInteractiveColor() + ' ' +
