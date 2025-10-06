@@ -1,7 +1,7 @@
 
 <fieldset class="fieldset">
   <div class="relative">
-    @if (inputType()==='fieldset-legend-label' ) {
+    @if (inputType()==='fieldset-legend-label' || inputType()==='file' ) {
       <label [for]="inputId()"
         [class]="
           labelGetType() + ' ' +
@@ -16,12 +16,15 @@
         +56
       </div>
     }
-    <input [id]="inputId()" type="text"
+    <input
+      [id]="inputId()"
+      [type]="(inputType()==='file') ? 'file': 'text'"
       [class]="
         INPUT_BASE +
         (inputType()!=='base' ? ' peer ' : ' ') +
         (inputType()==='label-interactive' ? LABEL_INTERACTIVE_COLOR_BASE : '') + ' ' +
         (inputType()==='floating' ? INPUT_FLOATING : '') + ' ' +
+        (inputType()==='file' ? INPUT_FILE : '') + ' ' +
         inputGetColor() + ' ' +
         inputGetInteractiveColor() + ' ' +
         inputGetSize() + ' ' +
@@ -32,7 +35,7 @@
       [disabled]="inputDisabled()"
       [readOnly]="!inputDisabled()"
     >
-    @if (inputType()!=='base' && inputType()!=='fieldset-legend-label' ) {
+    @if (inputType()!=='base' && inputType()!=='fieldset-legend-label' && inputType()!=='file' ) {
       <label [for]="inputId()"
         [class]="
           labelGetType() + ' ' +

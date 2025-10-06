@@ -21,11 +21,13 @@ export class CygnusInputComponent {
   INPUT_DISABLED: string = 'bg-neutral-50 text-neutral-400 cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none';
   INPUT_FLOATING: string = '!pb-2 !pt-6 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none focus:pt-6 focus:pb-2 [&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2';
 
-  INPUT_INTERACTIVE_BASE: string = 'px-4 py-3 block w-full text-sm transition duration-300 border rounded-lg shadow-sm';
+  INPUT_INTERACTIVE_BASE: string = 'px-4 py-3';
   INPUT_INTERACTIVE_GENERIC: string = '';
   INPUT_INTERACTIVE_SUCCESS: string = 'placeholder:text-success-500 placeholder:bg-gray-50 text-gray-700 border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow active:bg-white';
   INPUT_INTERACTIVE_WARNING: string = 'placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow active:bg-white';
   INPUT_INTERACTIVE_ERROR: string = 'placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 border-error-600 !focus:ring-error-700 !focus:border-error-700 focus:shadow active:bg-white';
+
+  INPUT_FILE: string = '!px-0 !py-0 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 file:cursor-pointer cursor-pointer';
 
   LABEL_BASE: string = 'block mb-1 text-sm font-medium text-gray-800';
 

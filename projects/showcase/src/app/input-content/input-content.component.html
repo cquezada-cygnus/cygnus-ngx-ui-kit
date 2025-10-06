@@ -364,8 +364,6 @@
                                   [iconPosition]="'left'"
                                 />
 
-
-
                             </div>
                         </div>
                     </div>
@@ -454,11 +452,13 @@
                         <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
 
                             <div class="max-w-sm space-y-4 w-full min-w-[200px]">
-                                <form class="max-w-sm">
-                                    <label for="file-input" class="sr-only">Subir imagen</label>
-                                    <input type="file" name="file-input" id="file-input"
-                                        class="block w-full text-sm border border-gray-200 rounded-lg shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4">
-                                </form>
+
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-18'"
+                                  [inputType]="'file'"
+                                  [textLabel]="'Subir imagen'"
+                                />
+
                             </div>
 
                         </div>
