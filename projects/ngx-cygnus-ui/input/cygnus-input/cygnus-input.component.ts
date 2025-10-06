@@ -20,7 +20,7 @@ export class CygnusInputComponent {
 
   INPUT_DISABLED: string = 'bg-neutral-50 text-neutral-400 cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none';
   INPUT_FLOATING: string = '!pb-2 !pt-6 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none focus:pt-6 focus:pb-2 [&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2';
-  INPUT_FLOATING_ICON: string = '!pb-2 !pt-3 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none !focus:pt-3 focus:pb-2 ![&:not(:placeholder-shown)]:pt-3 [&:not(:placeholder-shown)]:pb-2 !autofill:pt-3 autofill:pb-2';
+  INPUT_FLOATING_ICON: string = '!pb-3 !pt-3 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none !focus:pt-3 focus:pb-3 ![&:not(:placeholder-shown)]:pt-3 [&:not(:placeholder-shown)]:pb-3 !autofill:pt-3 autofill:pb-3';
 
   INPUT_INTERACTIVE_BASE: string = 'px-4 py-3';
   INPUT_INTERACTIVE_GENERIC: string = '';

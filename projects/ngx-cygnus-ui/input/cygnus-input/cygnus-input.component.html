@@ -47,7 +47,7 @@
     }
 
     @if (iconAsset()!=='' && iconPosition()==='right') {
-      <div [class]="'absolute flex items-center h-6 inset-y-3 end-2 ' + ( inputType()==='floating' ? 'pt-1' : '')">
+      <div [class]="'absolute flex items-center inset-y-3 end-2 ' + (inputType()==='floating' ? 'h-5': 'h-6')">
         <lib-ngx-cygnus-icons
           [width]="iconSize()"
           [height]="iconSize()"
