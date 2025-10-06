@@ -331,7 +331,7 @@
 
                                 <!-- COMPONENTE: Input con icono a la izquierda -->
                                 <cygnus-input
-                                  [inputId]="'cg-floating-inset-13'"
+                                  [inputId]="'cg-floating-inset-15'"
                                   [inputType]="'label-interactive'"
                                   [textPlaceholder]="'Escribe aquí...'"
                                   [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
@@ -340,7 +340,7 @@
                                 /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
 
                                 <cygnus-input
-                                  [inputId]="'cg-floating-inset-14'"
+                                  [inputId]="'cg-floating-inset-16'"
                                   [inputType]="'floating'"
                                   [textPlaceholder]="'Escribe aquí...'"
                                   [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
@@ -348,17 +348,21 @@
                                   [iconPosition]="'left'"
                                 /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
 
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-17'"
+                                  [inputType]="'floating'"
+                                  [textPlaceholder]="'Escribe aquí...'"
+                                  [pseudoIconCLPPhone]="true"
+                                  [iconPosition]="'left'"
+                                />
 
-
-
-
-                                <div class="relative">
-                                    <div
-                                        class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2 append">
-                                        +56
-                                    </div>
-                                    <input type="text" class="pl-9" placeholder="Escribe aquí..." />
-                                </div>
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-18'"
+                                  [inputType]="'label-interactive'"
+                                  [textPlaceholder]="'Escribe aquí...'"
+                                  [pseudoIconCLPPhone]="true"
+                                  [iconPosition]="'left'"
+                                />
 
                             </div>
                         </div>

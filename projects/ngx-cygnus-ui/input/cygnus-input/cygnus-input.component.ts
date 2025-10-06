@@ -61,6 +61,7 @@ export class CygnusInputComponent {
   iconPosition = input<IconPosition>('right');
   iconColor = input<IconInputColor>('#101828');
   iconSize = input<string>('19px');
+  pseudoIconCLPPhone = input<boolean>(false);
   hintColor = input<boolean>(false);
   textLabel = input<string>('');
   textHint = input<string>('');
