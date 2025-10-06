@@ -46,6 +46,9 @@ export class CygnusInputComponent {
 
   FIELDSET_LEGEND: string = 'block mb-1 text-sm font-medium text-gray-800';
 
+  ELEMENT_RIGHT: string = 'absolute';
+  ELEMENT_LEFT : string = 'absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2 text-sm font-semibold text-gray-600';
+
   HINT_TEXT   : string = 'mt-1 text-sm text-gray-500';
   HINT_SUCCESS: string = '!text-success-600';
   HINT_WARNING: string = '!text-warning-600';
