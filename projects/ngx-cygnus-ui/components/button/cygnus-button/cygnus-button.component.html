@@ -1,7 +1,7 @@
 <button [class]="btnAllClasses()" type="button">
   @if (btnIconExist && btnIconPosition() == 'left') {
     @if (btnIsLoading()) {
-      <div [class]="BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize() "  role="status" aria-label="loading">
+      <div [class]="TW_CLASS.BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize() "  role="status" aria-label="loading">
         <span class="sr-only">Cargando...</span>
       </div>
     } @else {
@@ -10,14 +10,14 @@
         [height]="btnIconSize"
         [color]="btnIconColor"
         [route]="btnIconRoute()"
-      /> <!-- 'assets/icons/svg/Users/user-square.svg' -->
+      />
     }
 
   }
     <ng-content></ng-content>
   @if (btnIconExist && btnIconPosition() == 'right') {
     @if (btnIsLoading()) {
-      <div [class]="BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize()"  role="status" aria-label="loading">
+      <div [class]="TW_CLASS.BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize()"  role="status" aria-label="loading">
         <span class="sr-only">Cargando...</span>
       </div>
     } @else {
