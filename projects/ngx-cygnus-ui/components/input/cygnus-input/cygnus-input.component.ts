@@ -7,7 +7,6 @@ import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
   selector: 'cygnus-input',
   imports: [NgxCygnusIconsComponent],
   templateUrl: './cygnus-input.component.html',
-  styleUrl: './cygnus-input.component.css'
 })
 export class CygnusInputComponent {
 

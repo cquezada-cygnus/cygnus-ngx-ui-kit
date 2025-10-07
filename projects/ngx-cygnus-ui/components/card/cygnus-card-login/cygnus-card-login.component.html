@@ -1,0 +1,46 @@
+<div class="flex items-center justify-center w-full max-w-sm gap-4 mb-4">
+
+  <div class="card card-panel">
+    <div class="mb-6 card-icon">
+      <lib-ngx-cygnus-icons
+        [width]="'3rem'"
+        [height]="'3rem'"
+        [route]="'assets/icons/backups/cygnus-logo.svg'"
+      />
+    </div>
+    <h4 class="card-title">Acceso a sistemas</h4>
+    <p class="mb-6 card-description">Ingresa tu RUT sin puntos, ni guión.</p>
+
+    <form action="#" method="POST" class="space-y-4">
+
+      <cygnus-input
+        [inputId]="'cg-floating-inset-01'"
+        [inputType]="'fieldset-legend-label'"
+        [textPlaceholder]="'12345678K'"
+        [textHint]="textHint()"
+        [inputColor]="inputColor()"
+        [hintColor]="true"
+        [textLabel]="'RUT'"
+      />
+
+      <cygnus-input
+        [inputId]="'cg-floating-inset-01'"
+        [inputType]="'fieldset-legend-label'"
+        [textPlaceholder]="'••••••••'"
+        [textHint]="textHint()"
+        [inputColor]="inputColor()"
+        [hintColor]="true"
+        [textLabel]="'Contraseña'"
+      />
+
+
+      <div class="flex items-center justify-end">
+        <a href="#" class="font-medium btn-link">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <cygnus-button [btnTypes]="'btn-primary btn-block'" >Iniciar sesión</cygnus-button>
+
+    </form>
+  </div>
+</div>
+

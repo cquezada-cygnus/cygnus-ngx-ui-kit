@@ -25,6 +25,12 @@
       "ngx-cygnus-ui/components/input": [
         "./projects/ngx-cygnus-ui/components/input",
       ],
+      "ngx-cygnus-ui/components/card/*": [
+        "./projects/ngx-cygnus-ui/components/card/*",
+      ],
+      "ngx-cygnus-ui/components/card": [
+        "./projects/ngx-cygnus-ui/components/card",
+      ],
        "ngx-cygnus-ui/types/*": [
         "./projects/ngx-cygnus-ui/types/*",
       ],
