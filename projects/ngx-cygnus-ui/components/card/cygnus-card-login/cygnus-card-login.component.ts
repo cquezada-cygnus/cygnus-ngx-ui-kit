@@ -3,17 +3,22 @@ import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputColor } from 'ngx-cygnus-ui/types';
+import { TW_CLASS } from '../const/tailwind.const';
 
 @Component({
   selector: 'cygnus-card-login',
   imports: [
     NgxCygnusIconsComponent,
     CygnusInputComponent,
-    CygnusButtonComponent
+    CygnusButtonComponent,
   ],
   templateUrl: './cygnus-card-login.component.html',
 })
 export class CygnusCardLoginComponent {
+
+  TW_CLASS = TW_CLASS;
+
+  CYGNUS_LOGO_COLOR: string = '#cc5224';
 
   textHint = signal<string>('');
 
