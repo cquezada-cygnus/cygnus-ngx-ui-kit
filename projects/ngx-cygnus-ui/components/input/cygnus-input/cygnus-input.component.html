@@ -12,7 +12,7 @@
       </label>
     }
     @if (pseudoIconCLPPhone()===true) {
-      <div [class]="ELEMENT_LEFT">
+      <div [class]="TW_CLASS.ELEMENT_LEFT">
         +56
       </div>
     }
@@ -20,16 +20,16 @@
       [id]="inputId()"
       [type]="(inputType()==='file') ? 'file': 'text'"
       [class]="
-        INPUT_BASE +
+        TW_CLASS.INPUT_BASE +
         (inputType()!=='base' ? ' peer ' : ' ') +
-        (inputType()==='label-interactive' ? LABEL_INTERACTIVE_COLOR_BASE : '') + ' ' +
-        (inputType()==='floating' ? ((iconAsset() || pseudoIconCLPPhone()) ? INPUT_FLOATING_ICON : INPUT_FLOATING)  : '') + ' ' +
-        (inputType()==='file' ? INPUT_FILE : '') + ' ' +
+        (inputType()==='label-interactive' ? TW_CLASS.LABEL_INTERACTIVE_COLOR_BASE : '') + ' ' +
+        (inputType()==='floating' ? ((iconAsset() || pseudoIconCLPPhone()) ? TW_CLASS.INPUT_FLOATING_ICON : TW_CLASS.INPUT_FLOATING)  : '') + ' ' +
+        (inputType()==='file' ? TW_CLASS.INPUT_FILE : '') + ' ' +
         inputGetColor() + ' ' +
         inputGetInteractiveColor() + ' ' +
         inputGetSize() + ' ' +
         (iconPosition()==='left' ? 'pl-9' : '') + ' ' +
-        (inputDisabled()? INPUT_DISABLED : '')
+        (inputDisabled()? TW_CLASS.INPUT_DISABLED : '')
       "
       [placeholder]="textPlaceholder()"
       [disabled]="inputDisabled()"
@@ -67,7 +67,7 @@
     }
 
     @if (inputType()!=='base') {
-      <p [class]="HINT_TEXT + ' ' + hintGetColor()">{{ textHint() }}</p>
+      <p [class]="TW_CLASS.HINT_TEXT + ' ' + hintGetColor()">{{ textHint() }}</p>
     }
   </div>
 </fieldset>

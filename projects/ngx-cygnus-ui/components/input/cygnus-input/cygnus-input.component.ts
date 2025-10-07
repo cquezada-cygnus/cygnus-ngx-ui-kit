@@ -2,6 +2,7 @@ import { Component, computed, input, signal, WritableSignal } from '@angular/cor
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
+import { TW_CLASS } from '../const/tailwind.const';
 
 @Component({
   selector: 'cygnus-input',
@@ -9,54 +10,7 @@ import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
   templateUrl: './cygnus-input.component.html',
 })
 export class CygnusInputComponent {
-
-  INPUT_BASE: string = 'px-3 py-3 block w-full text-sm transition duration-300 bg-white border rounded-lg shadow-sm placeholder:text-gray-500 text-gray-700 focus:ring-1 focus:outline-none focus:shadow';
-
-  INPUT_GENERIC: string = 'border-gray-300 focus:border-primary-700 focus:ring-primary-700';
-  INPUT_SUCCESS: string = '!border-success-500 !focus:border-success-500 !focus:ring-success-500';
-  INPUT_WARNING: string = '!border-warning-500 !focus:border-warning-500 !focus:ring-warning-500';
-  INPUT_ERROR  : string = '!border-error-500 !focus:border-error-500 !focus:ring-error-500';
-
-  INPUT_DISABLED: string = 'bg-neutral-50 text-neutral-400 cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none';
-  INPUT_FLOATING: string = '!pb-2 !pt-6 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none focus:pt-6 focus:pb-2 [&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2';
-  INPUT_FLOATING_ICON: string = '!pb-3 !pt-3 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none !focus:pt-3 focus:pb-3 ![&:not(:placeholder-shown)]:pt-3 [&:not(:placeholder-shown)]:pb-3 !autofill:pt-3 autofill:pb-3';
-
-  INPUT_INTERACTIVE_BASE: string = 'px-4 py-3';
-  INPUT_INTERACTIVE_GENERIC: string = '';
-  INPUT_INTERACTIVE_SUCCESS: string = 'placeholder:text-success-500 placeholder:bg-gray-50 text-gray-700 border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow active:bg-white';
-  INPUT_INTERACTIVE_WARNING: string = 'placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow active:bg-white';
-  INPUT_INTERACTIVE_ERROR: string = 'placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 border-error-600 !focus:ring-error-700 !focus:border-error-700 focus:shadow active:bg-white';
-
-  INPUT_FILE: string = '!px-0 !py-0 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 file:cursor-pointer cursor-pointer';
-
-  LABEL_BASE: string = 'block mb-1 text-sm font-medium text-gray-800';
-
-  LABEL_FLOATING_BASE: string = 'absolute top-0 start-0 !p-4 !pl-3 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500 peer-[:not(:placeholder-shown)]:scale-90 peer-[:not(:placeholder-shown)]:translate-x-0.5 peer-[:not(:placeholder-shown)]:-translate-y-1.5 peer-[:not(:placeholder-shown)]:text-gray-500';
-
-  LABEL_FLOATING_SUCCESS: string = '!text-success-600 !peer-focus:text-gray-500 !peer-[:not(:placeholder-shown)]:text-gray-500';
-  LABEL_FLOATING_WARNING: string = '!text-warning-600 !peer-focus:text-gray-500 !peer-[:not(:placeholder-shown)]:text-gray-500';
-  LABEL_FLOATING_ERROR  : string = '!text-error-600 !peer-focus:text-gray-500 !peer-[:not(:placeholder-shown)]:text-gray-500';
-
-  LABEL_INTERACTIVE_BASE: string = 'absolute cursor-text bg-white px-1 left-2.5 -top-2 text-xs scale-90 transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:scale-90 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm';
-
-  LABEL_INTERACTIVE_COLOR_BASE   : string = 'text-gray-600 peer-focus:text-gray-600 peer-placeholder-shown:text-gray-600';
-  LABEL_INTERACTIVE_COLOR_SUCCESS: string = 'text-success-600 peer-focus:text-success-600 peer-placeholder-shown:text-success-700';
-  LABEL_INTERACTIVE_COLOR_WARNING: string = 'text-warning-600 peer-focus:text-warning-600 peer-placeholder-shown:text-warning-700';
-  LABEL_INTERACTIVE_COLOR_ERROR  : string = 'text-error-600 peer-focus:text-error-600 peer-placeholder-shown:text-error-700';
-
-  FIELDSET_LEGEND: string = 'block mb-1 text-sm font-medium text-gray-800';
-
-  ELEMENT_RIGHT: string = 'absolute';
-  ELEMENT_LEFT : string = 'absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2 text-sm font-semibold text-gray-600';
-
-  HINT_TEXT   : string = 'mt-1 text-sm text-gray-500';
-  HINT_SUCCESS: string = '!text-success-600';
-  HINT_WARNING: string = '!text-warning-600';
-  HINT_ERROR  : string = '!text-error-600';
-
-  INPUT_SIZE_SM: string = '!p-2.5';
-  INPUT_SIZE_LG: string = '!p-4';
-
+  TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
 
   inputId = input<string>('cg-floating-inset');
   inputType = input<InputType>('base');
@@ -77,9 +31,9 @@ export class CygnusInputComponent {
   inputGetSize():string {
     switch (this.inputSize()) {
       case 'lg':
-        return this.INPUT_SIZE_LG;
+        return this.TW_CLASS.INPUT_SIZE_LG;
       case 'sm':
-        return this.INPUT_SIZE_SM;
+        return this.TW_CLASS.INPUT_SIZE_SM;
       default:
         return '';
     }
@@ -88,13 +42,13 @@ export class CygnusInputComponent {
   inputGetColor():string {
     switch (this.inputColor()) {
       case 'success':
-        return this.INPUT_SUCCESS;
+        return this.TW_CLASS.INPUT_SUCCESS;
       case 'warning':
-        return this.INPUT_WARNING;
+        return this.TW_CLASS.INPUT_WARNING;
       case 'error':
-        return this.INPUT_ERROR;
+        return this.TW_CLASS.INPUT_ERROR;
       default:
-        return this.INPUT_GENERIC;
+        return this.TW_CLASS.INPUT_GENERIC;
     }
   }
 
@@ -102,13 +56,13 @@ export class CygnusInputComponent {
     if (this.inputType()==='label-interactive') {
       switch (this.inputColor()) {
         case 'success':
-          return (this.INPUT_INTERACTIVE_BASE + ' ' + this.INPUT_INTERACTIVE_SUCCESS);
+          return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_SUCCESS);
         case 'warning':
-          return (this.INPUT_INTERACTIVE_BASE + ' ' + this.INPUT_INTERACTIVE_WARNING);
+          return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_WARNING);
         case 'error':
-          return (this.INPUT_INTERACTIVE_BASE + ' ' + this.INPUT_INTERACTIVE_ERROR);
+          return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_ERROR);
         default:
-          return (this.INPUT_INTERACTIVE_BASE + ' ' + this.INPUT_INTERACTIVE_GENERIC);
+          return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_GENERIC);
       }
     } else return '';
   }
@@ -116,11 +70,11 @@ export class CygnusInputComponent {
   labelFloatingGetColor():string {
     switch (this.inputColor()) {
       case 'success':
-        return this.LABEL_FLOATING_SUCCESS;
+        return this.TW_CLASS.LABEL_FLOATING_SUCCESS;
       case 'warning':
-        return this.LABEL_FLOATING_WARNING;
+        return this.TW_CLASS.LABEL_FLOATING_WARNING;
       case 'error':
-        return this.LABEL_FLOATING_ERROR;
+        return this.TW_CLASS.LABEL_FLOATING_ERROR;
       default:
         return '';
     }
@@ -129,13 +83,13 @@ export class CygnusInputComponent {
   labelInteractiveGetColor():string {
     switch (this.inputColor()) {
       case 'success':
-        return this.LABEL_INTERACTIVE_COLOR_SUCCESS;
+        return this.TW_CLASS.LABEL_INTERACTIVE_COLOR_SUCCESS;
       case 'warning':
-        return this.LABEL_INTERACTIVE_COLOR_WARNING;
+        return this.TW_CLASS.LABEL_INTERACTIVE_COLOR_WARNING;
       case 'error':
-        return this.LABEL_INTERACTIVE_COLOR_ERROR;
+        return this.TW_CLASS.LABEL_INTERACTIVE_COLOR_ERROR;
       default:
-        return this.LABEL_INTERACTIVE_COLOR_BASE;
+        return this.TW_CLASS.LABEL_INTERACTIVE_COLOR_BASE;
     }
   }
 
@@ -143,11 +97,11 @@ export class CygnusInputComponent {
     if (this.hintColor()) {
       switch (this.inputColor()) {
         case 'success':
-          return this.HINT_SUCCESS;
+          return this.TW_CLASS.HINT_SUCCESS;
         case 'warning':
-          return this.HINT_WARNING;
+          return this.TW_CLASS.HINT_WARNING;
         case 'error':
-          return this.HINT_ERROR;
+          return this.TW_CLASS.HINT_ERROR;
         default:
           return '';
       }
@@ -162,9 +116,9 @@ export class CygnusInputComponent {
   }
 
   labelGetType():string {
-    if (this.inputType()==='fieldset-legend-label') return this.FIELDSET_LEGEND;
-    if (this.inputType()==='label-interactive') return this.LABEL_INTERACTIVE_BASE;
-    if (this.inputType()==='floating') return (this.LABEL_BASE + ' ' + this.LABEL_FLOATING_BASE);
+    if (this.inputType()==='fieldset-legend-label') return this.TW_CLASS.FIELDSET_LEGEND;
+    if (this.inputType()==='label-interactive') return this.TW_CLASS.LABEL_INTERACTIVE_BASE;
+    if (this.inputType()==='floating') return (this.TW_CLASS.LABEL_BASE + ' ' + this.TW_CLASS.LABEL_FLOATING_BASE);
     return '';
   }
 
