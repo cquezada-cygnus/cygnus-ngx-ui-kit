@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CygnusInputComponent } from 'ngx-cygnus-ui/input';
+import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 
 @Component({
   selector: 'app-input-content',

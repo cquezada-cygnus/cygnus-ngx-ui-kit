@@ -1,0 +1,74 @@
+
+<fieldset class="fieldset">
+  <div class="relative">
+    @if (inputType()==='fieldset-legend-label' || inputType()==='file' ) {
+      <label [for]="inputId()"
+        [class]="
+          labelGetType() + ' ' +
+          labelColorGetType()
+        "
+      >
+        {{ textLabel() }}
+      </label>
+    }
+    @if (pseudoIconCLPPhone()===true) {
+      <div [class]="ELEMENT_LEFT">
+        +56
+      </div>
+    }
+    <input
+      [id]="inputId()"
+      [type]="(inputType()==='file') ? 'file': 'text'"
+      [class]="
+        INPUT_BASE +
+        (inputType()!=='base' ? ' peer ' : ' ') +
+        (inputType()==='label-interactive' ? LABEL_INTERACTIVE_COLOR_BASE : '') + ' ' +
+        (inputType()==='floating' ? ((iconAsset() || pseudoIconCLPPhone()) ? INPUT_FLOATING_ICON : INPUT_FLOATING)  : '') + ' ' +
+        (inputType()==='file' ? INPUT_FILE : '') + ' ' +
+        inputGetColor() + ' ' +
+        inputGetInteractiveColor() + ' ' +
+        inputGetSize() + ' ' +
+        (iconPosition()==='left' ? 'pl-9' : '') + ' ' +
+        (inputDisabled()? INPUT_DISABLED : '')
+      "
+      [placeholder]="textPlaceholder()"
+      [disabled]="inputDisabled()"
+      [readOnly]="inputDisabled()"
+    >
+    @if (inputType()!=='base' && inputType()!=='fieldset-legend-label' && inputType()!=='file' ) {
+      <label [for]="inputId()"
+        [class]="
+          labelGetType() + ' ' +
+          labelColorGetType()
+        "
+      >
+        {{ textLabel() }}
+      </label>
+    }
+
+    @if (iconAsset()!=='' && iconPosition()==='right') {
+      <div [class]="'absolute flex items-center inset-y-3 end-2 ' + (inputType()==='floating' ? 'h-5': 'h-6')">
+        <lib-ngx-cygnus-icons
+          [width]="iconSize()"
+          [height]="iconSize()"
+          [color]="iconColor()"
+          [route]="iconAsset()"
+        />
+      </div>
+    } @else if (iconAsset()!=='' && iconPosition()==='left') {
+      <div class="absolute flex items-center pointer-events-none ps-2 inset-y-0 start-0">
+        <lib-ngx-cygnus-icons
+          [width]="iconSize()"
+          [height]="iconSize()"
+          [color]="iconColor()"
+          [route]="iconAsset()"
+        />
+      </div>
+    }
+
+    @if (inputType()!=='base') {
+      <p [class]="HINT_TEXT + ' ' + hintGetColor()">{{ textHint() }}</p>
+    }
+  </div>
+</fieldset>
+

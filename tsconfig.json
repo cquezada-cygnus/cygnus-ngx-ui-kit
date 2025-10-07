@@ -13,11 +13,17 @@
       "ngx-cygnus-ui": [
         "./projects/ngx-cygnus-ui/index.ts"
       ],
-      "ngx-cygnus-ui/button/*": [
-        "./projects/ngx-cygnus-ui/button/*",
+      "ngx-cygnus-ui/components/button/*": [
+        "./projects/ngx-cygnus-ui/components/button/*",
       ],
-      "ngx-cygnus-ui/button": [
-        "./projects/ngx-cygnus-ui/button",
+      "ngx-cygnus-ui/components/button": [
+        "./projects/ngx-cygnus-ui/components/button",
+      ],
+      "ngx-cygnus-ui/components/input/*": [
+        "./projects/ngx-cygnus-ui/components/input/*",
+      ],
+      "ngx-cygnus-ui/components/input": [
+        "./projects/ngx-cygnus-ui/components/input",
       ],
        "ngx-cygnus-ui/types/*": [
         "./projects/ngx-cygnus-ui/types/*",

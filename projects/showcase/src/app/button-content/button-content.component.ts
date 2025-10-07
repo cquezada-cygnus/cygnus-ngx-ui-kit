@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CygnusButtonComponent } from 'ngx-cygnus-ui/button';
+import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 
 @Component({
   selector: 'app-button-content',
