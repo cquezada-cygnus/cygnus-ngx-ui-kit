@@ -1,8 +1,9 @@
-import { Component, computed, input, signal, WritableSignal } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
+import { ControlValueAccessor, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'cygnus-input',
@@ -11,6 +12,8 @@ import { TW_CLASS } from '../const/tailwind.const';
 })
 export class CygnusInputComponent {
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
+
+  control = input<FormControl<string>>();
 
   inputId = input<string>('cg-floating-inset');
   inputType = input<InputType>('base');
@@ -26,6 +29,17 @@ export class CygnusInputComponent {
   textHint = input<string>('');
   textPlaceholder = input<string>(' ');
   inputDisabled = input<boolean>(false);
+
+  setValue(value:string ) {
+    this.control()?.setValue(value);
+    this.control()?.markAsDirty();
+    this.control()?.markAsTouched();
+  }
+
+  resetValue() {
+    this.control()?.reset();
+    this.control()?.updateValueAndValidity();
+  }
 
 
   inputGetSize():string {

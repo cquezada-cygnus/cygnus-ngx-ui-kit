@@ -12,7 +12,7 @@
     <h4 [class]="TW_CLASS.CARD_TITLE">Acceso a sistemas</h4>
     <p [class]="'mb-6 ' + TW_CLASS.CARD_DESCRIPTION">Ingresa tu RUT sin puntos, ni guión.</p>
 
-    <form action="#" method="POST" class=" flex flex-col space-y-4">
+    <form autocomplete="off" [formGroup]="cardLoginForm" (ngSubmit)="onSubmit()" class=" flex flex-col space-y-4">
 
       <cygnus-input
         [inputId]="'cg-floating-inset-01'"
@@ -22,6 +22,7 @@
         [inputColor]="inputColor()"
         [hintColor]="true"
         [textLabel]="'RUT'"
+        [control]="cardLoginForm.controls.rut"
       />
 
       <cygnus-input
@@ -32,6 +33,7 @@
         [inputColor]="inputColor()"
         [hintColor]="true"
         [textLabel]="'Contraseña'"
+        [control]="cardLoginForm.controls.contrasegna"
       />
 
 
@@ -39,7 +41,7 @@
         <cygnus-button-link [routerLink]="'#'" [btnLinkText]="'¿Olvidaste tu contraseña?'"  />
       </div>
 
-      <cygnus-button [btnTypes]="'btn-primary btn-block'" >Iniciar sesión</cygnus-button>
+      <cygnus-button [btnTypes]="'btn-primary btn-block'" (click)="onSubmit()" >Iniciar sesión</cygnus-button>
 
     </form>
   </div>

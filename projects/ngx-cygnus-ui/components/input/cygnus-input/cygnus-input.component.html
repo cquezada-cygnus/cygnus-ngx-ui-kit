@@ -17,6 +17,7 @@
       </div>
     }
     <input
+      #cygnusInput
       [id]="inputId()"
       [type]="(inputType()==='file') ? 'file': 'text'"
       [class]="
@@ -34,6 +35,7 @@
       [placeholder]="textPlaceholder()"
       [disabled]="inputDisabled()"
       [readOnly]="inputDisabled()"
+      (focusout)="setValue(cygnusInput.value)"
     >
     @if (inputType()!=='base' && inputType()!=='fieldset-legend-label' && inputType()!=='file' ) {
       <label [for]="inputId()"

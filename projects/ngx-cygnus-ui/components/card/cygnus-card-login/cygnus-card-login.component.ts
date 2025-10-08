@@ -1,14 +1,18 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { ReactiveFormsModule, Validators, NonNullableFormBuilder } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputColor } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
+import { FormUtils } from 'ngx-cygnus-ui/utils';
+
 
 @Component({
   selector: 'cygnus-card-login',
   imports: [
+    ReactiveFormsModule,
     RouterLink,
     NgxCygnusIconsComponent,
     CygnusInputComponent,
@@ -20,11 +24,22 @@ import { TW_CLASS } from '../const/tailwind.const';
 export class CygnusCardLoginComponent {
 
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
-
   CYGNUS_LOGO_COLOR: string = '#cc5224';
 
   textHint = signal<string>('');
-
   inputColor = signal<InputColor>('base');
+
+  nonNullableFb = inject(NonNullableFormBuilder);
+  formUtils = FormUtils;
+
+  cardLoginForm = this.nonNullableFb.group({
+    rut: ['', [Validators.required, Validators.minLength(3)]],
+    contrasegna: ['', [Validators.required]],
+  });
+
+  onSubmit() {
+    console.log(this.cardLoginForm.value);
+    this.cardLoginForm.markAllAsTouched();
+  }
 
 }

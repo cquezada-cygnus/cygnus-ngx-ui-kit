@@ -36,6 +36,12 @@
       ],
       "ngx-cygnus-ui/types": [
         "./projects/ngx-cygnus-ui/types",
+      ],
+       "ngx-cygnus-ui/utils/*": [
+        "./projects/ngx-cygnus-ui/utils/*",
+      ],
+      "ngx-cygnus-ui/utils": [
+        "./projects/ngx-cygnus-ui/utils",
       ]
     },
     "skipLibCheck": true,
