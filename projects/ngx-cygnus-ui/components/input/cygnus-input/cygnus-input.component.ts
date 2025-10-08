@@ -1,9 +1,9 @@
 import { Component, input } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
-import { InputColor, InputSize, InputType } from 'ngx-cygnus-ui/types';
+import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
-import { ControlValueAccessor, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'cygnus-input',
@@ -16,7 +16,7 @@ export class CygnusInputComponent {
   control = input<FormControl<string>>();
 
   inputId = input<string>('cg-floating-inset');
-  inputType = input<InputType>('base');
+  inputCustomType = input<InputCustomType>('base');
   inputColor = input<InputColor>('base');
   inputSize = input<InputSize>('');
   iconAsset = input<string>('');
@@ -67,7 +67,7 @@ export class CygnusInputComponent {
   }
 
   inputGetInteractiveColor():string {
-    if (this.inputType()==='label-interactive') {
+    if (this.inputCustomType()==='label-interactive') {
       switch (this.inputColor()) {
         case 'success':
           return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_SUCCESS);
@@ -124,15 +124,15 @@ export class CygnusInputComponent {
   }
 
   labelColorGetType() {
-    if (this.inputType()==='floating') return this.labelFloatingGetColor();
-    if (this,this.inputType()==='label-interactive') return this.labelInteractiveGetColor();
+    if (this.inputCustomType()==='floating') return this.labelFloatingGetColor();
+    if (this,this.inputCustomType()==='label-interactive') return this.labelInteractiveGetColor();
     return '';
   }
 
   labelGetType():string {
-    if (this.inputType()==='fieldset-legend-label') return this.TW_CLASS.FIELDSET_LEGEND;
-    if (this.inputType()==='label-interactive') return this.TW_CLASS.LABEL_INTERACTIVE_BASE;
-    if (this.inputType()==='floating') return (this.TW_CLASS.LABEL_BASE + ' ' + this.TW_CLASS.LABEL_FLOATING_BASE);
+    if (this.inputCustomType()==='fieldset-legend-label') return this.TW_CLASS.FIELDSET_LEGEND;
+    if (this.inputCustomType()==='label-interactive') return this.TW_CLASS.LABEL_INTERACTIVE_BASE;
+    if (this.inputCustomType()==='floating') return (this.TW_CLASS.LABEL_BASE + ' ' + this.TW_CLASS.LABEL_FLOATING_BASE);
     return '';
   }
 

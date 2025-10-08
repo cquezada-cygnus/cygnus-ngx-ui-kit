@@ -7,6 +7,7 @@ import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputColor } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
 import { FormUtils } from 'ngx-cygnus-ui/utils';
+import { cgRutValidator } from 'ngx-cygnus-ui/validators';
 
 
 @Component({
@@ -33,7 +34,9 @@ export class CygnusCardLoginComponent {
   formUtils = FormUtils;
 
   cardLoginForm = this.nonNullableFb.group({
-    rut: ['', [Validators.required, Validators.minLength(3)]],
+    rut: ['',
+      [Validators.required, cgRutValidator()]
+    ],
     contrasegna: ['', [Validators.required]],
   });
 

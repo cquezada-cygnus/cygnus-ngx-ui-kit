@@ -1,7 +1,7 @@
 import { FormGroup } from '@angular/forms';
 
 export class FormUtils {
-  static emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+  // static emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'; // hay otro en uso en validators
   static notOnlySpacesPattern = '^[a-zA-Z0-9]+$';
 
 

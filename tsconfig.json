@@ -42,6 +42,12 @@
       ],
       "ngx-cygnus-ui/utils": [
         "./projects/ngx-cygnus-ui/utils",
+      ],
+       "ngx-cygnus-ui/validators/*": [
+        "./projects/ngx-cygnus-ui/validators/*",
+      ],
+      "ngx-cygnus-ui/validators": [
+        "./projects/ngx-cygnus-ui/validators",
       ]
     },
     "skipLibCheck": true,
