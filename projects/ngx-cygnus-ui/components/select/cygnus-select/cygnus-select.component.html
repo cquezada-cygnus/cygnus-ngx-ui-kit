@@ -1,0 +1,11 @@
+<select
+  id="select-id-0"
+  [class]="
+    TW_CLASS.SELECT + ' ' +
+    selGetSize()
+  "
+>
+  @for (op of options(); track $index) {
+    <option [value]="op.value">{{op.option}}</option>
+  }
+</select>

@@ -3,6 +3,7 @@ import { ButtonContentComponent } from './button-content/button-content.componen
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputContentComponent } from "./input-content/input-content.component";
 import { LoginFormComponent } from './login-form/login-form.component';
+import { SelectContentComponent } from './select-content/select-content.component';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
     ButtonContentComponent,
     InputContentComponent,
     LoginFormComponent,
+    SelectContentComponent,
 ],
   templateUrl: './app.component.html',
 })
