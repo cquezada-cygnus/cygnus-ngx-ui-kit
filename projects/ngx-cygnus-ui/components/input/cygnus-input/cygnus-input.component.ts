@@ -36,12 +36,6 @@ export class CygnusInputComponent {
     this.control()?.markAsTouched();
   }
 
-  resetValue() {
-    this.control()?.reset();
-    this.control()?.updateValueAndValidity();
-  }
-
-
   inputGetSize():string {
     switch (this.inputSize()) {
       case 'lg':

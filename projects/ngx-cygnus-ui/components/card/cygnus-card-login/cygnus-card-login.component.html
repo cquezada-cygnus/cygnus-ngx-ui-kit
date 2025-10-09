@@ -15,33 +15,32 @@
     <form autocomplete="off" [formGroup]="cardLoginForm" (ngSubmit)="onSubmit()" class=" flex flex-col space-y-4">
 
       <cygnus-input
-        [inputId]="'cg-floating-inset-01'"
+        [inputId]="'cg-floating-inset-card-1'"
         [inputCustomType]="'fieldset-legend-label'"
         [textPlaceholder]="'12345678K'"
-        [textHint]="textHint()"
-        [inputColor]="inputColor()"
+        [inputColor]="inputRutColor()"
         [hintColor]="true"
+        [textHint]="textRutHint()"
         [textLabel]="'RUT'"
         [control]="cardLoginForm.controls.rut"
       />
 
       <cygnus-input
-        [inputId]="'cg-floating-inset-01'"
+        [inputId]="'cg-floating-inset-card-2'"
         [inputCustomType]="'fieldset-legend-label'"
         [textPlaceholder]="'••••••••'"
-        [textHint]="textHint()"
-        [inputColor]="inputColor()"
+        [textHint]="textPassHint()"
+        [inputColor]="inputPassColor()"
         [hintColor]="true"
         [textLabel]="'Contraseña'"
-        [control]="cardLoginForm.controls.contrasegna"
+        [control]="cardLoginForm.controls.password"
       />
-
 
       <div class="flex items-center justify-end">
         <cygnus-button-link [routerLink]="'#'" [btnLinkText]="'¿Olvidaste tu contraseña?'"  />
       </div>
 
-      <cygnus-button [btnTypes]="'btn-primary btn-block'" (click)="onSubmit()" >Iniciar sesión</cygnus-button>
+      <cygnus-button [btnTypes]="btnSubmitColor() + ' btn-block'" (click)="onSubmit()" >Iniciar sesión</cygnus-button>
 
     </form>
   </div>

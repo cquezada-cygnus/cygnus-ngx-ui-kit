@@ -6,7 +6,7 @@ export class FormUtils {
 
 
   static isValidField(form: FormGroup, fieldName: string): boolean | null {
-    return ( !!form.controls[fieldName].errors &&
+    return ( !!form.controls[fieldName].invalid &&
                form.controls[fieldName].touched
     );
   }

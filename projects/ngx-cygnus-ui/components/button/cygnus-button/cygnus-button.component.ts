@@ -1,4 +1,4 @@
-import { Component, input, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, effect, input, OnInit, signal, WritableSignal } from '@angular/core';
 import { IconBtnColor, IconBtnSize, IconPosition } from 'ngx-cygnus-ui/types';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { IconLoadingSize } from 'ngx-cygnus-ui/types';
@@ -22,6 +22,13 @@ export class CygnusButtonComponent implements OnInit {
   btnIconRoute = input<string>('');
   btnIsLoading = input<boolean>(false);
   btnIconLoadingSize = input<IconLoadingSize>('size-5');
+
+  constructor() {
+    effect(() => { // actualizar color del botón cuando cambie this.btnTypes()
+      const setClasses = this.setBtnClasses(this.getBtnClasses(this.btnTypes()));
+      this.btnAllClasses.set(setClasses);
+    });
+  }
 
   ngOnInit(){
     this.btnIconExist = false;
