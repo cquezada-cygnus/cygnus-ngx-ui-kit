@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, effect, ElementRef, input, viewChild } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
@@ -29,6 +29,16 @@ export class CygnusInputComponent {
   textHint = input<string>('');
   textPlaceholder = input<string>(' ');
   inputDisabled = input<boolean>(false);
+  typePassword = input<boolean>(false);
+  inputClearValue = input<boolean>(false);
+
+  cygnusInput = viewChild<ElementRef>('cygnusInput');
+
+  constructor() {
+    effect(() => { // limpiar input si se solicita
+      if (!this.inputClearValue()) this.cygnusInput()!.nativeElement.textContent = '';
+    });
+  }
 
   setValue(value:string ) {
     this.control()?.setValue(value);

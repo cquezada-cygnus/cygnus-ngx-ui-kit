@@ -22,6 +22,7 @@ export class CygnusButtonComponent implements OnInit {
   btnIconRoute = input<string>('');
   btnIsLoading = input<boolean>(false);
   btnIconLoadingSize = input<IconLoadingSize>('size-5');
+  btnIsDisabled: boolean = false;
 
   constructor() {
     effect(() => { // actualizar color del botón cuando cambie this.btnTypes()
@@ -52,6 +53,7 @@ export class CygnusButtonComponent implements OnInit {
   }
 
   addTailwindClasses(customClass: string): string {
+    this.btnIsDisabled = false;
     this.btnIconOnly = false;
     switch (customClass) {
       case 'btn':
@@ -89,6 +91,7 @@ export class CygnusButtonComponent implements OnInit {
         return this.TW_CLASS.BTN_GHOST;
       case 'btn-disabled':
         this.btnIconColor = '#ffffff';
+        this.btnIsDisabled = true;
         return this.TW_CLASS.BTN_DISABLED;
       case 'btn-block':
         return this.TW_CLASS.BTN_BLOCK;

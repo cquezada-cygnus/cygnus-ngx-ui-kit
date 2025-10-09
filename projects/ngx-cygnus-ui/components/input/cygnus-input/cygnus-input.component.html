@@ -19,7 +19,7 @@
     <input
       #cygnusInput
       [id]="inputId()"
-      [type]="(inputCustomType()==='file') ? 'file': 'text'"
+      [type]="(inputCustomType()==='file') ? 'file': (typePassword() ? 'password' : 'text') "
       [class]="
         TW_CLASS.INPUT_BASE +
         (inputCustomType()!=='base' ? ' peer ' : ' ') +

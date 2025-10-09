@@ -9,9 +9,8 @@ import { TW_CLASS } from '../const/tailwind.const';
 import { FormUtils } from 'ngx-cygnus-ui/utils';
 import { cgRutValidator } from 'ngx-cygnus-ui/validators';
 
-
 @Component({
-  selector: 'cygnus-card-login',
+  selector: 'cygnus-card-show-validators',
   imports: [
     ReactiveFormsModule,
     RouterLink,
@@ -20,10 +19,9 @@ import { cgRutValidator } from 'ngx-cygnus-ui/validators';
     CygnusButtonComponent,
     CygnusButtonLinkComponent,
   ],
-  templateUrl: './cygnus-card-login.component.html',
+  templateUrl: './cygnus-card-show-validators.component.html',
 })
-export class CygnusCardLoginComponent implements OnInit {
-
+export class CygnusCardShowValidatorsComponent implements OnInit {
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
   CYGNUS_LOGO_COLOR: string = '#cc5224';
 
@@ -92,5 +90,4 @@ export class CygnusCardLoginComponent implements OnInit {
       this.cardLoginForm.markAllAsTouched();
     }
   }
-
 }

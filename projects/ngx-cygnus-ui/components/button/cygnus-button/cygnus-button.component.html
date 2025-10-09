@@ -1,4 +1,4 @@
-<button [class]="btnAllClasses()" type="button">
+<button [class]="btnAllClasses()" type="button" [disabled]="btnIsDisabled">
   @if (btnIconExist && btnIconPosition() == 'left') {
     @if (btnIsLoading()) {
       <div [class]="TW_CLASS.BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize() "  role="status" aria-label="loading">
