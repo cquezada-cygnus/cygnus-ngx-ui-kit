@@ -1,7 +1,17 @@
 
 <fieldset class="fieldset">
+  @if (inputCustomType()==='fieldset-legend-label' && pseudoIconCLPPhone()===true) {
+    <label [for]="inputId()"
+      [class]="
+        labelGetType() + ' ' +
+        labelColorGetType()
+      "
+    >
+      {{ textLabel() }}
+    </label>
+  }
   <div class="relative">
-    @if (inputCustomType()==='fieldset-legend-label' || inputCustomType()==='file' ) {
+    @if (!pseudoIconCLPPhone()===true && (inputCustomType()==='fieldset-legend-label' || inputCustomType()==='file') ) {
       <label [for]="inputId()"
         [class]="
           labelGetType() + ' ' +
@@ -12,16 +22,9 @@
       </label>
     }
     @if (pseudoIconCLPPhone()===true) {
-      @if (inputCustomType()==='fieldset-legend-label') {
-        <div [class]="TW_CLASS.ELEMENT_UPPER_LABEL_LEFT">
+      <div [class]="TW_CLASS.ELEMENT_LEFT">
         +56
       </div>
-      }
-      @else {
-        <div [class]="TW_CLASS.ELEMENT_LEFT">
-        +56
-      </div>
-      }
     }
     <input
       #cygnusInput
@@ -75,9 +78,12 @@
       </div>
     }
 
-    @if (inputCustomType()!=='base') {
+    @if (!pseudoIconCLPPhone()===true && inputCustomType()!=='base') {
       <p [class]="TW_CLASS.HINT_TEXT + ' ' + hintGetColor()">{{ textHint() }}</p>
     }
   </div>
+  @if (pseudoIconCLPPhone()===true && inputCustomType()!=='base') {
+    <p [class]="TW_CLASS.HINT_TEXT + ' ' + hintGetColor()">{{ textHint() }}</p>
+  }
 </fieldset>
 

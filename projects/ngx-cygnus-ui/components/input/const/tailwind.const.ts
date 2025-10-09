@@ -39,7 +39,7 @@ export const TW_CLASS = {
   ELEMENT_RIGHT: 'absolute',
   ELEMENT_LEFT : 'absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2 text-sm font-semibold text-gray-600',
 
-  ELEMENT_UPPER_LABEL_LEFT: 'absolute flex items-center font-semibold inset-y-0 !pb-0 !pt-6 pointer-events-none ps-2 start-0 text-gray-600 text-sm',
+  // ELEMENT_UPPER_LABEL_LEFT: 'absolute flex items-center font-semibold inset-y-0 !pb-0 !pt-6 pointer-events-none ps-2 start-0 text-gray-600 text-sm',
 
 
   HINT_TEXT   : 'mt-1 text-sm text-gray-500',
