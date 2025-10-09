@@ -15,7 +15,7 @@
     <form autocomplete="off" [formGroup]="cardLoginForm" (ngSubmit)="onSubmit()" class=" flex flex-col space-y-4">
 
       <cygnus-input
-        [inputId]="'cg-floating-inset-card-1'"
+        [inputId]="'cg-floating-inset-card-11'"
         [inputCustomType]="'fieldset-legend-label'"
         [textPlaceholder]="'12345678K'"
         [inputColor]="inputRutColor()"
@@ -27,7 +27,7 @@
       />
 
       <cygnus-input
-        [inputId]="'cg-floating-inset-card-2'"
+        [inputId]="'cg-floating-inset-card-22'"
         [inputCustomType]="'fieldset-legend-label'"
         [typePassword]="true"
         [textPlaceholder]="'••••••••'"
@@ -36,6 +36,33 @@
         [hintColor]="true"
         [textLabel]="'Contraseña'"
         [control]="cardLoginForm.controls.password"
+        [inputClearValue]="inputClearValue()"
+      />
+
+      <!-- label debe estar afuera del div.relative para que el ícono 56 no se salga.  -->
+      <cygnus-input
+        [inputId]="'cg-floating-inset-33'"
+        [inputCustomType]="'fieldset-legend-label'"
+        [textPlaceholder]="'99999999'"
+        [pseudoIconCLPPhone]="true"
+        [iconPosition]="'left'"
+        [textHint]="textPhoneHint()"
+        [inputColor]="inputPhoneColor()"
+        [hintColor]="true"
+        [textLabel]="'Teléfono (Chile)'"
+        [control]="cardLoginForm.controls.phone"
+        [inputClearValue]="inputClearValue()"
+      />
+
+      <cygnus-input
+        [inputId]="'cg-floating-inset-card-44'"
+        [inputCustomType]="'fieldset-legend-label'"
+        [textPlaceholder]="'Ingrese su correo...'"
+        [textHint]="textMailHint()"
+        [inputColor]="inputMailColor()"
+        [hintColor]="true"
+        [textLabel]="'Correo electrónico'"
+        [control]="cardLoginForm.controls.mail"
         [inputClearValue]="inputClearValue()"
       />
 

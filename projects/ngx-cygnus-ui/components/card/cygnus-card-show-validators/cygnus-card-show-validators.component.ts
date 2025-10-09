@@ -6,8 +6,7 @@ import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputColor, BtnCustomType } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
-import { FormUtils } from 'ngx-cygnus-ui/utils';
-import { cgRutValidator } from 'ngx-cygnus-ui/validators';
+import { cgEmail, cgPhone, cgRutValidator } from 'ngx-cygnus-ui/validators';
 
 @Component({
   selector: 'cygnus-card-show-validators',
@@ -31,18 +30,25 @@ export class CygnusCardShowValidatorsComponent implements OnInit {
   textPassHint = signal<string>('');
   inputPassColor = signal<InputColor>('base');
 
+  textPhoneHint = signal<string>('');
+  inputPhoneColor = signal<InputColor>('base');
+
+  textMailHint = signal<string>('');
+  inputMailColor = signal<InputColor>('base');
+
   btnSubmitColor = signal<BtnCustomType>('btn-disabled');
 
   inputClearValue = signal<boolean>(false);
 
   nonNullableFb = inject(NonNullableFormBuilder);
-  formUtils = FormUtils;
 
   cardLoginForm = this.nonNullableFb.group({
     rut: ['',
       [Validators.required, cgRutValidator()]
     ],
     password: ['', [Validators.required]],
+    phone: ['', [Validators.required, cgPhone()]],
+    mail: ['', [Validators.required, cgEmail()]]
   });
 
   ngOnInit() {
@@ -67,6 +73,28 @@ export class CygnusCardShowValidatorsComponent implements OnInit {
       } else {
         this.inputPassColor.set('base');
         this.textPassHint.set('');
+      }
+    });
+    this.cardLoginForm.get('phone')?.statusChanges.subscribe(status => {
+      console.log('phone errors: ',this.cardLoginForm.get('phone')?.errors);
+
+      if (this.cardLoginForm.get('phone')?.errors) {
+        this.inputPhoneColor.set('error');
+        this.textPhoneHint.set('error');
+      } else {
+        this.inputPhoneColor.set('success');
+        this.textPhoneHint.set('');
+      }
+    });
+    this.cardLoginForm.get('mail')?.statusChanges.subscribe(status => {
+      console.log('mail errors: ',this.cardLoginForm.get('mail')?.errors);
+
+      if (this.cardLoginForm.get('mail')?.errors) {
+        this.inputMailColor.set('warning');
+        this.textMailHint.set('warning');
+      } else {
+        this.inputMailColor.set('success');
+        this.textMailHint.set('');
       }
     });
   }

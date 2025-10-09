@@ -12,9 +12,16 @@
       </label>
     }
     @if (pseudoIconCLPPhone()===true) {
-      <div [class]="TW_CLASS.ELEMENT_LEFT">
+      @if (inputCustomType()==='fieldset-legend-label') {
+        <div [class]="TW_CLASS.ELEMENT_UPPER_LABEL_LEFT">
         +56
       </div>
+      }
+      @else {
+        <div [class]="TW_CLASS.ELEMENT_LEFT">
+        +56
+      </div>
+      }
     }
     <input
       #cygnusInput

@@ -6,7 +6,6 @@ import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputColor, BtnCustomType } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
-import { FormUtils } from 'ngx-cygnus-ui/utils';
 import { cgRutValidator } from 'ngx-cygnus-ui/validators';
 
 
@@ -38,7 +37,6 @@ export class CygnusCardLoginComponent implements OnInit {
   inputClearValue = signal<boolean>(false);
 
   nonNullableFb = inject(NonNullableFormBuilder);
-  formUtils = FormUtils;
 
   cardLoginForm = this.nonNullableFb.group({
     rut: ['',
