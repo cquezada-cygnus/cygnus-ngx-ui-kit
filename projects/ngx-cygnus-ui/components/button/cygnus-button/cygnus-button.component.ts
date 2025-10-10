@@ -70,13 +70,13 @@ export class CygnusButtonComponent implements OnInit {
         return this.TW_CLASS.BTN_ACCENT;
       case 'btn-success':
         this.btnIconColor = '#ffffff';
-        return this.TW_CLASS.BTN_SUCCESS;
+        return this.TW_CLASS.BTN_GREEN;
       case 'btn-warning':
         this.btnIconColor = '#ffffff';
-        return this.TW_CLASS.BTN_WARNING;
+        return this.TW_CLASS.BTN_YELLOW;
       case 'btn-error':
         this.btnIconColor = '#ffffff';
-        return this.TW_CLASS.BTN_ERROR;
+        return this.TW_CLASS.BTN_RED;
       case 'btn-purple':
         this.btnIconColor = '#ffffff';
         return this.TW_CLASS.BTN_PURPLE;
