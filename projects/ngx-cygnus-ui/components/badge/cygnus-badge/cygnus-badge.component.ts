@@ -55,6 +55,8 @@ export class CygnusBadgeComponent implements OnInit {
         return this.TW_CLASS.BADGE_PINK;
       case 'badge-purple':
         return this.TW_CLASS.BADGE_PURPLE;
+      case 'badge-indigo':
+        return this.TW_CLASS.BADGE_INDIGO;
       case 'badge-icon':
         return this.TW_CLASS.BADGE_ICON;
       case 'badge-icon-only':
