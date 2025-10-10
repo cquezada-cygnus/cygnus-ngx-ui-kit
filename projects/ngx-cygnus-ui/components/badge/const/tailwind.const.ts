@@ -1,0 +1,16 @@
+export const TW_CLASS = {
+  BADGE_XS: 'inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full ms-2',
+  BADGE_SM: 'rounded-full bg-gray-100 py-0.5 px-2.5 border border-transparent text-xs text-gray-700 transition-all shadow-sm',
+  BADGE: 'rounded-full bg-gray-100 py-0.5 px-2.5 border border-transparent text-sm text-gray-700 transition-all shadow-sm',
+  BADGE_LG: 'px-3 py-1 text-sm transition-all border-transparent rounded-full shadow-sm text-gray-600 bg-gray-100',
+  BADGE_PRIMARY: 'text-sm transition-all border-transparent rounded-full shadow-sm text-primary-600 bg-primary-100 text-center',
+  BADGE_GRAY: 'text-sm transition-all border-transparent rounded-full shadow-sm text-gray-600 bg-gray-100 text-center',
+  BADGE_ERROR: 'text-sm transition-all border-transparent rounded-full shadow-sm text-error-600 bg-error-100 text-center',
+  BADGE_WARNING: 'text-sm transition-all border-transparent rounded-full shadow-sm text-warning-600 bg-warning-100 text-center',
+  BADGE_SUCCESS: 'text-sm transition-all border-transparent rounded-full shadow-sm text-success-600 bg-success-100 text-center',
+  BADGE_PINK: 'text-sm transition-all border-transparent rounded-full shadow-sm text-pink-600 bg-pink-100 text-center',
+  BADGE_PURPLE: 'text-sm transition-all border-transparent rounded-full shadow-sm text-purple-600 bg-purple-100 text-center ' +
+  'text-sm transition-all border-transparent rounded-full shadow-sm text-indigo-800 bg-indigo-100 text-center',
+  BADGE_ICON: 'inline-flex items-center justify-center gap-1.5 text-sm py-1 px-2.5 rounded-full w-max text-gray-700 bg-gray-100 me-2',
+  BADGE_ICON_ONLY: 'inline-flex items-center justify-center text-sm font-semibold rounded-full w-7 h-7 text-gray-700 bg-gray-100 me-2',
+}
