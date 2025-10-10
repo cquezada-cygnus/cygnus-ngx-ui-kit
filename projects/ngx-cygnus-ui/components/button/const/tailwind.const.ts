@@ -1,5 +1,5 @@
 export const TW_CLASS = {
-  BTN: 'text-sm px-5 py-2.5 rounded-lg font-medium focus:ring-4 focus:outline-none',
+  BTN: 'text-sm px-5 py-2.5 rounded-lg font-medium focus:ring-4 focus:outline-none text-center',
   BTN_SIMPLE: 'text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300',
   BTN_PRIMARY: 'text-white bg-blue-600 border border-none hover:bg-blue-700 hover:text-white focus:ring-blue-300 active:bg-primary-700',
   BTN_SECONDARY: 'flex items-center justify-center border text-gray-900 border-gray-300 bg-white hover:bg-gray-100 hover:text-blue-700 hover:border-gray-300 focus:ring-gray-100 focus:z-10 active:bg-gray-100 active:text-white',
@@ -17,7 +17,7 @@ export const TW_CLASS = {
   BTN_SIZE_XS: '!py-2 !px-3 !text-xs',
   BTN_SIZE_SM: '!py-2 !px-3 !text-sm',
   BTN_SIZE_LG: '!px-5 !py-3 !text-base',
-  BTN_SIZE_XL: '!px-5 !py-3.5 !text-base',
+  BTN_SIZE_XL: '!px-6 !py-3.5 !text-base',
   BTN_ICON_XS: 'p-2 flex items-center',
   BTN_ICON_SM: 'p-2 flex items-center',
   BTN_ICON: 'inline-flex items-center justify-between',
