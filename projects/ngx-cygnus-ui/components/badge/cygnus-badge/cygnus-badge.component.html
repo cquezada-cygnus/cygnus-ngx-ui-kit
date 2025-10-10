@@ -1,3 +1,19 @@
 <div [class]="badgeAllClasses()" >
+  @if (badgeIconAsset()!=='' && badgeIconPosition()==='left') {
+    <lib-ngx-cygnus-icons
+      [width]="badgeIconSize"
+      [height]="badgeIconSize"
+      [color]="badgeIconColor()"
+      [route]="badgeIconAsset()"
+    />
+  }
   {{badgeText()}}
+  @if (badgeIconAsset()!=='' && badgeIconPosition()==='right') {
+    <lib-ngx-cygnus-icons
+      [width]="badgeIconSize"
+      [height]="badgeIconSize"
+      [color]="badgeIconColor()"
+      [route]="badgeIconAsset()"
+    />
+  }
 </div>
