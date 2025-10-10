@@ -13,4 +13,5 @@ export const TW_CLASS = {
   BADGE_INDIGO:'text-sm transition-all border-transparent rounded-full shadow-sm text-indigo-800 bg-indigo-100 text-center',
   BADGE_ICON: 'inline-flex items-center justify-center gap-1.5 text-sm py-1 px-2.5 rounded-full w-max text-gray-700 bg-gray-100',
   BADGE_ICON_ONLY: 'inline-flex items-center justify-center text-sm font-semibold rounded-full w-7 h-7 text-gray-700 bg-gray-100',
+  BADGE_BTN: 'text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 focus:outline-none relative rounded-md flex bg-gray-100 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-secondary-700 transition-all shadow-sm',
 }

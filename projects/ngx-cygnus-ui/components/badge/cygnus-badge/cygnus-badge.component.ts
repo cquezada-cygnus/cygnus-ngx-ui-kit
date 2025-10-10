@@ -5,7 +5,9 @@ import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
 @Component({
   selector: 'cygnus-badge',
-  imports: [NgxCygnusIconsComponent],
+  imports: [
+    NgxCygnusIconsComponent,
+  ],
   templateUrl: './cygnus-badge.component.html',
 })
 export class CygnusBadgeComponent implements OnInit {
@@ -19,6 +21,7 @@ export class CygnusBadgeComponent implements OnInit {
   badgeIconColor = input<IconBtnColor>('#344054');
   badgeIconOnly: boolean = false;
   badgeIconSize: IconBtnSize = '1.25rem';
+  btnBadge: boolean = false;
 
 
   ngOnInit(){
@@ -41,6 +44,7 @@ export class CygnusBadgeComponent implements OnInit {
 
   addTailwindClasses(customClass: string): string {
     this.badgeIconOnly = false;
+        this.btnBadge = false;
     switch (customClass) {
       case 'badge-xs':
         return this.TW_CLASS.BADGE_XS;
@@ -71,6 +75,9 @@ export class CygnusBadgeComponent implements OnInit {
       case 'badge-icon-only':
         this.badgeIconOnly = true;
         return this.TW_CLASS.BADGE_ICON_ONLY;
+      case 'badge-btn':
+        this.btnBadge = true;
+        return this.TW_CLASS.BADGE_BTN;
       default:
         return '';
     }
