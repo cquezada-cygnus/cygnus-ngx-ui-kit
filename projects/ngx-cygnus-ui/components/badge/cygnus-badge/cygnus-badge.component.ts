@@ -22,6 +22,8 @@ export class CygnusBadgeComponent implements OnInit {
   badgeIconOnly: boolean = false;
   badgeIconSize: IconBtnSize = '1.25rem';
   btnBadge: boolean = false;
+  badgeState: boolean = false;
+  badgeStateClassesIcon: string = '';
 
 
   ngOnInit(){
@@ -44,7 +46,9 @@ export class CygnusBadgeComponent implements OnInit {
 
   addTailwindClasses(customClass: string): string {
     this.badgeIconOnly = false;
-        this.btnBadge = false;
+    this.btnBadge = false;
+    this.badgeState = false;
+    this.badgeStateClassesIcon = '';
     switch (customClass) {
       case 'badge-xs':
         return this.TW_CLASS.BADGE_XS;
@@ -78,6 +82,14 @@ export class CygnusBadgeComponent implements OnInit {
       case 'badge-btn':
         this.btnBadge = true;
         return this.TW_CLASS.BADGE_BTN;
+      case 'badge-state-success':
+        this.badgeState = true;
+        this.badgeStateClassesIcon = this.TW_CLASS.BADGE_STATE_ICON_SUCCESS;
+        return this.TW_CLASS.BADGE_STATE_SUCCESS;
+      case 'badge-state-error':
+        this.badgeState = true;
+        this.badgeStateClassesIcon = this.TW_CLASS.BADGE_STATE_ICON_ERROR;
+        return this.TW_CLASS.BADGE_STATE_ERROR;
       default:
         return '';
     }

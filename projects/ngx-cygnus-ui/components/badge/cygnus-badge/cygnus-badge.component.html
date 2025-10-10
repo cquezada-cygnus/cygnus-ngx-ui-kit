@@ -7,6 +7,9 @@
       [route]="badgeIconAsset()"
     />
   }
+  @if (badgeState) {
+    <div [class]="badgeStateClassesIcon"></div>
+  }
 
   {{badgeText()}}
 
