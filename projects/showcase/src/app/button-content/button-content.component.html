@@ -312,15 +312,8 @@
                   [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
                 >
                   Messages
-                  <span class="inline-flex items-center justify-center w-4 h-4 text-xs badge ms-2">2</span> <!-- BADGE TODO -->
-                </cygnus-button>
-
-                <cygnus-button
-                  [btnTypes]="'btn-primary '"
-                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
-                >
-                  Messages
-                  <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full ms-2"> 2 </span> <!-- BADGE TODO -->
+                  <!-- COMPONENTE: Badge XS -->
+                  <cygnus-badge [badgeTypes]="'badge-xs'" [badgeText]="'2'" />
                 </cygnus-button>
 
                 <cygnus-button
