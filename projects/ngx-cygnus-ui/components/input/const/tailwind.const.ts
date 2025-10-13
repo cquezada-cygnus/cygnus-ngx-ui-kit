@@ -11,6 +11,12 @@ export const TW_CLASS = {
   INPUT_FLOATING: '!pb-2 !pt-6 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none focus:pt-6 focus:pb-2 [&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2',
   INPUT_FLOATING_ICON: '!pb-3 !pt-3 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none !focus:pt-3 focus:pb-3 ![&:not(:placeholder-shown)]:pt-3 [&:not(:placeholder-shown)]:pb-3 !autofill:pt-3 autofill:pb-3',
 
+  INPUT_TOP_BASE: 'px-4 !shadow-xs !placeholder:text-gray-400 !focus:outline-hidden focus:shadow-sm',
+  INPUT_TOP_GENERIC: 'border-gray-300 focus:ring-primary-700 focus:border-primary-700',
+  INPUT_TOP_SUCCESS: 'border-2 border-success-600 focus:ring-success-700 focus:border-success-700',
+  INPUT_TOP_WARNING: 'border-2 border-warning-500 focus:ring-warning-500 focus:border-warning-500',
+  INPUT_TOP_ERROR: 'border-2 border-error-500 focus:ring-error-500 focus:border-error-500',
+
   INPUT_INTERACTIVE_BASE: 'px-4 py-3',
   INPUT_INTERACTIVE_GENERIC: '',
   INPUT_INTERACTIVE_SUCCESS: 'placeholder:text-success-500 placeholder:bg-gray-50 text-gray-700 border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow active:bg-white',
@@ -26,6 +32,12 @@ export const TW_CLASS = {
   LABEL_FLOATING_SUCCESS: '!text-success-600 !peer-focus:text-gray-500 !peer-[:not(:placeholder-shown)]:text-gray-500',
   LABEL_FLOATING_WARNING: '!text-warning-600 !peer-focus:text-gray-500 !peer-[:not(:placeholder-shown)]:text-gray-500',
   LABEL_FLOATING_ERROR  : '!text-error-600 !peer-focus:text-gray-500 !peer-[:not(:placeholder-shown)]:text-gray-500',
+
+  LABEL_TOP_BASE: 'absolute cursor-text bg-white px-1.5 left-2.5 -top-2.5 placeholder-shown:text-sm text-sm',
+  LABEL_TOP_GENERIC: 'text-gray-600 peer-placeholder-shown:text-gray-700',
+  LABEL_TOP_SUCCESS: 'text-success-700',
+  LABEL_TOP_WARNING: 'text-warning-600',
+  LABEL_TOP_ERROR: 'text-error-600',
 
   LABEL_INTERACTIVE_BASE: 'absolute cursor-text bg-white px-1 left-2.5 -top-2 text-xs scale-90 transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:scale-90 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm',
 

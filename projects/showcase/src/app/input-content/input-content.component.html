@@ -116,6 +116,64 @@
                 </div>
             </section>
 
+            <!-- Input Label TOP -->
+            <section id="input-top-label">
+                <div
+                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+                    <div class="p-4 pb-4">
+                        <h2 class="mb-1 text-xl font-semibold">Label top</h2>
+                        <p class="mb-8 text-gray-600 text-md">Para uso sin animación del label</p>
+                        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                            <div class="flex flex-col w-full max-w-sm min-w-[200px] space-y-6"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
+
+                                <!-- COMPONENTE: Input Label TOP simple -->
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-05'"
+                                  [inputCustomType]="'label-top'"
+                                  [textLabel]="'Email'"
+                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
+                                />
+
+                                <!-- COMPONENTE: Input Label TOP success -->
+                                <cygnus-input
+                                  [inputId]="'cg-floating-inset-06'"
+                                  [inputCustomType]="'label-top'"
+                                  [inputColor]="'success'"
+                                  [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
+                                  [iconColor]="'#12b76a'"
+                                  [textLabel]="'Email'"
+                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
+                                />
+
+                                <!-- COMPONENTE: Input Label TOP warning -->
+                                 <cygnus-input
+                                  [inputId]="'cg-floating-inset-07'"
+                                  [inputCustomType]="'label-top'"
+                                  [inputColor]="'warning'"
+                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
+                                  [iconColor]="'#f79009'"
+                                  [textLabel]="'Email'"
+                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
+                                />
+
+                                <!-- COMPONENTE: Input Label TOP error -->
+                                 <cygnus-input
+                                  [inputId]="'cg-floating-inset-08'"
+                                  [inputCustomType]="'label-top'"
+                                  [inputColor]="'error'"
+                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+                                  [iconColor]="'#f04438'"
+                                  [textLabel]="'Email'"
+                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
+                                />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Input interactive -->
             <section id="input-interactive">
                 <div

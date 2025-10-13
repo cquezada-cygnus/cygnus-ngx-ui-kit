@@ -70,6 +70,19 @@ export class CygnusInputComponent {
     }
   }
 
+  inputGetTopColor():string {
+    switch (this.inputColor()) {
+      case 'success':
+        return this.TW_CLASS.INPUT_TOP_SUCCESS;
+      case 'warning':
+        return this.TW_CLASS.INPUT_TOP_WARNING;
+      case 'error':
+        return this.TW_CLASS.INPUT_TOP_ERROR;
+      default:
+        return this.TW_CLASS.INPUT_TOP_GENERIC;
+    }
+  }
+
   inputGetInteractiveColor():string {
     if (this.inputCustomType()==='label-interactive') {
       switch (this.inputColor()) {
@@ -95,6 +108,19 @@ export class CygnusInputComponent {
         return this.TW_CLASS.LABEL_FLOATING_ERROR;
       default:
         return '';
+    }
+  }
+
+  labelTopGetColor():string {
+    switch (this.inputColor()) {
+      case 'success':
+        return this.TW_CLASS.LABEL_TOP_SUCCESS;
+      case 'warning':
+        return this.TW_CLASS.LABEL_TOP_WARNING;
+      case 'error':
+        return this.TW_CLASS.LABEL_TOP_ERROR;
+      default:
+        return this.TW_CLASS.LABEL_TOP_BASE;
     }
   }
 
@@ -129,18 +155,17 @@ export class CygnusInputComponent {
 
   labelColorGetType() {
     if (this.inputCustomType()==='floating') return this.labelFloatingGetColor();
-    if (this,this.inputCustomType()==='label-interactive') return this.labelInteractiveGetColor();
+    if (this.inputCustomType()==='label-top') return this.labelTopGetColor();
+    if (this.inputCustomType()==='label-interactive') return this.labelInteractiveGetColor();
     return '';
   }
 
   labelGetType():string {
     if (this.inputCustomType()==='fieldset-legend-label') return this.TW_CLASS.FIELDSET_LEGEND;
+    if (this.inputCustomType()==='label-top') return this.TW_CLASS.LABEL_TOP_BASE;
     if (this.inputCustomType()==='label-interactive') return this.TW_CLASS.LABEL_INTERACTIVE_BASE;
     if (this.inputCustomType()==='floating') return (this.TW_CLASS.LABEL_BASE + ' ' + this.TW_CLASS.LABEL_FLOATING_BASE);
     return '';
   }
-
-
-
 
 }
