@@ -202,18 +202,16 @@
                   <div class="flex gap-2">
 
                       <!-- COMPONENTE: Estado Online -->
-                      <div
-                          class="rounded-full flex items-center bg-success-100 py-0.5 px-2.5 border border-transparent text-sm text-success-800 transition-all shadow-sm">
-                          <div class="block w-2 h-2 mx-auto mr-2 rounded-full bg-success-800"></div>
-                          Online
-                      </div>
-
+                      <cygnus-badge
+                        [badgeTypes]="'badge-state-success'"
+                        [badgeText]="'Online'"
+                      />
                       <!-- COMPONENTE: Estado Offline -->
-                      <div
-                          class="rounded-full flex items-center bg-error-100 py-0.5 px-2.5 border border-transparent text-sm text-error-800 transition-all shadow-sm">
-                          <div class="block w-2 h-2 mx-auto mr-2 rounded-full bg-error-800"></div>
-                          Offline
-                      </div>
+                      <cygnus-badge
+                        [badgeTypes]="'badge-state-error'"
+                        [badgeText]="'Offline'"
+                      />
+
                   </div>
 
               </div>

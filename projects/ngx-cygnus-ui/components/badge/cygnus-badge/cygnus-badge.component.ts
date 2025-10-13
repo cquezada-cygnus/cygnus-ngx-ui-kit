@@ -63,11 +63,11 @@ export class CygnusBadgeComponent implements OnInit {
       case 'badge-gray':
         return this.TW_CLASS.BADGE_GRAY;
       case 'badge-error':
-        return this.TW_CLASS.BADGE_ERROR;
+        return this.TW_CLASS.BADGE_RED;
       case 'badge-warning':
-        return this.TW_CLASS.BADGE_WARNING;
+        return this.TW_CLASS.BADGE_YELLOW;
       case 'badge-success':
-        return this.TW_CLASS.BADGE_SUCCESS;
+        return this.TW_CLASS.BADGE_GREEN;
       case 'badge-pink':
         return this.TW_CLASS.BADGE_PINK;
       case 'badge-purple':
@@ -84,12 +84,12 @@ export class CygnusBadgeComponent implements OnInit {
         return this.TW_CLASS.BADGE_BTN;
       case 'badge-state-success':
         this.badgeState = true;
-        this.badgeStateClassesIcon = this.TW_CLASS.BADGE_STATE_ICON_SUCCESS;
-        return this.TW_CLASS.BADGE_STATE_SUCCESS;
+        this.badgeStateClassesIcon = this.TW_CLASS.BADGE_STATE_ICON_GREEN;
+        return this.TW_CLASS.BADGE_STATE_GREEN;
       case 'badge-state-error':
         this.badgeState = true;
-        this.badgeStateClassesIcon = this.TW_CLASS.BADGE_STATE_ICON_ERROR;
-        return this.TW_CLASS.BADGE_STATE_ERROR;
+        this.badgeStateClassesIcon = this.TW_CLASS.BADGE_STATE_ICON_RED;
+        return this.TW_CLASS.BADGE_STATE_RED;
       default:
         return '';
     }
