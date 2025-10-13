@@ -1,4 +1,4 @@
-import { Component, effect, ElementRef, input, viewChild } from '@angular/core';
+import { Component, effect, ElementRef, input, OnInit, signal, viewChild } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
@@ -10,12 +10,14 @@ import { FormControl } from '@angular/forms';
   imports: [NgxCygnusIconsComponent],
   templateUrl: './cygnus-input.component.html',
 })
-export class CygnusInputComponent {
+export class CygnusInputComponent implements OnInit {
+  private static idCounter = 0;
+
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
 
   control = input<FormControl<string>>();
 
-  inputId = input<string>('cg-floating-inset');
+  inputId = signal<string>('');
   inputCustomType = input<InputCustomType>('base');
   inputColor = input<InputColor>('base');
   inputSize = input<InputSize>('');
@@ -39,6 +41,11 @@ export class CygnusInputComponent {
     effect(() => { // limpiar input si se solicita
       if (!this.inputClearValue()) this.cygnusInput()!.nativeElement.textContent = '';
     });
+  }
+
+  ngOnInit() {
+    // Generar ID único si no se proporciona
+    this.inputId.set(`cg-input-${++CygnusInputComponent.idCounter}`);
   }
 
   setValue(value:string ) {
