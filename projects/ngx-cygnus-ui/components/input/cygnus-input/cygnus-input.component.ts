@@ -20,6 +20,7 @@ export class CygnusInputComponent {
   inputColor = input<InputColor>('base');
   inputSize = input<InputSize>('');
   iconAsset = input<string>('');
+  iconState = input<boolean>(false); // true para identificar el estilo del input cuando es ícono de success/warning/error
   iconPosition = input<IconPosition>('right');
   iconColor = input<IconInputColor>('#101828');
   iconSize = input<string>('19px');

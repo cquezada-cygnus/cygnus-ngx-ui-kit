@@ -8,7 +8,7 @@ export const TW_CLASS = {
   INPUT_ERROR  : '!border-error-500 !focus:border-error-500 !focus:ring-error-500',
 
   INPUT_DISABLED: 'bg-neutral-50 text-neutral-400 cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none',
-  INPUT_FLOATING: '!pb-2 !pt-6 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none focus:pt-6 focus:pb-2 [&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2',
+  INPUT_FLOATING: '!pb-2 !pt-6 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none focus:pb-2 !focus:pt-6 ![&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2',
   INPUT_FLOATING_ICON: '!pb-3 !pt-3 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none !focus:pt-3 focus:pb-3 ![&:not(:placeholder-shown)]:pt-3 [&:not(:placeholder-shown)]:pb-3 !autofill:pt-3 autofill:pb-3',
 
   INPUT_TOP_BASE: 'px-4 !shadow-xs !placeholder:text-gray-400 !focus:outline-hidden focus:shadow-sm',
@@ -50,9 +50,6 @@ export const TW_CLASS = {
 
   ELEMENT_RIGHT: 'absolute',
   ELEMENT_LEFT : 'absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2 text-sm font-semibold text-gray-600',
-
-  // ELEMENT_UPPER_LABEL_LEFT: 'absolute flex items-center font-semibold inset-y-0 !pb-0 !pt-6 pointer-events-none ps-2 start-0 text-gray-600 text-sm',
-
 
   HINT_TEXT   : 'mt-1 text-sm text-gray-500',
   HINT_SUCCESS: '!text-success-600',

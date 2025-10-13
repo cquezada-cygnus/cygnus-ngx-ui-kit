@@ -35,7 +35,7 @@
         (inputCustomType()!=='base' ? ' peer ' : ' ') +
         (inputCustomType()==='label-top' ? TW_CLASS.INPUT_TOP_BASE : '') + ' ' +
         (inputCustomType()==='label-interactive' ? TW_CLASS.LABEL_INTERACTIVE_COLOR_BASE : '') + ' ' +
-        (inputCustomType()==='floating' ? ((iconAsset() || pseudoIconCLPPhone()) ? TW_CLASS.INPUT_FLOATING_ICON : TW_CLASS.INPUT_FLOATING)  : '') + ' ' +
+        (inputCustomType()==='floating' ? (!iconState() && ( (iconAsset() || pseudoIconCLPPhone() ) ) ? TW_CLASS.INPUT_FLOATING_ICON : TW_CLASS.INPUT_FLOATING)  : '') + ' ' +
         (inputCustomType()==='file' ? TW_CLASS.INPUT_FILE : '') + ' ' +
         inputGetColor() + ' ' +
         inputGetTopColor() + ' ' +
