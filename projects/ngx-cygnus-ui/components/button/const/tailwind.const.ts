@@ -28,4 +28,21 @@ export const TW_CLASS = {
   BTN_GROUP_MIDDLE: 'px-4 py-2 text-sm text-center transition-all border rounded-md rounded-l-none rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_GROUP_RIGHT: 'px-4 py-2 text-sm text-center transition-all border border-l-0 rounded-md rounded-l-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_LINK: 'flex items-center justify-center text-sm font-medium bg-transparent hover:bg-transparent focus:ring-0 focus:ring-gray-200 text-blue-600 no-underline hover:text-primary-700 active:underline hover:underline',
+
+  BTN_A: 'group relative overflow-hidden focus:ring-4 inline-flex items-center rounded-lg justify-center',
+  BTN_A_TYPE_A: 'px-5 py-2.5',
+  BTN_A_TYPE_B: 'px-7 py-2.5',
+  BTN_A_SIMPLE: 'bg-blue-600 focus:ring-blue-300 text-white',
+  BTN_A_PRIMARY: 'bg-blue-700 focus:ring-blue-300 text-white',
+  BTN_A_SECONDARY: 'bg-white focus:ring-gray-100 text-gray-900',
+  BTN_A_ACCENT: 'bg-blue-50 focus:ring-blue-100 text-blue-700',
+  BTN_A_GREEN: 'bg-green-700 focus:ring-green-300 text-white',
+  BTN_A_YELLOW: 'bg-yellow-600 focus:ring-yellow-300 text-white',
+  BTN_A_RED: 'bg-red-700 focus:ring-red-300 text-white',
+  BTN_A_PURPLE: 'bg-purple-700 focus:ring-purple-300 text-white',
+  BTN_A_INDIGO: 'bg-indigo-700 focus:ring-indigo-300 text-white',
+  BTN_A_PINK: 'bg-pink-500 focus:ring-pink-200 text-white',
+  BTN_A_GHOST: 'bg-white focus:ring-blue-300 text-gray-600 transition-all',
+  BTN_A_DISABLED: 'bg-primary-400 text-white',
+
 }

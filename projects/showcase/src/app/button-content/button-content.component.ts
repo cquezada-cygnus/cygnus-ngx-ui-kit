@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
+import { CygnusButtonComponent, CygnusButtonLinkComponent, CygnusButtonHoverAnimationComponent } from 'ngx-cygnus-ui/components/button';
 import { RouterLink } from '@angular/router';
 import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
 
@@ -8,6 +8,7 @@ import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
   imports: [
     CygnusButtonComponent,
     CygnusButtonLinkComponent,
+    CygnusButtonHoverAnimationComponent,
     RouterLink,
     CygnusBadgeComponent,
 ],

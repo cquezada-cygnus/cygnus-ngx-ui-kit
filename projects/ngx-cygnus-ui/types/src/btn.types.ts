@@ -26,3 +26,5 @@ export type BtnCustomType =
   'btn-group-middle' |
   'btn-group-right'
 ;
+
+export type BtnAnimationOption = 'A' | 'B';
