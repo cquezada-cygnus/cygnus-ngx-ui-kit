@@ -5,6 +5,7 @@ import { InputContentComponent } from "./input-content/input-content.component";
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SelectContentComponent } from './select-content/select-content.component';
 import { BadgeContentComponent } from './badge-content/badge-content.component';
+import { CygnusCardSelectsComponent } from 'ngx-cygnus-ui/components/card';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { BadgeContentComponent } from './badge-content/badge-content.component';
     LoginFormComponent,
     SelectContentComponent,
     BadgeContentComponent,
+    CygnusCardSelectsComponent,
 ],
   templateUrl: './app.component.html',
 })

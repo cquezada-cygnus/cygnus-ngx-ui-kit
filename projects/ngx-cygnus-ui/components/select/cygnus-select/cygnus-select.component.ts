@@ -2,6 +2,7 @@ import { Component, input, signal } from '@angular/core';
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 import { TW_CLASS } from '../const/tailwind.const';
 import { AutoWidthSelectDirective } from 'ngx-cygnus-ui/directives';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'cygnus-select',
@@ -22,6 +23,8 @@ import { AutoWidthSelectDirective } from 'ngx-cygnus-ui/directives';
 export class CygnusSelectComponent {
   private static idCounter = 0;
 
+  control = input<FormControl<string>>();
+
   TW_CLASS = TW_CLASS;
   selId = signal<string>('');
   options = input<SelectGeneric[]>();
@@ -35,6 +38,12 @@ export class CygnusSelectComponent {
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.selId.set(`cg-select-${++CygnusSelectComponent.idCounter}`);
+  }
+
+  setValue(value:string ) {
+    this.control()?.setValue(value);
+    this.control()?.markAsDirty();
+    this.control()?.markAsTouched();
   }
 
   selGetSize():string {

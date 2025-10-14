@@ -250,3 +250,13 @@ export function cgRutValidator(): ValidatorFn {
     return null; // Valid
   };
 }
+
+export function specificValueValidator(expectedValue: string): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value = control.value;
+    if (value === null || value === undefined || value === '') {
+      return null; // Don't validate empty values, use Validators.required for that
+    }
+    return value === expectedValue ? null : { specificValue: { expected: expectedValue, actual: value } };
+  };
+}

@@ -1,10 +1,10 @@
 
   <fieldset class="fieldset">
 @if (selectLabel()!=='') {
-    <label class="block mb-1 text-sm font-medium text-gray-800" [for]="selId()">Label</label>
+    <label class="block mb-1 text-sm font-medium text-gray-800" >Label</label>
 }
-
     <select
+      #cygnusSelect
       [id]="selId()"
       [class]="
         TW_CLASS.SELECT + ' ' +
@@ -14,6 +14,7 @@
       "
       [disabled]="isDisabled()"
       [autoWidthSelectDirective]="selAutoWidth()"
+      (change)="setValue(cygnusSelect.value)"
     >
       @for (op of options(); track $index) {
         <option [value]="op.value">{{op.option}}</option>
@@ -21,7 +22,7 @@
     </select>
 
 @if (selectHint()!=='') {
-    <p class="mt-1 text-sm text-gray-500">Este es un texto de ayuda para el usuario.</p>
+    <p class="mt-1 text-sm text-gray-500">{{selectHint()}}</p>
 }
   </fieldset>
 

@@ -1,0 +1,35 @@
+<div class="flex items-center justify-center w-full max-w-sm gap-4 mb-4">
+
+  <div [class]="TW_CLASS.CARD + ' ' + TW_CLASS.CARD_PANEL">
+    <div [class]="'mb-6 ' +  TW_CLASS.CARD_ICON">
+      <lib-ngx-cygnus-icons
+        [width]="'3rem'"
+        [height]="'3rem'"
+        [route]="'assets/icons/backups/cygnus-logo.svg'"
+        [color]="CYGNUS_LOGO_COLOR"
+      />
+    </div>
+    <h4 [class]="TW_CLASS.CARD_TITLE">Acceso a sistemas</h4>
+    <p [class]="'mb-6 ' + TW_CLASS.CARD_DESCRIPTION">Ingresa tu RUT sin puntos, ni guión.</p>
+
+    <form autocomplete="off" [formGroup]="cardSelForm" (ngSubmit)="onSubmit()" class=" flex flex-col space-y-4">
+
+      <!-- COMPONENTE: Selector con label -->
+      <cygnus-select
+        [options]="options"
+        [selectLabel]="'Elije una opción'"
+        [selectHint]="selHint()"
+        [selState]="setState()"
+        [control]="cardSelForm.controls.opt"
+      />
+
+      <div class="flex items-center justify-end">
+        <cygnus-button-link [routerLink]="'#'" [btnLinkText]="'¿Olvidaste tu contraseña?'"  />
+      </div>
+
+      <cygnus-button [btnTypes]="btnSubmitColor() + ' btn-block'" (click)="onSubmit()" >Iniciar sesión</cygnus-button>
+
+    </form>
+  </div>
+</div>
+
