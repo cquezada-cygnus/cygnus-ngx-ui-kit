@@ -66,6 +66,12 @@
       ],
       "ngx-cygnus-ui/validators": [
         "./projects/ngx-cygnus-ui/validators",
+      ],
+       "ngx-cygnus-ui/directives/*": [
+        "./projects/ngx-cygnus-ui/directives/*",
+      ],
+      "ngx-cygnus-ui/directives": [
+        "./projects/ngx-cygnus-ui/directives",
       ]
     },
     "skipLibCheck": true,

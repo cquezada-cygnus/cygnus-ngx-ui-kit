@@ -1,11 +1,11 @@
 
   <fieldset class="fieldset">
 @if (selectLabel()!=='') {
-    <label class="block mb-1 text-sm font-medium text-gray-800">Label</label>
+    <label class="block mb-1 text-sm font-medium text-gray-800" [for]="selId()">Label</label>
 }
 
     <select
-      id="select-id-0"
+      [id]="selId()"
       [class]="
         TW_CLASS.SELECT + ' ' +
         selGetSize() + ' ' +
@@ -13,6 +13,7 @@
         (isDisabled() ? TW_CLASS.SELECT_DISABLED : '')
       "
       [disabled]="isDisabled()"
+      [autoWidthSelectDirective]="selAutoWidth()"
     >
       @for (op of options(); track $index) {
         <option [value]="op.value">{{op.option}}</option>

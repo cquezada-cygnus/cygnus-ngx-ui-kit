@@ -17,6 +17,13 @@ export class SelectContentComponent {
     {option: 'Valor 5', value: '0005'},
     {option: 'Valor 6', value: '0006'},
     {option: 'Valor 7', value: '0007'},
+  ];
+
+  optionsTestAutoWidth: SelectGeneric[] = [
+    {option: 'Tengo un problema técnico', value:'brazil'},
+    {option: 'Tengo un problema con una plataforma', value:'bucharest'},
+    {option: 'Tengo un problema de red', value:'london'},
+    {option: 'Tengo un problema administrativo', value:'washington'},
   ]
 
 }
