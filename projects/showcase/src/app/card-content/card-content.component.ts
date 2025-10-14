@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {
+  CygnusCardIconTextComponent,
   CygnusCardImageComponent,
   CygnusCardLoginComponent,
   CygnusCardShowValidatorsComponent,
@@ -14,6 +15,7 @@ import {
     CygnusCardShowValidatorsComponent,
     CygnusCardImageComponent,
     CygnusCardTitleTextComponent,
+    CygnusCardIconTextComponent,
   ],
   templateUrl: './card-content.component.html',
   styleUrl: './card-content.component.scss'

@@ -1,0 +1,20 @@
+<div class="inline-flex flex-col items-center justify-center w-48 h-32 gap-2 mb-4">
+
+  <div [class]="
+    'items-center p-4 border-2 ' +
+    TW_CLASS.CARD + ' ' +
+    TW_CLASS.CARD_BODY + ' ' +
+    'hover:border-primary-300'
+  ">
+    <div class="mb-2 center-icon">
+      <lib-ngx-cygnus-icons [class]="''"
+        [width]="iconSize()"
+        [height]="iconSize()"
+        [color]="iconColor()"
+        [route]="iconRoute()"
+      />
+
+    </div>
+    <p class="text-center">{{cardText()}}</p>
+  </div>
+</div>
