@@ -22,6 +22,7 @@ export class CygnusSelectComponent {
   options = input<SelectGeneric[]>();
   selSize = input<string>('');
   isDisabled = input<boolean>(false);
+  selState = input<string>('');
 
   selGetSize():string {
     switch (this.selSize()) {
@@ -31,6 +32,17 @@ export class CygnusSelectComponent {
         return this.TW_CLASS.SELECT_LG;
       default:
         return '';
+    }
+  }
+
+  selGetType():string {
+    switch (this.selState()) {
+      case 'error':
+        return this.TW_CLASS.SELECT_ERROR;
+      case 'success':
+        return this.TW_CLASS.SELECT_SUCCESS;
+      default:
+        return this.TW_CLASS.SELECT_GENERIC;
     }
   }
 
