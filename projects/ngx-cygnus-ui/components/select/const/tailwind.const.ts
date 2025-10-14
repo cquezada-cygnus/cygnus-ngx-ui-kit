@@ -11,5 +11,7 @@ export const TW_CLASS = {
   SELECT_SUCCESS: 'py-2 rounded shadow-sm !text-success-700 !border-success-200 !placeholder:text-success-400 focus:outline-none !focus:border-success-500 !hover:border-success-300 focus:shadow',
 
   SELECT_WIDTH_AUTHOMATIC: '!placeholder:text-slate-400 !text-slate-700 !border-slate-200 rounded py-2 focus:outline-none !focus:border-slate-400 !hover:border-slate-400 shadow-sm focus:shadow-md min-w-[50px]',
+
+  SELECT_DISABLED: 'shadow-sm opacity-50 pointer-events-none placeholder:text-secondary-400 text-secondary-700 border-secondary-200 ease focus:outline-none focus:border-secondary-400 hover:border-secondary-400'
 }
 

@@ -21,6 +21,7 @@ export class CygnusSelectComponent {
 
   options = input<SelectGeneric[]>();
   selSize = input<string>('');
+  isDisabled = input<boolean>(false);
 
   selGetSize():string {
     switch (this.selSize()) {
