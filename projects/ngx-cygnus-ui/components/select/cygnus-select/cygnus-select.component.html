@@ -1,15 +1,27 @@
-<select
-  id="select-id-0"
-  [class]="
-    TW_CLASS.SELECT + ' ' +
-    selGetSize() + ' ' +
-    selGetType() + ' ' +
-    (isDisabled() ? TW_CLASS.SELECT_DISABLED : '')
-  "
-  [disabled]="isDisabled()"
->
-  @for (op of options(); track $index) {
-    <option [value]="op.value">{{op.option}}</option>
-  }
-</select>
+
+  <fieldset class="fieldset">
+@if (selectLabel()!=='') {
+    <label class="block mb-1 text-sm font-medium text-gray-800">Label</label>
+}
+
+    <select
+      id="select-id-0"
+      [class]="
+        TW_CLASS.SELECT + ' ' +
+        selGetSize() + ' ' +
+        selGetType() + ' ' +
+        (isDisabled() ? TW_CLASS.SELECT_DISABLED : '')
+      "
+      [disabled]="isDisabled()"
+    >
+      @for (op of options(); track $index) {
+        <option [value]="op.value">{{op.option}}</option>
+      }
+    </select>
+
+@if (selectHint()!=='') {
+    <p class="mt-1 text-sm text-gray-500">Este es un texto de ayuda para el usuario.</p>
+}
+  </fieldset>
+
 

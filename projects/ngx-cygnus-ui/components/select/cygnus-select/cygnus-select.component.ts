@@ -23,6 +23,8 @@ export class CygnusSelectComponent {
   selSize = input<string>('');
   isDisabled = input<boolean>(false);
   selState = input<string>('');
+  selectLabel = input<string>('');
+  selectHint = input<string>('');
 
   selGetSize():string {
     switch (this.selSize()) {
