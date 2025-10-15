@@ -1,0 +1,25 @@
+
+<div class="relative">
+  <lib-ngx-cygnus-icons class="ml-2 absolute h-full flex items-center"
+    [width]="'1.5rem'"
+    [height]="'1.5rem'"
+    [color]="'#475467'"
+    [route]="'assets/icons/svg/General/search-sm.svg'"
+  />
+  <input type="text"
+    [class]="
+      TW_CLASS.INPUT_BASE + ' ' +
+      '!pl-9'
+    "
+    placeholder="Escribe aquí..."
+  />
+
+  <button type="submit"
+    [class]="
+      'absolute inset-y-0 rounded-none rounded-r-lg element-right end-0 ' +
+      TW_CLASS.BTN + ' ' +
+      TW_CLASS.BTN_PRIMARY
+    "
+  >Buscar</button>
+</div>
+

@@ -6,6 +6,7 @@ import { CardContentComponent } from './card-content/card-content.component';
 import { SelectContentComponent } from './select-content/select-content.component';
 import { BadgeContentComponent } from './badge-content/badge-content.component';
 import { CygnusCardSelectsComponent } from 'ngx-cygnus-ui/components/card';
+import { SelectSearchContentComponent } from './select-search-content/select-search-content.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { CygnusCardSelectsComponent } from 'ngx-cygnus-ui/components/card';
     SelectContentComponent,
     BadgeContentComponent,
     CygnusCardSelectsComponent,
+    SelectSearchContentComponent,
 ],
   templateUrl: './app.component.html',
 })
