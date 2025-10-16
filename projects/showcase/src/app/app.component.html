@@ -1,34 +1,22 @@
-<app-button-content />
+<body class="text-gray-900">
+    <header id="header">
+      <app-header-cygnus-ui />
+    </header>
+    <div class="grid grid-cols-1 gap-3 pt-20 mx-auto md:px-6 max-w-7xl lg:grid-cols-12">
 
+      <!-- Menu izquierdo -->
+      <aside id="menu"
+        class="hidden lg:block lg:col-span-2 rounded-l-lg bg-white p-4 sticky top-20 h-[calc(100vh-5rem)] overflow-auto">
+        <app-sidebar-left-cygnus-ui />
+      </aside>
 
-<cygnus-input
-  [inputCustomType]="'label-interactive'"
-  [iconAsset]="'assets/icons/svg/General/eye.svg'"
-  [iconColor]="'#12b76a'"
-  [textLabel]="'Probando'"
-  [textHint]="'holap, estoy probando...'"
-/>
-<!--
-inputCustomType = input<InputCustomType>('base');
-inputColor = input<InputColor>('base');
-iconAsset = input<string>('');
-iconPosition = input<IconPosition>('right');
-iconColor = input<IconInputColor>('#101828');
-iconSize = input<string>('19px');
-hintColor = input<boolean>(false);
-textLabel = input<string>('Email');
-textHint = input<string>('Este es un texto de ayuda para el usuario.');
--->
+      <!-- Contenido -->
+      <main class="col-span-6 p-6 bg-white lg:col-span-8">
+        <router-outlet />
+      </main>
 
-
-<app-input-content />
-
-<app-card-content />
-
-<app-select-content />
-
-<cygnus-card-selects />
-
-<app-badge-content />
-
-<app-select-search-content />
+    </div>
+    <footer id="footer">
+      <app-footer-cygnus-ui />
+    </footer>
+</body>
