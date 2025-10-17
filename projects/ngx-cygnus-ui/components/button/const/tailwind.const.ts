@@ -7,8 +7,8 @@ export const TW_CLASS = {
   BTN_ACCENT: 'text-blue-700 border-blue-50 bg-blue-50 hover:bg-blue-100 hover:text-blue-600 focus:ring-gray-300',
   BTN_GRAY: 'bg-gray-200 border-gray-200 text-gray-800 hover:bg-gray-300 hover:border-gray-300 focus:ring-gray-300',
   BTN_GREEN: 'text-white bg-green-600 border-transparent hover:bg-green-700 focus:bg-success-600 focus:ring-green-300 hover:border-transparent',
-  BTN_YELLOW: 'flex items-center justify-center transition-all border border-warning-500 text-white bg-yellow-600 hover:bg-yellow-700 focus:bg-warning-700 focus:ring-yellow-300 active:bg-warning-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
-  BTN_RED: 'flex items-center justify-center transition-all border border-red-500 text-white bg-red-700 hover:bg-red-800 focus:bg-red-700 focus:ring-red-300 active:bg-red-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
+  BTN_AMBER: 'border-transparent text-white bg-amber-600 hover:bg-amber-700 hover:border-transparent focus:bg-warning-700 focus:ring-amber-300',
+  BTN_RED: 'border-transparent text-white bg-red-600 hover:bg-red-700 focus:bg-red-700 focus:ring-red-300 hover:border-transparent',
   BTN_CIRCLE: '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 disabled:pointer-events-none',
 
   // '          disabled:opacity-50 disabled:cursor-not-allowed   ',
