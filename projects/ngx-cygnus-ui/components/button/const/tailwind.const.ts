@@ -5,12 +5,10 @@ export const TW_CLASS = {
   BTN_PRIMARY: 'bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:ring-blue-300',
   BTN_SECONDARY: 'text-gray-700 bg-gray-25 border-gray-300 bg-white hover:bg-gray-100 hover:text-blue-600 hover:border-gray-300 focus:ring-gray-300',
   BTN_ACCENT: 'text-blue-700 border-blue-50 bg-blue-50 hover:bg-blue-100 hover:text-blue-600 focus:ring-gray-300',
+  BTN_GRAY: 'bg-gray-200 border-gray-200 text-gray-800 hover:bg-gray-300 hover:border-gray-300 focus:ring-gray-300',
   BTN_GREEN: 'flex items-center justify-center transition-all border text-white bg-green-700 hover:bg-green-800 focus:bg-success-600 focus:ring-green-300 active:bg-success-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_YELLOW: 'flex items-center justify-center transition-all border border-warning-500 text-white bg-yellow-600 hover:bg-yellow-700 focus:bg-warning-700 focus:ring-yellow-300 active:bg-warning-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_RED: 'flex items-center justify-center transition-all border border-red-500 text-white bg-red-700 hover:bg-red-800 focus:bg-red-700 focus:ring-red-300 active:bg-red-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
-  BTN_PURPLE: 'flex items-center justify-center transition-all border border-purple-500 text-white bg-purple-700 hover:bg-purple-800 focus:bg-purple-700 focus:ring-purple-300 active:bg-purple-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
-  BTN_INDIGO: 'flex items-center justify-center transition-all border border-indigo-500 text-white bg-indigo-700 hover:bg-indigo-800 focus:bg-indigo-700 focus:ring-indigo-300 active:bg-indigo-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
-  BTN_PINK: 'flex items-center justify-center transition-all border border-pink-500 text-white bg-pink-500 hover:bg-pink-600 focus:bg-pink-700 focus:ring-pink-200 active:bg-pink-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_CIRCLE: '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 disabled:pointer-events-none',
 
   // '          disabled:opacity-50 disabled:cursor-not-allowed   ',
@@ -47,9 +45,6 @@ export const TW_CLASS = {
   BTN_A_GREEN: 'bg-green-700 focus:ring-green-300 text-white',
   BTN_A_YELLOW: 'bg-yellow-600 focus:ring-yellow-300 text-white',
   BTN_A_RED: 'bg-red-700 focus:ring-red-300 text-white',
-  BTN_A_PURPLE: 'bg-purple-700 focus:ring-purple-300 text-white',
-  BTN_A_INDIGO: 'bg-indigo-700 focus:ring-indigo-300 text-white',
-  BTN_A_PINK: 'bg-pink-500 focus:ring-pink-200 text-white',
   BTN_A_GHOST: 'bg-white focus:ring-blue-300 text-gray-600 transition-all hover:text-white hover:bg-blue-600',
   BTN_A_DISABLED: 'bg-primary-400 text-white',
 

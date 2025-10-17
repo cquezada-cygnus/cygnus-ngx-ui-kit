@@ -71,15 +71,6 @@ export class CygnusButtonHoverAnimationComponent implements OnInit {
       case 'btn-error':
         this.btnIconColor = '#ffffff';
         return this.TW_CLASS.BTN_A_RED;
-      case 'btn-purple':
-        this.btnIconColor = '#ffffff';
-        return this.TW_CLASS.BTN_A_PURPLE;
-      case 'btn-indigo':
-        this.btnIconColor = '#ffffff';
-        return this.TW_CLASS.BTN_A_INDIGO;
-      case 'btn-pink':
-        this.btnIconColor = '#ffffff';
-        return this.TW_CLASS.BTN_A_PINK;
       case 'btn-ghost':
         this.btnIconColor = '#1d2939';
         return this.TW_CLASS.BTN_A_GHOST;
