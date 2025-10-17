@@ -21,7 +21,7 @@
       <div class="flex items-center justify-center w-full gap-4 mb-4">
 
         <!-- Prioridad: Botón Sólido/simple/primary -->
-        <cygnus-button [btnTypes]="'btn'" >Botón simple</cygnus-button>
+        <cygnus-button [btnTypes]="'btn btn-size-sm'" >Botón simple</cygnus-button>
 
       </div>
 
@@ -52,68 +52,72 @@
 
   <!-- Botones primarios -->
   <section id="button-colours">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
-          <div class="p-4">
-              <h2 class="mb-4 text-xl font-semibold">Colores de Botones</h2>
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+      <div class="p-4">
+        <h2 class="mb-4 text-xl font-semibold">Colores de Botones</h2>
 
-              <div class="flex flex-wrap items-center w-full gap-3 mb-4">
+        <div class="flex flex-wrap items-center w-full gap-3 mb-4">
 
-                  <!-- Prioridad: Botón primario -->
-                  <button
-                      class="cursor-pointer justify-center items-center  border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg px-5 py-2.5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:ring-2 focus:ring-blue-300">
-                      Primario
-                  </button>
+          <!-- Prioridad: Botón primario -->
+          <cygnus-button [btnTypes]="'btn-primary'" >Primario</cygnus-button>
+          <!-- Prioridad: Botón secundario -->
+          <cygnus-button [btnTypes]="'btn-secondary'" >Secundario</cygnus-button>
+          <!-- Prioridad: Botón informativo -->
+          <cygnus-button [btnTypes]="'btn-accent'" >Accent</cygnus-button>
 
-                  <!-- Prioridad: Botón secundario -->
-                  <button
-                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg px-5 py-2.5 shadow-sm hover:shadow-md bg-gray-25 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-300 hover:text-blue-600 focus:ring-2 focus:ring-gray-300">
-                      Secundario
-                  </button>
+          <cygnus-button [btnTypes]="'btn-success'" >Éxito</cygnus-button>
+          <cygnus-button [btnTypes]="'btn-warning'" >Advertencia</cygnus-button>
+          <cygnus-button [btnTypes]="'btn-error'" >Error</cygnus-button>
+          <cygnus-button [btnTypes]="'btn-purple'" >Púrpura</cygnus-button>
+          <cygnus-button [btnTypes]="'btn-indigo'" >Indigo</cygnus-button>
+          <cygnus-button [btnTypes]="'btn-pink'" >Rosado</cygnus-button>
+          <cygnus-button-link [routerLink]="" [btnLinkText]="'Enlace de texto'"  />
 
-                  <!-- Prioridad: Botón informativo -->
-                  <button
-                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-blue-50 border-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-600 focus:ring-2 focus:ring-gray-300">
-                      Informativo
-                  </button>
 
-                  <!-- Prioridad: Botón gris -->
-                  <button
-                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-gray-200 border-gray-200 text-gray-800 hover:bg-gray-300 hover:border-gray-300 focus:ring-2 focus:ring-gray-300">
-                      Gris
-                  </button>
+          <!-- Prioridad: Botón informativo -->
+          <button
+              class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-blue-50 border-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-600 focus:ring-2 focus:ring-gray-300">
+              Informativo
+          </button>
 
-                  <!-- Prioridad: Botón éxito -->
-                  <button
-                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-green-600 border-transparent text-white hover:bg-green-700 hover:border-transparent focus:ring-2 focus:ring-green-300">
-                      Éxito
-                  </button>
+          <!-- Prioridad: Botón gris -->
+          <button
+              class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-gray-200 border-gray-200 text-gray-800 hover:bg-gray-300 hover:border-gray-300 focus:ring-2 focus:ring-gray-300">
+              Gris
+          </button>
 
-                  <!-- Prioridad: Botón red -->
-                  <button
-                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-red-600 border-transparent text-white hover:bg-red-700 hover:border-transparent focus:ring-2 focus:ring-red-300">
-                      red
-                  </button>
+          <!-- Prioridad: Botón éxito -->
+          <button
+              class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-green-600 border-transparent text-white hover:bg-green-700 hover:border-transparent focus:ring-2 focus:ring-green-300">
+              Éxito
+          </button>
 
-                  <!-- Prioridad: Botón red -->
-                  <button
-                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-amber-600 border-transparent text-white hover:bg-amber-700 hover:border-transparent focus:ring-2 focus:ring-amber-300">
-                      Advertencia
-                  </button>
+          <!-- Prioridad: Botón red -->
+          <button
+              class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-red-600 border-transparent text-white hover:bg-red-700 hover:border-transparent focus:ring-2 focus:ring-red-300">
+              red
+          </button>
 
-                  <!-- Prioridad: Botón enlace -->
-                  <a href=""
-                      class="flex justify-center items-center transition-colors duration-300 text-sm font-medium no-underline bg-transparent hover:bg-transparent focus:ring-0 text-blue-600 hover:text-blue-800 active:underline hover:underline px-4 py-2.5">Botón
-                      enlace</a>
+          <!-- Prioridad: Botón red -->
+          <button
+              class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-amber-600 border-transparent text-white hover:bg-amber-700 hover:border-transparent focus:ring-2 focus:ring-amber-300">
+              Advertencia
+          </button>
 
-                  <!-- Prioridad: Botón enlace simple -->
-                  <a href=""
-                      class="block text-sm transition-colors duration-300 hover:text-blue-800 hover:underline text-blue-600 py-1.5">Enlace
-                      simple</a>
-              </div>
-          </div>
+          <!-- Prioridad: Botón enlace -->
+          <a href=""
+              class="flex justify-center items-center transition-colors duration-300 text-sm font-medium no-underline bg-transparent hover:bg-transparent focus:ring-0 text-blue-600 hover:text-blue-800 active:underline hover:underline px-4 py-2.5">Botón
+              enlace</a>
 
+          <!-- Prioridad: Botón enlace simple -->
+          <a href=""
+              class="block text-sm transition-colors duration-300 hover:text-blue-800 hover:underline text-blue-600 py-1.5">Enlace
+              simple</a>
+        </div>
       </div>
+
+    </div>
   </section>
 
   <!-- Botones secoundarios grises -->
@@ -876,60 +880,7 @@
 
 
 <main class="col-span-1 p-6 bg-white lg:col-span-8">
-  <header class="mb-12">
-      <h1 class="text-4xl font-bold">Botones</h1>
-      <p class="mt-4 text-gray-600 text-md">Los botones son un elemento esencial del diseño web. Básicamente,
-          son
-          enlaces con estilo que captan la atención del
-          usuario. Ayudan a los usuarios a navegar por nuestros sitios web o aplicaciones y los llevan a
-          realizar una
-          acción en
-          particular, como enviar un formulario de contacto o realizar un pedido de la forma más sencilla
-          posible.
 
-          Vea a continuación nuestros ejemplos de componentes de botones.</p>
-  </header>
-
-  <section id="button-simple">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4">
-              <h2 class="mb-4 text-xl font-semibold">Botón simple</h2>
-              <p class="mb-6 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
-                  texto
-                  blanco, esquinas
-                  redondeadas y un efecto
-                  de sombra al pasar el mouse, mostrando interactividad.</p>
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                  <!-- COMPONENTE: Botón simple -->
-                  <cygnus-button [btnTypes]="'btn'" >simple button</cygnus-button>
-              </div>
-          </div>
-
-      </div>
-  </section>
-
-  <!-- boton fantasma -->
-  <section id="button-ghost">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4">
-              <h2 class="mb-4 text-xl font-semibold">Botón fantasma</h2>
-              <p class="mb-6 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
-                  texto
-                  blanco, esquinas
-                  redondeadas y un efecto
-                  de sombra al pasar el mouse, mostrando interactividad.</p>
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                  <!-- COMPONENTE: Botón fantasma -->
-                  <cygnus-button [btnTypes]="'btn-ghost'" >ghost button</cygnus-button>
-              </div>
-          </div>
-
-      </div>
-  </section>
 
   <!-- Botones primarios -->
   <section id="button-colours">

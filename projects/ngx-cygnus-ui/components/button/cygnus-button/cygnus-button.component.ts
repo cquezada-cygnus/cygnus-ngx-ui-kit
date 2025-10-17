@@ -44,6 +44,8 @@ export class CygnusButtonComponent implements OnInit {
   }
 
   setBtnClasses(arrStringClasses: string[]): string {
+    console.log('arrStringClasses: ',arrStringClasses);
+
     let stringClasses = this.TW_CLASS.BTN + ' ';
     for (let i = 0; i < arrStringClasses.length; i++) {
       const elem = arrStringClasses[i];
