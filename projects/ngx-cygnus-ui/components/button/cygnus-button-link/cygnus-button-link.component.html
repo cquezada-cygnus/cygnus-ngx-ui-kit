@@ -1,5 +1,6 @@
-<span
-  [class]="TW_CLASS.BTN + ' ' + TW_CLASS.BTN_LINK"
+<a
+  [routerLink]="btnRouterLinkText()"
+  [class]="(btnLinkType()==='btn-link' ? TW_CLASS.BTN_LINK : TW_CLASS.BTN_LINK_SIMPLE)"
 >
-  {{btnLinkText()}}
-</span>
+  <ng-content></ng-content>
+</a>

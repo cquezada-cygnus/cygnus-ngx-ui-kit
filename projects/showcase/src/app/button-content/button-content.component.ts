@@ -4,7 +4,6 @@ import {
   CygnusButtonLinkComponent,
   CygnusButtonHoverAnimationComponent
 } from 'ngx-cygnus-ui/components/button';
-import { RouterLink } from '@angular/router';
 import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
 
 @Component({
@@ -13,7 +12,6 @@ import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
     CygnusButtonComponent,
     CygnusButtonLinkComponent,
     CygnusButtonHoverAnimationComponent,
-    RouterLink,
     CygnusBadgeComponent,
 ],
   templateUrl: './button-content.component.html',

@@ -33,7 +33,9 @@ export const TW_CLASS = {
   BTN_GROUP_LEFT: 'px-4 py-2 text-sm text-center transition-all border border-r-0 rounded-md rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_GROUP_MIDDLE: 'px-4 py-2 text-sm text-center transition-all border rounded-md rounded-l-none rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_GROUP_RIGHT: 'px-4 py-2 text-sm text-center transition-all border border-l-0 rounded-md rounded-l-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
-  BTN_LINK: 'flex items-center justify-center text-sm font-medium bg-transparent hover:bg-transparent focus:ring-0 focus:ring-gray-200 text-blue-600 no-underline hover:text-primary-700 active:underline hover:underline',
+
+  BTN_LINK: 'flex justify-center items-center transition-colors duration-300 text-sm font-medium no-underline bg-transparent hover:bg-transparent focus:ring-0 text-blue-600 hover:text-blue-800 active:underline hover:underline px-4 py-2.5',
+  BTN_LINK_SIMPLE: 'block text-sm transition-colors duration-300 hover:text-blue-800 hover:underline text-blue-600 py-1.5',
 
   BTN_A: 'group relative overflow-hidden focus:ring-4 inline-flex items-center rounded-lg justify-center',
   BTN_A_TYPE_A: 'px-5 py-2.5',

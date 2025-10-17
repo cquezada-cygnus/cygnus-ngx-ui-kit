@@ -29,3 +29,4 @@ export type BtnCustomType =
 ;
 
 export type BtnAnimationOption = 'A' | 'B';
+export type BtnLinkType = 'btn-link' | 'btn-link-simple';

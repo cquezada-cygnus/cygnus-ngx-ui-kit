@@ -38,7 +38,12 @@
       />
 
       <div class="flex items-center justify-end">
-        <cygnus-button-link [routerLink]="'#'" [btnLinkText]="'¿Olvidaste tu contraseña?'"  />
+        <cygnus-button-link
+          [btnLinkType]="'btn-link-simple'"
+          [btnRouterLinkText]="'#'"
+        >
+          ¿Olvidaste tu contraseña?
+        </cygnus-button-link>
       </div>
 
       <cygnus-button [btnTypes]="btnSubmitColor() + ' btn-block'" (click)="onSubmit()" >Iniciar sesión</cygnus-button>

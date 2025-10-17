@@ -1,6 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ReactiveFormsModule, Validators, NonNullableFormBuilder } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
@@ -13,7 +12,6 @@ import { cgRutValidator } from 'ngx-cygnus-ui/validators';
   selector: 'cygnus-card-login',
   imports: [
     ReactiveFormsModule,
-    RouterLink,
     NgxCygnusIconsComponent,
     CygnusInputComponent,
     CygnusButtonComponent,
