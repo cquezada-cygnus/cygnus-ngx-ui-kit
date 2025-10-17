@@ -28,7 +28,7 @@
 
             <cygnus-checkbox [checkboxSize]="'lg'" />
 
-            <p>Si no se indica el tamaño, por defecto es 'lg'</p>
+            <p>Si no se indica el tamaño, por defecto es 'sm'</p>
 
           </div>
 
@@ -52,13 +52,8 @@
 
             <div class="inline-flex items-center justify-start h-10 gap-2">
 
-              <!-- COMPONENTE: Checkbox con texto -->
-              <div class="flex items-start mb-4">
-                <input type="checkbox" id="checkbox-label" class="mt-0.5 checkbox-sm peer" />
-                <div class="checkbox-text">
-                    <label for="checkbox-label" class="checkbox-label">Recuérdame</label>
-                </div>
-              </div>
+              <cygnus-checkbox [checkboxType]="'text'" [checkboxText]="'Recuérdame'" />
+
             </div>
 
           </div>
@@ -79,14 +74,7 @@
           redondeadas y un efecto de sombra al pasar el mouse, mostrando interactividad.</p>
         <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-          <!-- COMPONENTE: Checkbox con texto y texto de ayuda -->
-          <div class="flex items-start mb-4">
-            <input type="checkbox" id="checkbox-text-d" class="mt-0.5 checkbox-sm peer" />
-            <div class="checkbox-text">
-              <label for="checkbox-text-d" class="checkbox-label">Recuérdame</label>
-              <p class="hint-text">Recuerda mi datos</p>
-            </div>
-          </div>
+          <cygnus-checkbox [checkboxType]="'text-hint'" [checkboxText]="'Recuérdame'" [checkboxHint]="'Recuerda mi datos'" />
 
         </div>
       </div>

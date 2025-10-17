@@ -1,6 +1,6 @@
 import { Component, input, OnInit, signal } from '@angular/core';
 import { TW_CLASS } from '../const/tailwind.const';
-import { CheckboxSize } from 'ngx-cygnus-ui/types';
+import { CheckboxSize, CheckboxType } from 'ngx-cygnus-ui/types';
 
 @Component({
   selector: 'cygnus-checkbox',
@@ -22,7 +22,10 @@ export class CygnusCheckboxComponent implements OnInit {
   TW_CLASS = TW_CLASS;
 
   checkboxId = signal<string>('');
-  checkboxSize = input<CheckboxSize>('lg');
+  checkboxType = input<CheckboxType>('base');
+  checkboxSize = input<CheckboxSize>('sm');
+  checkboxText = input<string>('');
+  checkboxHint = input<string>('');
 
   ngOnInit() {
     // Generar ID único si no se proporciona

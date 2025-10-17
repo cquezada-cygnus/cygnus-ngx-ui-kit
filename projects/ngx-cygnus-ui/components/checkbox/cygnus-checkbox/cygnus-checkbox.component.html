@@ -1,11 +1,22 @@
-<div class="block">
+<div [class]="(checkboxType()==='base' ? 'block' : (checkboxType()==='text' ? 'flex items-center mb-4' : 'flex items-start mb-4' ) ) ">
   <input type="checkbox"
     [class]="
       TW_CLASS.CHECKBOX_BASE + ' ' +
+      (checkboxType()==='text' ? 'mt-0.5 checkbox-sm' : '' ) + ' ' +
+      (checkboxType()=='text-hint' ? 'mt-1' : '') + ' ' +
       checkboxGetSize() +
       ' peer'
     "
-    [id]="checkboxId()" />
-  <label [for]="checkboxId()" class="sr-only">Checkbox</label>
+    [id]="checkboxId()"
+  />
+  @if (checkboxType()==='base') {
+    <label [for]="checkboxId()" class="sr-only">Checkbox</label>
+  } @else if (checkboxType()==='text' || checkboxType()==='text-hint') {
+    <div [class]="TW_CLASS.CHECKBOX_TEXT">
+      <label for="checkboxId()" class="checkbox-label">{{checkboxText()}}</label>
+      @if (checkboxType()==='text-hint') {
+        <p [class]="TW_CLASS.CHECKBOX_HINT">{{checkboxHint()}}</p>
+      }
+    </div>
+  }
 </div>
-
