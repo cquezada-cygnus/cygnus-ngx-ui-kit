@@ -13,7 +13,10 @@ export const TW_CLASS = {
   BTN_INDIGO: 'flex items-center justify-center transition-all border border-indigo-500 text-white bg-indigo-700 hover:bg-indigo-800 focus:bg-indigo-700 focus:ring-indigo-300 active:bg-indigo-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_PINK: 'flex items-center justify-center transition-all border border-pink-500 text-white bg-pink-500 hover:bg-pink-600 focus:bg-pink-700 focus:ring-pink-200 active:bg-pink-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_CIRCLE: '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 disabled:pointer-events-none',
-  BTN_GHOST: 'text-gray-600 bg-white shadow-none hover:text-white hover:bg-blue-600 focus:ring-blue-300 focus:border-gray-800 transition-all border-0 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none me-2 mb-2',
+
+  // '          disabled:opacity-50 disabled:cursor-not-allowed   ',
+
+  BTN_GHOST: 'py-2.5 px-4 text-blue-800 bg-transparent border-transparent !shadow-none hover:bg-blue-700/5 hover:border-blue-700/5 hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none data-[shape=pill]:rounded-full data-[width=full]:w-full',
   BTN_DISABLED: 'text-white bg-primary-400 cursor-not-allowed font-medium rounded-lg text-center',
   BTN_BLOCK: 'w-full',
   BTN_SIZE_XS: '!py-2 !px-3 !text-xs',
