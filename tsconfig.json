@@ -49,6 +49,12 @@
       "ngx-cygnus-ui/components/badge": [
         "./projects/ngx-cygnus-ui/components/badge",
       ],
+      "ngx-cygnus-ui/components/checkbox/*": [
+        "./projects/ngx-cygnus-ui/components/checkbox/*",
+      ],
+      "ngx-cygnus-ui/components/checkbox": [
+        "./projects/ngx-cygnus-ui/components/checkbox",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],

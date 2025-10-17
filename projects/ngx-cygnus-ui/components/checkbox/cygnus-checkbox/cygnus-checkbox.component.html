@@ -1,0 +1,11 @@
+<div class="block">
+  <input type="checkbox"
+    [class]="
+      TW_CLASS.CHECKBOX_BASE + ' ' +
+      checkboxGetSize() +
+      ' peer'
+    "
+    [id]="checkboxId()" />
+  <label [for]="checkboxId()" class="sr-only">Checkbox</label>
+</div>
+

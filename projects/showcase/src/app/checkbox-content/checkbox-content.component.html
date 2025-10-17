@@ -1,0 +1,97 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Checkboxes</h1>
+    <p class="mt-4 text-gray-600 text-md">Los campos de entrada permiten a los usuarios introducir texto
+      en
+      una interfaz de usuario. Suelen aparecer en
+      formularios y cuadros de diálogo. Los campos de entrada en móviles deben tener un tamaño de
+      texto de
+      al menos 16px para evitar el zoom automático en los navegadores móviles.</p>
+  </header>
+
+  <section id="simple-checkbox">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Checkboxes</h2>
+        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
+          texto
+          blanco, esquinas
+          redondeadas y un efecto
+          de sombra al pasar el mouse, mostrando interactividad.</p>
+        <div class="flex items-end justify-center w-full gap-4 mb-4 text-center">
+
+          <div class="w-full max-w-sm min-w-[200px] space-y-6">
+
+            <cygnus-checkbox [checkboxSize]="'sm'" />
+
+            <cygnus-checkbox [checkboxSize]="'lg'" />
+
+            <p>Si no se indica el tamaño, por defecto es 'lg'</p>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="checkbox-text">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Checkbox con texto</h2>
+        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
+          texto blanco, esquinas
+          redondeadas y un efecto de sombra al pasar el mouse, mostrando interactividad.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <div class="inline-flex items-center">
+
+            <div class="inline-flex items-center justify-start h-10 gap-2">
+
+              <!-- COMPONENTE: Checkbox con texto -->
+              <div class="flex items-start mb-4">
+                <input type="checkbox" id="checkbox-label" class="mt-0.5 checkbox-sm peer" />
+                <div class="checkbox-text">
+                    <label for="checkbox-label" class="checkbox-label">Recuérdame</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="checkbox-hint-text">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Checkbox con texto y texto de ayuda</h2>
+        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
+          texto blanco, esquinas
+          redondeadas y un efecto de sombra al pasar el mouse, mostrando interactividad.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <!-- COMPONENTE: Checkbox con texto y texto de ayuda -->
+          <div class="flex items-start mb-4">
+            <input type="checkbox" id="checkbox-text-d" class="mt-0.5 checkbox-sm peer" />
+            <div class="checkbox-text">
+              <label for="checkbox-text-d" class="checkbox-label">Recuérdame</label>
+              <p class="hint-text">Recuerda mi datos</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
