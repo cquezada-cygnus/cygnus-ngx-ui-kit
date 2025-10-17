@@ -1,6 +1,8 @@
 export const TW_CLASS = {
-  BTN: 'text-sm px-5 py-2.5 rounded-lg font-medium focus:ring-4 focus:outline-none text-center',
-  BTN_SIMPLE: 'text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300',
+  // ' disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed',
+
+  BTN: 'cursor-pointer flex justify-center items-center border align-middle font-sans font-medium text-center select-none transition-all duration-300 ease-in text-sm px-4 py-2 rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:outline-none focus:shadow-none data-[shape=pill]:rounded-full data-[width=full]:w-full',
+  BTN_SIMPLE: 'bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:ring-blue-300',
   BTN_PRIMARY: 'text-white bg-blue-600 border border-none hover:bg-blue-700 hover:text-white focus:ring-blue-300 active:bg-primary-700',
   BTN_SECONDARY: 'flex items-center justify-center border text-gray-900 border-gray-300 bg-white hover:bg-gray-100 hover:text-blue-700 hover:border-gray-300 focus:ring-gray-100 focus:z-10 active:bg-gray-100 active:text-white',
   BTN_ACCENT: 'flex items-center justify-center text-blue-700 border border-transparent bg-blue-50 hover:bg-blue-100 focus:ring-blue-100 active:bg-primary-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',

@@ -1,3 +1,892 @@
+<main class="col-span-1 p-4 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Botones</h1>
+    <p class="mt-4 text-gray-600 text-md">Los botones son un elemento esencial del diseño web. Básicamente,
+        son
+        enlaces con estilo que captan la atención del
+        usuario. Ayudan a los usuarios a navegar por nuestros sitios web o aplicaciones y los llevan a
+        realizar una
+        acción en
+        particular, como enviar un formulario de contacto o realizar un pedido de la forma más sencilla
+        posible.
+
+        Vea a continuación nuestros ejemplos de componentes de botones.</p>
+  </header>
+
+  <section id="button-simple">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14 p-4">
+      <h2 class="mb-4 text-xl font-semibold">Botón simple</h2>
+      <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+        <cygnus-button [btnTypes]="'btn'" >Botón simple</cygnus-button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Variantes de botones -->
+  <section id="button-ghost">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Variantes de botones</h2>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- COMPONENTE: Botón fantasma -->
+
+
+                  <!-- Prioridad: Botón fantasma -->
+                  <div class="flex flex-wrap justify-center gap-4 item">
+                      <button
+                          class="cursor-pointer justify-center items-center border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 bg-transparent border-transparent text-blue-800 hover:bg-blue-700/5 hover:border-blue-700/5 shadow-none hover:shadow-none focus:ring-2 focus:ring-blue-300">
+                          Fantasma
+                      </button>
+                      <!-- Prioridad: Botón Outline -->
+                      <button
+                          class="cursor-pointer justify-center items-center border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-transparent border-blue-700 text-blue-700 hover:bg-blue-800 hover:text-blue-50 focus:ring-2 focus:ring-blue-300">
+                          Outline
+                      </button>
+                      <!-- Prioridad: Botón Sólido -->
+                      <button
+                          class="cursor-pointer justify-center items-center border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800  hover:border-blue-800 focus:ring-2 focus:ring-blue-300">
+                          Sólido
+                      </button>
+
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Botones primarios -->
+  <section id="button-colours">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Colores de Botones</h2>
+
+              <div class="flex flex-wrap items-center w-full gap-3 mb-4">
+
+                  <!-- Prioridad: Botón primario -->
+                  <button
+                      class="cursor-pointer justify-center items-center  border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg px-5 py-2.5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:ring-2 focus:ring-blue-300">
+                      Primario
+                  </button>
+
+                  <!-- Prioridad: Botón secundario -->
+                  <button
+                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg px-5 py-2.5 shadow-sm hover:shadow-md bg-gray-25 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-300 hover:text-blue-600 focus:ring-2 focus:ring-gray-300">
+                      Secundario
+                  </button>
+
+                  <!-- Prioridad: Botón informativo -->
+                  <button
+                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-blue-50 border-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-600 focus:ring-2 focus:ring-gray-300">
+                      Informativo
+                  </button>
+
+                  <!-- Prioridad: Botón gris -->
+                  <button
+                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-gray-200 border-gray-200 text-gray-800 hover:bg-gray-300 hover:border-gray-300 focus:ring-2 focus:ring-gray-300">
+                      Gris
+                  </button>
+
+                  <!-- Prioridad: Botón éxito -->
+                  <button
+                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-green-600 border-transparent text-white hover:bg-green-700 hover:border-transparent focus:ring-2 focus:ring-green-300">
+                      Éxito
+                  </button>
+
+                  <!-- Prioridad: Botón red -->
+                  <button
+                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-red-600 border-transparent text-white hover:bg-red-700 hover:border-transparent focus:ring-2 focus:ring-red-300">
+                      red
+                  </button>
+
+                  <!-- Prioridad: Botón red -->
+                  <button
+                      class="cursor-pointer justify-center items-center  border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-amber-600 border-transparent text-white hover:bg-amber-700 hover:border-transparent focus:ring-2 focus:ring-amber-300">
+                      Advertencia
+                  </button>
+
+                  <!-- Prioridad: Botón enlace -->
+                  <a href=""
+                      class="flex justify-center items-center transition-colors duration-300 text-sm font-medium no-underline bg-transparent hover:bg-transparent focus:ring-0 text-blue-600 hover:text-blue-800 active:underline hover:underline px-4 py-2.5">Botón
+                      enlace</a>
+
+                  <!-- Prioridad: Botón enlace simple -->
+                  <a href=""
+                      class="block text-sm transition-colors duration-300 hover:text-blue-800 hover:underline text-blue-600 py-1.5">Enlace
+                      simple</a>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- Botones secoundarios grises -->
+  <section id="button-size">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Tamaño de botones</h2>
+
+              <div class="flex items-end justify-center w-full gap-4 mb-4">
+
+                  <div class="flex flex-wrap items-end gap-4">
+                      <button
+                          class="cursor-pointer justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-xs rounded-lg px-3 py-2 shadow-sm hover:shadow bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:scale-90">
+                          X Small
+                      </button>
+                      <button
+                          class="cursor-pointer justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg px-3 py-2 shadow-sm hover:shadow bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          Small
+                      </button>
+                      <button
+                          class="cursor-pointer justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg px-5 py-2.5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          Medium
+                      </button>
+                      <button
+                          class="cursor-pointer justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-base rounded-lg px-5 py-3 shadow-sm hover:shadow-lg bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          Large
+                      </button>
+                      <button
+                          class="cursor-pointer justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-base rounded-lg px-6 py-3.5 shadow-sm hover:shadow-lg bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          X Large
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Botones secoundarios grises -->
+  <section id="button-size">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Tamaño de botones con íconos</h2>
+
+              <div class="flex items-end justify-center w-full gap-4 mb-4">
+
+                  <div class="flex flex-wrap items-end gap-4">
+
+                      <!-- COMPONENTE: Botón X Small -->
+                      <button
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-xs rounded-lg px-3 py-2 shadow-sm hover:shadow bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:scale-90">
+                          <svg stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="mr-2 stroke-2 size-4">
+                              <path
+                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path
+                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                          X Small
+
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              class="ml-2 text-white stroke-2 size-4">
+                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
+                          </svg>
+                      </button>
+
+                      <!-- COMPONENTE: Botón Small -->
+                      <button
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg px-3 py-2 shadow-sm hover:shadow bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="w-4 h-4 mr-2 stroke-2">
+                              <path
+                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path
+                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                          Small
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              class="ml-2 text-white stroke-2 size-4">
+                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
+                          </svg>
+                      </button>
+
+                      <!-- COMPONENTE: Botón Medium -->
+                      <button
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="w-5 h-5 mr-2 stroke-2">
+                              <path
+                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path
+                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                          Medium
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              class="ml-2 text-white stroke-2 size-5">
+                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
+                          </svg>
+                      </button>
+
+                      <!-- COMPONENTE: Botón Large -->
+                      <button
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-base rounded-lg py-2.5 px-5 shadow-sm hover:shadow-lg bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="w-5 h-5 mr-2.5 stroke-2">
+                              <path
+                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path
+                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                          Large
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              class="ml-2 text-white stroke-2 size-5">
+                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
+                          </svg>
+                      </button>
+
+                      <!-- COMPONENTE: Botón Extra Large -->
+                      <button
+                          class="cursor-pointer border flex justify-center items-center font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-base rounded-lg py-3 px-6 shadow-sm hover:shadow-lg bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="w-5 h-5 mr-3 stroke-2">
+                              <path
+                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path
+                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                          X Large
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              class="ml-2 text-white stroke-2 size-5">
+                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
+                          </svg>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Botones iconos -->
+  <section id="button-icons">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Botones con íconos</h2>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <div class="flex flex-wrap justify-center gap-4">
+                      <button
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 bg-transparent border-transparent text-blue-800 hover:bg-blue-800/10 hover:border-blue-800/10 shadow-none hover:shadow-none">
+                          Leer más
+                          <svg stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="w-4 h-4 ml-1 stroke-[1.5]">
+                              <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                          </svg>
+                      </button>
+                      <button
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-transparent border-blue-600 text-blue-800 hover:bg-blue-800 hover:text-blue-50">
+                          Recargar
+                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="w-4 h-4 ml-2 stroke-2">
+                              <path
+                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path
+                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                      </button>
+                      <button
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="mr-2 stroke-2 size-4">
+                              <path d="M12 22V13M12 13L15.5 16.5M12 13L8.5 16.5" stroke="currentColor"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path
+                                  d="M20 17.6073C21.4937 17.0221 23 15.6889 23 13C23 9 19.6667 8 18 8C18 6 18 2 12 2C6 2 6 6 6 8C4.33333 8 1 9 1 13C1 15.6889 2.50628 17.0221 4 17.6073"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                          Ícono izquierdo
+                      </button>
+
+                      <button
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          Ícono derecho
+                          <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" stroke-width="1.5" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
+                              class="ml-2 stroke-2 size-5">
+                              <path
+                                  d="M9.95242 9.62272L11.5109 6.31816C11.711 5.89395 12.289 5.89395 12.4891 6.31816L14.0476 9.62272L17.5329 10.1559C17.9801 10.2243 18.1583 10.7996 17.8346 11.1296L15.313 13.7001L15.9081 17.3314C15.9845 17.7978 15.5168 18.1534 15.1167 17.9331L12 16.2177L8.88328 17.9331C8.48316 18.1534 8.01545 17.7978 8.09187 17.3314L8.68695 13.7001L6.16545 11.1296C5.8417 10.7996 6.01993 10.2243 6.46711 10.1559L9.95242 9.62272Z"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                              <path d="M12 2V1" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                              <path d="M12 23V22" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                              <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                              <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                              <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                              <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                              <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                          </svg>
+                      </button>
+
+                      <a href="#"
+                          class="group relative overflow-hidden bg-blue-600 focus:ring-4 focus:ring-blue-300 flex items-center px-5 py-2.5 rounded-lg text-white justify-center
+
+                          cursor-pointer border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm shadow-sm hover:shadow-md border-blue-600 hover:bg-blue-800 hover:border-blue-800">
+                          <span class="z-40">Sobre Mi</span>
+                          <svg class="z-40 w-4 h-4 ml-2 -mr-1 transition-all duration-300 group-hover:translate-x-1"
+                              fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                          </svg>
+                      </a>
+
+                      <a href="#"
+                          class="group relative overflow-hidden bg-blue-600 focus:ring-4 focus:ring-blue-300 flex items-center px-5 py-2.5 rounded-lg text-white justify-center">
+                          <span class="z-40">Sobre Mi</span>
+                          <svg class="z-40 w-3 h-3 ml-2 -mr-1 transition-all duration-300 group-hover:translate-x-1"
+                              fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                          </svg>
+                          <div
+                              class="absolute inset-0 h-[200%] w-[200%] rotate-45 translate-x-[-80%] transition-all group-hover:scale-100 bg-white/30 group-hover:translate-x-[50%] z-20 duration-1000">
+                          </div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Botones deshabilitados -->
+  <section id="button-disabled">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Botón Deshabilitado</h2>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- COMPONENTE: Botón Deshabilitado -->
+                  <button type="button"
+                      class="text-white bg-blue-400 cursor-not-allowed font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                      disabled>Botón Deshabilitado</button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Botones secoundarios grises -->
+  <section id="button-block">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4">
+              <h2 class="mb-4 text-xl font-semibold">Botón de bloque</h2>
+
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- COMPONENTE: Botón fantasma de bloque -->
+                  <div class="flex flex-col w-full gap-4">
+                      <button data-width="full"
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 bg-transparent border-transparent text-blue-800 hover:bg-blue-800/10 hover:border-blue-800/10 shadow-none hover:shadow-none">
+                          Botón fantasma de bloque
+                      </button>
+
+                      <!-- COMPONENTE: Botón "outline" de bloque -->
+                      <button data-width="full"
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-transparent border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-blue-50">
+                          Botón "outline" de bloque
+                      </button>
+
+                      <!-- COMPONENTE: Botón solido de bloque -->
+                      <button data-width="full"
+                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
+                          Botón sólido de bloque
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Button loading icons -->
+  <section id="button-loading-icons">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-2 text-xl font-semibold">Cargando</h2>
+              <p class="mb-8 text-gray-600 text-md">Utilice indicadores dentro de los botones para indicar que
+                  una acción se está procesando o llevando a cabo en ese
+                  momento. También se puede cambiar el texto del elemento indicador y utilizar el texto del
+                  botón
+                  según sea necesario..</p>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <!-- COMPONENTE: Cargando fantasma -->
+                  <div class="flex flex-wrap gap-4 item">
+                      <button
+                          class="flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2 px-4 bg-transparent border-transparent text-blue-800 hover:bg-blue-800/5 hover:border-blue-800/5 shadow-none hover:shadow-none gap-2">
+                          <svg fill="none" class="w-4 h-4 text-blue-200 animate-spin" viewBox="0 0 64 64"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path stroke="currentColor" stroke-width="5" stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z">
+                              </path>
+                              <path stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+                                  class="text-blue-800"
+                                  d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
+                                  stroke="currentColor"></path>
+                          </svg>
+                          Cargando
+                      </button>
+
+                      <!-- COMPONENTE: Cargando outline -->
+                      <button
+                          class="flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2 px-4 shadow-sm hover:shadow-md bg-transparent border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-blue-50 gap-2">
+                          <svg fill="none" class="w-4 h-4 text-blue-200 animate-spin" viewBox="0 0 64 64"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path stroke="currentColor" stroke-width="5" stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z">
+                              </path>
+                              <path stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+                                  class="text-blue-800"
+                                  d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
+                                  stroke="currentColor"></path>
+                          </svg>
+                          Cargando
+                      </button>
+
+                      <!-- COMPONENTE: Cargando sólido -->
+                      <button
+                          class="flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2 px-4 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 gap-2">
+                          <svg fill="none" class="w-4 h-4 text-blue-200 animate-spin" viewBox="0 0 64 64"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path stroke="currentColor" stroke-width="5" stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z">
+                              </path>
+                              <path stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+                                  class="text-blue-700"
+                                  d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
+                                  stroke="currentColor"></path>
+                          </svg>
+                          Cargando
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Button only icon -->
+  <section id="button-icon-only">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-2 text-xl font-semibold">Botones de íconos</h2>
+
+              <h4 class="mb-2 text-base">Botones de íconos cuadrados</h4>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+                  <button
+                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-lg border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-gray-600 transition-all duration-300 ease-in hover:border-gray-800/5 hover:bg-gray-200 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          class="stroke-2 size-6">
+                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M12 5v14m-7-7h14" />
+                      </svg>
+                  </button>
+                  <button
+                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-lg border border-gray-300 bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-gray-500 transition-all duration-300 ease-in hover:bg-gray-100 hover:text-blue-600 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          class="stroke-2 size-6">
+                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M12 5v14m-7-7h14" />
+                      </svg>
+                  </button>
+                  <button
+                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-slate-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          class="stroke-2 size-6">
+                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M12 5v14m-7-7h14" />
+                      </svg>
+                  </button>
+              </div>
+
+              <h4 class="mb-2 text-base">Botones de íconos circulares</h4>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+                  <button
+                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-full border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-gray-600 transition-all duration-300 ease-in hover:border-gray-800/5 hover:bg-gray-200 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" stroke-width="1.5" fill="none"
+                          viewBox="0 0 24 24" class="stroke-[1.5] size-6">
+                          <path
+                              d="M9.95242 9.62272L11.5109 6.31816C11.711 5.89395 12.289 5.89395 12.4891 6.31816L14.0476 9.62272L17.5329 10.1559C17.9801 10.2243 18.1583 10.7996 17.8346 11.1296L15.313 13.7001L15.9081 17.3314C15.9845 17.7978 15.5168 18.1534 15.1167 17.9331L12 16.2177L8.88328 17.9331C8.48316 18.1534 8.01545 17.7978 8.09187 17.3314L8.68695 13.7001L6.16545 11.1296C5.8417 10.7996 6.01993 10.2243 6.46711 10.1559L9.95242 9.62272Z"
+                              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M12 2V1" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M12 23V22" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                      </svg>
+                  </button>
+                  <button
+                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-full border border-gray-300 bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-gray-500 transition-all duration-300 ease-in hover:bg-gray-100 hover:text-blue-600 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" stroke-width="1.5" fill="none"
+                          viewBox="0 0 24 24" class="stroke-[1.5] size-6">
+                          <path
+                              d="M9.95242 9.62272L11.5109 6.31816C11.711 5.89395 12.289 5.89395 12.4891 6.31816L14.0476 9.62272L17.5329 10.1559C17.9801 10.2243 18.1583 10.7996 17.8346 11.1296L15.313 13.7001L15.9081 17.3314C15.9845 17.7978 15.5168 18.1534 15.1167 17.9331L12 16.2177L8.88328 17.9331C8.48316 18.1534 8.01545 17.7978 8.09187 17.3314L8.68695 13.7001L6.16545 11.1296C5.8417 10.7996 6.01993 10.2243 6.46711 10.1559L9.95242 9.62272Z"
+                              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M12 2V1" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M12 23V22" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                      </svg>
+                  </button>
+                  <button
+                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-full border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-slate-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" stroke-width="1.5" fill="none"
+                          viewBox="0 0 24 24" class="stroke-[1.5] size-6">
+                          <path
+                              d="M9.95242 9.62272L11.5109 6.31816C11.711 5.89395 12.289 5.89395 12.4891 6.31816L14.0476 9.62272L17.5329 10.1559C17.9801 10.2243 18.1583 10.7996 17.8346 11.1296L15.313 13.7001L15.9081 17.3314C15.9845 17.7978 15.5168 18.1534 15.1167 17.9331L12 16.2177L8.88328 17.9331C8.48316 18.1534 8.01545 17.7978 8.09187 17.3314L8.68695 13.7001L6.16545 11.1296C5.8417 10.7996 6.01993 10.2243 6.46711 10.1559L9.95242 9.62272Z"
+                              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M12 2V1" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M12 23V22" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                      </svg>
+                  </button>
+              </div>
+
+              <h4 class="mb-2 text-base">Tamaños de botones</h4>
+              <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+                  <button
+                      class="cursor-pointer inline-grid min-h-[32px] min-w-[32px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          class="text-white stroke-2 size-6">
+                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M12 5v14m-7-7h14" />
+                      </svg>
+                  </button>
+
+                  <button
+                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          class="text-white stroke-2 size-6">
+                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M12 5v14m-7-7h14" />
+                      </svg>
+                  </button>
+
+                  <button
+                      class="cursor-pointer inline-grid min-h-[44px] min-w-[44px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          class="text-white stroke-2 size-6">
+                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M12 5v14m-7-7h14" />
+                      </svg>
+                  </button>
+
+                  <button
+                      class="cursor-pointer inline-grid min-h-[48px] min-w-[48px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          class="text-white stroke-2 size-6">
+                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M12 5v14m-7-7h14" />
+                      </svg>
+                  </button>
+
+                  <button
+                      class="cursor-pointer inline-grid min-h-[52px] min-w-[52px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          class="text-white stroke-2 size-6">
+                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M12 5v14m-7-7h14" />
+                      </svg>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section id="button-group">
+      <div
+          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-2 text-xl font-semibold">Grupo de botones predeterminado</h2>
+              <p class="mb-8 text-gray-600 text-md">Este ejemplo de componente muestra un grupo de botones
+                  interactivo con control detallado sobre la apariencia y el
+                  diseño. El uso de clases de utilidad facilita la personalización de cada aspecto del diseño
+                  del grupo de botones.</p>
+              <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+
+
+                  <h4 class="text-base">Tamaños</h4>
+                  <!-- COMPONENTE: Grupo de botones small -->
+                  <div class="inline-flex flex-row">
+                      <button
+                          class="inline-flex px-2.5 py-1.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-blue-600 rounded-lg rounded-r-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Uno
+                      </button>
+                      <button
+                          class="inline-flex px-2.5 py-1.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Dos
+                      </button>
+                      <button
+                          class="inline-flex px-2.5 py-1.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-lg rounded-l-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Tres
+                      </button>
+                  </div>
+
+                  <!-- COMPONENTE: Grupo de botones medium -->
+                  <div class="inline-flex flex-row">
+                      <button
+                          class="inline-flex px-3.5 py-2.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-blue-600 rounded-lg rounded-r-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Uno
+                      </button>
+                      <button
+                          class="inline-flex px-3.5 py-2.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Dos
+                      </button>
+                      <button
+                          class="inline-flex px-3.5 py-2.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-lg rounded-l-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Tres
+                      </button>
+                  </div>
+
+                  <!-- COMPONENTE: Grupo de botones large -->
+                  <div class="inline-flex flex-row">
+                      <button
+                          class="inline-flex px-5 py-3.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-blue-600 rounded-lg rounded-r-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Uno
+                      </button>
+                      <button
+                          class="inline-flex px-5 py-3.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Dos
+                      </button>
+                      <button
+                          class="inline-flex px-5 py-3.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-lg rounded-l-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                          Tres
+                      </button>
+                  </div>
+              </div>
+
+              <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+
+                  <h4 class="text-base">Variantes</h4>
+                  <!-- COMPONENTE: Grupo de botones medium -->
+                  <div class="flex flex-col gap-4">
+                      <div class="inline-flex flex-row">
+                          <button
+                              class="inline-flex rounded-lg border border-transparent bg-transparent items-center px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-800 transition-all duration-300 ease-in hover:border-blue-800/5 hover:bg-blue-800/5 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M5 12a7 7 0 0 1 7-7m4.5 2.5L12 12m10 0c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Zm-9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
+                              </svg>
+                              Uno
+                          </button>
+                          <button
+                              class="inline-flex rounded-lg border border-transparent bg-transparent items-center px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-800 transition-all duration-300 ease-in hover:border-blue-800/5 hover:bg-blue-800/5 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M21 15v1.2c0 1.68 0 2.52-.327 3.162a3 3 0 0 1-1.311 1.311C18.72 21 17.88 21 16.2 21H7.8c-1.68 0-2.52 0-3.162-.327a3 3 0 0 1-1.311-1.311C3 18.72 3 17.88 3 16.2V15m14-5-5 5m0 0-5-5m5 5V3" />
+                              </svg>
+                              Dos
+                          </button>
+                          <button
+                              class="inline-flex rounded-lg border border-transparent bg-transparent px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-800 transition-all duration-300 ease-in hover:border-blue-800/5 hover:bg-blue-800/5 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M18.727 14.727a1.5 1.5 0 0 0 .3 1.655l.055.054a1.816 1.816 0 0 1 0 2.573 1.818 1.818 0 0 1-2.573 0l-.055-.055a1.5 1.5 0 0 0-1.654-.3 1.5 1.5 0 0 0-.91 1.373v.155a1.818 1.818 0 1 1-3.636 0V20.1a1.5 1.5 0 0 0-.981-1.373 1.5 1.5 0 0 0-1.655.3l-.054.055a1.818 1.818 0 0 1-3.106-1.287 1.818 1.818 0 0 1 .533-1.286l.054-.055a1.5 1.5 0 0 0 .3-1.654 1.5 1.5 0 0 0-1.372-.91h-.155a1.818 1.818 0 1 1 0-3.636H3.9a1.5 1.5 0 0 0 1.373-.981 1.5 1.5 0 0 0-.3-1.655l-.055-.054A1.818 1.818 0 1 1 7.491 4.99l.054.054a1.5 1.5 0 0 0 1.655.3h.073a1.5 1.5 0 0 0 .909-1.372v-.155a1.818 1.818 0 0 1 3.636 0V3.9a1.499 1.499 0 0 0 .91 1.373 1.5 1.5 0 0 0 1.654-.3l.054-.055a1.817 1.817 0 0 1 2.573 0 1.819 1.819 0 0 1 0 2.573l-.055.054a1.5 1.5 0 0 0-.3 1.655v.073a1.5 1.5 0 0 0 1.373.909h.155a1.818 1.818 0 0 1 0 3.636H20.1a1.499 1.499 0 0 0-1.373.91Z" />
+                              </svg>
+                              Tres
+                          </button>
+                      </div>
+                      <div class="inline-flex flex-row">
+                          <button
+                              class="inline-flex rounded-lg items-center rounded-r-none border border-blue-800 bg-transparent px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-800 transition-all duration-300 ease-in hover:bg-blue-800 hover:text-blue-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M5 12a7 7 0 0 1 7-7m4.5 2.5L12 12m10 0c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Zm-9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
+                              </svg>
+                              Uno
+                          </button>
+                          <button
+                              class="inline-flex rounded-none border items-center border-l-0 border-blue-800 bg-transparent px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-800 transition-all duration-300 ease-in hover:bg-blue-800 hover:text-blue-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M21 15v1.2c0 1.68 0 2.52-.327 3.162a3 3 0 0 1-1.311 1.311C18.72 21 17.88 21 16.2 21H7.8c-1.68 0-2.52 0-3.162-.327a3 3 0 0 1-1.311-1.311C3 18.72 3 17.88 3 16.2V15m14-5-5 5m0 0-5-5m5 5V3" />
+                              </svg>
+                              Dos
+                          </button>
+                          <button
+                              class="inline-flex rounded-lg rounded-l-none items-center border border-l-0 border-blue-800 bg-transparent px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-800 transition-all duration-300 ease-in hover:bg-blue-800 hover:text-blue-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M18.727 14.727a1.5 1.5 0 0 0 .3 1.655l.055.054a1.816 1.816 0 0 1 0 2.573 1.818 1.818 0 0 1-2.573 0l-.055-.055a1.5 1.5 0 0 0-1.654-.3 1.5 1.5 0 0 0-.91 1.373v.155a1.818 1.818 0 1 1-3.636 0V20.1a1.5 1.5 0 0 0-.981-1.373 1.5 1.5 0 0 0-1.655.3l-.054.055a1.818 1.818 0 0 1-3.106-1.287 1.818 1.818 0 0 1 .533-1.286l.054-.055a1.5 1.5 0 0 0 .3-1.654 1.5 1.5 0 0 0-1.372-.91h-.155a1.818 1.818 0 1 1 0-3.636H3.9a1.5 1.5 0 0 0 1.373-.981 1.5 1.5 0 0 0-.3-1.655l-.055-.054A1.818 1.818 0 1 1 7.491 4.99l.054.054a1.5 1.5 0 0 0 1.655.3h.073a1.5 1.5 0 0 0 .909-1.372v-.155a1.818 1.818 0 0 1 3.636 0V3.9a1.499 1.499 0 0 0 .91 1.373 1.5 1.5 0 0 0 1.654-.3l.054-.055a1.817 1.817 0 0 1 2.573 0 1.819 1.819 0 0 1 0 2.573l-.055.054a1.5 1.5 0 0 0-.3 1.655v.073a1.5 1.5 0 0 0 1.373.909h.155a1.818 1.818 0 0 1 0 3.636H20.1a1.499 1.499 0 0 0-1.373.91Z" />
+                              </svg>
+                              Tres
+                          </button>
+                      </div>
+                      <div class="inline-flex flex-row">
+                          <button
+                              class="inline-flex rounded-lg rounded-r-none border items-center border-blue-600 bg-blue-600 px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M5 12a7 7 0 0 1 7-7m4.5 2.5L12 12m10 0c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Zm-9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
+                              </svg>
+                              Uno
+                          </button>
+                          <button
+                              class="inline-flex rounded-none border border-l-0 border-blue-600 bg-blue-600 px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M21 15v1.2c0 1.68 0 2.52-.327 3.162a3 3 0 0 1-1.311 1.311C18.72 21 17.88 21 16.2 21H7.8c-1.68 0-2.52 0-3.162-.327a3 3 0 0 1-1.311-1.311C3 18.72 3 17.88 3 16.2V15m14-5-5 5m0 0-5-5m5 5V3" />
+                              </svg>
+                              Dos
+                          </button>
+                          <button
+                              class="inline-flex rounded-lg rounded-l-none border border-l-0 border-blue-600 bg-blue-600 px-3.5 py-2.5 text-center font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  class="mr-1.5 size-4 stroke-2">
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                  <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M18.727 14.727a1.5 1.5 0 0 0 .3 1.655l.055.054a1.816 1.816 0 0 1 0 2.573 1.818 1.818 0 0 1-2.573 0l-.055-.055a1.5 1.5 0 0 0-1.654-.3 1.5 1.5 0 0 0-.91 1.373v.155a1.818 1.818 0 1 1-3.636 0V20.1a1.5 1.5 0 0 0-.981-1.373 1.5 1.5 0 0 0-1.655.3l-.054.055a1.818 1.818 0 0 1-3.106-1.287 1.818 1.818 0 0 1 .533-1.286l.054-.055a1.5 1.5 0 0 0 .3-1.654 1.5 1.5 0 0 0-1.372-.91h-.155a1.818 1.818 0 1 1 0-3.636H3.9a1.5 1.5 0 0 0 1.373-.981 1.5 1.5 0 0 0-.3-1.655l-.055-.054A1.818 1.818 0 1 1 7.491 4.99l.054.054a1.5 1.5 0 0 0 1.655.3h.073a1.5 1.5 0 0 0 .909-1.372v-.155a1.818 1.818 0 0 1 3.636 0V3.9a1.499 1.499 0 0 0 .91 1.373 1.5 1.5 0 0 0 1.654-.3l.054-.055a1.817 1.817 0 0 1 2.573 0 1.819 1.819 0 0 1 0 2.573l-.055.054a1.5 1.5 0 0 0-.3 1.655v.073a1.5 1.5 0 0 0 1.373.909h.155a1.818 1.818 0 0 1 0 3.636H20.1a1.499 1.499 0 0 0-1.373.91Z" />
+                              </svg>
+                              Tres
+                          </button>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+</main>
+
+
+
+
+
+
 <main class="col-span-1 p-6 bg-white lg:col-span-8">
   <header class="mb-12">
       <h1 class="text-4xl font-bold">Botones</h1>
