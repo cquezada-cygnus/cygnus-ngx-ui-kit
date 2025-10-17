@@ -58,7 +58,7 @@ export class CygnusButtonComponent implements OnInit {
     switch (customClass) {
       case 'btn':
         this.btnIconColor = '#ffffff';
-        return this.TW_CLASS.BTN_SIMPLE;
+        return this.TW_CLASS.BTN_PRIMARY;
       case 'btn-primary':
         this.btnIconColor = '#ffffff';
         return this.TW_CLASS.BTN_PRIMARY;

@@ -20,6 +20,7 @@
       <h2 class="mb-4 text-xl font-semibold">Botón simple</h2>
       <div class="flex items-center justify-center w-full gap-4 mb-4">
 
+        <!-- Prioridad: Botón Sólido/simple/primary -->
         <cygnus-button [btnTypes]="'btn'" >Botón simple</cygnus-button>
 
       </div>
@@ -34,26 +35,18 @@
           <div class="p-4">
               <h2 class="mb-4 text-xl font-semibold">Variantes de botones</h2>
               <div class="flex items-center justify-center w-full gap-4 mb-4">
+                <div class="flex flex-wrap justify-center gap-4 item">
 
                   <!-- COMPONENTE: Botón fantasma -->
                   <cygnus-button [btnTypes]="'btn-ghost'" >Fantasma</cygnus-button>
                   <!-- Prioridad: Botón Outline -->
                   <cygnus-button [btnTypes]="'btn-outlined'" >Outline</cygnus-button>
+                  <!-- Prioridad: Botón Sólido/simple/primary -->
+                  <cygnus-button [btnTypes]="'btn'" >Sólido</cygnus-button>
 
-
-                  <!-- Prioridad: Botón fantasma -->
-                  <div class="flex flex-wrap justify-center gap-4 item">
-
-                      <!-- Prioridad: Botón Sólido -->
-                      <button
-                          class="cursor-pointer justify-center items-center border font-medium font-sans text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-4 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800  hover:border-blue-800 focus:ring-2 focus:ring-blue-300">
-                          Sólido
-                      </button>
-
-                  </div>
+                </div>
               </div>
           </div>
-
       </div>
   </section>
 
