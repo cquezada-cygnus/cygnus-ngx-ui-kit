@@ -10,6 +10,7 @@ export type BtnCustomType =
   'btn-indigo' |
   'btn-pink' |
   'btn-ghost' |
+  'btn-outlined' |
   'btn-disabled' |
   'btn-block' |
   'btn-circle' |

@@ -16,7 +16,11 @@ export const TW_CLASS = {
 
   // '          disabled:opacity-50 disabled:cursor-not-allowed   ',
 
-  BTN_GHOST: 'py-2.5 px-4 text-blue-800 bg-transparent border-transparent !shadow-none hover:bg-blue-700/5 hover:border-blue-700/5 hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none data-[shape=pill]:rounded-full data-[width=full]:w-full',
+  BTN_GHOST: 'py-2.5 px-4 text-blue-800 bg-transparent border-transparent !shadow-none hover:bg-blue-700/5 hover:border-blue-700/5 !hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
+
+// '  disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed     ',
+
+  BTN_OUTLINED: 'py-2.5 px-4 bg-transparent border-blue-700 text-blue-700 hover:bg-blue-800 hover:text-blue-50 focus:ring-blue-300',
   BTN_DISABLED: 'text-white bg-primary-400 cursor-not-allowed font-medium rounded-lg text-center',
   BTN_BLOCK: 'w-full',
   BTN_SIZE_XS: '!py-2 !px-3 !text-xs',
