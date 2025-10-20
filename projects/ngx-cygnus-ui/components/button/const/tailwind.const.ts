@@ -21,7 +21,7 @@ export const TW_CLASS = {
   BTN_ICON:    'stroke-2 size-5 p-4 flex items-center justify-between',
   BTN_ICON_LG: 'stroke-2 size-5 p-4 flex items-center',
   BTN_ICON_ONLY: '!p-2.5 flex items-center transition-all disabled:pointer-events-none disabled:opacity-50 border-0',
-  BTN_ICON_LOADING: 'animate-spin inline-block border-3 border-t-transparent rounded-full',
+  BTN_ICON_LOADING: 'animate-spin inline-block border-2 border-t-transparent rounded-full',
   BTN_GROUP_LEFT: 'px-4 py-2 text-sm text-center transition-all border border-r-0 rounded-md rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_GROUP_MIDDLE: 'px-4 py-2 text-sm text-center transition-all border rounded-md rounded-l-none rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_GROUP_RIGHT: 'px-4 py-2 text-sm text-center transition-all border border-l-0 rounded-md rounded-l-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',

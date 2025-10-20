@@ -22,7 +22,7 @@ export class CygnusButtonComponent implements OnInit {
   btnIconRouteRight = input<string>('');
   btnIconRouteLeft = input<string>('');
   btnIsLoading = input<boolean>(false);
-  btnIconLoadingSize = input<IconLoadingSize>('size-5');
+  btnIconLoadingSize = input<IconLoadingSize>('size-4');
   btnIsDisabled: boolean = false;
   btnIconOutlined = signal<boolean>(false);
 
