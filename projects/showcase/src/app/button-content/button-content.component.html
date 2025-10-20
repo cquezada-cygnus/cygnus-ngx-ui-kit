@@ -127,131 +127,47 @@
 
                   <div class="flex flex-wrap items-end gap-4">
 
-                      <!-- COMPONENTE: Botón X Small -->
-                      <button
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-xs rounded-lg px-3 py-2 shadow-sm hover:shadow bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:scale-90">
-                          <svg stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
-                              class="mr-2 stroke-2 size-4">
-                              <path
-                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
-                                  stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path
-                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          X Small
+                    <!-- COMPONENTE: Botón X Small -->
+                    <cygnus-button
+                      [btnTypes]="'btn-accent btn-size-xs btn-icon-sm'"
+                      [btnIconRouteLeft]="'assets/icons/svg/Arrows/refresh-cw-02.svg'"
+                      [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                    >
+                      X small
+                    </cygnus-button>
+                    <!-- COMPONENTE: Botón Small -->
+                    <cygnus-button
+                      [btnTypes]="'btn-accent btn-size-sm btn-icon-sm'"
+                      [btnIconRouteLeft]="'assets/icons/svg/Arrows/refresh-cw-02.svg'"
+                      [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                    >
+                      Small
+                    </cygnus-button>
+                    <!-- COMPONENTE: Botón Medium -->
+                    <cygnus-button
+                      [btnTypes]="'btn-accent btn-icon'"
+                      [btnIconRouteLeft]="'assets/icons/svg/Arrows/refresh-cw-02.svg'"
+                      [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                    >
+                      Medium
+                    </cygnus-button>
+                    <!-- COMPONENTE: Botón Large -->
+                    <cygnus-button
+                      [btnTypes]="'btn-accent btn-size-lg btn-icon-lg'"
+                      [btnIconRouteLeft]="'assets/icons/svg/Arrows/refresh-cw-02.svg'"
+                      [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                    >
+                      Large
+                    </cygnus-button>
+                    <!-- COMPONENTE: Botón X Large -->
+                    <cygnus-button
+                      [btnTypes]="'btn-accent btn-size-xl btn-icon-lg'"
+                      [btnIconRouteLeft]="'assets/icons/svg/Arrows/refresh-cw-02.svg'"
+                      [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                    >
+                      X Large
+                    </cygnus-button>
 
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                              class="ml-2 text-white stroke-2 size-4">
-                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
-                          </svg>
-                      </button>
-
-                      <!-- COMPONENTE: Botón Small -->
-                      <button
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg px-3 py-2 shadow-sm hover:shadow bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
-                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
-                              class="w-4 h-4 mr-2 stroke-2">
-                              <path
-                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
-                                  stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path
-                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          Small
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                              class="ml-2 text-white stroke-2 size-4">
-                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
-                          </svg>
-                      </button>
-
-                      <!-- COMPONENTE: Botón Medium -->
-                      <button
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
-                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
-                              class="w-5 h-5 mr-2 stroke-2">
-                              <path
-                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
-                                  stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path
-                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          Medium
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                              class="ml-2 text-white stroke-2 size-5">
-                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
-                          </svg>
-                      </button>
-
-                      <!-- COMPONENTE: Botón Large -->
-                      <button
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-base rounded-lg py-2.5 px-5 shadow-sm hover:shadow-lg bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
-                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
-                              class="w-5 h-5 mr-2.5 stroke-2">
-                              <path
-                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
-                                  stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path
-                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          Large
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                              class="ml-2 text-white stroke-2 size-5">
-                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
-                          </svg>
-                      </button>
-
-                      <!-- COMPONENTE: Botón Extra Large -->
-                      <button
-                          class="cursor-pointer border flex justify-center items-center font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-base rounded-lg py-3 px-6 shadow-sm hover:shadow-lg bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
-                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
-                              class="w-5 h-5 mr-3 stroke-2">
-                              <path
-                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
-                                  stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path
-                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          X Large
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                              class="ml-2 text-white stroke-2 size-5">
-                              <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2" d="M4 12h16m0 0-6-6m6 6-6 6" />
-                          </svg>
-                      </button>
                   </div>
               </div>
           </div>
@@ -842,26 +758,6 @@
 <main class="col-span-1 p-6 bg-white lg:col-span-8">
 
 
-  <!-- Botones secoundarios grises -->
-  <section id="button-size">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4">
-              <h2 class="mb-4 text-xl font-semibold">Tamaño de botones</h2>
-              <div class="flex items-end justify-center w-full gap-4 mb-4">
-
-                  <cygnus-button [btnTypes]="'btn btn-size-xs'" >Extra small</cygnus-button>
-                  <cygnus-button [btnTypes]="'btn btn-size-sm'" >Small</cygnus-button>
-                  <cygnus-button [btnTypes]="'btn'" >Medium</cygnus-button>
-                  <cygnus-button [btnTypes]="'btn btn-size-lg'" >Large</cygnus-button>
-                  <cygnus-button [btnTypes]="'btn btn-size-xl'" >Extra Large</cygnus-button>
-
-              </div>
-          </div>
-
-      </div>
-  </section>
-
   <!-- Tamaño de Botones con íconos -->
   <section id="button-size">
       <div
@@ -872,31 +768,31 @@
 
                   <cygnus-button
                     [btnTypes]="'btn-accent btn-size-xs btn-icon-sm'"
-                    [btnIconRoute]="'assets/icons/svg/Communication/mail-01.svg'"
+                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
                   >
                     Extra small
                   </cygnus-button>
                   <cygnus-button
                     [btnTypes]="'btn-accent btn-size-sm btn-icon-sm'"
-                    [btnIconRoute]="'assets/icons/svg/Communication/mail-01.svg'"
+                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
                   >
                     Small
                   </cygnus-button>
                   <cygnus-button
                     [btnTypes]="'btn-accent btn-icon'"
-                    [btnIconRoute]="'assets/icons/svg/Communication/mail-01.svg'"
+                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
                   >
                     Medium
                   </cygnus-button>
                   <cygnus-button
                     [btnTypes]="'btn-accent btn-size-lg btn-icon-lg'"
-                    [btnIconRoute]="'assets/icons/svg/Communication/mail-01.svg'"
+                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
                   >
                     Large
                   </cygnus-button>
                   <cygnus-button
                     [btnTypes]="'btn-accent btn-size-xl btn-icon-lg'"
-                    [btnIconRoute]="'assets/icons/svg/Communication/mail-01.svg'"
+                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
                   >
                     Extra Large
                   </cygnus-button>
@@ -918,8 +814,7 @@
                   <!-- COMPONENTE: Botón con ícono izquierdo -->
                   <cygnus-button
                     [btnTypes]="'btn-indigo btn-icon'"
-                    [btnIconPosition]="'left'"
-                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                    [btnIconRouteLeft]="'assets/icons/svg/Users/user-square.svg'"
                   >
                     Botón con ícono izquierdo
                   </cygnus-button>
@@ -927,8 +822,7 @@
                   <!-- COMPONENTE: Botón con ícono derecho -->
                    <cygnus-button
                     [btnTypes]="'btn-indigo btn-icon'"
-                    [btnIconPosition]="'right'"
-                    [btnIconRoute]="'assets/icons/svg/Users/user-square.svg'"
+                    [btnIconRouteLeft]="'assets/icons/svg/Users/user-square.svg'"
                   >
                     Botón con ícono derecho
                   </cygnus-button>
@@ -1189,28 +1083,28 @@
 
                 <cygnus-button
                   [btnTypes]="'btn btn-icon-only'"
-                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                  [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
                 >
                 </cygnus-button>
                 <cygnus-button
                   [btnTypes]="'btn-accent btn-circle btn-icon-only'"
-                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                  [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
                 >
                 </cygnus-button>
                 <cygnus-button
                   [btnTypes]="'btn-ghost btn-circle btn-icon-only'"
-                  [btnIconRoute]="'assets/icons/svg/Alerts&Feedback/thumbs-up.svg'"
+                  [btnIconRouteRight]="'assets/icons/svg/Alerts&Feedback/thumbs-up.svg'"
                 >
                 </cygnus-button>
                 <cygnus-button
                   [btnTypes]="'btn-success btn-circle btn-icon-only'"
-                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                  [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
                 >
                 </cygnus-button>
 
                 <cygnus-button
                   [btnTypes]="'btn-primary '"
-                  [btnIconRoute]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+                  [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
                 >
                   Messages
                   <!-- COMPONENTE: Badge XS -->

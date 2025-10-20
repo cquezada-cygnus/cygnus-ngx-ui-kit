@@ -16,10 +16,11 @@ export class CygnusButtonComponent implements OnInit {
   btnAllClasses:WritableSignal<string> = signal<string>('');
   btnIconExist: boolean = false;
   btnIconOnly: boolean = false;
-  btnIconPosition = input<IconPosition>('left');
   btnIconColor: IconBtnColor = '#ffffff';
   btnIconSize: IconBtnSize = '1.25rem';
-  btnIconRoute = input<string>('');
+  btnIconClasses = signal<string>('');
+  btnIconRouteRight = input<string>('');
+  btnIconRouteLeft = input<string>('');
   btnIsLoading = input<boolean>(false);
   btnIconLoadingSize = input<IconLoadingSize>('size-5');
   btnIsDisabled: boolean = false;
@@ -105,19 +106,23 @@ export class CygnusButtonComponent implements OnInit {
       case 'btn-icon-xs':
         this.btnIconSize = '0.75rem';
         this.btnIconExist = true;
-        return this.TW_CLASS.BTN_ICON_XS;
+        this.btnIconClasses.set(TW_CLASS.BTN_ICON_XS);
+        return '';
       case 'btn-icon-sm':
         this.btnIconSize = '0.875rem';
         this.btnIconExist = true;
-        return this.TW_CLASS.BTN_ICON_SM;
+        this.btnIconClasses.set(TW_CLASS.BTN_ICON_SM);
+        return '';
       case 'btn-icon':
-        this.btnIconSize = '1rem';
+        this.btnIconSize = '1.25rem';
         this.btnIconExist = true;
-        return this.TW_CLASS.BTN_ICON;
+        this.btnIconClasses.set(TW_CLASS.BTN_ICON);
+        return '';
       case 'btn-icon-lg':
         this.btnIconSize = '1.25rem';
         this.btnIconExist = true;
-        return this.TW_CLASS.BTN_ICON_LG;
+        this.btnIconClasses.set(TW_CLASS.BTN_ICON_LG);
+        return '';
       case 'btn-icon-only':
         this.btnIconExist = true;
         this.btnIconOnly = true;
