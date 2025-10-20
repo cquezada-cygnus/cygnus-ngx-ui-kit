@@ -116,7 +116,7 @@
       </div>
   </section>
 
-  <!-- Botones secoundarios grises -->
+  <!-- Tamaño de Botones con íconos -->
   <section id="button-size">
       <div
           class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
@@ -183,34 +183,25 @@
               <div class="flex items-center justify-center w-full gap-4 mb-4">
 
                   <div class="flex flex-wrap justify-center gap-4">
-                      <button
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 bg-transparent border-transparent text-blue-800 hover:bg-blue-800/10 hover:border-blue-800/10 shadow-none hover:shadow-none">
-                          Leer más
-                          <svg stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
-                              class="w-4 h-4 ml-1 stroke-[1.5]">
-                              <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
-                          </svg>
-                      </button>
-                      <button
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-transparent border-blue-600 text-blue-800 hover:bg-blue-800 hover:text-blue-50">
-                          Recargar
-                          <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                              xmlns="http://www.w3.org/2000/svg" color="currentColor"
-                              class="w-4 h-4 ml-2 stroke-2">
-                              <path
-                                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor"
-                                  stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path
-                                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
-                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                      </button>
+
+                    <!-- COMPONENTE: Botón fantasma -->
+                    <cygnus-button
+                      [btnTypes]="'btn-ghost btn-icon btn-icon-sm'"
+                      [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-right.svg'"
+                    >
+                      Leer más
+                    </cygnus-button>
+                    <!-- Prioridad: Botón Outline -->
+                    <cygnus-button
+                      [btnTypes]="'btn-outlined btn-icon btn-icon-sm'"
+                      [btnIconRouteRight]="'assets/icons/svg/Arrows/refresh-cw-02.svg'"
+                    >
+                      Recargar
+                    </cygnus-button>
+                    <!-- Prioridad: Botón Sólido/simple/primary -->
+                    <!-- <cygnus-button [btnTypes]="'btn'" >Sólido</cygnus-button> -->
+
+
                       <button
                           class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
                           <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
@@ -757,51 +748,6 @@
 
 <main class="col-span-1 p-6 bg-white lg:col-span-8">
 
-
-  <!-- Tamaño de Botones con íconos -->
-  <section id="button-size">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4">
-              <h2 class="mb-4 text-xl font-semibold">Tamaño de botone con íconos</h2>
-              <div class="flex items-end justify-center w-full gap-4 mb-4">
-
-                  <cygnus-button
-                    [btnTypes]="'btn-accent btn-size-xs btn-icon-sm'"
-                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
-                  >
-                    Extra small
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-accent btn-size-sm btn-icon-sm'"
-                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
-                  >
-                    Small
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-accent btn-icon'"
-                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
-                  >
-                    Medium
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-accent btn-size-lg btn-icon-lg'"
-                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
-                  >
-                    Large
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-accent btn-size-xl btn-icon-lg'"
-                    [btnIconRouteRight]="'assets/icons/svg/Communication/mail-01.svg'"
-                  >
-                    Extra Large
-                  </cygnus-button>
-
-              </div>
-          </div>
-
-      </div>
-  </section>
 
   <!-- Botones iconos -->
   <section id="button-icons">

@@ -16,7 +16,7 @@ export class CygnusButtonComponent implements OnInit {
   btnAllClasses:WritableSignal<string> = signal<string>('');
   btnIconExist: boolean = false;
   btnIconOnly: boolean = false;
-  btnIconColor: IconBtnColor = '#ffffff';
+  btnIconColor = signal<IconBtnColor>('#ffffff');
   btnIconSize: IconBtnSize = '1.25rem';
   btnIconClasses = signal<string>('');
   btnIconRouteRight = input<string>('');
@@ -24,6 +24,7 @@ export class CygnusButtonComponent implements OnInit {
   btnIsLoading = input<boolean>(false);
   btnIconLoadingSize = input<IconLoadingSize>('size-5');
   btnIsDisabled: boolean = false;
+  btnIconOutlined = signal<boolean>(false);
 
   constructor() {
     effect(() => { // actualizar color del botón cuando cambie this.btnTypes()
@@ -58,37 +59,38 @@ export class CygnusButtonComponent implements OnInit {
     this.btnIconOnly = false;
     switch (customClass) {
       case 'btn':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_PRIMARY;
       case 'btn-primary':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_PRIMARY;
       case 'btn-secondary':
-        this.btnIconColor = '#1d2939';
+        this.btnIconColor.set('#1d2939');
         return this.TW_CLASS.BTN_SECONDARY;
       case 'btn-accent':
-        this.btnIconColor = '#2970ff';
+        this.btnIconColor.set('#2970ff');
         return this.TW_CLASS.BTN_ACCENT;
       case 'btn-gray':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_GRAY;
       case 'btn-success':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_GREEN;
       case 'btn-warning':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_AMBER;
       case 'btn-error':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_RED;
       case 'btn-ghost':
-        this.btnIconColor = '#1d2939';
+        this.btnIconColor.set('#193cb8');
         return this.TW_CLASS.BTN_GHOST;
       case 'btn-outlined':
-        this.btnIconColor = '#1d2939';
+        this.btnIconColor.set('#193cb8');
+        this.btnIconOutlined.set(true);
         return this.TW_CLASS.BTN_OUTLINED;
       case 'btn-disabled':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor.set('#193cb8');
         this.btnIsDisabled = true;
         return this.TW_CLASS.BTN_DISABLED;
       case 'btn-block':
@@ -135,6 +137,18 @@ export class CygnusButtonComponent implements OnInit {
         return this.TW_CLASS.BTN_GROUP_RIGHT;
       default:
         return '';
+    }
+  }
+
+  onMouseEnter() {
+    if (this.btnIconOutlined()) {
+      this.btnIconColor.set('#ffffff');
+    }
+  }
+
+  onMouseLeave() {
+    if (this.btnIconOutlined()) {
+      this.btnIconColor.set('#193cb8');
     }
   }
 }

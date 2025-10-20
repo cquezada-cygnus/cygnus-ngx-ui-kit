@@ -1,4 +1,10 @@
-<button [class]="btnAllClasses()" type="button" [disabled]="btnIsDisabled">
+<button
+  [class]="btnAllClasses()"
+  type="button"
+  [disabled]="btnIsDisabled"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
   @if (btnIconExist && btnIsLoading()) {
     <div [class]="TW_CLASS.BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize() "  role="status" aria-label="loading">
       <span class="sr-only">Cargando...</span>
@@ -8,7 +14,7 @@
     <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
       [width]="btnIconSize"
       [height]="btnIconSize"
-      [color]="btnIconColor"
+      [color]="btnIconColor()"
       [route]="btnIconRouteLeft()"
     />
   }
@@ -17,7 +23,7 @@
     <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
       [width]="btnIconSize"
       [height]="btnIconSize"
-      [color]="btnIconColor"
+      [color]="btnIconColor()"
       [route]="btnIconRouteRight()"
     />
   }
