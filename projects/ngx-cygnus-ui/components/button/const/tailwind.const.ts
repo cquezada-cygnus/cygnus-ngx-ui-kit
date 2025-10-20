@@ -38,16 +38,4 @@ export const TW_CLASS = {
   BTN_LINK_SIMPLE: 'block text-sm transition-colors duration-300 hover:text-blue-800 hover:underline text-blue-600 py-1.5',
 
   BTN_A: 'group relative overflow-hidden focus:ring-4 inline-flex items-center rounded-lg justify-center',
-  BTN_A_TYPE_A: 'px-5 py-2.5',
-  BTN_A_TYPE_B: 'px-7 py-2.5',
-  BTN_A_SIMPLE: 'bg-blue-600 focus:ring-blue-300 text-white',
-  BTN_A_PRIMARY: 'bg-blue-700 focus:ring-blue-300 text-white',
-  BTN_A_SECONDARY: 'bg-white focus:ring-gray-100 text-gray-900 hover:bg-gray-100 hover:text-blue-700 active:bg-gray-100 active:text-white',
-  BTN_A_ACCENT: 'bg-blue-50 focus:ring-blue-100 text-blue-700 hover:bg-blue-100 active:bg-primary-100',
-  BTN_A_GREEN: 'bg-green-700 focus:ring-green-300 text-white',
-  BTN_A_YELLOW: 'bg-yellow-600 focus:ring-yellow-300 text-white',
-  BTN_A_RED: 'bg-red-700 focus:ring-red-300 text-white',
-  BTN_A_GHOST: 'bg-white focus:ring-blue-300 text-gray-600 transition-all hover:text-white hover:bg-blue-600',
-  BTN_A_DISABLED: 'bg-primary-400 text-white',
-
 }
