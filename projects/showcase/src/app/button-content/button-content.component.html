@@ -249,34 +249,22 @@
       </div>
   </section>
 
-  <!-- Botones secoundarios grises -->
+  <!-- Botones de bloque -->
   <section id="button-block">
       <div
           class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14">
           <div class="p-4">
               <h2 class="mb-4 text-xl font-semibold">Botón de bloque</h2>
 
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
+              <div class="flex flex-col space-y-3 justify-center">
 
-                  <!-- COMPONENTE: Botón fantasma de bloque -->
-                  <div class="flex flex-col w-full gap-4">
-                      <button data-width="full"
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 bg-transparent border-transparent text-blue-800 hover:bg-blue-800/10 hover:border-blue-800/10 shadow-none hover:shadow-none">
-                          Botón fantasma de bloque
-                      </button>
+                <!-- COMPONENTE: Botón fantasma de bloque -->
+                <cygnus-button [btnTypes]="'btn-ghost btn-block'" >Botón fantasma de bloque</cygnus-button>
+                <!-- COMPONENTE: Botón "outline" de bloque -->
+                <cygnus-button [btnTypes]="'btn-outlined btn-block'" >Botón "outline" de bloque</cygnus-button>
+                <!-- COMPONENTE: Botón solido de bloque -->
+                <cygnus-button [btnTypes]="'btn-primary btn-block'" >Botón sólido de bloque</cygnus-button>
 
-                      <!-- COMPONENTE: Botón "outline" de bloque -->
-                      <button data-width="full"
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-transparent border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-blue-50">
-                          Botón "outline" de bloque
-                      </button>
-
-                      <!-- COMPONENTE: Botón solido de bloque -->
-                      <button data-width="full"
-                          class="cursor-pointer flex justify-center items-center border font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-lg py-2.5 px-5 shadow-sm hover:shadow-md bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800">
-                          Botón sólido de bloque
-                      </button>
-                  </div>
               </div>
           </div>
       </div>
@@ -703,22 +691,6 @@
 
 
 <main class="col-span-1 p-6 bg-white lg:col-span-8">
-
-  <!-- Botones deshabilitados -->
-  <section id="button-disabled">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4">
-              <h2 class="mb-4 text-xl font-semibold">Botón Deshabilitado</h2>
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                    <!-- COMPONENTE: Botón Deshabilitado -->
-                    <cygnus-button [btnTypes]="'btn-disabled'" >Botón Deshabilitado</cygnus-button>
-
-              </div>
-          </div>
-      </div>
-  </section>
 
   <!-- Botones secoundarios grises -->
   <section id="button-block">

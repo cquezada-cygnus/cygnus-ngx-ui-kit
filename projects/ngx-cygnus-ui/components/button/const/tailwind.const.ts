@@ -1,6 +1,4 @@
 export const TW_CLASS = {
-  // ' disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed',
-
   BTN: 'cursor-pointer flex justify-center items-center border align-middle font-sans font-medium text-center select-none transition-all duration-300 ease-in rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:outline-none focus:shadow-none data-[shape=pill]:rounded-full data-[width=full]:w-full px-5 py-2.5 text-sm disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed',
   BTN_PRIMARY: 'bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:ring-blue-300',
   BTN_SECONDARY: 'text-gray-700 bg-gray-25 border-gray-300 bg-white hover:bg-gray-100 hover:text-blue-600 hover:border-gray-300 focus:ring-gray-300',
@@ -10,10 +8,10 @@ export const TW_CLASS = {
   BTN_AMBER: 'border-transparent text-white bg-amber-600 hover:bg-amber-700 hover:border-transparent focus:bg-warning-700 focus:ring-amber-300',
   BTN_RED: 'border-transparent text-white bg-red-600 hover:bg-red-700 focus:bg-red-700 focus:ring-red-300 hover:border-transparent',
   BTN_CIRCLE: '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 disabled:pointer-events-none',
-  BTN_GHOST: 'py-2.5 px-4 text-blue-800 bg-transparent border-transparent !shadow-none hover:bg-blue-700/5 hover:border-blue-700/5 !hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
-  BTN_OUTLINED: 'py-2.5 px-4 bg-transparent border-blue-700 text-blue-700 hover:bg-blue-800 hover:text-blue-50 focus:ring-blue-300',
+  BTN_GHOST: 'py-2.5 px-4 text-blue-800 bg-transparent border-transparent !shadow-none hover:bg-blue-800/10 hover:border-blue-800/10 !hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
+  BTN_OUTLINED: 'py-2.5 px-4 bg-transparent border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-blue-50 hover:shadow-md focus:ring-blue-300',
   BTN_DISABLED: 'text-white bg-blue-400 cursor-not-allowed',
-  BTN_BLOCK: 'w-full',
+  BTN_BLOCK: 'hover:shadow-md !w-full',
   BTN_SIZE_XS: '!px-3 !py-2 !text-xs',
   BTN_SIZE_SM: '!px-3 !py-2 !text-sm',
   BTN_SIZE_LG: '!px-5 !py-3 !text-base',
