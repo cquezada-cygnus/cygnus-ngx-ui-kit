@@ -1,7 +1,7 @@
 export const TW_CLASS = {
   // ' disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed',
 
-  BTN: 'cursor-pointer flex justify-center items-center border align-middle font-sans font-medium text-center select-none transition-all duration-300 ease-in rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:outline-none focus:shadow-none data-[shape=pill]:rounded-full data-[width=full]:w-full px-5 py-2.5 text-sm',
+  BTN: 'cursor-pointer flex justify-center items-center border align-middle font-sans font-medium text-center select-none transition-all duration-300 ease-in rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:outline-none focus:shadow-none data-[shape=pill]:rounded-full data-[width=full]:w-full px-5 py-2.5 text-sm disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed',
   BTN_PRIMARY: 'bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:ring-blue-300',
   BTN_SECONDARY: 'text-gray-700 bg-gray-25 border-gray-300 bg-white hover:bg-gray-100 hover:text-blue-600 hover:border-gray-300 focus:ring-gray-300',
   BTN_ACCENT: 'text-blue-700 border-blue-50 bg-blue-50 hover:bg-blue-100 hover:text-blue-600 focus:ring-gray-300',
@@ -10,15 +10,9 @@ export const TW_CLASS = {
   BTN_AMBER: 'border-transparent text-white bg-amber-600 hover:bg-amber-700 hover:border-transparent focus:bg-warning-700 focus:ring-amber-300',
   BTN_RED: 'border-transparent text-white bg-red-600 hover:bg-red-700 focus:bg-red-700 focus:ring-red-300 hover:border-transparent',
   BTN_CIRCLE: '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 disabled:pointer-events-none',
-
-  // '          disabled:opacity-50 disabled:cursor-not-allowed   ',
-
   BTN_GHOST: 'py-2.5 px-4 text-blue-800 bg-transparent border-transparent !shadow-none hover:bg-blue-700/5 hover:border-blue-700/5 !hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
-
-// '  disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed     ',
-
   BTN_OUTLINED: 'py-2.5 px-4 bg-transparent border-blue-700 text-blue-700 hover:bg-blue-800 hover:text-blue-50 focus:ring-blue-300',
-  BTN_DISABLED: 'text-white bg-primary-400 cursor-not-allowed font-medium rounded-lg text-center',
+  BTN_DISABLED: 'text-white bg-blue-400 cursor-not-allowed',
   BTN_BLOCK: 'w-full',
   BTN_SIZE_XS: '!px-3 !py-2 !text-xs',
   BTN_SIZE_SM: '!px-3 !py-2 !text-sm',
@@ -33,9 +27,7 @@ export const TW_CLASS = {
   BTN_GROUP_LEFT: 'px-4 py-2 text-sm text-center transition-all border border-r-0 rounded-md rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_GROUP_MIDDLE: 'px-4 py-2 text-sm text-center transition-all border rounded-md rounded-l-none rounded-r-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_GROUP_RIGHT: 'px-4 py-2 text-sm text-center transition-all border border-l-0 rounded-md rounded-l-none shadow-sm border-gray-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
-
   BTN_LINK: 'flex justify-center items-center transition-colors duration-300 text-sm font-medium no-underline bg-transparent hover:bg-transparent focus:ring-0 text-blue-600 hover:text-blue-800 active:underline hover:underline px-4 py-2.5',
   BTN_LINK_SIMPLE: 'block text-sm transition-colors duration-300 hover:text-blue-800 hover:underline text-blue-600 py-1.5',
-
   BTN_A: 'group relative overflow-hidden focus:ring-4 inline-flex items-center rounded-lg justify-center',
 }
