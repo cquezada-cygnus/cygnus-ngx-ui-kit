@@ -324,158 +324,75 @@
 
               <h4 class="mb-2 text-base">Botones de íconos cuadrados</h4>
               <div class="flex items-center justify-center w-full gap-4 mb-4">
-                  <button
-                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-lg border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-gray-600 transition-all duration-300 ease-in hover:border-gray-800/5 hover:bg-gray-200 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          class="stroke-2 size-6">
-                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M12 5v14m-7-7h14" />
-                      </svg>
-                  </button>
-                  <button
-                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-lg border border-gray-300 bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-gray-500 transition-all duration-300 ease-in hover:bg-gray-100 hover:text-blue-600 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          class="stroke-2 size-6">
-                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M12 5v14m-7-7h14" />
-                      </svg>
-                  </button>
-                  <button
-                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-slate-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          class="stroke-2 size-6">
-                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M12 5v14m-7-7h14" />
-                      </svg>
-                  </button>
+
+                <cygnus-button
+                  [btnTypes]="'btn-ghost btn-icon-only'"
+                  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-outlined btn-icon-only'"
+                  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-primary btn-icon-only'"
+                  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+                >
+                </cygnus-button>
+
               </div>
 
               <h4 class="mb-2 text-base">Botones de íconos circulares</h4>
               <div class="flex items-center justify-center w-full gap-4 mb-4">
-                  <button
-                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-full border border-transparent bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-gray-600 transition-all duration-300 ease-in hover:border-gray-800/5 hover:bg-gray-200 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" stroke-width="1.5" fill="none"
-                          viewBox="0 0 24 24" class="stroke-[1.5] size-6">
-                          <path
-                              d="M9.95242 9.62272L11.5109 6.31816C11.711 5.89395 12.289 5.89395 12.4891 6.31816L14.0476 9.62272L17.5329 10.1559C17.9801 10.2243 18.1583 10.7996 17.8346 11.1296L15.313 13.7001L15.9081 17.3314C15.9845 17.7978 15.5168 18.1534 15.1167 17.9331L12 16.2177L8.88328 17.9331C8.48316 18.1534 8.01545 17.7978 8.09187 17.3314L8.68695 13.7001L6.16545 11.1296C5.8417 10.7996 6.01993 10.2243 6.46711 10.1559L9.95242 9.62272Z"
-                              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M12 2V1" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M12 23V22" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                      </svg>
-                  </button>
-                  <button
-                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-full border border-gray-300 bg-transparent text-center align-middle font-sans text-sm font-medium leading-none text-gray-500 transition-all duration-300 ease-in hover:bg-gray-100 hover:text-blue-600 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" stroke-width="1.5" fill="none"
-                          viewBox="0 0 24 24" class="stroke-[1.5] size-6">
-                          <path
-                              d="M9.95242 9.62272L11.5109 6.31816C11.711 5.89395 12.289 5.89395 12.4891 6.31816L14.0476 9.62272L17.5329 10.1559C17.9801 10.2243 18.1583 10.7996 17.8346 11.1296L15.313 13.7001L15.9081 17.3314C15.9845 17.7978 15.5168 18.1534 15.1167 17.9331L12 16.2177L8.88328 17.9331C8.48316 18.1534 8.01545 17.7978 8.09187 17.3314L8.68695 13.7001L6.16545 11.1296C5.8417 10.7996 6.01993 10.2243 6.46711 10.1559L9.95242 9.62272Z"
-                              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M12 2V1" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M12 23V22" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                      </svg>
-                  </button>
-                  <button
-                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-full border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-slate-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" stroke-width="1.5" fill="none"
-                          viewBox="0 0 24 24" class="stroke-[1.5] size-6">
-                          <path
-                              d="M9.95242 9.62272L11.5109 6.31816C11.711 5.89395 12.289 5.89395 12.4891 6.31816L14.0476 9.62272L17.5329 10.1559C17.9801 10.2243 18.1583 10.7996 17.8346 11.1296L15.313 13.7001L15.9081 17.3314C15.9845 17.7978 15.5168 18.1534 15.1167 17.9331L12 16.2177L8.88328 17.9331C8.48316 18.1534 8.01545 17.7978 8.09187 17.3314L8.68695 13.7001L6.16545 11.1296C5.8417 10.7996 6.01993 10.2243 6.46711 10.1559L9.95242 9.62272Z"
-                              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M12 2V1" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M12 23V22" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                          <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round"></path>
-                      </svg>
-                  </button>
+
+                <cygnus-button
+                  [btnTypes]="'btn-ghost btn-circle btn-icon-only'"
+                  [btnIconRouteRight]="'assets/icons/svg/Users/face-smile.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-outlined btn-circle btn-icon-only'"
+                  [btnIconRouteRight]="'assets/icons/svg/Users/face-smile.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-primary btn-circle btn-icon-only'"
+                  [btnIconRouteRight]="'assets/icons/svg/Users/face-smile.svg'"
+                >
+                </cygnus-button>
+
               </div>
 
               <h4 class="mb-2 text-base">Tamaños de botones</h4>
               <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-                  <button
-                      class="cursor-pointer inline-grid min-h-[32px] min-w-[32px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          class="text-white stroke-2 size-6">
-                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M12 5v14m-7-7h14" />
-                      </svg>
-                  </button>
+                <cygnus-button
+                  [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-xs'"
+                  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-sm'"
+                  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-primary btn-icon-xl btn-icon-only'"
+                  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-lg'"
+                  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+                >
+                </cygnus-button>
+                <cygnus-button
+                  [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-xl'"
+                  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+                >
+                </cygnus-button>
 
-                  <button
-                      class="cursor-pointer inline-grid min-h-[40px] min-w-[40px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          class="text-white stroke-2 size-6">
-                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M12 5v14m-7-7h14" />
-                      </svg>
-                  </button>
-
-                  <button
-                      class="cursor-pointer inline-grid min-h-[44px] min-w-[44px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          class="text-white stroke-2 size-6">
-                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M12 5v14m-7-7h14" />
-                      </svg>
-                  </button>
-
-                  <button
-                      class="cursor-pointer inline-grid min-h-[48px] min-w-[48px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          class="text-white stroke-2 size-6">
-                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M12 5v14m-7-7h14" />
-                      </svg>
-                  </button>
-
-                  <button
-                      class="cursor-pointer inline-grid min-h-[52px] min-w-[52px] select-none place-items-center rounded-lg border border-blue-600 bg-blue-600 text-center align-middle font-sans text-sm font-medium leading-none text-blue-50 transition-all duration-300 ease-in hover:border-blue-800 hover:bg-blue-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          class="text-white stroke-2 size-6">
-                          <path stroke="CurrentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M12 5v14m-7-7h14" />
-                      </svg>
-                  </button>
               </div>
           </div>
       </div>
@@ -668,119 +585,6 @@
 <main class="col-span-1 p-6 bg-white lg:col-span-8">
 
 
-  <!-- Button loading icons -->
-  <section id="button-loading-icons">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Cargando</h2>
-              <p class="mb-8 text-gray-600 text-md">Utilice indicadores dentro de los botones para indicar que
-                  una acción se está procesando o llevando a cabo en ese
-                  momento. También se puede cambiar el texto del elemento indicador y utilizar el texto del
-                  botón
-                  según sea necesario..</p>
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                  <!-- Botón con loading + texto -->
-                  <cygnus-button
-                    [btnTypes]="'btn-success btn-size-sm btn-icon'"
-                    [btnIsLoading]="true"
-                    [btnIconLoadingSize]="'size-4'"
-                  >
-                    Cargando
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-warning btn-size-sm btn-icon'"
-                    [btnIsLoading]="true"
-                    [btnIconLoadingSize]="'size-5'"
-                  >
-                    Cargando
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-error btn-size-sm btn-icon'"
-                    [btnIsLoading]="true"
-                    [btnIconLoadingSize]="'size-6'"
-                  >
-                    Cargando
-                  </cygnus-button>
-
-                  <!-- Botón con solo loading -->
-                  <cygnus-button
-                    [btnTypes]="'btn-pink btn-size-sm btn-icon btn-icon-only'"
-                    [btnIsLoading]="true"
-                    [btnIconLoadingSize]="'size-6'"
-                  >
-                  </cygnus-button>
-
-                  <cygnus-button
-                    [btnTypes]="'btn-purple btn-size-sm btn-icon btn-icon-only'"
-                    [btnIsLoading]="true"
-                    [btnIconLoadingSize]="'size-5'"
-                  >
-                  </cygnus-button>
-
-                  <cygnus-button
-                    [btnTypes]="'btn-indigo btn-size-sm btn-icon btn-icon-only'"
-                    [btnIsLoading]="true"
-                    [btnIconLoadingSize]="'size-4'"
-                  >
-                  </cygnus-button>
-
-              </div>
-          </div>
-
-      </div>
-  </section>
-
-  <!-- Button only icon -->
-  <section id="button-icon-only">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Botón icono simple</h2>
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                <cygnus-button
-                  [btnTypes]="'btn btn-icon-only'"
-                  [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
-                >
-                </cygnus-button>
-                <cygnus-button
-                  [btnTypes]="'btn-accent btn-circle btn-icon-only'"
-                  [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
-                >
-                </cygnus-button>
-                <cygnus-button
-                  [btnTypes]="'btn-ghost btn-circle btn-icon-only'"
-                  [btnIconRouteRight]="'assets/icons/svg/Alerts&Feedback/thumbs-up.svg'"
-                >
-                </cygnus-button>
-                <cygnus-button
-                  [btnTypes]="'btn-success btn-circle btn-icon-only'"
-                  [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
-                >
-                </cygnus-button>
-
-                <cygnus-button
-                  [btnTypes]="'btn-primary '"
-                  [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
-                >
-                  Messages
-                  <!-- COMPONENTE: Badge XS -->
-                  <cygnus-badge [badgeTypes]="'badge-xs'" [badgeText]="'2'" />
-                </cygnus-button>
-
-                <cygnus-button
-                  [btnTypes]="'btn btn-circle'"
-                >
-                1
-                </cygnus-button>
-
-              </div>
-          </div>
-
-      </div>
-  </section>
 
   <section id="button-group">
       <div
