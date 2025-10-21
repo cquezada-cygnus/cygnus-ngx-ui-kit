@@ -67,6 +67,7 @@
           [height]="iconSize()"
           [color]="iconColor()"
           [route]="iconAsset()"
+          (click)="notifyIconClicked()"
         />
       </div>
     } @else if (iconAsset()!=='' && iconPosition()==='left') {
@@ -76,6 +77,7 @@
           [height]="iconSize()"
           [color]="iconColor()"
           [route]="iconAsset()"
+          (click)="notifyIconClicked()"
         />
       </div>
     }

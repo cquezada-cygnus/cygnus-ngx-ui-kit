@@ -65,23 +65,26 @@
             <cygnus-input
               [inputCustomType]="'label-top'"
               [inputColor]="'base'"
-              [iconAsset]="'assets/icons/heroicons-outline/eye-slash.svg'"
+              [iconAsset]="eyeIcon()"
               [iconColor]="'#364153'"
               [textLabel]="'Contraseña'"
               [typePassword]="true"
               [textPlaceholder]="'••••••••'"
               [hintColor]="true"
               [textHint] ="''"
+              (iconClicked)="toggleEyeIcon($event)"
             />
 
 
           </fieldset>
           <div class="flex items-center justify-between">
               <cygnus-checkbox [checkboxType]="'text'" [checkboxText]="'Recuérdame'" />
-
-              <a href=""
-                class="justify-end block text-sm text-blue-600 transition-colors duration-300 hover:text-blue-800 hover:underline">¿Olvidaste
-                tu contraseña?</a>
+              <cygnus-button-link
+                [btnLinkType]="'btn-link-simple'"
+                [btnRouterLinkText]="''"
+              >
+                ¿Olvidaste tu contraseña?
+              </cygnus-button-link>
           </div>
 
           <cygnus-button [btnTypes]="'btn-primary btn-size-lg btn-block'">
