@@ -1,11 +1,11 @@
-import { Component, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, input, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TW_CLASS } from '../const/tailwind.const';
 import { BtnLinkType } from 'ngx-cygnus-ui/types';
 
 @Component({
   selector: 'cygnus-button-link',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './cygnus-button-link.component.html',
 })
 export class CygnusButtonLinkComponent {
@@ -24,6 +24,15 @@ export class CygnusButtonLinkComponent {
         return this.TW_CLASS.BTN_LINK_NAVBAR;
       default:
         return this.TW_CLASS.BTN_LINK;
+    }
+  }
+
+  addRouterLinkActiveTailwindClasses(customClass: BtnLinkType): string {
+    switch (customClass) {
+      case 'btn-link-navbar':
+        return this.TW_CLASS.BTN_LINK_NAVBAR_ACTIVE;
+      default:
+        return this.TW_CLASS.BTN_LINK_NAVBAR_ACTIVE;
     }
   }
 }

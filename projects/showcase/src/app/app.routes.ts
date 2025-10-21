@@ -27,7 +27,21 @@ export const routes: Routes = [
   },
   {
     path: 'navbar',
-    loadComponent: () => import('./navbar-content/navbar-content.component').then( (c) => c.NavbarContentComponent )
+    loadComponent: () => import('./navbar-content/navbar-content.component').then( (c) => c.NavbarContentComponent ),
+    children: [
+      {
+        path: 'card',
+        loadComponent: () => import('./card-content/card-content.component').then( (c) => c.CardContentComponent )
+      },
+      {
+        path: 'login-01',
+        loadComponent: () => import('./login-content/login-content.component').then( (c) => c.LoginContentComponent )
+      },
+      {
+        path: '**',
+        redirectTo: ''
+      }
+    ]
   },
   {
     path: 'selectores',
