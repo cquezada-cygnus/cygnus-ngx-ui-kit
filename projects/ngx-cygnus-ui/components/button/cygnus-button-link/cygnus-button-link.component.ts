@@ -13,4 +13,17 @@ export class CygnusButtonLinkComponent {
 
   btnLinkType = input<BtnLinkType>('btn-link');
   btnRouterLinkText = input<string>('');
+
+  addTailwindClasses(customClass: BtnLinkType): string {
+    switch (customClass) {
+      case 'btn-link':
+        return this.TW_CLASS.BTN_LINK;
+      case 'btn-link-simple':
+        return this.TW_CLASS.BTN_LINK_SIMPLE;
+      case 'btn-link-navbar':
+        return this.TW_CLASS.BTN_LINK_NAVBAR;
+      default:
+        return this.TW_CLASS.BTN_LINK;
+    }
+  }
 }

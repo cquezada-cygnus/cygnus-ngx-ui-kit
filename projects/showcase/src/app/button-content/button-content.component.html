@@ -28,6 +28,27 @@
     </div>
   </section>
 
+  <section id="navbar-sidebar-buttons">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border border-gray-300 mb-14 p-4">
+      <h2 class="mb-4 text-xl font-semibold">Navbar Sidebar Buttons</h2>
+      <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+        <!-- Prioridad: Botón Navbar -->
+        <cygnus-button-link
+            [btnLinkType]="'btn-link-navbar'"
+            [btnRouterLinkText]="''"
+          >
+            Botón Navbar
+          </cygnus-button-link>
+        <!-- Prioridad: Botón Sidebar -->
+        <cygnus-button [btnTypes]="'btn btn-sidebar btn-size-sm'" >Botón sidebar</cygnus-button>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- Variantes de botones -->
   <section id="button-ghost">
       <div

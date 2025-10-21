@@ -6,6 +6,7 @@ export type BtnCustomType =
   'btn-success' |
   'btn-warning' |
   'btn-error' |
+  'btn-sidebar' |
   'btn-purple' |
   'btn-indigo' |
   'btn-pink' |
@@ -29,4 +30,4 @@ export type BtnCustomType =
 ;
 
 export type BtnAnimationOption = 'A' | 'B';
-export type BtnLinkType = 'btn-link' | 'btn-link-simple';
+export type BtnLinkType = 'btn-link' | 'btn-link-simple' | 'btn-link-navbar';

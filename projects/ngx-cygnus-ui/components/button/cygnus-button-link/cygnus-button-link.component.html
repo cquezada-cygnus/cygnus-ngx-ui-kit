@@ -1,6 +1,6 @@
 <a
   [routerLink]="btnRouterLinkText()"
-  [class]="(btnLinkType()==='btn-link' ? TW_CLASS.BTN_LINK : TW_CLASS.BTN_LINK_SIMPLE)"
+  [class]="addTailwindClasses(btnLinkType())"
 >
   <ng-content></ng-content>
 </a>
