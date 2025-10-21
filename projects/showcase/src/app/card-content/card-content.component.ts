@@ -4,7 +4,8 @@ import {
   CygnusCardImageComponent,
   CygnusCardLoginComponent,
   CygnusCardShowValidatorsComponent,
-  CygnusCardTitleTextComponent
+  CygnusCardTitleTextComponent,
+  CygnusMainboardCardComponent,
 } from 'ngx-cygnus-ui/components/card';
 
 
@@ -16,6 +17,7 @@ import {
     CygnusCardImageComponent,
     CygnusCardTitleTextComponent,
     CygnusCardIconTextComponent,
+    CygnusMainboardCardComponent,
   ],
   templateUrl: './card-content.component.html',
   styleUrl: './card-content.component.scss'

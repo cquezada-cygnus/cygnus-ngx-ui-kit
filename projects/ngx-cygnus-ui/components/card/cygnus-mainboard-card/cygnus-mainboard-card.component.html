@@ -1,0 +1,48 @@
+<div data-ripple-light="true"
+  class="p-0 transition bg-white border-2 border-blue-200 rounded-lg cursor-pointer text-3xl text-primary-400 hover:border-blue-300 hover:bg-gradient-to-t from-blue-100 to-white active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+  <div class="p-5 body">
+    <div class="flex items-start justify-between mb-4">
+      <div class="flex items-center justify-start header">
+        <div class="mr-2 center-icon">
+
+          <lib-ngx-cygnus-icons
+            [width]="iconLeftSize()"
+            [height]="iconLeftSize()"
+            [route]="iconLeftAsset()"
+            [color]="iconLeftColor()"
+          />
+
+        </div>
+        <p class="text-base text-left">{{cardTitle()}}</p>
+      </div>
+      <div class="icon-star text-warning-400">
+
+        <lib-ngx-cygnus-icons
+          [width]="iconRightSize()"
+          [height]="iconRightSize()"
+          [route]="iconRightAsset()"
+          [color]="iconRightColor()"
+        />
+
+      </div>
+    </div>
+    <div class="border-0 shadow-none">
+      <p class="text-sm text-gray-500">{{cardText()}}</p>
+    </div>
+  </div>
+  <div class="flex justify-end p-4 footer">
+    <cygnus-button-link
+      [btnLinkType]="'btn-link'"
+      [btnRouterLinkText]="''"
+    >
+      Ingresar
+      <lib-ngx-cygnus-icons
+        [width]="iconArrowSize()"
+        [height]="iconArrowSize()"
+        [route]="iconArrowAsset()"
+        [color]="iconArrowColor()"
+      />
+    </cygnus-button-link>
+
+  </div>
+</div>
