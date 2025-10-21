@@ -44,6 +44,10 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'sidebar',
+    loadComponent: () => import('./sidebar-content/sidebar-content.component').then( (c) => c.SidebarContentComponent )
+  },
+  {
     path: 'selectores',
     loadComponent: () => import('./select-content/select-content.component').then( (c) => c.SelectContentComponent )
   },

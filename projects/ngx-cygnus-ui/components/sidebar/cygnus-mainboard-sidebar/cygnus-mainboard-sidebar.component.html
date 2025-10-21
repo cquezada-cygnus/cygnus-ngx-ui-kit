@@ -1,0 +1,24 @@
+<aside id="rightPanel"
+  class="fixed top-0 md:top-[72px] right-0 h-full w-72 bg-blue-100 text-white z-40 shadow-2xl transform **translate-x-full** transition-transform duration-300 ease-in-out"
+  [class.translate-x-full]="closeMainboardToggle()"
+  >
+  <div class="flex flex-col justify-between h-full p-4">
+
+    <div class="flex flex-col space-y-4">
+
+      @for (item of buttonSidebarArr(); track $index) {
+        <cygnus-button
+          [btnTypes]="'btn btn-sidebar btn-block btn-size-md btn-icon-xl'"
+          [btnIconRouteLeft]="item.iconAsset"
+          [routerLink]="item.routerLinkText"
+        >
+          {{item.itemName}}
+        </cygnus-button>
+      }
+
+    </div>
+
+    <cygnus-button (click)="closeMainboard()" [btnTypes]="'btn-primary btn-block'" >Cerrar</cygnus-button>
+
+  </div>
+</aside>

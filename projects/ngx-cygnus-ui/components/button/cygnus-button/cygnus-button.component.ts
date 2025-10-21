@@ -82,6 +82,7 @@ export class CygnusButtonComponent implements OnInit {
         this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_RED;
       case 'btn-sidebar':
+        this.btnIconColor.set('#193cb8');
         return this.TW_CLASS.BTN_SIDEBAR;
       case 'btn-ghost':
         this.btnIconColor.set('#193cb8');
@@ -120,6 +121,10 @@ export class CygnusButtonComponent implements OnInit {
         return '';
       case 'btn-icon-lg':
         this.btnIconSize = '1.25rem';
+        this.btnIconExist = true;
+        return '';
+      case 'btn-icon-xl':
+        this.btnIconSize = '1.5rem';
         this.btnIconExist = true;
         return '';
       case 'btn-icon-only':
