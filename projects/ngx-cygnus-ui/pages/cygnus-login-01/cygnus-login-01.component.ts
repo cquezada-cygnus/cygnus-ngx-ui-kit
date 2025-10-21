@@ -20,12 +20,24 @@ export class CygnusLogin01Component {
 
   openEye: string = 'assets/icons/svg/General/eye.svg';
   closedEye: string = 'assets/icons/heroicons-outline/eye-slash.svg';
+  passPlaceholderHide: string = '••••••••';
+  passPlaceholderShow: string = '-----';
   eyeIcon = signal<string>(this.closedEye);
+  hidePassword = signal<boolean>(true);
+  passPlaceholder = signal<string>(this.passPlaceholderHide);
 
   toggleEyeIcon($event: string) {
     if ($event==='iconClicked') {
-      if (this.eyeIcon()===this.closedEye) this.eyeIcon.set(this.openEye);
-      else this.eyeIcon.set(this.closedEye);
+      if (this.eyeIcon()===this.closedEye) {
+        this.hidePassword.set(false);
+        this.passPlaceholder.set(this.passPlaceholderShow);
+        this.eyeIcon.set(this.openEye);
+      }
+      else {
+        this.hidePassword.set(true);
+        this.passPlaceholder.set(this.passPlaceholderHide);
+        this.eyeIcon.set(this.closedEye);
+      }
     }
   }
 
