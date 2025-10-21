@@ -1,0 +1,13 @@
+<ul
+  class="hidden mb-4 space-y-2 lg:block flex-column space-y md:me-4 md:mb-0 md:min-w-36">
+  @for (item of arrBtnLinkText(); track $index) {
+    <li>
+      <cygnus-button-link
+        [btnLinkType]="'btn-link-navbar'"
+        [btnRouterLinkText]="item.routerLinkText"
+      >
+        {{item.option}}
+      </cygnus-button-link>
+    </li>
+  }
+</ul>

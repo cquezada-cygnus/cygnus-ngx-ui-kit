@@ -26,6 +26,10 @@ export const routes: Routes = [
     loadComponent: () => import('./input-content/input-content.component').then( (c) => c.InputContentComponent )
   },
   {
+    path: 'navbar',
+    loadComponent: () => import('./navbar-content/navbar-content.component').then( (c) => c.NavbarContentComponent )
+  },
+  {
     path: 'selectores',
     loadComponent: () => import('./select-content/select-content.component').then( (c) => c.SelectContentComponent )
   },

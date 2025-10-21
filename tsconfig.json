@@ -55,6 +55,12 @@
       "ngx-cygnus-ui/components/checkbox": [
         "./projects/ngx-cygnus-ui/components/checkbox",
       ],
+      "ngx-cygnus-ui/components/navbar/*": [
+        "./projects/ngx-cygnus-ui/components/navbar/*",
+      ],
+      "ngx-cygnus-ui/components/navbar": [
+        "./projects/ngx-cygnus-ui/components/navbar",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],
