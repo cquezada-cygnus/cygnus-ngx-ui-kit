@@ -411,53 +411,149 @@
 
 
                   <h4 class="text-base">Tamaños</h4>
+
                   <!-- COMPONENTE: Grupo de botones small -->
                   <div class="inline-flex flex-row">
-                      <button
-                          class="inline-flex px-2.5 py-1.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-blue-600 rounded-lg rounded-r-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Uno
-                      </button>
-                      <button
-                          class="inline-flex px-2.5 py-1.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Dos
-                      </button>
-                      <button
-                          class="inline-flex px-2.5 py-1.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-lg rounded-l-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Tres
-                      </button>
+                    <cygnus-button
+                      [btnTypes]="'btn-success btn-size-xs btn-group-left'"
+                    >
+                      left btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-warning btn-size-xs btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-error btn-size-xs btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-ghost btn-size-xs btn-group-right'"
+                    >
+                      right btn
+                    </cygnus-button>
+                  </div>
+                  <!-- COMPONENTE: Grupo de botones small -->
+                  <div class="inline-flex flex-row">
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-size-xs btn-group-left'"
+                    >
+                      left btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-size-xs btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-size-xs btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-size-xs btn-group-right'"
+                    >
+                      right btn
+                    </cygnus-button>
                   </div>
 
                   <!-- COMPONENTE: Grupo de botones medium -->
                   <div class="inline-flex flex-row">
-                      <button
-                          class="inline-flex px-3.5 py-2.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-blue-600 rounded-lg rounded-r-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Uno
-                      </button>
-                      <button
-                          class="inline-flex px-3.5 py-2.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Dos
-                      </button>
-                      <button
-                          class="inline-flex px-3.5 py-2.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-lg rounded-l-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Tres
-                      </button>
+                    <cygnus-button
+                      [btnTypes]="'btn-success btn-group-left'"
+                    >
+                      left btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-warning btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-error btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-ghost btn-group-right'"
+                    >
+                      right btn
+                    </cygnus-button>
+                  </div>
+                  <!-- COMPONENTE: Grupo de botones medium -->
+                  <div class="inline-flex flex-row">
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-group-left'"
+                    >
+                      left btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-group-right'"
+                    >
+                      right btn
+                    </cygnus-button>
                   </div>
 
+
+                  <!-- COMPONENTE: Grupo de botones X large -->
+                  <div class="inline-flex flex-row">
+                    <cygnus-button
+                      [btnTypes]="'btn-success btn-size-xl btn-group-left'"
+                    >
+                      left btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-warning btn-size-xl btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-error btn-size-xl btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-ghost btn-size-xl btn-group-right'"
+                    >
+                      right btn
+                    </cygnus-button>
+                  </div>
                   <!-- COMPONENTE: Grupo de botones large -->
                   <div class="inline-flex flex-row">
-                      <button
-                          class="inline-flex px-5 py-3.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-blue-600 rounded-lg rounded-r-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Uno
-                      </button>
-                      <button
-                          class="inline-flex px-5 py-3.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Dos
-                      </button>
-                      <button
-                          class="inline-flex px-5 py-3.5 font-sans text-sm font-medium leading-none text-center transition-all duration-300 ease-in bg-blue-600 border border-l-0 border-blue-600 rounded-lg rounded-l-none text-blue-50 hover:border-blue-800 hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-                          Tres
-                      </button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-size-xl btn-group-left'"
+                    >
+                      left btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-size-xl btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-size-xl btn-group-middle'"
+                    >
+                      middle btn
+                    </cygnus-button>
+                    <cygnus-button
+                      [btnTypes]="'btn-primary btn-size-xl btn-group-right'"
+                    >
+                      right btn
+                    </cygnus-button>
                   </div>
+
               </div>
 
               <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
@@ -578,92 +674,3 @@
 </main>
 
 
-
-
-
-
-<main class="col-span-1 p-6 bg-white lg:col-span-8">
-
-
-
-  <section id="button-group">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Grupo de botones predeterminado</h2>
-              <p class="mb-8 text-gray-600 text-md">Este ejemplo de componente muestra un grupo de botones
-                  interactivo con control detallado sobre la apariencia y el
-                  diseño. El uso de clases de utilidad facilita la personalización de cada aspecto del diseño
-                  del grupo de botones.</p>
-
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
-                <div class="flex row">
-                  <cygnus-button
-                    [btnTypes]="'btn-secondary btn-group-left'"
-                  >
-                    left btn
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-secondary btn-group-middle'"
-                  >
-                    middle btn
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-secondary btn-group-right'"
-                  >
-                    right btn
-                  </cygnus-button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
-                <div class="flex row">
-                  <cygnus-button
-                    [btnTypes]="'btn-indigo btn-group-left'"
-                  >
-                    left btn
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-indigo btn-group-middle'"
-                  >
-                    middle btn
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-indigo btn-group-right'"
-                  >
-                    right btn
-                  </cygnus-button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
-                <div class="flex row">
-                  <cygnus-button
-                    [btnTypes]="'btn-success btn-group-left'"
-                  >
-                    left btn
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-warning btn-group-middle'"
-                  >
-                    middle btn
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-error btn-group-middle'"
-                  >
-                    middle btn
-                  </cygnus-button>
-                  <cygnus-button
-                    [btnTypes]="'btn-purple btn-group-right'"
-                  >
-                    right btn
-                  </cygnus-button>
-                </div>
-              </div>
-
-          </div>
-
-      </div>
-  </section>
-
-</main>
