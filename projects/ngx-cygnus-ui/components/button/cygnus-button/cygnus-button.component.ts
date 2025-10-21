@@ -1,5 +1,5 @@
 import { Component, effect, input, OnInit, signal, WritableSignal } from '@angular/core';
-import { IconBtnColor, IconBtnSize, IconPosition } from 'ngx-cygnus-ui/types';
+import { IconBtnColor, IconBtnSize } from 'ngx-cygnus-ui/types';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { IconLoadingSize } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';

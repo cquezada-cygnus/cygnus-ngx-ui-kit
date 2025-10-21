@@ -15,7 +15,7 @@ export const TW_CLASS = {
   BTN_SIZE_XS: '!px-2.5 !py-1.5 !text-sm',
   BTN_SIZE_SM: '!px-3 !py-2 !text-sm',
   BTN_SIZE_LG: '!px-5 !py-3 !text-base',
-  BTN_SIZE_XL: '!px-5 !py-3.5 !text-base', // px-5 py-3.5   // !px-6 !py-3.5
+  BTN_SIZE_XL: '!px-5 !py-3.5 !text-base',
   BTN_ICON_ONLY_SIZE_XS: '!px-0 !py-0 !inline-grid !min-h-[32px] !min-w-[32px] select-none !place-items-center align-middle leading-none',
   BTN_ICON_ONLY_SIZE_SM: '!px-0 !py-0 !inline-grid min-h-[40px] !min-w-[40px] select-none !place-items-center align-middle leading-none',
   BTN_ICON_ONLY: '!px-0 !py-0 !inline-grid !min-h-[44px] !min-w-[44px] select-none !place-items-center align-middle leading-none',

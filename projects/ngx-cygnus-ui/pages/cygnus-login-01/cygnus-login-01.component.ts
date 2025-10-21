@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
+import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 
 @Component({
   selector: 'cygnus-login-01',
   imports: [
     CygnusInputComponent,
     CygnusCheckboxComponent,
+    CygnusButtonComponent,
   ],
   templateUrl: './cygnus-login-01.component.html',
 })
