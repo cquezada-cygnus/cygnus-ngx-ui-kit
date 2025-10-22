@@ -21,6 +21,7 @@ export class CygnusAlertContenidoComponent implements OnInit {
   alertIconAsset = input<string>('assets/icons/svg/Alerts&Feedback/alert-circle.svg');
   alertTitle = input<string>('');
   alertContent = input<string>('');
+  btnFullText = input<string>('Aceptar');
 
   alertTypes = input<string>('');
   alertAllClasses = signal<string>('');

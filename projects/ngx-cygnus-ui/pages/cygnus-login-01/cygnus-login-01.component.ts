@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
 import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
+import { CygnusAlertContenidoComponent, } from 'ngx-cygnus-ui/components/alert';
 
 @Component({
   selector: 'cygnus-login-01',
@@ -10,6 +11,7 @@ import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/
     CygnusCheckboxComponent,
     CygnusButtonComponent,
     CygnusButtonLinkComponent,
+    CygnusAlertContenidoComponent,
   ],
   templateUrl: './cygnus-login-01.component.html',
 })
@@ -25,6 +27,9 @@ export class CygnusLogin01Component {
   eyeIcon = signal<string>(this.closedEye);
   hidePassword = signal<boolean>(true);
   passPlaceholder = signal<string>(this.passPlaceholderHide);
+
+  alertCondition = signal<boolean>(false);
+  alertBlocked = signal<boolean>(true);
 
   toggleEyeIcon($event: string) {
     if ($event==='iconClicked') {
