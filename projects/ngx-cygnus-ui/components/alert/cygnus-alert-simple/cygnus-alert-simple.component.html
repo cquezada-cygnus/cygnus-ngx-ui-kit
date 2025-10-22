@@ -1,34 +1,38 @@
-<div
-  [class]="
-    TW_CLASS.ALERT_SIMPLE_BASE + ' ' +
-    (alertEquis() ? TW_CLASS.ALERT_SIMPLE_EQUIS_BASE : '') + ' ' +
-    alertAllClasses() + ' '
-  "
-  role="alert"
->
-@if (alertIcon()) {
-  <lib-ngx-cygnus-icons class="me-2"
-    [width]="'1rem'"
-    [height]="'1rem'"
-    [color]="alertIconColor"
-    [route]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
-  />
-}
-  <span class="font-medium">
-    {{alertTitle()}}
-  </span>&nbsp;
-  {{alertContent()}}
-
-@if (alertEquis()) {
-  <button
-    class="flex items-center justify-center transition-all w-8 h-8 rounded-md hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5"
-    type="button">
-    <lib-ngx-cygnus-icons
-      [width]="'1.25rem'"
-      [height]="'1.25rem'"
+@if (showAlert()) {
+  <div
+    [class]="
+      TW_CLASS.ALERT_SIMPLE_BASE + ' ' +
+      (alertEquis() ? TW_CLASS.ALERT_SIMPLE_EQUIS_BASE : '') + ' ' +
+      alertAllClasses() + ' '
+    "
+    role="alert"
+  >
+  @if (alertIcon()) {
+    <lib-ngx-cygnus-icons class="me-2"
+      [width]="'1rem'"
+      [height]="'1rem'"
       [color]="alertIconColor"
-      [route]="'assets/icons/svg/General/x-close.svg'"
+      [route]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
     />
-  </button>
+  }
+    <span class="font-medium">
+      {{alertTitle()}}
+    </span>&nbsp;
+    {{alertContent()}}
+
+  @if (alertEquis()) {
+    <button (click)="hideAlert()"
+      class="flex items-center justify-center transition-all w-8 h-8 rounded-md hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5"
+      type="button">
+      <lib-ngx-cygnus-icons
+        [width]="'1.25rem'"
+        [height]="'1.25rem'"
+        [color]="alertIconColor"
+        [route]="'assets/icons/svg/General/x-close.svg'"
+      />
+    </button>
+  }
+  </div>
 }
-</div>
+
+

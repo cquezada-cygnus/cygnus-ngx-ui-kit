@@ -16,6 +16,7 @@ import { IconAlertColor } from 'ngx-cygnus-ui/types';
 })
 export class CygnusAlertSimpleComponent implements OnInit {
   TW_CLASS = TW_CLASS;
+  showAlert  = signal<boolean>(true);
 
   alertIcon  = input<boolean>(false);
   alertEquis = input<boolean>(false);
@@ -92,5 +93,9 @@ export class CygnusAlertSimpleComponent implements OnInit {
         this.alertIconColor = '#193cb8';
         return this.TW_CLASS.ALERT_SIMPLE_EQUIS_PRIMARY;
     }
+  }
+
+  hideAlert() {
+    this.showAlert.set(false);
   }
 }
