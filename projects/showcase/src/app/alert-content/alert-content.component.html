@@ -38,7 +38,7 @@
         <!-- COMPONENTE: Alerta simple -->
          <cygnus-alert-simple
           [alertTypes]="'alert-gray'"
-          [alertTitle]="'¡Alerta de simple!'"
+          [alertTitle]="'¡Alerta simple!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
         />
       </div>
@@ -55,127 +55,46 @@
           alerta usando la etiqueta <code>svg</code>.</p>
       <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
 
-          <!-- COMPONENTE: Alerta de información con ícono -->
-          <div class="flex items-center w-full p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50"
-              role="alert">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"
-                  fill="none" class="size-4 me-2 shrink-0">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              <span class="sr-only">Información</span>
-              <div>
-                  <span class="font-medium">¡Alerta de información!</span> Cambie algunas cosas e
-                  intente enviar de nuevo.
-              </div>
-          </div>
+        <!-- COMPONENTE: Alerta de información -->
+        <cygnus-alert-simple
+          [alertTypes]="'alert-primary'"
+          [alertIcon]="true"
+          [alertTitle]="'¡Alerta de información!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-          <!-- COMPONENTE: Alerta de error con ícono -->
-          <div class="flex items-center w-full p-4 mb-4 text-sm text-red-700 rounded-lg bg-red-50"
-              role="alert">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              <span class="sr-only">Info</span>
-              <div>
-                  <span class="font-medium">¡Alerta de error!</span> Cambie algunas cosas e intente
-                  enviar
-                  de nuevo.
-              </div>
-          </div>
+        <!-- COMPONENTE: Alerta de error -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-red'"
+          [alertIcon]="true"
+          [alertTitle]="'¡Alerta de error!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-          <!-- COMPONENTE: Alerta de éxito con ícono -->
-          <div class="flex items-center w-full p-4 mb-4 text-sm text-green-700 rounded-lg bg-green-50"
-              role="alert">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              <span class="sr-only">Info</span>
-              <div>
-                  <span class="font-medium">¡Alerta de éxito!</span> Cambie algunas cosas e intente
-                  enviar
-                  de nuevo.
-              </div>
-          </div>
+        <!-- COMPONENTE: Alerta de éxito -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-green'"
+          [alertIcon]="true"
+          [alertTitle]="'¡Alerta de éxito!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-          <!-- COMPONENTE: Alerta de advertencia con ícono -->
-          <div class="flex items-center w-full p-4 mb-4 text-sm text-yellow-700 rounded-lg bg-yellow-50"
-              role="alert">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              <span class="sr-only">Info</span>
-              <div>
-                  <span class="font-medium">¡Alerta de advertencia!</span> Cambie algunas cosas e
-                  intente enviar de nuevo.
-              </div>
-          </div>
+        <!-- COMPONENTE: Alerta de advertencia -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-yellow'"
+          [alertIcon]="true"
+          [alertTitle]="'¡Alerta de advertencia!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-          <!-- COMPONENTE: Alerta de simple con ícono -->
-          <div class="flex items-center w-full p-4 text-sm text-gray-700 rounded-lg bg-gray-50"
-              role="alert">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              <span class="sr-only">Info</span>
-              <div>
-                  <span class="font-medium">¡Alerta simple!</span> Cambie algunas cosas e intente
-                  enviar de nuevo.
-              </div>
-          </div>
+        <!-- COMPONENTE: Alerta simple -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-gray'"
+          [alertIcon]="true"
+          [alertTitle]="'¡Alerta simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
+
       </div>
     </div>
   </div>
@@ -189,166 +108,51 @@
 
       <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
 
-          <!-- COMPONENTE: Alerta de información con ícono equis -->
-          <div role="alert"
-              class="relative flex items-center w-full p-3 pr-6 mt-3 text-sm text-blue-700 border border-blue-300 rounded-md sm:p-3 bg-blue-50">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              Una simple alerta rellena para mostrar el mensaje información.
-              <button
-                  class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-blue-700 hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5"
-                  type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" class="w-5 h-5" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
-                      </path>
-                  </svg>
-              </button>
-          </div>
+        <!-- COMPONENTE: Alerta de información -->
+        <cygnus-alert-simple
+          [alertTypes]="'alert-primary'"
+          [alertIcon]="true"
+          [alertEquis]="true"
+          [alertTitle]="'¡Alerta de información!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-      </div>
+        <!-- COMPONENTE: Alerta de error -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-red'"
+          [alertIcon]="true"
+          [alertEquis]="true"
+          [alertTitle]="'¡Alerta de error!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-      <div class="flex items-center justify-center w-full gap-4 mb-4">
+        <!-- COMPONENTE: Alerta de éxito -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-green'"
+          [alertIcon]="true"
+          [alertEquis]="true"
+          [alertTitle]="'¡Alerta de éxito!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-          <!-- COMPONENTE: Alerta simple con ícono equis -->
-          <div role="alert"
-              class="relative flex items-center w-full p-3 pr-6 mt-3 text-sm text-gray-700 border border-gray-300 rounded-md sm:p-3 bg-gray-50">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              Una simple alerta rellena para mostrar el mensaje de información secundario.
-              <button
-                  class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-gray-700 hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5"
-                  type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" class="w-5 h-5" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
-                      </path>
-                  </svg>
-              </button>
-          </div>
+        <!-- COMPONENTE: Alerta de advertencia -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-yellow'"
+          [alertIcon]="true"
+          [alertEquis]="true"
+          [alertTitle]="'¡Alerta de advertencia!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-      </div>
+        <!-- COMPONENTE: Alerta simple -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-gray'"
+          [alertIcon]="true"
+          [alertEquis]="true"
+          [alertTitle]="'¡Alerta simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
-      <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-          <!-- COMPONENTE: Alerta de error con ícono equis -->
-          <div role="alert"
-              class="relative flex items-center w-full p-3 pr-6 mt-3 text-sm text-red-700 border border-red-300 rounded-md s:p-3 bg-red-50">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              Una simple alerta rellena para mostrar el mensaje.
-              <button
-                  class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-red-700 hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5"
-                  type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" class="w-5 h-5" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
-                      </path>
-                  </svg>
-              </button>
-          </div>
-
-      </div>
-
-      <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-          <!-- COMPONENTE: Alerta de advetencia con ícono equis -->
-          <div role="alert"
-              class="relative flex items-center w-full p-3 pr-6 mt-3 text-sm border rounded-md sm:p-3 text-warning-700 bg-warning-50 border-warning-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              Una simple alerta rellena para mostrar el mensaje de advetencia.
-              <button
-                  class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-warning-700 hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5"
-                  type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" class="w-5 h-5" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
-                      </path>
-                  </svg>
-              </button>
-          </div>
-
-      </div>
-
-      <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-          <!-- COMPONENTE: Alerta de éxito con ícono equis -->
-          <div role="alert"
-              class="relative flex items-center w-full p-3 pr-6 mt-3 text-sm text-green-700 border border-green-300 rounded-md sm:p-3 bg-green-50">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 shrink-0" viewBox="0 0 20 20"
-                  fill="none">
-                  <g clip-path="url(#clip0_6356_5514)">
-                      <path
-                          d="M9.99996 13.3333V9.99996M9.99996 6.66663H10.0083M18.3333 9.99996C18.3333 14.6023 14.6023 18.3333 9.99996 18.3333C5.39759 18.3333 1.66663 14.6023 1.66663 9.99996C1.66663 5.39759 5.39759 1.66663 9.99996 1.66663C14.6023 1.66663 18.3333 5.39759 18.3333 9.99996Z"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                      <clipPath id="clip0_6356_5514">
-                          <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                  </defs>
-              </svg>
-              Una simple alerta rellena para mostrar el mensaje de éxito.
-              <button
-                  class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-green-700 hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5"
-                  type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" class="w-5 h-5" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
-                      </path>
-                  </svg>
-              </button>
-          </div>
       </div>
     </div>
   </div>
