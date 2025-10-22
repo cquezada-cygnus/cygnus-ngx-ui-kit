@@ -14,6 +14,8 @@ import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 })
 export class CygnusAlertContenidoComponent implements OnInit {
   TW_CLASS = TW_CLASS;
+  showAlert  = signal<boolean>(true);
+
   alertWithBtn = input<boolean>(true);
   btnIsFull = input<boolean>(false);
   alertIconColor: IconAlertColor = '#193cb8';
@@ -112,5 +114,9 @@ export class CygnusAlertContenidoComponent implements OnInit {
         this.buttonType.set('btn-primary');
         return this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY;
     }
+  }
+
+  hideAlert() {
+    this.showAlert.set(false);
   }
 }

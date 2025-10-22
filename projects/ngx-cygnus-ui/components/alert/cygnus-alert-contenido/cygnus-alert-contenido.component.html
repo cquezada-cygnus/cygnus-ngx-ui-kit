@@ -1,49 +1,60 @@
-<div id="alert-additional-content-1"
-  [class]="
-    (btnIsFull() ? TW_CLASS.ALERT_CONTENT_BASE : TW_CLASS.ALERT_CONTENT_FULL_BASE) + ' ' +
-    alertAllClasses() + ' '
-  "
-  role="alert">
-  <div class="flex items-center">
-    <lib-ngx-cygnus-icons class="me-2"
-      [width]="'1rem'"
-      [height]="'1rem'"
-      [color]="alertIconColor"
-      [route]="alertIconAsset()"
-    />
-    <span class="sr-only">Info</span>
-    <h3 class="text-lg font-medium">{{alertTitle()}}</h3>
-  </div>
-  <div class="mt-2 mb-4 text-sm">
-    {{alertContent()}}
-  </div>
+@if (showAlert()) {
 
-@if (alertWithBtn()) {
+  <div id="alert-additional-content-1"
+    [class]="
+      (btnIsFull() ? TW_CLASS.ALERT_CONTENT_BASE : TW_CLASS.ALERT_CONTENT_FULL_BASE) + ' ' +
+      alertAllClasses() + ' '
+    "
+    role="alert">
+    <div class="flex items-center">
+      <lib-ngx-cygnus-icons class="me-2"
+        [width]="'1rem'"
+        [height]="'1rem'"
+        [color]="alertIconColor"
+        [route]="alertIconAsset()"
+      />
+      <span class="sr-only">Info</span>
+      <h3 class="text-lg font-medium">{{alertTitle()}}</h3>
+    </div>
+    <div class="mt-2 mb-4 text-sm">
+      {{alertContent()}}
+    </div>
 
-  @if (btnIsFull()) {
+  @if (alertWithBtn()) {
 
-  <div class="flex flex-col">
-    <cygnus-button
-      [btnTypes]="buttonType() + ' btn-icon btn-block'"
-      [btnIconRouteLeft]="'assets/icons/svg/Communication/phone.svg'"
-    >
-      {{btnFullText()}}
-    </cygnus-button>
-  </div>
+    @if (btnIsFull()) {
 
-  } @else {
+    <div class="flex flex-col">
+      <cygnus-button
+        [btnTypes]="buttonType() + ' btn-icon btn-block'"
+        [btnIconRouteLeft]="'assets/icons/svg/Communication/phone.svg'"
+      >
+        {{btnFullText()}}
+      </cygnus-button>
+    </div>
 
-  <div class="flex">
-    <cygnus-button
-      class="me-2"
-      [btnTypes]="buttonType() + ' btn-size-xs btn-icon'"
-      [btnIconRouteLeft]="'assets/icons/svg/General/eye.svg'"
-    >
-      Ver más
-    </cygnus-button>
-    <cygnus-button [btnTypes]="buttonOutlinedType() +' btn-size-xs'" >Cerrar</cygnus-button>
-  </div>
+    } @else {
 
+    <div class="flex">
+      <cygnus-button
+        class="me-2"
+        [btnTypes]="buttonType() + ' btn-size-xs btn-icon'"
+        [btnIconRouteLeft]="'assets/icons/svg/General/eye.svg'"
+      >
+        Ver más
+      </cygnus-button>
+      <cygnus-button
+        [btnTypes]="buttonOutlinedType() +' btn-size-xs'"
+        (click)="hideAlert()"
+      >
+        Cerrar
+      </cygnus-button>
+    </div>
+
+    }
   }
+  </div>
+
 }
-</div>
+
+
