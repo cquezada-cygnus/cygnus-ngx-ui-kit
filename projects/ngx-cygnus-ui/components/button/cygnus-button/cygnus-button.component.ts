@@ -72,6 +72,9 @@ export class CygnusButtonComponent implements OnInit {
       case 'btn-gray':
         this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_GRAY;
+      case 'btn-full-gray':
+        this.btnIconColor.set('#ffffff');
+        return this.TW_CLASS.BTN_FULL_GRAY;
       case 'btn-success':
         this.btnIconColor.set('#ffffff');
         return this.TW_CLASS.BTN_GREEN;
@@ -91,6 +94,22 @@ export class CygnusButtonComponent implements OnInit {
         this.btnIconColor.set('#193cb8');
         this.btnIconOutlined.set(true);
         return this.TW_CLASS.BTN_OUTLINED;
+      case 'btn-outlined-red':
+        this.btnIconColor.set('#c10007');
+        this.btnIconOutlined.set(true);
+        return this.TW_CLASS.BTN_OUTLINED_RED;
+      case 'btn-outlined-green':
+        this.btnIconColor.set('#008236');
+        this.btnIconOutlined.set(true);
+        return this.TW_CLASS.BTN_OUTLINED_GREEN;
+      case 'btn-outlined-amber':
+        this.btnIconColor.set('#a65f00');
+        this.btnIconOutlined.set(true);
+        return this.TW_CLASS.BTN_OUTLINED_AMBER;
+      case 'btn-outlined-gray':
+        this.btnIconColor.set('#364153');
+        this.btnIconOutlined.set(true);
+        return this.TW_CLASS.BTN_OUTLINED_GRAY;
       case 'btn-disabled':
         this.btnIconColor.set('#193cb8');
         this.btnIsDisabled = true;

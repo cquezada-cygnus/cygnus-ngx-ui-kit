@@ -1,1 +1,42 @@
-<p>cygnus-alert-contenido works!</p>
+<div id="alert-additional-content-1"
+  [class]="
+    (btnIsFull() ? TW_CLASS.ALERT_CONTENT_BASE : TW_CLASS.ALERT_CONTENT_FULL_BASE) + ' ' +
+    alertAllClasses() + ' '
+  "
+  role="alert">
+  <div class="flex items-center">
+    <lib-ngx-cygnus-icons class="me-2"
+      [width]="'1rem'"
+      [height]="'1rem'"
+      [color]="alertIconColor"
+      [route]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+    />
+    <span class="sr-only">Info</span>
+    <h3 class="text-lg font-medium">{{alertTitle()}}</h3>
+  </div>
+  <div class="mt-2 mb-4 text-sm">
+    {{alertContent()}}
+  </div>
+
+@if (btnIsFull()) {
+  <div class="flex flex-col">
+    <cygnus-button
+      [btnTypes]="buttonType() + ' btn-icon btn-block'"
+      [btnIconRouteLeft]="'assets/icons/svg/Communication/phone.svg'"
+    >
+      Aceptar
+    </cygnus-button>
+  </div>
+} @else {
+  <div class="flex">
+    <cygnus-button
+      class="me-2"
+      [btnTypes]="buttonType() + ' btn-size-xs btn-icon'"
+      [btnIconRouteLeft]="'assets/icons/svg/General/eye.svg'"
+    >
+      Ver más
+    </cygnus-button>
+    <cygnus-button [btnTypes]="buttonOutlinedType() +' btn-size-xs'" >Cerrar</cygnus-button>
+  </div>
+}
+</div>

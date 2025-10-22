@@ -11,4 +11,17 @@ export const TW_CLASS = {
   ALERT_SIMPLE_EQUIS_GREEN: 'text-green-700 border-green-300 bg-green-50',
   ALERT_SIMPLE_EQUIS_YELLOW: 'text-warning-700 bg-warning-50 border-warning-300',
   ALERT_SIMPLE_EQUIS_GRAY: 'text-gray-700 border-gray-300 bg-gray-50',
+
+  ALERT_CONTENT_BASE: 'p-4 mb-4 border rounded-lg',
+  ALERT_CONTENT_PRIMARY: 'text-blue-800 border-blue-300 bg-blue-50',
+  ALERT_CONTENT_RED: 'text-red-800 border-red-300 bg-red-50',
+  ALERT_CONTENT_GREEN: 'text-green-800 border-green-300 bg-green-50',
+  ALERT_CONTENT_YELLOW: 'text-yellow-800 border-warning-300 bg-warning-50',
+  ALERT_CONTENT_GRAY: 'text-gray-800 border-gray-300 bg-gray-50',
+  ALERT_CONTENT_FULL_BASE: 'p-4 mb-8 border rounded-lg',
+  ALERT_CONTENT_FULL_PRIMARY: 'text-blue-800 border-blue-300 bg-blue-50',
+  ALERT_CONTENT_FULL_RED: 'text-red-800 border-red-300 bg-red-50',
+  ALERT_CONTENT_FULL_GREEN: 'text-green-800 border-green-300 bg-green-50',
+  ALERT_CONTENT_FULL_YELLOW: 'text-amber-800 border-amber-300 bg-amber-50',
+  ALERT_CONTENT_FULL_GRAY: 'text-gray-800 border-gray-300 bg-gray-50',
 }
