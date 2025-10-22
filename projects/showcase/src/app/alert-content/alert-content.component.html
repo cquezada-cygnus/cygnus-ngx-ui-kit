@@ -9,33 +9,38 @@
 
         <!-- COMPONENTE: Alerta de información -->
         <cygnus-alert-simple
+          [alertTypes]="'alert-primary'"
           [alertTitle]="'¡Alerta de información!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
         />
 
         <!-- COMPONENTE: Alerta de error -->
-        <div class="w-full p-4 mb-4 text-sm text-red-700 rounded-lg bg-red-50" role="alert">
-            <span class="font-medium">¡Alerta de error!</span> Cambie algunas cosas e intente enviar
-            de nuevo.
-        </div>
+         <cygnus-alert-simple
+          [alertTypes]="'alert-red'"
+          [alertTitle]="'¡Alerta de error!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
         <!-- COMPONENTE: Alerta de éxito -->
-        <div class="w-full p-4 mb-4 text-sm text-green-700 rounded-lg bg-green-50" role="alert">
-            <span class="font-medium">¡Alerta de éxito!</span> Cambie algunas cosas e intente enviar
-            de nuevo.
-        </div>
+         <cygnus-alert-simple
+          [alertTypes]="'alert-green'"
+          [alertTitle]="'¡Alerta de éxito!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
         <!-- COMPONENTE: Alerta de advertencia -->
-        <div class="w-full p-4 mb-4 text-sm text-yellow-700 rounded-lg bg-yellow-50" role="alert">
-            <span class="font-medium">¡Alerta de advertencia!</span> Cambie algunas cosas e intente
-            enviar de nuevo.
-        </div>
+         <cygnus-alert-simple
+          [alertTypes]="'alert-yellow'"
+          [alertTitle]="'¡Alerta de advertencia!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
 
         <!-- COMPONENTE: Alerta simple -->
-        <div class="w-full p-4 text-sm text-gray-700 rounded-lg bg-gray-50" role="alert">
-            <span class="font-medium">¡Alerta simple!</span> Cambie algunas cosas e intente enviar
-            de nuevo.
-        </div>
+         <cygnus-alert-simple
+          [alertTypes]="'alert-gray'"
+          [alertTitle]="'¡Alerta de simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
       </div>
     </div>
   </div>
