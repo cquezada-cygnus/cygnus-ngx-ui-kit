@@ -14,9 +14,11 @@ import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 })
 export class CygnusAlertContenidoComponent implements OnInit {
   TW_CLASS = TW_CLASS;
+  alertWithBtn = input<boolean>(true);
   btnIsFull = input<boolean>(false);
   alertIconColor: IconAlertColor = '#193cb8';
 
+  alertIconAsset = input<string>('assets/icons/svg/Alerts&Feedback/alert-circle.svg');
   alertTitle = input<string>('');
   alertContent = input<string>('');
 

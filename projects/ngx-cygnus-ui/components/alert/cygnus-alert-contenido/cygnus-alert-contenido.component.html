@@ -9,7 +9,7 @@
       [width]="'1rem'"
       [height]="'1rem'"
       [color]="alertIconColor"
-      [route]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+      [route]="alertIconAsset()"
     />
     <span class="sr-only">Info</span>
     <h3 class="text-lg font-medium">{{alertTitle()}}</h3>
@@ -18,7 +18,10 @@
     {{alertContent()}}
   </div>
 
-@if (btnIsFull()) {
+@if (alertWithBtn()) {
+
+  @if (btnIsFull()) {
+
   <div class="flex flex-col">
     <cygnus-button
       [btnTypes]="buttonType() + ' btn-icon btn-block'"
@@ -27,7 +30,9 @@
       Aceptar
     </cygnus-button>
   </div>
-} @else {
+
+  } @else {
+
   <div class="flex">
     <cygnus-button
       class="me-2"
@@ -38,5 +43,7 @@
     </cygnus-button>
     <cygnus-button [btnTypes]="buttonOutlinedType() +' btn-size-xs'" >Cerrar</cygnus-button>
   </div>
+
+  }
 }
 </div>
