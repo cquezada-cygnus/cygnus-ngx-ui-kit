@@ -67,6 +67,7 @@
               [textHint]="textEmailHint()"
               [control]="loginForm.controls.email"
               [inputClearValue]="inputClearValue()"
+              [inputDisabled]="inputDisabled()"
             />
 
             <cygnus-input
@@ -82,6 +83,7 @@
               (iconClicked)="toggleEyeIcon($event)"
               [control]="loginForm.controls.password"
               [inputClearValue]="inputClearValue()"
+              [inputDisabled]="inputDisabled()"
             />
 
           </fieldset>

@@ -1,4 +1,4 @@
-import { Component, inject, input, OnInit, output, signal } from '@angular/core';
+import { Component, effect, inject, input, OnInit, output, signal } from '@angular/core';
 import { ReactiveFormsModule, Validators, NonNullableFormBuilder } from '@angular/forms';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
@@ -39,6 +39,7 @@ export class CygnusLogin01Component implements OnInit {
   inputPassColor = signal<InputColor>('base');
 
   inputClearValue = signal<boolean>(false);
+  inputDisabled = signal<boolean>(false);
 
   maxCounter = input<number>(3);
   tryCounter = input<number>(0);
@@ -54,6 +55,16 @@ export class CygnusLogin01Component implements OnInit {
     ],
     password: ['', [Validators.required]],
   });
+
+  constructor() {
+    effect(() => {
+      if (this.tryCounter()===this.maxCounter()) {
+        this.inputClearValue.set(true);
+        this.inputDisabled.set(true);
+        this.btnSubmitColor.set('btn-disabled');
+      }
+    });
+  }
 
   ngOnInit() {
     this.inputStatusManager();
@@ -88,10 +99,8 @@ export class CygnusLogin01Component implements OnInit {
   formStatusManager() {
     this.loginForm.statusChanges.subscribe(status => {
       if (status === 'VALID') {
-        console.log('form valid');
         this.btnSubmitColor.set('btn-primary');
       } else {
-        console.log('form no valid');
         this.btnSubmitColor.set('btn-disabled');
       }
     });
@@ -99,7 +108,6 @@ export class CygnusLogin01Component implements OnInit {
 
   onSubmit() {
     if (this.btnSubmitColor()!=='btn-disabled') {
-      console.log('onSubmit: ',this.loginForm.value);
       this.inputClearValue.set(true);
       this.loginForm.markAllAsTouched();
       this.outputInfo.emit(this.loginForm.value);

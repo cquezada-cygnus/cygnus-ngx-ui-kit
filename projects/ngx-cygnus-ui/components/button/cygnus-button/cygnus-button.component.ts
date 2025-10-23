@@ -28,6 +28,7 @@ export class CygnusButtonComponent implements OnInit {
 
   constructor() {
     effect(() => { // actualizar color del botón cuando cambie this.btnTypes()
+      this.btnIsDisabled.set(false);
       const setClasses = this.setBtnClasses(this.getBtnClasses(this.btnTypes()));
       this.btnAllClasses.set(setClasses);
     });
@@ -36,6 +37,7 @@ export class CygnusButtonComponent implements OnInit {
   ngOnInit(){
     this.btnIconExist = false;
     this.btnIconOnly = false;
+    this.btnIsDisabled.set(false);
     const setClasses = this.setBtnClasses(this.getBtnClasses(this.btnTypes()));
     this.btnAllClasses.set(setClasses);
   }
@@ -55,7 +57,6 @@ export class CygnusButtonComponent implements OnInit {
   }
 
   addTailwindClasses(customClass: string): string {
-    this.btnIsDisabled.set(false);
     this.btnIconOnly = false;
     switch (customClass) {
       case 'btn':
