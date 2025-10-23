@@ -6,18 +6,20 @@ import {
   CygnusCardShowValidatorsComponent,
   CygnusCardTitleTextComponent,
   CygnusMainboardCardComponent,
+  CygnusCardSelectsComponent,
 } from 'ngx-cygnus-ui/components/card';
 
 
 @Component({
   selector: 'app-card-content',
   imports: [
-    CygnusCardLoginComponent,
-    CygnusCardShowValidatorsComponent,
     CygnusCardImageComponent,
     CygnusCardTitleTextComponent,
     CygnusCardIconTextComponent,
     CygnusMainboardCardComponent,
+    CygnusCardLoginComponent,
+    CygnusCardShowValidatorsComponent,
+    CygnusCardSelectsComponent,
   ],
   templateUrl: './card-content.component.html',
   styleUrl: './card-content.component.scss'

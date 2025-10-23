@@ -1,12 +1,16 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { ReactiveFormsModule, Validators, NonNullableFormBuilder } from '@angular/forms';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
 import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 import { CygnusAlertCounterBlockedComponent, } from 'ngx-cygnus-ui/components/alert';
+import { cgEmail } from 'ngx-cygnus-ui/validators';
+import { BtnCustomType, InputColor } from 'ngx-cygnus-ui/types';
 
 @Component({
   selector: 'cygnus-login-01',
   imports: [
+    ReactiveFormsModule,
     CygnusInputComponent,
     CygnusCheckboxComponent,
     CygnusButtonComponent,
@@ -15,7 +19,7 @@ import { CygnusAlertCounterBlockedComponent, } from 'ngx-cygnus-ui/components/al
   ],
   templateUrl: './cygnus-login-01.component.html',
 })
-export class CygnusLogin01Component {
+export class CygnusLogin01Component implements OnInit {
   // assets/icons/svg/General/eye.svg
   // assets/icons/heroicons-outline/eye-slash.svg
   // assets/icons/svg/General/eye-off.svg
@@ -27,6 +31,81 @@ export class CygnusLogin01Component {
   eyeIcon = signal<string>(this.closedEye);
   hidePassword = signal<boolean>(true);
   passPlaceholder = signal<string>(this.passPlaceholderHide);
+
+  textEmailHint = signal<string>('');
+  inputEmailColor = signal<InputColor>('base');
+
+  textPassHint = signal<string>('');
+  inputPassColor = signal<InputColor>('base');
+
+  inputClearValue = signal<boolean>(false);
+
+  btnSubmitColor = signal<BtnCustomType>('btn-disabled');
+
+  nonNullableFb = inject(NonNullableFormBuilder);
+
+  loginForm = this.nonNullableFb.group({
+    email: ['',
+      [Validators.required, cgEmail()]
+    ],
+    password: ['', [Validators.required]],
+  });
+
+  ngOnInit() {
+    this.inputStatusManager();
+    this.formStatusManager();
+  }
+
+  inputStatusManager() {
+    this.loginForm.get('email')?.statusChanges.subscribe(status => {
+      if (this.loginForm.get('email')?.errors) {
+        console.log('Email errors: ',this.loginForm.get('email')?.errors);
+
+
+
+        if (this.loginForm.get('email')?.errors!['required']) {
+          this.textEmailHint.set('Debe indicar un correo');
+        } else if (this.loginForm.get('email')?.errors!['cgEmail']) {
+          this.textEmailHint.set('El formato del correo es inválido');
+        }
+
+        this.inputEmailColor.set('error');
+
+      } else {
+        this.inputEmailColor.set('base');
+        this.textEmailHint.set('');
+      }
+    });
+    this.loginForm.get('password')?.statusChanges.subscribe(status => {
+      if (this.loginForm.get('password')?.errors) {
+        this.inputPassColor.set('error');
+        this.textPassHint.set('Debe indicar una contraseña');
+      } else {
+        this.inputPassColor.set('base');
+        this.textPassHint.set('');
+      }
+    });
+  }
+
+  formStatusManager() {
+    this.loginForm.statusChanges.subscribe(status => {
+      if (status === 'VALID') {
+        console.log('form valid');
+        this.btnSubmitColor.set('btn-primary');
+      } else {
+        console.log('form no valid');
+        this.btnSubmitColor.set('btn-disabled');
+      }
+    });
+  }
+
+  onSubmit() {
+    if (this.btnSubmitColor()!=='btn-disabled') {
+      console.log('onSubmit: ',this.loginForm.value);
+      this.inputClearValue.set(true);
+      this.loginForm.markAllAsTouched();
+    }
+  }
 
   toggleEyeIcon($event: string) {
     if ($event==='iconClicked') {

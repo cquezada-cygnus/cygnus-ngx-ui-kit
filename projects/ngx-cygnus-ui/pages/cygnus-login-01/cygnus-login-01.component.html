@@ -57,28 +57,32 @@
           [tryCounter]="0"
         /> <!-- Según el contador van a ir apareciendo las alertas. La idea es que sea de 0-3 -->
 
-        <form class="flex flex-col space-y-4 md:space-y-6" action="#">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-4 md:space-y-6" action="#">
           <fieldset class="flex flex-col space-y-6">
             <cygnus-input
               [inputCustomType]="'label-top'"
-              [inputColor]="'base'"
+              [inputColor]="inputEmailColor()"
               [textLabel]="'Email'"
-              [textHint] ="''"
+              [hintColor]="true"
+              [textHint]="textEmailHint()"
+              [control]="loginForm.controls.email"
+              [inputClearValue]="inputClearValue()"
             />
 
             <cygnus-input
               [inputCustomType]="'label-top'"
-              [inputColor]="'base'"
+              [inputColor]="inputPassColor()"
               [iconAsset]="eyeIcon()"
               [iconColor]="'#364153'"
               [textLabel]="'Contraseña'"
               [typePassword]="hidePassword()"
               [textPlaceholder]="passPlaceholder()"
               [hintColor]="true"
-              [textHint] ="''"
+              [textHint]="textPassHint()"
               (iconClicked)="toggleEyeIcon($event)"
+              [control]="loginForm.controls.password"
+              [inputClearValue]="inputClearValue()"
             />
-
 
           </fieldset>
           <div class="flex items-center justify-between">
@@ -91,7 +95,7 @@
               </cygnus-button-link>
           </div>
 
-          <cygnus-button [btnTypes]="'btn-primary btn-size-lg btn-block'">
+          <cygnus-button [btnTypes]="btnSubmitColor() + ' btn-size-lg btn-block'">
             Iniciar sesión
           </cygnus-button>
 
