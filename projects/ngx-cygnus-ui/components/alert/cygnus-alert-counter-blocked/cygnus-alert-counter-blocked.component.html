@@ -1,0 +1,37 @@
+@if (showAlert()) {
+
+  <div id="alert-additional-content-1"
+    [class]="
+      (alertWithBtn() ? TW_CLASS.ALERT_CONTENT_BASE : TW_CLASS.ALERT_CONTENT_FULL_BASE) + ' ' +
+      alertAllClasses() + ' '
+    "
+    role="alert">
+    <div class="flex items-center">
+      <lib-ngx-cygnus-icons class="me-2"
+        [width]="'1rem'"
+        [height]="'1rem'"
+        [color]="alertIconColor"
+        [route]="alertIconAsset()"
+      />
+      <span class="sr-only">Info</span>
+      <h3 class="text-lg font-medium">{{alertTitle()}}</h3>
+    </div>
+    <div class="mt-2 mb-4 text-sm">
+      {{alertContent()}}
+    </div>
+
+  @if (alertWithBtn()) {
+
+    <div class="flex flex-col">
+      <cygnus-button
+        [btnTypes]="buttonType() + ' btn-icon btn-block'"
+        [btnIconRouteLeft]="'assets/icons/svg/Communication/phone.svg'"
+      >
+        {{btnFullText()}}
+      </cygnus-button>
+    </div>
+
+  }
+  </div>
+
+}

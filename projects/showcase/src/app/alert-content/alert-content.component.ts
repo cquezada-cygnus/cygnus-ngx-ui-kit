@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {
   CygnusAlertContenidoComponent,
+  CygnusAlertCounterBlockedComponent,
   CygnusAlertSimpleComponent
 } from 'ngx-cygnus-ui/components/alert';
 
@@ -9,6 +10,7 @@ import {
   imports: [
     CygnusAlertSimpleComponent,
     CygnusAlertContenidoComponent,
+    CygnusAlertCounterBlockedComponent,
   ],
   templateUrl: './alert-content.component.html',
   styleUrl: './alert-content.component.scss'
