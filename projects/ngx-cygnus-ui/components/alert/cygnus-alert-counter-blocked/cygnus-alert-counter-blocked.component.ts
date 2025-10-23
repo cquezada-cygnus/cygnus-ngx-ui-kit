@@ -12,11 +12,11 @@ import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
   ],
   templateUrl: './cygnus-alert-counter-blocked.component.html',
 })
-export class CygnusAlertCounterBlockedComponent implements OnInit {
+export class CygnusAlertCounterBlockedComponent {
   TW_CLASS = TW_CLASS;
-  showAlert  = input<boolean>(false);
+  showAlert  = signal<boolean>(false);
 
-  alertWithBtn = input<boolean>(false);
+  alertWithBtn = signal<boolean>(false);
   alertIconColor: IconAlertColor = '#193cb8';
 
   alertIconAsset = input<string>('assets/icons/svg/Alerts&Feedback/alert-circle.svg');
@@ -24,12 +24,12 @@ export class CygnusAlertCounterBlockedComponent implements OnInit {
   alertContent = signal<string>('');
   btnFullText = signal<string>('Aceptar');
 
-  alertTypes = input<string>('');
+  alertTypes = signal<string>('');
   alertAllClasses = signal<string>('');
   buttonType = signal<string>('');
 
   maxCounter: number = 3;
-  tryCounter = signal<number>(1);
+  tryCounter = input<number>(0);
   errorTitle = 'Bloqueo de cuenta';
   errorContent = '';
   warningTitle = 'Alerta de bloqueo de cuenta';
@@ -37,8 +37,6 @@ export class CygnusAlertCounterBlockedComponent implements OnInit {
 
   constructor() {
     effect(() => { // actualizar color y contenido del alert cuando se indique
-      const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
-      this.alertAllClasses.set(setClasses);
 
       this.errorContent = `
         Tu cuenta ha sido bloqueada por “${this.tryCounter()}” cantidad de intentos fallidos. Espera 30 minutos o comunícate con recursos humanos.
@@ -47,14 +45,27 @@ export class CygnusAlertCounterBlockedComponent implements OnInit {
         Has hecho “${this.tryCounter()}” ${this.customIntentoText(this.tryCounter())} de inicio de sesión.
         Tienes ${this.maxCounter - this.tryCounter()} ${this.customIntentoText(this.maxCounter - this.tryCounter())} más, si no, se bloqueará tu cuenta y tendrás que esperar 30 minutos.
       `;
-      this.alertTitle.set(this.warningTitle);
-      this.alertContent.set(this.warningContent);
-    });
-  }
 
-  ngOnInit(){
-    const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
-    this.alertAllClasses.set(setClasses);
+      if (this.tryCounter()===0) {
+        this.showAlert.set(false);
+      } else if (this.tryCounter()>0 && this.tryCounter()<3) {
+        this.alertTypes.set('alert-yellow');
+        this.alertWithBtn.set(false);
+        this.alertTitle.set(this.warningTitle);
+        this.alertContent.set(this.warningContent);
+        this.showAlert.set(true);
+      } else {
+        this.alertTypes.set('alert-red');
+        this.alertWithBtn.set(true);
+        this.alertTitle.set(this.errorTitle);
+        this.alertContent.set(this.errorContent);
+        this.showAlert.set(true);
+      }
+
+      const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
+      this.alertAllClasses.set(setClasses);
+
+    });
   }
 
   customIntentoText(num: number):string {

@@ -253,22 +253,19 @@
         />
 
         <!-- LOGIN -->
-        <cygnus-alert-contenido
-          [alertTypes]="'alert-yellow'"
-          [alertWithBtn]="false"
-          [alertTitle]="'Alerta de bloqueo de cuenta'"
-          [alertContent]="`
-            Has hecho “2” intentos de inicio de sesión.
-            Tienes uno intento más, si no, se bloqueará tu cuenta y tendrás que esperar 30 minutos.
-          `"
-        />
-
         <cygnus-alert-counter-blocked
-          [alertTypes]="'alert-yellow'"
-          [showAlert]="true"
-          [alertWithBtn]="false"
-
+          [tryCounter]="0"
         />
+        <cygnus-alert-counter-blocked
+          [tryCounter]="1"
+        />
+        <cygnus-alert-counter-blocked
+          [tryCounter]="2"
+        />
+        <cygnus-alert-counter-blocked
+          [tryCounter]="3"
+        />
+
 
 
 
