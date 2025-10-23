@@ -79,6 +79,12 @@
       "ngx-cygnus-ui/pages/cygnus-login-01": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01",
       ],
+      "ngx-cygnus-ui/pages/cygnus-login-ok/*": [
+        "./projects/ngx-cygnus-ui/pages/cygnus-login-ok/*",
+      ],
+      "ngx-cygnus-ui/pages/cygnus-login-ok": [
+        "./projects/ngx-cygnus-ui/pages/cygnus-login-ok",
+      ],
        "ngx-cygnus-ui/types/*": [
         "./projects/ngx-cygnus-ui/types/*",
       ],

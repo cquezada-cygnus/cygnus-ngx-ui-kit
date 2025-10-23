@@ -1,10 +1,11 @@
-import { Component, effect, signal } from '@angular/core';
-import { CygnusLogin01Component } from 'ngx-cygnus-ui/pages';
+import { Component, signal } from '@angular/core';
+import { CygnusLogin01Component, CygnusLoginOkComponent } from 'ngx-cygnus-ui/pages';
 
 @Component({
   selector: 'app-login-content',
   imports: [
-    CygnusLogin01Component
+    CygnusLogin01Component,
+    CygnusLoginOkComponent,
   ],
   templateUrl: './login-content.component.html',
   styleUrl: './login-content.component.scss'
