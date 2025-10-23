@@ -53,35 +53,9 @@
           <p class="text-sm font-normal text-gray-600">Ingresa tu RUT sin puntos, ni guión.</p>
         </div>
 
-        @if (alertCondition()) {
-
-        <cygnus-alert-contenido
-          [alertTypes]="'alert-yellow'"
-          [alertWithBtn]="false"
-          [alertIconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
-          [alertTitle]="'Alerta de bloqueo de cuenta'"
-          [alertContent]="`
-            Has hecho “2” intentos de inicio de sesión.
-            Tienes uno intento más, si no, se bloqueará tu cuenta y tendrás que esperar 30 minutos.
-          `"
-        />
-
-        }
-
-        @if (alertBlocked()) {
-
-        <cygnus-alert-contenido
-          [alertTypes]="'alert-red'"
-          [btnIsFull]="true"
-          [alertWithBtn]="true"
-          [alertTitle]="'Bloqueo de cuenta'"
-          [alertContent]="`
-            Tu cuenta ha sido bloqueada por “X” cantidad de intentos fallidos. Espera 30 minutos o comunícate con recursos humanos.
-          `"
-          [btnFullText]="'Llamar a recursos humanos'"
-        />
-
-        }
+        <cygnus-alert-counter-blocked
+          [tryCounter]="0"
+        /> <!-- Según el contador van a ir apareciendo las alertas. La idea es que sea de 0-3 -->
 
         <form class="flex flex-col space-y-4 md:space-y-6" action="#">
           <fieldset class="flex flex-col space-y-6">
