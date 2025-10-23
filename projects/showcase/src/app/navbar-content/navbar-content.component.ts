@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CygnusMainboardNavbarComponent } from 'ngx-cygnus-ui/components/navbar';
+import {
+  CygnusMainboardHeaderNavbarComponent,
+  CygnusMainboardNavbarComponent
+} from 'ngx-cygnus-ui/components/navbar';
 import { NavbarItem } from 'ngx-cygnus-ui/interfaces';
 
 @Component({
@@ -8,6 +11,7 @@ import { NavbarItem } from 'ngx-cygnus-ui/interfaces';
   imports: [
     RouterOutlet,
     CygnusMainboardNavbarComponent,
+    CygnusMainboardHeaderNavbarComponent,
   ],
   templateUrl: './navbar-content.component.html',
   styleUrl: './navbar-content.component.scss'

@@ -11,6 +11,7 @@ export const TW_CLASS = {
   BTN_SIDEBAR: 'justify-start bg-gray-50 border-transparent text-blue-800 hover:bg-blue-800/10 hover:border-blue-800/10 shadow-none hover:shadow-none',
   BTN_CIRCLE: '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 disabled:pointer-events-none',
   BTN_GHOST: 'text-blue-800 bg-transparent border-transparent !shadow-none hover:bg-blue-800/10 hover:border-blue-800/10 !hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
+  BTN_GHOST_GRAY: 'text-gray-600 bg-transparent border-transparent !shadow-none hover:bg-gray-200 hover:border-gray-800/5 !hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
   BTN_OUTLINED: 'bg-transparent border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-blue-50 hover:shadow-md focus:ring-blue-300',
   BTN_OUTLINED_RED: 'bg-transparent border-red-700 text-red-700 hover:bg-red-700 hover:text-red-50 hover:shadow-md focus:ring-red-300',
   BTN_OUTLINED_GREEN: 'bg-transparent border-green-700 text-green-700 hover:bg-green-700 hover:text-green-50 hover:shadow-md focus:ring-green-300',
