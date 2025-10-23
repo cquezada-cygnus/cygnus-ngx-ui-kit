@@ -1,24 +1,55 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
 
-<cygnus-card-image
-  [imgSrc]="'https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80'"
-  [imgAlt]="'Card Image'"
-  [cardTitle]="'Titulo de la tarjeta'"
-  [cardText]="`Un texto de ejemplo rápido que se basa en el título de la tarjeta y constituye
-                                    el grueso de su contenido.`"
-  [cardButtonText]="'Ir a alguna parte'"
-/>
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Cards</h1>
+    <p class="mt-4 text-gray-600 text-md">Las "cards" o trajetas de información son deales para
+        listados de productos y eventos, perfiles de usuario, paneles de control y más.</p>
+  </header>
 
-<cygnus-card-title-text
-  [cardTitle]="'Cygnus - gestión de equipos colaborativos'"
-  [cardText]="'Este es un texto dentro del cuerpo de una tarjeta.'"
-/>
+  <section id="basic-card">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll lg:overflow-visible mb-14">
+      <h2 class="mb-4 text-xl font-semibold">Tarjeta con imagen</h2>
 
-<cygnus-card-icon-text
-  [iconSize]="'40px'"
-  [iconColor]="'#528bff'"
-  [iconRoute]="'assets/icons/svg/Charts/presentation-chart-01.svg'"
-  [cardText]="'Administración de RRHH Cygnus'"
-/>
+      <cygnus-card-image
+        [imgSrc]="'https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80'"
+        [imgAlt]="'Card Image'"
+        [cardTitle]="'Titulo de la tarjeta'"
+        [cardText]="`Un texto de ejemplo rápido que se basa en el título de la tarjeta y constituye
+                                          el grueso de su contenido.`"
+        [cardButtonText]="'Ir a alguna parte'"
+      />
+    </div>
+  </section>
+
+  <section id="card-body">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll lg:overflow-visible mb-14">
+      <h2 class="mb-4 text-xl font-semibold">Cuerpo de tarjeta</h2>
+
+      <cygnus-card-title-text
+        [cardTitle]="'Cygnus - gestión de equipos colaborativos'"
+        [cardText]="'Este es un texto dentro del cuerpo de una tarjeta.'"
+      />
+    </div>
+  </section>
+
+  <section id="card-body">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll lg:overflow-visible mb-14">
+      <h2 class="mb-4 text-xl font-semibold">Cuerpo de tarjeta</h2>
+      <div class="flex items-center w-full max-w-xs gap-4 mb-4">
+
+        <cygnus-card-icon-text
+          [iconSize]="'40px'"
+          [iconColor]="'#528bff'"
+          [iconRoute]="'assets/icons/svg/Charts/presentation-chart-01.svg'"
+          [cardText]="'Administración de RRHH Cygnus'"
+        />
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
 
 <cygnus-mainboard-card
   [cardTitle]="'Administración de RRHH'"
