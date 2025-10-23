@@ -46,18 +46,66 @@
       </div>
     </div>
   </section>
+  <section id="simple-card">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll lg:overflow-visible mb-14">
+      <h2 class="mb-4 text-xl font-semibold">Tarjeta sencilla</h2>
+      <div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
+
+        <cygnus-card-simple-link
+          [cardTitle]="'Título de la tarjeta'"
+          [cardSubtitle]="'Subtítulo de la tarjeta'"
+          [cardText]="`Un texto de ejemplo rápido para ampliar el título de la tarjeta y constituir la
+                                mayor parte del contenido de la tarjeta.`"
+          [cardLinkText]="'Enlace de tarjeta'"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="simple-card">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll lg:overflow-visible mb-14">
+      <h2 class="mb-4 text-xl font-semibold">Tarjeta mainboard</h2>
+      <div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
+
+        <cygnus-mainboard-card
+          [cardTitle]="'Administración de RRHH'"
+          [cardText]="'Optimiza los proyectos de software, los sprints y el seguimiento de errores.'"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="simple-card">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll lg:overflow-visible mb-14">
+      <h2 class="mb-4 text-xl font-semibold">Tarjeta Login</h2>
+      <div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
+
+        <cygnus-card-login />
+
+      </div>
+    </div>
+  </section>
+
+  <section id="simple-card">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll lg:overflow-visible mb-14">
+      <h2 class="mb-4 text-xl font-semibold">Tarjeta Ejemplo validadores</h2>
+      <div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
+
+        <cygnus-card-show-validators />
+
+      </div>
+    </div>
+  </section>
+
+  <section id="simple-card">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll lg:overflow-visible mb-14">
+      <h2 class="mb-4 text-xl font-semibold">Tarjeta Ejemplo validador selectores</h2>
+      <div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
+
+        <cygnus-card-selects />
+
+      </div>
+    </div>
+  </section>
 </main>
 
-
-
-
-<cygnus-mainboard-card
-  [cardTitle]="'Administración de RRHH'"
-  [cardText]="'Optimiza los proyectos de software, los sprints y el seguimiento de errores.'"
-/>
-
-<cygnus-card-login />
-
-<cygnus-card-show-validators />
-
-<cygnus-card-selects />

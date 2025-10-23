@@ -31,7 +31,7 @@ export const TW_CLASS = {
   BTN_GROUP_LEFT: 'border-r-0 inline-flex leading-none rounded-r-none',
   BTN_GROUP_MIDDLE: 'inline-flex leading-none rounded-none',
   BTN_GROUP_RIGHT: 'border-l-0 inline-flex leading-none rounded-l-none',
-  BTN_LINK: 'flex justify-center items-center transition-colors duration-300 text-sm font-medium no-underline bg-transparent hover:bg-transparent focus:ring-0 text-blue-600 hover:text-blue-800 active:underline hover:underline px-4 py-2.5',
+  BTN_LINK: 'flex justify-center items-center transition-colors duration-300 text-sm font-medium no-underline bg-transparent hover:bg-transparent focus:ring-0 text-blue-600 hover:text-blue-800 active:underline hover:underline py-2.5',
   BTN_LINK_SIMPLE: 'block text-sm transition-colors duration-300 hover:text-blue-800 hover:underline text-blue-600 py-1.5',
   BTN_LINK_NAVBAR: 'text-sm font-medium text-gray-500 inline-flex items-center w-full px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-white',
   BTN_LINK_NAVBAR_ACTIVE: '!text-blue-700 !bg-blue-100 !hover:text-blue-600',

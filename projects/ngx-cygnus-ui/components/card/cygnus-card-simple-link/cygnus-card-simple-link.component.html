@@ -1,0 +1,26 @@
+<div class="flex flex-col p-4 bg-white border border-gray-300 shadow-sm rounded-xl md:p-5 ">
+  <h3 class="text-lg font-bold text-gray-800 ">
+    {{cardTitle()}}
+  </h3>
+  <p class="mt-1 text-xs font-medium text-gray-500 uppercase ">
+    {{cardSubtitle()}}
+  </p>
+  <p class="mt-2 text-gray-500 ">
+    {{cardText()}}
+  </p>
+  <div class="flex justify-start footer">
+    <cygnus-button-link
+      [btnLinkType]="'btn-link'"
+      [btnRouterLinkText]="''"
+      [paddingOk]="false"
+    >
+    {{cardLinkText()}}
+    <lib-ngx-cygnus-icons
+      [width]="'1rem'"
+      [height]="'1rem'"
+      [route]="'assets/icons/svg/Arrows/chevron-right.svg'"
+      [color]="'#155eef'"
+    />
+  </cygnus-button-link>
+  </div>
+</div>

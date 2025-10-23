@@ -13,6 +13,7 @@ export class CygnusButtonLinkComponent {
 
   btnLinkType = input<BtnLinkType>('btn-link');
   btnRouterLinkText = input<string>('');
+  paddingOk = input<boolean>(true);
 
   addTailwindClasses(customClass: BtnLinkType): string {
     switch (customClass) {

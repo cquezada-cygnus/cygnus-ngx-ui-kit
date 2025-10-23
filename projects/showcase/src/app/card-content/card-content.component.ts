@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {
   CygnusCardIconTextComponent,
   CygnusCardImageComponent,
+  CygnusCardSimpleLinkComponent,
   CygnusCardLoginComponent,
   CygnusCardShowValidatorsComponent,
   CygnusCardTitleTextComponent,
@@ -16,6 +17,7 @@ import {
     CygnusCardImageComponent,
     CygnusCardTitleTextComponent,
     CygnusCardIconTextComponent,
+    CygnusCardSimpleLinkComponent,
     CygnusMainboardCardComponent,
     CygnusCardLoginComponent,
     CygnusCardShowValidatorsComponent,
