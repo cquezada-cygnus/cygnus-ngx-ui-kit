@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnInit, output, signal } from '@angular/core';
 import { ReactiveFormsModule, Validators, NonNullableFormBuilder } from '@angular/forms';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
@@ -40,6 +40,10 @@ export class CygnusLogin01Component implements OnInit {
 
   inputClearValue = signal<boolean>(false);
 
+  maxCounter = input<number>(3);
+  tryCounter = input<number>(0);
+  outputInfo = output<any>();
+
   btnSubmitColor = signal<BtnCustomType>('btn-disabled');
 
   nonNullableFb = inject(NonNullableFormBuilder);
@@ -59,18 +63,12 @@ export class CygnusLogin01Component implements OnInit {
   inputStatusManager() {
     this.loginForm.get('email')?.statusChanges.subscribe(status => {
       if (this.loginForm.get('email')?.errors) {
-        console.log('Email errors: ',this.loginForm.get('email')?.errors);
-
-
-
+        this.inputEmailColor.set('error');
         if (this.loginForm.get('email')?.errors!['required']) {
           this.textEmailHint.set('Debe indicar un correo');
         } else if (this.loginForm.get('email')?.errors!['cgEmail']) {
           this.textEmailHint.set('El formato del correo es inválido');
         }
-
-        this.inputEmailColor.set('error');
-
       } else {
         this.inputEmailColor.set('base');
         this.textEmailHint.set('');
@@ -104,6 +102,7 @@ export class CygnusLogin01Component implements OnInit {
       console.log('onSubmit: ',this.loginForm.value);
       this.inputClearValue.set(true);
       this.loginForm.markAllAsTouched();
+      this.outputInfo.emit(this.loginForm.value);
     }
   }
 

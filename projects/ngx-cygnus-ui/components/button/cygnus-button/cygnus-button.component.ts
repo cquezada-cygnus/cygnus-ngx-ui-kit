@@ -12,6 +12,7 @@ import { TW_CLASS } from '../const/tailwind.const';
 export class CygnusButtonComponent implements OnInit {
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
 
+  typeButtonStructure = input<string>('button');
   btnTypes = input<string>('btn');
   btnAllClasses:WritableSignal<string> = signal<string>('');
   btnIconExist: boolean = false;
