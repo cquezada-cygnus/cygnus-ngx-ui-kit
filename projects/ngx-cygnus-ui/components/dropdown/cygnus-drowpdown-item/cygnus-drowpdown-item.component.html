@@ -30,5 +30,17 @@
   </li>
 
 } @else if (dropdownItemType()==='close') {
+  <a
+    [routerLink]="itemContent()?.routerLinkText"
+    class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+  >
+    <lib-ngx-cygnus-icons class="mr-2"
+        [width]="'1.5rem'"
+        [height]="'1.5rem'"
+        [color]="'#e7000b'"
+        [route]="itemContent()?.iconAssetText||''"
+      />
+    {{itemContent()?.itemText}}
+</a>
 
 }

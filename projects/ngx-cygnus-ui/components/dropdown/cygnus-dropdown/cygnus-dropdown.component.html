@@ -13,7 +13,10 @@
     {{dropdownMenuTitle()}}
   </cygnus-button>
 
-  <ul class="pt-1 mt-1 text-gray-700 z-10 min-w-[180px] overflow-auto rounded-lg border border-gray-200 bg-white py-2 shadow-lg focus:outline-hidden">
+  <ul
+    [class]="
+      'pt-1 mt-1 text-gray-700 z-10 min-w-[180px] overflow-auto rounded-lg border border-gray-200 bg-white py-2 shadow-lg focus:outline-hidden '
+    ">
 
     @for (item of dropdownItemDataArr(); track $index) {
       <cygnus-drowpdown-item
@@ -21,5 +24,33 @@
         [itemContent]="item"
       />
     }
+    @if (dropdownItemType()==='iconText') {
+
+      <hr class="h-px bg-gray-100 border-0 dark:bg-gray-100">
+
+      <div class="pt-2">
+        <cygnus-drowpdown-item
+          [dropdownItemType]="'close'"
+          [itemContent]="{
+            routerLinkText: '',
+            iconAssetText: 'assets/icons/svg/General/log-out-01.svg',
+            itemText: 'Cerrar Sesión',
+          }"
+        />
+      </div>
+
+    }
   </ul>
+  <!-- @if (dropdownItemType()==='iconText') {
+    <div class="py-2">
+      <cygnus-drowpdown-item
+        [dropdownItemType]="'close'"
+        [itemContent]="{
+          routerLinkText: '',
+          iconAssetText: 'assets/icons/svg/General/log-out-01.svg',
+          itemText: 'Cerrar Sesión',
+        }"
+      />
+    </div>
+  } -->
 </div>
