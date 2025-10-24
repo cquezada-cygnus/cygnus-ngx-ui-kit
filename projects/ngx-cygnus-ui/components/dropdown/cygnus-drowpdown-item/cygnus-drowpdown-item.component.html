@@ -9,18 +9,23 @@
   </li>
 
 } @else if (dropdownItemType()==='radiobutton') {
-
+  <div class="flex items-center w-full px-4 py-2 text-sm text-gray-800 transition-all cursor-pointer hover:bg-gray-200 focus:bg-gray-100 active:bg-gray-100">
+    <cygnus-radio-button [labelText]="itemContent()?.itemText||''" [isDisabled]="false" />
+  </div>
 
 } @else if (dropdownItemType()==='iconText') {
   <li>
-    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100">
-        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 size-6" fill="none"
-            viewBox="0 0 24 24">
-            <path stroke="CurrentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2"
-                d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3m.08 4h.01M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Z" />
-        </svg>
-        Ayuda
+    <a
+      [routerLink]="itemContent()?.routerLinkText"
+      class="flex items-center px-4 py-2 text-sm hover:bg-gray-100"
+    >
+      <lib-ngx-cygnus-icons class="mr-2"
+        [width]="'1.5rem'"
+        [height]="'1.5rem'"
+        [color]="'#344054'"
+        [route]="itemContent()?.iconAssetText||''"
+      />
+        {{itemContent()?.itemText}}
     </a>
   </li>
 

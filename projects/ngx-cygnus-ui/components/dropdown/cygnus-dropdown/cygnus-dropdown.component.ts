@@ -18,5 +18,6 @@ export class CygnusDropdownComponent {
 
   dropdownMenuTitle = input<string>('');
   dropdownItemType = input<DropdownItemType>('simple');
+  dropdownRadioIconAsset = input<string>('');
   dropdownItemDataArr = input<DropdownItemData[]>([]);
 }

@@ -29,4 +29,50 @@ export class DropdownContentComponent {
     },
   ];
 
+  dropdownRadiobuttonItemDataArr: DropdownItemData[] = [
+    {
+      iconAssetText: '',
+      routerLinkText: '',
+      itemText: 'Último día'
+    },
+    {
+      iconAssetText: '',
+      routerLinkText: '',
+      itemText: 'Últimos 7 días'
+    },
+    {
+      iconAssetText: '',
+      routerLinkText: '',
+      itemText: 'Últimos 15 días'
+    },
+    {
+      iconAssetText: '',
+      routerLinkText: '',
+      itemText: 'Últimos 30 días'
+    },
+    {
+      iconAssetText: '',
+      routerLinkText: '',
+      itemText: 'Último año'
+    },
+  ];
+
+  dropdownIconTextItemDataArr: DropdownItemData[] = [
+    {
+      iconAssetText: 'assets/icons/svg/General/help-circle.svg',
+      routerLinkText: '',
+      itemText: 'Ayuda'
+    },
+    {
+      iconAssetText: 'assets/icons/svg/Weather/moon-01.svg',
+      routerLinkText: '',
+      itemText: 'Modo oscuro'
+    },
+    {
+      iconAssetText: 'assets/icons/svg/General/tool-02.svg',
+      routerLinkText: '',
+      itemText: 'Configuraciones'
+    },
+  ];
+
 }

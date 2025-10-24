@@ -1,6 +1,13 @@
-<div class="relative inline-block">
+<div [class]="(dropdownItemType()==='iconText' ? 'flex flex-col items-center' : 'relative inline-block' )">
   <cygnus-button
-    [btnTypes]="'btn btn-size-sm btn-icon'"
+    [btnTypes]="
+      (dropdownItemType()==='simple' ? 'btn-primary' : '') + ' ' +
+      (dropdownItemType()==='radiobutton' ? 'btn-secondary btn-size-lg' : '') + ' ' +
+      (dropdownItemType()==='iconText' ? 'btn-gray btn-circle' : '') + ' ' +
+      'btn-size-sm' + ' ' +
+      ((dropdownItemType()==='simple' || dropdownItemType()==='radiobutton' ) ? 'btn-icon' : '')
+    "
+    [btnIconRouteLeft]="dropdownRadioIconAsset()"
     [btnIconRouteRight]="'assets/icons/backups/chevron-down.svg'"
   >
     {{dropdownMenuTitle()}}
@@ -10,7 +17,7 @@
 
     @for (item of dropdownItemDataArr(); track $index) {
       <cygnus-drowpdown-item
-        [dropdownItemType]="'simple'"
+        [dropdownItemType]="dropdownItemType()"
         [itemContent]="item"
       />
     }
