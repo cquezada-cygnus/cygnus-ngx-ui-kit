@@ -1,5 +1,9 @@
-<div [class]="(dropdownItemType()==='iconText' ? 'flex flex-col items-center' : 'relative inline-block' )">
+<div [class]="
+    (dropdownItemType()==='iconText' ? 'flex flex-col items-center' : 'inline-block' )
+  "
+>
   <cygnus-button
+    class="relative"
     [btnTypes]="
       (dropdownItemType()==='simple' ? 'btn-primary' : '') + ' ' +
       (dropdownItemType()==='radiobutton' ? 'btn-secondary btn-size-lg' : '') + ' ' +
@@ -14,14 +18,12 @@
     {{dropdownMenuTitle()}}
   </cygnus-button>
 
-
-  @if (dropdownOpen) {
-
   <ul
     [class]="
-      'pt-1 mt-1 text-gray-700 z-10 min-w-[180px] overflow-auto rounded-lg border border-gray-200 bg-white py-2 shadow-lg focus:outline-hidden '
+      'absolute ' +
+      'pt-1 mt-1 text-gray-700 z-10 min-w-[180px]  rounded-lg border border-gray-200 bg-white py-2 shadow-lg focus:outline-hidden'
     "
-    [@slideInOut]="dropdownOpen ? 'in' : 'out'"
+    [class.invisible]="dropdownClosed()"
   >
 
     @for (item of dropdownItemDataArr(); track $index) {
@@ -47,6 +49,7 @@
 
     }
   </ul>
-  }
+
+
 
 </div>
