@@ -46,30 +46,19 @@
 
         <!-- Components -->
 
-        <fieldset class="space-y-4">
-
-            <div class="flex items-center">
-              <input name="framework" type="radio" id="yes" checked>
-              <label class="my-0 ml-2 text-sm text-gray-600 cursor-pointer" for="yes">
-                <p>
-                  Estoy de acuerdo con los
-                  <a href="#" class="font-medium underline hover:text-gray-800">
-                      términos y condiciones</a>.
-                </p>
-              </label>
-            </div>
-
-            <div class="flex items-center">
-              <input name="framework" type="radio" id="not">
-              <label class="my-0 ml-2 text-sm text-gray-600 cursor-pointer" for="not">
-                <p>
-                  No estoy de acuerdo con los
-                  <a href="#" class="font-medium underline hover:text-gray-800">
-                      términos y condiciones</a>.
-                </p>
-              </label>
-            </div>
+        <fieldset class="flex flex-col space-y-4">
+          <cygnus-radio-button
+            [labelText]="'Estoy de acuerdo con los '"
+            [linkText]="'términos y condiciones'"
+            [linkUrl]="'./'"
+          />
+          <cygnus-radio-button
+            [labelText]="'No estoy de acuerdo con los '"
+            [linkText]="'términos y condiciones'"
+            [linkUrl]="'./'"
+          />
         </fieldset>
+
       </div>
     </div>
   </section>

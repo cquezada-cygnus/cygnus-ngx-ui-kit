@@ -17,7 +17,17 @@
       "
       [for]="inputId()"
     >
-      {{labelText()}}
+
+      @if (linkText()!='' && linkUrl()!='') {
+        <p class="text-base text-gray-600">
+          {{labelText()}}
+          <a [routerLink]="linkUrl()" class="font-medium underline hover:text-gray-800">
+            {{linkText()}}
+          </a>
+        </p>
+      }  @else {
+        {{labelText()}}
+      }
     </label>
 </div>
 

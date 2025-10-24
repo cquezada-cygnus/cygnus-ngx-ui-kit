@@ -1,11 +1,13 @@
 import { Component, input, OnInit, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 
 @Component({
   selector: 'cygnus-radio-button',
   imports: [
-    NgxCygnusIconsComponent
+    RouterLink,
+    NgxCygnusIconsComponent,
   ],
   templateUrl: './cygnus-radio-button.component.html',
   styles: `
@@ -22,6 +24,8 @@ export class CygnusRadioButtonComponent implements OnInit {
   labelText = input<string>('');
 
   isDisabled = input<boolean>(false);
+  linkText = input<string>('');
+  linkUrl = input<string>('');
 
   ngOnInit() {
     // Generar ID único si no se proporciona
