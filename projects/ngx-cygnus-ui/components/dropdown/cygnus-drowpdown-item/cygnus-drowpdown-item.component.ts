@@ -18,6 +18,4 @@ export class CygnusDrowpdownItemComponent {
   dropdownItemType = input<DropdownItemType>('simple');
   itemContent = input<DropdownItemData>();
 
-
-
 }
