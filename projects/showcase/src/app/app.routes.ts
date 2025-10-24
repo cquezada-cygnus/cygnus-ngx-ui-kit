@@ -48,6 +48,10 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'radiobuttons',
+    loadComponent: () => import('./radio-button-content/radio-button-content.component').then( (c) => c.RadioButtonContentComponent )
+  },
+  {
     path: 'sidebar',
     loadComponent: () => import('./sidebar-content/sidebar-content.component').then( (c) => c.SidebarContentComponent )
   },

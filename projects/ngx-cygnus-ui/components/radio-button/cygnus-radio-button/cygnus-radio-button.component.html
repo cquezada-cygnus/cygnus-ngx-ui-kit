@@ -1,0 +1,24 @@
+<div class="flex items-center">
+    <input
+      [class]="
+        TW_CLASS.RADIOBUTTON_INPUT + ' ' +
+        (isDisabled() ? TW_CLASS.RADIOBUTTON_INPUT_DISABLED : '')
+      "
+      name="framework"
+      type="radio"
+      [id]="inputId()"
+      checked=""
+      [disabled]="isDisabled()"
+    >
+    <label
+      [class]="
+        TW_CLASS.RADIOBUTTON_LABEL + ' ' +
+        (isDisabled() ? TW_CLASS.RADIOBUTTON_LABEL_DISABLED : '')
+      "
+      [for]="inputId()"
+    >
+      {{labelText()}}
+    </label>
+</div>
+
+

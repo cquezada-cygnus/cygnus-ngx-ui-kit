@@ -1,0 +1,77 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Radiobuttons</h1>
+    <p class="mt-4 text-gray-600 text-md">Los botones de opción son circulares y suelen aparecer en grupos;
+      cuando un usuario selecciona un botón de opción de un
+      grupo, cualquier botón de opción seleccionado previamente en el mismo grupo se deselecciona
+      automáticamente. Este
+      comportamiento garantiza que el usuario pueda elegir solo una opción del grupo, lo que hace que los
+      botones de opción
+      sean ideales para opciones en las que solo se aplica una opción.</p>
+  </header>
+
+  <section id="radio-simple">
+
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Radiobuttons</h2>
+        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
+          texto blanco, esquinas
+          redondeadas y un efecto de sombra al pasar el mouse, mostrando interactividad.</p>
+
+        <div class="inline-flex items-center">
+
+          <fieldset class="flex flex-col space-y-4">
+            <cygnus-radio-button [labelText]="'Chile'" />
+            <cygnus-radio-button [labelText]="'Perú'" />
+            <cygnus-radio-button [labelText]="'Argentina'" />
+            <cygnus-radio-button [labelText]="'Brasil'" [isDisabled]="true" />
+          </fieldset>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="radio-link">
+
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Botón de radio con enlace</h2>
+        <p class="mb-8 text-gray-600 text-md">Este ejemplo muestra cómo se pueden implementar botones de
+            opción con etiquetas que incluyen un hipervínculo.</p>
+
+        <!-- Components -->
+
+        <fieldset class="space-y-4">
+
+            <div class="flex items-center">
+              <input name="framework" type="radio" id="yes" checked>
+              <label class="my-0 ml-2 text-sm text-gray-600 cursor-pointer" for="yes">
+                <p>
+                  Estoy de acuerdo con los
+                  <a href="#" class="font-medium underline hover:text-gray-800">
+                      términos y condiciones</a>.
+                </p>
+              </label>
+            </div>
+
+            <div class="flex items-center">
+              <input name="framework" type="radio" id="not">
+              <label class="my-0 ml-2 text-sm text-gray-600 cursor-pointer" for="not">
+                <p>
+                  No estoy de acuerdo con los
+                  <a href="#" class="font-medium underline hover:text-gray-800">
+                      términos y condiciones</a>.
+                </p>
+              </label>
+            </div>
+        </fieldset>
+      </div>
+    </div>
+  </section>
+
+</main>

@@ -73,6 +73,12 @@
       "ngx-cygnus-ui/components/alert": [
         "./projects/ngx-cygnus-ui/components/alert",
       ],
+      "ngx-cygnus-ui/components/radio-button/*": [
+        "./projects/ngx-cygnus-ui/components/radio-button/*",
+      ],
+      "ngx-cygnus-ui/components/radio-button": [
+        "./projects/ngx-cygnus-ui/components/radio-button",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],
