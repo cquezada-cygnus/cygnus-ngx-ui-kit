@@ -26,6 +26,10 @@ export const routes: Routes = [
     loadComponent: () => import('./card-content/card-content.component').then( (c) => c.CardContentComponent )
   },
   {
+    path: 'dropdown',
+    loadComponent: () => import('./dropdown-content/dropdown-content.component').then( (c) => c.DropdownContentComponent )
+  },
+  {
     path: 'inputs',
     loadComponent: () => import('./input-content/input-content.component').then( (c) => c.InputContentComponent )
   },

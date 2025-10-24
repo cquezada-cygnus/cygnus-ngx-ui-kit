@@ -1,13 +1,11 @@
 import { Component, input, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 
 @Component({
   selector: 'cygnus-radio-button',
   imports: [
-    RouterLink,
-    NgxCygnusIconsComponent,
+    RouterLink
   ],
   templateUrl: './cygnus-radio-button.component.html',
   styles: `

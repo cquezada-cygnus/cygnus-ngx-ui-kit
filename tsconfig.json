@@ -79,6 +79,12 @@
       "ngx-cygnus-ui/components/radio-button": [
         "./projects/ngx-cygnus-ui/components/radio-button",
       ],
+      "ngx-cygnus-ui/components/dropdown/*": [
+        "./projects/ngx-cygnus-ui/components/dropdown/*",
+      ],
+      "ngx-cygnus-ui/components/dropdown": [
+        "./projects/ngx-cygnus-ui/components/dropdown",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],

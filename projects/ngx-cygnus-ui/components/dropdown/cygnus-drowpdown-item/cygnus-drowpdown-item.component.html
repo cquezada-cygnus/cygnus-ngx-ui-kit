@@ -1,0 +1,29 @@
+@if (dropdownItemType()==='simple') {
+  <li role="menuitem">
+    <a
+      class="flex items-center w-full px-4 py-2.5 text-sm text-gray-800 transition-all cursor-pointer hover:bg-gray-200 focus:bg-gray-100 active:bg-gray-100"
+      [routerLink]="itemContent()?.routerLinkText"
+    >
+      {{itemContent()?.itemText}}
+    </a>
+  </li>
+
+} @else if (dropdownItemType()==='radiobutton') {
+
+
+} @else if (dropdownItemType()==='iconText') {
+  <li>
+    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 size-6" fill="none"
+            viewBox="0 0 24 24">
+            <path stroke="CurrentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2"
+                d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3m.08 4h.01M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Z" />
+        </svg>
+        Ayuda
+    </a>
+  </li>
+
+} @else if (dropdownItemType()==='close') {
+
+}

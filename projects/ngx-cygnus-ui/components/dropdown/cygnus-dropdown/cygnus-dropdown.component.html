@@ -1,0 +1,18 @@
+<div class="relative inline-block">
+  <cygnus-button
+    [btnTypes]="'btn btn-size-sm btn-icon'"
+    [btnIconRouteRight]="'assets/icons/backups/chevron-down.svg'"
+  >
+    {{dropdownMenuTitle()}}
+  </cygnus-button>
+
+  <ul class="pt-1 mt-1 text-gray-700 z-10 min-w-[180px] overflow-auto rounded-lg border border-gray-200 bg-white py-2 shadow-lg focus:outline-hidden">
+
+    @for (item of dropdownItemDataArr(); track $index) {
+      <cygnus-drowpdown-item
+        [dropdownItemType]="'simple'"
+        [itemContent]="item"
+      />
+    }
+  </ul>
+</div>
