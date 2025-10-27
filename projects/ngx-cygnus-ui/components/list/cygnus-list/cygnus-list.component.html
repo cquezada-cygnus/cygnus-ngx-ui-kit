@@ -1,0 +1,8 @@
+<ul class="flex flex-col max-w-xs">
+  @for (item of itemsArr(); track $index) {
+    <li [routerLink]="item.linkText"
+        class="inline-flex items-center px-4 py-3 -mt-px text-sm font-medium text-gray-800 bg-white border border-gray-200 gap-x-2 first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+        {{item.title}}
+    </li>
+  }
+</ul>

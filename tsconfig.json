@@ -85,6 +85,12 @@
       "ngx-cygnus-ui/components/dropdown": [
         "./projects/ngx-cygnus-ui/components/dropdown",
       ],
+      "ngx-cygnus-ui/components/list/*": [
+        "./projects/ngx-cygnus-ui/components/list/*",
+      ],
+      "ngx-cygnus-ui/components/list": [
+        "./projects/ngx-cygnus-ui/components/list",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],
