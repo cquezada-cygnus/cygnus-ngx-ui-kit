@@ -1,0 +1,26 @@
+<!-- COMPONENTE: Botón Medium -->
+<cygnus-button
+  [btnTypes]="btnType()"
+  [btnIconRouteLeft]="btnIconAssetLeft()"
+  [btnIconRouteRight]="btnIconAssetRight()"
+  (click)="toggleCollapse()"
+>
+  {{collapsableTitle()}}
+</cygnus-button>
+@if (toggleIsOpen()) {
+<div
+  class="block w-full  overflow-hidden transition-all duration-300 ease-in-out basis-full"
+  [class.h-0]="!toggleIsOpen()"
+  [class.invisible]="!toggleIsOpen()"
+  [class.h-fit]="toggleIsOpen()"
+>
+  <div class="relative flex flex-col w-8/12 mx-auto mt-4 bg-white border rounded-lg shadow-sm border-slate-200">
+    <div class="p-4">
+      <p class="font-light text-slate-600">
+        <ng-content></ng-content>
+      </p>
+    </div>
+  </div>
+</div>
+}
+

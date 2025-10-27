@@ -18,12 +18,16 @@ export const routes: Routes = [
     loadComponent: () => import('./button-content/button-content.component').then( (c) => c.ButtonContentComponent )
   },
   {
-    path: 'checkboxes',
-    loadComponent: () => import('./checkbox-content/checkbox-content.component').then( (c) => c.CheckboxContentComponent )
-  },
-  {
     path: 'cards',
     loadComponent: () => import('./card-content/card-content.component').then( (c) => c.CardContentComponent )
+  },
+  {
+    path: 'collapsible',
+    loadComponent: () => import('./collapsible-content/collapsible-content.component').then( (c) => c.CollapsibleContentComponent )
+  },
+  {
+    path: 'checkboxes',
+    loadComponent: () => import('./checkbox-content/checkbox-content.component').then( (c) => c.CheckboxContentComponent )
   },
   {
     path: 'dropdown',

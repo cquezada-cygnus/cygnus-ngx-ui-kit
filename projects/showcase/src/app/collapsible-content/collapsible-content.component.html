@@ -1,0 +1,27 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <section id="collapse-simple">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Colapsable predeterminado</h2>
+        <p class="mb-8 text-gray-600 text-md">Usa el componente colapsable CSS Tailwind para permitir al
+          usuario mostrar y ocultar secciones de contenido
+          relacionado en una página.
+
+          Hay muchas formas de utilizar este componente, como mostrar una lista de preguntas
+          frecuentes, mostrar varios menús y
+          submenús, mostrar las ubicaciones de una empresa en particular, etc.</p>
+
+        <!-- Primary -->
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+          <cygnus-collapsible
+            [collapsableTitle]="'Abrir Colapsable'"
+          >
+            Utilice este colapsable hecho en Tailwind. Puedes utilizarlo para acordeón, elementos plegables y mucho más.
+          </cygnus-collapsible>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
