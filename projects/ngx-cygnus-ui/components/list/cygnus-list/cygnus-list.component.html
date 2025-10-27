@@ -8,10 +8,20 @@
             [height]="'1rem'"
             [color]="'#1e2939'"
             [route]="item.iconAsset||''"
-
           />
         }
-        {{item.title}}
+        @if (!item.badgeContent) {
+          {{item.title}}
+        }
+        @if (item.badgeContent!==undefined) {
+          <div class="flex justify-between w-full">
+            <span>{{item.title}}</span>
+            <cygnus-badge
+              [badgeText]="item.badgeContent"
+              [badgeTypes]="'badge-sm badge-primary'"
+            />
+          </div>
+        }
     </li>
   }
 </ul>

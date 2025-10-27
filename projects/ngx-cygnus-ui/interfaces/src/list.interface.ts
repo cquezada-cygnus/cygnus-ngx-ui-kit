@@ -3,4 +3,5 @@ export interface ListElem {
   value?: any,
   linkText?: string,
   iconAsset?: string,
+  badgeContent?: string,
 }

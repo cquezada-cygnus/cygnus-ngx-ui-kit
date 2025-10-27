@@ -51,37 +51,7 @@
         </p>
         <div class="mb-4">
 
-          <ul class="flex flex-col max-w-xs">
-              <li
-                  class="inline-flex items-center px-4 py-3 -mt-px text-sm font-medium text-gray-800 bg-white border border-gray-200 gap-x-2 first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-                  <div class="flex justify-between w-full">
-                      Perfil
-                      <div
-                          class="inline-flex items-center justify-center px-2 py-0.5 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
-                          Nuevo</div>
-                  </div>
-              </li>
-              <li
-                  class="flex items-center px-4 py-3 -mt-px text-sm font-medium text-gray-800 bg-white border border-gray-200 gap-x-2 first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-                  <div class="flex justify-between w-full">
-                      Ajustes
-                      <span
-                          class="inline-flex items-center justify-center text-xs px-2 py-0.5 font-semibold text-blue-800 bg-blue-200 rounded-full min-w-4 min-h-4 ms-2">
-                          9
-                      </span>
-                  </div>
-              </li>
-              <li
-                  class="inline-flex items-center px-4 py-3 -mt-px text-sm font-medium text-gray-800 bg-white border border-gray-200 gap-x-2 first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-                  <div class="flex justify-between w-full">
-                      Hoja informativa
-                      <span
-                          class="inline-flex items-center justify-center px-2 py-0.5 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
-                          +99
-                      </span>
-                  </div>
-              </li>
-          </ul>
+          <cygnus-list [itemsArr]="listBadgeArr" />
         </div>
       </div>
     </div>

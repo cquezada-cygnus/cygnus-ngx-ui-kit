@@ -22,4 +22,10 @@ export class ListContentComponent {
     {title: 'Descargas', linkText: './', value: '', iconAsset: 'assets/icons/svg/General/download-cloud-02.svg' },
     {title: 'Cuenta de equipo', linkText: './', value: '', iconAsset: 'assets/icons/svg/Users/users-01.svg' },
   ];
+
+  listBadgeArr: ListElem[] = [
+    {title: 'Perfil', linkText: './', value: '', badgeContent: 'Nuevo' },
+    {title: 'Ajustes', linkText: './', value: '', badgeContent: '9' },
+    {title: 'Hoja informativa', linkText: './', value: '', badgeContent: '+99' },
+  ];
 }
