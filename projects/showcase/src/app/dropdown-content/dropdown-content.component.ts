@@ -14,17 +14,17 @@ export class DropdownContentComponent {
   dropdownSimpleItemDataArr: DropdownItemData[] = [
     {
       iconAssetText: '',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Elemento de menú 1'
     },
     {
       iconAssetText: '',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Elemento de menú 2'
     },
     {
       iconAssetText: '',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Elemento de menú 3'
     },
   ];
@@ -32,27 +32,27 @@ export class DropdownContentComponent {
   dropdownRadiobuttonItemDataArr: DropdownItemData[] = [
     {
       iconAssetText: '',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Último día'
     },
     {
       iconAssetText: '',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Últimos 7 días'
     },
     {
       iconAssetText: '',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Últimos 15 días'
     },
     {
       iconAssetText: '',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Últimos 30 días'
     },
     {
       iconAssetText: '',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Último año'
     },
   ];
@@ -60,17 +60,17 @@ export class DropdownContentComponent {
   dropdownIconTextItemDataArr: DropdownItemData[] = [
     {
       iconAssetText: 'assets/icons/svg/General/help-circle.svg',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Ayuda'
     },
     {
       iconAssetText: 'assets/icons/svg/Weather/moon-01.svg',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Modo oscuro'
     },
     {
       iconAssetText: 'assets/icons/svg/General/tool-02.svg',
-      routerLinkText: '',
+      routerLinkText: './',
       itemText: 'Configuraciones'
     },
   ];

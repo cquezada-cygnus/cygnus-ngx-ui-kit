@@ -1,4 +1,6 @@
-<div [class]="
+<div
+  [id]="dropdownId()"
+  [class]="
     (dropdownItemType()==='iconText' ? 'flex flex-col items-center' : 'inline-block' )
   "
 >
@@ -21,7 +23,8 @@
   <ul
     [class]="
       'absolute ' +
-      'pt-1 mt-1 text-gray-700 z-10 min-w-[180px]  rounded-lg border border-gray-200 bg-white py-2 shadow-lg focus:outline-hidden'
+      'pt-1 text-gray-700 z-10 min-w-[180px]  rounded-lg border border-gray-200 bg-white py-2 shadow-lg focus:outline-hidden ' +
+      ( dropdownItemType()==='iconText' ? 'mt-6' : 'mt-1')
     "
     [class.invisible]="dropdownClosed()"
   >
