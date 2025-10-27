@@ -16,4 +16,10 @@ export class ListContentComponent {
     {title: 'Ajustes', linkText: './', value: '' },
     {title: 'Hoja informativa', linkText: './', value: '' },
   ];
+
+  listIconArr: ListElem[] = [
+    {title: 'Hoja informativa', linkText: './', value: '', iconAsset: 'assets/icons/svg/Alerts&Feedback/bell-01.svg' },
+    {title: 'Descargas', linkText: './', value: '', iconAsset: 'assets/icons/svg/General/download-cloud-02.svg' },
+    {title: 'Cuenta de equipo', linkText: './', value: '', iconAsset: 'assets/icons/svg/Users/users-01.svg' },
+  ];
 }
