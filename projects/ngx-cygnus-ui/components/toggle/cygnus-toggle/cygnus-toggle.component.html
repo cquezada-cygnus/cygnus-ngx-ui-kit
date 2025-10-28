@@ -1,4 +1,6 @@
-<input
+@if (toggleText()=='') {
+
+  <input
   #cygnusToggle
   [class]="TW_CLASS.TOGGLE_BASE + ' ' + TW_CLASS.TOGGLE_PRIMARY"
   type="checkbox"
@@ -6,3 +8,19 @@
   [checked]="inputIsChecked()"
   [id]="toggleId()"
 />
+
+} @else {
+  <div class="flex items-center gap-2">
+    <input
+      #cygnusToggle
+      [id]="toggleId()"
+      [class]="TW_CLASS.TOGGLE_BASE + ' ' + TW_CLASS.TOGGLE_PRIMARY"
+      type="checkbox"
+      (click)="setValue(cygnusToggle.checked)"
+      [checked]="inputIsChecked()"
+    />
+    <label [for]="toggleId()" class="ml-1 font-sans text-base antialiased text-gray-600">
+      {{toggleText()}}
+    </label>
+  </div>
+}

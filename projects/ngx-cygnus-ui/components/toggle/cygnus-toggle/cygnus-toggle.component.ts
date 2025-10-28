@@ -11,6 +11,7 @@ export class CygnusToggleComponent implements OnInit {
   private static idCounter = 0;
   TW_CLASS = TW_CLASS;
   toggleId = signal<string>('');
+  toggleText = input<string>('');
   inputIsChecked = input<boolean>(false);
 
   control = input<FormControl<boolean>>();

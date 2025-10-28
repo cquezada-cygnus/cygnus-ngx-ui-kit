@@ -34,12 +34,8 @@
         <h2 class="mb-2 text-xl font-semibold">Toggle chequeado</h2>
         <p class="mb-8 text-gray-600 text-md">La forma predeterminada de un interruptor/toggle.</p>
         <div class="flex items-center justify-center w-full gap-4 mb-4">
-
           <cygnus-toggle [inputIsChecked]="true" />
-
-
         </div>
-
       </div>
     </div>
   </section>
@@ -51,14 +47,7 @@
           <h2 class="mb-2 text-xl font-semibold">Toggle con texto</h2>
           <p class="mb-8 text-gray-600 text-md">El uso básico con descripción.</p>
           <div class="flex flex-col items-center w-full gap-6 mb-4">
-
-            <div class="flex items-center gap-2">
-              <input id="switch"
-                  class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-gray-200 before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-white after:transition-transform after:duration-200 after:ease-in checked:before:bg-blue-800 checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
-                  type="checkbox" />
-              <label for="switch" class="ml-1 font-sans text-base antialiased text-gray-600"> Modo
-                  oscuro</label>
-            </div>
+            <cygnus-toggle [toggleText]="'Modo oscuro'" />
           </div>
         </div>
       </div>
