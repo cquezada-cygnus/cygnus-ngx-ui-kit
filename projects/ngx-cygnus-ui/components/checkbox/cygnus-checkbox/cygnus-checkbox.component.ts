@@ -1,6 +1,7 @@
 import { Component, input, OnInit, signal } from '@angular/core';
 import { TW_CLASS } from '../const/tailwind.const';
 import { CheckboxSize, CheckboxType } from 'ngx-cygnus-ui/types';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'cygnus-checkbox',
@@ -20,6 +21,7 @@ import { CheckboxSize, CheckboxType } from 'ngx-cygnus-ui/types';
 export class CygnusCheckboxComponent implements OnInit {
   private static idCounter = 0;
   TW_CLASS = TW_CLASS;
+  control = input<FormControl<boolean>>();
 
   checkboxId = signal<string>('');
   checkboxType = input<CheckboxType>('base');
@@ -41,6 +43,12 @@ export class CygnusCheckboxComponent implements OnInit {
       default:
         return this.TW_CLASS.CHECKBOX_LG;
     }
+  }
+
+  setValue(value:boolean ) {
+    this.control()?.setValue(value);
+    this.control()?.markAsDirty();
+    this.control()?.markAsTouched();
   }
 
 }

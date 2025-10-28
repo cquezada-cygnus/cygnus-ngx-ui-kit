@@ -76,6 +76,10 @@ export const routes: Routes = [
     loadComponent: () => import('./select-search-content/select-search-content.component').then( (c) => c.SelectSearchContentComponent )
   },
   {
+    path: 'toggles',
+    loadComponent: () => import('./toggle-content/toggle-content.component').then( (c) => c.ToggleContentComponent )
+  },
+  {
     path: 'login',
     loadComponent: () => import('./login-content/login-content.component').then( (c) => c.LoginContentComponent )
   },

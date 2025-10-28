@@ -1,0 +1,155 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Toggles</h1>
+    <p class="mt-4 text-gray-600 text-md">Toggles (también conocidos como «interruptores») es un
+      control de
+      interfaz de usuario que tiene dos estados mutuamente
+      excluyentes, como ON y OFF. El diseño y la funcionalidad de este componente se basan en un
+      interruptor físico que
+      permite a los usuarios encender o apagar cosas. Los conmutadores son una gran señal visual para los
+      ajustes,
+      especialmente en móviles, porque ocupan menos espacio en pantalla (en comparación con dos botones de
+      radio).</p>
+  </header>
+
+  <section id="basic-toggle">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Toggle básico</h2>
+        <p class="mb-8 text-gray-600 text-md">La forma predeterminada de un interruptor/toggle.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+            <cygnus-toggle />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="basic-toggle-checked">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Toggle chequeado</h2>
+        <p class="mb-8 text-gray-600 text-md">La forma predeterminada de un interruptor/toggle.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <input
+              class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-gray-200 before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-white after:transition-transform after:duration-200 after:ease-in checked:before:bg-blue-800 checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
+              type="checkbox" checked />
+
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="toogle-text">
+      <div
+        class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+        <div class="p-4 pb-4">
+          <h2 class="mb-2 text-xl font-semibold">Toggle con texto</h2>
+          <p class="mb-8 text-gray-600 text-md">El uso básico con descripción.</p>
+          <div class="flex flex-col items-center w-full gap-6 mb-4">
+
+            <div class="flex items-center gap-2">
+              <input id="switch"
+                  class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-gray-200 before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-white after:transition-transform after:duration-200 after:ease-in checked:before:bg-blue-800 checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
+                  type="checkbox" />
+              <label for="switch" class="ml-1 font-sans text-base antialiased text-gray-600"> Modo
+                  oscuro</label>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="toggle-disabled">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Desactivado</h2>
+        <p class="mb-8 text-gray-600 text-md">Interruptor deshabilitado.</p>
+        <div class="flex flex-col items-center justify-center w-full gap-6 mb-4">
+
+          <input
+              class="relative inline-block h-6 w-10 cursor-not-allowed appearance-none rounded-full opacity-50 before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-gray-200 before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-white after:transition-transform after:duration-200 after:ease-in checked:before:bg-blue-800 checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
+              type="checkbox" disabled />
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="toggle-disabled">
+      <div
+        class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+        <div class="p-4 pb-4">
+          <h2 class="mb-2 text-xl font-semibold">Con enlace</h2>
+          <p class="mb-8 text-gray-600 text-md">Consulta estos estados inactivos creados con las
+              utilidades de opacidad de Tailwind CSS. Usa "opacity-50" y "pointer-events-none" para una
+              visualización clara.</p>
+          <div class="flex flex-col items-center justify-center w-full gap-6 mb-4">
+
+            <div class="flex items-center gap-2">
+              <input id="switch-link"
+                  class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-gray-200 before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-white after:transition-transform after:duration-200 after:ease-in checked:before:bg-blue-800 checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
+                  type="checkbox" />
+              <label for="switch-link" class="flex gap-1 text-sm antialiased text-slate-600">Acepto
+                  los <a href="#" class="antialiased font-bold text-slate-800">términos y
+                      condiciones</a></label>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="toggle-disabled">
+      <div
+        class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+        <div class="p-4 pb-4">
+          <h2 class="mb-2 text-xl font-semibold">Con descripción</h2>
+          <p class="mb-8 text-gray-600 text-md">Ideal para configuraciones que requieren contexto o
+              explicación adicional.</p>
+          <div class="flex flex-col items-center justify-center w-full gap-6 mb-4">
+
+            <div class="flex gap-2">
+              <input id="switch-description"
+                  class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-gray-200 before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-white after:transition-transform after:duration-200 after:ease-in checked:before:bg-slate-800 checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
+                  type="checkbox" />
+              <label for="switch-description" class="-translate-y-1">
+                  <p class="font-sans text-base antialiased font-semibold text-gray-800">
+                      Recuérdame</p>
+                  <small class="font-sans text-sm antialiased text-slate-600">Podrás iniciar sesión
+                      sin contraseña durante 24 horas.</small>
+              </label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="toggle-disabled">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Con descripción</h2>
+        <p class="mb-8 text-gray-600 text-md">Ideal para configuraciones que requieren contexto o
+            explicación adicional.</p>
+        <div class="flex flex-col items-center justify-center w-full gap-6 mb-4">
+
+          <input
+              class="relative inline-block h-6 w-10 appearance-none rounded-full before:absolute before:left-0 before:top-0 before:inline-block before:h-full before:w-full before:rounded-full before:bg-slate-200 before:transition-colors before:duration-200 before:ease-in after:absolute after:left-0.5 after:top-2/4 after:h-5 after:w-5 after:-translate-y-2/4 after:rounded-full after:bg-white after:shadow-sm after:shadow-black/10 after:transition-transform after:duration-200 after:ease-in checked:before:bg-[#2ec946] checked:after:translate-x-[calc(100%-4px)] dark:after:bg-white"
+              type="checkbox" />
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

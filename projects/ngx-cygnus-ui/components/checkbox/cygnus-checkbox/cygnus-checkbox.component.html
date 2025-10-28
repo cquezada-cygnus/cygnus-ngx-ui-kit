@@ -1,5 +1,7 @@
 <div [class]="(checkboxType()==='base' ? 'block' : (checkboxType()==='text' ? 'flex items-center' : 'flex items-start' ) ) ">
-  <input type="checkbox"
+  <input
+    #cygnusCheckbox
+    type="checkbox"
     [class]="
       TW_CLASS.CHECKBOX_BASE + ' ' +
       (checkboxType()==='text' ? 'mt-0.5 checkbox-sm' : '' ) + ' ' +
@@ -8,6 +10,7 @@
       ' peer'
     "
     [id]="checkboxId()"
+    (click)="setValue(cygnusCheckbox.checked)"
   />
   @if (checkboxType()==='base') {
     <label [for]="checkboxId()" class="sr-only">Checkbox</label>

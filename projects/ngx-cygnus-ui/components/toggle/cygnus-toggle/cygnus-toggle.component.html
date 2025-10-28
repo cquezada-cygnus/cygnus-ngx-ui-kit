@@ -1,0 +1,7 @@
+<input
+  #cygnusToggle
+  [class]="TW_CLASS.TOGGLE_BASE + ' ' + TW_CLASS.TOGGLE_PRIMARY"
+  type="checkbox"
+  (click)="setValue(cygnusToggle.checked)"
+  [id]="toggleId()"
+/>

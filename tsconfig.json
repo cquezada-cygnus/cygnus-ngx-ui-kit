@@ -91,6 +91,12 @@
       "ngx-cygnus-ui/components/list": [
         "./projects/ngx-cygnus-ui/components/list",
       ],
+      "ngx-cygnus-ui/components/toggle/*": [
+        "./projects/ngx-cygnus-ui/components/toggle/*",
+      ],
+      "ngx-cygnus-ui/components/toggle": [
+        "./projects/ngx-cygnus-ui/components/toggle",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],
