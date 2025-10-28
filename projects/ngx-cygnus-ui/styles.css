@@ -128,4 +128,12 @@
   --cg-z-modal: 1040;
   --cg-z-popover: 1050;
   --cg-z-tooltip: 1060;
+
+  /* Breakpoints  */
+  /*
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xs: 20rem;
+  --breakpoint-3xs: 10rem;
+  --breakpoint-4xs: 5rem;
+  */
 }

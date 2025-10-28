@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 
 @Component({
@@ -9,5 +9,6 @@ import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
   templateUrl: './cygnus-mainboard-header-navbar.component.html',
 })
 export class CygnusMainboardHeaderNavbarComponent {
+
 
 }

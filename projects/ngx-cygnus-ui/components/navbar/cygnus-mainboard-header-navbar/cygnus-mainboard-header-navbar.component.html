@@ -1,4 +1,4 @@
-<header class="flex items-center justify-between p-3 bg-white border-b border-gray-300">
+<header class="@container  flex items-center justify-between p-3 bg-white border-b border-gray-300">
   <div class="flex items-center space-x-2">
 
       <svg class="block w-8 h-8 sm:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
@@ -62,7 +62,9 @@
       [btnIconRouteRight]="'assets/icons/svg/Alerts&Feedback/bell-03.svg'"
     />
 
+
     <cygnus-button
+      [class]="'hidden @xs:block'"
       [btnTypes]="'btn-ghost-gray btn-icon btn-icon-xl'"
       [btnIconRouteLeft]="'assets/icons/svg/General/dots-grid.svg'"
     > <!-- mostrar solo en desktop -->
@@ -70,9 +72,11 @@
     </cygnus-button>
 
     <cygnus-button
+      [class]="'@xs:hidden'"
       [btnTypes]="'btn-ghost-gray btn-circle btn-icon-only btn-icon-only-size-xl'"
       [btnIconRouteRight]="'assets/icons/svg/General/dots-grid.svg'"
     /> <!-- mostrar solo en mobile -->
+
 
     <cygnus-button
       [btnTypes]="'btn-gray btn-circle'"
