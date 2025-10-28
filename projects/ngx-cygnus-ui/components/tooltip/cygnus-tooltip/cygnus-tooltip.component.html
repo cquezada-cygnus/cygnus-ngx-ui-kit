@@ -1,0 +1,10 @@
+@if (isVisible) {
+  <div
+    class="z-50 px-3 py-1.5 text-sm text-white bg-gray-900 rounded-md shadow-md"
+    [style.left.px]="position.left"
+    [style.top.px]="position.top"
+  >
+    <ng-content></ng-content>
+  </div>
+}
+

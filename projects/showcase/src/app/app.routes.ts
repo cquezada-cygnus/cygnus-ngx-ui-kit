@@ -80,6 +80,10 @@ export const routes: Routes = [
     loadComponent: () => import('./toggle-content/toggle-content.component').then( (c) => c.ToggleContentComponent )
   },
   {
+    path: 'tooltips',
+    loadComponent: () => import('./tooltip-content/tooltip-content.component').then( (c) => c.TooltipContentComponent )
+  },
+  {
     path: 'login',
     loadComponent: () => import('./login-content/login-content.component').then( (c) => c.LoginContentComponent )
   },
