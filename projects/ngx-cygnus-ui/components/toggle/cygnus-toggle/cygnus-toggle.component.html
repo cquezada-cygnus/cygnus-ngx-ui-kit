@@ -27,8 +27,17 @@
       [checked]="inputIsChecked()"
       [disabled]="inputIsDisabled()"
     />
-    <label [for]="toggleId()" class="ml-1 font-sans text-base antialiased text-gray-600">
+    <label [for]="toggleId()"
+      [class]="
+        'ml-1 font-sans antialiased text-gray-600 ' +
+        (inputlink() ? 'text-sm' : 'text-base')
+      "
+    >
       {{toggleText()}}
+
+      @if (inputlink()) {
+        <a [routerLink]="inputlink()" class="antialiased font-bold text-slate-800">{{inputlinkText()}}</a>
+      }
     </label>
   </div>
 }
