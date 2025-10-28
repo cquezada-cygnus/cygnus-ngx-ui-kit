@@ -2,10 +2,14 @@
 
   <input
   #cygnusToggle
-  [class]="TW_CLASS.TOGGLE_BASE + ' ' + TW_CLASS.TOGGLE_PRIMARY"
+  [class]="
+    TW_CLASS.TOGGLE_BASE + ' ' +
+    (inputIsDisabled() ? TW_CLASS.TOGGLE_DISABLED : TW_CLASS.TOGGLE_PRIMARY)
+  "
   type="checkbox"
   (click)="setValue(cygnusToggle.checked)"
   [checked]="inputIsChecked()"
+  [disabled]="inputIsDisabled()"
   [id]="toggleId()"
 />
 
@@ -14,10 +18,14 @@
     <input
       #cygnusToggle
       [id]="toggleId()"
-      [class]="TW_CLASS.TOGGLE_BASE + ' ' + TW_CLASS.TOGGLE_PRIMARY"
+      [class]="
+        TW_CLASS.TOGGLE_BASE + ' ' +
+        (inputIsDisabled() ? TW_CLASS.TOGGLE_DISABLED : TW_CLASS.TOGGLE_PRIMARY)
+      "
       type="checkbox"
       (click)="setValue(cygnusToggle.checked)"
       [checked]="inputIsChecked()"
+      [disabled]="inputIsDisabled()"
     />
     <label [for]="toggleId()" class="ml-1 font-sans text-base antialiased text-gray-600">
       {{toggleText()}}
