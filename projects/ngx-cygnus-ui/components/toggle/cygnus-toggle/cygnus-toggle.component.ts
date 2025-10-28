@@ -19,6 +19,7 @@ export class CygnusToggleComponent implements OnInit {
   inputIsDisabled = input<boolean>(false);
   inputlink = input<string>('');
   inputlinkText = input<string>('');
+  toggleDescription = input<string>('');
 
   control = input<FormControl<boolean>>();
 

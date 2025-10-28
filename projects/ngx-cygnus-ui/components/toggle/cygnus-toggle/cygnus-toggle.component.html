@@ -33,11 +33,26 @@
         (inputlink() ? 'text-sm' : 'text-base')
       "
     >
-      {{toggleText()}}
 
-      @if (inputlink()) {
-        <a [routerLink]="inputlink()" class="antialiased font-bold text-slate-800">{{inputlinkText()}}</a>
+      @if (toggleDescription()!='') {
+
+        <p class="font-sans text-base antialiased font-semibold text-gray-800">
+            {{toggleText()}}
+        </p>
+        <small class="font-sans text-sm antialiased text-slate-600">
+          {{toggleDescription()}}
+        </small>
+
+      } @else {
+
+        {{toggleText()}}
+
+        @if (inputlink()) {
+          <a [routerLink]="inputlink()" class="antialiased font-bold text-slate-800">{{inputlinkText()}}</a>
+        }
+
       }
+
     </label>
   </div>
 }
