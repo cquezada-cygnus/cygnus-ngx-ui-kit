@@ -4,7 +4,8 @@
   #cygnusToggle
   [class]="
     TW_CLASS.TOGGLE_BASE + ' ' +
-    (inputIsDisabled() ? TW_CLASS.TOGGLE_DISABLED : TW_CLASS.TOGGLE_PRIMARY)
+    (inputIsDisabled() ? TW_CLASS.TOGGLE_DISABLED : '') + ' ' +
+    (checkedCustomColor() ? setCheckedCustomColor() : TW_CLASS.TOGGLE_PRIMARY)
   "
   type="checkbox"
   (click)="setValue(cygnusToggle.checked)"
@@ -20,7 +21,8 @@
       [id]="toggleId()"
       [class]="
         TW_CLASS.TOGGLE_BASE + ' ' +
-        (inputIsDisabled() ? TW_CLASS.TOGGLE_DISABLED : TW_CLASS.TOGGLE_PRIMARY)
+        (inputIsDisabled() ? TW_CLASS.TOGGLE_DISABLED : '') + ' ' +
+        (checkedCustomColor() ? setCheckedCustomColor() : TW_CLASS.TOGGLE_PRIMARY)
       "
       type="checkbox"
       (click)="setValue(cygnusToggle.checked)"
