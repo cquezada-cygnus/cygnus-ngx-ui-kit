@@ -23,7 +23,7 @@ export class CygnusTooltipComponent implements OnInit, OnDestroy {
       this.isVisible = true;
       if (targetElement) {
         const rect = targetElement.getBoundingClientRect();
-        this.position.left = rect.left + window.scrollX;
+        this.position.left = ((rect.left)-30) + window.scrollX;
         this.position.top = rect.top + window.scrollY - 30; // Adjust for tooltip height
       }
     }));
