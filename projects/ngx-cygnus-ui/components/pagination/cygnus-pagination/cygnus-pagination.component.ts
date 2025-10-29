@@ -13,15 +13,21 @@ export class CygnusPaginationComponent {
   currentCounter = model<number>(0);
   paginationType = input<string>('');
 
-  goToLeft() {
+  goToLeft():void {
     if (this.currentCounter() > 1) {
       this.currentCounter.update( current => current-=1 );
     }
   }
 
-  goToRight() {
+  goToRight():void {
     if (this.currentCounter() < this.maxCounter()) {
       this.currentCounter.update( current => current+=1 );
+    }
+  }
+
+  goToSelfPosition(value:number):void {
+    if (this.currentCounter() != value) {
+      this.currentCounter.set(value);
     }
   }
 }

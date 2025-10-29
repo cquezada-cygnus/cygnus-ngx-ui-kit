@@ -15,6 +15,7 @@
           ( idx+1==currentCounter() ? 'btn-primary ' : 'btn-ghost ') +
           ( paginationType()==='circle' ? 'btn-circle btn-pagination-circle-size':'btn-pagination-size')
         "
+        (click)="goToSelfPosition(idx+1)"
       >
         {{idx+1}}
       </cygnus-button>
