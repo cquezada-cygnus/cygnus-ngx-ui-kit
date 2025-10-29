@@ -67,6 +67,7 @@
       [class]="'hidden @xs:block'"
       [btnTypes]="'btn-ghost-gray btn-icon btn-icon-xl'"
       [btnIconRouteLeft]="'assets/icons/svg/General/dots-grid.svg'"
+      (click)="utilitiesClicked()"
     > <!-- mostrar solo en desktop -->
       Utilidades
     </cygnus-button>
@@ -75,6 +76,7 @@
       [class]="'@xs:hidden'"
       [btnTypes]="'btn-ghost-gray btn-circle btn-icon-only btn-icon-only-size-xl'"
       [btnIconRouteRight]="'assets/icons/svg/General/dots-grid.svg'"
+      (click)="utilitiesClicked()"
     /> <!-- mostrar solo en mobile -->
 
 

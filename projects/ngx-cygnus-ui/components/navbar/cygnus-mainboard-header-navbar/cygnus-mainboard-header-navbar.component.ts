@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 
 @Component({
@@ -9,6 +9,10 @@ import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
   templateUrl: './cygnus-mainboard-header-navbar.component.html',
 })
 export class CygnusMainboardHeaderNavbarComponent {
+  utilities = output<string>();
 
+  utilitiesClicked():void {
+    this.utilities.emit('utilities');
+  }
 
 }
