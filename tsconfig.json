@@ -109,6 +109,12 @@
       "ngx-cygnus-ui/components/popover": [
         "./projects/ngx-cygnus-ui/components/popover",
       ],
+      "ngx-cygnus-ui/components/modal/*": [
+        "./projects/ngx-cygnus-ui/components/modal/*",
+      ],
+      "ngx-cygnus-ui/components/modal": [
+        "./projects/ngx-cygnus-ui/components/modal",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],

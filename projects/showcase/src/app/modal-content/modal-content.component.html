@@ -1,0 +1,80 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Modales</h1>
+    <p class="mt-4 text-gray-600 text-md">Se unan las ventanas modales para informar a los usuarios sobre
+        tareas o información importante que requieren decisiones o
+        implican múltiples pasos.
+
+        Un modal es una ventana que muestra información crítica, deshabilita todas las funciones de la
+        aplicación cuando aparece
+        y permanece en la pantalla hasta que se Confirmara o se descarta.
+
+        Vea a continuación nuestros ejemplos modales diseñados con Tailwind CSS que puede usar para sus
+        aplicaciones web o
+        móviles.
+
+    </p>
+  </header>
+
+  <section id="modal-simple">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Modal simple</h2>
+        <p class="mb-8 text-gray-600 text-md">Este ejemplo codificado muestra un componente modal;
+            incluye un botón de activación, un fondo y un estilo personalizable
+            para el contenido y las acciones del modal. Al hacer clic en el botón "Abrir modal", el
+            modal se muestra sobre el fondo,
+            lo que garantiza una interacción enfocada para el usuario. El contenido y el comportamiento
+            se pueden ajustar fácilmente
+            para adaptarse a los requisitos de su sitio web.</p>
+
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <cygnus-button [btnTypes]="'btn-primary'" (click)="toggleModalSimple()" >Abrir Modal</cygnus-button>
+
+          <!-- Modal -->
+          <cygnus-modal
+            [modalTitle]="'Esta es una simple Modal'"
+            [modalContent]="`Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
+                            reiciendis voluptates repellendus, eum sunt architecto quam praesentium?
+                            Nesciunt velit consequatur reiciendis expedita natus, hic veniam quisquam quam
+                            dolorum.`"
+            [(showModal)]="showModalSimple"
+          />
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modal-close">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Modal con cierre equis (X)</h2>
+        <p class="mb-8 text-gray-600 text-md">Se agrega una ventana modal con cierre equis (X).</p>
+
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <cygnus-button [btnTypes]="'btn-primary'" (click)="toggleModalEquis()" >Abrir Modal</cygnus-button>
+
+          <!-- Modal con equis -->
+          <cygnus-modal
+            [modalTitle]="'Esta es una simple Modal'"
+            [modalContent]="`Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
+                            reiciendis voluptates repellendus, eum sunt architecto quam praesentium?
+                            Nesciunt velit consequatur reiciendis expedita natus, hic veniam quisquam quam
+                            dolorum.`"
+            [(showModal)]="showModalEquis"
+            [withX]="true"
+          />
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>

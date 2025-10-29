@@ -1,0 +1,28 @@
+@if (showModal()) {
+<div
+  class="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+  <div
+    class="relative m-4 p-4 sm:p-6 w-full max-w-[95%] md:max-w-[80%] lg:max-w-[60%] 2xl:max-w-[40%] rounded-lg bg-white shadow-sm">
+    <div class="flex items-center justify-between pb-4 text-xl font-medium text-gray-800 shrink-0">
+      {{modalTitle()}}
+      @if (withX()) {
+        <cygnus-button
+          [btnTypes]="'btn-gray btn-circle btn btn-icon-only-size-xs'"
+          [btnIconRouteRight]="'assets/icons/svg/General/x-close.svg'"
+        />
+      }
+    </div>
+    <div
+      class="relative py-4 font-light leading-normal text-gray-600 border-t border-gray-200"
+      [innerHTML]="modalContent()"
+    >
+    </div>
+    <div class="flex flex-wrap items-center justify-end pt-4 space-x-2 shrink-0">
+      <cygnus-button [btnTypes]="'btn-secondary'" (click)="toggleModal()" >Cancelar</cygnus-button>
+      <cygnus-button [btnTypes]="'btn-primary'" (click)="sendData()" >Confirmar</cygnus-button>
+    </div>
+  </div>
+</div>
+}
+
+

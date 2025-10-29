@@ -42,6 +42,10 @@ export const routes: Routes = [
     loadComponent: () => import('./input-content/input-content.component').then( (c) => c.InputContentComponent )
   },
   {
+    path: 'modals',
+    loadComponent: () => import('./modal-content/modal-content.component').then( (c) => c.ModalContentComponent )
+  },
+  {
     path: 'navbar',
     loadComponent: () => import('./navbar-content/navbar-content.component').then( (c) => c.NavbarContentComponent ),
     children: [
