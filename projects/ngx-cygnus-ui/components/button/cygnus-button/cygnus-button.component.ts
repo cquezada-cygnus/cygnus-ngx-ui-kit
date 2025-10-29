@@ -123,6 +123,10 @@ export class CygnusButtonComponent implements OnInit {
         return this.TW_CLASS.BTN_BLOCK;
       case 'btn-circle':
         return this.TW_CLASS.BTN_CIRCLE;
+      case 'btn-pagination-circle-size':
+        return '!px-3 !py-2';
+      case 'btn-pagination-size':
+        return '!px-3 !py-1.5';
       case 'btn-size-xs':
         return this.TW_CLASS.BTN_SIZE_XS;
       case 'btn-size-sm':

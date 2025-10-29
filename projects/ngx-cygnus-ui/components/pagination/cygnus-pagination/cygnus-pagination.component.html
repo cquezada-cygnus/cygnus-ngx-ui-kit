@@ -1,19 +1,53 @@
+<!-- COMPONENTE: Paginación normal | circle -->
+@if (paginationType()==='normal' || paginationType()==='circle') {
+  <div class="flex items-center gap-1">
+    <cygnus-button
+      [btnTypes]="'btn-ghost btn-size-sm btn-icon-sm'"
+      [btnIconRouteLeft]="'assets/icons/svg/Arrows/chevron-left.svg'"
+      (click)="goToLeft()"
+    >
+      Anterior
+    </cygnus-button>
+
+    @for (item of [].constructor(maxCounter()); track item; let idx = $index) {
+      <cygnus-button
+        [btnTypes]="
+          ( idx+1==currentCounter() ? 'btn-primary ' : 'btn-ghost ') +
+          ( paginationType()==='circle' ? 'btn-circle btn-pagination-circle-size':'btn-pagination-size')
+        "
+      >
+        {{idx+1}}
+      </cygnus-button>
+    }
 
 
-<!-- COMPONENTE: Paginación normal -->
-<div class="flex items-center gap-2">
-  <cygnus-button
-    [btnTypes]="'btn-ghost btn-icon-xl btn-icon-only-size-xs'"
-    [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-left.svg'"
-  />
-    <p class="flex items-center gap-1 text-sm antialiased text-gray-600">
-        Página
-        <span class="text-sm antialiased font-semibold text-gray-800">{{currentCounter()}}</span>
-        de
-        <span class="text-sm antialiased font-semibold text-gray-800">{{maxCounter()}}</span>
-    </p>
+    <cygnus-button
+      [btnTypes]="'btn-ghost btn-size-xs btn-icon-sm'"
+      [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-right.svg'"
+      (click)="goToRight()"
+    >
+      Siguiente
+    </cygnus-button>
+  </div>
+}
+
+<!-- COMPONENTE: Paginación simple -->
+@if (paginationType()==='simple') {
+  <div class="flex items-center gap-2">
     <cygnus-button
       [btnTypes]="'btn-ghost btn-icon-xl btn-icon-only-size-xs'"
-      [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-right.svg'"
+      [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-left.svg'"
     />
-</div>
+      <p class="flex items-center gap-1 text-sm antialiased text-gray-600">
+          Página
+          <span class="text-sm antialiased font-semibold text-gray-800">{{currentCounter()}}</span>
+          de
+          <span class="text-sm antialiased font-semibold text-gray-800">{{maxCounter()}}</span>
+      </p>
+      <cygnus-button
+        [btnTypes]="'btn-ghost btn-icon-xl btn-icon-only-size-xs'"
+        [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-right.svg'"
+      />
+  </div>
+}
+

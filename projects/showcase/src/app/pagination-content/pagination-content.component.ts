@@ -10,5 +10,7 @@ import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
   styleUrl: './pagination-content.component.scss'
 })
 export class PaginationContentComponent {
-  simpleCurrentCounter: number = 2;
+  currentCounter: number = 2;
+  currentCounterCircle: number = 2;
+
 }
