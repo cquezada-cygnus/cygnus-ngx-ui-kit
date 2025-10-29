@@ -1,18 +1,17 @@
-import { Component, ElementRef, inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { TooltipService } from 'ngx-cygnus-ui/services';
+import { Component, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { TooltipService } from 'ngx-cygnus-ui/services';
 
 @Component({
-  selector: 'cygnus-tooltip',
+  selector: 'cygnus-popover',
   imports: [],
-  templateUrl: './cygnus-tooltip.component.html',
+  templateUrl: './cygnus-popover.component.html',
 })
-export class CygnusTooltipComponent implements OnInit, OnDestroy {
-
+export class CygnusPopoverComponent {
   isVisible:boolean = false;
   message:string = '';
 
-  position = { left: 0, top: 0 };
+  position = { bottom: 0 };
   private subscription: Subscription = new Subscription();
   private tooltipService = inject(TooltipService);
 
@@ -22,8 +21,7 @@ export class CygnusTooltipComponent implements OnInit, OnDestroy {
       this.isVisible = true;
       if (targetElement) {
         const rect = targetElement.getBoundingClientRect();
-        // this.position.left = ((rect.left)-30) + window.scrollX;
-        this.position.top = rect.top + window.scrollY - 30; // Adjust for tooltip height
+        this.position.bottom = -(rect.top)/1.95 + (window.scrollY) - 30; // Adjust for tooltip height
       }
     }));
 
@@ -35,6 +33,5 @@ export class CygnusTooltipComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 
 }

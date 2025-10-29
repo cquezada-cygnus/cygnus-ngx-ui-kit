@@ -1,0 +1,9 @@
+<div
+  [class]="
+    'absolute z-10 w-64 py-2 mt-2 text-gray-800 bg-white border border-gray-300 rounded-lg shadow-lg ' +
+    (!isVisible ? 'invisible':'')
+  "
+  [style.bottom.px]="position.bottom"
+  [innerHTML]="message"
+>
+</div>

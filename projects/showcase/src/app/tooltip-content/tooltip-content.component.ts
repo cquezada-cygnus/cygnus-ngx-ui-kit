@@ -28,8 +28,6 @@ export class TooltipContentComponent {
   `;
 
   showMyTooltip(tooltipInside: string, event: MouseEvent): void {
-    console.log('showMyTooltip: ', event);
-
     this.tooltipService.show(tooltipInside, event.target as HTMLElement);
   }
 

@@ -1,0 +1,44 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Popovers</h1>
+    <p class="mt-4 text-gray-600 text-md">Popopovers sirven para mostrar información adicional, contexto o
+        controles relacionados con un elemento o una acción. Los elementos
+        emergentes se pueden activar mediante diversas interacciones del usuario, como hacer clic en un
+        botón, pasar el cursor
+        sobre un enlace de texto o centrarse en un campo de entrada.
+
+        Los elementos emergentes son útiles para crear una interfaz de usuario más limpia y ordenada, ya que
+        ocultan información
+        secundaria u opciones hasta que se las necesita. Suelen utilizarse para información sobre
+        herramientas, menús
+        desplegables, menús de opciones, mensajes de validación de formularios y más.</p>
+  </header>
+
+  <!-- Popover simple -->
+  <section id="simple-popover">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Popover simple</h2>
+        <div class="relative items-center justify-center inline-block">
+
+          <div class="relative inline-block group">
+            <cygnus-popover />
+            <cygnus-button
+              [btnTypes]="'btn btn-size-sm'"
+              (mouseenter)="showMyTooltip(popoverMessage, $event)"
+              (mouseleave)="hideMyTooltip()"
+            >
+              popover
+            </cygnus-button>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>

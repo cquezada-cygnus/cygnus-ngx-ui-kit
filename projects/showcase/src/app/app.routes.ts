@@ -60,6 +60,10 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'popovers',
+    loadComponent: () => import('./popover-content/popover-content.component').then( (c) => c.PopoverContentComponent )
+  },
+  {
     path: 'radiobuttons',
     loadComponent: () => import('./radio-button-content/radio-button-content.component').then( (c) => c.RadioButtonContentComponent )
   },
