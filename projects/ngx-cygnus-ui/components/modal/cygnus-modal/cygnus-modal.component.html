@@ -7,8 +7,9 @@
       {{modalTitle()}}
       @if (withX()) {
         <cygnus-button
-          [btnTypes]="'btn-gray btn-circle btn btn-icon-only-size-xs'"
+          [btnTypes]="'btn-gray btn-circle btn-icon-only-size-xs'"
           [btnIconRouteRight]="'assets/icons/svg/General/x-close.svg'"
+          (click)="toggleModal()"
         />
       }
     </div>
