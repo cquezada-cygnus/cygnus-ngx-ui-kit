@@ -64,6 +64,10 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'pagination',
+    loadComponent: () => import('./pagination-content/pagination-content.component').then( (c) => c.PaginationContentComponent )
+  },
+  {
     path: 'popovers',
     loadComponent: () => import('./popover-content/popover-content.component').then( (c) => c.PopoverContentComponent )
   },
