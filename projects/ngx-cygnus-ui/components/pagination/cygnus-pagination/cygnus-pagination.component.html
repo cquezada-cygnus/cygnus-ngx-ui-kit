@@ -37,17 +37,19 @@
     <cygnus-button
       [btnTypes]="'btn-ghost btn-icon-xl btn-icon-only-size-xs'"
       [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-left.svg'"
+      (click)="goToLeft()"
     />
-      <p class="flex items-center gap-1 text-sm antialiased text-gray-600">
-          Página
-          <span class="text-sm antialiased font-semibold text-gray-800">{{currentCounter()}}</span>
-          de
-          <span class="text-sm antialiased font-semibold text-gray-800">{{maxCounter()}}</span>
-      </p>
-      <cygnus-button
-        [btnTypes]="'btn-ghost btn-icon-xl btn-icon-only-size-xs'"
-        [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-right.svg'"
-      />
+    <p class="flex items-center gap-1 text-sm antialiased text-gray-600">
+        Página
+        <span class="text-sm antialiased font-semibold text-gray-800">{{currentCounter()}}</span>
+        de
+        <span class="text-sm antialiased font-semibold text-gray-800">{{maxCounter()}}</span>
+    </p>
+    <cygnus-button
+      [btnTypes]="'btn-ghost btn-icon-xl btn-icon-only-size-xs'"
+      [btnIconRouteRight]="'assets/icons/svg/Arrows/chevron-right.svg'"
+      (click)="goToRight()"
+    />
   </div>
 }
 
