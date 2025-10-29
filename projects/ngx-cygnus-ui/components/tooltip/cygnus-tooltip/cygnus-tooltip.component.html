@@ -1,13 +1,13 @@
-
-  <div
-    [class]="
-      'absolute transition-opacity duration-300 z-50 px-3 py-1.5 text-sm text-white bg-gray-900 rounded-md shadow-md ' +
-      (!isVisible ? 'invisible':'')
-    "
-    [style.left.px]="position.left"
-    [style.top.px]="position.top"
-  >
-    <ng-content></ng-content>
-  </div>
+<div
+  [class]="
+    'absolute transition-opacity duration-300 z-50 px-3 py-1.5 text-sm text-white bg-gray-900 rounded-md shadow-md ' +
+    (!isVisible ? 'invisible':'')
+  "
+  [style.left]="'50%'"
+  [style.transform]="'translateX(-50%)'"
+  [style.top.px]="position.top"
+  [innerHTML]="message"
+>
+</div>
 
 

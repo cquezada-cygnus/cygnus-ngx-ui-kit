@@ -6,14 +6,14 @@ import { Subject, Observable } from 'rxjs';
 })
 export class TooltipService {
 
-  private showTooltipSubject = new Subject<{ targetElement: HTMLElement | null }>();
+  private showTooltipSubject = new Subject<{ message: string, targetElement: HTMLElement | null }>();
   private hideTooltipSubject = new Subject<void>();
 
-  showTooltip$: Observable<{ targetElement: HTMLElement | null }> = this.showTooltipSubject.asObservable();
+  showTooltip$: Observable<{ message: string, targetElement: HTMLElement | null }> = this.showTooltipSubject.asObservable();
   hideTooltip$: Observable<void> = this.hideTooltipSubject.asObservable();
 
-  show(targetElement: HTMLElement | null = null): void {
-    this.showTooltipSubject.next({ targetElement });
+  show(message: string, targetElement: HTMLElement | null = null): void {
+    this.showTooltipSubject.next({ message, targetElement });
   }
 
   hide(): void {

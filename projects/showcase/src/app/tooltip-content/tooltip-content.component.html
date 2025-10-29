@@ -18,13 +18,10 @@
         <h2 class="mb-2 text-xl font-semibold">Tooltip predeterminado</h2>
 
         <div class="flex flex-col items-center justify-center gap-2">
-          <!-- <div class="z-50 px-3 py-1.5 text-sm text-white bg-gray-900 rounded-md shadow-md">
-              Este es un tooltip
-          </div> -->
-          <cygnus-tooltip>Este es un tooltip</cygnus-tooltip>
+          <cygnus-tooltip />
           <cygnus-button
             [btnTypes]="'btn btn-size-sm'"
-            (mouseenter)="showMyTooltip($event)"
+            (mouseenter)="showMyTooltip(firstTooltip, $event)"
             (mouseleave)="hideMyTooltip()"
           >
             Hover
@@ -45,28 +42,15 @@
         <div class="flex flex-col items-center justify-center gap-2">
 
           <div class="flex flex-col items-center justify-center">
-            <div
-              class="z-50 px-3 py-3 space-y-1.5 text-xs text-white bg-gray-900 rounded-lg shadow-md w-88">
-              <h5 class="text-sm font-medium">Cygnus UI</h5>
-              <p class="text-xs text-white opacity-80">Cygnus UI es una biblioteca de componentes
-                  fácil de
-                  usar para
-                  Tailwind CSS y Material Design..</p>
-            </div>
-            <button
-                class="cursor-pointer inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[38px] min-h-[38px] rounded-md bg-transparent border-transparent text-gray-500 hover:text-gray-800 shadow-none hover:shadow-none">
-                <svg class="stroke-2 size-6" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" color="currentColor" class="w-5 h-5">
-                    <path d="M12 11.5V16.5" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                    <path d="M12 7.51L12.01 7.49889" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round">
-                    </path>
-                    <path
-                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </button>
+
+            <cygnus-tooltip />
+            <cygnus-button
+              [btnTypes]="'btn-gray btn-circle btn-icon-only'"
+              [btnIconRouteRight]="'assets/icons/svg/Users/face-smile.svg'"
+              (mouseenter)="showMyTooltip(secondTooltip, $event)"
+              (mouseleave)="hideMyTooltip()"
+            >
+            </cygnus-button>
           </div>
         </div>
       </div>

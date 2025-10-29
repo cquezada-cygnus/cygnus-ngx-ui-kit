@@ -10,14 +10,27 @@ import { TooltipService } from 'ngx-cygnus-ui/services';
     CygnusTooltipComponent,
   ],
   templateUrl: './tooltip-content.component.html',
-  styleUrl: './tooltip-content.component.scss'
+  styleUrl: './tooltip-content.component.scss',
 })
 export class TooltipContentComponent {
 
   private tooltipService = inject(TooltipService);
 
-  showMyTooltip(event: MouseEvent): void {
-    this.tooltipService.show(event.target as HTMLElement);
+  firstTooltip: string = `
+    Este es un tooltip
+  `;
+
+  secondTooltip: string = `
+    <h5 class="text-sm font-medium">Cygnus UI</h5>
+      <p class="text-xs text-white opacity-80">
+        Cygnus UI es una biblioteca de componentes fácil de usar para Tailwind CSS y Material Design..
+      </p>
+  `;
+
+  showMyTooltip(tooltipInside: string, event: MouseEvent): void {
+    console.log('showMyTooltip: ', event);
+
+    this.tooltipService.show(tooltipInside, event.target as HTMLElement);
   }
 
   hideMyTooltip(): void {

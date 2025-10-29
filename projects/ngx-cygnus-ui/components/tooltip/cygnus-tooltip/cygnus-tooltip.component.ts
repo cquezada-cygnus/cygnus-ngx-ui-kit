@@ -15,15 +15,15 @@ export class CygnusTooltipComponent implements OnInit, OnDestroy {
   private subscription: Subscription = new Subscription();
 
   private tooltipService = inject(TooltipService);
-  private renderer = inject(Renderer2);
-  private el = inject(ElementRef);
+  message = '';
 
   ngOnInit(): void {
-    this.subscription.add(this.tooltipService.showTooltip$.subscribe(({ targetElement }) => {
+    this.subscription.add(this.tooltipService.showTooltip$.subscribe(({ message, targetElement }) => {
+      this.message = message;
       this.isVisible = true;
       if (targetElement) {
         const rect = targetElement.getBoundingClientRect();
-        this.position.left = ((rect.left)-30) + window.scrollX;
+        // this.position.left = ((rect.left)-30) + window.scrollX;
         this.position.top = rect.top + window.scrollY - 30; // Adjust for tooltip height
       }
     }));
