@@ -1,0 +1,45 @@
+<div class="flex flex-col w-full">
+  <div class="-m-1.5 overflow-x-auto">
+    <div class="p-1.5 min-w-full inline-block align-middle">
+      <div class="overflow-hidden">
+        <!-- Table -->
+        <table [class]="TW_CLASS.TABLE_BASE">
+            <thead [class]="TW_CLASS.TABLE_THEAD" >
+                <tr>
+                    <th scope="col" [class]="TW_CLASS.TABLE_TH" >Nombre</th>
+                    <th scope="col" [class]="TW_CLASS.TABLE_TH" >Edad</th>
+                    <th scope="col" [class]="TW_CLASS.TABLE_TH" >Dirección</th>
+                    <th scope="col" [class]="TW_CLASS.TABLE_TH" >Estado</th>
+                    <th scope="col" [class]="TW_CLASS.TABLE_TH" >Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+              @for (item of tableItems(); track $index) {
+                <tr>
+                  <td [class]="TW_CLASS.TABLE_TD" >{{item.name}}</td>
+                  <td [class]="TW_CLASS.TABLE_TD" >{{item.age}}</td>
+                  <td [class]="TW_CLASS.TABLE_TD" >{{item.address}}</td>
+                  <td [class]="TW_CLASS.TABLE_TD" >
+                    @if ((item.state).toLowerCase()=='activo') {
+                      <cygnus-badge [badgeTypes]="'badge badge-success'" [badgeText]=" item.state | titlecase " />
+                    }
+                    @else {}
+
+                  </td>
+                  <td [class]="TW_CLASS.TABLE_TD + ' actions'" >
+                    <cygnus-button-link
+                      [btnLinkType]="'btn-link'"
+                      [btnRouterLinkText]="''"
+                      (click)="deleteItem($index)"
+                    > <!-- podrías poner un modal para confirmar la borración antes de borrar -->
+                      Borrar
+                    </cygnus-button-link>
+                  </td>
+                </tr>
+              }
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

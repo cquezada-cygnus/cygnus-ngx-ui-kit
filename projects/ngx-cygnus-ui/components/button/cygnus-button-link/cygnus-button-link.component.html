@@ -1,11 +1,23 @@
-<a
-  [routerLink]="btnRouterLinkText()"
-  [routerLinkActive]="addRouterLinkActiveTailwindClasses(btnLinkType())"
-  [routerLinkActiveOptions]="{ exact: true }"
-  [class]="
-    addTailwindClasses(btnLinkType()) + ' ' +
-    (paddingOk() ? 'px-4' : '')
-  "
->
-  <ng-content></ng-content>
-</a>
+@if (btnRouterLinkText()!='') {
+  <a
+    [routerLink]="btnRouterLinkText()"
+    [routerLinkActive]="addRouterLinkActiveTailwindClasses(btnLinkType())"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [class]="
+      addTailwindClasses(btnLinkType()) + ' ' +
+      (paddingOk() ? 'px-4' : '')
+    "
+  >
+    <ng-content></ng-content>
+  </a>
+} @else {
+  <a
+    [class]="
+      addTailwindClasses(btnLinkType()) + ' ' +
+      (paddingOk() ? 'px-4' : '')
+    "
+  >
+    <ng-content></ng-content>
+  </a>
+}
+

@@ -1,0 +1,1047 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-6">
+    <h1 class="text-4xl font-bold">Tablas</h1>
+    <p class="mt-4 text-secondary-600 text-md">Elige la mejor tabla para una visualización de
+        datos responsiva y en forma de cuadrícula. Se puede personalizar
+        fácilmente con búsqueda, paginación, botones de acción y más</p>
+  </header>
+
+  <!-- basic-table -->
+  <section id="basic-table">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Tabla básica</h2>
+        <p class="mb-8 text-secondary-600 text-md">Usando el marcado de tabla más básico, así es como se
+            ven las tablas.
+
+            Todos los ejemplos son responsivos: las tablas permiten desplazarse horizontalmente con
+            facilidad.</p>
+        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
+            <!-- COMPONENTE: Tabla básica -->
+            <cygnus-table [(tableItems)]="tableBasicArr" />
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Striped rows -->
+  <section id="striped-rows">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Filas rayadas</h2>
+        <p class="mb-8 text-secondary-600 text-md">Utilice este ejemplo para aumentar la legibilidad de
+            los conjuntos de datos alternando el color de fondo de cada segunda
+            fila de tabla.</p>
+        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
+          <!-- COMPONENTE: Filas rayadas -->
+          <div class="flex flex-col w-full">
+              <div class="flex justify-start py-3">
+                  <div class="relative max-w-xs w-80">
+                      <div class="element-left">
+                          <span
+                              class="text-md text-secondary-500 material-symbols-outlined">search</span>
+                      </div>
+                      <input type="text" class="pl-9 input-sm" placeholder="Buscar..." />
+                  </div>
+              </div>
+              <div class="-m-1.5 overflow-x-auto">
+                  <div class="p-1.5 min-w-full inline-block align-middle">
+                      <div class="overflow-hidden">
+                          <table class="table-striped">
+                              <thead>
+                                  <tr>
+                                      <th scope="col">Nombre</th>
+                                      <th scope="col">Edad</th>
+                                      <th scope="col">Dirección</th>
+                                      <th scope="col">Estado</th>
+                                      <th scope="col">Acciones</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>Juan Pérez</td>
+                                      <td>45</td>
+                                      <td>Argomedo 601, Santiago</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link">Borrar</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>Jaime Valverde</td>
+                                      <td>27</td>
+                                      <td>Polo Sur 304, Ñuñoa</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link">Borrar</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>José Lopez</td>
+                                      <td>31</td>
+                                      <td>Santa Isabel 1904, Santiago</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link ">Borrar</button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- hoverable-rows -->
+  <section id="hoverable-rows">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Estado hover</h2>
+        <p class="mb-8 text-secondary-600 text-md">Utilice este ejemplo para cambiar el color de fondo
+            de una fila de datos al pasar el cursor sobre el elemento.</p>
+        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
+          <!-- COMPONENTE: Tabla con hover -->
+          <div class="flex flex-col w-full">
+              <div class="flex justify-end py-3">
+                  <div class="relative max-w-xs w-80">
+                      <div class="element-left">
+                          <span
+                              class="text-md text-secondary-500 material-symbols-outlined">search</span>
+                      </div>
+                      <input type="text" class="pl-9 input-sm" placeholder="Buscar..." />
+                  </div>
+              </div>
+              <div class="-m-1.5 overflow-x-auto">
+                  <div class="p-1.5 min-w-full inline-block align-middle">
+                      <div class="overflow-hidden">
+                          <table class="table-hover">
+                              <thead>
+                                  <tr>
+                                      <th scope="col">Nombre</th>
+                                      <th scope="col">Edad</th>
+                                      <th scope="col">Dirección</th>
+                                      <th scope="col">Estado</th>
+                                      <th scope="col">Acciones</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>Juan Pérez</td>
+                                      <td>45</td>
+                                      <td>Argomedo 601, Santiago</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link">Borrar</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>Jaime Valverde</td>
+                                      <td>27</td>
+                                      <td>Polo Sur 304, Ñuñoa</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link">Borrar</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>José Lopez</td>
+                                      <td>31</td>
+                                      <td>Santa Isabel 1904, Santiago</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link ">Borrar</button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- striped-hover-rows -->
+  <section id="striped-hover-rows">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Filas rayadas con estado hover</h2>
+        <p class="mb-8 text-secondary-600 text-md">Una tabla con elementos que muestra si los usuarios
+            están activos o no.</p>
+        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
+          <!-- COMPONENTE: Filas rayadas con estado hover -->
+          <div class="flex flex-col w-full">
+              <div class="flex justify-end py-3">
+                  <div class="relative max-w-xs w-80">
+                      <div class="element-left">
+                          <span
+                              class="text-md text-secondary-500 material-symbols-outlined">search</span>
+                      </div>
+                      <input type="text" class="pl-9 input-sm" placeholder="Buscar..." />
+                  </div>
+              </div>
+              <div class="-m-1.5 overflow-x-auto">
+                  <div class="p-1.5 min-w-full inline-block align-middle">
+                      <div class="overflow-hidden">
+                          <table class="table-hover-striped">
+                              <thead>
+                                  <tr>
+                                      <th scope="col">Nombre</th>
+                                      <th scope="col">Edad</th>
+                                      <th scope="col">Dirección</th>
+                                      <th scope="col">Estado</th>
+                                      <th scope="col">Acciones</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>Juan Pérez</td>
+                                      <td>45</td>
+                                      <td>Argomedo 601, Santiago</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link">Borrar</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>Jaime Valverde</td>
+                                      <td>27</td>
+                                      <td>Polo Sur 304, Ñuñoa</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link">Borrar</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>José Lopez</td>
+                                      <td>31</td>
+                                      <td>Santa Isabel 1904, Santiago</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link ">Borrar</button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- double-rows -->
+  <section id="double-rows">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Doble fila en una celda</h2>
+        <p class="mb-8 text-secondary-600 text-md">Una tabla con elementos que muestra si los usuarios
+            están activos o no.</p>
+        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
+          <!-- COMPONENTE: Tabla con doble fila en celda -->
+          <div class="flex flex-col w-full">
+              <div class="flex justify-end px-0 py-3">
+                  <div class="relative max-w-xs w-80">
+                      <div class="element-left">
+                          <span
+                              class="text-md text-secondary-500 material-symbols-outlined">search</span>
+                      </div>
+                      <input type="text" class="pl-9 input-sm" placeholder="Buscar..." />
+                  </div>
+              </div>
+              <div class="-m-1.5 overflow-x-auto">
+                  <div class="p-1.5 min-w-full inline-block align-middle">
+                      <div class="overflow-hidden">
+                          <table class="table-hover-striped">
+                              <thead>
+                                  <tr>
+                                      <th scope="col">Nombre</th>
+                                      <th scope="col">Edad</th>
+                                      <th scope="col">Dirección</th>
+                                      <th scope="col">Estado</th>
+                                      <th scope="col"><span class="sr-only">Acciones</span></th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>
+                                          <div class="text-sm font-medium text-secondary-900">
+                                              Florencia Mardonez
+                                          </div>
+                                          <div class="text-sm text-secondary-500">
+                                              florencia.mardonez.&#64;sitio.com
+                                          </div>
+                                      </td>
+                                      <td>45</td>
+                                      <td>Argomedo 601, Santiago</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link">Borrar</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>
+                                          <div
+                                              class="text-sm font-medium text-left text-secondary-900">
+                                              Nidia Pérez
+                                          </div>
+                                          <div class="text-sm text-left text-secondary-500">
+                                              nidia.perez&#64;sitio.com
+                                          </div>
+                                      </td>
+                                      <td>27</td>
+                                      <td>Polo Sur 304, Ñuñoa</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link">Borrar</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>
+                                          <div class="text-sm font-medium text-secondary-900">
+                                              Carla Fuentealba
+                                          </div>
+                                          <div class="text-sm text-secondary-500">
+                                              carla.fuentealba&#64;sitio.com
+                                          </div>
+                                      </td>
+                                      <td>31</td>
+                                      <td>Santa Isabel 1904, Santiago</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-link ">Borrar</button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- select-rows -->
+  <section id="select-rows">
+      <div class="min-h-[140px] rounded-lg border mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-2 text-xl font-semibold">Selección de filas y paginación</h2>
+              <p class="mb-8 text-secondary-600 text-md">Las filas se pueden seleccionar haciendo que la
+                  primera
+                  columna sea una columna seleccionable.</p>
+              <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
+                <!-- COMPONENTE: Tabla con doble fila en celda y páginación -->
+                <div class="flex flex-col w-full">
+
+                    <div
+                        class="flex flex-wrap items-center justify-between py-4 space-y-4 bg-white flex-column md:flex-row md:space-y-0">
+                        <div>
+
+                            <!-- COMPONENTE: Dropdown con radiobutton -->
+                            <button data-popover-target="menu-checkbox" role="menu"
+                                data-popover-nested="true"
+                                class="items-center btn btn-icon btn-secondary dropdown-btn" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="mr-1 size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                                <!-- <span class="inline-block">
+                                                            </span> -->
+
+                                <span>Últimos 30 días</span>
+                                <span class="ml-1 material-symbols-outlined">keyboard_arrow_down</span>
+                            </button>
+
+                            <!-- Dropdown menu -->
+
+                            <ul role="menu" data-popover="menu-checkbox" data-popover-placement="bottom"
+                                class="absolute dropdown-menu">
+
+                                <li role="menuitem">
+                                    <a href="">
+                                        <input name="framework" type="radio" id="last_day">
+                                        <label for="last_day">Último día</label></a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="">
+                                        <input name="framework" type="radio" id="last_seven_day">
+                                        <label for="last_seven_day">Últimos 7 días</label>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="">
+                                        <input name="framework" type="radio" id="last_fifteen_day">
+                                        <label for="last_fifteen_day">Últimos 15 días</label>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="">
+                                        <input name="framework" type="radio" id="last_month">
+                                        <label for="last_month">Últimos 30 días</label>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="">
+                                        <input name="framework" type="radio" id="last_year">
+                                        <label for="last_year">Último año</label>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="relative max-w-xs w-80">
+                            <div class="element-left">
+                                <span
+                                    class="text-md text-secondary-500 material-symbols-outlined">search</span>
+                            </div>
+                            <input type="text" class="pl-9 input-sm" placeholder="Buscar..." />
+                        </div>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="overflow-x-auto">
+                        <div class="inline-block min-w-full">
+                            <div class="overflow-hidden">
+                                <table class="table-hover-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="checkbox-table">
+                                                <div class="flex items-center h-5">
+                                                    <input type="checkbox" checked class="checkbox-sm peer"
+                                                        id="checkbox" />
+                                                    <label for="checkbox" class="sr-only">Checkbox</label>
+                                                </div>
+                                            </th>
+                                            <th scope="col">Compañia</th>
+                                            <th scope="col">ID usuario</th>
+                                            <th scope="col">Nombre / Email</th>
+                                            <th scope="col">Fecha de incorporación</th>
+                                            <th scope="col">
+                                                Acciones
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-secondary-200">
+                                        <tr>
+                                            <td class="checkbox-table">
+                                                <div class="flex items-center h-5">
+                                                    <input type="checkbox" checked class="checkbox-sm peer"
+                                                        id="checkbox" />
+                                                    <label for="checkbox" class="sr-only">Checkbox</label>
+                                                </div>
+                                            </td>
+                                            <td>Lider</td>
+                                            <td>20010510</td>
+                                            <td>
+                                                <div class="flex items-center gap-2">
+                                                    <div class="avatar-simple">
+                                                        <span
+                                                            class="font-medium text-secondary-600">CD</span>
+                                                    </div>
+                                                    <div class="data">
+                                                        <p class="text-sm font-normal text-gray-900">
+                                                            Carla Díaz</p>
+                                                        <p
+                                                            class="text-sm font-normal leading-5 text-secondary-500">
+                                                            carla.diaz&#64;email.cl
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>24/01/2023</td>
+                                            <td class="actions">
+                                                <button type="button" class="btn-link">
+                                                    Editar
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="checkbox-table">
+                                                <div class="flex items-center h-5">
+                                                    <input type="checkbox" checked class="checkbox-sm peer"
+                                                        id="checkbox" />
+                                                    <label for="checkbox" class="sr-only">Checkbox</label>
+                                                </div>
+                                            </td>
+                                            <td>Falabella</td>
+                                            <td>20010511</td>
+                                            <td>
+                                                <div class="flex items-center gap-2">
+                                                    <div class="avatar-simple">
+                                                        <span
+                                                            class="font-medium text-secondary-600">SN</span>
+                                                    </div>
+                                                    <div class="data">
+                                                        <p class="text-sm font-normal text-gray-900">
+                                                            Sandra Narvaez</p>
+                                                        <p
+                                                            class="text-sm font-normal leading-5 text-secondary-500">
+                                                            sandra.narvaez&#64;email.cl
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>24/01/2023</td>
+                                            <td class="actions">
+                                                <button type="button" class="btn-link">
+                                                    Editar
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="checkbox-table">
+                                                <div class="flex items-center h-5">
+                                                    <input type="checkbox" checked class="checkbox-sm peer"
+                                                        id="checkbox" />
+                                                    <label for="checkbox" class="sr-only">Checkbox</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Cencosud
+                                            </td>
+                                            <td>20010512</td>
+                                            <td>
+                                                <div class="flex items-center gap-2">
+                                                    <div class="avatar-simple">
+                                                        <span
+                                                            class="font-medium text-secondary-600">CF</span>
+                                                    </div>
+                                                    <div class="data">
+                                                        <p class="text-sm font-normal text-gray-900">
+                                                            Carla Fuentealba</p>
+                                                        <p
+                                                            class="text-sm font-normal leading-5 text-secondary-500">
+                                                            carla.fuentealba&#64;sitio.com
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>24/01/2023</td>
+                                            <td class="actions">
+                                                <button type="button" class="btn-link">
+                                                    Editar
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="p-1">
+                        <nav class="flex items-center space-x-1" aria-label="Pagination">
+                            <button type="button" class="btn btn-secondary btn-sm" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                                <span class="sr-only">Anterior</span>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                aria-current="page">1</button>
+                            <button type="button" class="btn btn-secondary btn-sm">2</button>
+                            <button type="button" class="btn btn-secondary btn-sm">3</button>
+                            <button type="button" class="btn btn-secondary btn-sm" aria-label="Next">
+                                <span class="sr-only">Siguiente</span>
+                                <span aria-hidden="true">»</span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- table-complete -->
+  <section id="table-complete">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Tabla con todos los elementos</h2>
+        <p class="mb-8 text-secondary-600 text-md">Las filas se pueden seleccionar haciendo que la
+            primera
+            columna sea una columna seleccionable.</p>
+        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
+          <!-- COMPONENTE: Tabla con doble fila en celda -->
+          <div class="flex flex-col w-full">
+
+              <!-- Cabecera de tabla con borde -->
+              <div class="panel-top">
+                  <div>
+
+                      <!-- COMPONENTE: Dropdown con radiobutton -->
+                      <button data-popover-target="menu-checkbox" role="menu"
+                          data-popover-nested="true"
+                          class="items-center btn btn-icon btn-secondary dropdown-btn" type="button">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor" class="mr-1 size-6">
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                          </svg>
+                          <!-- <span class="inline-block">
+                                                      </span> -->
+
+                          <span>Últimos 30 días</span>
+                          <span class="ml-1 material-symbols-outlined">keyboard_arrow_down</span>
+                      </button>
+
+                      <!-- Dropdown menu -->
+
+                      <ul role="menu" data-popover="menu-checkbox" data-popover-placement="bottom"
+                          class="absolute dropdown-menu">
+
+                          <li role="menuitem">
+                              <a href="">
+                                  <input name="framework" type="radio" id="last_day">
+                                  <label for="last_day">Último día</label></a>
+                          </li>
+                          <li role="menuitem">
+                              <a href="">
+                                  <input name="framework" type="radio" id="last_seven_day">
+                                  <label for="last_seven_day">Últimos 7 días</label>
+                              </a>
+                          </li>
+                          <li role="menuitem">
+                              <a href="">
+                                  <input name="framework" type="radio" id="last_fifteen_day">
+                                  <label for="last_fifteen_day">Últimos 15 días</label>
+                              </a>
+                          </li>
+                          <li role="menuitem">
+                              <a href="">
+                                  <input name="framework" type="radio" id="last_month">
+                                  <label for="last_month">Últimos 30 días</label>
+                              </a>
+                          </li>
+                          <li role="menuitem">
+                              <a href="">
+                                  <input name="framework" type="radio" id="last_year">
+                                  <label for="last_year">Último año</label>
+                              </a>
+                          </li>
+                      </ul>
+
+                  </div>
+                  <div class="relative max-w-xs w-80">
+                      <div class="element-left">
+                          <span
+                              class="text-md text-secondary-500 material-symbols-outlined">search</span>
+                      </div>
+                      <input type="text" class="pl-9 input-sm" placeholder="Buscar..." />
+                  </div>
+              </div>
+
+              <!-- Table -->
+              <div class="overflow-x-auto">
+                  <div class="inline-block min-w-full">
+                      <div class="overflow-hidden">
+                          <table class="table table-hover-striped">
+                              <thead>
+                                  <tr>
+                                      <th scope="col" class="checkbox-table">
+                                          <div class="flex items-center h-5">
+                                              <input type="checkbox" checked class="checkbox-sm peer"
+                                                  id="checkbox" />
+                                              <label for="checkbox" class="sr-only">Checkbox</label>
+                                          </div>
+                                      </th>
+                                      <th scope="col">Compañia</th>
+                                      <th scope="col">ID usuario</th>
+                                      <th scope="col">Nombre / Email</th>
+                                      <th scope="col">Tipo</th>
+                                      <th scope="col">Tipo de industria</th>
+                                      <th scope="col">Fecha de incorporación</th>
+                                      <th scope="col">Presupuesto</th>
+                                      <th scope="col">Estado</th>
+                                      <th scope="col">
+                                          Acciones
+                                          <!-- <span class="sr-only">Acciones</span> -->
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody class="divide-y divide-secondary-200">
+                                  <tr>
+                                      <td class="checkbox-table">
+                                          <div class="flex items-center h-5">
+                                              <input type="checkbox" checked class="checkbox-sm peer"
+                                                  id="checkbox" />
+                                              <label for="checkbox" class="sr-only">Checkbox</label>
+                                          </div>
+                                      </td>
+                                      <td>Lider</td>
+                                      <td>20010510</td>
+                                      <td>
+                                          <div class="flex items-center gap-2">
+                                              <div class="avatar-simple">
+                                                  <span
+                                                      class="font-medium text-secondary-600">CD</span>
+                                              </div>
+                                              <div class="data">
+                                                  <p class="text-sm font-normal text-gray-900">
+                                                      Carla Díaz</p>
+                                                  <p
+                                                      class="text-sm font-normal leading-5 text-secondary-500">
+                                                      carla.diaz&#64;email.cl
+                                                  </p>
+                                              </div>
+                                          </div>
+                                      </td>
+                                      <td>Vendedor</td>
+                                      <td>Accesorios</td>
+                                      <td>24/01/2023</td>
+                                      <td>$500.000</td>
+                                      <td>
+                                          <div class="badge badge-success">Activo</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  edit_square </span>
+                                          </button>
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  delete </span>
+                                          </button>
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  more_vert </span>
+                                          </button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td class="checkbox-table">
+                                          <div class="flex items-center h-5">
+                                              <input type="checkbox" checked class="checkbox-sm peer"
+                                                  id="checkbox" />
+                                              <label for="checkbox" class="sr-only">Checkbox</label>
+                                          </div>
+                                      </td>
+                                      <td>Falabella</td>
+                                      <td>20010511</td>
+                                      <td>
+                                          <div class="flex items-center gap-2">
+                                              <div class="avatar-simple">
+                                                  <span
+                                                      class="font-medium text-secondary-600">SN</span>
+                                              </div>
+                                              <div class="data">
+                                                  <p class="text-sm font-normal text-gray-900">
+                                                      Sandra Narvaez</p>
+                                                  <p
+                                                      class="text-sm font-normal leading-5 text-secondary-500">
+                                                      sandra.narvaez&#64;email.cl
+                                                  </p>
+                                              </div>
+                                          </div>
+                                      </td>
+                                      <td>Partner</td>
+                                      <td>Electrónica</td>
+                                      <td>24/01/2023</td>
+                                      <td>$500.000</td>
+                                      <td>
+                                          <div class="badge badge-warning">Pendiente</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  edit_square </span>
+                                          </button>
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  delete </span>
+                                          </button>
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  more_vert </span>
+                                          </button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td class="checkbox-table">
+                                          <div class="flex items-center h-5">
+                                              <input type="checkbox" checked class="checkbox-sm peer"
+                                                  id="checkbox" />
+                                              <label for="checkbox" class="sr-only">Checkbox</label>
+                                          </div>
+                                      </td>
+                                      <td>
+                                          Cencosud
+                                      </td>
+                                      <td>20010512</td>
+                                      <td>
+                                          <div class="flex items-center gap-2">
+                                              <div class="avatar-simple">
+                                                  <span
+                                                      class="font-medium text-secondary-600">CF</span>
+                                              </div>
+                                              <div class="data">
+                                                  <p class="text-sm font-normal text-gray-900">
+                                                      Carla Fuentealba</p>
+                                                  <p
+                                                      class="text-sm font-normal leading-5 text-secondary-500">
+                                                      carla.fuentealba&#64;sitio.com
+                                                  </p>
+                                              </div>
+                                          </div>
+                                      </td>
+                                      <td>Customer</td>
+                                      <td>Electrónica</td>
+                                      <td>24/01/2023</td>
+                                      <td>$500.000</td>
+                                      <td>
+                                          <div class="badge badge-error">Bloqueado</div>
+                                      </td>
+                                      <td class="actions">
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  edit_square </span>
+                                          </button>
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  delete </span>
+                                          </button>
+                                          <button type="button" class="btn-icon-only">
+                                              <span
+                                                  class="text-secondary-500 material-symbols-outlined">
+                                                  more_vert </span>
+                                          </button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+
+                  </div>
+              </div>
+              <!-- Pagination -->
+              <div class="px-4 py-1">
+                  <nav class="flex items-center space-x-1" aria-label="Pagination">
+                      <button type="button" class="btn btn-ghost btn-circle" aria-label="Previous">
+                          <span aria-hidden="true">«</span>
+                          <span class="sr-only">Anterior</span>
+                      </button>
+                      <button type="button" class="btn btn-ghost btn-circle"
+                          aria-current="page">1</button>
+                      <button type="button" class="btn btn-ghost btn-circle">2</button>
+                      <button type="button" class="btn btn-ghost btn-circle">3</button>
+                      <button type="button" class="btn btn-ghost btn-circle" aria-label="Next">
+                          <span class="sr-only">Siguiente</span>
+                          <span aria-hidden="true">»</span>
+                      </button>
+                  </nav>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Responsive table -->
+  <section id="responsive-table">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Tablas responsivas con cambio de vista</h2>
+        <p class="mb-8 text-secondary-600 text-md">Tabla que cambia su "display" dependiendo del ancho
+            de la pantalla.
+        </p>
+        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
+          <div class="w-full overflow-x-auto bg-white border border-gray-300 rounded-lg">
+            <table class="hidden w-full md:table">
+                <thead class="bg-secondary-50">
+                    <tr class="bg-gray-50">
+                        <th
+                            class="px-5 py-3 text-xs font-medium uppercase text-secondary-500 text-start">
+                            ID usuario</th>
+                        <th
+                            class="px-5 py-3 text-xs font-medium uppercase text-secondary-500 text-start">
+                            Nombre</th>
+                        <th
+                            class="px-5 py-3 text-xs font-medium uppercase text-secondary-500 text-start">
+                            Tipo</th>
+                        <th
+                            class="px-5 py-3 text-xs font-medium uppercase text-secondary-500 text-start">
+                            Fecha de incorporación</th>
+                        <th
+                            class="px-5 py-3 text-xs font-medium uppercase text-secondary-500 text-start">
+                            Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            20010510</td>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            Juan Pérez</td>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            Reponedor</td>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            13/01/2024</td>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            <div class="badge-success">Activo</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            20010234</td>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            Constanza Ramis</td>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            Vendedor</td>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            20/01/2024</td>
+                        <td
+                            class="px-4 py-2 text-sm font-medium text-secondary-800 whitespace-nowrap">
+                            <div class="badge-warning badge-xs">Pendiente</div>
+                        </td>
+                    </tr>
+                    <!-- Agregar más filas aquí -->
+                </tbody>
+            </table>
+
+            <!-- Versión móvil como lista -->
+            <div class="md:hidden">
+              <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">ID usuario:</span>
+                      <span
+                          class="text-sm font-medium text-right text-secondary-800">20010510</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">Nombre:</span>
+                      <span class="text-sm font-medium text-right text-secondary-800">Juan
+                          Pérez</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">Tipo:</span>
+                      <span
+                          class="text-sm font-medium text-right text-secondary-800">Reponedor</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">Fecha de incorporación :</span>
+                      <span
+                          class="text-sm font-medium text-right text-secondary-800">13/01/2024</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">Estado</span>
+                      <span class="text-sm font-medium text-right text-secondary-800">
+                          <div class="badge-success badge-xs">Activo</div>
+                      </span>
+                  </div>
+              </div>
+              <hr>
+              <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">ID usuario:</span>
+                      <span
+                          class="text-sm font-medium text-right text-secondary-800">20010234</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">Nombre:</span>
+                      <span class="text-sm font-medium text-right text-secondary-800">Constanza
+                          Ramis</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">Tipo:</span>
+                      <span
+                          class="text-sm font-medium text-right text-secondary-800">Vendedor</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">Fecha de incorporación :</span>
+                      <span
+                          class="text-sm font-medium text-right text-secondary-800">20/01/2024</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-secondary-500">Estado</span>
+                      <span class="text-sm font-medium text-right text-secondary-800">
+                          <div class="badge-warning">Pendiente</div>
+                      </span>
+                  </div>
+              </div>
+              <!-- Agregar más bloques de lista aquí -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
