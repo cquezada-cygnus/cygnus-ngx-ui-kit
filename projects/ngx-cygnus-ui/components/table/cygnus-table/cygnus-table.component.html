@@ -16,7 +16,7 @@
               </thead>
               <tbody>
                 @for (item of tableItems(); track $index; let isEven = $even) {
-                  <tr>
+                  <tr [class]="((tableType()==='hover') ? TW_CLASS.TABLE_HOVER_STRIPPED : '')">
                     <td
                       [class]="
                         TW_CLASS.TABLE_TD + ' ' +

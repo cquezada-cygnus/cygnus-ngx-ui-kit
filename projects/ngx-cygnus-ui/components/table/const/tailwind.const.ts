@@ -1,5 +1,4 @@
 export const TW_CLASS = {
-
   TABLE_BASE: 'w-full min-w-full divide-y divide-gray-200 text-sm text-gray-800',
   TABLE_STRIPPED: 'bg-gray-50',
   TABLE_HOVER_STRIPPED: 'hover:bg-gray-50',
