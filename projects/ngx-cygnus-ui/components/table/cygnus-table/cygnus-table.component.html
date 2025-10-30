@@ -14,19 +14,25 @@
                 </tr>
             </thead>
             <tbody>
-              @for (item of tableItems(); track $index) {
+              @for (item of tableItems(); track $index; ; let isEven = $even) {
                 <tr>
-                  <td [class]="TW_CLASS.TABLE_TD" >{{item.name}}</td>
-                  <td [class]="TW_CLASS.TABLE_TD" >{{item.age}}</td>
-                  <td [class]="TW_CLASS.TABLE_TD" >{{item.address}}</td>
-                  <td [class]="TW_CLASS.TABLE_TD" >
+                  <td [class]="TW_CLASS.TABLE_TD + ' ' + (isEven ? TW_CLASS.TABLE_STRIPPED : '')" >{{item.name}}</td>
+                  <td [class]="TW_CLASS.TABLE_TD + ' ' + (isEven ? TW_CLASS.TABLE_STRIPPED : '')" >{{item.age}}</td>
+                  <td [class]="TW_CLASS.TABLE_TD + ' ' + (isEven ? TW_CLASS.TABLE_STRIPPED : '')" >{{item.address}}</td>
+                  <td [class]="TW_CLASS.TABLE_TD + ' ' + (isEven ? TW_CLASS.TABLE_STRIPPED : '')" >
                     @if ((item.state).toLowerCase()=='activo') {
                       <cygnus-badge [badgeTypes]="'badge badge-success'" [badgeText]=" item.state | titlecase " />
                     }
                     @else {}
 
                   </td>
-                  <td [class]="TW_CLASS.TABLE_TD + ' actions'" >
+                  <td
+                    [class]="
+                      TW_CLASS.TABLE_TD + ' ' +
+                      (isEven ? TW_CLASS.TABLE_STRIPPED : '') + ' ' +
+                      TW_CLASS.ACTIONS
+                    "
+                  >
                     <cygnus-button-link
                       [btnLinkType]="'btn-link'"
                       [btnRouterLinkText]="''"
