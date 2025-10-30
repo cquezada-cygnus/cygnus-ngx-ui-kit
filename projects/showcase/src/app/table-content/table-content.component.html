@@ -17,12 +17,12 @@
 
             Todos los ejemplos son responsivos: las tablas permiten desplazarse horizontalmente con
             facilidad.</p>
-        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
 
             <!-- COMPONENTE: Tabla básica -->
             <cygnus-table [(tableItems)]="tableBasicArr" />
 
-        </div>
+
       </div>
 
     </div>
@@ -36,75 +36,11 @@
         <p class="mb-8 text-secondary-600 text-md">Utilice este ejemplo para aumentar la legibilidad de
             los conjuntos de datos alternando el color de fondo de cada segunda
             fila de tabla.</p>
-        <div class="flex flex-col items-center justify-center gap-4 mb-4">
+
 
           <!-- COMPONENTE: Filas rayadas -->
-          <div class="flex flex-col w-full">
-              <div class="flex justify-start py-3">
-                  <div class="relative max-w-xs w-80">
-                      <div class="element-left">
-                          <span
-                              class="text-md text-secondary-500 material-symbols-outlined">search</span>
-                      </div>
-                      <input type="text" class="pl-9 input-sm" placeholder="Buscar..." />
-                  </div>
-              </div>
-              <div class="-m-1.5 overflow-x-auto">
-                  <div class="p-1.5 min-w-full inline-block align-middle">
-                      <div class="overflow-hidden">
-                          <table class="table-striped">
-                              <thead>
-                                  <tr>
-                                      <th scope="col">Nombre</th>
-                                      <th scope="col">Edad</th>
-                                      <th scope="col">Dirección</th>
-                                      <th scope="col">Estado</th>
-                                      <th scope="col">Acciones</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>Juan Pérez</td>
-                                      <td>45</td>
-                                      <td>Argomedo 601, Santiago</td>
-                                      <td>
-                                          <div class="badge badge-success">Activo</div>
-                                      </td>
-                                      <td class="actions">
-                                          <button type="button" class="btn-link">Borrar</button>
-                                      </td>
-                                  </tr>
+          <cygnus-table [tableType]="'stripped'" [(tableItems)]="tableBasicArr" />
 
-                                  <tr>
-                                      <td>Jaime Valverde</td>
-                                      <td>27</td>
-                                      <td>Polo Sur 304, Ñuñoa</td>
-                                      <td>
-                                          <div class="badge badge-success">Activo</div>
-                                      </td>
-                                      <td class="actions">
-                                          <button type="button" class="btn-link">Borrar</button>
-                                      </td>
-                                  </tr>
-
-                                  <tr>
-                                      <td>José Lopez</td>
-                                      <td>31</td>
-                                      <td>Santa Isabel 1904, Santiago</td>
-                                      <td>
-                                          <div class="badge badge-success">Activo</div>
-                                      </td>
-                                      <td class="actions">
-                                          <button type="button" class="btn-link ">Borrar</button>
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
       </div>
 
     </div>

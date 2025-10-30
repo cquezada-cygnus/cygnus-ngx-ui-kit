@@ -14,10 +14,21 @@ import {
   imports: [
     TitleCasePipe,
     CygnusBadgeComponent,
-    CygnusButtonComponent,
     CygnusButtonLinkComponent,
   ],
   templateUrl: './cygnus-table.component.html',
+  styles: `
+    table tbody {
+      :where(& > :not(:last-child)) {
+        border-color: #EAECF0;
+        --tw-divide-y-reverse: 0;
+        border-bottom-style: var(--tw-border-style);
+        border-top-style: var(--tw-border-style);
+        border-top-width: calc(1px * var(--tw-divide-y-reverse));
+        border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+      }
+    }
+  `,
 })
 export class CygnusTableComponent {
   TW_CLASS = TW_CLASS;
