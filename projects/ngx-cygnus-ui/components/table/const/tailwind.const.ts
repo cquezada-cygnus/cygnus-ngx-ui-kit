@@ -1,7 +1,8 @@
 export const TW_CLASS = {
   TABLE_BASE: 'w-full min-w-full divide-y divide-gray-200 text-sm text-gray-800',
   TABLE_STRIPPED: 'bg-gray-50',
-  TABLE_HOVER_STRIPPED: 'hover:bg-gray-50',
+  TABLE_HOVER: 'hover:bg-gray-50',
+  TABLE_HOVER_STRIPPED: 'hover:bg-gray-100',
   TABLE_THEAD: 'bg-gray-50',
   TABLE_TBODY: 'divide-y divide-gray-200',
   TABLE_TH: 'px-5 py-3 text-xs font-medium uppercase text-gray-500 text-start',

@@ -16,11 +16,16 @@
               </thead>
               <tbody>
                 @for (item of tableItems(); track $index; let isEven = $even) {
-                  <tr [class]="((tableType()==='hover') ? TW_CLASS.TABLE_HOVER_STRIPPED : '')">
+                  <tr
+                    [class]="
+                      ((tableType()==='hover') ? TW_CLASS.TABLE_HOVER : '') + ' ' +
+                      ((tableType()==='stripped-hover') ? TW_CLASS.TABLE_HOVER_STRIPPED : '')
+                    "
+                  >
                     <td
                       [class]="
                         TW_CLASS.TABLE_TD + ' ' +
-                        ((tableType()==='stripped' && !isEven) ? TW_CLASS.TABLE_STRIPPED : '')
+                        (((tableType()==='stripped' || tableType()==='stripped-hover') && !isEven) ? TW_CLASS.TABLE_STRIPPED : '')
                       "
                     >
                       {{item.name}}
@@ -28,7 +33,7 @@
                     <td
                       [class]="
                         TW_CLASS.TABLE_TD + ' ' +
-                        ((tableType()==='stripped' && !isEven) ? TW_CLASS.TABLE_STRIPPED : '')
+                        (((tableType()==='stripped' || tableType()==='stripped-hover') && !isEven) ? TW_CLASS.TABLE_STRIPPED : '')
                       "
                     >
                       {{item.age}}
@@ -36,7 +41,7 @@
                     <td
                       [class]="
                         TW_CLASS.TABLE_TD + ' ' +
-                        ((tableType()==='stripped' && !isEven) ? TW_CLASS.TABLE_STRIPPED : '')
+                        (((tableType()==='stripped' || tableType()==='stripped-hover') && !isEven) ? TW_CLASS.TABLE_STRIPPED : '')
                       "
                     >
                       {{item.address}}
@@ -44,7 +49,7 @@
                     <td
                       [class]="
                         TW_CLASS.TABLE_TD + ' ' +
-                        ((tableType()==='stripped' && !isEven) ? TW_CLASS.TABLE_STRIPPED : '')
+                        (((tableType()==='stripped' || tableType()==='stripped-hover') && !isEven) ? TW_CLASS.TABLE_STRIPPED : '')
                       "
                     >
 
@@ -60,7 +65,7 @@
                     <td
                       [class]="
                         TW_CLASS.TABLE_TD + ' ' +
-                        ((tableType()==='stripped' && !isEven) ? TW_CLASS.TABLE_STRIPPED : '') + ' ' +
+                        (((tableType()==='stripped' || tableType()==='stripped-hover') && !isEven) ? TW_CLASS.TABLE_STRIPPED : '') + ' ' +
                         TW_CLASS.ACTIONS
                       "
                     >
