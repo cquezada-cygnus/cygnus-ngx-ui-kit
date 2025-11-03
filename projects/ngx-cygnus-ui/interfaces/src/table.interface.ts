@@ -3,4 +3,5 @@ export interface TableItem {
   age: string,
   address: string,
   state: string,
+  isHover?: boolean,
 }

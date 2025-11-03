@@ -1,4 +1,4 @@
-import { Component, input, model } from '@angular/core';
+import { Component, input, model, signal } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
 import { TW_CLASS } from '../const/tailwind.const';
 import { TableItem } from 'ngx-cygnus-ui/interfaces';
