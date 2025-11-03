@@ -10,4 +10,5 @@ export const TW_CLASS = {
   TABLE_TD_TH_CHECKBOX: 'text-center py-3 pl-4 pr-0',
   TABLE_BORDER: 'border divide-y rounded-lg divide-gray-200 inline-block min-w-full align-middle',
   ACTIONS: 'flex px-5 py-4 text-sm items-center gap-0.5',
+  AVATAR_SIMPLE: 'relative inline-flex items-center justify-center w-10 h-10 overflow-hidden rounded-full bg-gray-200 font-medium text-gray-600'
 }

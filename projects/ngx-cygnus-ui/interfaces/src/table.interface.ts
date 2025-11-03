@@ -3,6 +3,10 @@ export interface TableItem {
   age: string,
   email?: string,
   address: string,
-  state: string,
+  state?: string,
+  company?: string,
+  id?: string,
+  startDate?: string | Date,
   isHover?: boolean,
+  base64?: string,
 }

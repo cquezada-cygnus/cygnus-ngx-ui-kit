@@ -5,6 +5,8 @@
         <div class="overflow-hidden">
           <!-- Table -->
           <table [class]="TW_CLASS.TABLE_BASE">
+
+            @if (tableType()!='select') {
               <thead [class]="TW_CLASS.TABLE_THEAD" >
                   <tr>
                       <th scope="col" [class]="TW_CLASS.TABLE_TH" >Nombre</th>
@@ -66,10 +68,10 @@
                       "
                     >
 
-                    @if ((item.state).toLowerCase()=='activo') {
+                    @if ((item.state)?.toLowerCase()=='activo') {
                         <cygnus-badge
                           [badgeTypes]="'badge badge-success'"
-                          [badgeText]=" item.state | titlecase "
+                          [badgeText]=" (item.state | titlecase ) || '' "
                         />
                       }
                       @else {}
@@ -93,6 +95,74 @@
                   </tr>
                 }
               </tbody>
+
+            } @else {
+              <thead [class]="TW_CLASS.TABLE_THEAD" >
+                  <tr>
+                      <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{'Compañía' | uppercase }}</th>
+                      <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{'ID Usuario' | uppercase }}</th>
+                      <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{'Nombre / Email' | uppercase }}</th>
+                      <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{'Fecha de incorporación' | uppercase }}</th>
+                      <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{'Acciones' | uppercase }}</th>
+                  </tr>
+              </thead>
+              <tbody>
+                @for (item of tableItems(); track $index; let isEven = $even) {
+                  <tr
+                    [class]="
+                      TW_CLASS.TABLE_HOVER_STRIPPED
+                    "
+                    (mouseenter)="item.isHover=true"
+                    (mouseleave)="item.isHover=false"
+                  >
+                    <td [class]="TW_CLASS.TABLE_TD">{{item.company}}</td>
+                    <td [class]="TW_CLASS.TABLE_TD">{{item.id}}</td>
+                    <td
+                      [class]="
+                        TW_CLASS.TABLE_TD + ' ' +
+                        ((!isEven) ? (( item.isHover ) ? TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
+                      "
+                    >
+
+                      <div [class]="TW_CLASS.AVATAR_SIMPLE">
+                          <span class="font-medium text-secondary-600">CD</span>
+                      </div>
+                      <div>
+                        <div class="text-sm font-normal text-gray-900">
+                          {{item.name}}
+                        </div>
+                        <div class="text-sm font-normal leading-5 text-secondary-500">
+                            {{item.email}}
+                        </div>
+                      </div>
+
+                    </td>
+                    @if (startDateisDate(item)) {
+                      <td [class]="TW_CLASS.TABLE_TD">{{item.startDate | date}}</td>
+                    } @else {
+                      <td [class]="TW_CLASS.TABLE_TD">{{item.startDate}}</td>
+                    }
+
+                    <td
+                      [class]="
+                        TW_CLASS.TABLE_TD + ' ' +
+                        TW_CLASS.ACTIONS
+                      "
+                    >
+                      <cygnus-button-link
+                        [btnLinkType]="'btn-link'"
+                        [btnRouterLinkText]="''"
+                        (click)="editItem($index)"
+                      >
+                        Editar
+                      </cygnus-button-link>
+                    </td>
+
+                  </tr>
+                }
+              </tbody>
+            }
+
           </table>
         </div>
       </div>
