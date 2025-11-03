@@ -12,8 +12,8 @@ import { CygnusTableComponent } from 'ngx-cygnus-ui/components/table';
 })
 export class TableContentComponent {
   tableBasicArr: TableItem[] = [
-    { name: 'Juan Pérez', age: '45', address: 'Argomedo 601, Santiago', state: 'Activo' },
-    { name: 'Jaime Valverde', age: '27', address: 'Polo Sur 304, Ñuñoa', state: 'Activo' },
-    { name: 'José Lopez', age: '31', address: 'Santa Isabel 1904, Santiago', state: 'Activo' },
+    { name: 'Juan Pérez', age: '45', email: 'florencia.mardonez.@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo' },
+    { name: 'Jaime Valverde', age: '27', email: 'nidia.perez@sitio.com', address: 'Polo Sur 304, Ñuñoa', state: 'Activo' },
+    { name: 'José Lopez', age: '31', email: 'carla.fuentealba@sitio.com', address: 'Santa Isabel 1904, Santiago', state: 'Activo' },
   ];
 }

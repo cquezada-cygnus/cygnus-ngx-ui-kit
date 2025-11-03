@@ -82,97 +82,10 @@
         <h2 class="mb-2 text-xl font-semibold">Doble fila en una celda</h2>
         <p class="mb-8 text-secondary-600 text-md">Una tabla con elementos que muestra si los usuarios
             están activos o no.</p>
-        <div class="flex flex-col items-center justify-center gap-4 mb-4">
 
           <!-- COMPONENTE: Tabla con doble fila en celda -->
-          <div class="flex flex-col w-full">
-              <div class="flex justify-end px-0 py-3">
-                  <div class="relative max-w-xs w-80">
-                      <div class="element-left">
-                          <span
-                              class="text-md text-secondary-500 material-symbols-outlined">search</span>
-                      </div>
-                      <input type="text" class="pl-9 input-sm" placeholder="Buscar..." />
-                  </div>
-              </div>
-              <div class="-m-1.5 overflow-x-auto">
-                  <div class="p-1.5 min-w-full inline-block align-middle">
-                      <div class="overflow-hidden">
-                          <table class="table-hover-striped">
-                              <thead>
-                                  <tr>
-                                      <th scope="col">Nombre</th>
-                                      <th scope="col">Edad</th>
-                                      <th scope="col">Dirección</th>
-                                      <th scope="col">Estado</th>
-                                      <th scope="col"><span class="sr-only">Acciones</span></th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>
-                                          <div class="text-sm font-medium text-secondary-900">
-                                              Florencia Mardonez
-                                          </div>
-                                          <div class="text-sm text-secondary-500">
-                                              florencia.mardonez.&#64;sitio.com
-                                          </div>
-                                      </td>
-                                      <td>45</td>
-                                      <td>Argomedo 601, Santiago</td>
-                                      <td>
-                                          <div class="badge badge-success">Activo</div>
-                                      </td>
-                                      <td class="actions">
-                                          <button type="button" class="btn-link">Borrar</button>
-                                      </td>
-                                  </tr>
+          <cygnus-table [tableType]="'double'" [(tableItems)]="tableBasicArr" />
 
-                                  <tr>
-                                      <td>
-                                          <div
-                                              class="text-sm font-medium text-left text-secondary-900">
-                                              Nidia Pérez
-                                          </div>
-                                          <div class="text-sm text-left text-secondary-500">
-                                              nidia.perez&#64;sitio.com
-                                          </div>
-                                      </td>
-                                      <td>27</td>
-                                      <td>Polo Sur 304, Ñuñoa</td>
-                                      <td>
-                                          <div class="badge badge-success">Activo</div>
-                                      </td>
-                                      <td class="actions">
-                                          <button type="button" class="btn-link">Borrar</button>
-                                      </td>
-                                  </tr>
-
-                                  <tr>
-                                      <td>
-                                          <div class="text-sm font-medium text-secondary-900">
-                                              Carla Fuentealba
-                                          </div>
-                                          <div class="text-sm text-secondary-500">
-                                              carla.fuentealba&#64;sitio.com
-                                          </div>
-                                      </td>
-                                      <td>31</td>
-                                      <td>Santa Isabel 1904, Santiago</td>
-                                      <td>
-                                          <div class="badge badge-success">Activo</div>
-                                      </td>
-                                      <td class="actions">
-                                          <button type="button" class="btn-link ">Borrar</button>
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
       </div>
 
     </div>
