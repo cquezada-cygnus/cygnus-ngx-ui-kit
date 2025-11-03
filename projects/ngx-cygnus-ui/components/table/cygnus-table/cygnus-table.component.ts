@@ -5,6 +5,7 @@ import { TableItem } from 'ngx-cygnus-ui/interfaces';
 import { TableType } from 'ngx-cygnus-ui/types';
 import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
 import { CygnusButtonLinkComponent, } from 'ngx-cygnus-ui/components/button';
+import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
 
 @Component({
   selector: 'cygnus-table',
@@ -14,6 +15,7 @@ import { CygnusButtonLinkComponent, } from 'ngx-cygnus-ui/components/button';
     DatePipe,
     CygnusBadgeComponent,
     CygnusButtonLinkComponent,
+    CygnusCheckboxComponent,
   ],
   templateUrl: './cygnus-table.component.html',
   styles: `
