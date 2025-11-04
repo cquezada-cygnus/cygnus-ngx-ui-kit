@@ -45,13 +45,18 @@ export class CygnusTableComponent implements OnInit {
   limit = signal<number>(3);
   maxCounter = input<number>(3);
 
+  checkAll = signal<boolean>(false);
+
   showContent() {
     const total = this.tableItems().length;
     const amountPerPage = Math.ceil(total / this.maxCounter());
     this.init.set(amountPerPage*(this.currentCounter-1));
-
     this.limit.set((amountPerPage*this.currentCounter)-1);
+  }
 
+  setCheckAll(value: boolean) {
+    console.log('setCheckAll value: ', value);
+    this.checkAll.set(value);
   }
 
   ngOnInit(): void {

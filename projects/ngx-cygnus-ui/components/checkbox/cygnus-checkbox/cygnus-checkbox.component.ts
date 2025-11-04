@@ -1,4 +1,4 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, effect, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
 import { TW_CLASS } from '../const/tailwind.const';
 import { CheckboxSize, CheckboxType } from 'ngx-cygnus-ui/types';
 import { FormControl } from '@angular/forms';
@@ -22,12 +22,22 @@ export class CygnusCheckboxComponent implements OnInit {
   private static idCounter = 0;
   TW_CLASS = TW_CLASS;
   control = input<FormControl<boolean>>();
+  isChecked = output<boolean>();
+  checkedIn = input<boolean>();
+
+  checkboxRef = viewChild<ElementRef<HTMLInputElement>>('cygnusCheckbox');
 
   checkboxId = signal<string>('');
   checkboxType = input<CheckboxType>('base');
   checkboxSize = input<CheckboxSize>('sm');
   checkboxText = input<string>('');
   checkboxHint = input<string>('');
+
+  constructor() {
+    effect(() => {
+      this.checkboxRef()!.nativeElement.checked = this.checkedIn() || false;
+    });
+  }
 
   ngOnInit() {
     // Generar ID único si no se proporciona
@@ -49,6 +59,7 @@ export class CygnusCheckboxComponent implements OnInit {
     this.control()?.setValue(value);
     this.control()?.markAsDirty();
     this.control()?.markAsTouched();
+    this.isChecked.emit(value);
   }
 
 }

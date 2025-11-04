@@ -100,7 +100,7 @@
               <thead [class]="TW_CLASS.TABLE_THEAD" >
                   <tr>
                     <th scope="col" [class]="TW_CLASS.TABLE_TH" >
-                      <cygnus-checkbox [checkboxSize]="'sm'" />
+                      <cygnus-checkbox (isChecked)="setCheckAll($event)" [checkboxSize]="'sm'" />
                     </th>
                     <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{'Compañía' | uppercase }}</th>
                     <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{'ID Usuario' | uppercase }}</th>
@@ -121,7 +121,7 @@
                   >
 
                     <td [class]="TW_CLASS.TABLE_TD">
-                      <cygnus-checkbox [checkboxSize]="'sm'" />
+                      <cygnus-checkbox [checkedIn]="checkAll()" (isChecked)="item.isChecked" [checkboxSize]="'sm'" />
                     </td>
                     <td [class]="TW_CLASS.TABLE_TD">{{item.company}}</td>
                     <td [class]="TW_CLASS.TABLE_TD">{{item.id}}</td>

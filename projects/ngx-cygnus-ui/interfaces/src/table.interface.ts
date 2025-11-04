@@ -9,4 +9,5 @@ export interface TableItem {
   startDate?: string | Date,
   isHover?: boolean,
   base64?: string,
+  isChecked?: boolean,
 }
