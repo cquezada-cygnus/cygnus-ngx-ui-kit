@@ -6,3 +6,4 @@ export * from './src/validation.types';
 export * from './src/checkbox.types';
 export * from './src/dropdown.types';
 export * from './src/table.types';
+export * from './src/textarea.types';

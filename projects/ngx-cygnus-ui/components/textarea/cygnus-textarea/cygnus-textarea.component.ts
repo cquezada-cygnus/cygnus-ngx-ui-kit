@@ -1,6 +1,7 @@
 import { Component, input, OnInit, signal } from '@angular/core';
 import { TW_CLASS } from '../const/tailwind.const';
 import { FormControl } from '@angular/forms';
+import { TextareaType } from 'ngx-cygnus-ui/types';
 
 @Component({
   selector: 'cygnus-textarea',
@@ -13,6 +14,10 @@ export class CygnusTextareaComponent implements OnInit {
   private static idCounter = 0;
   control = input<FormControl<string>>();
   textareaId = signal<string>('');
+
+  textareaType = input<TextareaType>('simple');
+  textareaPlaceholder = input<string>('');
+  textareaLabel = input<string>('');
 
   ngOnInit() {
     // Generar ID único si no se proporciona
