@@ -173,12 +173,15 @@
             }
 
           </table>
-          <cygnus-pagination
-            [paginationType]="'normal'"
-            [(currentCounter)]="currentCounter"
-            [maxCounter]="maxCounter()"
-            (click)="showContent()"
-          />
+
+          @if (tableType()=='select') {
+            <cygnus-pagination
+              [paginationType]="'normal'"
+              [(currentCounter)]="currentCounter"
+              [maxCounter]="maxCounter()"
+              (click)="showContent()"
+            />
+          }
         </div>
       </div>
     </div>

@@ -27,5 +27,6 @@ export class TableContentComponent {
     { name: 'Juan Pérez', age: '45', email: 'florencia.mardonez.@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Lider', id: '20010516'  },
     { name: 'Jaime Valverde', age: '27', email: 'nidia.perez@sitio.com', address: 'Polo Sur 304, Ñuñoa', state: 'Activo', startDate: '24/01/2023', company: 'Falabella', id: '20010517' },
     { name: 'José Lopez', age: '31', email: 'carla.fuentealba@sitio.com', address: 'Santa Isabel 1904, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Cencosud', id: '20010518' },
+    { name: 'Juana Zapata', age: '45', email: 'jzd@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Luchetti', id: '20010519'  },
   ];
 }
