@@ -4,7 +4,7 @@ import { TW_CLASS } from '../const/tailwind.const';
 import { TableItem } from 'ngx-cygnus-ui/interfaces';
 import { TableType } from 'ngx-cygnus-ui/types';
 import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
-import { CygnusButtonLinkComponent, } from 'ngx-cygnus-ui/components/button';
+import { CygnusButtonComponent, CygnusButtonLinkComponent, } from 'ngx-cygnus-ui/components/button';
 import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
 import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
 
@@ -15,6 +15,7 @@ import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
     UpperCasePipe,
     DatePipe,
     CygnusBadgeComponent,
+    CygnusButtonComponent,
     CygnusButtonLinkComponent,
     CygnusCheckboxComponent,
     CygnusPaginationComponent
@@ -57,6 +58,21 @@ export class CygnusTableComponent implements OnInit {
   setCheckAll(value: boolean) {
     console.log('setCheckAll value: ', value);
     this.checkAll.set(value);
+  }
+
+  checkData(index: number, checkValue: boolean) {
+    const copyTable = this.tableItems();
+    copyTable[index].isChecked = checkValue;
+    this.tableItems.set(copyTable);
+    console.log(`checkData index: ${index}, checkValue: ${checkValue} `);
+    console.log(`checkData copyTable: ${copyTable}`);
+    console.log(`checkData this.tableItems: ${this.tableItems()}`);
+
+  }
+
+  sendSelection() {
+    console.log("tableItems: ", this.tableItems());
+
   }
 
   ngOnInit(): void {

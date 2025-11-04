@@ -121,7 +121,7 @@
                   >
 
                     <td [class]="TW_CLASS.TABLE_TD">
-                      <cygnus-checkbox [checkedIn]="checkAll()" (isChecked)="item.isChecked" [checkboxSize]="'sm'" />
+                      <cygnus-checkbox [checkedIn]="checkAll()" (isChecked)="checkData(i, $event)" [checkboxSize]="'sm'" />
                     </td>
                     <td [class]="TW_CLASS.TABLE_TD">{{item.company}}</td>
                     <td [class]="TW_CLASS.TABLE_TD">{{item.id}}</td>
@@ -175,12 +175,20 @@
           </table>
 
           @if (tableType()=='select') {
-            <cygnus-pagination
-              [paginationType]="'normal'"
-              [(currentCounter)]="currentCounter"
-              [maxCounter]="maxCounter()"
-              (click)="showContent()"
-            />
+            <div class="flex content-center">
+              <cygnus-pagination
+                [paginationType]="'normal'"
+                [(currentCounter)]="currentCounter"
+                [maxCounter]="maxCounter()"
+                (click)="showContent()"
+              />
+              <cygnus-button
+                [btnTypes]="'btn-ghost'"
+                (click)="sendSelection()"
+              >
+                Guardar Selección
+              </cygnus-button>
+            </div>
           }
         </div>
       </div>

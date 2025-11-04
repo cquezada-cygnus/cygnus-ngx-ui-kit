@@ -10,7 +10,7 @@
       ' peer'
     "
     [id]="checkboxId()"
-    (click)="setValue(cygnusCheckbox.checked)"
+    (change)="setValue(cygnusCheckbox.checked)"
   />
   @if (checkboxType()==='base') {
     <label [for]="checkboxId()" class="sr-only">Checkbox</label>

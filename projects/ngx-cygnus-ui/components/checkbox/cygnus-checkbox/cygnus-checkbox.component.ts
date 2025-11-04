@@ -21,9 +21,9 @@ import { FormControl } from '@angular/forms';
 export class CygnusCheckboxComponent implements OnInit {
   private static idCounter = 0;
   TW_CLASS = TW_CLASS;
-  control = input<FormControl<boolean>>();
-  isChecked = output<boolean>();
-  checkedIn = input<boolean>();
+  control = input<FormControl<boolean>>(); // utilizar dentro de un formulario
+  isChecked = output<boolean>(); // utilizar para seleccionar elementos en una tabla
+  checkedIn = input<boolean>(); // utilizar para seleccionar elementos en una tabla
 
   checkboxRef = viewChild<ElementRef<HTMLInputElement>>('cygnusCheckbox');
 
@@ -36,6 +36,7 @@ export class CygnusCheckboxComponent implements OnInit {
   constructor() {
     effect(() => {
       this.checkboxRef()!.nativeElement.checked = this.checkedIn() || false;
+      this.isChecked.emit(this.checkedIn() || false);
     });
   }
 
