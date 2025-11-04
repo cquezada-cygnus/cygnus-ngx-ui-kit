@@ -92,6 +92,10 @@ export const routes: Routes = [
     loadComponent: () => import('./table-content/table-content.component').then( (c) => c.TableContentComponent )
   },
   {
+    path: 'textarea',
+    loadComponent: () => import('./textarea-content/textarea-content.component').then( (c) => c.TextareaContentComponent )
+  },
+  {
     path: 'toggles',
     loadComponent: () => import('./toggle-content/toggle-content.component').then( (c) => c.ToggleContentComponent )
   },

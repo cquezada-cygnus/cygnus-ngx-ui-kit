@@ -1,0 +1,95 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Textarea</h1>
+    <p class="mt-4 text-gray-600 text-md">Un "textarea" es un elemento de una página web en el que puedes
+        escribir.</p>
+  </header>
+
+  <section id="placeholder">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Placeholder</h2>
+        <p class="mb-8 text-gray-600 text-md">Ejemplo de textarea básico con placeholder.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <div class="max-w-sm space-y-3 w-full min-w-[200px]">
+            <cygnus-textarea />
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section id="label">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Etiqueta</h2>
+        <p class="mb-8 text-gray-600 text-md">Ejemplo de entrada básica con etiqueta.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <div class="max-w-sm w-full min-w-[200px]">
+              <label for="textarea-label" class="label-input">Comentario</label>
+              <textarea id="textarea-label"
+                  class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                  rows="3" placeholder="Escribe un comentario..."></textarea>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <section id="floating-label">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Placeholder</h2>
+        <p class="mb-8 text-gray-600 text-md">Se requiere un marcador de posición en cada uno de ellos,
+            <code class="code">input</code> ya que nuestro método utiliza elpseudoelemento
+            <code class="code">:placeholder-shown</code>. Tenga en cuenta también que el <code
+                class="code">input</code> debe aparecer primero para que podamos utilizar un selector de
+            hermanos (por ejemplo, ~).
+        </p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <div class="max-w-sm space-y-3 w-full min-w-[200px]">
+            <div class="relative">
+                <textarea id="hs-floating-textarea" class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none
+                        focus:pt-6
+                        focus:pb-2
+                        [&:not(:placeholder-shown)]:pt-6
+                        [&:not(:placeholder-shown)]:pb-2
+                        autofill:pt-6
+                        autofill:pb-2" placeholder="This is a textarea placeholder"
+                    data-hs-textarea-auto-height=""></textarea>
+                <label for="hs-floating-textarea"
+                    class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                        peer-focus:text-xs
+                        peer-focus:-translate-y-1.5
+                        peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+                        peer-[:not(:placeholder-shown)]:text-xs
+                        peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                        peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 ">Escribe
+                    un comentario...</label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+</main>

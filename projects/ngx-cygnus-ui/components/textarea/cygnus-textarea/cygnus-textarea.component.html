@@ -1,0 +1,10 @@
+<textarea
+  #cygnusTextarea
+  [class]="
+    TW_CLASS.TEXTAREA_BASE + ' ' +
+    'block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none'
+  "
+  rows="3" placeholder="Escribe un comentario..."
+  (focusout)="setValue(cygnusTextarea.value)"
+>
+</textarea>
