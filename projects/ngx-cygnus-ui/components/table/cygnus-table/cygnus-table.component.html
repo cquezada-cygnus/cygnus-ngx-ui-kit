@@ -110,7 +110,8 @@
                   </tr>
               </thead>
               <tbody>
-                @for (item of tableItems(); track $index; let isEven = $even) {
+                @for (item of tableItems(); track $index; let i = $index; let isEven = $even) {
+                  @if (i >= init() && i <= limit()) {
                   <tr
                     [class]="
                       TW_CLASS.TABLE_HOVER_STRIPPED
@@ -166,11 +167,18 @@
                     </td>
 
                   </tr>
+                  }
                 }
               </tbody>
             }
 
           </table>
+          <cygnus-pagination
+            [paginationType]="'normal'"
+            [(currentCounter)]="currentCounter"
+            [maxCounter]="maxCounter()"
+            (click)="showContent()"
+          />
         </div>
       </div>
     </div>

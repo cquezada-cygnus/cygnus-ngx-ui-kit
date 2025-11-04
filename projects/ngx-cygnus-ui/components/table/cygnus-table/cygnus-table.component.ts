@@ -1,4 +1,4 @@
-import { Component, input, model, output } from '@angular/core';
+import { Component, input, model, OnInit, output, signal } from '@angular/core';
 import { TitleCasePipe, UpperCasePipe, DatePipe } from '@angular/common';
 import { TW_CLASS } from '../const/tailwind.const';
 import { TableItem } from 'ngx-cygnus-ui/interfaces';
@@ -6,6 +6,7 @@ import { TableType } from 'ngx-cygnus-ui/types';
 import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
 import { CygnusButtonLinkComponent, } from 'ngx-cygnus-ui/components/button';
 import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
+import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
 
 @Component({
   selector: 'cygnus-table',
@@ -16,6 +17,7 @@ import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
     CygnusBadgeComponent,
     CygnusButtonLinkComponent,
     CygnusCheckboxComponent,
+    CygnusPaginationComponent
   ],
   templateUrl: './cygnus-table.component.html',
   styles: `
@@ -31,12 +33,30 @@ import { CygnusCheckboxComponent } from 'ngx-cygnus-ui/components/checkbox';
     }
   `,
 })
-export class CygnusTableComponent {
+export class CygnusTableComponent implements OnInit {
   TW_CLASS = TW_CLASS;
 
   tableType = input<TableType>('basic');
   tableItems = model<TableItem[]>([]);
   tableEditOutput = output<number>();
+
+  currentCounter:number = 1;
+  init = signal<number>(1);
+  limit = signal<number>(3);
+  maxCounter = input<number>(3);
+
+  showContent() {
+    const total = this.tableItems().length;
+    const amountPerPage = Math.ceil(total / this.maxCounter());
+    this.init.set(amountPerPage*(this.currentCounter-1));
+
+    this.limit.set((amountPerPage*this.currentCounter)-1);
+
+  }
+
+  ngOnInit(): void {
+    this.showContent();
+  }
 
   deleteItem(index:number):void {
     this.tableItems.update( table => [
