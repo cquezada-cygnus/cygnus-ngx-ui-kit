@@ -10,14 +10,13 @@
     rows="3"
     [placeholder]="textareaPlaceholder()"
     (focusout)="setValue(cygnusTextarea.value)"
-  >
-  </textarea>
+  ></textarea> <!-- si dejas un espacio, no se ve el placeholder -->
 
 } @else {
 
-  <div class="max-w-sm w-full min-w-[200px]">
-    <label for="textarea-label" [class]="TW_CLASS.LABEL">{{textareaLabel()}}</label>
-    <textarea id="textarea-label"
+
+    <label [for]="textareaId()" [class]="TW_CLASS.LABEL">{{textareaLabel()}}</label>
+    <textarea
       #cygnusTextarea
       [id]="textareaId()"
       [class]="
@@ -27,9 +26,8 @@
       rows="3"
       [placeholder]="textareaPlaceholder()"
       (focusout)="setValue(cygnusTextarea.value)"
-    >
-    </textarea>
-  </div>
+    ></textarea> <!-- si dejas un espacio, no se ve el placeholder -->
+
 }
 
 
