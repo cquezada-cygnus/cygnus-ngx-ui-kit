@@ -1,1 +1,1 @@
-export type TextareaType = "simple" | "label" ;
+export type TextareaType = "simple" | "label" | "dynamic-label" ;
