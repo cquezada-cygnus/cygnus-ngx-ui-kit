@@ -1,4 +1,8 @@
-<ol [class]="TW_CLASS.BREADCRUMB_BASE">
+<ol [class]="
+    TW_CLASS.BREADCRUMB_BASE + ' ' +
+    (setBlock() ? TW_CLASS.BREADCRUMB_BLOCK : '' )
+  "
+>
 
   @for (item of itemsArr(); track $index; let i = $index) {
     <li [class]="TW_CLASS.BREADCRUMB_ITEM">

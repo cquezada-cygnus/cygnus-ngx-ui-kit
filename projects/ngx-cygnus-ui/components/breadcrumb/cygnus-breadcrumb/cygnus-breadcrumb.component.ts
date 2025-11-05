@@ -16,6 +16,8 @@ export class CygnusBreadcrumbComponent {
   TW_CLASS = TW_CLASS;
 
   itemsArr = input<BreadcrumbItem[]>([]);
+  setBlock = input<boolean>(false);
+  setMoreIcon = input<boolean>(false);
   iconColor = signal<string>('#344054');
 
   iconColorOnMouseEnter() {
