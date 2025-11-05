@@ -1,0 +1,191 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Breadcrumbs</h1>
+    <p class="mt-4 text-secondary-600 text-md">Las migas de pan sirven como una ayuda visual eficaz,
+      indicando la
+      ubicación del usuario dentro de la jerarquía del
+      sitio web, lo que las convierte en una gran fuente de información contextual para las páginas de
+      destino. Además, las
+      migas de pan facilitan la navegación a páginas de nivel superior.</p>
+  </header>
+
+  <section id="simple-breadcrumb">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+          <h2 class="mb-2 text-xl font-semibold">Breadcrumb básico</h2>
+          <p class="mb-8 text-secondary-600 text-md">Utilice este botón versátil que viene con fondo azul
+              y texto blanco, esquinas redondeadas y un efecto de sombra al pasar el mouse, mostrando
+              interactividad.</p>
+          <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+            <div class="inline-flex flex-col items-center">
+
+              <!-- COMPONENTE: Breadcrumb básico -->
+              <cygnus-breadcrumb [itemsArr]="basicItemsArr" />
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="breadcrumb-icon">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Breadcrumb con ícono</h2>
+        <p class="mb-8 text-secondary-600 text-md">Puede agregar cualquier tipo de ícono para el
+            componente
+            de breadcrumbs tan fácilmente como se usan en HTML.</p>
+        <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+
+          <!-- COMPONENTE: Breadcrumb con icono -->
+          <ol class="flex items-center whitespace-nowrap">
+              <li class="inline-flex items-center">
+                  <a class="flex items-center text-sm font-medium text-gray-700 no-underline hover:text-primary-700 focus:outline-hidden hover:underline"
+                      href="#">
+                      <svg class="shrink-0 me-3 size-4" xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                      </svg>
+                      <span class="sr-only">Inicio</span>
+                  </a>
+                  <svg class="mx-2 text-secondary-400 shrink-0 size-4"
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="m9 18 6-6-6-6"></path>
+                  </svg>
+              </li>
+              <li class="inline-flex items-center">
+                  <a class="inline-flex items-center text-sm font-medium text-gray-700 no-underline hover:text-primary-700 focus:outline-hidden hover:underline"
+                      href="#">
+                      Centro de aplicaciones
+                      <svg class="mx-2 text-secondary-400 shrink-0 size-4"
+                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <path d="m9 18 6-6-6-6"></path>
+                      </svg>
+                  </a>
+              </li>
+              <li class="flex inline-flex items-center text-sm font-medium text-gray-700 no-underline hover:text-primary-700 focus:outline-hidden hover:underline"
+                  aria-current="page">
+                  Aplicaciones
+              </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="breadcrumb-block">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Breadcrumb a nivel de bloque</h2>
+        <p class="mb-8 text-secondary-600 text-md">Breadcrumb puede ser un componente a nivel de bloque
+          que
+          obtiene todo el espacio disponible en una fila. Puede mostrar los breadcrumbs como un
+          elemento a nivel de bloque utilizando la clase <code>w-full</code>.</p>
+        <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+
+          <!-- COMPONENTE: Breadcrumb a nivel de bloque -->
+          <ol class="flex items-center whitespace-nowrap breadcrumb-block">
+              <li class="inline-flex items-center">
+                  <a class="inline-flex items-center text-sm font-medium text-gray-700 no-underline hover:text-primary-700 focus:outline-hidden hover:underline"
+                      href="#">
+                      <svg class="shrink-0 me-3 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+                          height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                      </svg>
+                      <span class="sr-only">Inicio</span>
+                  </a>
+                  <svg class="mx-2 text-secondary-400 shrink-0 size-4 "
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="m9 18 6-6-6-6"></path>
+                  </svg>
+              </li>
+              <li class="inline-flex items-center">
+                  <a class="inline-flex items-center text-sm font-medium text-gray-700 no-underline hover:text-primary-700 focus:outline-hidden hover:underline"
+                      href="#">
+                      Centro de aplicaciones
+                      <svg class="mx-2 text-secondary-400 shrink-0 size-4 "
+                          xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="m9 18 6-6-6-6"></path>
+                      </svg>
+                  </a>
+              </li>
+              <li class="flex inline-flex items-center text-sm font-medium text-gray-700 no-underline hover:text-primary-700 focus:outline-hidden hover:underline"
+                  aria-current="page">
+                  Aplicaciones
+              </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="breadcrumb-static">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Botón estático 'Más'</h2>
+        <p class="mb-8 text-secondary-600 text-md">Agregue un ícono para indicar que hay más enlaces,
+          pero este ícono será estático.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <div class="inline-flex flex-col items-center">
+
+            <ol class="flex items-center whitespace-nowrap">
+                <li class="inline-flex items-center">
+                    <a class="inline-flex items-center text-sm font-medium text-gray-700 no-underline hover:text-primary-700 focus:outline-hidden hover:underline"
+                        href="#">
+                        Inicio
+                    </a>
+                    <svg class="mx-2 text-secondary-400 shrink-0 size-4"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                </li>
+                <li class="text-sm">
+                    <div class="flex items-center text-secondary-500">
+                        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="19" cy="12" r="1"></circle>
+                            <circle cx="5" cy="12" r="1"></circle>
+                        </svg>
+                        <svg class="mx-2 text-secondary-400 shrink-0 size-4"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </div>
+                </li>
+                <li class="flex inline-flex items-center text-sm font-medium text-gray-700 no-underline hover:text-primary-700 focus:outline-hidden hover:underline"
+                    aria-current="page">
+                    Aplicaciones
+                </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

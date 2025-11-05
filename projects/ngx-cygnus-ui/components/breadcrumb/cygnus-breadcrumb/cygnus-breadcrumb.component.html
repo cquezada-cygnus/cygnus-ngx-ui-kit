@@ -1,0 +1,19 @@
+<ol [class]="TW_CLASS.BREADCRUMB_BASE">
+
+  @for (item of itemsArr(); track $index; let i = $index) {
+    <li [class]="TW_CLASS.BREADCRUMB_ITEM">
+      <a [class]="TW_CLASS.BREADCRUMB_LINK" [routerLink]="item.routerLinkText" >
+        {{item.itemText}}
+      </a>
+
+      @if ( itemsArr().length && i != (itemsArr()!.length - 1) ) {
+        <lib-ngx-cygnus-icons class="mx-2"
+          [width]="'1rem'"
+          [height]="'1rem'"
+          [color]="'#98A2B3'"
+          [route]="'assets/icons/svg/Arrows/chevron-right.svg'"
+        />
+      }
+    </li>
+  }
+</ol>
