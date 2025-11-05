@@ -18,4 +18,10 @@ export class BreadcrumbContentComponent {
     {itemText: 'Aplicaciones', iconAssetText: '', routerLinkText: './', },
   ];
 
+  basicItemsIconArr: BreadcrumbItem[] = [
+    {itemText: '', iconAssetText: 'assets/icons/svg/General/home-02.svg', routerLinkText: './', },
+    {itemText: 'Centro de aplicaciones', iconAssetText: '', routerLinkText: './', },
+    {itemText: 'Aplicaciones', iconAssetText: '', routerLinkText: './', },
+  ];
+
 }

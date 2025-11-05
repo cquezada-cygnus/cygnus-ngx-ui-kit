@@ -1,8 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { RouterLink, } from '@angular/router';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
-import { CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 import { BreadcrumbItem } from 'ngx-cygnus-ui/interfaces';
 
 @Component({
@@ -10,7 +9,6 @@ import { BreadcrumbItem } from 'ngx-cygnus-ui/interfaces';
   imports: [
     RouterLink,
     NgxCygnusIconsComponent,
-    CygnusButtonLinkComponent,
   ],
   templateUrl: './cygnus-breadcrumb.component.html',
 })
@@ -18,5 +16,14 @@ export class CygnusBreadcrumbComponent {
   TW_CLASS = TW_CLASS;
 
   itemsArr = input<BreadcrumbItem[]>([]);
+  iconColor = signal<string>('#344054');
+
+  iconColorOnMouseEnter() {
+    this.iconColor.set('#1447e6'); // azul
+  }
+
+  iconColorOnMouseLeave() {
+    this.iconColor.set('#344054'); // gris oscuro
+  }
 
 }

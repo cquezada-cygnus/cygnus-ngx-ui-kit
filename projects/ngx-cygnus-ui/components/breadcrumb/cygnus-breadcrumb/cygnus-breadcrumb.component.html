@@ -2,9 +2,27 @@
 
   @for (item of itemsArr(); track $index; let i = $index) {
     <li [class]="TW_CLASS.BREADCRUMB_ITEM">
-      <a [class]="TW_CLASS.BREADCRUMB_LINK" [routerLink]="item.routerLinkText" >
-        {{item.itemText}}
-      </a>
+
+      @if (item.iconAssetText) {
+        <a
+          [class]="TW_CLASS.BREADCRUMB_LINK"
+          [routerLink]="item.routerLinkText"
+          (mouseenter)="iconColorOnMouseEnter()"
+          (mouseleave)="iconColorOnMouseLeave()"
+        >
+          <lib-ngx-cygnus-icons class="me-3"
+            [width]="'1rem'"
+            [height]="'1rem'"
+            [color]="iconColor()"
+            [route]="item.iconAssetText"
+          />
+        </a>
+      } @else {
+        <a [class]="TW_CLASS.BREADCRUMB_LINK" [routerLink]="item.routerLinkText" >
+          {{item.itemText}}
+        </a>
+      }
+
 
       @if ( itemsArr().length && i != (itemsArr()!.length - 1) ) {
         <lib-ngx-cygnus-icons class="mx-2"
