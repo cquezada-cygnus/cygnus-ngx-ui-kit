@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./index-cygnus-ui/index-cygnus-ui.component').then( (c) => c.IndexCygnusUiComponent )
   },
   {
+    path: 'accordion',
+    loadComponent: () => import('./accordion-content/accordion-content.component').then( (c) => c.AccordionContentComponent )
+  },
+  {
     path: 'alerts',
     loadComponent: () => import('./alert-content/alert-content.component').then( (c) => c.AlertContentComponent )
   },

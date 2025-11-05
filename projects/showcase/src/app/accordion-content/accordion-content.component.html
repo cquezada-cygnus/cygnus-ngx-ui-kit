@@ -1,0 +1,42 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
+
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Acordeón</h1>
+    <p class="mt-4 text-gray-600 text-md">El acordeón es un componente de interfaz de usuario que permite al
+      usuario mostrar y ocultar secciones de contenido
+      relacionado en una página. Hay muchas formas de utilizar este componente, como mostrar una lista de
+      preguntas
+      frecuentes, mostrar varios menús y submenús, mostrar las ubicaciones de una empresa en particular,
+      etc.
+    </p>
+  </header>
+
+  <section id="acordion-simple">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Acordeón simple</h2>
+        <p class="mb-8 text-gray-600 text-md">Se puede utilizar íconos personalizados para el elemento
+          disparador del acordeón y, mediante el selector <code>group-open</code> de
+          atributos en Tailwind CSS, puede controlar el ícono para los estados abierto y cerrado del
+          acordeón.</p>
+
+        <div>
+
+          <!-- COMPONENTE: Acordeón -->
+          <div>
+
+            <cygnus-accordion [accordionTitle]="'Acordeón #1'" >
+              HOLI Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
+              reiciendis voluptates repellendus, eum sunt architecto quam praesentium?
+              Nesciunt velit consequatur reiciendis expedita natus, hic veniam quisquam quam
+              dolorum.
+            </cygnus-accordion>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

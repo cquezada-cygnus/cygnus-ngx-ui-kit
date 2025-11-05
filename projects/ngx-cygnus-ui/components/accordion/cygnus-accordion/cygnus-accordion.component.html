@@ -1,0 +1,24 @@
+<div class="border-b border-gray-200">
+  <button (click)="toggleAccordion()"
+    class="flex items-center justify-between w-full py-5 text-gray-800">
+    <span>{{accordionTitle()}}</span>
+    <span [class]="'text-gray-800 transition-transform duration-300 ' + (contentShow() ? 'rotate-180' : '')">
+      <lib-ngx-cygnus-icons [class]="'w-6 h-6'"
+        [width]="'1.5rem'"
+        [height]="'1.5rem'"
+        [color]="'#1e2939'"
+        [route]="'assets/icons/backups/chevron-down.svg'"
+      />
+    </span>
+  </button>
+  <div
+    #accordionContent
+    [class]="
+      'overflow-hidden transition-all duration-300 ease-in-out max-h-0' + ' ' +
+      (contentShow() ? 'max-h-fit' : 'max-h-0' )
+    "
+  >
+    <ng-content></ng-content>
+  </div>
+</div>
+

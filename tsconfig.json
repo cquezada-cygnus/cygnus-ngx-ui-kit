@@ -133,6 +133,12 @@
       "ngx-cygnus-ui/components/textarea": [
         "./projects/ngx-cygnus-ui/components/textarea",
       ],
+      "ngx-cygnus-ui/components/accordion/*": [
+        "./projects/ngx-cygnus-ui/components/accordion/*",
+      ],
+      "ngx-cygnus-ui/components/accordion": [
+        "./projects/ngx-cygnus-ui/components/accordion",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],
