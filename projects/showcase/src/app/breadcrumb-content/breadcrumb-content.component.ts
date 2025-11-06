@@ -24,4 +24,13 @@ export class BreadcrumbContentComponent {
     {itemText: 'Aplicaciones', iconAssetText: '', routerLinkText: './', },
   ];
 
+  basicItemsDropdownMenuArr: BreadcrumbItem[] = [
+    {itemText: 'Inicio', iconAssetText: '', routerLinkText: './', notDropdownLeft: true },
+    {itemText: 'Centro de aplicaciones', iconAssetText: '', routerLinkText: './', dropdownMenu: true },
+    {itemText: 'Perritos', iconAssetText: '', routerLinkText: './', dropdownMenu: true  },
+    {itemText: 'Gatitos', iconAssetText: '', routerLinkText: './', dropdownMenu: true  },
+    {itemText: 'Marisopas', iconAssetText: '', routerLinkText: './', dropdownMenu: true  },
+    {itemText: 'Aplicaciones', iconAssetText: '', routerLinkText: './', notDropdownRight: true },
+  ];
+
 }

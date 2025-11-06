@@ -1,4 +1,5 @@
 import { Component, HostListener, input, OnInit, signal } from '@angular/core';
+import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 import { DropdownItemType } from 'ngx-cygnus-ui/types';
 import { DropdownItemData } from 'ngx-cygnus-ui/interfaces';
@@ -8,6 +9,7 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'cygnus-dropdown',
   imports: [
+    NgxCygnusIconsComponent,
     CygnusButtonComponent,
     CygnusDrowpdownItemComponent,
   ],
@@ -24,6 +26,8 @@ export class CygnusDropdownComponent implements OnInit {
   dropdownItemDataArr = input<DropdownItemData[]>([]);
   dropdownClosed = signal<boolean>(true);
 
+  iconBGColor = signal<string>('#344054');
+
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.dropdownId.set(`cg-dropdown-${++CygnusDropdownComponent.idCounter}`);
@@ -31,6 +35,15 @@ export class CygnusDropdownComponent implements OnInit {
 
   toggleDropdown() {
     this.dropdownClosed.update( current => !current );
+
+  }
+
+  iconColorOnMouseEnter() {
+    this.iconBGColor.set('#1447e6'); // azul
+  }
+
+  iconColorOnMouseLeave() {
+    this.iconBGColor.set('#344054'); // gris oscuro
   }
 
   @HostListener('document:click', ['$event'])

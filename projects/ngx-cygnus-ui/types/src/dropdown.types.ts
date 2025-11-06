@@ -1,1 +1,1 @@
-export type DropdownItemType = "simple" | "radiobutton" | "iconText" | "close";
+export type DropdownItemType = "simple" | "radiobutton" | "iconText" | "close" | "breadcrumb";
