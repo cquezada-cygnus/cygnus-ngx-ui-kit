@@ -1,4 +1,6 @@
 export interface Tab {
-  routerLinkText: string,
+  routerLinkText?: string,
   option: string,
+  iconAsset?: string,
+  tabInnerHTML?: string,
 }
