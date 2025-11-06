@@ -1,0 +1,28 @@
+<div class="grid w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible">
+
+  <div class="w-full">
+    <div class="relative right-0">
+      <ul class="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-slate-100" >
+
+        <div id="js-pointer" class="nav__pointer"></div>
+
+        @for (tab of tabsArr(); track $index; let i = $index;) {
+          <li
+            [class]="
+              'z-30 flex-auto text-center  transition-colors duration-800 ease-in-out ' +
+              ( currentTab()===i ? 'bg-white rounded-md shadow-md' : '')
+            "
+            (click)="changeCurrentTab(i)"
+          >
+            <a class="z-30 flex items-center justify-center w-full px-0 py-2 mb-0 text-sm transition-all ease-in-out border-0 rounded-md cursor-pointer text-slate-600 bg-inherit"
+                [routerLink]="tab.routerLinkText">
+                {{tab.option}}
+            </a>
+          </li>
+        }
+
+      </ul>
+    </div>
+  </div>
+
+</div>

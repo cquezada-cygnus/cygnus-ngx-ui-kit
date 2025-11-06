@@ -145,6 +145,12 @@
       "ngx-cygnus-ui/components/breadcrumb": [
         "./projects/ngx-cygnus-ui/components/breadcrumb",
       ],
+      "ngx-cygnus-ui/components/tabs/*": [
+        "./projects/ngx-cygnus-ui/components/tabs/*",
+      ],
+      "ngx-cygnus-ui/components/tabs": [
+        "./projects/ngx-cygnus-ui/components/tabs",
+      ],
       "ngx-cygnus-ui/pages/cygnus-login-01/*": [
         "./projects/ngx-cygnus-ui/pages/cygnus-login-01/*",
       ],
