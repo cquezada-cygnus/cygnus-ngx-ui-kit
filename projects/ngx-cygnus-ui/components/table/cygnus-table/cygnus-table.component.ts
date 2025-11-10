@@ -56,7 +56,6 @@ export class CygnusTableComponent implements OnInit {
   }
 
   setCheckAll(value: boolean) {
-    console.log('setCheckAll value: ', value);
     this.checkAll.set(value);
   }
 
@@ -64,9 +63,6 @@ export class CygnusTableComponent implements OnInit {
     const copyTable = this.tableItems();
     copyTable[index].isChecked = checkValue;
     this.tableItems.set(copyTable);
-    console.log(`checkData index: ${index}, checkValue: ${checkValue} `);
-    console.log(`checkData copyTable: ${copyTable}`);
-    console.log(`checkData this.tableItems: ${this.tableItems()}`);
 
   }
 

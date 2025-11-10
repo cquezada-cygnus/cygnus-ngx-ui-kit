@@ -1,0 +1,2058 @@
+[
+  {
+    "cli_autoid": 1,
+    "NOMBRES": "CRISTIAN",
+    "APELLIDOS": "CONTRERAS",
+    "RUT": "183379519",
+    "TELEFONO": "935454113",
+    "EMAIL": "cristian.contreras@cygnus.cl"
+  },
+  {
+    "cli_autoid": 207,
+    "NOMBRES": "Abimael",
+    "APELLIDOS": "Subero",
+    "RUT": "",
+    "TELEFONO": "",
+    "EMAIL": "abimael@insaitas.com"
+  },
+  {
+    "cli_autoid": 208,
+    "NOMBRES": "Abner",
+    "APELLIDOS": "Sebick",
+    "RUT": "182223174",
+    "TELEFONO": "",
+    "EMAIL": "Abner.Sebick.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 209,
+    "NOMBRES": "Abraham",
+    "APELLIDOS": "Tello",
+    "RUT": "174906874",
+    "TELEFONO": "56956288656",
+    "EMAIL": "abraham.tello.avila@gmail.com"
+  },
+  {
+    "cli_autoid": 210,
+    "NOMBRES": "Adam",
+    "APELLIDOS": "Simmons",
+    "RUT": "AL393496",
+    "TELEFONO": "16478594046",
+    "EMAIL": "adam@fusion-collective.com"
+  },
+  {
+    "cli_autoid": 211,
+    "NOMBRES": "Alejandro",
+    "APELLIDOS": "Gutierrez",
+    "RUT": "56659562",
+    "TELEFONO": "12865542559",
+    "EMAIL": "agutil899@gmail.com"
+  },
+  {
+    "cli_autoid": 212,
+    "NOMBRES": "Alberto",
+    "APELLIDOS": "Medina",
+    "RUT": "270777228",
+    "TELEFONO": "56932670400",
+    "EMAIL": "albertmedina1987@gmail.com"
+  },
+  {
+    "cli_autoid": 213,
+    "NOMBRES": "Alessandra",
+    "APELLIDOS": "Sánchez",
+    "RUT": "248352876",
+    "TELEFONO": "56942694959",
+    "EMAIL": "alessandrasanchez@gmail.com"
+  },
+  {
+    "cli_autoid": 214,
+    "NOMBRES": "Daniella",
+    "APELLIDOS": "Muñoz Basualto",
+    "RUT": "210516603",
+    "TELEFONO": "56958286552",
+    "EMAIL": "algodesarai@gmail.com"
+  },
+  {
+    "cli_autoid": 215,
+    "NOMBRES": "Alicia",
+    "APELLIDOS": "Olivari",
+    "RUT": "138311546",
+    "TELEFONO": "56951255862",
+    "EMAIL": "Alicia.Olivari.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 216,
+    "NOMBRES": "Andres",
+    "APELLIDOS": "Calderon",
+    "RUT": "281045199",
+    "TELEFONO": "56978390258",
+    "EMAIL": "andcalderon@gmail.com"
+  },
+  {
+    "cli_autoid": 217,
+    "NOMBRES": "Andrés",
+    "APELLIDOS": "Jorquera",
+    "RUT": "11100725M",
+    "TELEFONO": "34657712242",
+    "EMAIL": "Andrés.Jorquera.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 218,
+    "NOMBRES": "Andrés",
+    "APELLIDOS": "Pino",
+    "RUT": "208284762",
+    "TELEFONO": "56990800879",
+    "EMAIL": "Andrés.Pino.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 219,
+    "NOMBRES": "Angelina",
+    "APELLIDOS": "Sepúlveda",
+    "RUT": "16382377k",
+    "TELEFONO": "56966883464",
+    "EMAIL": "angelica.sepulveda@citic.cl"
+  },
+  {
+    "cli_autoid": 220,
+    "NOMBRES": "Antonia",
+    "APELLIDOS": "Roselló",
+    "RUT": "169379416",
+    "TELEFONO": "56982783853",
+    "EMAIL": "Antonia.Roselló.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 221,
+    "NOMBRES": "Antonio",
+    "APELLIDOS": "Maldonado",
+    "RUT": "168881878",
+    "TELEFONO": "56983402882",
+    "EMAIL": "antonio@agenciafi.cl"
+  },
+  {
+    "cli_autoid": 222,
+    "NOMBRES": "Avelio",
+    "APELLIDOS": "Sepúlveda",
+    "RUT": "177755281",
+    "TELEFONO": "56957826769",
+    "EMAIL": "aveliose@gmail.com"
+  },
+  {
+    "cli_autoid": 223,
+    "NOMBRES": "Barbara",
+    "APELLIDOS": "Negrón",
+    "RUT": "761339443",
+    "TELEFONO": "",
+    "EMAIL": "barbaranegronm@gmail.com"
+  },
+  {
+    "cli_autoid": 224,
+    "NOMBRES": "Mauricio",
+    "APELLIDOS": "Beiza",
+    "RUT": "175175806",
+    "TELEFONO": "56988054849",
+    "EMAIL": "beizakay@gmail.com"
+  },
+  {
+    "cli_autoid": 225,
+    "NOMBRES": "Benjamín",
+    "APELLIDOS": "Fernandez",
+    "RUT": "197857420",
+    "TELEFONO": "56976794423",
+    "EMAIL": "Benjamín.Fernandez.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 226,
+    "NOMBRES": "Bastián",
+    "APELLIDOS": "Maldonado García",
+    "RUT": "177743593",
+    "TELEFONO": "56956672648",
+    "EMAIL": "bmg.tdm@gmail.com"
+  },
+  {
+    "cli_autoid": 227,
+    "NOMBRES": "Bover",
+    "APELLIDOS": "Li",
+    "RUT": "EM1444397",
+    "TELEFONO": "56983609470",
+    "EMAIL": "Bover.Li.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 228,
+    "NOMBRES": "Brayan",
+    "APELLIDOS": "0",
+    "RUT": "195645957",
+    "TELEFONO": "56934232560",
+    "EMAIL": "brayan@obolochocolate.cl"
+  },
+  {
+    "cli_autoid": 229,
+    "NOMBRES": "Brenda",
+    "APELLIDOS": "Padilla",
+    "RUT": "71942969",
+    "TELEFONO": "56936467091",
+    "EMAIL": "brendapadillac.15@gmail.com"
+  },
+  {
+    "cli_autoid": 230,
+    "NOMBRES": "Buzz",
+    "APELLIDOS": "Piece",
+    "RUT": "7418236",
+    "TELEFONO": "13108067089",
+    "EMAIL": "Buzz.Piece.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 231,
+    "NOMBRES": "Chin",
+    "APELLIDOS": "Dou",
+    "RUT": "249567795",
+    "TELEFONO": "56951284534",
+    "EMAIL": "c_dou@hotmail.com"
+  },
+  {
+    "cli_autoid": 232,
+    "NOMBRES": "Camila",
+    "APELLIDOS": "Huencho",
+    "RUT": "174860211",
+    "TELEFONO": "56934874498",
+    "EMAIL": "camihuencho@gmai.com"
+  },
+  {
+    "cli_autoid": 233,
+    "NOMBRES": "Camila",
+    "APELLIDOS": "Cataldo",
+    "RUT": "179225508",
+    "TELEFONO": "",
+    "EMAIL": "camila.cataldo@drap.cl"
+  },
+  {
+    "cli_autoid": 234,
+    "NOMBRES": "Camila",
+    "APELLIDOS": "Rivera",
+    "RUT": "168625707",
+    "TELEFONO": "56987086527",
+    "EMAIL": "Camila.Rivera.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 235,
+    "NOMBRES": "Camila",
+    "APELLIDOS": "Undurraga",
+    "RUT": "156392774",
+    "TELEFONO": "56994389773",
+    "EMAIL": "Camila.Undurraga.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 236,
+    "NOMBRES": "Camila",
+    "APELLIDOS": "González",
+    "RUT": "189931539",
+    "TELEFONO": "56950634761",
+    "EMAIL": "camilag@gdschile.org"
+  },
+  {
+    "cli_autoid": 237,
+    "NOMBRES": "Camila",
+    "APELLIDOS": "Roa",
+    "RUT": "193507425",
+    "TELEFONO": "56949986323",
+    "EMAIL": "camilarm@gmail.com"
+  },
+  {
+    "cli_autoid": 238,
+    "NOMBRES": "Camilo",
+    "APELLIDOS": "Carreño",
+    "RUT": "16768856k",
+    "TELEFONO": "56995142731",
+    "EMAIL": "Camilo.Carreño.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 239,
+    "NOMBRES": "Carla",
+    "APELLIDOS": "Vásquez",
+    "RUT": "168399375",
+    "TELEFONO": "56965831947",
+    "EMAIL": "Carla.Vásquez.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 240,
+    "NOMBRES": "Carlos",
+    "APELLIDOS": "Barra",
+    "RUT": "154908455",
+    "TELEFONO": "56998270262",
+    "EMAIL": "carlos.barra@perfawere.com"
+  },
+  {
+    "cli_autoid": 241,
+    "NOMBRES": "Carlos",
+    "APELLIDOS": "Martinez",
+    "RUT": "259992265",
+    "TELEFONO": "56939319040",
+    "EMAIL": "carlosrmd94@gmail.com"
+  },
+  {
+    "cli_autoid": 242,
+    "NOMBRES": "Carola",
+    "APELLIDOS": "Santana",
+    "RUT": "133233806",
+    "TELEFONO": "",
+    "EMAIL": "carolasantanao@gmail.com"
+  },
+  {
+    "cli_autoid": 243,
+    "NOMBRES": "Carolina",
+    "APELLIDOS": "Díaz",
+    "RUT": "141460501",
+    "TELEFONO": "",
+    "EMAIL": "carolina.diaz11@gmail.com"
+  },
+  {
+    "cli_autoid": 244,
+    "NOMBRES": "Carolina",
+    "APELLIDOS": "Ortega",
+    "RUT": "211513357",
+    "TELEFONO": "56977692425",
+    "EMAIL": "carolina.ortega@gmail.com"
+  },
+  {
+    "cli_autoid": 245,
+    "NOMBRES": "Carolina",
+    "APELLIDOS": "Rojas",
+    "RUT": "203487274",
+    "TELEFONO": "56961212140",
+    "EMAIL": "Carolina.Rojas.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 246,
+    "NOMBRES": "Constanza",
+    "APELLIDOS": "Gómez",
+    "RUT": "198375144",
+    "TELEFONO": "56992254199",
+    "EMAIL": "cgomez@masdoyv.cl"
+  },
+  {
+    "cli_autoid": 247,
+    "NOMBRES": "Christian",
+    "APELLIDOS": "Belmar",
+    "RUT": "85333682",
+    "TELEFONO": "56932662027",
+    "EMAIL": "christian@gdschile.org"
+  },
+  {
+    "cli_autoid": 248,
+    "NOMBRES": "Claudia",
+    "APELLIDOS": "Alvarado",
+    "RUT": "169643431",
+    "TELEFONO": "56991415513",
+    "EMAIL": "clau.alvarado.v@gmail.com"
+  },
+  {
+    "cli_autoid": 249,
+    "NOMBRES": "Claudia",
+    "APELLIDOS": "Arias",
+    "RUT": "164763706",
+    "TELEFONO": "56940408186",
+    "EMAIL": "Claudia.Arias.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 250,
+    "NOMBRES": "Claudia",
+    "APELLIDOS": "Espinoza",
+    "RUT": "163121158",
+    "TELEFONO": "3228835944",
+    "EMAIL": "Claudia.Espinoza.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 251,
+    "NOMBRES": "Claudia",
+    "APELLIDOS": "Sánchez",
+    "RUT": "186658604",
+    "TELEFONO": "56973715442",
+    "EMAIL": "claudia.sanchez@umce.cl"
+  },
+  {
+    "cli_autoid": 252,
+    "NOMBRES": "Claudio",
+    "APELLIDOS": "Ortíz",
+    "RUT": "185706192",
+    "TELEFONO": "56973405872",
+    "EMAIL": "Claudio.Ortíz.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 253,
+    "NOMBRES": "Comado",
+    "APELLIDOS": "Sanami",
+    "RUT": "YA205723",
+    "TELEFONO": "41791285888",
+    "EMAIL": "Comado.Sanami.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 254,
+    "NOMBRES": "Constanza",
+    "APELLIDOS": "Echeverría",
+    "RUT": "184084538",
+    "TELEFONO": "56997979430",
+    "EMAIL": "Constanza.Echeverría.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 255,
+    "NOMBRES": "Constanza",
+    "APELLIDOS": "Reyes",
+    "RUT": "177815446",
+    "TELEFONO": "56932821091",
+    "EMAIL": "cony.reyeso@gmail.com"
+  },
+  {
+    "cli_autoid": 256,
+    "NOMBRES": "Constanza",
+    "APELLIDOS": "López",
+    "RUT": "181689307",
+    "TELEFONO": "56939553145",
+    "EMAIL": "conyerba2019@gmail.com"
+  },
+  {
+    "cli_autoid": 257,
+    "NOMBRES": "Crhistian",
+    "APELLIDOS": "Zamorano",
+    "RUT": "202422489",
+    "TELEFONO": "56945122899",
+    "EMAIL": "Crhistian.Zamorano.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 258,
+    "NOMBRES": "Cristofer",
+    "APELLIDOS": "Cepeda García",
+    "RUT": "174385017",
+    "TELEFONO": "56931230942",
+    "EMAIL": "cristofer.cepeda.garcia@gmail.com"
+  },
+  {
+    "cli_autoid": 259,
+    "NOMBRES": "Catalina",
+    "APELLIDOS": "Saldivia",
+    "RUT": "176032685",
+    "TELEFONO": "56944927980",
+    "EMAIL": "csaldivialagos@gmail.com"
+  },
+  {
+    "cli_autoid": 260,
+    "NOMBRES": "Daisy",
+    "APELLIDOS": "Seguel",
+    "RUT": "197532610",
+    "TELEFONO": "56958924727",
+    "EMAIL": "daisy@agenciafi.cl"
+  },
+  {
+    "cli_autoid": 261,
+    "NOMBRES": "Danal",
+    "APELLIDOS": "Estrada",
+    "RUT": "254546054",
+    "TELEFONO": "56964367711",
+    "EMAIL": "danalreynaldo.endis@gmail.com"
+  },
+  {
+    "cli_autoid": 262,
+    "NOMBRES": "Daniela",
+    "APELLIDOS": "Rosales",
+    "RUT": "173255934",
+    "TELEFONO": "56988235075",
+    "EMAIL": "dani.rosales.m@gmail.com"
+  },
+  {
+    "cli_autoid": 263,
+    "NOMBRES": "Daniel",
+    "APELLIDOS": "Muñoz",
+    "RUT": "159296938",
+    "TELEFONO": "56961564099",
+    "EMAIL": "Daniel.Muñoz.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 264,
+    "NOMBRES": "Daniela",
+    "APELLIDOS": "Cespedes",
+    "RUT": "178373757",
+    "TELEFONO": "56996512728",
+    "EMAIL": "Daniela.Cespedes.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 265,
+    "NOMBRES": "Daniela",
+    "APELLIDOS": "Carrasco",
+    "RUT": "197007281",
+    "TELEFONO": "56966506589",
+    "EMAIL": "daniela@agenciafi.cl"
+  },
+  {
+    "cli_autoid": 266,
+    "NOMBRES": "Daniela",
+    "APELLIDOS": "Paz",
+    "RUT": "170889479",
+    "TELEFONO": "56979474355",
+    "EMAIL": "daniela@gdschile.org"
+  },
+  {
+    "cli_autoid": 267,
+    "NOMBRES": "Daniela",
+    "APELLIDOS": "Peña Corvillon",
+    "RUT": "153144974",
+    "TELEFONO": "15109265878",
+    "EMAIL": "daniela@wildlandarch.com"
+  },
+  {
+    "cli_autoid": 268,
+    "NOMBRES": "Daniella",
+    "APELLIDOS": "Bravari",
+    "RUT": "215912809",
+    "TELEFONO": "",
+    "EMAIL": "Daniella.Bravari.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 269,
+    "NOMBRES": "Daniel",
+    "APELLIDOS": "Paez",
+    "RUT": "101902631",
+    "TELEFONO": "",
+    "EMAIL": "danielpl@gmail.com"
+  },
+  {
+    "cli_autoid": 270,
+    "NOMBRES": "Danilo",
+    "APELLIDOS": "Urbina",
+    "RUT": "165584104",
+    "TELEFONO": "56983148749",
+    "EMAIL": "Danilo.Urbina.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 271,
+    "NOMBRES": "Dario",
+    "APELLIDOS": "Martinez",
+    "RUT": "178118951",
+    "TELEFONO": "",
+    "EMAIL": "dariomartinez.dg@gmail.com"
+  },
+  {
+    "cli_autoid": 272,
+    "NOMBRES": "Daniela",
+    "APELLIDOS": "Bravo Tapia",
+    "RUT": "153423458",
+    "TELEFONO": "56999278398",
+    "EMAIL": "dbravo@insaitas.com"
+  },
+  {
+    "cli_autoid": 273,
+    "NOMBRES": "Dean",
+    "APELLIDOS": "Curry",
+    "RUT": "149882625",
+    "TELEFONO": "34673952986",
+    "EMAIL": "Dean.Curry.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 274,
+    "NOMBRES": "Diego",
+    "APELLIDOS": "Zuleta Brune",
+    "RUT": "178659855",
+    "TELEFONO": "56993087584",
+    "EMAIL": "Diego.Zuleta Brune.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 275,
+    "NOMBRES": "Diego",
+    "APELLIDOS": "Escobar",
+    "RUT": "174044341",
+    "TELEFONO": "13126785684",
+    "EMAIL": "diegoes@hotmail.com"
+  },
+  {
+    "cli_autoid": 276,
+    "NOMBRES": "Diego",
+    "APELLIDOS": "González",
+    "RUT": "172047394",
+    "TELEFONO": "56982986075",
+    "EMAIL": "diegog@utlego.cl"
+  },
+  {
+    "cli_autoid": 277,
+    "NOMBRES": "Jeremy",
+    "APELLIDOS": "Allen",
+    "RUT": "PP2058254",
+    "TELEFONO": "7798979279",
+    "EMAIL": "djeremi@gmail.com"
+  },
+  {
+    "cli_autoid": 278,
+    "NOMBRES": "Andy",
+    "APELLIDOS": "Pacheco",
+    "RUT": "254687650",
+    "TELEFONO": "56999442610",
+    "EMAIL": "don70ceo@gmail.com"
+  },
+  {
+    "cli_autoid": 279,
+    "NOMBRES": "Diego",
+    "APELLIDOS": "Pérez Pérez",
+    "RUT": "163617145",
+    "TELEFONO": "56983609470",
+    "EMAIL": "dperez@gmail.com"
+  },
+  {
+    "cli_autoid": 280,
+    "NOMBRES": "Daniela",
+    "APELLIDOS": "López",
+    "RUT": "187369681",
+    "TELEFONO": "56957826769",
+    "EMAIL": "dtlopez@uc.lc"
+  },
+  {
+    "cli_autoid": 281,
+    "NOMBRES": "Danitza",
+    "APELLIDOS": "Jerez",
+    "RUT": "108924888",
+    "TELEFONO": "56991612534",
+    "EMAIL": "dyepez@masdayv.cl"
+  },
+  {
+    "cli_autoid": 282,
+    "NOMBRES": "Eduardo",
+    "APELLIDOS": "Ramirez",
+    "RUT": "12141516k",
+    "TELEFONO": "56984180633",
+    "EMAIL": "eduardoramirezabogado@gmail.com"
+  },
+  {
+    "cli_autoid": 283,
+    "NOMBRES": "Enzo",
+    "APELLIDOS": "Mariben",
+    "RUT": "19727607k",
+    "TELEFONO": "56967596293",
+    "EMAIL": "emaiben@morrisonpato.com"
+  },
+  {
+    "cli_autoid": 284,
+    "NOMBRES": "Eduardo",
+    "APELLIDOS": "Rey Pizarro",
+    "RUT": "162265865",
+    "TELEFONO": "56984725106",
+    "EMAIL": "epizarrorey@gmail.com"
+  },
+  {
+    "cli_autoid": 285,
+    "NOMBRES": "Estefania",
+    "APELLIDOS": "Castellano",
+    "RUT": "272022062",
+    "TELEFONO": "56949665935",
+    "EMAIL": "estefaniacastellanov@gmail.com"
+  },
+  {
+    "cli_autoid": 286,
+    "NOMBRES": "Falón",
+    "APELLIDOS": "Equis",
+    "RUT": "46039686",
+    "TELEFONO": "56975781258",
+    "EMAIL": "Falón.Equis.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 287,
+    "NOMBRES": "Faviana",
+    "APELLIDOS": "Espina Aldana",
+    "RUT": "262237788",
+    "TELEFONO": "56964367711",
+    "EMAIL": "favianareynaldo.endis@gmail.com"
+  },
+  {
+    "cli_autoid": 288,
+    "NOMBRES": "Francisco",
+    "APELLIDOS": "Cabezas",
+    "RUT": "154496335",
+    "TELEFONO": "56945992343",
+    "EMAIL": "fco.cabezar@gmail.com"
+  },
+  {
+    "cli_autoid": 289,
+    "NOMBRES": "Francisco",
+    "APELLIDOS": "Cordero",
+    "RUT": "199019708",
+    "TELEFONO": "56990711554",
+    "EMAIL": "fco.cordero98@gmail.com"
+  },
+  {
+    "cli_autoid": 290,
+    "NOMBRES": "Fernanda",
+    "APELLIDOS": "Figueroa",
+    "RUT": "274316640",
+    "TELEFONO": "",
+    "EMAIL": "Fernanda.Figueroa.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 291,
+    "NOMBRES": "Fernanda",
+    "APELLIDOS": "Ferrada",
+    "RUT": "187685559",
+    "TELEFONO": "56962695273",
+    "EMAIL": "fernandaf@gdschile.org"
+  },
+  {
+    "cli_autoid": 292,
+    "NOMBRES": "Fernando",
+    "APELLIDOS": "Leiva",
+    "RUT": "20744900k",
+    "TELEFONO": "56956069932",
+    "EMAIL": "Fernando.Leiva.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 293,
+    "NOMBRES": "Francisco",
+    "APELLIDOS": "Pinto",
+    "RUT": "13231859k",
+    "TELEFONO": "",
+    "EMAIL": "fjpintop@gmail.com"
+  },
+  {
+    "cli_autoid": 294,
+    "NOMBRES": "Florencia",
+    "APELLIDOS": "Suarez",
+    "RUT": "18216044k",
+    "TELEFONO": "56967111974",
+    "EMAIL": "florencia.paix@gmail.com"
+  },
+  {
+    "cli_autoid": 295,
+    "NOMBRES": "Francisca",
+    "APELLIDOS": "Julve Vidal",
+    "RUT": "159330397",
+    "TELEFONO": "56999611546",
+    "EMAIL": "francisca.julve@gmail.com"
+  },
+  {
+    "cli_autoid": 296,
+    "NOMBRES": "Francisca",
+    "APELLIDOS": "Garrido",
+    "RUT": "156588599",
+    "TELEFONO": "56991598794",
+    "EMAIL": "francisca@agenciafi.cl"
+  },
+  {
+    "cli_autoid": 297,
+    "NOMBRES": "Francisca",
+    "APELLIDOS": "Rojas Pizarro",
+    "RUT": "166603765",
+    "TELEFONO": "56999782248",
+    "EMAIL": "franciscarojaspizarro@gmail.com"
+  },
+  {
+    "cli_autoid": 298,
+    "NOMBRES": "Francisco",
+    "APELLIDOS": "Jhonson",
+    "RUT": "165735862",
+    "TELEFONO": "56957896191",
+    "EMAIL": "Francisco.Jhonson.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 299,
+    "NOMBRES": "Francisco",
+    "APELLIDOS": "Díaz",
+    "RUT": "194908229",
+    "TELEFONO": "56999689513",
+    "EMAIL": "franciscodiaz.97@outloook.com"
+  },
+  {
+    "cli_autoid": 300,
+    "NOMBRES": "Frederick",
+    "APELLIDOS": "Chacal",
+    "RUT": "254194913",
+    "TELEFONO": "56989690037",
+    "EMAIL": "frederickjcc@gmail.com"
+  },
+  {
+    "cli_autoid": 301,
+    "NOMBRES": "Gloria",
+    "APELLIDOS": "Garrido",
+    "RUT": "93564774",
+    "TELEFONO": "56983825057",
+    "EMAIL": "Gloria.Garrido.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 302,
+    "NOMBRES": "Geraldine",
+    "APELLIDOS": "Monsalve",
+    "RUT": "172528090",
+    "TELEFONO": "",
+    "EMAIL": "gmmp17@live.com"
+  },
+  {
+    "cli_autoid": 303,
+    "NOMBRES": "Gonzalo",
+    "APELLIDOS": "González",
+    "RUT": "163669522",
+    "TELEFONO": "56979994415",
+    "EMAIL": "Gonzalo.González.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 304,
+    "NOMBRES": "Gonzalo",
+    "APELLIDOS": "Galleguillos",
+    "RUT": "169268867",
+    "TELEFONO": "",
+    "EMAIL": "gonzalo.m.galleguillos"
+  },
+  {
+    "cli_autoid": 305,
+    "NOMBRES": "Gonzalo",
+    "APELLIDOS": "Monrado",
+    "RUT": "159924025",
+    "TELEFONO": "56963533830",
+    "EMAIL": "Gonzalo.Monrado.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 306,
+    "NOMBRES": "Ignacio",
+    "APELLIDOS": "Meneses",
+    "RUT": "186699343",
+    "TELEFONO": "56975550335",
+    "EMAIL": "igna@wildlandarch.com"
+  },
+  {
+    "cli_autoid": 307,
+    "NOMBRES": "Ignacio",
+    "APELLIDOS": "Haro",
+    "RUT": "210425683",
+    "TELEFONO": "56961203162",
+    "EMAIL": "Ignacio.Haro.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 308,
+    "NOMBRES": "Francisca",
+    "APELLIDOS": "de Capeyra",
+    "RUT": "20589862k",
+    "TELEFONO": "56968201817",
+    "EMAIL": "innovacionsocial@gdschile.org"
+  },
+  {
+    "cli_autoid": 309,
+    "NOMBRES": "Isidora",
+    "APELLIDOS": "Pinochet",
+    "RUT": "20305825k",
+    "TELEFONO": "56949001181",
+    "EMAIL": "isidorapvenegas@gmail.com"
+  },
+  {
+    "cli_autoid": 310,
+    "NOMBRES": "Javiera",
+    "APELLIDOS": "Aguilera",
+    "RUT": "153751498",
+    "TELEFONO": "56995990029",
+    "EMAIL": "javiera.aguilera1@gmail.com"
+  },
+  {
+    "cli_autoid": 311,
+    "NOMBRES": "Jean",
+    "APELLIDOS": "Guiao",
+    "RUT": "p74219871",
+    "TELEFONO": "56996721082",
+    "EMAIL": "Jean.Guiao.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 312,
+    "NOMBRES": "Jesús",
+    "APELLIDOS": "Ugarte",
+    "RUT": "261846578",
+    "TELEFONO": "56989399327",
+    "EMAIL": "Jesús.Ugarte.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 313,
+    "NOMBRES": "James",
+    "APELLIDOS": "Darnbrook",
+    "RUT": "284035410",
+    "TELEFONO": "56991567934",
+    "EMAIL": "jgdarnbrook@gmail.com"
+  },
+  {
+    "cli_autoid": 314,
+    "NOMBRES": "Juan José",
+    "APELLIDOS": "Lagos",
+    "RUT": "187667623",
+    "TELEFONO": "56961258419",
+    "EMAIL": "jjlagosp@gmail.com"
+  },
+  {
+    "cli_autoid": 315,
+    "NOMBRES": "Juan Jose",
+    "APELLIDOS": "0",
+    "RUT": "187308241",
+    "TELEFONO": "56987299156",
+    "EMAIL": "jjosenicolaspalomor@gmail.com"
+  },
+  {
+    "cli_autoid": 316,
+    "NOMBRES": "Jorge",
+    "APELLIDOS": "Cortes Rodriguez",
+    "RUT": "141179926",
+    "TELEFONO": "56973766045",
+    "EMAIL": "Jorge.Cortes Rodriguez.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 317,
+    "NOMBRES": "Patricia",
+    "APELLIDOS": "Martinez",
+    "RUT": "204030146",
+    "TELEFONO": "56950199405",
+    "EMAIL": "jorsette.patricia@gmail.com"
+  },
+  {
+    "cli_autoid": 318,
+    "NOMBRES": "José",
+    "APELLIDOS": "Cañas",
+    "RUT": "102932226",
+    "TELEFONO": "56979583894",
+    "EMAIL": "José.Cañas.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 319,
+    "NOMBRES": "Juan Pablo",
+    "APELLIDOS": "Urrutia",
+    "RUT": "103573222",
+    "TELEFONO": "56999333282",
+    "EMAIL": "juanpablo.urrutia.l@gmail.com"
+  },
+  {
+    "cli_autoid": 320,
+    "NOMBRES": "Julio",
+    "APELLIDOS": "Calderon",
+    "RUT": "272100896",
+    "TELEFONO": "56982723244",
+    "EMAIL": "julio.calderon@gmail.com"
+  },
+  {
+    "cli_autoid": 321,
+    "NOMBRES": "Esteban",
+    "APELLIDOS": "Jara Carvallo",
+    "RUT": "187828619",
+    "TELEFONO": "56953333971",
+    "EMAIL": "k.ejara@gmail.com"
+  },
+  {
+    "cli_autoid": 322,
+    "NOMBRES": "Katherine",
+    "APELLIDOS": "Flores",
+    "RUT": "184817276",
+    "TELEFONO": "56978936339",
+    "EMAIL": "Katherine.Flores.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 323,
+    "NOMBRES": "María José",
+    "APELLIDOS": "Bravo",
+    "RUT": "158023717",
+    "TELEFONO": "56994690277",
+    "EMAIL": "kote.bravo@gmail.com"
+  },
+  {
+    "cli_autoid": 324,
+    "NOMBRES": "Leonardo",
+    "APELLIDOS": "Balleteros",
+    "RUT": "128787308",
+    "TELEFONO": "56982391570",
+    "EMAIL": "lballesterosm@hotmail.com"
+  },
+  {
+    "cli_autoid": 325,
+    "NOMBRES": "Lisette",
+    "APELLIDOS": "Rodriguez",
+    "RUT": "254069108",
+    "TELEFONO": "56951878844",
+    "EMAIL": "lisette.andreinar@gmail.com"
+  },
+  {
+    "cli_autoid": 326,
+    "NOMBRES": "Lizeth",
+    "APELLIDOS": "Laguna",
+    "RUT": "259989647",
+    "TELEFONO": "56935735611",
+    "EMAIL": "lizethlaguna@gmail.com"
+  },
+  {
+    "cli_autoid": 327,
+    "NOMBRES": "Laura",
+    "APELLIDOS": "Rivadeneira",
+    "RUT": "198298018",
+    "TELEFONO": "56990515811",
+    "EMAIL": "lrivadeneirasilva@gmail.com"
+  },
+  {
+    "cli_autoid": 328,
+    "NOMBRES": "Luis",
+    "APELLIDOS": "Garrido",
+    "RUT": "156423777",
+    "TELEFONO": "56995235120",
+    "EMAIL": "luis.garrido.v@gobierno.uchile.cl"
+  },
+  {
+    "cli_autoid": 329,
+    "NOMBRES": "Felipe",
+    "APELLIDOS": "Castillo",
+    "RUT": "239153321",
+    "TELEFONO": "56973719471",
+    "EMAIL": "luisfcastillo@gmail.com"
+  },
+  {
+    "cli_autoid": 330,
+    "NOMBRES": "Luz Maria",
+    "APELLIDOS": "Véliz",
+    "RUT": "177047295",
+    "TELEFONO": "56934392395",
+    "EMAIL": "Luz Maria.Véliz.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 331,
+    "NOMBRES": "Luz",
+    "APELLIDOS": "Sierra",
+    "RUT": "267152535",
+    "TELEFONO": "56932861978",
+    "EMAIL": "luz@lajunta.cl"
+  },
+  {
+    "cli_autoid": 332,
+    "NOMBRES": "María del Carmen",
+    "APELLIDOS": "Quiroz",
+    "RUT": "282415356",
+    "TELEFONO": "56966628996",
+    "EMAIL": "m.carmenquiroz@gmail.com"
+  },
+  {
+    "cli_autoid": 333,
+    "NOMBRES": "Mary",
+    "APELLIDOS": "González",
+    "RUT": "257132978",
+    "TELEFONO": "56948063225",
+    "EMAIL": "malyglaguado@gmail.com"
+  },
+  {
+    "cli_autoid": 334,
+    "NOMBRES": "María De Los Angeles",
+    "APELLIDOS": "Caripa",
+    "RUT": "256762293",
+    "TELEFONO": "56984209966",
+    "EMAIL": "mangeles@bwisebim.com"
+  },
+  {
+    "cli_autoid": 335,
+    "NOMBRES": "Manuel",
+    "APELLIDOS": "Barra G",
+    "RUT": "181866241",
+    "TELEFONO": "56963000888",
+    "EMAIL": "Manuel.Barra G.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 336,
+    "NOMBRES": "Marcos",
+    "APELLIDOS": "González",
+    "RUT": "161534846",
+    "TELEFONO": "56998280617",
+    "EMAIL": "marcosghernando@gmail.com"
+  },
+  {
+    "cli_autoid": 337,
+    "NOMBRES": "Margarita",
+    "APELLIDOS": "Fariña",
+    "RUT": "171089999",
+    "TELEFONO": "56993683645",
+    "EMAIL": "Margarita.Fariña.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 338,
+    "NOMBRES": "Mariela",
+    "APELLIDOS": "Avendaño",
+    "RUT": "150724562",
+    "TELEFONO": "56949087806",
+    "EMAIL": "mari@kioto.la"
+  },
+  {
+    "cli_autoid": 339,
+    "NOMBRES": "María",
+    "APELLIDOS": "Ramírez",
+    "RUT": "19162668",
+    "TELEFONO": "56948700103",
+    "EMAIL": "maria.ramirezd@alumnaupm.cl"
+  },
+  {
+    "cli_autoid": 340,
+    "NOMBRES": "Marina",
+    "APELLIDOS": "González",
+    "RUT": "126544014",
+    "TELEFONO": "56954065219",
+    "EMAIL": "Marina.González.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 341,
+    "NOMBRES": "Mario",
+    "APELLIDOS": "González",
+    "RUT": "210097767",
+    "TELEFONO": "56940126889",
+    "EMAIL": "mario.gonzalez_p@mail.udp.cl"
+  },
+  {
+    "cli_autoid": 342,
+    "NOMBRES": "Marion",
+    "APELLIDOS": "Torquebian",
+    "RUT": "19ac89777",
+    "TELEFONO": "56928831714",
+    "EMAIL": "Marion.Torquebian.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 343,
+    "NOMBRES": "Maritza",
+    "APELLIDOS": "0",
+    "RUT": "181324402",
+    "TELEFONO": "56961855284",
+    "EMAIL": "maritza@gdschile.org"
+  },
+  {
+    "cli_autoid": 344,
+    "NOMBRES": "Martín",
+    "APELLIDOS": "Mendoza Polanco",
+    "RUT": "205502351",
+    "TELEFONO": "56942263693",
+    "EMAIL": "martin.mendoza.p@ig.uchile.cl"
+  },
+  {
+    "cli_autoid": 345,
+    "NOMBRES": "Martin",
+    "APELLIDOS": "Otovello",
+    "RUT": "272022100",
+    "TELEFONO": "56923754613",
+    "EMAIL": "Martin.Otovello.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 346,
+    "NOMBRES": "Maxime",
+    "APELLIDOS": "Augussera",
+    "RUT": "265850359",
+    "TELEFONO": "",
+    "EMAIL": "Maxime.Augussera.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 347,
+    "NOMBRES": "Theo",
+    "APELLIDOS": "Sojo Oropeza",
+    "RUT": "252306465",
+    "TELEFONO": "56994240965",
+    "EMAIL": "maximilianosojo1999@gmail.com"
+  },
+  {
+    "cli_autoid": 348,
+    "NOMBRES": "Michael",
+    "APELLIDOS": "Rivera",
+    "RUT": "15466159k",
+    "TELEFONO": "56968155655",
+    "EMAIL": "Michael.Rivera.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 349,
+    "NOMBRES": "María Isabel",
+    "APELLIDOS": "Díaz",
+    "RUT": "102931467",
+    "TELEFONO": "56976677266",
+    "EMAIL": "midiaz.2007@gmail.com"
+  },
+  {
+    "cli_autoid": 350,
+    "NOMBRES": "Miguel",
+    "APELLIDOS": "Castro",
+    "RUT": "106298548",
+    "TELEFONO": "56993185868",
+    "EMAIL": "miguelcastro@gdschile.org"
+  },
+  {
+    "cli_autoid": 351,
+    "NOMBRES": "Minerva",
+    "APELLIDOS": "Itriago",
+    "RUT": "254877122",
+    "TELEFONO": "56958442524",
+    "EMAIL": "minervaitriago15@gmail.com"
+  },
+  {
+    "cli_autoid": 352,
+    "NOMBRES": "Marco Antonio",
+    "APELLIDOS": "Peralta",
+    "RUT": "155392428",
+    "TELEFONO": "56949393767",
+    "EMAIL": "mperalta@grupodgt.com"
+  },
+  {
+    "cli_autoid": 353,
+    "NOMBRES": "Matias",
+    "APELLIDOS": "Philiph",
+    "RUT": "167176364",
+    "TELEFONO": "56951154321",
+    "EMAIL": "mphilipp@fac.chile.cl"
+  },
+  {
+    "cli_autoid": 354,
+    "NOMBRES": "Matias",
+    "APELLIDOS": "Sánchez",
+    "RUT": "19646221k",
+    "TELEFONO": "56930894638",
+    "EMAIL": "msanchez@insaitas.com"
+  },
+  {
+    "cli_autoid": 355,
+    "NOMBRES": "Natalia",
+    "APELLIDOS": "Jara Veliz",
+    "RUT": "16366397k",
+    "TELEFONO": "56973877191",
+    "EMAIL": "Natalia.Jara Veliz.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 356,
+    "NOMBRES": "Nektarios",
+    "APELLIDOS": "Lianos",
+    "RUT": "BH2809789",
+    "TELEFONO": "15103599554",
+    "EMAIL": "Nektarios.Lianos.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 357,
+    "NOMBRES": "Victoria",
+    "APELLIDOS": "Espinoza",
+    "RUT": "200781872",
+    "TELEFONO": "56991240602",
+    "EMAIL": "nespinozaa@fen.uchile.cl"
+  },
+  {
+    "cli_autoid": 358,
+    "NOMBRES": "Nicolas",
+    "APELLIDOS": "Urquiza Zurich",
+    "RUT": "196872329",
+    "TELEFONO": "56966503590",
+    "EMAIL": "nicolasurquizazurich@gmail.com"
+  },
+  {
+    "cli_autoid": 359,
+    "NOMBRES": "Nicole",
+    "APELLIDOS": "Ávalos Díaz",
+    "RUT": "166529662",
+    "TELEFONO": "56981746178",
+    "EMAIL": "nicole.avalos.diaz@gmail.com"
+  },
+  {
+    "cli_autoid": 360,
+    "NOMBRES": "Nicole",
+    "APELLIDOS": "Roa",
+    "RUT": "169075131",
+    "TELEFONO": "56965762653",
+    "EMAIL": "nicole.roa@gmail.com"
+  },
+  {
+    "cli_autoid": 361,
+    "NOMBRES": "Nicole",
+    "APELLIDOS": "Torres Díaz",
+    "RUT": "205314962",
+    "TELEFONO": "56987313913",
+    "EMAIL": "Nicole.Torres Díaz.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 362,
+    "NOMBRES": "Nicole",
+    "APELLIDOS": "Ellena",
+    "RUT": "175363505",
+    "TELEFONO": "56993458250",
+    "EMAIL": "nicole@endemico.org"
+  },
+  {
+    "cli_autoid": 363,
+    "NOMBRES": "Noemi",
+    "APELLIDOS": "Miranda",
+    "RUT": "103874009",
+    "TELEFONO": "56998799427",
+    "EMAIL": "noemi.miranda@gmail.com"
+  },
+  {
+    "cli_autoid": 364,
+    "NOMBRES": "Oliver",
+    "APELLIDOS": "Lepage",
+    "RUT": "HP873496",
+    "TELEFONO": "56929722353",
+    "EMAIL": "oliver.lepage.1@gmail.com"
+  },
+  {
+    "cli_autoid": 365,
+    "NOMBRES": "Owen",
+    "APELLIDOS": "Hatton",
+    "RUT": "251685871",
+    "TELEFONO": "56962367906",
+    "EMAIL": "owen.j.hatton@gmail.com"
+  },
+  {
+    "cli_autoid": 366,
+    "NOMBRES": "Pablo",
+    "APELLIDOS": "López",
+    "RUT": "145528003",
+    "TELEFONO": "",
+    "EMAIL": "Pablo.López.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 367,
+    "NOMBRES": "Pablo",
+    "APELLIDOS": "Salazar",
+    "RUT": "255067192",
+    "TELEFONO": "56999484975",
+    "EMAIL": "pablo_salazar8@hotmail.com"
+  },
+  {
+    "cli_autoid": 368,
+    "NOMBRES": "Pablo",
+    "APELLIDOS": "Carvajal",
+    "RUT": "155719419",
+    "TELEFONO": "56988917944",
+    "EMAIL": "pacarvajal.v@gmail.com"
+  },
+  {
+    "cli_autoid": 369,
+    "NOMBRES": "Pamela",
+    "APELLIDOS": "Reyes",
+    "RUT": "45494115",
+    "TELEFONO": "56945334686",
+    "EMAIL": "Pamela.Reyes.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 370,
+    "NOMBRES": "Francisco",
+    "APELLIDOS": "Villarroel",
+    "RUT": "180414274",
+    "TELEFONO": "56988202972",
+    "EMAIL": "pancho@atisbor.cl"
+  },
+  {
+    "cli_autoid": 371,
+    "NOMBRES": "Paola",
+    "APELLIDOS": "Gómez Boza",
+    "RUT": "190483799",
+    "TELEFONO": "56952015387",
+    "EMAIL": "paola@endemico.org"
+  },
+  {
+    "cli_autoid": 372,
+    "NOMBRES": "Pamela",
+    "APELLIDOS": "Díaz Soto",
+    "RUT": "178825999",
+    "TELEFONO": "56926172982",
+    "EMAIL": "pavlid12d@gmail.com"
+  },
+  {
+    "cli_autoid": 373,
+    "NOMBRES": "Paz",
+    "APELLIDOS": "González",
+    "RUT": "173984707",
+    "TELEFONO": "",
+    "EMAIL": "pazgonzalezlorca@gmail.com"
+  },
+  {
+    "cli_autoid": 374,
+    "NOMBRES": "Patricia",
+    "APELLIDOS": "Cobs",
+    "RUT": "156951854",
+    "TELEFONO": "56995212731",
+    "EMAIL": "pcobsmunoz@gmail.com"
+  },
+  {
+    "cli_autoid": 375,
+    "NOMBRES": "German",
+    "APELLIDOS": "Gonzalez",
+    "RUT": "102750659",
+    "TELEFONO": "56993036947",
+    "EMAIL": "pgonzalez@insaitas.com"
+  },
+  {
+    "cli_autoid": 376,
+    "NOMBRES": "Matias",
+    "APELLIDOS": "Palacios Riveros",
+    "RUT": "20118567k",
+    "TELEFONO": "56963091054",
+    "EMAIL": "psi.matiaspalacios@gmail.com"
+  },
+  {
+    "cli_autoid": 377,
+    "NOMBRES": "Gabriel",
+    "APELLIDOS": "Gonzalez",
+    "RUT": "A15999934",
+    "TELEFONO": "19914476142",
+    "EMAIL": "quetero68@gmail.com"
+  },
+  {
+    "cli_autoid": 378,
+    "NOMBRES": "Rodrigo",
+    "APELLIDOS": "Bórquez",
+    "RUT": "158184520",
+    "TELEFONO": "56965750031",
+    "EMAIL": "r.borqueznorambuena@gmail.com"
+  },
+  {
+    "cli_autoid": 379,
+    "NOMBRES": "Roberto",
+    "APELLIDOS": "Cabezas",
+    "RUT": "133039910",
+    "TELEFONO": "56965961924",
+    "EMAIL": "rcabezas@insaitas.com"
+  },
+  {
+    "cli_autoid": 380,
+    "NOMBRES": "Remi",
+    "APELLIDOS": "Leblone",
+    "RUT": "222258979",
+    "TELEFONO": "56965494722",
+    "EMAIL": "remileblonc@yahoo.com"
+  },
+  {
+    "cli_autoid": 381,
+    "NOMBRES": "Renato",
+    "APELLIDOS": "San Martin",
+    "RUT": "160167947",
+    "TELEFONO": "56967514252",
+    "EMAIL": "renatosmb@gmail.com"
+  },
+  {
+    "cli_autoid": 382,
+    "NOMBRES": "Reynaldo",
+    "APELLIDOS": "Endis Peña",
+    "RUT": "262206424",
+    "TELEFONO": "56964367711",
+    "EMAIL": "reynaldo.endis@gmail.com"
+  },
+  {
+    "cli_autoid": 383,
+    "NOMBRES": "Raúl",
+    "APELLIDOS": "Marin",
+    "RUT": "91168170",
+    "TELEFONO": "56971603440",
+    "EMAIL": "rmarin@ingal.cl"
+  },
+  {
+    "cli_autoid": 384,
+    "NOMBRES": "Rosario",
+    "APELLIDOS": "Sandoval",
+    "RUT": "172712673",
+    "TELEFONO": "56984199640",
+    "EMAIL": "rosario.sq@gmail.com"
+  },
+  {
+    "cli_autoid": 385,
+    "NOMBRES": "Renato",
+    "APELLIDOS": "Petrulis",
+    "RUT": "147251432",
+    "TELEFONO": "56978068287",
+    "EMAIL": "rpetrulis@insaitas.com"
+  },
+  {
+    "cli_autoid": 386,
+    "NOMBRES": "Samuel",
+    "APELLIDOS": "Romo",
+    "RUT": "164291618",
+    "TELEFONO": "56982399008",
+    "EMAIL": "Samuel.Romo.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 387,
+    "NOMBRES": "Sarai",
+    "APELLIDOS": "Riquelme Ulloa",
+    "RUT": "195275688",
+    "TELEFONO": "56990792993",
+    "EMAIL": "sarairiquelme96@gmail.com"
+  },
+  {
+    "cli_autoid": 388,
+    "NOMBRES": "Sean",
+    "APELLIDOS": "Danovan",
+    "RUT": "128154539",
+    "TELEFONO": "56936232533",
+    "EMAIL": "Sean.Danovan.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 389,
+    "NOMBRES": "Sebastian",
+    "APELLIDOS": "Moraga",
+    "RUT": "175966293",
+    "TELEFONO": "56969066728",
+    "EMAIL": "sebastian.moraga@gmail.com"
+  },
+  {
+    "cli_autoid": 390,
+    "NOMBRES": "Sebastian",
+    "APELLIDOS": "Iturriaga",
+    "RUT": "196124187",
+    "TELEFONO": "56987013010",
+    "EMAIL": "sebastian@agencialajunta.cl"
+  },
+  {
+    "cli_autoid": 391,
+    "NOMBRES": "Sebastian",
+    "APELLIDOS": "Quezada",
+    "RUT": "174648417",
+    "TELEFONO": "56971299645",
+    "EMAIL": "Sebastian_Quezada@perfaware.com"
+  },
+  {
+    "cli_autoid": 392,
+    "NOMBRES": "Simón",
+    "APELLIDOS": "Vásquez",
+    "RUT": "260925059",
+    "TELEFONO": "56963108496",
+    "EMAIL": "simonvasquez01@gmail.com"
+  },
+  {
+    "cli_autoid": 393,
+    "NOMBRES": "Sofia",
+    "APELLIDOS": "Budinich",
+    "RUT": "196887547",
+    "TELEFONO": "56957795779",
+    "EMAIL": "sofia.budinich@gmail.com"
+  },
+  {
+    "cli_autoid": 394,
+    "NOMBRES": "Stiwart",
+    "APELLIDOS": "Antunez",
+    "RUT": "244545602",
+    "TELEFONO": "26984448526",
+    "EMAIL": "Stiwart.Antunez.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 395,
+    "NOMBRES": "Susan",
+    "APELLIDOS": "Solar",
+    "RUT": "120483285",
+    "TELEFONO": "56952103116",
+    "EMAIL": "susan@arpet"
+  },
+  {
+    "cli_autoid": 396,
+    "NOMBRES": "Sergio",
+    "APELLIDOS": "Zamorano",
+    "RUT": "130872069",
+    "TELEFONO": "56981563184",
+    "EMAIL": "szamorano@masdoyvcl"
+  },
+  {
+    "cli_autoid": 397,
+    "NOMBRES": "Thomas",
+    "APELLIDOS": "Armstrong",
+    "RUT": "175046640",
+    "TELEFONO": "56994451072",
+    "EMAIL": "thomas_armstrong@perfaware.com"
+  },
+  {
+    "cli_autoid": 398,
+    "NOMBRES": "Tomás",
+    "APELLIDOS": "García",
+    "RUT": "191310531",
+    "TELEFONO": "56965074816",
+    "EMAIL": "tomas.garalv@gmail.com"
+  },
+  {
+    "cli_autoid": 399,
+    "NOMBRES": "Valeria",
+    "APELLIDOS": "Cabezas",
+    "RUT": "186264061",
+    "TELEFONO": "",
+    "EMAIL": "Valeria.Cabezas.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 400,
+    "NOMBRES": "Veronica",
+    "APELLIDOS": "Barrios",
+    "RUT": "105344996",
+    "TELEFONO": "56982019817",
+    "EMAIL": "vbarrios@masdoyv.cl"
+  },
+  {
+    "cli_autoid": 401,
+    "NOMBRES": "Robert",
+    "APELLIDOS": "Curiñanco",
+    "RUT": "196507532",
+    "TELEFONO": "56935058273",
+    "EMAIL": "vcuriñanco@fen.uchile.cl"
+  },
+  {
+    "cli_autoid": 402,
+    "NOMBRES": "Velaire",
+    "APELLIDOS": "Elliott",
+    "RUT": "A07736770",
+    "TELEFONO": "19198152074",
+    "EMAIL": "Velaire.Elliott.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 403,
+    "NOMBRES": "José",
+    "APELLIDOS": "Vargas",
+    "RUT": "264153824",
+    "TELEFONO": "56941590870",
+    "EMAIL": "vgsjose@gmail.com"
+  },
+  {
+    "cli_autoid": 404,
+    "NOMBRES": "Vivian",
+    "APELLIDOS": "Jimenez",
+    "RUT": "158732211",
+    "TELEFONO": "56961216594",
+    "EMAIL": "viaiandresj@gmail.com"
+  },
+  {
+    "cli_autoid": 405,
+    "NOMBRES": "Vicente",
+    "APELLIDOS": "Carrasco",
+    "RUT": "194547269",
+    "TELEFONO": "56976690986",
+    "EMAIL": "Vicente.Carrasco.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 406,
+    "NOMBRES": "Victor",
+    "APELLIDOS": "Barrera",
+    "RUT": "281083376",
+    "TELEFONO": "56940918383",
+    "EMAIL": "Victor.Barrera.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 407,
+    "NOMBRES": "Xavier",
+    "APELLIDOS": "Chacón",
+    "RUT": "25843954k",
+    "TELEFONO": "56981330840",
+    "EMAIL": "xavichaconho5@gmail.com"
+  },
+  {
+    "cli_autoid": 408,
+    "NOMBRES": "Yessica",
+    "APELLIDOS": "Gutierrez",
+    "RUT": "241825434",
+    "TELEFONO": "56956288656",
+    "EMAIL": "yessicaxavichaconho5@gmail.com"
+  },
+  {
+    "cli_autoid": 409,
+    "NOMBRES": "Frany",
+    "APELLIDOS": "Riveros",
+    "RUT": "1",
+    "TELEFONO": "56992187563",
+    "EMAIL": "Administracion@arpet.cl"
+  },
+  {
+    "cli_autoid": 410,
+    "NOMBRES": "Alejandro",
+    "APELLIDOS": "Veliz",
+    "RUT": "2",
+    "TELEFONO": "",
+    "EMAIL": "Alejandro.Veliz.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 411,
+    "NOMBRES": "Alexis",
+    "APELLIDOS": "Barrera",
+    "RUT": "4",
+    "TELEFONO": "",
+    "EMAIL": "Alexis.Barrera.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 412,
+    "NOMBRES": "Alexis",
+    "APELLIDOS": "Rojas",
+    "RUT": "5",
+    "TELEFONO": "",
+    "EMAIL": "Alexis_Rojas@perfaware.com"
+  },
+  {
+    "cli_autoid": 413,
+    "NOMBRES": "Andrés",
+    "APELLIDOS": "Bezanilla",
+    "RUT": "6",
+    "TELEFONO": "56991881474",
+    "EMAIL": "andres.bezanilla.v@gmail.com"
+  },
+  {
+    "cli_autoid": 414,
+    "NOMBRES": "Angela",
+    "APELLIDOS": "Burgos",
+    "RUT": "7",
+    "TELEFONO": "",
+    "EMAIL": "Angela.Burgos.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 415,
+    "NOMBRES": "Alejandra",
+    "APELLIDOS": "Swett",
+    "RUT": "8",
+    "TELEFONO": "56986828754",
+    "EMAIL": "aswett@trazoverde.cl"
+  },
+  {
+    "cli_autoid": 416,
+    "NOMBRES": "Brian",
+    "APELLIDOS": "Mcgdukl",
+    "RUT": "9",
+    "TELEFONO": "19292641525",
+    "EMAIL": "bpmgou@gmail.com"
+  },
+  {
+    "cli_autoid": 417,
+    "NOMBRES": "Catalina",
+    "APELLIDOS": "Castañeda",
+    "RUT": "10",
+    "TELEFONO": "",
+    "EMAIL": "catalina@agencialajunta.cl"
+  },
+  {
+    "cli_autoid": 418,
+    "NOMBRES": "Claudia",
+    "APELLIDOS": "Carrasco",
+    "RUT": "11",
+    "TELEFONO": "",
+    "EMAIL": "claudia@agencialajunta.cl"
+  },
+  {
+    "cli_autoid": 419,
+    "NOMBRES": "Carlos",
+    "APELLIDOS": "Muñoz",
+    "RUT": "12",
+    "TELEFONO": "",
+    "EMAIL": "cmunoz@latinparts.com"
+  },
+  {
+    "cli_autoid": 420,
+    "NOMBRES": "Nicole",
+    "APELLIDOS": "Del Rio",
+    "RUT": "14",
+    "TELEFONO": "",
+    "EMAIL": "nicole@agenciafi"
+  },
+  {
+    "cli_autoid": 421,
+    "NOMBRES": "Daniela",
+    "APELLIDOS": "Prado",
+    "RUT": "15",
+    "TELEFONO": "",
+    "EMAIL": "daniela@agencialajunta.cl"
+  },
+  {
+    "cli_autoid": 422,
+    "NOMBRES": "Dean",
+    "APELLIDOS": "Yarsites",
+    "RUT": "16",
+    "TELEFONO": "15408308830",
+    "EMAIL": "deanyarsites@gmail.com"
+  },
+  {
+    "cli_autoid": 423,
+    "NOMBRES": "Diego",
+    "APELLIDOS": "Rojas",
+    "RUT": "17",
+    "TELEFONO": "",
+    "EMAIL": "Diego.Rojas.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 424,
+    "NOMBRES": "Esteban",
+    "APELLIDOS": "Villalobos",
+    "RUT": "18",
+    "TELEFONO": "",
+    "EMAIL": "Esteban.Villalobos.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 425,
+    "NOMBRES": "Florencia",
+    "APELLIDOS": "0",
+    "RUT": "19",
+    "TELEFONO": "",
+    "EMAIL": "Florencia@perfaware.com"
+  },
+  {
+    "cli_autoid": 426,
+    "NOMBRES": "Gabriel",
+    "APELLIDOS": "Criado",
+    "RUT": "20",
+    "TELEFONO": "",
+    "EMAIL": "gabriel_criado@perfaware.com"
+  },
+  {
+    "cli_autoid": 427,
+    "NOMBRES": "Hasan",
+    "APELLIDOS": "Afeal",
+    "RUT": "21",
+    "TELEFONO": "17038551382",
+    "EMAIL": "Hasan.Afeal.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 428,
+    "NOMBRES": "Joe",
+    "APELLIDOS": "Barwatt",
+    "RUT": "22",
+    "TELEFONO": "1127666738",
+    "EMAIL": "Joe.Barwatt.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 429,
+    "NOMBRES": "Karen",
+    "APELLIDOS": "espinoza",
+    "RUT": "23",
+    "TELEFONO": "",
+    "EMAIL": "Karen.espinoza.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 430,
+    "NOMBRES": "Lionel",
+    "APELLIDOS": "Nuñez",
+    "RUT": "24",
+    "TELEFONO": "",
+    "EMAIL": "Lionel.Nuñez.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 431,
+    "NOMBRES": "Luis",
+    "APELLIDOS": "0",
+    "RUT": "25",
+    "TELEFONO": "",
+    "EMAIL": "luis@arpet"
+  },
+  {
+    "cli_autoid": 432,
+    "NOMBRES": "Manohar",
+    "APELLIDOS": "SR",
+    "RUT": "26",
+    "TELEFONO": "",
+    "EMAIL": "Manohar_SR@perfaware.com"
+  },
+  {
+    "cli_autoid": 433,
+    "NOMBRES": "Marcus",
+    "APELLIDOS": "Valiner",
+    "RUT": "27",
+    "TELEFONO": "1637871480",
+    "EMAIL": "Marcus.Valiner.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 434,
+    "NOMBRES": "María José",
+    "APELLIDOS": "Contreras Fuentes",
+    "RUT": "28",
+    "TELEFONO": "",
+    "EMAIL": "mariajose@agencialajunta.cl"
+  },
+  {
+    "cli_autoid": 435,
+    "NOMBRES": "Mariana",
+    "APELLIDOS": "Calderon",
+    "RUT": "29",
+    "TELEFONO": "",
+    "EMAIL": "marianacalderon2301@gmail.com"
+  },
+  {
+    "cli_autoid": 436,
+    "NOMBRES": "Martin",
+    "APELLIDOS": "Ortiz",
+    "RUT": "30",
+    "TELEFONO": "",
+    "EMAIL": "martin@agencialajunta.cl"
+  },
+  {
+    "cli_autoid": 437,
+    "NOMBRES": "Natascha",
+    "APELLIDOS": "Roth",
+    "RUT": "31",
+    "TELEFONO": "",
+    "EMAIL": "Natascha.Roth.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 438,
+    "NOMBRES": "Nicolletta",
+    "APELLIDOS": "Solari",
+    "RUT": "32",
+    "TELEFONO": "",
+    "EMAIL": "Nicolletta.Solari.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 439,
+    "NOMBRES": "Patricio",
+    "APELLIDOS": "Molina",
+    "RUT": "33",
+    "TELEFONO": "",
+    "EMAIL": "patricio@agencialajunta.cl"
+  },
+  {
+    "cli_autoid": 440,
+    "NOMBRES": "Paulina",
+    "APELLIDOS": "Ricciardi",
+    "RUT": "34",
+    "TELEFONO": "",
+    "EMAIL": "Paulina.Ricciardi.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 441,
+    "NOMBRES": "Paulina",
+    "APELLIDOS": "Sandoval",
+    "RUT": "35",
+    "TELEFONO": "",
+    "EMAIL": "Paulina.Sandoval.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 442,
+    "NOMBRES": "Ronald",
+    "APELLIDOS": "Pacheco",
+    "RUT": "36",
+    "TELEFONO": "",
+    "EMAIL": "Ronald.Pacheco.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 443,
+    "NOMBRES": "José Simón",
+    "APELLIDOS": "González",
+    "RUT": "37",
+    "TELEFONO": "",
+    "EMAIL": "soyjetsetcl@gmail.com"
+  },
+  {
+    "cli_autoid": 444,
+    "NOMBRES": "Surajit",
+    "APELLIDOS": "Mukherjee",
+    "RUT": "38",
+    "TELEFONO": "56947464802",
+    "EMAIL": "Surajit_Mukherjee@perfaware.com"
+  },
+  {
+    "cli_autoid": 445,
+    "NOMBRES": "Vanesa",
+    "APELLIDOS": "Mataden",
+    "RUT": "39",
+    "TELEFONO": "",
+    "EMAIL": "vanesasoyjetsetcl@gmail.com"
+  },
+  {
+    "cli_autoid": 446,
+    "NOMBRES": "Veronica",
+    "APELLIDOS": "Rivera",
+    "RUT": "40",
+    "TELEFONO": "",
+    "EMAIL": "veronica@agencialajunta.cl"
+  },
+  {
+    "cli_autoid": 447,
+    "NOMBRES": "Yamila",
+    "APELLIDOS": "0",
+    "RUT": "41",
+    "TELEFONO": "",
+    "EMAIL": "Yamila@perfaware.com"
+  },
+  {
+    "cli_autoid": 448,
+    "NOMBRES": "Alexis",
+    "APELLIDOS": "0",
+    "RUT": "3",
+    "TELEFONO": "",
+    "EMAIL": "Alexis.0.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 449,
+    "NOMBRES": "Esteban",
+    "APELLIDOS": "0",
+    "RUT": "137613754",
+    "TELEFONO": "56994058642",
+    "EMAIL": "Esteban.0.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 450,
+    "NOMBRES": "Andrea",
+    "APELLIDOS": "0",
+    "RUT": "212062707",
+    "TELEFONO": "56976208500",
+    "EMAIL": "Andrea.0.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 451,
+    "NOMBRES": "Anderson",
+    "APELLIDOS": "0",
+    "RUT": "260911724",
+    "TELEFONO": "56932140903",
+    "EMAIL": "Anderson.0.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 452,
+    "NOMBRES": "Ivan",
+    "APELLIDOS": "0",
+    "RUT": "10122341k",
+    "TELEFONO": "56919467705",
+    "EMAIL": "Ivan.0.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 453,
+    "NOMBRES": "Natalia",
+    "APELLIDOS": "0",
+    "RUT": "42",
+    "TELEFONO": "56987299156",
+    "EMAIL": "natalianicolaspalomor@gmail.com"
+  },
+  {
+    "cli_autoid": 454,
+    "NOMBRES": "Nicolás",
+    "APELLIDOS": "Palomo Ruiz",
+    "RUT": "43",
+    "TELEFONO": "56987299156",
+    "EMAIL": "nicolaspalomor@gmail.com"
+  },
+  {
+    "cli_autoid": 455,
+    "NOMBRES": "Sur",
+    "APELLIDOS": "Siem",
+    "RUT": "44",
+    "TELEFONO": "56935564502",
+    "EMAIL": "Sur.Siem.cambiar@citic.cl"
+  },
+  {
+    "cli_autoid": 456,
+    "NOMBRES": "Cafeteria",
+    "APELLIDOS": "Citic",
+    "RUT": "",
+    "TELEFONO": "",
+    "EMAIL": "cafeteria@citic.cl"
+  },
+  {
+    "cli_autoid": 457,
+    "NOMBRES": "Gato",
+    "APELLIDOS": "Mardones",
+    "RUT": "",
+    "TELEFONO": "935454545",
+    "EMAIL": "alexander.mardones@cygnus.cl"
+  },
+  {
+    "cli_autoid": 458,
+    "NOMBRES": "CRISTIAN",
+    "APELLIDOS": "CONTRERAS",
+    "RUT": "",
+    "TELEFONO": "",
+    "EMAIL": "ccontrerasvergara@hotmail.cl"
+  },
+  {
+    "cli_autoid": 459,
+    "NOMBRES": "CRISTIAN",
+    "APELLIDOS": "CONTRERAS",
+    "RUT": "",
+    "TELEFONO": "",
+    "EMAIL": "ccontrerasvergara@hotmail.co"
+  },
+  {
+    "cli_autoid": 460,
+    "NOMBRES": "CLIENTE",
+    "APELLIDOS": "NUEVO",
+    "RUT": "",
+    "TELEFONO": "",
+    "EMAIL": "cliente@nuevo.new"
+  },
+  {
+    "cli_autoid": 461,
+    "NOMBRES": "Cristian Fernando",
+    "APELLIDOS": "Contreras Vergara",
+    "RUT": "",
+    "TELEFONO": "",
+    "EMAIL": "cristian.fernando.contreras@cyg.cl"
+  },
+  {
+    "cli_autoid": 462,
+    "NOMBRES": "asas",
+    "APELLIDOS": "asasas",
+    "RUT": "111111111",
+    "TELEFONO": "",
+    "EMAIL": "asasassa@asas.cl"
+  }
+]

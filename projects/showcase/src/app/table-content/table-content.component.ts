@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { TableItem } from 'ngx-cygnus-ui/interfaces';
-import { CygnusTableComponent } from 'ngx-cygnus-ui/components/table';
+import { CygnusCustomTableComponent, CygnusTableComponent } from 'ngx-cygnus-ui/components/table';
+import * as CLIENTES from './../../json/CLIENTES.json';
+import * as EMPRESAS from './../../json/EMPRESAS.json';
+
 
 @Component({
   selector: 'app-table-content',
   imports: [
     CygnusTableComponent,
+    CygnusCustomTableComponent,
   ],
   templateUrl: './table-content.component.html',
   styleUrl: './table-content.component.scss'
@@ -29,4 +33,12 @@ export class TableContentComponent {
     { name: 'José Lopez', age: '31', email: 'carla.fuentealba@sitio.com', address: 'Santa Isabel 1904, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Cencosud', id: '20010518' },
     { name: 'Juana Zapata', age: '45', email: 'jzd@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Luchetti', id: '20010519'  },
   ];
+
+  CLIENTES = JSON.parse(JSON.stringify(CLIENTES)).default;
+  EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
+
+  constructor() {
+    console.log('CLIENTES: ', this.CLIENTES);
+
+  }
 }

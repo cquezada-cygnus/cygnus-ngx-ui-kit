@@ -1,0 +1,182 @@
+[
+  {
+    "emp_autoid": 9,
+    "RAZON SOCIAL": "CANAIMA CONSULTORES LIMITADA",
+    "NOMBRE DE FANTASIA": "CANAIMA",
+    "RUT": "772333412",
+    "EMAIL": "ti@ti.cl",
+    "GIRO": "OTRAS ACTIVIDADES DE SERVICIOS PERSONALES",
+    "DIRECCION": "Providencia 1017, of 41, Providencia"
+  },
+  {
+    "emp_autoid": 10,
+    "RAZON SOCIAL": "LEPRCON DATA MARKETPLACE SPA",
+    "NOMBRE DE FANTASIA": "LEPRCON",
+    "RUT": "776339520",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE PROGRAMACION INFORMATICA",
+    "DIRECCION": "Av Italia 2095, Ñuñoa"
+  },
+  {
+    "emp_autoid": 11,
+    "RAZON SOCIAL": "DTG TECHNOLOGY SPA",
+    "NOMBRE DE FANTASIA": "DTG",
+    "RUT": "768398259",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE INFORMATICA",
+    "DIRECCION": "Avenida Libertad 269, of 904, Viña del Mar"
+  },
+  {
+    "emp_autoid": 12,
+    "RAZON SOCIAL": "JMG GASTRONOMÍA LIMITADA",
+    "NOMBRE DE FANTASIA": "JMG GASTRONOMÍA",
+    "RUT": "773010382",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE RESTAURANTES Y DE SERVICIO MOVIL DE COMIDAS",
+    "DIRECCION": "Condell 1352, Providencia"
+  },
+  {
+    "emp_autoid": 13,
+    "RAZON SOCIAL": "GRUPO PISTACHO SPA",
+    "NOMBRE DE FANTASIA": "PISTACHO",
+    "RUT": "760560979",
+    "EMAIL": "",
+    "GIRO": "OTRAS ACTIVIDADES DE VENTA AL POR MENOR",
+    "DIRECCION": ""
+  },
+  {
+    "emp_autoid": 14,
+    "RAZON SOCIAL": "TRAZO VERDE PAISAJISMO LIMITADA",
+    "NOMBRE DE FANTASIA": "Trazo verde paisajismo",
+    "RUT": "761461826",
+    "EMAIL": "",
+    "GIRO": "FABRICACION DE MUEBLES PRINCIPALMENTE",
+    "DIRECCION": "PROVIDENCIA 1208, DPTO 1603, Providencia"
+  },
+  {
+    "emp_autoid": 15,
+    "RAZON SOCIAL": "LATIN PARTS CHILE SPA",
+    "NOMBRE DE FANTASIA": "LATIN PARTS CHILE SPA",
+    "RUT": "762037084",
+    "EMAIL": "",
+    "GIRO": "VENTA AL POR MENOR DE COMPUTADORES",
+    "DIRECCION": ""
+  },
+  {
+    "emp_autoid": 16,
+    "RAZON SOCIAL": "INSAITAS CONSULTORIA LIMITADA",
+    "NOMBRE DE FANTASIA": "INSAITAS CONSULTORIA LIMITADA",
+    "RUT": "762146029",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE GESTION",
+    "DIRECCION": ""
+  },
+  {
+    "emp_autoid": 17,
+    "RAZON SOCIAL": "MVMT AGENCIA DE COMUNICACIONES SPA",
+    "NOMBRE DE FANTASIA": "MVMT",
+    "RUT": "763505197",
+    "EMAIL": "",
+    "GIRO": "Elab des y ejec de public marketing y co",
+    "DIRECCION": "Av. El Golf 99 of 901, Las Condes"
+  },
+  {
+    "emp_autoid": 18,
+    "RAZON SOCIAL": "OBOLO CHOCOLATE SPA",
+    "NOMBRE DE FANTASIA": "OBOLO",
+    "RUT": "766209319",
+    "EMAIL": "",
+    "GIRO": "ELABORACION DE CACAO, CHOCOLATE",
+    "DIRECCION": ""
+  },
+  {
+    "emp_autoid": 19,
+    "RAZON SOCIAL": "4SOLUTIONS SPA",
+    "NOMBRE DE FANTASIA": "4SOLUTIONS SPA",
+    "RUT": "768887780",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE INFORMATICA Y DE GESTION DE",
+    "DIRECCION": ""
+  },
+  {
+    "emp_autoid": 20,
+    "RAZON SOCIAL": "GDS CONSULTORES LIMITADA",
+    "NOMBRE DE FANTASIA": "GDS",
+    "RUT": "769321721",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE GESTION",
+    "DIRECCION": "LA CONCEPCION 81 A903, Providencia"
+  },
+  {
+    "emp_autoid": 21,
+    "RAZON SOCIAL": "BWISE SPA",
+    "NOMBRE DE FANTASIA": "BWISE SPA",
+    "RUT": "771008798",
+    "EMAIL": "",
+    "GIRO": "EMPRESAS DE SERVICIOS DE INGENIERIA",
+    "DIRECCION": ""
+  },
+  {
+    "emp_autoid": 22,
+    "RAZON SOCIAL": "PARTNERS, CONSULTORIA, GESTION Y FORMACION EN RRHH SPA",
+    "NOMBRE DE FANTASIA": "PARTNERS ",
+    "RUT": "771392849",
+    "EMAIL": "",
+    "GIRO": "Consultoria y asesoria empresiaral en RRHH",
+    "DIRECCION": "Argomedo 373, depto 309, Santiago"
+  },
+  {
+    "emp_autoid": 23,
+    "RAZON SOCIAL": "PERFAWARE CHILE SPA",
+    "NOMBRE DE FANTASIA": "PERFAWARE CHILE SPA",
+    "RUT": "772276745",
+    "EMAIL": "",
+    "GIRO": "Otras actividades de tecnologia de la ing",
+    "DIRECCION": "Los Militares 5001 of 1101 piso 11, Las Condes"
+  },
+  {
+    "emp_autoid": 24,
+    "RAZON SOCIAL": "BY ASESORÍAS CONTABLES Y TRIBUTARIAS LIMITADA",
+    "NOMBRE DE FANTASIA": "BY ASESORÍAS",
+    "RUT": "773741298",
+    "EMAIL": "",
+    "GIRO": "Asesorias contables",
+    "DIRECCION": "Suarez Mujica 2900, DP 135, Ñuñoa"
+  },
+  {
+    "emp_autoid": 25,
+    "RAZON SOCIAL": "PRODUCCIONES Y EVENTOS - SERVICIOS PUBLICITARIOS - DE BANQUETERÍA AGENCIA LA JUNTA SPA",
+    "NOMBRE DE FANTASIA": "AGENCIA LA JUNTA",
+    "RUT": "774765395",
+    "EMAIL": "",
+    "GIRO": "SUMINISTRO DE COMIDAS POR ENCARGO",
+    "DIRECCION": "AV VESPUCIO #3121 DP 52 G, Macul"
+  },
+  {
+    "emp_autoid": 26,
+    "RAZON SOCIAL": "SOCIEDAD DE PROFESIONALES AGENCIA FI LIMITADA",
+    "NOMBRE DE FANTASIA": "AGENCIA FI",
+    "RUT": "776872121",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE GESTION",
+    "DIRECCION": "SENEGAL ORIENTE 7671, Vitacura"
+  },
+  {
+    "emp_autoid": 27,
+    "RAZON SOCIAL": "INGAL INGENIERIA LIMITADA",
+    "NOMBRE DE FANTASIA": "INGAL INGENIERIA",
+    "RUT": "777589504",
+    "EMAIL": "",
+    "GIRO": "Obras de Ingenieria",
+    "DIRECCION": "Villarrica 540, Providencia"
+  },
+  {
+    "emp_autoid": 28,
+    "RAZON SOCIAL": "DPC ARQUITECTURA ECOLOGÍA Y TERRITORIO SPA",
+    "NOMBRE DE FANTASIA": "WILD",
+    "RUT": "779357953",
+    "EMAIL": "",
+    "GIRO": "Servicios de Arquitectura",
+    "DIRECCION": "Quilicura Rastro LT-B 4, Pelluhue"
+  }
+]

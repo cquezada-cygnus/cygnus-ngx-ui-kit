@@ -541,4 +541,24 @@
       </div>
     </div>
   </section>
+
+  <!-- cygnus-custom-table -->
+  <section id="cygnus-custom-table">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table</h2>
+        <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla.</p>
+
+
+            <!-- COMPONENTE: cygnus-custom-table -->
+            @if (CLIENTES) {
+              <cygnus-custom-table [dataTable]="CLIENTES" [tableType]="'stripped-hover'" />
+            }
+
+
+
+      </div>
+
+    </div>
+  </section>
 </main>
