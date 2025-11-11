@@ -4,7 +4,6 @@ import { TW_CLASS } from '../const/tailwind.const';
 import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
 import { CygnusButtonLinkComponent, } from 'ngx-cygnus-ui/components/button';
 import { TableType } from 'ngx-cygnus-ui/types';
-import * as i0 from '@angular/core';
 
 @Component({
   selector: 'cygnus-custom-table',
@@ -24,6 +23,10 @@ export class CygnusCustomTableComponent implements OnInit {
   columnsHead = signal<string[]>([]);
   displayedColumns = signal<string[]>([]);
 
+  doubleKeyUp1 = input<string>('');
+  doubleKeyUp2 = input<string>('');
+  doubleKeydown = input<string>('');
+
   ngOnInit(): void {
     console.log(this.dataTable());
     this.setColumnsHead();
@@ -31,7 +34,6 @@ export class CygnusCustomTableComponent implements OnInit {
       const elem = this.dataTable()[i];
       for (let j = 0; j < this.columnsHead().length; j++) {
         const key = this.columnsHead()[j];
-        console.log('elem[j]: ',elem[key]);
       }
     }
 

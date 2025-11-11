@@ -10,7 +10,14 @@
               <thead [class]="TW_CLASS.TABLE_THEAD" >
                 <tr>
                   @for (item of columnsHead(); track $index) {
-                    <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{item}}</th>
+                    @if (tableType()==='double' && item.includes(doubleKeyUp1())) {
+                      <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{doubleKeyUp1() + '-' + doubleKeyUp2() + '/' + doubleKeydown()}}</th>
+                    } @if (tableType()==='double' && (item.includes(doubleKeyUp1()) || item.includes(doubleKeyUp2()) || item.includes(doubleKeydown()) )) {
+
+                    } @else {
+                      <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{item}}</th>
+                    }
+
                   }
                 </tr>
               </thead>
@@ -26,73 +33,35 @@
                   >
 
                   @for (key of columnsHead(); track $index) {
-                    <td
-                      [class]="
-                        TW_CLASS.TABLE_TD + ' ' +
-                        (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
-                      "
-                    >
-                      {{item[key]}}
-                    </td>
-                  }
+                    @if (tableType()==='double' && ( key.includes(doubleKeyUp2()) || key.includes(doubleKeydown())) ) {
 
-                    <!--
-                    <td
-                      [class]="
-                        TW_CLASS.TABLE_TD + ' ' +
-                        (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
-                      "
-                    >
+                    } @else {
 
-                      @if (tableType()==='double') {
-                        <div class="text-sm font-medium text-secondary-900">
-                            {{ item.name || item.NAME || (item.NOMBRES + ' ' + item.APELLIDOS) || (item.nombres + ' ' + item.apellidos) }}
-                        </div>
-                        <div class="text-sm text-secondary-500">
-                            {{ item.email || item.EMAIL }}
-                        </div>
-                      } @else {
-                        {{ item.name || item.NAME || (item.NOMBRES + ' ' + item.APELLIDOS) || (item.nombres + ' ' + item.apellidos) }}
-                      }
+                      <td
+                        [class]="
+                          TW_CLASS.TABLE_TD + ' ' +
+                          (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
+                        "
+                      >
 
-                    </td>
-                    <td
-                      [class]="
-                        TW_CLASS.TABLE_TD + ' ' +
-                        (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
-                      "
-                    >
+                        @if (tableType()==='double' && (key.includes(doubleKeyUp1())) ) {
+                            <div class="text-sm font-medium text-secondary-900">
+                              {{item[doubleKeyUp1()] + ' ' + item[doubleKeyUp2()]}}
+                            </div>
+                            <div class="text-sm text-secondary-500">
+                                {{item[doubleKeydown()]}}
+                            </div>
+                        }
+                        @else {
+                          {{item[key]}}
+                        }
 
-                    @if ((item.state)?.toLowerCase()=='activo') {
-                        <cygnus-badge
-                          [badgeTypes]="'badge badge-success'"
-                          [badgeText]=" (item.state | uppercase ) || '' "
-                        />
+                      </td>
                     }
 
-                    </td> -->
-                    <!-- SUGERIR ENVIAR UN BUTTON LINK, BUTTON, O SELECT CYGNUS COMO STRING PARA RENDERIZARLO -->
-                    <!--
-                    <td
-                      [class]="
-                        TW_CLASS.TABLE_TD + ' ' +
-                        (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '') + ' ' +
-                        TW_CLASS.ACTIONS
-                      "
-                    >
-
-                      <cygnus-button-link
-                        [btnLinkType]="'btn-link'"
-                        [btnRouterLinkText]="''"
-                      >
-                        Borrar
-                      </cygnus-button-link>
-                    </td>
-                  </tr>
-                  -->
+                  }
                 }
               </tbody>
-
             }
 
           </table>
