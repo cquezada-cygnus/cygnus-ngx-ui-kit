@@ -22,49 +22,106 @@
                 </tr>
               </thead>
               <tbody>
-                @for (item of dataTable(); track $index; let isEven = $even) {
-                  <tr
-                    [class]="
-                      ((tableType()==='hover') ? TW_CLASS.TABLE_HOVER : '') + ' ' +
-                      ((tableType()==='stripped-hover' || tableType()==='double') ? TW_CLASS.TABLE_HOVER_STRIPPED : '')
-                    "
-                    (mouseenter)="item.isHover=true"
-                    (mouseleave)="item.isHover=false"
-                  >
+                @for (item of dataTable(); track $index; let i = $index; let isEven = $even) {
 
-                  @for (key of columnsHead(); track $index) {
-                    @if (tableType()==='double' && ( key.includes(doubleKeyUp2()) || key.includes(doubleKeydown())) ) {
+                  @if (maxCounter()>0 && i >= init() && i <= limit()) { <!-- MUESTRA RESTRINGIENDO POR LIMITE-->
 
-                    } @else {
+                    <tr
+                      [class]="
+                        ((tableType()==='hover') ? TW_CLASS.TABLE_HOVER : '') + ' ' +
+                        ((tableType()==='stripped-hover' || tableType()==='double') ? TW_CLASS.TABLE_HOVER_STRIPPED : '')
+                      "
+                      (mouseenter)="item.isHover=true"
+                      (mouseleave)="item.isHover=false"
+                    >
 
-                      <td
-                        [class]="
-                          TW_CLASS.TABLE_TD + ' ' +
-                          (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
-                        "
-                      >
+                      @for (key of columnsHead(); track $index) {
+                        @if (tableType()==='double' && ( key.includes(doubleKeyUp2()) || key.includes(doubleKeydown())) ) {
 
-                        @if (tableType()==='double' && (key.includes(doubleKeyUp1())) ) {
-                            <div class="text-sm font-medium text-secondary-900">
-                              {{item[doubleKeyUp1()] + ' ' + item[doubleKeyUp2()]}}
-                            </div>
-                            <div class="text-sm text-secondary-500">
-                                {{item[doubleKeydown()]}}
-                            </div>
+                        } @else {
+
+                          <td
+                            [class]="
+                              TW_CLASS.TABLE_TD + ' ' +
+                              (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
+                            "
+                          >
+
+                            @if (tableType()==='double' && (key.includes(doubleKeyUp1())) ) {
+                                <div class="text-sm font-medium text-secondary-900">
+                                  {{item[doubleKeyUp1()] + ' ' + item[doubleKeyUp2()]}}
+                                </div>
+                                <div class="text-sm text-secondary-500">
+                                    {{item[doubleKeydown()]}}
+                                </div>
+                            }
+                            @else {
+                              {{item[key]}}
+                            }
+
+                          </td>
                         }
-                        @else {
-                          {{item[key]}}
+
+                      }
+                    </tr>
+                  } @else if (maxCounter()<=0) { <!-- MUESTRA SIN LIMITE TODO LO QUE HAYA -->
+
+                    <tr
+                      [class]="
+                        ((tableType()==='hover') ? TW_CLASS.TABLE_HOVER : '') + ' ' +
+                        ((tableType()==='stripped-hover' || tableType()==='double') ? TW_CLASS.TABLE_HOVER_STRIPPED : '')
+                      "
+                      (mouseenter)="item.isHover=true"
+                      (mouseleave)="item.isHover=false"
+                    >
+
+                      @for (key of columnsHead(); track $index) {
+                        @if (tableType()==='double' && ( key.includes(doubleKeyUp2()) || key.includes(doubleKeydown())) ) {
+
+                        } @else {
+
+                          <td
+                            [class]="
+                              TW_CLASS.TABLE_TD + ' ' +
+                              (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
+                            "
+                          >
+
+                            @if (tableType()==='double' && (key.includes(doubleKeyUp1())) ) {
+                                <div class="text-sm font-medium text-secondary-900">
+                                  {{item[doubleKeyUp1()] + ' ' + item[doubleKeyUp2()]}}
+                                </div>
+                                <div class="text-sm text-secondary-500">
+                                    {{item[doubleKeydown()]}}
+                                </div>
+                            }
+                            @else {
+                              {{item[key]}}
+                            }
+
+                          </td>
                         }
 
-                      </td>
-                    }
-
+                      }
+                    </tr>
                   }
+
                 }
               </tbody>
             }
 
           </table>
+
+          @if (maxCounter()>0) {
+            <div class="flex content-center">
+              <cygnus-pagination
+                [paginationType]="'normal'"
+                [(currentCounter)]="currentCounter"
+                [maxCounter]="maxCounter()"
+                (click)="showContent()"
+              />
+            </div>
+          }
 
         </div>
       </div>

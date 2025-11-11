@@ -551,7 +551,11 @@
 
             <!-- COMPONENTE: cygnus-custom-table -->
             @if (CLIENTES) {
-              <cygnus-custom-table [dataTable]="CLIENTES" [tableType]="'stripped-hover'" />
+              <cygnus-custom-table
+                [dataTable]="CLIENTES"
+                [tableType]="'stripped-hover'"
+                [maxCounter]="10"
+              />
             }
 
       </div>
@@ -574,6 +578,7 @@
                 [doubleKeyUp1]="'NOMBRES'"
                 [doubleKeyUp2]="'APELLIDOS'"
                 [doubleKeydown]="'EMAIL'"
+                [maxCounter]="10"
               />
             }
 
