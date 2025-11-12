@@ -1,4 +1,4 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, effect, input, OnInit, output, signal } from '@angular/core';
 import { UpperCasePipe } from '@angular/common';
 import { TW_CLASS } from '../const/tailwind.const';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
@@ -8,6 +8,7 @@ import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { TableType } from 'ngx-cygnus-ui/types';
 import { EditableTableItem } from 'ngx-cygnus-ui/interfaces';
+import { ɵInternalFormsSharedModule } from "@angular/forms";
 
 @Component({
   selector: 'cygnus-custom-table',
@@ -18,7 +19,8 @@ import { EditableTableItem } from 'ngx-cygnus-ui/interfaces';
     CygnusButtonLinkComponent,
     CygnusPaginationComponent,
     CygnusInputComponent,
-  ],
+    ɵInternalFormsSharedModule
+],
   templateUrl: './cygnus-custom-table.component.html',
 })
 export class CygnusCustomTableComponent implements OnInit {
@@ -42,8 +44,9 @@ export class CygnusCustomTableComponent implements OnInit {
   tdEditArr = input<string[]>([]); // if tdEditArr.length > 0, aparece btn editar
   toggleEdit = signal<boolean>(false);
   toggleEditIndex = signal<number>(-1);
-
-  // <cygnus-input [inputCustomType]="'base'" [textPlaceholder]="'esto es un placeholder'" />
+  originalData: any = {};
+  editedData: any = {};
+  emitModifiedData = output<any>();
 
   ngOnInit(): void {
     this.setColumnsHead();
@@ -53,9 +56,22 @@ export class CygnusCustomTableComponent implements OnInit {
     }
   }
 
+  getOutputData(data: any, key: string, i: number) {
+    this.editedData[key]=data;
+    this.originalData=this.dataTable()[i];
+  }
+
+  emitDataModified() {
+    this.emitModifiedData.emit({edited: this.editedData, original: this.originalData } );
+  }
+
   setToggleEdit(index: number) {
     this.toggleEdit.update( current => !current );
     this.toggleEditIndex.set(index);
+  }
+
+  keyIsEditable(key: string): boolean {
+    return this.tdEditArr().includes(key.toUpperCase());
   }
 
   setColumnsHead() {

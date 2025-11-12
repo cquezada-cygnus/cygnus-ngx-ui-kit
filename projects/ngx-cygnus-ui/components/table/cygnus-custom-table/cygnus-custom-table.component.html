@@ -58,7 +58,21 @@
                                 </div>
                             }
                             @else {
-                              {{item[key]}}
+
+
+                              @if (tdEditArr().length && toggleEdit() && toggleEditIndex()===i && keyIsEditable(key)) {
+                                <cygnus-input
+                                  [inputCustomType]="'base'"
+                                  [textPlaceholder]="'esto es un placeholder'"
+                                  (inputValueOutput)="getOutputData($event,key,i)"
+                                  [initializeInputValue]="item[key]"
+                                />
+
+                              } @else {
+                                {{item[key]}}
+
+                              }
+
                             }
 
                           </td>
@@ -82,12 +96,13 @@
                         </td>
                       }
                       @if (toggleEdit() && toggleEditIndex()===i) {
-                        <td class="flex">
+                        <td class="flex justify-center align-center py-4">
                           <lib-ngx-cygnus-icons class="mr-2"
                             [width]="'1.5rem'"
                             [height]="'1.5rem'"
                             [color]="'#667085'"
                             [route]="'assets/icons/svg/General/save-01.svg'"
+                            (click)="emitDataModified()"
                           />
                           <lib-ngx-cygnus-icons class="mr-2"
                             [width]="'1.5rem'"
@@ -131,7 +146,21 @@
                                 </div>
                             }
                             @else {
-                              {{item[key]}}
+
+
+                              @if (tdEditArr().length && toggleEdit() && toggleEditIndex()===i && keyIsEditable(key)) {
+                                <cygnus-input
+                                  [inputCustomType]="'base'"
+                                  [textPlaceholder]="'esto es un placeholder'"
+                                  (inputValueOutput)="getOutputData($event,key,i)"
+                                  [initializeInputValue]="item[key]"
+                                />
+
+                              } @else {
+                                {{item[key]}}
+
+                              }
+
                             }
 
                           </td>
@@ -155,12 +184,13 @@
                         </td>
                       }
                       @if (toggleEdit() && toggleEditIndex()===i) {
-                        <td class="flex">
+                        <td class="flex justify-center align-center py-4">
                           <lib-ngx-cygnus-icons class="mr-2"
                             [width]="'1.5rem'"
                             [height]="'1.5rem'"
                             [color]="'#667085'"
                             [route]="'assets/icons/svg/General/save-01.svg'"
+                            (click)="emitDataModified()"
                           />
                           <lib-ngx-cygnus-icons class="mr-2"
                             [width]="'1.5rem'"

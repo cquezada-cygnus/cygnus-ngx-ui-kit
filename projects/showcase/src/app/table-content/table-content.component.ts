@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { TableItem } from 'ngx-cygnus-ui/interfaces';
 import { CygnusCustomTableComponent, CygnusTableComponent } from 'ngx-cygnus-ui/components/table';
 import * as CLIENTES from './../../json/CLIENTES.json';
@@ -40,6 +40,10 @@ export class TableContentComponent {
   empresasEditArr: string[] = [
     'NOMBRE DE FANTASIA', 'EMAIL', 'DIRECCION',
   ]
+
+  showEditedData(data: any) {
+    console.log('showEditedData: ', data);
+  }
 
 
 }

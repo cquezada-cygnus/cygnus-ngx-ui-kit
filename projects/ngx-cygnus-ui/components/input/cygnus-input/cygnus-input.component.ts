@@ -1,4 +1,4 @@
-import { Component, effect, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, effect, ElementRef, inject, input, model, OnInit, output, signal, viewChild } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
@@ -10,7 +10,7 @@ import { FormControl } from '@angular/forms';
   imports: [NgxCygnusIconsComponent],
   templateUrl: './cygnus-input.component.html',
 })
-export class CygnusInputComponent implements OnInit {
+export class CygnusInputComponent implements OnInit, AfterViewInit {
   private static idCounter = 0;
 
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
@@ -38,15 +38,29 @@ export class CygnusInputComponent implements OnInit {
   cygnusInput = viewChild<ElementRef>('cygnusInput');
   iconClicked = output<string>();
 
+  initializeInputValue = input<string>('');
+  inputValueOutput = output<string>();
+
+
+
   constructor() {
     effect(() => { // limpiar input si se solicita
-      if (!this.inputClearValue()) this.cygnusInput()!.nativeElement.textContent = '';
+      if (!this.inputClearValue()) {
+        this.cygnusInput()!.nativeElement.textContent = '';
+        this.cygnusInput()!.nativeElement.value = '';
+      }
     });
   }
 
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.inputId.set(`cg-input-${++CygnusInputComponent.idCounter}`);
+
+  }
+
+  ngAfterViewInit() {
+    this.cygnusInput()!.nativeElement.value  = this.initializeInputValue();
+    this.cygnusInput()!.nativeElement.textContent = this.initializeInputValue();
   }
 
   notifyIconClicked(): void {
@@ -57,6 +71,7 @@ export class CygnusInputComponent implements OnInit {
     this.control()?.setValue(value);
     this.control()?.markAsDirty();
     this.control()?.markAsTouched();
+    this.inputValueOutput.emit(value);
   }
 
   inputGetSize():string {
