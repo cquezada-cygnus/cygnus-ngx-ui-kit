@@ -12,7 +12,8 @@
                   @for (item of columnsHead(); track $index) {
                     @if (tableType()==='double' && item.includes(doubleKeyUp1())) {
                       <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{doubleKeyUp1() + '-' + doubleKeyUp2() + '/' + doubleKeydown()}}</th>
-                    } @if (tableType()==='double' && (item.includes(doubleKeyUp1()) || item.includes(doubleKeyUp2()) || item.includes(doubleKeydown()) )) {
+                    } @if (tableType()==='double' &&
+                          (item.includes(doubleKeyUp1()) || item.includes(doubleKeyUp2()) || item.includes(doubleKeydown()) )) {
 
                     } @else {
                       <th scope="col" [class]="TW_CLASS.TABLE_TH" >{{item}}</th>
@@ -36,7 +37,8 @@
                     >
 
                       @for (key of columnsHead(); track $index) {
-                        @if (tableType()==='double' && ( key.includes(doubleKeyUp2()) || key.includes(doubleKeydown())) ) {
+                        @if (tableType()==='double' &&
+                            ( key.includes(doubleKeyUp2()) || key.includes(doubleKeydown())) ) {
 
                         } @else {
 
@@ -62,6 +64,39 @@
                           </td>
                         }
 
+                      }
+                      @if (tdEditArr().length>0 && !toggleEdit()) {
+                        <td
+                          [class]="
+                            TW_CLASS.TABLE_TD + ' ' +
+                            TW_CLASS.ACTIONS
+                          "
+                        >
+                          <cygnus-button-link
+                            [btnLinkType]="'btn-link'"
+                            [btnRouterLinkText]="''"
+                            (click)="setToggleEdit(i)"
+                          >
+                            Editar
+                          </cygnus-button-link>
+                        </td>
+                      }
+                      @if (toggleEdit() && toggleEditIndex()===i) {
+                        <td class="flex">
+                          <lib-ngx-cygnus-icons class="mr-2"
+                            [width]="'1.5rem'"
+                            [height]="'1.5rem'"
+                            [color]="'#667085'"
+                            [route]="'assets/icons/svg/General/save-01.svg'"
+                          />
+                          <lib-ngx-cygnus-icons class="mr-2"
+                            [width]="'1.5rem'"
+                            [height]="'1.5rem'"
+                            [color]="'#667085'"
+                            [route]="'assets/icons/svg/General/x.svg'"
+                            (click)="setToggleEdit(i)"
+                          />
+                        </td>
                       }
                     </tr>
                   } @else if (maxCounter()<=0) { <!-- MUESTRA SIN LIMITE TODO LO QUE HAYA -->
@@ -102,6 +137,39 @@
                           </td>
                         }
 
+                      }
+                      @if (tdEditArr().length>0 && !toggleEdit()) {
+                        <td
+                          [class]="
+                            TW_CLASS.TABLE_TD + ' ' +
+                            TW_CLASS.ACTIONS
+                          "
+                        >
+                          <cygnus-button-link
+                            [btnLinkType]="'btn-link'"
+                            [btnRouterLinkText]="''"
+                            (click)="setToggleEdit(i)"
+                          >
+                            Editar
+                          </cygnus-button-link>
+                        </td>
+                      }
+                      @if (toggleEdit() && toggleEditIndex()===i) {
+                        <td class="flex">
+                          <lib-ngx-cygnus-icons class="mr-2"
+                            [width]="'1.5rem'"
+                            [height]="'1.5rem'"
+                            [color]="'#667085'"
+                            [route]="'assets/icons/svg/General/save-01.svg'"
+                          />
+                          <lib-ngx-cygnus-icons class="mr-2"
+                            [width]="'1.5rem'"
+                            [height]="'1.5rem'"
+                            [color]="'#667085'"
+                            [route]="'assets/icons/svg/General/x.svg'"
+                            (click)="setToggleEdit(i)"
+                          />
+                        </td>
                       }
                     </tr>
                   }

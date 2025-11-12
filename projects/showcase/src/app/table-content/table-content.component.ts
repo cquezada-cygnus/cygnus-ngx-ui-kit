@@ -37,8 +37,9 @@ export class TableContentComponent {
   CLIENTES = JSON.parse(JSON.stringify(CLIENTES)).default;
   EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
 
-  constructor() {
-    console.log('CLIENTES: ', this.CLIENTES);
+  empresasEditArr: string[] = [
+    'NOMBRE DE FANTASIA', 'EMAIL', 'DIRECCION',
+  ]
 
-  }
+
 }

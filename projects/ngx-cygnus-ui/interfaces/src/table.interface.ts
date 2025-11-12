@@ -11,3 +11,8 @@ export interface TableItem {
   base64?: string,
   isChecked?: boolean,
 }
+
+export interface EditableTableItem {
+  canEdit: boolean,
+  index: number,
+}
