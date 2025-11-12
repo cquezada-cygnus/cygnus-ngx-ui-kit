@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, effect, ElementRef, inject, input, model, OnInit, output, signal, viewChild } from '@angular/core';
+import { AfterViewInit, Component, effect, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
@@ -41,8 +41,6 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   initializeInputValue = input<string>('');
   inputValueOutput = output<string>();
 
-
-
   constructor() {
     effect(() => { // limpiar input si se solicita
       if (!this.inputClearValue()) {
@@ -55,7 +53,6 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.inputId.set(`cg-input-${++CygnusInputComponent.idCounter}`);
-
   }
 
   ngAfterViewInit() {

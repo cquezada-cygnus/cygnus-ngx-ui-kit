@@ -102,14 +102,14 @@
                             [height]="'1.5rem'"
                             [color]="'#667085'"
                             [route]="'assets/icons/svg/General/save-01.svg'"
-                            (click)="emitDataModified()"
+                            (click)="emitDataModified(); setToggleEdit(i);"
                           />
                           <lib-ngx-cygnus-icons class="mr-2"
                             [width]="'1.5rem'"
                             [height]="'1.5rem'"
                             [color]="'#667085'"
                             [route]="'assets/icons/svg/General/x.svg'"
-                            (click)="setToggleEdit(i)"
+                            (click)="setToggleEdit(i, true)"
                           />
                         </td>
                       }
@@ -190,14 +190,14 @@
                             [height]="'1.5rem'"
                             [color]="'#667085'"
                             [route]="'assets/icons/svg/General/save-01.svg'"
-                            (click)="emitDataModified()"
+                            (click)="emitDataModified(); setToggleEdit(i);"
                           />
                           <lib-ngx-cygnus-icons class="mr-2"
                             [width]="'1.5rem'"
                             [height]="'1.5rem'"
                             [color]="'#667085'"
                             [route]="'assets/icons/svg/General/x.svg'"
-                            (click)="setToggleEdit(i)"
+                            (click)="setToggleEdit(i, true)"
                           />
                         </td>
                       }

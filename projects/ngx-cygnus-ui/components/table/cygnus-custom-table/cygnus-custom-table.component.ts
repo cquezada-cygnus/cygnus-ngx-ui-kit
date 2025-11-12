@@ -61,13 +61,20 @@ export class CygnusCustomTableComponent implements OnInit {
     this.originalData=this.dataTable()[i];
   }
 
-  emitDataModified() {
-    this.emitModifiedData.emit({edited: this.editedData, original: this.originalData } );
+  cancelEditedData() {
+    this.editedData = {};
+    this.originalData = {};
   }
 
-  setToggleEdit(index: number) {
+  emitDataModified() {
+    this.emitModifiedData.emit({edited: this.editedData, original: this.originalData } );
+    this.cancelEditedData();
+  }
+
+  setToggleEdit(index: number, cancel?: boolean) {
     this.toggleEdit.update( current => !current );
-    this.toggleEditIndex.set(index);
+    if (cancel) this.toggleEditIndex.set(-1);
+    else this.toggleEditIndex.set(index);
   }
 
   keyIsEditable(key: string): boolean {
