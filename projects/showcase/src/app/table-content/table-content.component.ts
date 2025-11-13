@@ -1,8 +1,9 @@
-import { Component, effect } from '@angular/core';
-import { TableItem } from 'ngx-cygnus-ui/interfaces';
+import { Component } from '@angular/core';
+import { TableBadge, TableItem } from 'ngx-cygnus-ui/interfaces';
 import { CygnusCustomTableComponent, CygnusTableComponent } from 'ngx-cygnus-ui/components/table';
 import * as CLIENTES from './../../json/CLIENTES.json';
 import * as EMPRESAS from './../../json/EMPRESAS.json';
+import * as COMPANY_COLAB from './../../json/COMPANY_COLAB.json';
 
 
 @Component({
@@ -36,6 +37,14 @@ export class TableContentComponent {
 
   CLIENTES = JSON.parse(JSON.stringify(CLIENTES)).default;
   EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
+  COMPANY_COLAB = JSON.parse(JSON.stringify(COMPANY_COLAB)).default;
+
+  badgeKey: TableBadge = {
+    key: 'ESTADO',
+    stateActive: 'Activo',
+    stateWarning: 'Pendiente',
+    stateError: 'Bloqueado'
+  };
 
   empresasEditArr: string[] = [
     'NOMBRE DE FANTASIA', 'EMAIL', 'DIRECCION',

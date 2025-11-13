@@ -59,8 +59,16 @@
                             }
                             @else {
 
+                              @if (badgeKey() && badgeKey()?.key===key) {
 
-                              @if (tdEditArr().length && toggleEdit() && toggleEditIndex()===i && keyIsEditable(key)) {
+                                <cygnus-badge
+                                  [badgeTypes]="'badge-sm ' + badgeColor(item[key])"
+                                  [badgeText]="item[key]"
+                                />
+
+                              }
+
+                              @else if (tdEditArr().length && toggleEdit() && toggleEditIndex()===i && keyIsEditable(key)) {
                                 <cygnus-input
                                   [inputCustomType]="'base'"
                                   [textPlaceholder]="'esto es un placeholder'"
@@ -147,11 +155,19 @@
                             }
                             @else {
 
+                              @if (badgeKey() && badgeKey()?.key===key) {
 
-                              @if (tdEditArr().length && toggleEdit() && toggleEditIndex()===i && keyIsEditable(key)) {
+                                <cygnus-badge
+                                  [badgeTypes]="'badge-sm ' + badgeColor(item[key])"
+                                  [badgeText]="item[key]"
+                                />
+
+                              }
+
+                              @else if (tdEditArr().length && toggleEdit() && toggleEditIndex()===i && keyIsEditable(key)) {
                                 <cygnus-input
                                   [inputCustomType]="'base'"
-                                  [textPlaceholder]="'esto es un placeholder'"
+                                  [textPlaceholder]="'...'"
                                   (inputValueOutput)="getOutputData($event,key,i)"
                                   [initializeInputValue]="item[key]"
                                 />

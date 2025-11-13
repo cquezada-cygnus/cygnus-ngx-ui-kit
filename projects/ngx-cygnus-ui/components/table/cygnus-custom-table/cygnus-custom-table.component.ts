@@ -7,7 +7,7 @@ import { CygnusButtonLinkComponent, } from 'ngx-cygnus-ui/components/button';
 import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { TableType } from 'ngx-cygnus-ui/types';
-import { EditableTableItem } from 'ngx-cygnus-ui/interfaces';
+import { EditableTableItem, TableBadge } from 'ngx-cygnus-ui/interfaces';
 import { ɵInternalFormsSharedModule } from "@angular/forms";
 
 @Component({
@@ -48,12 +48,21 @@ export class CygnusCustomTableComponent implements OnInit {
   editedData: any = {};
   emitModifiedData = output<any>();
 
+  badgeKey = input<TableBadge>();
+
   ngOnInit(): void {
     this.setColumnsHead();
 
     if (this.maxCounter()>0) {
       this.showContent();
     }
+  }
+
+  badgeColor(itemValue: string): string {
+    if (this.badgeKey()?.stateActive===itemValue) return 'badge-success';
+    else if (this.badgeKey()?.stateWarning===itemValue) return 'badge-warning';
+    else if (this.badgeKey()?.stateError===itemValue) return 'badge-error';
+    else return '';
   }
 
   getOutputData(data: any, key: string, i: number) {

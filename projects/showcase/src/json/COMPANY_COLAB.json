@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "COMPAÑIA": "Lider",
+    "ID USUARIO": 20010510,
+    "NOMBRE": "Carla Díaz",
+    "EMAIL": "carla.diaz@email.cl",
+    "TIPO": "Vendedor",
+    "TIPO DE INDUSTRIA": "Accesorios",
+    "FECHA DE INCORPORACIÓN": "24/01/2023",
+    "PRESUPUESTO": "500000",
+    "ESTADO": "Activo"
+  },
+  {
+    "id": 2,
+    "COMPAÑIA": "Falabella",
+    "ID USUARIO": 20010511,
+    "NOMBRE": "Sandra Narvaez",
+    "EMAIL": "sandra.narvaez@email.cl",
+    "TIPO": "Partner",
+    "TIPO DE INDUSTRIA": "Electrónica",
+    "FECHA DE INCORPORACIÓN": "24/01/2023",
+    "PRESUPUESTO": "500000",
+    "ESTADO": "Pendiente"
+  },
+  {
+    "id": 3,
+    "COMPAÑIA": "Cencosud",
+    "ID USUARIO": 20010512,
+    "NOMBRE": "Carla Fuentealba",
+    "EMAIL": "carla.fuentealba@sitio.com",
+    "TIPO": "Customer",
+    "TIPO DE INDUSTRIA": "Electrónica",
+    "FECHA DE INCORPORACIÓN": "24/01/2023",
+    "PRESUPUESTO": "500000",
+    "ESTADO": "Bloqueado"
+  }
+]
