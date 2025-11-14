@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select/public-api';
+import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 
 @Component({

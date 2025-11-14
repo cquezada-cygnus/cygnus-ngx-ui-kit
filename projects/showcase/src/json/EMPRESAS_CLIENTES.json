@@ -1,0 +1,886 @@
+[
+  {
+    "emp_autoid": 9,
+    "RAZON SOCIAL": "CANAIMA CONSULTORES LIMITADA",
+    "NOMBRE DE FANTASIA": "CANAIMA",
+    "RUT": "772333412",
+    "EMAIL": "ti@ti.cl",
+    "GIRO": "OTRAS ACTIVIDADES DE SERVICIOS PERSONALES",
+    "DIRECCION": "Providencia 1017, of 41, Providencia",
+    "CLIENTES": [
+      {
+        "cli_autoid": 1,
+        "NOMBRES": "CRISTIAN",
+        "APELLIDOS": "CONTRERAS",
+        "RUT": "183379519",
+        "TELEFONO": "935454113",
+        "EMAIL": "cristian.contreras@cygnus.cl"
+      },
+      {
+        "cli_autoid": 207,
+        "NOMBRES": "Abimael",
+        "APELLIDOS": "Subero",
+        "RUT": "",
+        "TELEFONO": "",
+        "EMAIL": "abimael@insaitas.com"
+      },
+      {
+        "cli_autoid": 208,
+        "NOMBRES": "Abner",
+        "APELLIDOS": "Sebick",
+        "RUT": "182223174",
+        "TELEFONO": "",
+        "EMAIL": "Abner.Sebick.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 209,
+        "NOMBRES": "Abraham",
+        "APELLIDOS": "Tello",
+        "RUT": "174906874",
+        "TELEFONO": "56956288656",
+        "EMAIL": "abraham.tello.avila@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 10,
+    "RAZON SOCIAL": "LEPRCON DATA MARKETPLACE SPA",
+    "NOMBRE DE FANTASIA": "LEPRCON",
+    "RUT": "776339520",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE PROGRAMACION INFORMATICA",
+    "DIRECCION": "Av Italia 2095, Ñuñoa",
+    "CLIENTES": [
+      {
+        "cli_autoid": 210,
+        "NOMBRES": "Adam",
+        "APELLIDOS": "Simmons",
+        "RUT": "AL393496",
+        "TELEFONO": "16478594046",
+        "EMAIL": "adam@fusion-collective.com"
+      },
+      {
+        "cli_autoid": 211,
+        "NOMBRES": "Alejandro",
+        "APELLIDOS": "Gutierrez",
+        "RUT": "56659562",
+        "TELEFONO": "12865542559",
+        "EMAIL": "agutil899@gmail.com"
+      },
+      {
+        "cli_autoid": 212,
+        "NOMBRES": "Alberto",
+        "APELLIDOS": "Medina",
+        "RUT": "270777228",
+        "TELEFONO": "56932670400",
+        "EMAIL": "albertmedina1987@gmail.com"
+      },
+      {
+        "cli_autoid": 213,
+        "NOMBRES": "Alessandra",
+        "APELLIDOS": "Sánchez",
+        "RUT": "248352876",
+        "TELEFONO": "56942694959",
+        "EMAIL": "alessandrasanchez@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 11,
+    "RAZON SOCIAL": "DTG TECHNOLOGY SPA",
+    "NOMBRE DE FANTASIA": "DTG",
+    "RUT": "768398259",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE INFORMATICA",
+    "DIRECCION": "Avenida Libertad 269, of 904, Viña del Mar",
+    "CLIENTES": [
+      {
+        "cli_autoid": 214,
+        "NOMBRES": "Daniella",
+        "APELLIDOS": "Muñoz Basualto",
+        "RUT": "210516603",
+        "TELEFONO": "56958286552",
+        "EMAIL": "algodesarai@gmail.com"
+      },
+      {
+        "cli_autoid": 215,
+        "NOMBRES": "Alicia",
+        "APELLIDOS": "Olivari",
+        "RUT": "138311546",
+        "TELEFONO": "56951255862",
+        "EMAIL": "Alicia.Olivari.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 216,
+        "NOMBRES": "Andres",
+        "APELLIDOS": "Calderon",
+        "RUT": "281045199",
+        "TELEFONO": "56978390258",
+        "EMAIL": "andcalderon@gmail.com"
+      },
+      {
+        "cli_autoid": 217,
+        "NOMBRES": "Andrés",
+        "APELLIDOS": "Jorquera",
+        "RUT": "11100725M",
+        "TELEFONO": "34657712242",
+        "EMAIL": "Andrés.Jorquera.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 218,
+        "NOMBRES": "Andrés",
+        "APELLIDOS": "Pino",
+        "RUT": "208284762",
+        "TELEFONO": "56990800879",
+        "EMAIL": "Andrés.Pino.cambiar@citic.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 12,
+    "RAZON SOCIAL": "JMG GASTRONOMÍA LIMITADA",
+    "NOMBRE DE FANTASIA": "JMG GASTRONOMÍA",
+    "RUT": "773010382",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE RESTAURANTES Y DE SERVICIO MOVIL DE COMIDAS",
+    "DIRECCION": "Condell 1352, Providencia",
+    "CLIENTES": [
+      {
+        "cli_autoid": 219,
+        "NOMBRES": "Angelina",
+        "APELLIDOS": "Sepúlveda",
+        "RUT": "16382377k",
+        "TELEFONO": "56966883464",
+        "EMAIL": "angelica.sepulveda@citic.cl"
+      },
+      {
+        "cli_autoid": 220,
+        "NOMBRES": "Antonia",
+        "APELLIDOS": "Roselló",
+        "RUT": "169379416",
+        "TELEFONO": "56982783853",
+        "EMAIL": "Antonia.Roselló.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 221,
+        "NOMBRES": "Antonio",
+        "APELLIDOS": "Maldonado",
+        "RUT": "168881878",
+        "TELEFONO": "56983402882",
+        "EMAIL": "antonio@agenciafi.cl"
+      },
+      {
+        "cli_autoid": 222,
+        "NOMBRES": "Avelio",
+        "APELLIDOS": "Sepúlveda",
+        "RUT": "177755281",
+        "TELEFONO": "56957826769",
+        "EMAIL": "aveliose@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 13,
+    "RAZON SOCIAL": "GRUPO PISTACHO SPA",
+    "NOMBRE DE FANTASIA": "PISTACHO",
+    "RUT": "760560979",
+    "EMAIL": "",
+    "GIRO": "OTRAS ACTIVIDADES DE VENTA AL POR MENOR",
+    "DIRECCION": "",
+    "CLIENTES": [
+      {
+        "cli_autoid": 223,
+        "NOMBRES": "Barbara",
+        "APELLIDOS": "Negrón",
+        "RUT": "761339443",
+        "TELEFONO": "",
+        "EMAIL": "barbaranegronm@gmail.com"
+      },
+      {
+        "cli_autoid": 224,
+        "NOMBRES": "Mauricio",
+        "APELLIDOS": "Beiza",
+        "RUT": "175175806",
+        "TELEFONO": "56988054849",
+        "EMAIL": "beizakay@gmail.com"
+      },
+      {
+        "cli_autoid": 225,
+        "NOMBRES": "Benjamín",
+        "APELLIDOS": "Fernandez",
+        "RUT": "197857420",
+        "TELEFONO": "56976794423",
+        "EMAIL": "Benjamín.Fernandez.cambiar@citic.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 14,
+    "RAZON SOCIAL": "TRAZO VERDE PAISAJISMO LIMITADA",
+    "NOMBRE DE FANTASIA": "Trazo verde paisajismo",
+    "RUT": "761461826",
+    "EMAIL": "",
+    "GIRO": "FABRICACION DE MUEBLES PRINCIPALMENTE",
+    "DIRECCION": "PROVIDENCIA 1208, DPTO 1603, Providencia",
+    "CLIENTES": [
+      {
+        "cli_autoid": 226,
+        "NOMBRES": "Bastián",
+        "APELLIDOS": "Maldonado García",
+        "RUT": "177743593",
+        "TELEFONO": "56956672648",
+        "EMAIL": "bmg.tdm@gmail.com"
+      },
+      {
+        "cli_autoid": 227,
+        "NOMBRES": "Bover",
+        "APELLIDOS": "Li",
+        "RUT": "EM1444397",
+        "TELEFONO": "56983609470",
+        "EMAIL": "Bover.Li.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 228,
+        "NOMBRES": "Brayan",
+        "APELLIDOS": "0",
+        "RUT": "195645957",
+        "TELEFONO": "56934232560",
+        "EMAIL": "brayan@obolochocolate.cl"
+      },
+      {
+        "cli_autoid": 229,
+        "NOMBRES": "Brenda",
+        "APELLIDOS": "Padilla",
+        "RUT": "71942969",
+        "TELEFONO": "56936467091",
+        "EMAIL": "brendapadillac.15@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 15,
+    "RAZON SOCIAL": "LATIN PARTS CHILE SPA",
+    "NOMBRE DE FANTASIA": "LATIN PARTS CHILE SPA",
+    "RUT": "762037084",
+    "EMAIL": "",
+    "GIRO": "VENTA AL POR MENOR DE COMPUTADORES",
+    "DIRECCION": "",
+    "CLIENTES": [
+      {
+        "cli_autoid": 230,
+        "NOMBRES": "Buzz",
+        "APELLIDOS": "Piece",
+        "RUT": "7418236",
+        "TELEFONO": "13108067089",
+        "EMAIL": "Buzz.Piece.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 231,
+        "NOMBRES": "Chin",
+        "APELLIDOS": "Dou",
+        "RUT": "249567795",
+        "TELEFONO": "56951284534",
+        "EMAIL": "c_dou@hotmail.com"
+      },
+      {
+        "cli_autoid": 232,
+        "NOMBRES": "Camila",
+        "APELLIDOS": "Huencho",
+        "RUT": "174860211",
+        "TELEFONO": "56934874498",
+        "EMAIL": "camihuencho@gmai.com"
+      },
+      {
+        "cli_autoid": 233,
+        "NOMBRES": "Camila",
+        "APELLIDOS": "Cataldo",
+        "RUT": "179225508",
+        "TELEFONO": "",
+        "EMAIL": "camila.cataldo@drap.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 16,
+    "RAZON SOCIAL": "INSAITAS CONSULTORIA LIMITADA",
+    "NOMBRE DE FANTASIA": "INSAITAS CONSULTORIA LIMITADA",
+    "RUT": "762146029",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE GESTION",
+    "DIRECCION": "",
+    "CLIENTES": [
+      {
+        "cli_autoid": 234,
+        "NOMBRES": "Camila",
+        "APELLIDOS": "Rivera",
+        "RUT": "168625707",
+        "TELEFONO": "56987086527",
+        "EMAIL": "Camila.Rivera.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 235,
+        "NOMBRES": "Camila",
+        "APELLIDOS": "Undurraga",
+        "RUT": "156392774",
+        "TELEFONO": "56994389773",
+        "EMAIL": "Camila.Undurraga.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 236,
+        "NOMBRES": "Camila",
+        "APELLIDOS": "González",
+        "RUT": "189931539",
+        "TELEFONO": "56950634761",
+        "EMAIL": "camilag@gdschile.org"
+      },
+      {
+        "cli_autoid": 237,
+        "NOMBRES": "Camila",
+        "APELLIDOS": "Roa",
+        "RUT": "193507425",
+        "TELEFONO": "56949986323",
+        "EMAIL": "camilarm@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 17,
+    "RAZON SOCIAL": "MVMT AGENCIA DE COMUNICACIONES SPA",
+    "NOMBRE DE FANTASIA": "MVMT",
+    "RUT": "763505197",
+    "EMAIL": "",
+    "GIRO": "Elab des y ejec de public marketing y co",
+    "DIRECCION": "Av. El Golf 99 of 901, Las Condes",
+    "CLIENTES": [
+      {
+        "cli_autoid": 238,
+        "NOMBRES": "Camilo",
+        "APELLIDOS": "Carreño",
+        "RUT": "16768856k",
+        "TELEFONO": "56995142731",
+        "EMAIL": "Camilo.Carreño.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 239,
+        "NOMBRES": "Carla",
+        "APELLIDOS": "Vásquez",
+        "RUT": "168399375",
+        "TELEFONO": "56965831947",
+        "EMAIL": "Carla.Vásquez.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 240,
+        "NOMBRES": "Carlos",
+        "APELLIDOS": "Barra",
+        "RUT": "154908455",
+        "TELEFONO": "56998270262",
+        "EMAIL": "carlos.barra@perfawere.com"
+      },
+      {
+        "cli_autoid": 241,
+        "NOMBRES": "Carlos",
+        "APELLIDOS": "Martinez",
+        "RUT": "259992265",
+        "TELEFONO": "56939319040",
+        "EMAIL": "carlosrmd94@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 18,
+    "RAZON SOCIAL": "OBOLO CHOCOLATE SPA",
+    "NOMBRE DE FANTASIA": "OBOLO",
+    "RUT": "766209319",
+    "EMAIL": "",
+    "GIRO": "ELABORACION DE CACAO, CHOCOLATE",
+    "DIRECCION": "",
+    "CLIENTES": [
+      {
+        "cli_autoid": 242,
+        "NOMBRES": "Carola",
+        "APELLIDOS": "Santana",
+        "RUT": "133233806",
+        "TELEFONO": "",
+        "EMAIL": "carolasantanao@gmail.com"
+      },
+      {
+        "cli_autoid": 243,
+        "NOMBRES": "Carolina",
+        "APELLIDOS": "Díaz",
+        "RUT": "141460501",
+        "TELEFONO": "",
+        "EMAIL": "carolina.diaz11@gmail.com"
+      },
+      {
+        "cli_autoid": 244,
+        "NOMBRES": "Carolina",
+        "APELLIDOS": "Ortega",
+        "RUT": "211513357",
+        "TELEFONO": "56977692425",
+        "EMAIL": "carolina.ortega@gmail.com"
+      },
+      {
+        "cli_autoid": 245,
+        "NOMBRES": "Carolina",
+        "APELLIDOS": "Rojas",
+        "RUT": "203487274",
+        "TELEFONO": "56961212140",
+        "EMAIL": "Carolina.Rojas.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 246,
+        "NOMBRES": "Constanza",
+        "APELLIDOS": "Gómez",
+        "RUT": "198375144",
+        "TELEFONO": "56992254199",
+        "EMAIL": "cgomez@masdoyv.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 19,
+    "RAZON SOCIAL": "4SOLUTIONS SPA",
+    "NOMBRE DE FANTASIA": "4SOLUTIONS SPA",
+    "RUT": "768887780",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE INFORMATICA Y DE GESTION DE",
+    "DIRECCION": "",
+    "CLIENTES": [
+      {
+        "cli_autoid": 247,
+        "NOMBRES": "Christian",
+        "APELLIDOS": "Belmar",
+        "RUT": "85333682",
+        "TELEFONO": "56932662027",
+        "EMAIL": "christian@gdschile.org"
+      },
+      {
+        "cli_autoid": 248,
+        "NOMBRES": "Claudia",
+        "APELLIDOS": "Alvarado",
+        "RUT": "169643431",
+        "TELEFONO": "56991415513",
+        "EMAIL": "clau.alvarado.v@gmail.com"
+      },
+      {
+        "cli_autoid": 249,
+        "NOMBRES": "Claudia",
+        "APELLIDOS": "Arias",
+        "RUT": "164763706",
+        "TELEFONO": "56940408186",
+        "EMAIL": "Claudia.Arias.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 250,
+        "NOMBRES": "Claudia",
+        "APELLIDOS": "Espinoza",
+        "RUT": "163121158",
+        "TELEFONO": "3228835944",
+        "EMAIL": "Claudia.Espinoza.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 251,
+        "NOMBRES": "Claudia",
+        "APELLIDOS": "Sánchez",
+        "RUT": "186658604",
+        "TELEFONO": "56973715442",
+        "EMAIL": "claudia.sanchez@umce.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 20,
+    "RAZON SOCIAL": "GDS CONSULTORES LIMITADA",
+    "NOMBRE DE FANTASIA": "GDS",
+    "RUT": "769321721",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE GESTION",
+    "DIRECCION": "LA CONCEPCION 81 A903, Providencia",
+    "CLIENTES": [
+      {
+        "cli_autoid": 252,
+        "NOMBRES": "Claudio",
+        "APELLIDOS": "Ortíz",
+        "RUT": "185706192",
+        "TELEFONO": "56973405872",
+        "EMAIL": "Claudio.Ortíz.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 253,
+        "NOMBRES": "Comado",
+        "APELLIDOS": "Sanami",
+        "RUT": "YA205723",
+        "TELEFONO": "41791285888",
+        "EMAIL": "Comado.Sanami.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 254,
+        "NOMBRES": "Constanza",
+        "APELLIDOS": "Echeverría",
+        "RUT": "184084538",
+        "TELEFONO": "56997979430",
+        "EMAIL": "Constanza.Echeverría.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 255,
+        "NOMBRES": "Constanza",
+        "APELLIDOS": "Reyes",
+        "RUT": "177815446",
+        "TELEFONO": "56932821091",
+        "EMAIL": "cony.reyeso@gmail.com"
+      },
+      {
+        "cli_autoid": 256,
+        "NOMBRES": "Constanza",
+        "APELLIDOS": "López",
+        "RUT": "181689307",
+        "TELEFONO": "56939553145",
+        "EMAIL": "conyerba2019@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 21,
+    "RAZON SOCIAL": "BWISE SPA",
+    "NOMBRE DE FANTASIA": "BWISE SPA",
+    "RUT": "771008798",
+    "EMAIL": "",
+    "GIRO": "EMPRESAS DE SERVICIOS DE INGENIERIA",
+    "DIRECCION": "",
+    "CLIENTES": [
+      {
+        "cli_autoid": 257,
+        "NOMBRES": "Crhistian",
+        "APELLIDOS": "Zamorano",
+        "RUT": "202422489",
+        "TELEFONO": "56945122899",
+        "EMAIL": "Crhistian.Zamorano.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 258,
+        "NOMBRES": "Cristofer",
+        "APELLIDOS": "Cepeda García",
+        "RUT": "174385017",
+        "TELEFONO": "56931230942",
+        "EMAIL": "cristofer.cepeda.garcia@gmail.com"
+      },
+      {
+        "cli_autoid": 259,
+        "NOMBRES": "Catalina",
+        "APELLIDOS": "Saldivia",
+        "RUT": "176032685",
+        "TELEFONO": "56944927980",
+        "EMAIL": "csaldivialagos@gmail.com"
+      },
+      {
+        "cli_autoid": 260,
+        "NOMBRES": "Daisy",
+        "APELLIDOS": "Seguel",
+        "RUT": "197532610",
+        "TELEFONO": "56958924727",
+        "EMAIL": "daisy@agenciafi.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 22,
+    "RAZON SOCIAL": "PARTNERS, CONSULTORIA, GESTION Y FORMACION EN RRHH SPA",
+    "NOMBRE DE FANTASIA": "PARTNERS ",
+    "RUT": "771392849",
+    "EMAIL": "",
+    "GIRO": "Consultoria y asesoria empresiaral en RRHH",
+    "DIRECCION": "Argomedo 373, depto 309, Santiago",
+    "CLIENTES": [
+      {
+        "cli_autoid": 261,
+        "NOMBRES": "Danal",
+        "APELLIDOS": "Estrada",
+        "RUT": "254546054",
+        "TELEFONO": "56964367711",
+        "EMAIL": "danalreynaldo.endis@gmail.com"
+      },
+      {
+        "cli_autoid": 262,
+        "NOMBRES": "Daniela",
+        "APELLIDOS": "Rosales",
+        "RUT": "173255934",
+        "TELEFONO": "56988235075",
+        "EMAIL": "dani.rosales.m@gmail.com"
+      },
+      {
+        "cli_autoid": 263,
+        "NOMBRES": "Daniel",
+        "APELLIDOS": "Muñoz",
+        "RUT": "159296938",
+        "TELEFONO": "56961564099",
+        "EMAIL": "Daniel.Muñoz.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 264,
+        "NOMBRES": "Daniela",
+        "APELLIDOS": "Cespedes",
+        "RUT": "178373757",
+        "TELEFONO": "56996512728",
+        "EMAIL": "Daniela.Cespedes.cambiar@citic.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 23,
+    "RAZON SOCIAL": "PERFAWARE CHILE SPA",
+    "NOMBRE DE FANTASIA": "PERFAWARE CHILE SPA",
+    "RUT": "772276745",
+    "EMAIL": "",
+    "GIRO": "Otras actividades de tecnologia de la ing",
+    "DIRECCION": "Los Militares 5001 of 1101 piso 11, Las Condes",
+    "CLIENTES": [
+      {
+        "cli_autoid": 265,
+        "NOMBRES": "Daniela",
+        "APELLIDOS": "Carrasco",
+        "RUT": "197007281",
+        "TELEFONO": "56966506589",
+        "EMAIL": "daniela@agenciafi.cl"
+      },
+      {
+        "cli_autoid": 266,
+        "NOMBRES": "Daniela",
+        "APELLIDOS": "Paz",
+        "RUT": "170889479",
+        "TELEFONO": "56979474355",
+        "EMAIL": "daniela@gdschile.org"
+      },
+      {
+        "cli_autoid": 267,
+        "NOMBRES": "Daniela",
+        "APELLIDOS": "Peña Corvillon",
+        "RUT": "153144974",
+        "TELEFONO": "15109265878",
+        "EMAIL": "daniela@wildlandarch.com"
+      },
+      {
+        "cli_autoid": 268,
+        "NOMBRES": "Daniella",
+        "APELLIDOS": "Bravari",
+        "RUT": "215912809",
+        "TELEFONO": "",
+        "EMAIL": "Daniella.Bravari.cambiar@citic.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 24,
+    "RAZON SOCIAL": "BY ASESORÍAS CONTABLES Y TRIBUTARIAS LIMITADA",
+    "NOMBRE DE FANTASIA": "BY ASESORÍAS",
+    "RUT": "773741298",
+    "EMAIL": "",
+    "GIRO": "Asesorias contables",
+    "DIRECCION": "Suarez Mujica 2900, DP 135, Ñuñoa",
+    "CLIENTES": [
+      {
+        "cli_autoid": 269,
+        "NOMBRES": "Daniel",
+        "APELLIDOS": "Paez",
+        "RUT": "101902631",
+        "TELEFONO": "",
+        "EMAIL": "danielpl@gmail.com"
+      },
+      {
+        "cli_autoid": 270,
+        "NOMBRES": "Danilo",
+        "APELLIDOS": "Urbina",
+        "RUT": "165584104",
+        "TELEFONO": "56983148749",
+        "EMAIL": "Danilo.Urbina.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 271,
+        "NOMBRES": "Dario",
+        "APELLIDOS": "Martinez",
+        "RUT": "178118951",
+        "TELEFONO": "",
+        "EMAIL": "dariomartinez.dg@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 25,
+    "RAZON SOCIAL": "PRODUCCIONES Y EVENTOS - SERVICIOS PUBLICITARIOS - DE BANQUETERÍA AGENCIA LA JUNTA SPA",
+    "NOMBRE DE FANTASIA": "AGENCIA LA JUNTA",
+    "RUT": "774765395",
+    "EMAIL": "",
+    "GIRO": "SUMINISTRO DE COMIDAS POR ENCARGO",
+    "DIRECCION": "AV VESPUCIO #3121 DP 52 G, Macul",
+    "CLIENTES": [
+      {
+        "cli_autoid": 272,
+        "NOMBRES": "Daniela",
+        "APELLIDOS": "Bravo Tapia",
+        "RUT": "153423458",
+        "TELEFONO": "56999278398",
+        "EMAIL": "dbravo@insaitas.com"
+      },
+      {
+        "cli_autoid": 273,
+        "NOMBRES": "Dean",
+        "APELLIDOS": "Curry",
+        "RUT": "149882625",
+        "TELEFONO": "34673952986",
+        "EMAIL": "Dean.Curry.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 274,
+        "NOMBRES": "Diego",
+        "APELLIDOS": "Zuleta Brune",
+        "RUT": "178659855",
+        "TELEFONO": "56993087584",
+        "EMAIL": "Diego.Zuleta Brune.cambiar@citic.cl"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 26,
+    "RAZON SOCIAL": "SOCIEDAD DE PROFESIONALES AGENCIA FI LIMITADA",
+    "NOMBRE DE FANTASIA": "AGENCIA FI",
+    "RUT": "776872121",
+    "EMAIL": "",
+    "GIRO": "ACTIVIDADES DE CONSULTORIA DE GESTION",
+    "DIRECCION": "SENEGAL ORIENTE 7671, Vitacura",
+    "CLIENTES": [
+      {
+        "cli_autoid": 275,
+        "NOMBRES": "Diego",
+        "APELLIDOS": "Escobar",
+        "RUT": "174044341",
+        "TELEFONO": "13126785684",
+        "EMAIL": "diegoes@hotmail.com"
+      },
+      {
+        "cli_autoid": 276,
+        "NOMBRES": "Diego",
+        "APELLIDOS": "González",
+        "RUT": "172047394",
+        "TELEFONO": "56982986075",
+        "EMAIL": "diegog@utlego.cl"
+      },
+      {
+        "cli_autoid": 277,
+        "NOMBRES": "Jeremy",
+        "APELLIDOS": "Allen",
+        "RUT": "PP2058254",
+        "TELEFONO": "7798979279",
+        "EMAIL": "djeremi@gmail.com"
+      },
+      {
+        "cli_autoid": 278,
+        "NOMBRES": "Andy",
+        "APELLIDOS": "Pacheco",
+        "RUT": "254687650",
+        "TELEFONO": "56999442610",
+        "EMAIL": "don70ceo@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 27,
+    "RAZON SOCIAL": "INGAL INGENIERIA LIMITADA",
+    "NOMBRE DE FANTASIA": "INGAL INGENIERIA",
+    "RUT": "777589504",
+    "EMAIL": "",
+    "GIRO": "Obras de Ingenieria",
+    "DIRECCION": "Villarrica 540, Providencia",
+    "CLIENTES": [
+      {
+        "cli_autoid": 279,
+        "NOMBRES": "Diego",
+        "APELLIDOS": "Pérez Pérez",
+        "RUT": "163617145",
+        "TELEFONO": "56983609470",
+        "EMAIL": "dperez@gmail.com"
+      },
+      {
+        "cli_autoid": 280,
+        "NOMBRES": "Daniela",
+        "APELLIDOS": "López",
+        "RUT": "187369681",
+        "TELEFONO": "56957826769",
+        "EMAIL": "dtlopez@uc.lc"
+      },
+      {
+        "cli_autoid": 281,
+        "NOMBRES": "Danitza",
+        "APELLIDOS": "Jerez",
+        "RUT": "108924888",
+        "TELEFONO": "56991612534",
+        "EMAIL": "dyepez@masdayv.cl"
+      },
+      {
+        "cli_autoid": 282,
+        "NOMBRES": "Eduardo",
+        "APELLIDOS": "Ramirez",
+        "RUT": "12141516k",
+        "TELEFONO": "56984180633",
+        "EMAIL": "eduardoramirezabogado@gmail.com"
+      }
+    ]
+  },
+  {
+    "emp_autoid": 28,
+    "RAZON SOCIAL": "DPC ARQUITECTURA ECOLOGÍA Y TERRITORIO SPA",
+    "NOMBRE DE FANTASIA": "WILD",
+    "RUT": "779357953",
+    "EMAIL": "",
+    "GIRO": "Servicios de Arquitectura",
+    "DIRECCION": "Quilicura Rastro LT-B 4, Pelluhue",
+    "CLIENTES": [
+      {
+        "cli_autoid": 283,
+        "NOMBRES": "Enzo",
+        "APELLIDOS": "Mariben",
+        "RUT": "19727607k",
+        "TELEFONO": "56967596293",
+        "EMAIL": "emaiben@morrisonpato.com"
+      },
+      {
+        "cli_autoid": 284,
+        "NOMBRES": "Eduardo",
+        "APELLIDOS": "Rey Pizarro",
+        "RUT": "162265865",
+        "TELEFONO": "56984725106",
+        "EMAIL": "epizarrorey@gmail.com"
+      },
+      {
+        "cli_autoid": 285,
+        "NOMBRES": "Estefania",
+        "APELLIDOS": "Castellano",
+        "RUT": "272022062",
+        "TELEFONO": "56949665935",
+        "EMAIL": "estefaniacastellanov@gmail.com"
+      },
+      {
+        "cli_autoid": 286,
+        "NOMBRES": "Falón",
+        "APELLIDOS": "Equis",
+        "RUT": "46039686",
+        "TELEFONO": "56975781258",
+        "EMAIL": "Falón.Equis.cambiar@citic.cl"
+      },
+      {
+        "cli_autoid": 287,
+        "NOMBRES": "Faviana",
+        "APELLIDOS": "Espina Aldana",
+        "RUT": "262237788",
+        "TELEFONO": "56964367711",
+        "EMAIL": "favianareynaldo.endis@gmail.com"
+      },
+      {
+        "cli_autoid": 288,
+        "NOMBRES": "Francisco",
+        "APELLIDOS": "Cabezas",
+        "RUT": "154496335",
+        "TELEFONO": "56945992343",
+        "EMAIL": "fco.cabezar@gmail.com"
+      }
+    ]
+  }
+]

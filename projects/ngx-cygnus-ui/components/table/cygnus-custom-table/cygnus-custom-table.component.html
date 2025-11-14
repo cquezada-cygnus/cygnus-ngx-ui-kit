@@ -59,7 +59,11 @@
                             }
                             @else {
 
-                              @if (badgeKey() && badgeKey()?.key===key) {
+                              @if (selectKeyArr() && selectKeyArr().length>0 && key===getKeyOfSelOption(key, item)) {
+                                <cygnus-select [options]="options" />
+                              }
+
+                              @else if (badgeKey() && badgeKey()?.key===key) {
 
                                 <cygnus-badge
                                   [badgeTypes]="'badge-sm ' + badgeColor(item[key])"
@@ -155,7 +159,11 @@
                             }
                             @else {
 
-                              @if (badgeKey() && badgeKey()?.key===key) {
+                              @if (selectKeyArr() && selectKeyArr().length>0 && key===getKeyOfSelOption(key, item)) {
+                                <cygnus-select [options]="options" />
+                              }
+
+                              @else if (badgeKey() && badgeKey()?.key===key) {
 
                                 <cygnus-badge
                                   [badgeTypes]="'badge-sm ' + badgeColor(item[key])"

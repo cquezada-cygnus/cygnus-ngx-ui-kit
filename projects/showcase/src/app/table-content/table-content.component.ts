@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { TableBadge, TableItem } from 'ngx-cygnus-ui/interfaces';
+import { SelectCollection, TableBadge, TableItem } from 'ngx-cygnus-ui/interfaces';
 import { CygnusCustomTableComponent, CygnusTableComponent } from 'ngx-cygnus-ui/components/table';
 import * as CLIENTES from './../../json/CLIENTES.json';
 import * as EMPRESAS from './../../json/EMPRESAS.json';
 import * as COMPANY_COLAB from './../../json/COMPANY_COLAB.json';
+import * as EMPRESAS_CLIENTES from './../../json/EMPRESAS_CLIENTES.json';
 
 
 @Component({
@@ -38,6 +39,7 @@ export class TableContentComponent {
   CLIENTES = JSON.parse(JSON.stringify(CLIENTES)).default;
   EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
   COMPANY_COLAB = JSON.parse(JSON.stringify(COMPANY_COLAB)).default;
+  EMPRESAS_CLIENTES = JSON.parse(JSON.stringify(EMPRESAS_CLIENTES)).default;
 
   badgeKey: TableBadge = {
     key: 'ESTADO',
@@ -48,11 +50,14 @@ export class TableContentComponent {
 
   empresasEditArr: string[] = [
     'NOMBRE DE FANTASIA', 'EMAIL', 'DIRECCION',
-  ]
+  ];
 
   showEditedData(data: any) {
     console.log('showEditedData: ', data);
-  }
+  };
 
+  empresasSelectArr:SelectCollection[]  = [
+    {key:'CLIENTES', keyItems: ['NOMBRES', 'APELLIDOS', 'EMAIL']}
+  ];
 
 }

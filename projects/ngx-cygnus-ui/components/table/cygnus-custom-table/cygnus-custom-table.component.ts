@@ -1,4 +1,4 @@
-import { Component, effect, input, OnInit, output, signal } from '@angular/core';
+import { Component, input, OnInit, output, signal } from '@angular/core';
 import { UpperCasePipe } from '@angular/common';
 import { TW_CLASS } from '../const/tailwind.const';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
@@ -6,9 +6,10 @@ import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
 import { CygnusButtonLinkComponent, } from 'ngx-cygnus-ui/components/button';
 import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
+import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { TableType } from 'ngx-cygnus-ui/types';
-import { EditableTableItem, TableBadge } from 'ngx-cygnus-ui/interfaces';
-import { ɵInternalFormsSharedModule } from "@angular/forms";
+import { EditableTableItem, SelectCollection, SelectGeneric, TableBadge } from 'ngx-cygnus-ui/interfaces';
+import * as i0 from '@angular/core';
 
 @Component({
   selector: 'cygnus-custom-table',
@@ -19,7 +20,7 @@ import { ɵInternalFormsSharedModule } from "@angular/forms";
     CygnusButtonLinkComponent,
     CygnusPaginationComponent,
     CygnusInputComponent,
-    ɵInternalFormsSharedModule
+    CygnusSelectComponent,
 ],
   templateUrl: './cygnus-custom-table.component.html',
 })
@@ -49,12 +50,62 @@ export class CygnusCustomTableComponent implements OnInit {
   emitModifiedData = output<any>();
 
   badgeKey = input<TableBadge>();
+  selectKeyArr = input<SelectCollection[]>([]);
+  options: SelectGeneric[] = [];
 
   ngOnInit(): void {
     this.setColumnsHead();
 
     if (this.maxCounter()>0) {
       this.showContent();
+    }
+  }
+
+  getKeyOfSelOption(key: string, item: any): string {
+    this.options = [];
+    if (this.selectKeyArr() && this.selectKeyArr().length>0) {
+      for (let i = 0; i < this.selectKeyArr().length; i++) {
+        const sel = this.selectKeyArr()[i];
+        if (key===sel.key) {
+          this.options = this.createOptions(sel, item);
+          return key;
+        }
+      }
+    }
+    this.options = [];
+    return '';
+  }
+
+  createOptions(sel: SelectCollection, item: any): SelectGeneric[] {
+    const options: SelectGeneric[] = [];
+
+    for (let i = 0; i < item[sel.key].length; i++) {
+      const elem = item[sel.key][i];
+      let option = '';
+
+      for (let j = 0; j < sel.keyItems.length; j++) {
+        const kelem = elem[sel.keyItems[j]];
+        option += (kelem + ' ');
+      }
+
+      options.push( { option: option, value: elem })
+    }
+
+    console.log('createOptions: ', options);
+
+    return options;
+  }
+
+  setSelectFormat(obj:any) {
+    function getObjectEntries<T extends object>(obj: T): [keyof T, T[keyof T]][] {
+      return Object.entries(obj) as [keyof T, T[keyof T]][];
+    }
+
+    obj = getObjectEntries(obj);
+    const options: SelectGeneric[] = [];
+    for (const [key, value] of obj) {
+      console.log(`Key: ${String(key)}, Value: ${value}`);
+      options.push({option: key, value: value})
     }
   }
 
