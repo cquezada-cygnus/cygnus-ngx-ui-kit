@@ -44,6 +44,7 @@
 
                           <td
                             [class]="
+                              'min-w-[15rem] ' +
                               TW_CLASS.TABLE_TD + ' ' +
                               (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
                             "
@@ -144,6 +145,7 @@
 
                           <td
                             [class]="
+                              'min-w-[15rem] ' +
                               TW_CLASS.TABLE_TD + ' ' +
                               (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
                             "
