@@ -1,8 +1,8 @@
 <div class="flex">
-  <div class="relative inline-block" id="dropdown-div" >
-    <button id="dropdown-button" [class]="TW_CLASS.DROPDOWN_MENU_FILTER"  (click)="toggleInvisible()"
+  <div class="inline-block" [id]="drowpdownSearchId()" >
+    <button [id]="drowpdownSearchBtnId()" [class]="TW_CLASS.DROPDOWN_MENU_FILTER"  (click)="toggleInvisible()"
     type="button">
-      <span class="whitespace-nowrap"  >Todas las categorías</span>
+      <span class="whitespace-nowrap"  >{{menuSearchText()}}</span>
       <lib-ngx-cygnus-icons class="inline-flex items-center h-2.5 ms-2.5"
         [width]="'19px'"
         [height]="'19px'"
@@ -13,23 +13,17 @@
     <ul class="absolute z-10 min-w-[180px] overflow-auto rounded-lg border border-slate-200 bg-white p-1.5 shadow-lg focus:outline-none"
       [class.invisible]="isInvisible()"
     >
-      <li role="menuitem"
-        class="flex items-center w-full p-3 text-sm transition-all rounded-md cursor-pointer text-slate-800 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100">
-        Contratos
-      </li>
-      <li role="menuitem"
-        class="flex items-center w-full p-3 text-sm transition-all rounded-md cursor-pointer text-slate-800 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100">
-        Reportes
-      </li>
-      <li role="menuitem"
-        class="flex items-center w-full p-3 text-sm transition-all rounded-md cursor-pointer text-slate-800 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100">
-        Liquidaciones
-      </li>
+      @for (item of menuSearchContentArr(); track $index) {
+        <li role="menuitem" (click)="selectMenu(item.key)"
+          class="flex items-center w-full p-3 text-sm transition-all rounded-md cursor-pointer text-slate-800 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100">
+          {{item.key}}
+        </li>
+      }
     </ul>
   </div>
   <input type="text"
     [class]="
-      'rounded-none border border-gray-300 bg-gray-50 focus:border-primary-700 focus:outline-none focus:ring-primary-700 active:border-primary-700 w-full px-4'
+      'rounded-none border border-gray-300 bg-white focus:border-primary-700 focus:outline-none focus:ring-primary-700 active:border-primary-700 w-full px-4'
     "
     placeholder="Buscar..." />
   <button type="submit"
