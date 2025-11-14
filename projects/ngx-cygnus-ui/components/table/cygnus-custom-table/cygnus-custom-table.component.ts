@@ -91,8 +91,6 @@ export class CygnusCustomTableComponent implements OnInit {
       options.push( { option: option, value: elem })
     }
 
-    console.log('createOptions: ', options);
-
     return options;
   }
 
