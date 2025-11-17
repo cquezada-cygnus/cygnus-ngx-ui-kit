@@ -13,8 +13,8 @@
     <ul [class]="TW_CLASS.UL_BASE"
       [class.invisible]="isInvisible()"
     >
-      @for (item of menuSearchContentArr(); track $index) {
-        <li role="menuitem" (click)="selectMenu(item.key)"
+      @for (item of menuSearchContentArr(); track $index; let i = $index;) {
+        <li role="menuitem" (click)="selectMenu(item.key, i)"
           [class]="TW_CLASS.LI_BASE">
           {{item.key}}
         </li>
@@ -25,7 +25,9 @@
     [class]="
       'rounded-none border border-gray-300 bg-white focus:border-primary-700 focus:outline-none focus:ring-primary-700 active:border-primary-700 w-full px-4'
     "
-    placeholder="Buscar..." />
+    [placeholder]="placeholder()"
+    [formControl]="searchControl"
+  />
   <button type="submit"
     [class]="
       'inset-y-0 w-max !px-5 rounded-none rounded-r-lg element-right end-0 ' +
@@ -42,3 +44,11 @@
     />
   </button>
 </div>
+<ul
+  [class]="TW_CLASS.UL_BASE"
+  [class.invisible]="filteredItems.length==0"
+>
+  @for (item of filteredItems; track $index; let i = $index;) {
+    <li [class]="TW_CLASS.LI_BASE" >{{item.option}}</li>
+  }
+</ul>
