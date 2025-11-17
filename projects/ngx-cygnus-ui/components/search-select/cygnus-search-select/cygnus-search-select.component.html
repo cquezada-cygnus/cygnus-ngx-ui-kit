@@ -11,7 +11,8 @@
       TW_CLASS.INPUT_BASE + ' ' +
       '!pl-9'
     "
-    placeholder="Escribe aquí..."
+    [placeholder]="placeholder()"
+    [formControl]="searchControl"
   />
 
   <button type="submit"
@@ -22,4 +23,12 @@
     "
   >Buscar</button>
 </div>
+<ul
+  [class]="TW_CLASS.UL_BASE"
+  [class.invisible]="filteredItems.length==0"
+>
+  @for (item of filteredItems; track $index; let i = $index;) {
+    <li [class]="TW_CLASS.LI_BASE" >{{item.option}}</li>
+  }
+</ul>
 
