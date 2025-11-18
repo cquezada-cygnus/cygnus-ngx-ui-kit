@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center justify-center gap-4 mb-4">
   <div class="flex flex-col w-full">
 
-    <!-- Other panel -->
+    @if (showSearch()) {
     <div class="flex flex-wrap items-center justify-between py-4 space-y-4 bg-white flex-column md:flex-row md:space-y-0">
       <div>
         <!-- SELECT... si es que lo vas a utilizar para filtrar -->
@@ -11,9 +11,9 @@
           [typeAutoSearch]="true"
           (outputSearch)="search($event)"
         />
-
       </div>
     </div>
+    }
 
     <div class="-m-1.5 overflow-x-auto">
       <div class="p-1.5 min-w-full inline-block align-middle">

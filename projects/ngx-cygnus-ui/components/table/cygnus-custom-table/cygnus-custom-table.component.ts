@@ -54,6 +54,8 @@ export class CygnusCustomTableComponent implements OnInit {
   selectKeyArr = input<SelectCollection[]>([]);
   options: SelectGeneric[] = [];
 
+  showSearch = input<boolean>(false);
+
   ngOnInit(): void {
     this.showDataTable.set(this.dataTable());
     this.setColumnsHead();
@@ -170,6 +172,8 @@ export class CygnusCustomTableComponent implements OnInit {
           return false; // Ignore non-string values for this search
         });
       }) );
+
+      this.showContent(); // actualizar paginación (funciona raro pero funciona, podría mejorar (¿?))
     }
   }
 
