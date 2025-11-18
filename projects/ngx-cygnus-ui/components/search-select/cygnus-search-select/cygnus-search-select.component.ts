@@ -23,6 +23,8 @@ export class CygnusSearchSelectComponent implements OnInit {
   itemSelected = signal<SelectGeneric>(this.emptyItemSelected);
   isInvisible = signal<boolean>(true);
 
+  typeAutoSearch = input<boolean>(false);
+
   placeholder = input<string>('Escribe aquí...');
 
   showOptionsAutomatically = input<boolean>(false);
@@ -57,6 +59,11 @@ export class CygnusSearchSelectComponent implements OnInit {
       this.outputSearch.emit([ this.searchControl.value || '', this.itemSelected()||this.emptyItemSelected ]);
       this.itemSelected.set(this.emptyItemSelected);
     }
+    if(!this.typeAutoSearch()) this.searchControl.patchValue('');
+  }
+
+  keyupSendSearch() {
+    if(this.typeAutoSearch()) this.sendSearch();
   }
 
 }

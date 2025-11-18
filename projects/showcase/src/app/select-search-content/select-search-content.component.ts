@@ -50,7 +50,6 @@ export class SelectSearchContentComponent {
 
   printSearch(event: any) {
     console.log('printSearch:', event);
-
   }
 
 }

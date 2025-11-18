@@ -1,5 +1,4 @@
 import { Component, input, OnInit, output, signal } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
 import { TW_CLASS } from '../const/tailwind.const';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
@@ -9,18 +8,18 @@ import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { TableType } from 'ngx-cygnus-ui/types';
 import { EditableTableItem, SelectCollection, SelectGeneric, TableBadge } from 'ngx-cygnus-ui/interfaces';
-import * as i0 from '@angular/core';
+import { CygnusSearchSelectComponent } from "ngx-cygnus-ui/components/search-select";
 
 @Component({
   selector: 'cygnus-custom-table',
   imports: [
-    UpperCasePipe,
     NgxCygnusIconsComponent,
     CygnusBadgeComponent,
     CygnusButtonLinkComponent,
     CygnusPaginationComponent,
     CygnusInputComponent,
     CygnusSelectComponent,
+    CygnusSearchSelectComponent,
 ],
   templateUrl: './cygnus-custom-table.component.html',
 })
@@ -29,6 +28,8 @@ export class CygnusCustomTableComponent implements OnInit {
 
   tableType = input<TableType>('basic');
   dataTable = input<any[]>([]); // enviar JSON con datos
+  filteredDataTable = signal<any[]>([]);
+  showDataTable = signal<any[]>(this.dataTable());
 
   columnsHead = signal<string[]>([]);
   displayedColumns = signal<string[]>([]);
@@ -54,6 +55,7 @@ export class CygnusCustomTableComponent implements OnInit {
   options: SelectGeneric[] = [];
 
   ngOnInit(): void {
+    this.showDataTable.set(this.dataTable());
     this.setColumnsHead();
 
     if (this.maxCounter()>0) {
@@ -116,7 +118,7 @@ export class CygnusCustomTableComponent implements OnInit {
 
   getOutputData(data: any, key: string, i: number) {
     this.editedData[key]=data;
-    this.originalData=this.dataTable()[i];
+    this.originalData=this.showDataTable()[i];
   }
 
   cancelEditedData() {
@@ -140,16 +142,35 @@ export class CygnusCustomTableComponent implements OnInit {
   }
 
   setColumnsHead() {
-    for (const key in this.dataTable()[0]) {
+    for (const key in this.showDataTable()[0]) {
       this.columnsHead.update(currentItems => [...currentItems, key]);
     }
   }
 
   showContent() {
-    const total = this.dataTable().length;
+    const total = this.showDataTable().length;
     const amountPerPage = Math.ceil(total / this.maxCounter());
     this.init.set(amountPerPage*(this.currentCounter-1));
     this.limit.set((amountPerPage*this.currentCounter)-1);
+  }
+
+  search(searchTerm: string | [string, SelectGeneric]) {
+    if ( typeof searchTerm === 'string' ) {
+      if (searchTerm.length==0) { // mostrar la tabla completa si no hay búsqueda
+        this.showDataTable.set(this.dataTable());
+        return;
+      }
+
+      this.showDataTable.set( this.dataTable().filter(item => {
+        // Check if any value in the current object contains the search term
+        return Object.values(item).some(value => {
+          if (typeof value === 'string') {
+            return value.toLowerCase().includes(searchTerm.toLowerCase());
+          }
+          return false; // Ignore non-string values for this search
+        });
+      }) );
+    }
   }
 
 }

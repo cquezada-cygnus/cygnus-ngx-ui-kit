@@ -76,8 +76,6 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
 
   setInputSearchAfterChooseOption(item: SelectGeneric) {
     this.itemSelected.set(item);
-    console.log('this.itemSelected: ', this.itemSelected());
-
     this.searchControl.patchValue(item.option);
     this.isInvisibleOptions.set(true);
   }
@@ -89,6 +87,7 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
       this.outputSearch.emit([ this.searchControl.value || '', this.itemSelected()||this.emptyItemSelected ]);
       this.itemSelected.set(this.emptyItemSelected);
     }
+    this.searchControl.patchValue('');
   }
 
   @HostListener('document:click', ['$event'])
