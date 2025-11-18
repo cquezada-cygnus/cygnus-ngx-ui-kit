@@ -258,19 +258,18 @@
 
           </table>
 
-          @if (maxCounter()>0) {
-            <div class="flex content-center">
-              <cygnus-pagination
-                [paginationType]="'normal'"
-                [(currentCounter)]="currentCounter"
-                [maxCounter]="maxCounter()"
-                (click)="showContent()"
-              />
-            </div>
-          }
-
         </div>
       </div>
     </div>
+    @if (maxCounter()>0) {
+      <div class="flex content-center">
+        <cygnus-pagination
+          [paginationType]="'normal'"
+          [(currentCounter)]="currentCounter"
+          [maxCounter]="maxCounter()"
+          (click)="showContent()"
+        />
+      </div>
+    }
   </div>
 </div>
