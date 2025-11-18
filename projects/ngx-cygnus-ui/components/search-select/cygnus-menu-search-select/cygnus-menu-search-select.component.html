@@ -35,6 +35,7 @@
       TW_CLASS.BTN_PRIMARY + ' ' +
       'flex items-center'
     "
+    (click)="sendSearch()"
   >
     <lib-ngx-cygnus-icons class="h-full flex items-center"
       [width]="'1.5rem'"
@@ -46,9 +47,9 @@
 </div>
 <ul
   [class]="TW_CLASS.UL_BASE"
-  [class.invisible]="filteredItems.length==0"
+  [class.invisible]="isInvisibleOptions()"
 >
   @for (item of filteredItems; track $index; let i = $index;) {
-    <li [class]="TW_CLASS.LI_BASE" >{{item.option}}</li>
+    <li [class]="TW_CLASS.LI_BASE" (click)="setInputSearchAfterChooseOption(item)" >{{item.option}}</li>
   }
 </ul>

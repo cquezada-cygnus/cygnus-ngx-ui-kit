@@ -38,7 +38,6 @@ export class CygnusSearchSelectComponent implements OnInit {
           this.isInvisible.set(false);
         } else {
           this.filteredItems = [];
-          this.itemSelected.set(this.emptyItemSelected);
           this.isInvisible.set(true);
         }
       });
@@ -56,8 +55,8 @@ export class CygnusSearchSelectComponent implements OnInit {
       this.outputSearch.emit(this.searchControl.value || '');
     } else {
       this.outputSearch.emit([ this.searchControl.value || '', this.itemSelected()||this.emptyItemSelected ]);
+      this.itemSelected.set(this.emptyItemSelected);
     }
-
   }
 
 }
