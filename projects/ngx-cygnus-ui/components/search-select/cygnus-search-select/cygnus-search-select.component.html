@@ -21,14 +21,15 @@
       TW_CLASS.BTN + ' ' +
       TW_CLASS.BTN_PRIMARY
     "
+    (click)="sendSearch()"
   >Buscar</button>
 </div>
 <ul
   [class]="TW_CLASS.UL_BASE"
-  [class.invisible]="filteredItems.length==0"
+  [class.invisible]="isInvisible()"
 >
   @for (item of filteredItems; track $index; let i = $index;) {
-    <li [class]="TW_CLASS.LI_BASE" >{{item.option}}</li>
+    <li [class]="TW_CLASS.LI_BASE" (click)="setInputSearchAfterChooseOption(item)" >{{item.option}}</li>
   }
 </ul>
 

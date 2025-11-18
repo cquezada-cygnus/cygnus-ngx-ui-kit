@@ -48,4 +48,9 @@ export class SelectSearchContentComponent {
       {option: 'Reportes', value: '0004'},
     ];
 
+  printSearch(event: any) {
+    console.log('printSearch:', event);
+
+  }
+
 }

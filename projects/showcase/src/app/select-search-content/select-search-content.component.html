@@ -39,6 +39,20 @@
                   </div>
 
               </div>
+              <div
+                  class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+
+                  <div class="flex-col w-full max-w-sm space-y-4">
+
+                      <cygnus-search-select
+                        [items]="options"
+                        [showOptionsAutomatically]="true"
+                        (outputSearch)="printSearch($event)"
+                      />
+
+                  </div>
+
+              </div>
 
           </div>
 
