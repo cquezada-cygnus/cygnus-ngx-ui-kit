@@ -34,6 +34,7 @@
 
                       <cygnus-search-select
                         [items]="options"
+                        (outputSearch)="printSearch($event)"
                       />
 
                   </div>
@@ -77,7 +78,10 @@
 
                   <div class="flex flex-col w-full max-w-lg space-y-4">
 
-                      <cygnus-menu-search-select [menuSearchContentArr]="menuSearchContentArr" />
+                      <cygnus-menu-search-select
+                        [menuSearchContentArr]="menuSearchContentArr"
+                        (outputSearch)="printSearch($event)"
+                      />
 
                   </div>
 
