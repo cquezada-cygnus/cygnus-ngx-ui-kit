@@ -6,17 +6,36 @@ import * as EMPRESAS from './../../json/EMPRESAS.json';
 import * as COMPANY_COLAB from './../../json/COMPANY_COLAB.json';
 import * as EMPRESAS_CLIENTES from './../../json/EMPRESAS_CLIENTES.json';
 
+import { Highlight, HighlightAuto } from 'ngx-highlightjs';
+import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
+
 
 @Component({
   selector: 'app-table-content',
   imports: [
     CygnusTableComponent,
     CygnusCustomTableComponent,
+    Highlight, HighlightAuto, HighlightLineNumbers,
   ],
   templateUrl: './table-content.component.html',
-  styleUrl: './table-content.component.scss'
+  styleUrl: './table-content.component.scss',
 })
 export class TableContentComponent {
+
+  codeForHighlight = `export class SuperUser {
+    name: string;
+
+    contructor(name: string) {
+      this.name = name;
+    }
+  }`;
+
+  codeForHighlightAuto = `var testString = @$"
+    Some multi-
+    line text
+  ";
+    `;
+
   tableBasicArr: TableItem[] = [
     { name: 'Juan Pérez', age: '45', email: 'florencia.mardonez.@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo' },
     { name: 'Jaime Valverde', age: '27', email: 'nidia.perez@sitio.com', address: 'Polo Sur 304, Ñuñoa', state: 'Activo' },
