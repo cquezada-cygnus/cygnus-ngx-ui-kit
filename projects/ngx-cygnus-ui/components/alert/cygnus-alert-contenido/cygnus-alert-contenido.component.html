@@ -28,6 +28,7 @@
       <cygnus-button
         [btnTypes]="buttonType() + ' btn-icon btn-block'"
         [btnIconRouteLeft]="'assets/icons/svg/Communication/phone.svg'"
+        (click)="btnClicked()"
       >
         {{btnFullText()}}
       </cygnus-button>
@@ -40,6 +41,7 @@
         class="me-2"
         [btnTypes]="buttonType() + ' btn-size-xs btn-icon'"
         [btnIconRouteLeft]="'assets/icons/svg/General/eye.svg'"
+        (click)="btnClicked()"
       >
         Ver más
       </cygnus-button>

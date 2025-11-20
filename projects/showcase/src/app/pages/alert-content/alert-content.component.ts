@@ -227,6 +227,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
 
     <cygnus-alert-contenido
@@ -236,6 +237,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
   `;
 
@@ -246,6 +248,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
 
     <cygnus-alert-contenido
@@ -255,6 +258,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
   `;
 
@@ -265,6 +269,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
 
     <cygnus-alert-contenido
@@ -274,6 +279,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
   `;
 
@@ -284,6 +290,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
 
     <cygnus-alert-contenido
@@ -293,6 +300,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
   `;
 
@@ -303,6 +311,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
 
     <cygnus-alert-contenido
@@ -312,6 +321,7 @@ export class AlertContentComponent {
       [alertContent]="'
         Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
       '"
+      (btnClickedEvent)="btnClickedEvent($event)"
     />
   `;
 
@@ -329,5 +339,9 @@ export class AlertContentComponent {
       [tryCounter]="3"
     />
   `;
+
+  btnClickedEvent(event: boolean) {
+    console.log('cygnus-alert-contenido btnClickedEvent:',event);
+  }
 
 }
