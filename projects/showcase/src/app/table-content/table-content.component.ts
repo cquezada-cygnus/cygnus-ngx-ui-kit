@@ -22,19 +22,32 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 })
 export class TableContentComponent {
 
-  codeForHighlight = `export class SuperUser {
-    name: string;
-
-    contructor(name: string) {
-      this.name = name;
+  customTableCLIENTES: string = `
+    <!-- COMPONENTE: cygnus-custom-table -->
+    @if (CLIENTES) {
+      <cygnus-custom-table
+        [dataTable]="CLIENTES"
+        [tableType]="'stripped-hover'"
+        [maxCounter]="10"
+        [showSearch]="false"
+      />
     }
-  }`;
+  `;
 
-  codeForHighlightAuto = `var testString = @$"
-    Some multi-
-    line text
-  ";
-    `;
+  customTableCLIENTESDoubleSearch: string = `
+    <!-- COMPONENTE: cygnus-custom-table -->
+    @if (CLIENTES) {
+      <cygnus-custom-table
+        [dataTable]="CLIENTES"
+        [tableType]="'double'"
+        [doubleKeyUp1]="'NOMBRES'"
+        [doubleKeyUp2]="'APELLIDOS'"
+        [doubleKeydown]="'EMAIL'"
+        [maxCounter]="10"
+        [showSearch]="true"
+      />
+    }
+  `;
 
   tableBasicArr: TableItem[] = [
     { name: 'Juan Pérez', age: '45', email: 'florencia.mardonez.@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo' },

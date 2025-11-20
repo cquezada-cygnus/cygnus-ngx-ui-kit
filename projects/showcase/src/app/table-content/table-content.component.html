@@ -7,22 +7,6 @@
         fácilmente con búsqueda, paginación, botones de acción y más</p>
   </header>
 
-  <section>
-
-    <pre>
-      <code [highlight]="codeForHighlight"
-            language="ts"
-            lineNumbers></code>
-    </pre>
-
-    <p></p>
-    <pre>
-      <code [highlightAuto]="codeForHighlightAuto"
-            lineNumbers></code>
-    </pre>
-
-  </section>
-
   <!-- basic-table -->
   <section id="basic-table">
     <div class="min-h-[140px] rounded-lg border mb-14">
@@ -126,8 +110,6 @@
 
 
 
-
-
   <!-- cygnus-custom-table -->
   <section id="cygnus-custom-table">
     <div class="min-h-[140px] rounded-lg border mb-14">
@@ -135,15 +117,27 @@
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table</h2>
         <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla.</p>
 
-            <!-- COMPONENTE: cygnus-custom-table -->
-            @if (CLIENTES) {
-              <cygnus-custom-table
-                [dataTable]="CLIENTES"
-                [tableType]="'stripped-hover'"
-                [maxCounter]="10"
-                [showSearch]="false"
-              />
-            }
+        <pre>
+          <code [highlight]="customTableCLIENTES"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>"CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
+        <p>[maxCounter] se implementa cuando uno quiere implementar la tabla con paginación. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
+        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <br>
+
+        <!-- COMPONENTE: cygnus-custom-table -->
+        @if (CLIENTES) {
+          <cygnus-custom-table
+            [dataTable]="CLIENTES"
+            [tableType]="'stripped-hover'"
+            [maxCounter]="10"
+            [showSearch]="false"
+          />
+        }
 
       </div>
 
@@ -157,18 +151,31 @@
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table double</h2>
         <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla. 'double' indica que un casillero de la tabla tiene doble dato.</p>
 
-            <!-- COMPONENTE: cygnus-custom-table -->
-            @if (CLIENTES) {
-              <cygnus-custom-table
-                [dataTable]="CLIENTES"
-                [tableType]="'double'"
-                [doubleKeyUp1]="'NOMBRES'"
-                [doubleKeyUp2]="'APELLIDOS'"
-                [doubleKeydown]="'EMAIL'"
-                [maxCounter]="10"
-                [showSearch]="true"
-              />
-            }
+        <pre>
+          <code [highlight]="customTableCLIENTESDoubleSearch"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>"CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p>'double' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Double se refiere a que habrán elementos en la tabla que se fusionarán en el mismo td. Para saber cuáles elementos se van a fusionar, debes indicar qué keys del JSON se van a fusionar utilizando [doubleKeyUp1] (se posiciona el contenido de la llave arriba a la izquierda), [doubleKeyUp2] (se posiciona el contenido de la llave arriba a la derecha) y [doubleKeydown] (se posiciona el contenido de la llave abajo). Está diseñado para posicionar el nombre, apellido y correo.</p>
+        <p>[maxCounter] se implementa cuando uno quiere implementar la tabla con paginación. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
+        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p>Si se implementa [maxCounter] (paginación) y [showSearch] (filtro de búsqueda) en la misma tabla, se actualiza la paginación con las busquedas pero van quedando páginas vacías.</p>
+        <br>
+
+        <!-- COMPONENTE: cygnus-custom-table -->
+        @if (CLIENTES) {
+          <cygnus-custom-table
+            [dataTable]="CLIENTES"
+            [tableType]="'double'"
+            [doubleKeyUp1]="'NOMBRES'"
+            [doubleKeyUp2]="'APELLIDOS'"
+            [doubleKeydown]="'EMAIL'"
+            [maxCounter]="10"
+            [showSearch]="true"
+          />
+        }
 
       </div>
 
