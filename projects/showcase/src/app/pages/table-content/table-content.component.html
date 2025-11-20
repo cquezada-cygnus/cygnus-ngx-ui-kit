@@ -110,11 +110,52 @@
 
 
 
-  <!-- cygnus-custom-table -->
-  <section id="cygnus-custom-table">
+  <!-- cygnus-custom-table instrucciones generales -->
+  <section id="cygnus-custom-table-general-instructions">
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table</h2>
+        <h2 class="mb-2 text-xl font-semibold">Como usar cygnus-custom-table</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y algunas interfaces que podrías necesitar en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre>
+          <code [highlight]="importCygnusCustomTable"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Crear la variable que contenga los datos del documento JSON y aquellas que contengan datos que requiera según la configuración deseada.
+        </p>
+
+        <pre>
+          <code [highlight]="codeDataExample"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla de la tabla y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="customTableEMPRESAS_CLIENTES"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- cygnus-custom-table simple -->
+  <section id="cygnus-custom-table-simple">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table simple</h2>
         <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla.</p>
 
         <pre>
@@ -125,7 +166,7 @@
 
         <p>"CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
         <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
-        <p>[maxCounter] se implementa cuando uno quiere implementar la tabla con paginación. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
+        <p>[maxCounter] se implementa cuando uno quiere agregar paginación a la tabla. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
         <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
         <br>
 
@@ -159,7 +200,7 @@
 
         <p>"CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
         <p>'double' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Double se refiere a que habrán elementos en la tabla que se fusionarán en el mismo td. Para saber cuáles elementos se van a fusionar, debes indicar qué keys del JSON se van a fusionar utilizando [doubleKeyUp1] (se posiciona el contenido de la llave arriba a la izquierda), [doubleKeyUp2] (se posiciona el contenido de la llave arriba a la derecha) y [doubleKeydown] (se posiciona el contenido de la llave abajo). Está diseñado para posicionar el nombre, apellido y correo.</p>
-        <p>[maxCounter] se implementa cuando uno quiere implementar la tabla con paginación. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
+        <p>[maxCounter] se implementa cuando uno quiere agregar paginación a la tabla. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
         <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
         <p>Si se implementa [maxCounter] (paginación) y [showSearch] (filtro de búsqueda) en la misma tabla, se actualiza la paginación con las busquedas pero van quedando páginas vacías.</p>
         <br>
@@ -183,23 +224,51 @@
   </section>
 
   <!-- cygnus-custom-table can edit -->
-  <section id="cygnus-custom-table">
+  <section id="cygnus-custom-table-edit">
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table can edit</h2>
         <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla. Al presionar editar, te permite modificar las partes que indiques y envia los cambios para que los puedas guardar.</p>
 
-            <!-- COMPONENTE: cygnus-custom-table -->
-            @if (CLIENTES) {
-              <cygnus-custom-table
-                [dataTable]="EMPRESAS"
-                [tableType]="'stripped-hover'"
-                [maxCounter]="5"
-                [tdEditArr]="empresasEditArr"
-                (emitModifiedData)="showEditedData($event)"
-                [showSearch]="false"
-              />
-            }
+        <pre>
+          <code [highlight]="customTableEMPRESAS"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>"EMPRESAS" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
+        <p>[maxCounter] se implementa cuando uno quiere agregar paginación a la tabla. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
+        <p>[tdEditArr] cuando se encuentra implementado se utiliza para indicar qué elementos de la tabla se pueden editar. Debes entregar un arreglo que contenga strings que correspondan a las keys del JSON que quieres que se puedan editar. Al presionar el link "editar" en la última columna, aparece el modo edición del documento para los elementos que se indicó que se pueden editar.</p>
+
+        <pre>
+          <code [highlight]="codeEmpresasEditArr"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>(emitModifiedData) es un evento que entrega el resultado de la edición del documento de la tabla. Contiene el elemento original y el resultado de la edición.</p>
+
+        <pre>
+          <code [highlight]="eventEmitModifiedData"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <br>
+
+        <!-- COMPONENTE: cygnus-custom-table -->
+        @if (EMPRESAS) {
+          <cygnus-custom-table
+            [dataTable]="EMPRESAS"
+            [tableType]="'stripped-hover'"
+            [maxCounter]="5"
+            [tdEditArr]="empresasEditArr"
+            (emitModifiedData)="showEditedData($event)"
+            [showSearch]="false"
+          />
+        }
 
       </div>
 
@@ -207,22 +276,40 @@
   </section>
 
   <!-- cygnus-custom-table badge -->
-  <section id="cygnus-custom-table">
+  <section id="cygnus-custom-table-badge">
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table badge</h2>
         <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla. Se indica pintar como badge los estados.</p>
 
-            <!-- COMPONENTE: cygnus-custom-table -->
-            @if (CLIENTES) {
-              <cygnus-custom-table
-                [dataTable]="COMPANY_COLAB"
-                [tableType]="'stripped-hover'"
-                [badgeKey]="badgeKey"
-                (emitModifiedData)="showEditedData($event)"
-                [showSearch]="true"
-              />
-            }
+        <pre>
+          <code [highlight]="customTableCOMPANY_COLAB"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>"COMPANY_COLAB" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
+        <p>[badgeKey] aquí debes indicar en un objeto cuál key del JSON corresponde a la información que se transformará en badge y qué valores del key se deben pintar en determinado estilo: stateActive se pinta de verde, stateWarning se pinta de amarillo y stateError se pinta de rojo. Está pensado para que sólo una columna de la tabla pueda contener un badge.</p>
+
+        <pre>
+          <code [highlight]="codeBadgeKey"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <br>
+
+        <!-- COMPONENTE: cygnus-custom-table -->
+        @if (COMPANY_COLAB) {
+          <cygnus-custom-table
+            [dataTable]="COMPANY_COLAB"
+            [tableType]="'stripped-hover'"
+            [badgeKey]="badgeKey"
+            [showSearch]="true"
+          />
+        }
 
       </div>
 
@@ -230,24 +317,54 @@
   </section>
 
   <!-- cygnus-custom-table select -->
-  <section id="cygnus-custom-table">
+  <section id="cygnus-custom-table-select">
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table select</h2>
         <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla. Se indica pintar como select listado de keys de la tabla.</p>
 
-            <!-- COMPONENTE: cygnus-custom-table -->
-            @if (CLIENTES) {
-              <cygnus-custom-table
-                [dataTable]="EMPRESAS_CLIENTES"
-                [tableType]="'stripped-hover'"
-                [selectKeyArr]="empresasSelectArr"
-                [showSearch]="true"
-              />
-            }
+        <pre>
+          <code [highlight]="customTableEMPRESAS_CLIENTES"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>"EMPRESAS_CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
+        <p>[selectKeyArr] al ser implementado tomará las keys indicadas para mostrarlas en el JSON con un selector y entre las opciones mostrará la lista que contenga esa llave del JSON.</p>
+
+        <pre>
+          <code [highlight]="codeEmpresasSelectArr"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>El JSON EMPRESAS_CLIENTES en la llave CLIENTES contiene un listado de clientes:</p>
+
+        <pre>
+          <code [highlight]="exampleCodeEmpresasClientes"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>Para mostrar las opciones de forma más compacta y simple, en keyItems se indica un array con strings que indican las llaves de, en este caso CLIENTES que se mostrarán en el texto de las opciones, pero por dentro al elegir la opción se indica el objeto del JSON completo.</p>
+
+        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <br>
+
+        <!-- COMPONENTE: cygnus-custom-table -->
+        @if (EMPRESAS_CLIENTES) {
+          <cygnus-custom-table
+            [dataTable]="EMPRESAS_CLIENTES"
+            [tableType]="'stripped-hover'"
+            [selectKeyArr]="empresasSelectArr"
+            [showSearch]="true"
+          />
+        }
 
       </div>
 
     </div>
   </section>
+
 </main>
