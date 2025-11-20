@@ -12,20 +12,43 @@
   </header>
 
   <section id="acordion-simple">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar Acordeón simple</h2>
+
+        <p class="mb-8 text-gray-600 text-md">
+          Importar cygnus-accordion desde la biblioteca ngx-cygnus-ui en el .ts del componente donde se implementará.
+        </p>
+
+        <pre>
+          <code [highlight]="accordionCodeImport"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-gray-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del accordion. Dentro se puede colocar cualquier texto u otros componentes y quedaran dentro del accordion.
+        </p>
+
+        <pre>
+          <code [highlight]="accordionHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="acordion-simple">
     <div
       class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Acordeón simple</h2>
-        <p class="mb-8 text-gray-600 text-md">Se puede utilizar íconos personalizados para el elemento
-          disparador del acordeón y, mediante el selector <code>group-open</code> de
-          atributos en Tailwind CSS, puede controlar el ícono para los estados abierto y cerrado del
-          acordeón.</p>
 
         <div>
-
-          <!-- COMPONENTE: Acordeón -->
           <div>
-
+            <!-- COMPONENTE: Acordeón -->
             <cygnus-accordion [accordionTitle]="'Acordeón #1'" >
               HOLI Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
               reiciendis voluptates repellendus, eum sunt architecto quam praesentium?

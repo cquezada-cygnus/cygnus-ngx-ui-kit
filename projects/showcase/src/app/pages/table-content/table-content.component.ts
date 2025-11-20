@@ -6,7 +6,7 @@ import * as EMPRESAS from '../../../json/EMPRESAS.json';
 import * as COMPANY_COLAB from '../../../json/COMPANY_COLAB.json';
 import * as EMPRESAS_CLIENTES from '../../../json/EMPRESAS_CLIENTES.json';
 
-import { Highlight, HighlightAuto } from 'ngx-highlightjs';
+import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 
 
@@ -15,7 +15,7 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
   imports: [
     CygnusTableComponent,
     CygnusCustomTableComponent,
-    Highlight, HighlightAuto, HighlightLineNumbers,
+    Highlight, HighlightLineNumbers,
   ],
   templateUrl: './table-content.component.html',
   styleUrl: './table-content.component.scss',
