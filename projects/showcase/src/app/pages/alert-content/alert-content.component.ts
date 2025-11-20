@@ -5,16 +5,329 @@ import {
   CygnusAlertSimpleComponent
 } from 'ngx-cygnus-ui/components/alert';
 
+import { Highlight } from 'ngx-highlightjs';
+import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
+
 @Component({
   selector: 'app-alert-content',
   imports: [
     CygnusAlertSimpleComponent,
     CygnusAlertContenidoComponent,
     CygnusAlertCounterBlockedComponent,
+    Highlight, HighlightLineNumbers,
   ],
   templateUrl: './alert-content.component.html',
   styleUrl: './alert-content.component.scss'
 })
 export class AlertContentComponent {
+  importCygnusAlertSimple: string = `
+    import { Component } from '@angular/core';
+    import {
+      CygnusAlertSimpleComponent
+    } from 'ngx-cygnus-ui/components/alert';
+
+    @Component({
+      selector: 'app-component',
+      imports: [
+        CygnusAlertSimpleComponent,
+      ],
+      templateUrl: './app-component.component.html',
+    })
+    export class AppComponentComponent {}
+  `;
+
+  importCygnusAlertContenido: string = `
+    import { Component } from '@angular/core';
+    import {
+      CygnusAlertContenidoComponent
+    } from 'ngx-cygnus-ui/components/alert';
+
+    @Component({
+      selector: 'app-component',
+      imports: [
+        CygnusAlertContenidoComponent,
+      ],
+      templateUrl: './app-component.component.html',
+    })
+    export class AppComponentComponent {}
+  `;
+
+  importCygnusAlertCounterBlocked: string = `
+    import { Component } from '@angular/core';
+    import {
+      CygnusAlertCounterBlockedComponent
+    } from 'ngx-cygnus-ui/components/alert';
+
+    @Component({
+      selector: 'app-component',
+      imports: [
+        CygnusAlertCounterBlockedComponent,
+      ],
+      templateUrl: './app-component.component.html',
+    })
+    export class AppComponentComponent {}
+  `;
+
+  exampleAlert: string = `
+    <!-- COMPONENTE: Alerta de información -->
+    <cygnus-alert-simple
+      [alertTypes]="'alert-primary'"
+      [alertTitle]="'¡Alerta de información!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+  `;
+
+  exampleAlertContenido: string = `
+    <cygnus-alert-contenido
+      [btnIsFull]="true"
+      [alertTypes]="'alert-primary'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+  `;
+
+  exampleAlertCounterBlocked: string = `
+    <cygnus-alert-counter-blocked
+      [tryCounter]="0"
+    />
+  `;
+
+  alertSimple: string = `
+    <!-- COMPONENTE: Alerta de información -->
+    <cygnus-alert-simple
+      [alertTypes]="'alert-primary'"
+      [alertTitle]="'¡Alerta de información!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de error -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-red'"
+      [alertTitle]="'¡Alerta de error!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de éxito -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-green'"
+      [alertTitle]="'¡Alerta de éxito!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de advertencia -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-yellow'"
+      [alertTitle]="'¡Alerta de advertencia!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta simple -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-gray'"
+      [alertTitle]="'¡Alerta simple!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+  `;
+
+  alertIconSimple: string = `
+    <!-- COMPONENTE: Alerta de información -->
+    <cygnus-alert-simple
+      [alertTypes]="'alert-primary'"
+      [alertIcon]="true"
+      [alertTitle]="'¡Alerta de información!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de error -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-red'"
+      [alertIcon]="true"
+      [alertTitle]="'¡Alerta de error!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de éxito -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-green'"
+      [alertIcon]="true"
+      [alertTitle]="'¡Alerta de éxito!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de advertencia -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-yellow'"
+      [alertIcon]="true"
+      [alertTitle]="'¡Alerta de advertencia!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta simple -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-gray'"
+      [alertIcon]="true"
+      [alertTitle]="'¡Alerta simple!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+  `;
+
+  alertIconXSimple: string = `
+    <!-- COMPONENTE: Alerta de información -->
+    <cygnus-alert-simple
+      [alertTypes]="'alert-primary'"
+      [alertIcon]="true"
+      [alertEquis]="true"
+      [alertTitle]="'¡Alerta de información!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de error -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-red'"
+      [alertIcon]="true"
+      [alertEquis]="true"
+      [alertTitle]="'¡Alerta de error!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de éxito -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-green'"
+      [alertIcon]="true"
+      [alertEquis]="true"
+      [alertTitle]="'¡Alerta de éxito!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta de advertencia -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-yellow'"
+      [alertIcon]="true"
+      [alertEquis]="true"
+      [alertTitle]="'¡Alerta de advertencia!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+
+    <!-- COMPONENTE: Alerta simple -->
+      <cygnus-alert-simple
+      [alertTypes]="'alert-gray'"
+      [alertIcon]="true"
+      [alertEquis]="true"
+      [alertTitle]="'¡Alerta simple!'"
+      [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+    />
+  `;
+
+  alertContenidoPrimary: string = `
+    <cygnus-alert-contenido
+      [alertTypes]="'alert-primary'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+
+    <cygnus-alert-contenido
+      [btnIsFull]="true"
+      [alertTypes]="'alert-primary'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+  `;
+
+  alertContenidoRed: string = `
+    <cygnus-alert-contenido
+      [alertTypes]="'alert-red'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+
+    <cygnus-alert-contenido
+      [btnIsFull]="true"
+      [alertTypes]="'alert-red'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+  `;
+
+  alertContenidoGreen: string = `
+    <cygnus-alert-contenido
+      [alertTypes]="'alert-green'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+
+    <cygnus-alert-contenido
+      [btnIsFull]="true"
+      [alertTypes]="'alert-green'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+  `;
+
+  alertContenidoYellow: string = `
+    <cygnus-alert-contenido
+      [alertTypes]="'alert-yellow'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+
+    <cygnus-alert-contenido
+      [btnIsFull]="true"
+      [alertTypes]="'alert-yellow'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+  `;
+
+  alertContenidoGray: string = `
+    <cygnus-alert-contenido
+      [alertTypes]="'alert-gray'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+
+    <cygnus-alert-contenido
+      [btnIsFull]="true"
+      [alertTypes]="'alert-gray'"
+      [alertTitle]="'Esto es una alerta informativa'"
+      [alertContent]="'
+        Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+      '"
+    />
+  `;
+
+  alertCounterBlockedExample: string = `
+    <cygnus-alert-counter-blocked
+      [tryCounter]="0"
+    />
+    <cygnus-alert-counter-blocked
+      [tryCounter]="1"
+    />
+    <cygnus-alert-counter-blocked
+      [tryCounter]="2"
+    />
+    <cygnus-alert-counter-blocked
+      [tryCounter]="3"
+    />
+  `;
 
 }

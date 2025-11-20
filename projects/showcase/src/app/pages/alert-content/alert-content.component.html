@@ -1,10 +1,54 @@
+<section id="simple-alert-explanation">
+  <div
+    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="p-4 pb-4">
+      <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-alert-simple</h2>
+      <p class="mb-8 text-gray-600 text-md">
+        Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar.
+      </p>
+
+      <pre>
+        <code [highlight]="importCygnusAlertSimple"
+              language="ts"
+              lineNumbers></code>
+      </pre>
+
+      <p class="mb-8 text-gray-600 text-md">
+        En el documento .html del componente, posicionar la plantilla de la alerta y agregar la configuración según corresponda.
+      </p>
+
+      <pre>
+        <code [highlight]="exampleAlert"
+              language="html"
+              lineNumbers></code>
+      </pre>
+
+      <p class="mb-8 text-gray-600 text-md">
+        [alertTypes]: El tipo de alerta determina el estilo de la alerta. Se pueden indicar los siguientes:
+        'alert-primary','alert-red', 'alert-green', 'alert-yellow', 'alert-gray'.
+      </p>
+      <p class="mb-8 text-gray-600 text-md">
+        [alertTitle]: Acá se indica el título de la alerta.
+      </p>
+      <p class="mb-8 text-gray-600 text-md">
+        [alertContent]: Acá se indica el contenido de la alerta.
+      </p>
+      <p class="mb-8 text-gray-600 text-md">
+        [alertIcon]: Acá se indica si la alerta simple tendrá o no un ícono. Si se omite, su valor es false por defecto.
+      </p>
+      <p class="mb-8 text-gray-600 text-md">
+        [alertEquis]: Acá se indica si la alerta simple tendrá o no una équis (x) de cierre. Si se omite, su valor es false por defecto.
+      </p>
+
+    </div>
+  </div>
+</section>
+
 <section id="simple-alert">
   <div
     class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
     <div class="p-4 pb-4">
       <h2 class="mb-2 text-xl font-semibold">Alerta simple</h2>
-      <p class="mb-8 text-gray-600 text-md">Este ejemplo de alerta con texto blanco y fondo gris
-          oscuro crea una relación de alto contraste que mejora la legibilidad y atrae la atención.</p>
       <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
 
         <!-- COMPONENTE: Alerta de información -->
@@ -42,6 +86,13 @@
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
         />
       </div>
+
+      <pre>
+        <code [highlight]="alertSimple"
+              language="html"
+              lineNumbers></code>
+      </pre>
+
     </div>
   </div>
 </section>
@@ -51,8 +102,6 @@
     class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
     <div class="p-4 pb-4">
       <h2 class="mb-2 text-xl font-semibold">Alerta con icono</h2>
-      <p class="mb-8 text-gray-600 text-md">Puede agregar un ícono al comienzo del componente de
-          alerta usando la etiqueta <code>svg</code>.</p>
       <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
 
         <!-- COMPONENTE: Alerta de información -->
@@ -96,6 +145,13 @@
         />
 
       </div>
+
+      <pre>
+        <code [highlight]="alertIconSimple"
+              language="html"
+              lineNumbers></code>
+      </pre>
+
     </div>
   </div>
 </section>
@@ -154,110 +210,229 @@
         />
 
       </div>
+
+      <pre>
+        <code [highlight]="alertIconXSimple"
+              language="html"
+              lineNumbers></code>
+      </pre>
+
+    </div>
+  </div>
+</section>
+
+<section id="alert-content-explanation">
+  <div
+    class="min-h-[140px] rounded-lg border mb-14">
+    <div class="p-4 pb-4">
+      <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-alert-contenido</h2>
+
+      <div class="flex flex-col w-full gap-4 mb-4">
+        <p class="mb-8 text-gray-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre class="w-full">
+          <code [highlight]="importCygnusAlertContenido"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-gray-600 text-md">
+          En el documento .html del componente, posicionar la plantilla de la alerta y agregar la configuración según corresponda.
+        </p>
+
+        <pre class="w-full">
+          <code [highlight]="exampleAlertContenido"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-gray-600 text-md">
+          [alertTypes]: El tipo de alerta determina el estilo de la alerta. Se pueden indicar los siguientes:
+          'alert-primary','alert-red', 'alert-green', 'alert-yellow', 'alert-gray'.
+        </p>
+        <p class="mb-8 text-gray-600 text-md">
+          [alertTitle]: Acá se indica el título de la alerta.
+        </p>
+        <p class="mb-8 text-gray-600 text-md">
+          [alertContent]: Acá se indica el contenido de la alerta.
+        </p>
+        <p class="mb-8 text-gray-600 text-md">
+          [btnIsFull]: Acá se indica si El botón inferior ocupará todo el ancho de la alerta o si se utilizarán un formato de dos botones. Por defecto si no se implementa quedará el formato de dos botones.
+        </p>
+      </div>
+
+
     </div>
   </div>
 </section>
 
 <section id="alert-content">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+  <div class="min-h-[140px] rounded-lg border mb-14">
     <div class="p-4 pb-4">
       <h2 class="mb-2 text-xl font-semibold">Alerta con contenido</h2>
-      <p class="mb-8 text-gray-600 text-md">Utilice el siguiente ejemplo para utilizar un componente
-          de alerta con elementos de contenido como título y descripción</p>
-      <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+      <p class="mb-8 text-gray-600 text-md">Utilice el siguiente ejemplo para utilizar un componente de alerta con elementos de contenido como título y descripción</p>
 
-        <cygnus-alert-contenido
-          [alertTypes]="'alert-primary'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <cygnus-alert-contenido
+        [alertTypes]="'alert-primary'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
 
-        <cygnus-alert-contenido
-          [btnIsFull]="true"
-          [alertTypes]="'alert-primary'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <cygnus-alert-contenido
+        [btnIsFull]="true"
+        [alertTypes]="'alert-primary'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
 
-        <cygnus-alert-contenido
-          [alertTypes]="'alert-red'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <pre class="w-full">
+        <code [highlight]="alertContenidoPrimary"
+              language="html"
+              lineNumbers></code>
+      </pre>
 
-        <cygnus-alert-contenido
-          [btnIsFull]="true"
-          [alertTypes]="'alert-red'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <cygnus-alert-contenido
+        [alertTypes]="'alert-red'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
 
-        <cygnus-alert-contenido
-          [alertTypes]="'alert-green'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <cygnus-alert-contenido
+        [btnIsFull]="true"
+        [alertTypes]="'alert-red'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
 
-        <cygnus-alert-contenido
-          [btnIsFull]="true"
-          [alertTypes]="'alert-green'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <pre class="w-full">
+        <code [highlight]="alertContenidoRed"
+              language="html"
+              lineNumbers></code>
+      </pre>
 
-        <cygnus-alert-contenido
-          [alertTypes]="'alert-yellow'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <cygnus-alert-contenido
+        [alertTypes]="'alert-green'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
 
-        <cygnus-alert-contenido
-          [btnIsFull]="true"
-          [alertTypes]="'alert-yellow'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <cygnus-alert-contenido
+        [btnIsFull]="true"
+        [alertTypes]="'alert-green'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
 
-        <cygnus-alert-contenido
-          [alertTypes]="'alert-gray'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <pre class="w-full">
+        <code [highlight]="alertContenidoGreen"
+              language="html"
+              lineNumbers></code>
+      </pre>
 
-        <cygnus-alert-contenido
-          [btnIsFull]="true"
-          [alertTypes]="'alert-gray'"
-          [alertTitle]="'Esto es una alerta informativa'"
-          [alertContent]="`
-            Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
-          `"
-        />
+      <cygnus-alert-contenido
+        [alertTypes]="'alert-yellow'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
 
-      </div>
+      <cygnus-alert-contenido
+        [btnIsFull]="true"
+        [alertTypes]="'alert-yellow'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
+
+      <pre class="w-full">
+        <code [highlight]="alertContenidoYellow"
+              language="html"
+              lineNumbers></code>
+      </pre>
+
+      <cygnus-alert-contenido
+        [alertTypes]="'alert-gray'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
+
+      <cygnus-alert-contenido
+        [btnIsFull]="true"
+        [alertTypes]="'alert-gray'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+      />
+
+      <pre class="w-full">
+        <code [highlight]="alertContenidoGray"
+              language="html"
+              lineNumbers></code>
+      </pre>
+
+
     </div>
   </div>
 </section>
 
-<section id="alert-content">
+<section id="alert-counter-blocked-explanation">
+  <div
+    class="min-h-[140px] rounded-lg border mb-14">
+    <div class="p-4 pb-4">
+      <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-alert-counter-blocked</h2>
+
+      <div class="flex flex-col w-full gap-4 mb-4">
+        <p class="mb-8 text-gray-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre class="w-full">
+          <code [highlight]="importCygnusAlertCounterBlocked"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-gray-600 text-md">
+          En el documento .html del componente, posicionar la plantilla de la alerta y agregar la configuración según corresponda.
+        </p>
+
+        <pre class="w-full">
+          <code [highlight]="exampleAlertCounterBlocked"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-gray-600 text-md">
+          [tryCounter]: Esta alerta cambia su contenido según el valor de un contador. En tryCounter se debe indicar un número de 0 a 3. Es ideal para alertas de login donde se debe emitir un mensaje diferente según la cantidad de intentos de login.
+        </p>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<section id="alert-counter-blocked">
   <div
     class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
     <div class="p-4 pb-4">
@@ -278,6 +453,12 @@
         <cygnus-alert-counter-blocked
           [tryCounter]="3"
         />
+
+        <pre class="w-full">
+          <code [highlight]="alertCounterBlockedExample"
+                language="html"
+                lineNumbers></code>
+        </pre>
 
       </div>
     </div>
