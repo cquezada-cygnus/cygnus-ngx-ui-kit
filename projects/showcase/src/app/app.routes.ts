@@ -3,67 +3,67 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./index-cygnus-ui/index-cygnus-ui.component').then( (c) => c.IndexCygnusUiComponent )
+    loadComponent: () => import('./partials/index-cygnus-ui/index-cygnus-ui.component').then( (c) => c.IndexCygnusUiComponent )
   },
   {
     path: 'accordion',
-    loadComponent: () => import('./accordion-content/accordion-content.component').then( (c) => c.AccordionContentComponent )
+    loadComponent: () => import('./pages/accordion-content/accordion-content.component').then( (c) => c.AccordionContentComponent )
   },
   {
     path: 'alerts',
-    loadComponent: () => import('./alert-content/alert-content.component').then( (c) => c.AlertContentComponent )
+    loadComponent: () => import('./pages/alert-content/alert-content.component').then( (c) => c.AlertContentComponent )
   },
   {
     path: 'badges',
-    loadComponent: () => import('./badge-content/badge-content.component').then( (c) => c.BadgeContentComponent )
+    loadComponent: () => import('./pages/badge-content/badge-content.component').then( (c) => c.BadgeContentComponent )
   },
   {
     path: 'buttons',
-    loadComponent: () => import('./button-content/button-content.component').then( (c) => c.ButtonContentComponent )
+    loadComponent: () => import('./pages/button-content/button-content.component').then( (c) => c.ButtonContentComponent )
   },
   {
     path: 'breadcrumbs',
-    loadComponent: () => import('./breadcrumb-content/breadcrumb-content.component').then( (c) => c.BreadcrumbContentComponent )
+    loadComponent: () => import('./pages/breadcrumb-content/breadcrumb-content.component').then( (c) => c.BreadcrumbContentComponent )
   },
   {
     path: 'cards',
-    loadComponent: () => import('./card-content/card-content.component').then( (c) => c.CardContentComponent )
+    loadComponent: () => import('./pages/card-content/card-content.component').then( (c) => c.CardContentComponent )
   },
   {
     path: 'collapsible',
-    loadComponent: () => import('./collapsible-content/collapsible-content.component').then( (c) => c.CollapsibleContentComponent )
+    loadComponent: () => import('./pages/collapsible-content/collapsible-content.component').then( (c) => c.CollapsibleContentComponent )
   },
   {
     path: 'checkboxes',
-    loadComponent: () => import('./checkbox-content/checkbox-content.component').then( (c) => c.CheckboxContentComponent )
+    loadComponent: () => import('./pages/checkbox-content/checkbox-content.component').then( (c) => c.CheckboxContentComponent )
   },
   {
     path: 'dropdown',
-    loadComponent: () => import('./dropdown-content/dropdown-content.component').then( (c) => c.DropdownContentComponent )
+    loadComponent: () => import('./pages/dropdown-content/dropdown-content.component').then( (c) => c.DropdownContentComponent )
   },
   {
     path: 'lists',
-    loadComponent: () => import('./list-content/list-content.component').then( (c) => c.ListContentComponent )
+    loadComponent: () => import('./pages/list-content/list-content.component').then( (c) => c.ListContentComponent )
   },
   {
     path: 'inputs',
-    loadComponent: () => import('./input-content/input-content.component').then( (c) => c.InputContentComponent )
+    loadComponent: () => import('./pages/input-content/input-content.component').then( (c) => c.InputContentComponent )
   },
   {
     path: 'modals',
-    loadComponent: () => import('./modal-content/modal-content.component').then( (c) => c.ModalContentComponent )
+    loadComponent: () => import('./pages/modal-content/modal-content.component').then( (c) => c.ModalContentComponent )
   },
   {
     path: 'navbar',
-    loadComponent: () => import('./navbar-content/navbar-content.component').then( (c) => c.NavbarContentComponent ),
+    loadComponent: () => import('./pages/navbar-content/navbar-content.component').then( (c) => c.NavbarContentComponent ),
     children: [
       {
         path: 'card',
-        loadComponent: () => import('./card-content/card-content.component').then( (c) => c.CardContentComponent )
+        loadComponent: () => import('./pages/card-content/card-content.component').then( (c) => c.CardContentComponent )
       },
       {
         path: 'login-01',
-        loadComponent: () => import('./login-content/login-content.component').then( (c) => c.LoginContentComponent )
+        loadComponent: () => import('./pages/login-content/login-content.component').then( (c) => c.LoginContentComponent )
       },
       {
         path: '**',
@@ -73,51 +73,51 @@ export const routes: Routes = [
   },
   {
     path: 'pagination',
-    loadComponent: () => import('./pagination-content/pagination-content.component').then( (c) => c.PaginationContentComponent )
+    loadComponent: () => import('./pages/pagination-content/pagination-content.component').then( (c) => c.PaginationContentComponent )
   },
   {
     path: 'popovers',
-    loadComponent: () => import('./popover-content/popover-content.component').then( (c) => c.PopoverContentComponent )
+    loadComponent: () => import('./pages/popover-content/popover-content.component').then( (c) => c.PopoverContentComponent )
   },
   {
     path: 'tabs',
-    loadComponent: () => import('./tabs-content/tabs-content.component').then( (c) => c.TabsContentComponent )
+    loadComponent: () => import('./pages/tabs-content/tabs-content.component').then( (c) => c.TabsContentComponent )
   },
   {
     path: 'radiobuttons',
-    loadComponent: () => import('./radio-button-content/radio-button-content.component').then( (c) => c.RadioButtonContentComponent )
+    loadComponent: () => import('./pages/radio-button-content/radio-button-content.component').then( (c) => c.RadioButtonContentComponent )
   },
   {
     path: 'sidebar',
-    loadComponent: () => import('./sidebar-content/sidebar-content.component').then( (c) => c.SidebarContentComponent )
+    loadComponent: () => import('./pages/sidebar-content/sidebar-content.component').then( (c) => c.SidebarContentComponent )
   },
   {
     path: 'selectores',
-    loadComponent: () => import('./select-content/select-content.component').then( (c) => c.SelectContentComponent )
+    loadComponent: () => import('./pages/select-content/select-content.component').then( (c) => c.SelectContentComponent )
   },
   {
     path: 'selectores-search',
-    loadComponent: () => import('./select-search-content/select-search-content.component').then( (c) => c.SelectSearchContentComponent )
+    loadComponent: () => import('./pages/select-search-content/select-search-content.component').then( (c) => c.SelectSearchContentComponent )
   },
   {
     path: 'tables',
-    loadComponent: () => import('./table-content/table-content.component').then( (c) => c.TableContentComponent )
+    loadComponent: () => import('./pages/table-content/table-content.component').then( (c) => c.TableContentComponent )
   },
   {
     path: 'textarea',
-    loadComponent: () => import('./textarea-content/textarea-content.component').then( (c) => c.TextareaContentComponent )
+    loadComponent: () => import('./pages/textarea-content/textarea-content.component').then( (c) => c.TextareaContentComponent )
   },
   {
     path: 'toggles',
-    loadComponent: () => import('./toggle-content/toggle-content.component').then( (c) => c.ToggleContentComponent )
+    loadComponent: () => import('./pages/toggle-content/toggle-content.component').then( (c) => c.ToggleContentComponent )
   },
   {
     path: 'tooltips',
-    loadComponent: () => import('./tooltip-content/tooltip-content.component').then( (c) => c.TooltipContentComponent )
+    loadComponent: () => import('./pages/tooltip-content/tooltip-content.component').then( (c) => c.TooltipContentComponent )
   },
   {
     path: 'login',
-    loadComponent: () => import('./login-content/login-content.component').then( (c) => c.LoginContentComponent )
+    loadComponent: () => import('./pages/login-content/login-content.component').then( (c) => c.LoginContentComponent )
   },
   {
     path: '**',

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { SelectCollection, TableBadge, TableItem } from 'ngx-cygnus-ui/interfaces';
 import { CygnusCustomTableComponent, CygnusTableComponent } from 'ngx-cygnus-ui/components/table';
-import * as CLIENTES from './../../json/CLIENTES.json';
-import * as EMPRESAS from './../../json/EMPRESAS.json';
-import * as COMPANY_COLAB from './../../json/COMPANY_COLAB.json';
-import * as EMPRESAS_CLIENTES from './../../json/EMPRESAS_CLIENTES.json';
+import * as CLIENTES from '../../../json/CLIENTES.json';
+import * as EMPRESAS from '../../../json/EMPRESAS.json';
+import * as COMPANY_COLAB from '../../../json/COMPANY_COLAB.json';
+import * as EMPRESAS_CLIENTES from '../../../json/EMPRESAS_CLIENTES.json';
 
 import { Highlight, HighlightAuto } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
