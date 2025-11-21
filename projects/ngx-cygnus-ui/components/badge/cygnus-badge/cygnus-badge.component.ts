@@ -24,7 +24,7 @@ export class CygnusBadgeComponent implements OnInit {
   btnBadge: boolean = false;
   badgeState: boolean = false;
   badgeStateClassesIcon: string = '';
-
+  badgeIsClosed = signal<boolean>(false);
 
   ngOnInit(){
     const setClasses = this.setBadgeClasses(this.getBadgeClasses(this.badgeTypes()));
@@ -93,6 +93,10 @@ export class CygnusBadgeComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  badgeClose() {
+    this.badgeIsClosed.set(true);
   }
 
 }
