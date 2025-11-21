@@ -50,7 +50,7 @@
       <div class="p-4 space-y-4 md:space-y-6 sm:py-8 sm:px-6">
         <div class="mb-6 space-y-2">
           <h1 class="text-xl font-semibold text-gray-900">Acceso a sistemas</h1>
-          <p class="text-sm font-normal text-gray-600">Ingresa tu RUT sin puntos, ni guión.</p>
+          <!-- <p class="text-sm font-normal text-gray-600">Ingresa tu RUT sin puntos, ni guión.</p> -->
         </div>
 
         <cygnus-alert-counter-blocked
@@ -88,10 +88,15 @@
 
           </fieldset>
           <div class="flex items-center justify-between">
-              <cygnus-checkbox [checkboxType]="'text'" [checkboxText]="'Recuérdame'" />
+              <cygnus-checkbox
+                [checkboxType]="'text'"
+                [checkboxText]="'Recuérdame'"
+                [control]="loginForm.controls.rememberMe"
+              />
               <cygnus-button-link
                 [btnLinkType]="'btn-link-simple'"
                 [btnRouterLinkText]="''"
+                (click)="passwordSendHelp()"
               >
                 ¿Olvidaste tu contraseña?
               </cygnus-button-link>

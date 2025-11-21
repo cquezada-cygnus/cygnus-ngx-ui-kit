@@ -49,11 +49,14 @@ export class CygnusLogin01Component implements OnInit {
 
   nonNullableFb = inject(NonNullableFormBuilder);
 
+  passwordSendHelpEvent = output<boolean>();
+
   loginForm = this.nonNullableFb.group({
     email: ['',
       [Validators.required, cgEmail()]
     ],
     password: ['', [Validators.required]],
+    rememberMe: [false, [Validators.required]],
   });
 
   constructor() {
@@ -127,6 +130,10 @@ export class CygnusLogin01Component implements OnInit {
         this.eyeIcon.set(this.closedEye);
       }
     }
+  }
+
+  passwordSendHelp() {
+    this.passwordSendHelpEvent.emit(true);
   }
 
 }

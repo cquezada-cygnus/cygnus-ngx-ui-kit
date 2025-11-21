@@ -17,6 +17,8 @@ export class LoginContentComponent {
 
   updateInfo($event: any) {
     if ($event) {
+      console.log('login form:', $event);
+
       this.getOutputInfo.set($event);
       console.log('this.counter(): ', this.counter());
       this.counter.update( current => current+= 1 );
