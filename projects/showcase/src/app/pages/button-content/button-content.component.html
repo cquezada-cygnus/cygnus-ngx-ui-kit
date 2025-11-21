@@ -34,6 +34,8 @@
                 lineNumbers></code>
         </pre>
 
+        <h4>cygnus-button:</h4>
+
         <p class="mb-8 text-gray-600 text-md">
           [btnTypes]: acá se indica el tipo de botón que se quiere utilizar dependiendo del tamaño, color, etc. También pueden combinarse varios aunque se pueden sobreescribir algunas propiedades.
         </p>
@@ -128,6 +130,21 @@
                 language="html"
                 lineNumbers></code>
         </pre>
+
+        <h4>cygnus-button-link:</h4>
+
+        <p class="mb-8 text-gray-600 text-md">
+          [btnLinkType]: acá se indica el tipo de botón que se quiere utilizar. También pueden combinarse varios aunque se pueden sobreescribir algunas propiedades.
+        </p>
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>'btn-link': botón link por defecto.</li>
+          <li>'btn-link-simple': botón link más delgado.</li>
+          <li>'btn-link-navbar': botón link para navbar del mainboard.</li>
+        </ul>
+
+        <p class="mb-8 text-gray-600 text-md">
+          [btnRouterLinkText]: acá se indica la ruta a la cual va a dirigir el link. Si no se quiere indicar una ruta en particular se puede dejar en blanco o indicar './' para que no redireccione a una ruta por defecto.
+        </p>
       </div>
 
     </div>
@@ -295,6 +312,16 @@
                 language="html"
                 lineNumbers></code>
         </pre>
+
+        <h4>cygnus-button:</h4>
+
+        <p class="mb-8 text-gray-600 text-md">
+          [btnIconRouteLeft]: Si se quiere ubicar un ícono en el botón, además de configurarlo en btnTypes, se debe indicar dónde se va a posicionar el ícono y cuál es la ruta de la imagen del ícono. La ruta es una dirección dentro de la biblioteca ngx-cygnus-icons. Si se indica la ruta en btnIconRouteLeft, se posicionará el ícono indicado del lado izquierdo del botón.
+        </p>
+        <p class="mb-8 text-gray-600 text-md">
+          [btnIconRouteRight]: Si se quiere ubicar un ícono en el botón, además de configurarlo en btnTypes, se debe indicar dónde se va a posicionar el ícono y cuál es la ruta de la imagen del ícono. La ruta es una dirección dentro de la biblioteca ngx-cygnus-icons. Si se indica la ruta en btnIconRouteRight, se posicionará el ícono indicado del lado derecho del botón.
+        </p>
+
       </div>
     </div>
   </section>
@@ -358,6 +385,16 @@
                 language="html"
                 lineNumbers></code>
         </pre>
+
+        <h4>cygnus-button-hover-animation:</h4>
+
+        <p class="mb-8 text-gray-600 text-md">
+          [btnTypes]: acá se indica el tipo de botón que se quiere utilizar dependiendo del tamaño, color, etc. También pueden combinarse varios aunque se pueden sobreescribir algunas propiedades. Son los mismos tipos para el caso del componente cygnus-button.
+        </p>
+        <p class="mb-8 text-gray-600 text-md">
+          [btnAnimationOption]: Puede ser un string 'A' o 'B'. Se refiere a las características de la animación. Si no se implementa, por defecto el valor es 'A'.
+        </p>
+
       </div>
     </div>
   </section>
