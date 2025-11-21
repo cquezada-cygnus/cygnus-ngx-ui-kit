@@ -50,6 +50,7 @@ export class CygnusLogin01Component implements OnInit {
   nonNullableFb = inject(NonNullableFormBuilder);
 
   passwordSendHelpEvent = output<boolean>();
+  btnAlertIsClickedEvent = output<boolean>();
 
   loginForm = this.nonNullableFb.group({
     email: ['',
@@ -134,6 +135,10 @@ export class CygnusLogin01Component implements OnInit {
 
   passwordSendHelp() {
     this.passwordSendHelpEvent.emit(true);
+  }
+
+  btnAlertClick($event: boolean) {
+    this.btnAlertIsClickedEvent.emit($event);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, effect, input, OnInit, signal } from '@angular/core';
+import { Component, effect, input, OnInit, output, signal } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 import { IconAlertColor } from 'ngx-cygnus-ui/types';
@@ -34,6 +34,8 @@ export class CygnusAlertCounterBlockedComponent {
   errorContent = '';
   warningTitle = 'Alerta de bloqueo de cuenta';
   warningContent = '';
+
+  btnAlertIsClickedEvent = output<boolean>();
 
   constructor() {
     effect(() => { // actualizar color y contenido del alert cuando se indique
@@ -125,5 +127,9 @@ export class CygnusAlertCounterBlockedComponent {
         this.buttonType.set('btn-warning');
         return this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY;
     }
+  }
+
+  alertWithBtnClick() {
+    this.btnAlertIsClickedEvent.emit(true);
   }
 }

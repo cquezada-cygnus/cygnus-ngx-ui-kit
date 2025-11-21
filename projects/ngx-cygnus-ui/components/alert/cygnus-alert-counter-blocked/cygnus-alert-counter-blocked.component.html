@@ -26,6 +26,7 @@
       <cygnus-button
         [btnTypes]="buttonType() + ' btn-icon btn-block'"
         [btnIconRouteLeft]="'assets/icons/svg/Communication/phone.svg'"
+        (click)="alertWithBtnClick()"
       >
         {{btnFullText()}}
       </cygnus-button>

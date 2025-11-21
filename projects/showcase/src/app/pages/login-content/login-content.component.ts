@@ -26,4 +26,12 @@ export class LoginContentComponent {
     }
   }
 
+  getPasswordSendHelpEvent($event: boolean) {
+    console.log('getPasswordSendHelpEvent:', $event);
+  }
+
+  getBtnAlertIsClickedEvent($event: boolean) {
+    console.log('getBtnAlertIsClickedEvent:', $event);
+  }
+
 }

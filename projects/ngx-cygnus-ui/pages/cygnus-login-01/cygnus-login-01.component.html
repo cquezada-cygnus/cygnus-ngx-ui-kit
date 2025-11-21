@@ -55,6 +55,7 @@
 
         <cygnus-alert-counter-blocked
           [tryCounter]="tryCounter()"
+          (btnAlertIsClickedEvent)="btnAlertClick($event)"
         /> <!-- Según el contador van a ir apareciendo las alertas. La idea es que sea de 0-3 -->
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-4 md:space-y-6" action="#">
