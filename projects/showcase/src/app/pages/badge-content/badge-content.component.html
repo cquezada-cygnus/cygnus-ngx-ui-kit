@@ -13,6 +13,63 @@
           datos o la selección representados por el badge.</p>
   </header>
 
+  <section id="simple-badge-howto">
+      <div
+          class="min-h-[140px] rounded-lg border mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-2 text-xl font-semibold">Cómo usar badge simple</h2>
+              <p class="mb-8 text-gray-600 text-md">
+                Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar. Es posible que necesites importar también CygnusButtonComponent dependiendo del tipo de badge.
+              </p>
+
+              <pre class="w-full">
+                <code [highlight]="badgeImport"
+                      language="ts"
+                      lineNumbers></code>
+              </pre>
+
+              <p class="mb-8 text-gray-600 text-md">
+                En el documento .html del componente, posicionar la plantilla de la tabla y agregar la configuración según corresponda.
+              </p>
+
+              <pre class="w-full">
+                <code [highlight]="exampleBadgeSimple"
+                      language="html"
+                      lineNumbers></code>
+              </pre>
+
+              <p class="mb-8 text-gray-600 text-md">
+                [badgeTypes]: acá se indica el tipo de badge que se quiere utilizar dependiendo del tamaño, color, etc. También pueden combinarse varios aunque se pueden sobreescribir algunas propiedades.
+              </p>
+
+              <ul class="mb-8 text-gray-600 text-md list-none">
+                <li>'badge-xs': Badge del tamaño más pequeño.</li>
+                <li>'badge-sm': Badge pequeño.</li>
+                <li>'badge': Badge tamaño estándar.</li>
+                <li>'badge-lg': Badge grande.</li>
+                <li>'badge-primary': Badge color estándar.</li>
+                <li>'badge-gray': Badge gris.</li>
+                <li>'badge-error': Badge color rojo.</li>
+                <li>'badge-warning': Badge color amarillo.</li>
+                <li>'badge-success': Badge color verde.</li>
+                <li>'badge-pink': badge color rosado.</li>
+                <li>'badge-purple': Badge color morado.</li>
+                <li>'badge-indigo': Badge color indigo.</li>
+                <li>'badge-icon': badge que lleva un ícono.</li>
+                <li>'badge-icon-only': Badge que sólo lleva un ícono, sin texto.</li>
+                <li>'badge-btn': Badge combinado con un botón.</li>
+                <li>'badge-state-success': Badge para expresar estado éxito u online.</li>
+                <li>'badge-state-error': Badge para expresar estado error u offline.</li>
+              </ul>
+
+              <p class="mb-8 text-gray-600 text-md">
+                [badgeText]: acá se indica el texto que llevará el badge.
+              </p>
+
+          </div>
+      </div>
+  </section>
+
   <!-- Badge simple -->
   <section id="simple-badge">
       <div
@@ -26,9 +83,15 @@
               <div class="flex items-center justify-center w-full gap-4 mb-4">
 
                   <!-- COMPONENTE: Badge simple -->
-                   <cygnus-badge [badgeTypes]="'badge'" [badgeText]="'Badge simple'" />
+                  <cygnus-badge [badgeTypes]="'badge'" [badgeText]="'Badge simple'" />
 
               </div>
+
+              <pre class="w-full">
+                <code [highlight]="exampleBadgeSimple"
+                      language="html"
+                      lineNumbers></code>
+              </pre>
           </div>
       </div>
   </section>
@@ -57,113 +120,126 @@
                   <cygnus-badge [badgeTypes]="'badge-lg'" [badgeText]="'Large'" />
 
               </div>
+              <pre class="w-full">
+                <code [highlight]="exampleBadgeSizes"
+                      language="html"
+                      lineNumbers></code>
+              </pre>
           </div>
       </div>
   </section>
 
-  <!-- Badge states -->
+  <!-- Badge btn -->
   <section id="badge-colors">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Botón con badge</h2>
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Botón con badge</h2>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-                  <!-- COMPONENTE: Cygnus Button -->
-                  <cygnus-button
-                    [btnTypes]="'btn-primary '"
-                    [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
-                  >
-                    Messages
-                    <!-- COMPONENTE: Badge XS -->
-                    <cygnus-badge [badgeTypes]="'badge-xs'" [badgeText]="'2'" />
-                  </cygnus-button>
+          <!-- COMPONENTE: Cygnus Button -->
+          <cygnus-button
+            [btnTypes]="'btn-primary '"
+            [btnIconRouteRight]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
+          >
+            Messages
+            <!-- COMPONENTE: Badge XS -->
+            <cygnus-badge [badgeTypes]="'badge-xs'" [badgeText]="'2'" />
+          </cygnus-button>
 
-              </div>
-          </div>
+        </div>
+        <pre class="w-full">
+          <code [highlight]="exampleBadgeBtn"
+                language="html"
+                lineNumbers></code>
+        </pre>
       </div>
+    </div>
   </section>
 
   <!-- Badge states -->
   <section id="badge-colors">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Colores de badges</h2>
-              <p class="mb-8 text-gray-600 text-md">El componente de badge viene con los cinco estados de
-                  color
-                  desde el
-                  color de iformación, simple hasta los colores de error, advetencia, éxito y tres colores
-                  extra.</p>
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Colores de badges</h2>
+        <p class="mb-8 text-gray-600 text-md">El componente de badge viene con los cinco estados de
+            color desde el color de iformación, simple hasta los colores de error, advetencia, éxito y tres colores extra.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-                  <!-- COMPONENTE: Badge Información -->
-                  <cygnus-badge [badgeTypes]="'badge badge-primary'" [badgeText]="'Información'" />
+          <!-- COMPONENTE: Badge Información -->
+          <cygnus-badge [badgeTypes]="'badge badge-primary'" [badgeText]="'Información'" />
 
-                  <!-- COMPONENTE: Badge Simple -->
-                  <cygnus-badge [badgeTypes]="'badge badge-secondary'" [badgeText]="'Simple'" />
+          <!-- COMPONENTE: Badge Simple -->
+          <cygnus-badge [badgeTypes]="'badge badge-secondary'" [badgeText]="'Simple'" />
 
-                  <!-- COMPONENTE: Badge Error -->
-                  <cygnus-badge [badgeTypes]="'badge badge-error'" [badgeText]="'Error'" />
+          <!-- COMPONENTE: Badge Error -->
+          <cygnus-badge [badgeTypes]="'badge badge-error'" [badgeText]="'Error'" />
 
-                  <!-- COMPONENTE: Badge Advertencia -->
-                  <cygnus-badge [badgeTypes]="'badge badge-warning'" [badgeText]="'Advertencia'" />
+          <!-- COMPONENTE: Badge Advertencia -->
+          <cygnus-badge [badgeTypes]="'badge badge-warning'" [badgeText]="'Advertencia'" />
 
-                  <!-- COMPONENTE: Badge Éxito -->
-                  <cygnus-badge [badgeTypes]="'badge badge-success'" [badgeText]="'Éxito'" />
+          <!-- COMPONENTE: Badge Éxito -->
+          <cygnus-badge [badgeTypes]="'badge badge-success'" [badgeText]="'Éxito'" />
 
-                  <!-- NOTA: Estos estados son para ocasiones que se necesitan colores distintos -->
-                  <!-- COMPONENTE: Badge Púrpura -->
-                  <cygnus-badge [badgeTypes]="'badge badge-purple'" [badgeText]="'Púrpura'" />
+          <!-- NOTA: Estos estados son para ocasiones que se necesitan colores distintos -->
+          <!-- COMPONENTE: Badge Púrpura -->
+          <cygnus-badge [badgeTypes]="'badge badge-purple'" [badgeText]="'Púrpura'" />
 
-                  <!-- COMPONENTE: Badge Indigo -->
-                  <cygnus-badge [badgeTypes]="'badge badge-indigo'" [badgeText]="'Indigo'" />
+          <!-- COMPONENTE: Badge Indigo -->
+          <cygnus-badge [badgeTypes]="'badge badge-indigo'" [badgeText]="'Indigo'" />
 
-                  <!-- COMPONENTE: Badge Rosado -->
-                  <cygnus-badge [badgeTypes]="'badge badge-pink'" [badgeText]="'Rosado'" />
+          <!-- COMPONENTE: Badge Rosado -->
+          <cygnus-badge [badgeTypes]="'badge badge-pink'" [badgeText]="'Rosado'" />
 
-              </div>
-          </div>
+        </div>
+        <pre class="w-full">
+          <code [highlight]="exampleBadgeColors"
+                language="html"
+                lineNumbers></code>
+        </pre>
       </div>
+    </div>
   </section>
 
   <!-- Badge-icons -->
   <section id="badge-icons">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Badges con iconos</h2>
-              <p class="mb-8 text-gray-600 text-md">Utilice el icono para mostrar la indicación.</p>
-              <div class="flex items-center justify-center w-full gap-4 mb-4">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Badges con iconos</h2>
+        <p class="mb-8 text-gray-600 text-md">Utilice el icono para mostrar la indicación.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-                  <div class="flex items-center gap-3">
+          <div class="flex items-center gap-3">
 
-                      <cygnus-badge
-                        [badgeTypes]="'badge-icon-only'"
-                        [badgeIconAsset]="'assets/icons/svg/General/plus.svg'"
-                        [badgeText]="''"
-                      />
+            <cygnus-badge
+              [badgeTypes]="'badge-icon-only'"
+              [badgeIconAsset]="'assets/icons/svg/General/plus.svg'"
+              [badgeText]="''"
+            />
 
-                      <cygnus-badge
-                        [badgeTypes]="'badge-icon'"
-                        [badgeIconAsset]="'assets/icons/svg/General/plus.svg'"
-                        [badgeIconPosition]="'left'"
-                        [badgeText]="'Icono a la izquierda'"
-                      />
+            <cygnus-badge
+              [badgeTypes]="'badge-icon'"
+              [badgeIconAsset]="'assets/icons/svg/General/plus.svg'"
+              [badgeIconPosition]="'left'"
+              [badgeText]="'Icono a la izquierda'"
+            />
 
-                      <cygnus-badge
-                        [badgeTypes]="'badge-icon'"
-                        [badgeIconAsset]="'assets/icons/svg/General/plus.svg'"
-                        [badgeIconPosition]="'right'"
-                        [badgeText]="'Icono a la derecha'"
-                      />
+            <cygnus-badge
+              [badgeTypes]="'badge-icon'"
+              [badgeIconAsset]="'assets/icons/svg/General/plus.svg'"
+              [badgeIconPosition]="'right'"
+              [badgeText]="'Icono a la derecha'"
+            />
 
-                  </div>
-
-              </div>
-              <p>Por defecto los íconos se encuentran a la derecha.</p>
           </div>
+        </div>
+        <pre class="w-full">
+          <code [highlight]="exampleBadgeColors"
+                language="html"
+                lineNumbers></code>
+        </pre>
+        <p class="mb-8 text-gray-600 text-md">Por defecto los íconos se encuentran a la derecha.</p>
       </div>
+    </div>
   </section>
 
   <!-- Badge-dismissible -->
@@ -185,36 +261,40 @@
                   />
 
               </div>
+              <pre class="w-full">
+                <code [highlight]="exampleBadgeInadmisible"
+                      language="html"
+                      lineNumbers></code>
+              </pre>
           </div>
       </div>
   </section>
 
   <!-- Badge status -->
   <section id="badge-status">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
           <div class="p-4 pb-4">
               <h2 class="mb-2 text-xl font-semibold">Estados de badges</h2>
-              <p class="mb-8 text-gray-600 text-md">El componente de badge viene con los 5 estados desde el
-                  color primario, secundario hasta los colores de error, advetencia y éxito.</p>
+              <p class="mb-8 text-gray-600 text-md"></p>
               <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                  <div class="flex gap-2">
-
-                      <!-- COMPONENTE: Estado Online -->
-                      <cygnus-badge
-                        [badgeTypes]="'badge-state-success'"
-                        [badgeText]="'Online'"
-                      />
-                      <!-- COMPONENTE: Estado Offline -->
-                      <cygnus-badge
-                        [badgeTypes]="'badge-state-error'"
-                        [badgeText]="'Offline'"
-                      />
-
-                  </div>
-
+                <div class="flex gap-2">
+                  <!-- COMPONENTE: Estado Online -->
+                  <cygnus-badge
+                    [badgeTypes]="'badge-state-success'"
+                    [badgeText]="'Online'"
+                  />
+                  <!-- COMPONENTE: Estado Offline -->
+                  <cygnus-badge
+                    [badgeTypes]="'badge-state-error'"
+                    [badgeText]="'Offline'"
+                  />
+                </div>
               </div>
+              <pre class="w-full">
+                <code [highlight]="exampleBadgeStatus"
+                      language="html"
+                      lineNumbers></code>
+              </pre>
           </div>
       </div>
   </section>
