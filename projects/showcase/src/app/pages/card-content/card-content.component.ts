@@ -84,6 +84,23 @@ export class CardContentComponent {
     }
   `;
 
+  cygnusCardTitleTextTsExample: string = `
+    import { Component } from '@angular/core';
+    import {
+      CygnusCardTitleTextComponent,
+    } from 'ngx-cygnus-ui/components/card';
+
+    @Component({
+      selector: 'app-component',
+      imports: [
+        CygnusCardTitleTextComponent,
+      ],
+      templateUrl: './app-component.component.html',
+      styleUrl: './app-component.component.scss'
+    })
+    export class AppComponentComponent {}
+  `;
+
   cygnusCardImageHTMLExample: string = `
     <cygnus-card-image
       [imgSrc]="'https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80'"
@@ -92,6 +109,13 @@ export class CardContentComponent {
       [cardText]="'Un texto de ejemplo rápido que se basa en el título de la tarjeta y constituye el grueso de su contenido.'"
       [cardButtonText]="'Ir a alguna parte'"
       (clicked)="cygnusCardImageClick()"
+    />
+  `;
+
+  cygnusCardTitleTextHTMLExample: string = `
+    <cygnus-card-title-text
+      [cardTitle]="'Cygnus - gestión de equipos colaborativos'"
+      [cardText]="'Este es un texto dentro del cuerpo de una tarjeta.'"
     />
   `;
 
