@@ -10,30 +10,88 @@
       migas de pan facilitan la navegación a páginas de nivel superior.</p>
   </header>
 
-  <section id="simple-breadcrumb">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+  <section id="cygnus-breadcrumb-general-instructions">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
-          <h2 class="mb-2 text-xl font-semibold">Breadcrumb básico</h2>
-          <p class="mb-8 text-secondary-600 text-md">Utilice este botón versátil que viene con fondo azul
-              y texto blanco, esquinas redondeadas y un efecto de sombra al pasar el mouse, mostrando
-              interactividad.</p>
-          <div class="flex items-center justify-center w-full gap-4 mb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-breadcrumb</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y la interfaz correspondiente en el archivo .ts del componente donde lo vas a implementar.
+        </p>
 
-            <div class="inline-flex flex-col items-center">
+        <pre>
+          <code [highlight]="importCygnusBreadcrumb"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+        <p class="mb-8 text-secondary-600 text-md">
+          Debes entregarle al breadcrumb un arreglo de BreadcrumbItem (la interfaz que importaste) para desplegar lo que se mostrará en el breadcrumb.
+        </p>
 
-              <!-- COMPONENTE: Breadcrumb básico -->
-              <cygnus-breadcrumb [itemsArr]="basicItemsArr" />
+        <pre>
+          <code [highlight]="breadcrumbItemExample"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
-            </div>
+        <pre>
+          <code [highlight]="breadcrumbItemInterface"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>itemText: Texto que será visible en el item breadcrumb.</li>
+          <li>iconAssetText: Url dentro de la biblioteca ngx-cygnus-icons que corresponde al ícono que quieres visualizar en el item breadcrumb.</li>
+          <li>routerLinkText: Url al que se redireccionará si haces click en el item del breadcrumb.</li>
+          <li>dropdownMenu: Indica si el item breadcrumb contiene un menú desplegable.</li>
+          <li>notDropdownLeft: Indica cuál item breadcrumb se encuentra a la izquierda del item breadcrumb que tiene un menú desplegable.</li>
+          <li>notDropdownRight: Indica cuál item breadcrumb se encuentra a la derecha del item breadcrumb que tiene un menú desplegable.</li>
+        </ul>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del breadcrumb y agregar el arreglo de BreadcrumbItem y la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="htmlCygnusBreadcrumb"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="simple-breadcrumb">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Breadcrumb básico</h2>
+        <p class="mb-8 text-secondary-600 text-md">Utilice este botón versátil que viene con fondo azul
+          y texto blanco, esquinas redondeadas y un efecto de sombra al pasar el mouse, mostrando
+          interactividad.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="inline-flex flex-col items-center">
+
+            <!-- COMPONENTE: Breadcrumb básico -->
+            <cygnus-breadcrumb [itemsArr]="basicItemsArr" />
+
           </div>
+        </div>
+        <pre>
+          <code [highlight]="htmlCygnusBreadcrumb"
+              language="ts"
+              lineNumbers></code>
+        </pre>
+        <pre>
+          <code [highlight]="breadcrumbItemExample"
+                language="ts"
+                lineNumbers></code>
+        </pre>
       </div>
     </div>
   </section>
 
   <section id="breadcrumb-icon">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Breadcrumb con ícono</h2>
         <p class="mb-8 text-secondary-600 text-md">Puede agregar cualquier tipo de ícono para el
@@ -45,13 +103,22 @@
           <cygnus-breadcrumb [itemsArr]="basicItemsIconArr" />
 
         </div>
+        <pre>
+          <code [highlight]="htmlCygnusBreadcrumbIcono"
+              language="ts"
+              lineNumbers></code>
+        </pre>
+        <pre>
+          <code [highlight]="breadcrumbItemExampleIcono"
+                language="ts"
+                lineNumbers></code>
+        </pre>
       </div>
     </div>
   </section>
 
   <section id="breadcrumb-block">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Breadcrumb a nivel de bloque</h2>
         <p class="mb-8 text-secondary-600 text-md">Breadcrumb puede ser un componente a nivel de bloque
@@ -64,25 +131,44 @@
           <cygnus-breadcrumb [itemsArr]="basicItemsIconArr" [setBlock]="true" />
 
         </div>
+        <pre>
+          <code [highlight]="htmlCygnusBreadcrumbBloque"
+              language="ts"
+              lineNumbers></code>
+        </pre>
+        <pre>
+          <code [highlight]="breadcrumbItemExampleBloque"
+                language="ts"
+                lineNumbers></code>
+        </pre>
       </div>
     </div>
   </section>
 
   <section id="breadcrumb-static">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Botón estático 'Más'</h2>
         <p class="mb-8 text-secondary-600 text-md">Agregue un ícono para indicar que hay más enlaces,
           pero este ícono será estático.</p>
         <div class="flex items-center justify-center w-full gap-4 mb-4">
-
           <div class="inline-flex flex-col items-center">
 
+            <!-- COMPONENTE: Breadcrumb con botón estático -->
             <cygnus-breadcrumb [itemsArr]="basicItemsDropdownMenuArr" [setMoreIcon]="true" />
 
           </div>
         </div>
+        <pre>
+          <code [highlight]="htmlCygnusBreadcrumbStatic"
+              language="ts"
+              lineNumbers></code>
+        </pre>
+        <pre>
+          <code [highlight]="breadcrumbItemExampleStatic"
+                language="ts"
+                lineNumbers></code>
+        </pre>
       </div>
     </div>
   </section>
