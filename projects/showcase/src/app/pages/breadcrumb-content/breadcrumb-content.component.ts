@@ -26,9 +26,9 @@ export class BreadcrumbContentComponent {
       imports: [
         CygnusBreadcrumbComponent,
       ],
-      templateUrl: './component.component.html',
+      templateUrl: './app-component.component.html',
     })
-    export class BreadcrumbContentComponent {}
+    export class AppComponentComponent {}
   `;
 
   breadcrumbItemExample: string = `
