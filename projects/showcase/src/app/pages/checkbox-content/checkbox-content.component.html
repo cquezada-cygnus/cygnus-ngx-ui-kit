@@ -2,24 +2,59 @@
 
   <header class="mb-12">
     <h1 class="text-4xl font-bold">Checkboxes</h1>
-    <p class="mt-4 text-gray-600 text-md">Los campos de entrada permiten a los usuarios introducir texto
-      en
-      una interfaz de usuario. Suelen aparecer en
-      formularios y cuadros de diálogo. Los campos de entrada en móviles deben tener un tamaño de
-      texto de
-      al menos 16px para evitar el zoom automático en los navegadores móviles.</p>
   </header>
+
+  <section id="simple-checkbox">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar los checkboxes</h2>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusCheckboxTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla de la tabla y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusCheckboxHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Se puede añadir configuración adicional para incluir en formulario.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusCheckboxHtmlForm"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusCheckboxTsForm"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+      </div>
+    </div>
+  </section>
 
   <section id="simple-checkbox">
     <div
       class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
       <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">Checkboxes</h2>
-        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
-          texto
-          blanco, esquinas
-          redondeadas y un efecto
-          de sombra al pasar el mouse, mostrando interactividad.</p>
+        <h2 class="mb-2 text-xl font-semibold">Checkboxes tamaños</h2>
+        <p class="mb-8 text-gray-600 text-md">Se indica en [checkboxSize] un string que indica el tamaño. Dos tamaños disponibles: 'sm' y 'lg'.</p>
         <div class="flex items-end justify-center w-full gap-4 mb-4 text-center">
 
           <div class="w-full max-w-sm min-w-[200px] space-y-6">
@@ -33,19 +68,24 @@
           </div>
 
         </div>
+
+        <pre>
+          <code [highlight]="cygnusCheckboxSizeHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
       </div>
 
     </div>
   </section>
 
   <section id="checkbox-text">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Checkbox con texto</h2>
-        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
-          texto blanco, esquinas
-          redondeadas y un efecto de sombra al pasar el mouse, mostrando interactividad.</p>
+        <p class="mb-8 text-gray-600 text-md">
+          Se debe indicar en [checkboxType] el string 'text' para que el checkbox renderice un. texto. Cuando no se indica [checkboxType] por defecto tiene el valor 'base' que significa que se encontrará el checkbox solo sin texto. En [checkboxText] se entrega un string con el texto que se requiera.
+        </p>
         <div class="flex items-center justify-center w-full gap-4 mb-4">
 
           <div class="inline-flex items-center">
@@ -59,6 +99,12 @@
           </div>
 
         </div>
+
+        <pre>
+          <code [highlight]="cygnusCheckboxTextHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
       </div>
 
     </div>
@@ -69,14 +115,25 @@
       class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Checkbox con texto y texto de ayuda</h2>
-        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
-          texto blanco, esquinas
-          redondeadas y un efecto de sombra al pasar el mouse, mostrando interactividad.</p>
+        <p class="mb-8 text-gray-600 text-md">
+          Se debe indicar en [checkboxType] el string 'text-hint' para que el checkbox renderice un texto de indicación y un texto de ayuda. Cuando no se indica [checkboxType] por defecto tiene el valor 'base' que significa que se encontrará el checkbox solo sin texto. En [checkboxText] se entrega un string con el texto que se requiera como indicación y en [checkboxHint] se indica el texto de ayuda.
+        </p>
         <div class="flex items-center justify-center w-full gap-4 mb-4">
 
-          <cygnus-checkbox [checkboxType]="'text-hint'" [checkboxText]="'Recuérdame'" [checkboxHint]="'Recuerda mi datos'" />
+          <cygnus-checkbox
+            [checkboxType]="'text-hint'"
+            [checkboxText]="'Recuérdame'"
+            [checkboxHint]="'Recuerda mi datos'"
+          />
 
         </div>
+
+        <pre>
+          <code [highlight]="cygnusCheckboxTextHelpHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
 
     </div>
