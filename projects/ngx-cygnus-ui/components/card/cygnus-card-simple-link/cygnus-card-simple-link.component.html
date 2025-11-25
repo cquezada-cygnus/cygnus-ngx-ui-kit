@@ -8,7 +8,7 @@
   <p class="mt-2 text-gray-500 ">
     {{cardText()}}
   </p>
-  <div class="flex justify-start footer">
+  <div class="flex justify-start footer" (click)="notifyClick()">
     <cygnus-button-link
       [btnLinkType]="'btn-link'"
       [btnRouterLinkText]="''"
@@ -21,6 +21,6 @@
       [route]="'assets/icons/svg/Arrows/chevron-right.svg'"
       [color]="'#155eef'"
     />
-  </cygnus-button-link>
+    </cygnus-button-link>
   </div>
 </div>

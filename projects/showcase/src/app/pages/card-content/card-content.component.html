@@ -22,7 +22,7 @@
         </pre>
 
         <p class="mb-8 text-secondary-600 text-md">
-          Depende del componente específito cómo será la plantilla html y su configuración.
+          Depende del componente específico cómo será la plantilla html y su configuración.
         </p>
 
       </div>
@@ -112,6 +112,26 @@
             [cardText]="'Administración de RRHH Cygnus'"
           />
         </div>
+
+        <pre>
+          <code [highlight]="cygnusCardIconTextTsExample"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusCardIconTextHTMLExample"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[iconSize]: String que indica el tamaño del ícono.</li>
+          <li>[iconColor]: String que indica el color del ícono.</li>
+          <li>[iconRoute]: String que indica la ruta del ícono dentro de la biblioteca ngx-cygnus-icons.</li>
+          <li>[cardText]: Texto que irá en el contenido de la tarjeta.</li>
+        </ul>
+
       </div>
     </div>
   </section>
@@ -127,8 +147,30 @@
             [cardText]="`Un texto de ejemplo rápido para ampliar el título de la tarjeta y constituir la
                                   mayor parte del contenido de la tarjeta.`"
             [cardLinkText]="'Enlace de tarjeta'"
+            (clicked)="cygnusCardSimpleLinkClick()"
           />
         </div>
+
+        <pre>
+          <code [highlight]="cygnusCardSimpleLinkTsExample"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusCardSimpleLinkHTMLExample"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[iconSize]: String que indica el tamaño del ícono.</li>
+          <li>[iconColor]: String que indica el color del ícono.</li>
+          <li>[iconRoute]: String que indica la ruta del ícono dentro de la biblioteca ngx-cygnus-icons.</li>
+          <li>[cardText]: Texto que irá en el contenido de la tarjeta.</li>
+          <li>(clicked): Evento que indica cuándo el botón de la tarjeta ha sido clickeado.</li>
+        </ul>
+
       </div>
     </div>
   </section>
@@ -142,8 +184,54 @@
           <cygnus-mainboard-card
             [cardTitle]="'Administración de RRHH'"
             [cardText]="'Optimiza los proyectos de software, los sprints y el seguimiento de errores.'"
+            [cardLinkText]="'Ingresar'"
+            (cardLinkClicked)="cygnusMainboardCardClicked()"
           />
         </div>
+
+        <pre>
+          <code [highlight]="cygnusCardMainboardTsExample"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusCardMainboardHTMLExample"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[cardTitle]: Texto que irá en el título de la tarjeta.</li>
+          <li>[cardText]: Texto que irá en el contenido de la tarjeta.</li>
+          <li>[cardLinkText]: Texto que irá en el link de la tarjeta.</li>
+          <li>(cardLinkClicked): Evento que indica cuándo el botón de la tarjeta ha sido clickeado.</li>
+        </ul>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Existen otros parámetros que se pueden modificar que tienen valores por defecto:
+        </p>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[iconLeftColor]: Color del ícono izquierdo.</li>
+          <li>[iconLeftAsset]: Url dentro de la librería ngx-cygnus-icons donde se encuentra el ícono izquierdo.</li>
+          <li>[iconLeftSize]: Tamaño del ícono izquierdo.</li>
+          <br>
+          <li>[iconRightColor]: Color del ícono derecho.</li>
+          <li>[iconRightAsset]: Url dentro de la librería ngx-cygnus-icons donde se encuentra el ícono derecho.</li>
+          <li>[iconRightSize]: Tamaño del ícono derecho.</li>
+          <br>
+          <li>[iconArrowColor]: Color del ícono derecho.</li>
+          <li>[iconArrowAsset]: Url dentro de la librería ngx-cygnus-icons donde se encuentra el ícono derecho.</li>
+          <li>[iconArrowSize]: Tamaño del ícono derecho.</li>
+        </ul>
+
+        <pre>
+          <code [highlight]="cygnusCardMainboardDefaultHTMLExample"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
   </section>
@@ -152,7 +240,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-4 text-xl font-semibold">Tarjeta Login</h2>
-        <div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
+        <div class="flex items-center gap-4 mb-4">
 
           <cygnus-card-login />
 
@@ -165,7 +253,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-4 text-xl font-semibold">Tarjeta Ejemplo validadores</h2>
-        <div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
+        <div class="flex items-center gap-4 mb-4">
 
           <cygnus-card-show-validators />
 
@@ -178,7 +266,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-4 text-xl font-semibold">Tarjeta Ejemplo validador selectores</h2>
-        <div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
+        <div class="flex items-center gap-4 mb-4">
 
           <cygnus-card-selects />
 

@@ -12,7 +12,7 @@ export class CygnusButtonLinkComponent {
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
 
   btnLinkType = input<BtnLinkType>('btn-link');
-  btnRouterLinkText = input<string>('./');
+  btnRouterLinkText = input<string>('');
   paddingOk = input<boolean>(true);
 
   addTailwindClasses(customClass: BtnLinkType): string {

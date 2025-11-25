@@ -31,11 +31,12 @@
     </div>
   </div>
   <div class="flex justify-end p-4 footer">
+    @if (cardLinkText()) {
     <cygnus-button-link
       [btnLinkType]="'btn-link'"
-      [btnRouterLinkText]="''"
+      (click)="buttonLinkClicked()"
     >
-      Ingresar
+      {{cardLinkText()}}
       <lib-ngx-cygnus-icons
         [width]="iconArrowSize()"
         [height]="iconArrowSize()"
@@ -43,6 +44,6 @@
         [color]="iconArrowColor()"
       />
     </cygnus-button-link>
-
+    }
   </div>
 </div>

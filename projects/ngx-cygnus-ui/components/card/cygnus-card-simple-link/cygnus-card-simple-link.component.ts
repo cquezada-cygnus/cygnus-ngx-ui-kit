@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { TW_CLASS } from '../const/tailwind.const';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
@@ -17,4 +17,10 @@ export class CygnusCardSimpleLinkComponent {
   cardSubtitle = input<string>('');
   cardText = input<string>('');
   cardLinkText = input<string>('');
+
+  readonly clicked = output<boolean>();
+
+  notifyClick() {
+    this.clicked.emit(true);
+  }
 }

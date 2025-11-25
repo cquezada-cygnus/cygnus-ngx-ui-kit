@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 
@@ -27,5 +27,11 @@ export class CygnusMainboardCardComponent {
 
   cardTitle = input<string>('');
   cardText  = input<string>('');
+  cardLinkText = input<string>('Ingresar');
+  cardLinkClicked = output<boolean>()
+
+  buttonLinkClicked() {
+    this.cardLinkClicked.emit(true);
+  }
 
 }
