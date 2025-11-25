@@ -35,6 +35,7 @@
         <cygnus-drowpdown-item
           [dropdownItemType]="dropdownItemType()"
           [itemContent]="item"
+          (itemSelectedEmit)="itemSelected($event)"
         />
       }
       @if (dropdownItemType()==='iconText') {
@@ -49,6 +50,7 @@
               iconAssetText: 'assets/icons/svg/General/log-out-01.svg',
               itemText: 'Cerrar Sesión',
             }"
+            (itemSelectedEmit)="itemSelected($event)"
           />
         </div>
 
@@ -89,6 +91,7 @@
             iconAssetText: item.iconAssetText,
             itemText: item.itemText,
           }"
+          (itemSelectedEmit)="itemSelected($event)"
         />
       }
 

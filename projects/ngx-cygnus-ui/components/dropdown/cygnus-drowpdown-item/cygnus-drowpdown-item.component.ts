@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusRadioButtonComponent } from 'ngx-cygnus-ui/components/radio-button';
@@ -17,5 +17,10 @@ import { DropdownItemType } from 'ngx-cygnus-ui/types';
 export class CygnusDrowpdownItemComponent {
   dropdownItemType = input<DropdownItemType>('simple');
   itemContent = input<DropdownItemData>();
+  itemSelectedEmit = output<DropdownItemData | undefined>();
+
+  itemSelected() {
+    this.itemSelectedEmit.emit(this.itemContent());
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Component, HostListener, input, OnInit, signal } from '@angular/core';
+import { Component, HostListener, input, model, OnInit, output, signal } from '@angular/core';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 import { DropdownItemType } from 'ngx-cygnus-ui/types';
@@ -20,11 +20,12 @@ export class CygnusDropdownComponent implements OnInit {
   dropdownId = signal<string>('');
   control = input<FormControl<string>>();
 
-  dropdownMenuTitle = input<string>('');
+  dropdownMenuTitle = model<string>('');
   dropdownItemType = input<DropdownItemType>('simple');
   dropdownRadioIconAsset = input<string>('');
   dropdownItemDataArr = input<DropdownItemData[]>([]);
   dropdownClosed = signal<boolean>(true);
+  dropdownItemSelected = output<DropdownItemData | undefined>();
 
   iconBGColor = signal<string>('#344054');
 
@@ -44,6 +45,15 @@ export class CygnusDropdownComponent implements OnInit {
 
   iconColorOnMouseLeave() {
     this.iconBGColor.set('#344054'); // gris oscuro
+  }
+
+  itemSelected(event: DropdownItemData | undefined) {
+    console.log('cygnus-dropdown itemSelected:', event);
+    if (this.dropdownItemType() != 'iconText') {
+      this.dropdownMenuTitle.set(event?.itemText || this.dropdownMenuTitle());
+    }
+    this.dropdownItemSelected.emit(event);
+    if (!this.dropdownClosed()) this.dropdownClosed.set(true); // invisibilizar opciones
   }
 
   @HostListener('document:click', ['$event'])
