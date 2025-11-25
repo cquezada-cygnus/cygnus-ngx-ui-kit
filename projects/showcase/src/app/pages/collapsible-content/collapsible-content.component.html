@@ -24,4 +24,32 @@
       </div>
     </div>
   </section>
+
+  <section id="collapse-simple">
+    <div
+      class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar el colapsable</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusCollapsibleTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla de la tabla y agregar el título en [collapsableTitle] y el contenido del colapsable dentro de los tags de la plantilla. Se pueden agregar otros componentes o sólo texto u otras estructuras.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusCollapsibleHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
 </main>
