@@ -2,12 +2,54 @@
 
   <header class="mb-12">
     <h1 class="text-4xl font-bold">Listas</h1>
-    <p class="mt-4 text-gray-600 text-md">El componente de lista nos permite crear
-      listas elegantes y bien estructuradas con un mínimo esfuerzo. Es
-      perfecto para diversos casos de uso, desde mostrar contenido hasta crear menús de
-      navegación, mostrar resultados de
-      búsqueda, presentar mensajes en aplicaciones de chat o enumerar archivos en un directorio.</p>
+    <p class="mt-4 text-gray-600 text-md">El componente de lista nos permite crear listas elegantes y bien estructuradas con un mínimo esfuerzo. Es perfecto para diversos casos de uso, desde mostrar contenido hasta crear menús de navegación, mostrar resultados de búsqueda, presentar mensajes en aplicaciones de chat o enumerar archivos en un directorio.</p>
   </header>
+
+  <section id="simple-list">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-list</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y la interfaz para los datos en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusListImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Para desplegar datos dentro de la lista debes crear un arreglo que siga la estructura de la interfaz ListElem.
+        </p>
+
+        <pre>
+          <code [highlight]="interfazListElemTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>title: Indica el texto visible del elemento de la lista. Es el único elemento que no es opcional.</li>
+          <li>value?: Valor que tendrá el elemento de la lista. Puede ser de cualquier tipo.</li>
+          <li>linkText?: Texto que indica una url a la que se podría redireccionar si se hace click en el elemento de la lista.</li>
+          <li>iconAsset?: Texto que indica una url dentro de la biblioteca ngx-cygnus-icons para mostrar el ícono que se requiera.</li>
+          <li>badgeContent?: Texto que podría contener un badge si se quiere agregar a la lista.</li>
+        </ul>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla de la lista y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusListHtml"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
 
   <section id="simple-list">
     <div
@@ -20,13 +62,22 @@
 
           <cygnus-list [itemsArr]="listArr" />
         </div>
+        <pre>
+          <code [highlight]="cygnusListImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+        <pre>
+          <code [highlight]="cygnusListHtml"
+                language="ts"
+                lineNumbers></code>
+        </pre>
       </div>
     </div>
   </section>
 
   <section id="lists-icons">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Iconos</h2>
         <p class="mb-8 text-gray-600 text-md">El grupo de lista predeterminado con iconos.
@@ -35,24 +86,41 @@
 
           <cygnus-list [itemsArr]="listIconArr" />
         </div>
+        <pre>
+          <code [highlight]="cygnusListIconsTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+        <pre>
+          <code [highlight]="cygnusListIconsHtml"
+                language="ts"
+                lineNumbers></code>
+        </pre>
       </div>
     </div>
   </section>
 
   <section id="lists-badges">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Lista con badge</h2>
-        <p class="mb-8 text-gray-600 text-md">Agregue badges a cualquier elemento del grupo de
-            listas
-            para mostrar recuentos de elementos no leídos, actividad y
-            más.
+        <p class="mb-8 text-gray-600 text-md">
+          Agregue badges a cualquier elemento del grupo de listas para mostrar recuentos de elementos no leídos, actividad y más.
         </p>
         <div class="mb-4">
 
           <cygnus-list [itemsArr]="listBadgeArr" />
         </div>
+        <pre>
+          <code [highlight]="cygnusListBadgesTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+        <pre>
+          <code [highlight]="cygnusListBadgesHtml"
+                language="ts"
+                lineNumbers></code>
+        </pre>
       </div>
     </div>
   </section>
