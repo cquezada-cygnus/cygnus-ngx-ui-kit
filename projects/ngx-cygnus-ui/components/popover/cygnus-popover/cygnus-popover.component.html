@@ -1,9 +1,14 @@
 <div
   [class]="
-    'absolute z-10 w-64 py-2 mt-2 text-gray-800 bg-white border border-gray-300 rounded-lg shadow-lg ' +
+    'fixed z-[9999] pointer-events-none ' +
     (!isVisible ? 'invisible':'')
   "
-  [style.bottom.px]="position.bottom"
-  [innerHTML]="message"
+  [style.top.px]="position.top"
+  [style.left.px]="position.left"
+
 >
+  <div
+    [class]="tooltipClasses"
+    class="z-10 w-64 py-2 mt-2 text-gray-800 bg-white border border-gray-300 rounded-lg shadow-lg"
+    [innerHTML]="message"></div>
 </div>

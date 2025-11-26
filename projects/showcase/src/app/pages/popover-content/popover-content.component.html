@@ -15,13 +15,14 @@
         desplegables, menús de opciones, mensajes de validación de formularios y más.</p>
   </header>
 
+
+
   <!-- Popover simple -->
   <section id="simple-popover">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Popover simple</h2>
-        <div class="relative items-center justify-center inline-block">
+        <div class="items-center justify-center inline-block">
 
           <div class="relative inline-block group">
             <cygnus-popover />
@@ -34,8 +35,48 @@
             </cygnus-button>
 
           </div>
-
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="popover-explanation">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-popover</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y algún otro componente que podrías necesitar para llamar al modal en el archivo .ts del componente donde lo vas a implementar. También se requiere importar TooltipService para el correcto funcionamiento del popover.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusPopoverImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Implementar la plantilla del mensaje que se mostrará en el popover y los métodos que permitirán ejecutar el comportamiento del popover utilizando el servicio TooltipService.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusPopoverCodeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del popover, el componente que se requiera para ejecutarlo y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusPopoverHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Los eventos (mouseenter) y (mouseleave) permiten saber cuándo mostrar y ocultar el contenido del popover. Se posiciona el popover un lugar por encima del componente que lo mostrará activando los eventos.
+        </p>
 
       </div>
     </div>
