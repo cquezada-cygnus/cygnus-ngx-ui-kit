@@ -19,6 +19,57 @@
   </header>
 
   <section id="select-search-simple">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="text-xl font-semibold mb-2">Cómo usar cygnus-tabs</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y la interfaz Tab en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre>
+          <code [highlight]="importCygnusTabTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Añadir un arreglo de elementos que usen la interfaz Tab para mostrar.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusTabsTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusTabInterfaz"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusTabSimpleHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[tabsArr]: Aquí se debe indicar el arreglo de tabs que se utilizará.</li>
+          <li>[showIcon]: Acá se indica con un boolean si se mostrará un ícono en los tab o no.</li>
+          <li>[showTabInnerHTML]: Acá se indica con un boolean si se ingresará por cada tab Html con contenido adicional.</li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="select-search-simple">
     <div
       class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
       <div class="p-4 pb-4">
@@ -28,6 +79,12 @@
             responder, ajustándose bien a un contenedor de ancho completo (w-full).</p>
 
         <cygnus-tabs [tabsArr]="tabsArr" />
+
+        <pre>
+          <code [highlight]="cygnusTabSimpleHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
 
       </div>
 
@@ -45,14 +102,19 @@
 
         <cygnus-tabs [tabsArr]="tabsArr" [showIcon]="true" />
 
+        <pre>
+          <code [highlight]="cygnusTabIconsHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
 
     </div>
   </section>
 
   <section id="select-search-simple">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="text-xl font-semibold mb-2">Pestañas con contenido</h2>
         <p class="mb-8 text-gray-600 text-md">Este ejemplo muestra un componente de pestañas, incluyendo
@@ -62,6 +124,12 @@
             atributo <code class="code">data-tab-content</code>.</p>
 
         <cygnus-tabs [tabsArr]="tabsArr" [showIcon]="true" [showTabInnerHTML]="true" />
+
+        <pre>
+          <code [highlight]="cygnusTabInnerHtmlHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
 
       </div>
 
