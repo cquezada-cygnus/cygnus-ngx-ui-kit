@@ -17,24 +17,58 @@
     </p>
   </header>
 
+  <section id="modal-explanation">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-modal</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y algún otro componente que podrías necesitar para llamar al modal en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusModalImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Implementar una o dos variables tipo boolean y sus respectivos métodos para manejar el modal y el botón X de cierre si corresponde.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusModalBooleanTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del modal, el componente que se requiera para ejecutar el modal y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusModalHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[modalTitle]: Acá se indica el texto correspondiente al título del modal.</li>
+          <li>[modalContent]: Acá se indica el texto correspondiente al contenido del modal.</li>
+          <li>[(showModal)]:Acá se entrega una variable tipo boolean para manejar la aparición/desaparición del modal.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="modal-simple">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Modal simple</h2>
-        <p class="mb-8 text-gray-600 text-md">Este ejemplo codificado muestra un componente modal;
-            incluye un botón de activación, un fondo y un estilo personalizable
-            para el contenido y las acciones del modal. Al hacer clic en el botón "Abrir modal", el
-            modal se muestra sobre el fondo,
-            lo que garantiza una interacción enfocada para el usuario. El contenido y el comportamiento
-            se pueden ajustar fácilmente
-            para adaptarse a los requisitos de su sitio web.</p>
 
         <div class="flex items-center justify-center w-full gap-4 mb-4">
 
           <cygnus-button [btnTypes]="'btn-primary'" (click)="toggleModalSimple()" >Abrir Modal</cygnus-button>
 
-          <!-- Modal -->
           <cygnus-modal
             [modalTitle]="'Esta es una simple Modal'"
             [modalContent]="`Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
@@ -45,22 +79,32 @@
           />
 
         </div>
+
+        <pre>
+          <code [highlight]="cygnusModalSimpleTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusModalHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
   </section>
 
   <section id="modal-close">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Modal con cierre equis (X)</h2>
-        <p class="mb-8 text-gray-600 text-md">Se agrega una ventana modal con cierre equis (X).</p>
 
         <div class="flex items-center justify-center w-full gap-4 mb-4">
 
           <cygnus-button [btnTypes]="'btn-primary'" (click)="toggleModalEquis()" >Abrir Modal</cygnus-button>
 
-          <!-- Modal con equis -->
           <cygnus-modal
             [modalTitle]="'Esta es una simple Modal'"
             [modalContent]="`Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
@@ -72,6 +116,19 @@
           />
 
         </div>
+
+        <pre>
+          <code [highlight]="cygnusModalEquisTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusModalEquisHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
 
     </div>
