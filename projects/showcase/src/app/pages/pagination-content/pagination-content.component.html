@@ -4,6 +4,40 @@
       <h1 class="text-4xl font-bold">Paginación</h1>
   </header>
 
+  <section id="pagination-explanation">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-4 text-xl font-semibold">Cómo usar cygnus-pagination</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar. Debes agregar una variable tipo número para utilizar como contador.
+        </p>
+
+        <pre>
+          <code [highlight]="importCygnusPaginationTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla de la paginación y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusPaginationHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[paginationType]: Acá debes indicar un string con el tipo de estilo de la paginación. Puede ser 'normal', 'circle', 'simple'. </li>
+          <li>[(currentCounter)]: Acá se indica una variable que será utilizada para manejar el contador del paginador.</li>
+          <li>[maxCounter]: Acá se indica el número máximo de páginas que se van a mostrar.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
   <!-- pagination-normal -->
   <section id="pagination-normal">
     <div class="min-h-[140px] rounded-lg border mb-14">
@@ -17,6 +51,19 @@
             [maxCounter]="5"
           />
         </div>
+
+        <pre>
+          <code [highlight]="importCygnusPaginationTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusPaginationHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
   </section>
@@ -26,7 +73,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-4 text-xl font-semibold">Paginación circular</h2>
-        <!-- COMPONENTE: Paginación normal -->
+        <!-- COMPONENTE: Paginación circular -->
         <div class="flex justify-center">
           <cygnus-pagination
             [paginationType]="'circle'"
@@ -34,6 +81,19 @@
             [maxCounter]="5"
           />
         </div>
+
+        <pre>
+          <code [highlight]="importCygnusPaginationCircleTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusPaginationCircleHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
   </section>
@@ -51,6 +111,19 @@
             [maxCounter]="10"
           />
         </div>
+
+        <pre>
+          <code [highlight]="importCygnusPaginationSimpleTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusPaginationSimpleHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
   </section>
