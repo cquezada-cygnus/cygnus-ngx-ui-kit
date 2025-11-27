@@ -11,10 +11,55 @@
       sean ideales para opciones en las que solo se aplica una opción.</p>
   </header>
 
-  <section id="radio-simple">
+  <section id="radio-explanation">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-custom-table</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente CygnusRadioGroupComponent y CygnusRadioButtonComponent de la biblioteca ngx-cygnus-ui e importar los componentes necesarios de &#64;angular/forms en el archivo .ts del componente donde lo vas a implementar.
+        </p>
 
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+        <pre>
+          <code [highlight]="cygnusRadioButtonImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Implementar el ts del formulario que contendrá el valor del grupo de radio-buttons.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusRadioButtonFormTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html posicionar la plantilla de cygnus-radio-group y cygnus-radio-button y agregar la configuración para conectar con el formulario ts, entre otras configuraciones adicionales.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusRadioButtonHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[control]: Permite conectar cygnus-radio-group y cygnus-radio-button con el formulario ts.</li>
+          <li>[labelText]: Corresponde al texto que se visualizará junto al radio button. Se entrega también como value del elemento de control del formulario.</li>
+          <li>[isDisabled]: Boolean que indica si el cygnus-radio-button está desabilitado o no.</li>
+        </ul>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Adicionalmente en cygnus-radio-group se puede agregar un texto con [legend] de forma opcional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="radio-simple">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Radiobuttons</h2>
         <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
@@ -31,14 +76,25 @@
           </cygnus-radio-group>
 
         </div>
+
+        <pre>
+          <code [highlight]="cygnusRadioButtonFormTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusRadioButtonHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
   </section>
 
   <section id="radio-link">
-
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Botón de radio con enlace</h2>
         <p class="mb-8 text-gray-600 text-md">Este ejemplo muestra cómo se pueden implementar botones de
@@ -58,6 +114,23 @@
             [linkUrl]="'./'"
           />
         </cygnus-radio-group>
+
+        <pre>
+          <code [highlight]="cygnusRadioLinkFormTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusRadioLinkHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[linkText]: Texto del link que va junto al radio button.</li>
+          <li>[linkUrl]: Url del link que va junto al radio button.</li>
+        </ul>
 
       </div>
     </div>
