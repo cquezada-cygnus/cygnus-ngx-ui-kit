@@ -1,0 +1,8 @@
+<fieldset class="flex flex-col space-y-4">
+  @if (legend()) {
+    <legend>
+      {{ legend() }}
+    </legend>
+  }
+  <ng-content></ng-content>
+</fieldset>

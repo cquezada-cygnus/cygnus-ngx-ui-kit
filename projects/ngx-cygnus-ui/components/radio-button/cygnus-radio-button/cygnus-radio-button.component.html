@@ -1,14 +1,17 @@
 <div class="flex items-center">
     <input
+      #cygnusRadioInput
       [class]="
         TW_CLASS.RADIOBUTTON_INPUT + ' ' +
         (isDisabled() ? TW_CLASS.RADIOBUTTON_INPUT_DISABLED : '')
       "
-      name="framework"
+      [name]="inputId()"
       type="radio"
       [id]="inputId()"
-      checked=""
+      [checked]="isChecked()"
+      [value]="labelText()"
       [disabled]="isDisabled()"
+      (change)="onRadioChange()"
     >
     <label
       [class]="

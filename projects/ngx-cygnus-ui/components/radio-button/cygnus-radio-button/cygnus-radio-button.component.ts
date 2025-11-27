@@ -1,6 +1,7 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, input, OnInit, output, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TW_CLASS } from '../const/tailwind.const';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'cygnus-radio-button',
@@ -18,6 +19,9 @@ export class CygnusRadioButtonComponent implements OnInit {
   private static idCounter = 0;
   TW_CLASS = TW_CLASS;
 
+  control = input<FormControl<string>>();
+  inputRadioValueOutput = output<string>();
+
   inputId = signal<string>('');
   labelText = input<string>('');
 
@@ -28,6 +32,17 @@ export class CygnusRadioButtonComponent implements OnInit {
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.inputId.set(`cg-radio-button-${++CygnusRadioButtonComponent.idCounter}`);
+  }
+
+  isChecked(): boolean {
+    return this.control()?.value === this.labelText();
+  }
+
+  onRadioChange() {
+    this.control()?.setValue(this.labelText());
+    this.control()?.markAsDirty();
+    this.control()?.markAsTouched();
+    this.inputRadioValueOutput.emit(this.labelText());
   }
 
 }

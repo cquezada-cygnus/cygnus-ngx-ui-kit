@@ -23,12 +23,12 @@
 
         <div class="inline-flex items-center">
 
-          <fieldset class="flex flex-col space-y-4">
-            <cygnus-radio-button [labelText]="'Chile'" />
-            <cygnus-radio-button [labelText]="'Perú'" />
-            <cygnus-radio-button [labelText]="'Argentina'" />
-            <cygnus-radio-button [labelText]="'Brasil'" [isDisabled]="true" />
-          </fieldset>
+          <cygnus-radio-group [control]="radioForm.controls.radioExample">
+            <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Chile'" />
+            <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Perú'" />
+            <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Argentina'" />
+            <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Brasil'" [isDisabled]="true" />
+          </cygnus-radio-group>
 
         </div>
       </div>
@@ -44,20 +44,20 @@
         <p class="mb-8 text-gray-600 text-md">Este ejemplo muestra cómo se pueden implementar botones de
             opción con etiquetas que incluyen un hipervínculo.</p>
 
-        <!-- Components -->
-
-        <fieldset class="flex flex-col space-y-4">
+        <cygnus-radio-group [control]="radioLinkForm.controls.radioExample">
           <cygnus-radio-button
+            [control]="radioLinkForm.controls.radioExample"
             [labelText]="'Estoy de acuerdo con los '"
             [linkText]="'términos y condiciones'"
             [linkUrl]="'./'"
           />
           <cygnus-radio-button
+            [control]="radioLinkForm.controls.radioExample"
             [labelText]="'No estoy de acuerdo con los '"
             [linkText]="'términos y condiciones'"
             [linkUrl]="'./'"
           />
-        </fieldset>
+        </cygnus-radio-group>
 
       </div>
     </div>
