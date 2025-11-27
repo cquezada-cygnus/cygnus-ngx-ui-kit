@@ -10,6 +10,45 @@
         elemento.</p>
   </header>
 
+  <section id="tooltip-howto">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo utilizar cygnus-tooltip</h2>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y algún otro componente de referencia en el archivo .ts del componente donde lo vas a implementar. También se debe importar el servicio TooltipService para el correcto funcionamiento del tooltip.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusTooltipImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Implementar en el archivo .ts el uso del servicio TooltipService, la variable con un string con el contenido del tooltip (puede ser sólo texto o una estructura html), y los métodos que mostrarán y ocultarán el tooltip.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusTooltipCodeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del tooltip, la plantilla del componente que utilizarás de referencia para el tooltip y agregar los métodos que manejan el tooltip.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusTooltipSimpleHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Popover simple -->
   <section id="simple-tooltip">
     <div
@@ -32,12 +71,11 @@
     </div>
   </section>
 
-  <!-- Popover simple -->
-  <section id="simple-tooltip">
-    <div
-      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+  <!-- Popover complex -->
+  <section id="complex-tooltip">
+    <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">Tooltip con ícono de ayuda</h2>
+        <h2 class="mb-2 text-xl font-semibold">Tooltip con estructura HTML</h2>
 
         <div class="flex flex-col items-center justify-center gap-2">
 
@@ -53,6 +91,19 @@
             </cygnus-button>
           </div>
         </div>
+
+        <pre>
+          <code [highlight]="cygnusTooltipComplexCodeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusTooltipComplexHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
   </section>
