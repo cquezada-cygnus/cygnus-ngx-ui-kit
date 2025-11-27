@@ -1,7 +1,7 @@
 <main class="col-span-1 p-6 bg-white lg:col-span-8">
 
   <header class="mb-12">
-      <h1 class="text-4xl font-bold">Selects</h1>
+      <h1 class="text-4xl font-bold">Selectores de Búsqueda</h1>
       <p class="mt-4 text-secondary-600 text-md">El select de búsqueda aplica a los usuarios a introducir sus
           consultas, afinar los resultados y mostrar fácilmente
           la información relevante.
@@ -16,94 +16,158 @@
   </header>
 
   <section id="select-search-simple">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Selector de búsqueda con botón</h2>
-              <p class="mb-8 text-secondary-600 text-md">Este ejemplo de una entrada de búsqueda con el botón
-                  de
-                  búsqueda ubicado dentro del campo de entrada. Este diseño
-                  compacto permite a los usuarios escribir su consulta y hacer clic inmediatamente en el botón
-                  de búsqueda dentro del
-                  mismo elemento, ahorrando espacio.</p>
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Selector de búsqueda con botón</h2>
+        <p class="mb-8 text-secondary-600 text-md">Este ejemplo de una entrada de búsqueda con el botón
+            de búsqueda ubicado dentro del campo de entrada. Este diseño compacto permite a los usuarios escribir su consulta y hacer clic inmediatamente en el botón de búsqueda dentro del mismo elemento, ahorrando espacio.</p>
 
-              <div
-                  class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <hr>
+        <br>
 
-                  <div class="flex-col w-full max-w-sm space-y-4">
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y algunas interfaces que podrías necesitar en el archivo .ts del componente donde lo vas a implementar.
+        </p>
 
-                      <cygnus-search-select
-                        [items]="options"
-                        (outputSearch)="printSearch($event)"
-                      />
+        <pre>
+          <code [highlight]="cygnusSearchSelImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
-                  </div>
+        <p class="mb-8 text-secondary-600 text-md">
+          En el archivo .ts crea un arreglo cuyos elementos cumplan con la interfaz SelectGeneric para desplegarlos en el selector. Para obtener el resultado de la selección, puedes usar un método para capturar el resultado.
+        </p>
 
-              </div>
-              <div
-                  class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <pre>
+          <code [highlight]="cygnusSearchSelTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
-                  <div class="flex-col w-full max-w-sm space-y-4">
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del selector y agregar la configuración según corresponda.
+        </p>
 
-                      <cygnus-search-select
-                        [items]="options"
-                        [showOptionsAutomatically]="true"
-                        (outputSearch)="printSearch($event)"
-                      />
+        <pre>
+          <code [highlight]="cygnusSearchSelHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
 
-                  </div>
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+          <div class="flex-col w-full max-w-sm space-y-4">
 
-              </div>
+            <cygnus-search-select
+              [items]="options"
+              (outputSearch)="printSearch($event)"
+            />
 
           </div>
+        </div>
 
+        <p class="mb-8 text-secondary-600 text-md">
+          Puedes cambiar el comportamiento del selector con [showOptionsAutomatically] ingresando un boolean.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusSearchSelAutHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+          <div class="flex-col w-full max-w-sm space-y-4">
+
+            <cygnus-search-select
+              [items]="options"
+              [showOptionsAutomatically]="true"
+              (outputSearch)="printSearch($event)"
+            />
+
+          </div>
+        </div>
       </div>
+    </div>
   </section>
 
   <section id="select-size">
-      <div
-          class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Selector con menú desplegable</h2>
-              <p class="mb-8 text-secondary-600 text-md">Este ejemplo de entrada de búsqueda incluye un menú
-                  desplegable para filtrar las categorías de búsqueda. Los usuarios
-                  pueden seleccionar entre distintas categorías, como Dashboards, UI Kits y Components, antes
-                  de ingresar su consulta de
-                  búsqueda. Este diseño ayuda a refinar las búsquedas y brinda resultados más precisos.</p>
-              <p class="text-secondary-600 text-md">Nota: este componente trae un script para que el dropdown
-                  funcione</p>
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Selector con menú desplegable</h2>
+        <p class="mb-8 text-secondary-600 text-md">Este ejemplo de entrada de búsqueda incluye un menú
+            desplegable para filtrar las categorías de búsqueda. Los usuarios
+            pueden seleccionar entre distintas categorías, como Dashboards, UI Kits y Components, antes
+            de ingresar su consulta de
+            búsqueda. Este diseño ayuda a refinar las búsquedas y brinda resultados más precisos.</p>
+        <p class="text-secondary-600 text-md">Nota: este componente trae un script para que el dropdown
+            funcione</p>
 
-              <div
-                  class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y algunas interfaces que podrías necesitar en el archivo .ts del componente donde lo vas a implementar.
+        </p>
 
-                  <div class="flex flex-col w-full max-w-lg space-y-4">
+        <pre>
+          <code [highlight]="cygnusMenuSearchSelImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
-                      <cygnus-menu-search-select
-                        [menuSearchContentArr]="menuSearchContentArr"
-                        (outputSearch)="printSearch($event)"
-                      />
+        <p class="mb-8 text-secondary-600 text-md">
+          En el archivo .ts crea un arreglo cuyos elementos cumplan con la interfaz SelectGeneric para desplegarlos en el selector. Para obtener el resultado de la selección, puedes usar un método para capturar el resultado.
+        </p>
 
-                  </div>
+        <pre>
+          <code [highlight]="cygnusMenuSearchSelTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
-              </div>
-              <div
-                  class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del selector y agregar la configuración según corresponda.
+        </p>
 
-                  <div class="flex flex-col w-full max-w-lg space-y-4">
+        <pre>
+          <code [highlight]="cygnusSearchSelHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
 
-                      <cygnus-menu-search-select
-                        [menuSearchContentArr]="menuSearchContentArr"
-                        [showOptionsAutomatically]="true"
-                        (outputSearch)="printSearch($event)"
-                      />
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+          <div class="flex flex-col w-full max-w-lg space-y-4">
 
-                  </div>
-
-              </div>
+            <cygnus-menu-search-select
+              [menuSearchContentArr]="menuSearchContentArr"
+              (outputSearch)="printSearch($event)"
+            />
 
           </div>
+        </div>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Puedes cambiar el comportamiento del selector con [showOptionsAutomatically] ingresando un boolean.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusMenuSearchSelAutHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+          <div class="flex flex-col w-full max-w-lg space-y-4">
+
+            <cygnus-menu-search-select
+              [menuSearchContentArr]="menuSearchContentArr"
+              [showOptionsAutomatically]="true"
+              (outputSearch)="printSearch($event)"
+            />
+
+          </div>
+        </div>
 
       </div>
+    </div>
   </section>
 
 </main>
