@@ -1,140 +1,248 @@
+<main class="col-span-1 p-6 bg-white lg:col-span-8">
 
-<section id="select-simple">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-    <div class="p-4 pb-4">
-      <h2 class="mb-2 text-xl font-semibold">Básico</h2>
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Selector</h1>
+  </header>
 
-      <div
-        class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <section id="select-explanation">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-select</h2>
 
-        <div class="w-full max-w-sm min-w-[200px]">
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui y la  interfaz SelectGeneric en el archivo .ts del componente donde lo vas a implementar.
+        </p>
 
+        <pre>
+          <code [highlight]="cygnusSelImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
+        <p class="mb-8 text-secondary-600 text-md">
+          Crear un arreglo de elementos que cumplan con la interfaz SelectGeneric en el documento .ts.
+        </p>
 
-          <cygnus-select [options]="options" />
-        </div>
+        <pre>
+          <code [highlight]="cygnusSelCodeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del selector y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusSelHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="select-size">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-    <div class="p-4 pb-4">
-      <h2 class="mb-2 text-xl font-semibold">Tamaños</h2>
+  <section id="select-simple">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Básico</h2>
 
-      <!-- Primary -->
-      <div class="flex items-center justify-center w-full gap-4 mb-4">
+        <div
+          class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
 
-        <div class="flex flex-col max-w-sm space-y-3 w-full min-w-[200px]"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
-
-          <!-- COMPONENTE: Selector XS -->
-          <cygnus-select [options]="options" [selSize]="'xs'" />
-
-          <!-- COMPONENTE: Selector básico -->
-          <cygnus-select [options]="options" />
-
-          <!-- COMPONENTE: Selector LG -->
-          <cygnus-select [options]="options" [selSize]="'lg'" />
+          <div class="w-full max-w-sm min-w-[200px]">
+            <cygnus-select [options]="options" />
+          </div>
 
         </div>
+
+        <pre>
+          <code [highlight]="cygnusSelCodeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusSelHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Select deshabilitado -->
-<section id="select-disabled">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-    <div class="p-4 pb-4">
-      <h2 class="mb-2 text-xl font-semibold">Select deshabilitado</h2>
-      <p class="mb-8 text-gray-600 text-md">Ideal para mostrar una opción bloqueada o perroreterminada
-          en formularios.</p>
+  <section id="select-size">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Tamaños</h2>
 
-      <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <div class="flex flex-col max-w-sm space-y-3 w-full min-w-[200px]"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
+
+            <!-- COMPONENTE: Selector XS -->
+            <cygnus-select [options]="options" [selSize]="'xs'" />
+
+            <!-- COMPONENTE: Selector básico -->
+            <cygnus-select [options]="options" />
+
+            <!-- COMPONENTE: Selector LG -->
+            <cygnus-select [options]="options" [selSize]="'lg'" />
+
+          </div>
+        </div>
+
+        <pre>
+          <code [highlight]="cygnusSelCodeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusSelSizeHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Select deshabilitado -->
+  <section id="select-disabled">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Select deshabilitado</h2>
+        <p class="mb-8 text-gray-600 text-md">Ideal para mostrar una opción bloqueada o perroreterminada
+            en formularios.</p>
+
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
           <div class="w-full max-w-sm min-w-[200px]">
             <div class="relative">
 
               <!-- COMPONENTE: Selector deshabilitado -->
               <cygnus-select [options]="options" [isDisabled]="true" />
+
             </div>
+          </div>
         </div>
+        <pre>
+          <code [highlight]="cygnusSelCodeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusSelDesHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Select validación -->
+  <section id="select-validation">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Select con validación</h2>
+        <p class="mb-8 text-gray-600 text-md">Ideal para mostrar una opción bloqueada o determinada
+            en formularios.</p>
+
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-col max-w-sm space-y-3 w-full min-w-[200px]">
+
+            <!-- COMPONENTE: Selector error -->
+            <cygnus-select [options]="options" [selState]="'error'" />
+
+            <!-- COMPONENTE: Selector éxito -->
+            <cygnus-select [options]="options" [selState]="'success'" />
+
+          </div>
+        </div>
+
+        <pre>
+          <code [highlight]="cygnusSelValHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Select con label -->
+  <section id="select-label">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Label y texto de ayuda</h2>
+        <p class="mb-8 text-gray-600 text-md">Ideal para mostrar una opción bloqueada o determinada
+            en formularios.</p>
+
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+          <div class="w-full max-w-sm min-w-[200px]">
+
+            <!-- COMPONENTE: Selector con label -->
+            <cygnus-select
+              [options]="options"
+              [selectLabel]="'Label'"
+              [selectHint]="'Este es un texto de ayuda para el usuario.'"
+            />
+
+          </div>
+        </div>
+
+        <pre>
+          <code [highlight]="cygnusSelLabelHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- Select con ancho automático -->
+  <section id="select-width-automatic">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Select con ancho automático</h2>
+        <p class="mb-8 text-gray-600 text-md">selección automática de ancho con capacidad de respuesta y
+          opciones personalizables, ideal para formularios que
+          necesitan campos de entrada dinámicos que se ajusten al tamaño del contenido.</p>
 
-<!-- Select validación -->
-<section id="select-validation">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-    <div class="p-4 pb-4">
-      <h2 class="mb-2 text-xl font-semibold">Select con validación</h2>
-      <p class="mb-8 text-gray-600 text-md">Ideal para mostrar una opción bloqueada o determinada
-          en formularios.</p>
+        <div
+          class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
 
-      <div class="flex items-center justify-center w-full gap-4 mb-4">
-        <div class="flex flex-col max-w-sm space-y-3 w-full min-w-[200px]">
-
-          <!-- COMPONENTE: Selector error -->
-          <cygnus-select [options]="options" [selState]="'error'" />
-
-          <!-- COMPONENTE: Selector éxito -->
-          <cygnus-select [options]="options" [selState]="'success'" />
+          <!-- COMPONENTE: Selector AutoWidth -->
+          <cygnus-select [options]="optionsTestAutoWidth" [selAutoWidth]="true"  />
 
         </div>
-      </div>
-    </div>
 
-  </div>
-</section>
+        <pre>
+          <code [highlight]="cygnusSelAutoWidthTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
-<!-- Select con label -->
-<section id="select-label">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-    <div class="p-4 pb-4">
-      <h2 class="mb-2 text-xl font-semibold">Label y texto de ayuda</h2>
-      <p class="mb-8 text-gray-600 text-md">Ideal para mostrar una opción bloqueada o determinada
-          en formularios.</p>
-
-      <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-        <div class="w-full max-w-sm min-w-[200px]">
-
-          <!-- COMPONENTE: Selector con label -->
-          <cygnus-select
-            [options]="options"
-            [selectLabel]="'Label'"
-            [selectHint]="'Este es un texto de ayuda para el usuario.'"
-          />
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Select con ancho automático -->
-<section id="select-width-automatic">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-    <div class="p-4 pb-4">
-      <h2 class="mb-2 text-xl font-semibold">Select con ancho automático</h2>
-      <p class="mb-8 text-gray-600 text-md">selección automática de ancho con capacidad de respuesta y
-        opciones personalizables, ideal para formularios que
-        necesitan campos de entrada dinámicos que se ajusten al tamaño del contenido.</p>
-
-      <div
-        class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-
-        <!-- COMPONENTE: Selector AutoWidth -->
-        <cygnus-select [options]="optionsTestAutoWidth" [selAutoWidth]="true"  />
+        <pre>
+          <code [highlight]="cygnusSelAutoWidthHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
 
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</main>
