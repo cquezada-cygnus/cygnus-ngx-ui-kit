@@ -1,4 +1,4 @@
-<div
+<!-- <div
   [class]="
     'absolute transition-opacity duration-300 z-50 px-3 py-1.5 text-sm text-white bg-gray-900 rounded-md shadow-md ' +
     (!isVisible ? 'invisible':'')
@@ -8,6 +8,21 @@
   [style.top.px]="position.top"
   [innerHTML]="message"
 >
+</div> -->
+
+<div
+  [class]="
+    'fixed z-[9999] pointer-events-none ' +
+    (!isVisible ? 'invisible':'')
+  "
+  [style.top.px]="position.top"
+  [style.left.px]="position.left"
+>
+
+  <div
+    [class]="tooltipClasses"
+    class="transition-opacity duration-300 z-50 px-3 py-1.5 text-sm text-white bg-gray-900 rounded-md shadow-md"
+    [innerHTML]="message"></div>
 </div>
 
 

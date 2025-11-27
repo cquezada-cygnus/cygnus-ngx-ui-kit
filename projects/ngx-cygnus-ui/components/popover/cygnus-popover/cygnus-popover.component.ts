@@ -29,9 +29,6 @@ export class CygnusPopoverComponent {
       this.isVisible = true;
 
       if (targetElement) {
-        // const rect = targetElement.getBoundingClientRect();
-        // this.position.bottom = -(rect.top)/1.95 + (window.scrollY) - 30; // Adjust for tooltip height
-
         this.calculatePosition(targetElement);
       }
     }));
