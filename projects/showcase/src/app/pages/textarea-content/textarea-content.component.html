@@ -6,6 +6,41 @@
         escribir.</p>
   </header>
 
+  <section id="textarea-howto">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Cómo usar cygnus-textarea</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusTextareaImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla de la tabla y agregar la configuración según corresponda.
+        </p>
+
+        <pre>
+          <code [highlight]="cygnusTextareaHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[textareaPlaceholder]: Texto que irá como indicación en el placeholder.</li>
+          <li>[textareaType]: String que indica tipo de cygnus-textarea. Existen 3 tipos: "simple", "label", "dynamic-label".</li>
+          <li>[textareaLabel]: Texto que irá como indicación en la etiqueta superior.</li>
+          <li>[control]: Acá puedes ingresar un control de formulario en caso de que quieras integrar el valor del textarea en un formulario: <code>&lt;cygnus-textarea [control]="form.controls.textareaExample" /&gt;</code>.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
   <section id="placeholder">
     <div
       class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
@@ -24,9 +59,12 @@
 
           </div>
         </div>
+        <pre>
+          <code [highlight]="cygnusTextareaHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
       </div>
-
-
     </div>
   </section>
 
@@ -44,13 +82,13 @@
               [textareaType]="'label'"
             />
           </div>
-
-
         </div>
+        <pre>
+          <code [highlight]="cygnusTextareaLabelHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
       </div>
-
-
-
     </div>
   </section>
 
@@ -75,12 +113,13 @@
           </div>
 
         </div>
+        <pre>
+          <code [highlight]="cygnusTextareaDLHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
       </div>
-
-
-
     </div>
   </section>
-
 
 </main>
