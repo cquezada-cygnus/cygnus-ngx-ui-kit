@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, input, model, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { TooltipService } from 'ngx-cygnus-ui/services';
 import { Subscription } from 'rxjs';
 
