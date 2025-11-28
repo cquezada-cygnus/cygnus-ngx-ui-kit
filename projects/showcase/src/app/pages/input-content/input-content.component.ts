@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, output, signal } from '@angular/core';
+import { ReactiveFormsModule, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
+import { InputColor } from 'ngx-cygnus-ui/types/public-api';
+import { cgPhone } from 'ngx-cygnus-ui/validators';
 
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
@@ -7,13 +10,63 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 @Component({
   selector: 'app-input-content',
   imports: [
+    ReactiveFormsModule,
     CygnusInputComponent,
     Highlight, HighlightLineNumbers,
   ],
   templateUrl: './input-content.component.html',
   styleUrl: './input-content.component.scss'
 })
-export class InputContentComponent {
+export class InputContentComponent implements OnInit {
+
+  inputClearValue = signal<boolean>(false);
+  outputPhone = output<any>();
+  nonNullableFb = inject(NonNullableFormBuilder);
+  phoneForm = this.nonNullableFb.group({
+    phone: ['',
+      [Validators.required, cgPhone()]
+    ],
+  });
+
+  textPhoneHint = signal<string>('');
+  inputPhoneColor = signal<InputColor>('base');
+
+  ngOnInit() {
+    this.inputStatusManager();
+    // this.formStatusManager();
+  }
+
+  inputStatusManager() {
+    this.phoneForm.get('phone')?.statusChanges.subscribe(status => {
+      if (this.phoneForm.get('phone')?.errors) {
+        this.inputPhoneColor.set('error');
+        if (this.phoneForm.get('phone')?.errors!['required']) {
+          this.textPhoneHint.set('Debe indicar un teléfono');
+        } else if (this.phoneForm.get('phone')?.errors!['cgPhone']) {
+          this.textPhoneHint.set('El formato del teléfono es inválido');
+        }
+      } else {
+        this.inputPhoneColor.set('base');
+        this.textPhoneHint.set('');
+      }
+    });
+  }
+
+  // formStatusManager() {
+  //   this.phoneForm.statusChanges.subscribe(status => {
+  //     if (status === 'VALID') {
+  //       this.btnSubmitColor.set('btn-primary');
+  //     } else {
+  //       this.btnSubmitColor.set('btn-disabled');
+  //     }
+  //   });
+  // }
+
+  onSubmit() {
+      this.inputClearValue.set(true);
+      this.phoneForm.markAllAsTouched();
+      this.outputPhone.emit(this.phoneForm.value);
+  }
 
   cygnusInputImportTs: string = `
     import { Component } from '@angular/core';
