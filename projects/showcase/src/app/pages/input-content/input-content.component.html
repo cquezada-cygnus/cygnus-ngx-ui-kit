@@ -1,511 +1,461 @@
 <main class="col-span-1 p-6 bg-white lg:col-span-8">
 
-    <header class="mb-12">
-        <h1 class="text-4xl font-bold">Inputs</h1>
-        <p class="mt-4 text-gray-600 text-md">Los campos de entrada permiten a los usuarios introducir texto
-            en
-            una interfaz de usuario. Suelen aparecer en
-            formularios y cuadros de diálogo. Los campos de entrada en móviles deben tener un tamaño de
-            texto de
-            al menos 16px para evitar el zoom automático en los navegadores móviles.</p>
-    </header>
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold">Inputs</h1>
+    <p class="mt-4 text-gray-600 text-md">Los campos de entrada permiten a los usuarios introducir texto
+      en una interfaz de usuario. Suelen aparecer en formularios y cuadros de diálogo. Los campos de entrada en móviles deben tener un tamaño de texto de al menos 16px para evitar el zoom automático en los navegadores móviles.</p>
+  </header>
 
-    <!-- Input simple -->
-    <section id="input-simple">
-        <div
-            class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-            <div class="p-4 pb-4">
-                <h2 class="mb-1 text-xl font-semibold">Input simple</h2>
-                <p class="mb-8 text-gray-600 text-md">Utilice este ejemplo de "input" para comenzar fácilmente.
-                    Es
-                    perfecto para formularios que requieren la entrada de
-                    texto, como el registro de usuarios, formularios de inicio de sesión o cualquier formulario
-                    en
-                    el que los usuarios
-                    necesiten ingresar un nombre de usuario.</p>
-                <div class="flex items-center justify-center w-full gap-4 mb-4">
+  <section id="input-howto">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Cómo usar cygnus-input</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Importar el componente de la biblioteca ngx-cygnus-ui en el archivo .ts del componente donde lo vas a implementar.
+        </p>
 
-                    <div class="w-full max-w-sm min-w-[200px]">
+        <pre>
+          <code [highlight]="cygnusInputImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
-                        <!-- COMPONENTE: Input simple -->
-                        <cygnus-input [inputCustomType]="'base'" [textPlaceholder]="'esto es un placeholder'" />
+        <p class="mb-8 text-secondary-600 text-md">
+          En el documento .html del componente, posicionar la plantilla del input y agregar la configuración según corresponda.
+        </p>
 
-                    </div>
-                </div>
-            </div>
+        <pre>
+          <code [highlight]="cygnusInputSimpleHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[inputCustomType]: Recibe un string que indica el tipo de input que se va a utilizar. Existen los tipos: "base", "fieldset-legend-label", "label-top", "label-interactive", "floating", "file".</li>
+          <li>[textPlaceholder]: Recibe un string que indica el texto del placeholder.</li>
+          <li>[textHint]: Recibe un string que indica el texto que va debajo del input para entregar instrucciones al usuario.</li>
+          <li>[textLabel]: Recibe un string que indica el texto que va arriba del input a modo de encabezado.</li>
+          <li>[inputSize]: Recibe un string que indica el tamaño del input. Si no se indica, tiene un tamaño estándar. Puede tener los siguientes valores: 'sm' y 'lg'.</li>
+          <li>[inputColor]: Recibe un string que indica el color del input. Puede recibir los siguientes valores: 'success', 'warning', 'error'. Si no recibe nada, el color es estándar.</li>
+          <li>[iconAsset]: Recibe un string que indica la url de un ícono dentro de la biblioteca ngx-cygnus-icons.</li>
+          <li>[iconColor]: Recibe un string que indica el color de un ícono dentro del input. Puede recibir los siguientes valores: 'success', 'warning', 'error'. Si no recibe nada, el color es estándar.</li>
+          <li>[iconState]: Recibe un boolean: true para identificar el estilo del input cuando es ícono de success/warning/error. Por defecto su valor es false.</li>
+          <li>[iconSize]: Recibe un string que indica el tamaño del ícono dentro del input. Por defecto tiene el valor '19px'.</li>
+          <li>[iconPosition]: Recibe un string que indica la posición del ícono dentro del input. Su valor puede ser 'right' o 'left'. Por defecto tiene el valor 'right'.</li>
+          <li>[pseudoIconCLPPhone]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar el comienzo del número de teléfono para Chile.</li>
+          <li>[hintColor]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si el texto por debajo del input se va a colorear o si va a mantener un color estándar.</li>
+          <li>[inputDisabled]: Recibe un boolean. Por defecto su valor es false. Se utiliza para desabilitar o no el input.</li>
+          <li>[typePassword]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si hay que ocultar el contenido del input en caso de que sea para indicar un password.</li>
+          <li>[inputClearValue]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si se requiere que se limpie el input.</li>
+          <li>[initializeInputValue]: Recibe un string para inicializar el valor del input.</li>
+          <li>[control]: Se utiliza para conectar el input a un formulario.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input simple -->
+  <section id="input-simple">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Input simple</h2>
+        <p class="mb-8 text-gray-600 text-md">Utilice este ejemplo de "input" para comenzar fácilmente.
+          Es perfecto para formularios que requieren la entrada de texto, como el registro de usuarios, formularios de inicio de sesión o cualquier formulario en el que los usuarios necesiten ingresar un nombre de usuario.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="w-full max-w-sm min-w-[200px]">
+
+            <!-- COMPONENTE: Input simple -->
+            <cygnus-input [inputCustomType]="'base'" [textPlaceholder]="'esto es un placeholder'" />
+
+          </div>
         </div>
-    </section>
-
-            <!-- Input with label -->
-            <section id="input-with-label">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-1 text-xl font-semibold">Input con label</h2>
-                        <p class="mb-8 text-gray-600 text-md">Utilice este ejemplo de "input" con el texto de
-                            marcador de
-                            posición "Este es el placeholder", guiando al usuario para que
-                            introduzca su nombre. La etiqueta se coloca encima del campo de entrada para obtener
-                            claridad
-                            sobre qué información se
-                            requiere.</p>
-                        <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
-
-                            <div class="w-full max-w-sm">
-
-                                <!-- COMPONENTE: Input con label -->
-                                <cygnus-input
-                                  [inputCustomType]="'fieldset-legend-label'"
-                                  [textPlaceholder]="'esto es un placeholder'"
-                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
-                                  [textLabel]="'Custom label'"
-                                />
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Input size -->
-            <section id="input-size">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-1 text-xl font-semibold">Tamaños</h2>
-                        <p class="mb-8 text-gray-600 text-md">Input apilados de tamaños pequeños a grandes..</p>
-                        <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                            <div class="flex flex-col max-w-sm space-y-3 w-full min-w-[200px]"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
-
-                                <!-- COMPONENTE: Tamaño SM -->
-                                <cygnus-input
-                                  [inputCustomType]="'fieldset-legend-label'"
-                                  [textPlaceholder]="'Tamaño SM'"
-                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
-                                  [textLabel]="'Label'"
-                                  [inputSize]="'sm'"
-                                />
-
-                                <!-- COMPONENTE: Tamaño default -->
-                                <cygnus-input
-                                  [inputCustomType]="'fieldset-legend-label'"
-                                  [textPlaceholder]="'Tamaño Normal'"
-                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
-                                  [textLabel]="'Label'"
-                                  [inputSize]="''"
-                                />
-
-                                <!-- COMPONENTE: Tamaño LG -->
-                                <cygnus-input
-                                  [inputCustomType]="'fieldset-legend-label'"
-                                  [textPlaceholder]="'Tamaño LG'"
-                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
-                                  [textLabel]="'Label'"
-                                  [inputSize]="'lg'"
-                                />
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Input Label TOP -->
-            <section id="input-top-label">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-1 text-xl font-semibold">Label top</h2>
-                        <p class="mb-8 text-gray-600 text-md">Para uso sin animación del label</p>
-                        <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                            <div class="flex flex-col w-full max-w-sm min-w-[200px] space-y-6"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
-
-                                <!-- COMPONENTE: Input Label TOP simple -->
-                                <cygnus-input
-                                  [inputCustomType]="'label-top'"
-                                  [textLabel]="'Email'"
-                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input Label TOP success -->
-                                <cygnus-input
-                                  [inputCustomType]="'label-top'"
-                                  [inputColor]="'success'"
-                                  [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
-                                  [iconColor]="'#12b76a'"
-                                  [textLabel]="'Email'"
-                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input Label TOP warning -->
-                                 <cygnus-input
-                                  [inputCustomType]="'label-top'"
-                                  [inputColor]="'warning'"
-                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
-                                  [iconColor]="'#f79009'"
-                                  [textLabel]="'Email'"
-                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input Label TOP error -->
-                                 <cygnus-input
-                                  [inputCustomType]="'label-top'"
-                                  [inputColor]="'error'"
-                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
-                                  [iconColor]="'#f04438'"
-                                  [textLabel]="'Email'"
-                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Input interactive -->
-            <section id="input-interactive">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-1 text-xl font-semibold">Label interactivo top</h2>
-                        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
-                            texto
-                            blanco, esquinas
-                            redondeadas y un efecto
-                            de sombra al pasar el mouse, mostrando interactividad.</p>
-                        <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                            <div class="flex flex-col space-y-6 w-full max-w-sm min-w-[200px]"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
-
-                                <!-- COMPONENTE: Input interactivo simple -->
-                                <cygnus-input
-                                  [inputCustomType]="'label-interactive'"
-                                  [textLabel]="'Email'"
-                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input interactivo success -->
-                                <cygnus-input
-                                  [inputCustomType]="'label-interactive'"
-                                  [inputColor]="'success'"
-                                  [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
-                                  [iconColor]="'#12b76a'"
-                                  [textLabel]="'Email'"
-                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input interactivo warning -->
-                                 <cygnus-input
-                                  [inputCustomType]="'label-interactive'"
-                                  [inputColor]="'warning'"
-                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
-                                  [iconColor]="'#f79009'"
-                                  [textLabel]="'Email'"
-                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input interactivo error -->
-                                 <cygnus-input
-                                  [inputCustomType]="'label-interactive'"
-                                  [inputColor]="'error'"
-                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
-                                  [iconColor]="'#f04438'"
-                                  [textLabel]="'Email'"
-                                  [textHint] ="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input floating -->
-                                <cygnus-input
-                                  [inputCustomType]="'floating'"
-                                  [textPlaceholder]="'...'"
-                                  [textLabel]="'Email'"
-                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input floating success -->
-                                <cygnus-input
-                                  [inputCustomType]="'floating'"
-                                  [textPlaceholder]="'...'"
-                                  [textLabel]="'Email'"
-                                  [inputColor]="'success'"
-                                  [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
-                                  [iconState]="true"
-                                  [iconColor]="'#12b76a'"
-                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input floating warning -->
-                                <cygnus-input
-                                  [inputCustomType]="'floating'"
-                                  [textPlaceholder]="'...'"
-                                  [textLabel]="'Email'"
-                                  [inputColor]="'warning'"
-                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
-                                  [iconState]="true"
-                                  [iconColor]="'#f79009'"
-                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                                <!-- COMPONENTE: Input floating error -->
-                                <cygnus-input
-                                  [inputCustomType]="'floating'"
-                                  [textPlaceholder]="'...'"
-                                  [textLabel]="'Email'"
-                                  [inputColor]="'error'"
-                                  [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
-                                  [iconState]="true"
-                                  [iconColor]="'#f04438'"
-                                  [textHint]="'Este es un texto de ayuda para el usuario.'"
-                                />
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Input validations -->
-            <section id="input-validations">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-1 text-xl font-semibold">Validaciones</h2>
-                        <p class="mb-8 text-gray-600 text-md">Proporciona información valiosa y procesable a los
-                            usuarios con la validación de formularios HTML5.</p>
-                        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
-
-                            <div class="flex-col w-full max-w-sm space-y-4">
-
-                                <!-- COMPONENTE: Input éxito -->
-                                <fieldset>
-                                    <label for="" class="fieldset-legend">Label</label>
-                                    <div class="relative">
-                                        <input type="text" class="pr-9 input-success" placeholder="Escribe aquí..." />
-                                        <div
-                                            class="absolute inset-y-0 end-2 flex items-center ps-3.5 pointer-events-none">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor"
-                                                class="size-6 text-success-500">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p class="hint-text text-success-600" id="cg-validation-name-success-helper"
-                                        role="alert">
-                                        Ingreso exitoso</p>
-                                </fieldset>
-
-                                <!-- COMPONENTE: Input advertencia -->
-                                <fieldset>
-                                    <label for="" class="fieldset-legend">Label</label>
-                                    <div class="relative">
-                                        <input type="text" class="pr-9 input-warning" placeholder="Escribe aquí..." />
-                                        <div
-                                            class="absolute inset-y-0 end-2 flex items-center ps-3.5 pointer-events-none">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor"
-                                                class="size-6 text-warning-600">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p class="hint-text text-warning-600" id="cg-validation-name-success-helper"
-                                        role="alert">
-                                        Este formato puede requerir revisión.</p>
-                                </fieldset>
-
-                                <!-- COMPONENTE: Input error -->
-                                <fieldset>
-                                    <label for="" class="fieldset-legend">Label</label>
-                                    <div class="relative">
-                                        <input type="text" class="pr-9 input-error" placeholder="Escribe aquí..." />
-                                        <div
-                                            class="absolute inset-y-0 end-2 flex items-center ps-3.5 pointer-events-none">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6 text-error-600">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p class="hint-text text-error-600" id="cg-validation-name-success-helper"
-                                        role="alert">
-                                        Por favor introduzca un número de teléfono válido.</p>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Input icon -->
-            <section id="input-icon">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-1 text-xl font-semibold">Input con icono</h2>
-                        <div class="flex items-center justify-center w-full gap-4 mb-4">
-
-                            <div class="flex-col w-full max-w-sm space-y-4">
-
-                                <!-- COMPONENTE: Input con icono a la derecha -->
-                                <cygnus-input
-                                  [inputCustomType]="'label-interactive'"
-                                  [textPlaceholder]="'Escribe aquí...'"
-                                  [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
-                                  [iconState]="false"
-                                  [iconColor]="'#101828'"
-                                  [iconPosition]="'right'"
-                                /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
-
-                                <cygnus-input
-                                  [inputCustomType]="'floating'"
-                                  [textPlaceholder]="'Escribe aquí...'"
-                                  [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
-                                  [iconState]="false"
-                                  [iconColor]="'#101828'"
-                                  [iconPosition]="'right'"
-                                /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
-
-
-                                <!-- COMPONENTE: Input con icono a la izquierda -->
-                                <cygnus-input
-                                  [inputCustomType]="'label-interactive'"
-                                  [textPlaceholder]="'Escribe aquí...'"
-                                  [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
-                                  [iconState]="false"
-                                  [iconColor]="'#101828'"
-                                  [iconPosition]="'left'"
-                                /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
-
-                                <cygnus-input
-                                  [inputCustomType]="'floating'"
-                                  [textPlaceholder]="'Escribe aquí...'"
-                                  [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
-                                  [iconState]="false"
-                                  [iconColor]="'#101828'"
-                                  [iconPosition]="'left'"
-                                /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
-
-                                <cygnus-input
-                                  [inputCustomType]="'label-interactive'"
-                                  [textPlaceholder]="'Escribe aquí...'"
-                                  [pseudoIconCLPPhone]="true"
-                                  [iconPosition]="'left'"
-                                />
-
-                                <cygnus-input
-                                  [inputCustomType]="'floating'"
-                                  [textPlaceholder]="'Escribe aquí...'"
-                                  [pseudoIconCLPPhone]="true"
-                                  [iconPosition]="'left'"
-                                />
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- Input group -->
-            <section id="input-group">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-1 text-xl font-semibold">Grupo de inputs</h2>
-                        <p class="mb-8 text-gray-600 text-md">Utilice este ejemplo de entrada de teléfono con un ícono
-                            de teléfono a la izquierda de la entrada, agregando una señal
-                            visual para el tipo de entrada requerida.</p>
-                        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
-
-                            <div class="flex-col w-full max-w-sm space-y-4">
-
-                                <!-- COMPONENTE: Input agrupado con icono -->
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                            class="w-5 h-5">
-                                            <path fill-rule="evenodd"
-                                                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        <!-- inset-y-0 flex items-center pointer-events-none element-right end-0 pe-2 -->
-                                    </div>
-                                    <input type="text" class="pl-9" placeholder="Escribe aquí..." />
-                                </div>
-
-                                <!-- COMPONENTE: Input agrupado con texto -->
-                                <div class="relative">
-                                    <span class="element-left append">+56</span>
-                                    <input type="text" class="pl-10" placeholder="123-45 6789"
-                                        pattern="^\+\d{1,3}\s\d{1,3}-\d{3}-\d{4}$"
-                                        title="El número de teléfono debe tener al menos 7 números" maxlength="9" />
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Input disabled -->
-            <section id="input-disabled">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-6 text-xl font-semibold">Inputs deshabilitados</h2>
-                        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
-
-                            <div class="flex-col w-full max-w-sm space-y-4">
-
-                                <cygnus-input
-                                  [inputCustomType]="'label-interactive'"
-                                  [textPlaceholder]="'Escribe aquí...'"
-                                  [pseudoIconCLPPhone]="true"
-                                  [iconPosition]="'left'"
-                                  [textPlaceholder]="'123-45 6789'"
-                                  [inputDisabled]="true"
-                                />
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                </div>
-            </section>
-
-            <!-- Input file -->
-            <section id="file-input">
-                <div
-                    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-                    <div class="p-4 pb-4">
-                        <h2 class="mb-1 text-xl font-semibold">File input</h2>
-                        <p class="mb-8 text-gray-600 text-md">Una entrada de archivo estándar para cargar archivos.</p>
-                        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
-
-                            <div class="max-w-sm space-y-4 w-full min-w-[200px]">
-
-                                <cygnus-input
-                                  [inputCustomType]="'file'"
-                                  [textLabel]="'Subir imagen'"
-                                />
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </section>
+        <pre>
+          <code [highlight]="cygnusInputSimpleHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input with label -->
+  <section id="input-with-label">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Input con label</h2>
+        <p class="mb-8 text-gray-600 text-md">Utilice este ejemplo de "input" con el texto de
+          marcador de posición "Este es el placeholder", guiando al usuario para que introduzca su nombre. La etiqueta se coloca encima del campo de entrada para obtener
+          claridad sobre qué información se requiere.</p>
+        <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+          <div class="w-full max-w-sm">
+
+            <!-- COMPONENTE: Input con label -->
+            <cygnus-input
+              [inputCustomType]="'fieldset-legend-label'"
+              [textPlaceholder]="'esto es un placeholder'"
+              [textHint]="'Este es un texto de ayuda para el usuario.'"
+              [textLabel]="'Custom label'"
+            />
+
+          </div>
+        </div>
+        <pre>
+          <code [highlight]="cygnusInputLabelHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input size -->
+  <section id="input-size">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Tamaños</h2>
+        <p class="mb-8 text-gray-600 text-md">Input apilados de tamaños pequeños a grandes..</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-col max-w-sm space-y-3 w-full min-w-[200px]"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
+
+            <!-- COMPONENTE: Tamaño SM -->
+            <cygnus-input
+              [inputCustomType]="'fieldset-legend-label'"
+              [textPlaceholder]="'Tamaño SM'"
+              [textHint]="'Este es un texto de ayuda para el usuario.'"
+              [textLabel]="'Label'"
+              [inputSize]="'sm'"
+            />
+
+            <!-- COMPONENTE: Tamaño default -->
+            <cygnus-input
+              [inputCustomType]="'fieldset-legend-label'"
+              [textPlaceholder]="'Tamaño Normal'"
+              [textHint]="'Este es un texto de ayuda para el usuario.'"
+              [textLabel]="'Label'"
+              [inputSize]="''"
+            />
+
+            <!-- COMPONENTE: Tamaño LG -->
+            <cygnus-input
+              [inputCustomType]="'fieldset-legend-label'"
+              [textPlaceholder]="'Tamaño LG'"
+              [textHint]="'Este es un texto de ayuda para el usuario.'"
+              [textLabel]="'Label'"
+              [inputSize]="'lg'"
+            />
+
+          </div>
+        </div>
+        <pre>
+          <code [highlight]="cygnusInputSizesHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input Label TOP -->
+  <section id="input-top-label">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Label top</h2>
+        <p class="mb-8 text-gray-600 text-md">Para uso sin animación del label</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-col w-full max-w-sm min-w-[200px] space-y-6"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
+
+            <!-- COMPONENTE: Input Label TOP simple -->
+            <cygnus-input
+              [inputCustomType]="'label-top'"
+              [textLabel]="'Email'"
+              [textHint] ="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input Label TOP success -->
+            <cygnus-input
+              [inputCustomType]="'label-top'"
+              [inputColor]="'success'"
+              [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
+              [iconColor]="'#12b76a'"
+              [textLabel]="'Email'"
+              [textHint] ="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input Label TOP warning -->
+              <cygnus-input
+              [inputCustomType]="'label-top'"
+              [inputColor]="'warning'"
+              [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
+              [iconColor]="'#f79009'"
+              [textLabel]="'Email'"
+              [textHint] ="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input Label TOP error -->
+              <cygnus-input
+              [inputCustomType]="'label-top'"
+              [inputColor]="'error'"
+              [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+              [iconColor]="'#f04438'"
+              [textLabel]="'Email'"
+              [textHint] ="'Este es un texto de ayuda para el usuario.'"
+            />
+
+          </div>
+        </div>
+        <pre>
+          <code [highlight]="cygnusInputLabelTopHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input interactive -->
+  <section id="input-interactive">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Label interactivo top</h2>
+        <p class="mb-8 text-gray-600 text-md">Utilice este botón versátil que viene con fondo azul y
+          texto blanco, esquinas redondeadas y un efecto de sombra al pasar el mouse, mostrando interactividad.</p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-col space-y-6 w-full max-w-sm min-w-[200px]"><!-- agregué flex flex-col porque sin eso, space-y-* no funciona -->
+
+            <!-- COMPONENTE: Input interactivo simple -->
+            <cygnus-input
+              [inputCustomType]="'label-interactive'"
+              [textLabel]="'Email'"
+              [textHint] ="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input interactivo success -->
+            <cygnus-input
+              [inputCustomType]="'label-interactive'"
+              [inputColor]="'success'"
+              [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
+              [iconColor]="'#12b76a'"
+              [textLabel]="'Email'"
+              [textHint] ="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input interactivo warning -->
+              <cygnus-input
+              [inputCustomType]="'label-interactive'"
+              [inputColor]="'warning'"
+              [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
+              [iconColor]="'#f79009'"
+              [textLabel]="'Email'"
+              [textHint] ="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input interactivo error -->
+              <cygnus-input
+              [inputCustomType]="'label-interactive'"
+              [inputColor]="'error'"
+              [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+              [iconColor]="'#f04438'"
+              [textLabel]="'Email'"
+              [textHint] ="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input floating -->
+            <cygnus-input
+              [inputCustomType]="'floating'"
+              [textPlaceholder]="'...'"
+              [textLabel]="'Email'"
+              [textHint]="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input floating success -->
+            <cygnus-input
+              [inputCustomType]="'floating'"
+              [textPlaceholder]="'...'"
+              [textLabel]="'Email'"
+              [inputColor]="'success'"
+              [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
+              [iconState]="true"
+              [iconColor]="'#12b76a'"
+              [textHint]="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input floating warning -->
+            <cygnus-input
+              [inputCustomType]="'floating'"
+              [textPlaceholder]="'...'"
+              [textLabel]="'Email'"
+              [inputColor]="'warning'"
+              [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
+              [iconState]="true"
+              [iconColor]="'#f79009'"
+              [textHint]="'Este es un texto de ayuda para el usuario.'"
+            />
+
+            <!-- COMPONENTE: Input floating error -->
+            <cygnus-input
+              [inputCustomType]="'floating'"
+              [textPlaceholder]="'...'"
+              [textLabel]="'Email'"
+              [inputColor]="'error'"
+              [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+              [iconState]="true"
+              [iconColor]="'#f04438'"
+              [textHint]="'Este es un texto de ayuda para el usuario.'"
+            />
+
+          </div>
+        </div>
+        <pre>
+          <code [highlight]="cygnusInputLabelInteractiveTopHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input icon -->
+  <section id="input-icon">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">Input con icono</h2>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex-col w-full max-w-sm space-y-4">
+
+            <!-- COMPONENTE: Input con icono a la derecha -->
+            <cygnus-input
+              [inputCustomType]="'label-interactive'"
+              [textPlaceholder]="'Escribe aquí...'"
+              [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
+              [iconState]="false"
+              [iconColor]="'#101828'"
+              [iconPosition]="'right'"
+            /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
+
+            <cygnus-input
+              [inputCustomType]="'floating'"
+              [textPlaceholder]="'Escribe aquí...'"
+              [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
+              [iconState]="false"
+              [iconColor]="'#101828'"
+              [iconPosition]="'right'"
+            /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
+
+
+            <!-- COMPONENTE: Input con icono a la izquierda -->
+            <cygnus-input
+              [inputCustomType]="'label-interactive'"
+              [textPlaceholder]="'Escribe aquí...'"
+              [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
+              [iconState]="false"
+              [iconColor]="'#101828'"
+              [iconPosition]="'left'"
+            /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
+
+            <cygnus-input
+              [inputCustomType]="'floating'"
+              [textPlaceholder]="'Escribe aquí...'"
+              [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
+              [iconState]="false"
+              [iconColor]="'#101828'"
+              [iconPosition]="'left'"
+            /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
+
+            <cygnus-input
+              [inputCustomType]="'label-interactive'"
+              [textPlaceholder]="'Escribe aquí...'"
+              [pseudoIconCLPPhone]="true"
+              [iconPosition]="'left'"
+            />
+
+            <cygnus-input
+              [inputCustomType]="'floating'"
+              [textPlaceholder]="'Escribe aquí...'"
+              [pseudoIconCLPPhone]="true"
+              [iconPosition]="'left'"
+            />
+
+          </div>
+        </div>
+        <pre>
+          <code [highlight]="cygnusInputIconHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input telefono -->
+  <section id="input-telefono">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+          <div class="p-4 pb-4">
+              <h2 class="mb-1 text-xl font-semibold">Input con validador de telefono</h2>
+
+              <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
+
+                  <div class="flex-col w-full max-w-sm space-y-4">
+
+                      <!-- input con validador de número de teléfono -->
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Input disabled -->
+  <section id="input-disabled">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-6 text-xl font-semibold">Inputs deshabilitados</h2>
+        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
+          <div class="flex-col w-full max-w-sm space-y-4">
+
+            <cygnus-input
+              [inputCustomType]="'label-interactive'"
+              [textPlaceholder]="'Escribe aquí...'"
+              [pseudoIconCLPPhone]="true"
+              [iconPosition]="'left'"
+              [textPlaceholder]="'123-45 6789'"
+              [inputDisabled]="true"
+            />
+
+          </div>
+        </div>
+        <pre>
+          <code [highlight]="cygnusInputDisabledHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input file -->
+  <section id="file-input">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-1 text-xl font-semibold">File input</h2>
+        <p class="mb-8 text-gray-600 text-md">Una entrada de archivo estándar para cargar archivos.</p>
+        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
+          <div class="max-w-sm space-y-4 w-full min-w-[200px]">
+
+              <cygnus-input
+                [inputCustomType]="'file'"
+                [textLabel]="'Subir imagen'"
+              />
+
+          </div>
+        </div>
+        <pre>
+          <code [highlight]="cygnusInputFileHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </div>
+  </section>
 
 </main>

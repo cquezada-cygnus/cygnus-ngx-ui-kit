@@ -1,12 +1,272 @@
 import { Component } from '@angular/core';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 
+import { Highlight } from 'ngx-highlightjs';
+import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
+
 @Component({
   selector: 'app-input-content',
-  imports: [CygnusInputComponent],
+  imports: [
+    CygnusInputComponent,
+    Highlight, HighlightLineNumbers,
+  ],
   templateUrl: './input-content.component.html',
   styleUrl: './input-content.component.scss'
 })
 export class InputContentComponent {
+
+  cygnusInputImportTs: string = `
+    import { Component } from '@angular/core';
+    import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
+
+    @Component({
+      selector: 'app-component',
+      imports: [
+        CygnusInputComponent
+      ],
+      templateUrl: './app-component.component.html',
+      styleUrl: './app-component.component.scss'
+    })
+    export class AppComponentComponent {}
+  `;
+
+  cygnusInputSimpleHtml: string = `
+    <!-- COMPONENTE: Input simple -->
+    <cygnus-input [inputCustomType]="'base'" [textPlaceholder]="'esto es un placeholder'" />
+  `;
+
+  cygnusInputLabelHtml: string = `
+    <!-- COMPONENTE: Input con label -->
+    <cygnus-input
+      [inputCustomType]="'fieldset-legend-label'"
+      [textPlaceholder]="'esto es un placeholder'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+      [textLabel]="'Custom label'"
+    />
+  `;
+
+  cygnusInputSizesHtml: string = `
+    <!-- COMPONENTE: Tamaño SM -->
+    <cygnus-input
+      [inputCustomType]="'fieldset-legend-label'"
+      [textPlaceholder]="'Tamaño SM'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+      [textLabel]="'Label'"
+      [inputSize]="'sm'"
+    />
+
+    <!-- COMPONENTE: Tamaño default -->
+    <cygnus-input
+      [inputCustomType]="'fieldset-legend-label'"
+      [textPlaceholder]="'Tamaño Normal'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+      [textLabel]="'Label'"
+      [inputSize]="''"
+    />
+
+    <!-- COMPONENTE: Tamaño LG -->
+    <cygnus-input
+      [inputCustomType]="'fieldset-legend-label'"
+      [textPlaceholder]="'Tamaño LG'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+      [textLabel]="'Label'"
+      [inputSize]="'lg'"
+    />
+  `;
+
+  cygnusInputLabelTopHtml: string = `
+    <!-- COMPONENTE: Input Label TOP simple -->
+    <cygnus-input
+      [inputCustomType]="'label-top'"
+      [textLabel]="'Email'"
+      [textHint] ="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input Label TOP success -->
+    <cygnus-input
+      [inputCustomType]="'label-top'"
+      [inputColor]="'success'"
+      [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
+      [iconColor]="'#12b76a'"
+      [textLabel]="'Email'"
+      [textHint] ="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input Label TOP warning -->
+      <cygnus-input
+      [inputCustomType]="'label-top'"
+      [inputColor]="'warning'"
+      [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
+      [iconColor]="'#f79009'"
+      [textLabel]="'Email'"
+      [textHint] ="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input Label TOP error -->
+      <cygnus-input
+      [inputCustomType]="'label-top'"
+      [inputColor]="'error'"
+      [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+      [iconColor]="'#f04438'"
+      [textLabel]="'Email'"
+      [textHint] ="'Este es un texto de ayuda para el usuario.'"
+    />
+  `;
+
+  cygnusInputLabelInteractiveTopHtml: string = `
+    <!-- COMPONENTE: Input interactivo simple -->
+    <cygnus-input
+      [inputCustomType]="'label-interactive'"
+      [textLabel]="'Email'"
+      [textHint] ="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input interactivo success -->
+    <cygnus-input
+      [inputCustomType]="'label-interactive'"
+      [inputColor]="'success'"
+      [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
+      [iconColor]="'#12b76a'"
+      [textLabel]="'Email'"
+      [textHint] ="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input interactivo warning -->
+      <cygnus-input
+      [inputCustomType]="'label-interactive'"
+      [inputColor]="'warning'"
+      [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
+      [iconColor]="'#f79009'"
+      [textLabel]="'Email'"
+      [textHint] ="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input interactivo error -->
+      <cygnus-input
+      [inputCustomType]="'label-interactive'"
+      [inputColor]="'error'"
+      [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+      [iconColor]="'#f04438'"
+      [textLabel]="'Email'"
+      [textHint] ="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input floating -->
+    <cygnus-input
+      [inputCustomType]="'floating'"
+      [textPlaceholder]="'...'"
+      [textLabel]="'Email'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input floating success -->
+    <cygnus-input
+      [inputCustomType]="'floating'"
+      [textPlaceholder]="'...'"
+      [textLabel]="'Email'"
+      [inputColor]="'success'"
+      [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
+      [iconState]="true"
+      [iconColor]="'#12b76a'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input floating warning -->
+    <cygnus-input
+      [inputCustomType]="'floating'"
+      [textPlaceholder]="'...'"
+      [textLabel]="'Email'"
+      [inputColor]="'warning'"
+      [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
+      [iconState]="true"
+      [iconColor]="'#f79009'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+    />
+
+    <!-- COMPONENTE: Input floating error -->
+    <cygnus-input
+      [inputCustomType]="'floating'"
+      [textPlaceholder]="'...'"
+      [textLabel]="'Email'"
+      [inputColor]="'error'"
+      [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
+      [iconState]="true"
+      [iconColor]="'#f04438'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+    />
+  `;
+
+  cygnusInputIconHtml: string = `
+    <!-- COMPONENTE: Input con icono a la derecha -->
+    <cygnus-input
+      [inputCustomType]="'label-interactive'"
+      [textPlaceholder]="'Escribe aquí...'"
+      [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
+      [iconState]="false"
+      [iconColor]="'#101828'"
+      [iconPosition]="'right'"
+    /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
+
+    <cygnus-input
+      [inputCustomType]="'floating'"
+      [textPlaceholder]="'Escribe aquí...'"
+      [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
+      [iconState]="false"
+      [iconColor]="'#101828'"
+      [iconPosition]="'right'"
+    /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
+
+
+    <!-- COMPONENTE: Input con icono a la izquierda -->
+    <cygnus-input
+      [inputCustomType]="'label-interactive'"
+      [textPlaceholder]="'Escribe aquí...'"
+      [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
+      [iconState]="false"
+      [iconColor]="'#101828'"
+      [iconPosition]="'left'"
+    /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
+
+    <cygnus-input
+      [inputCustomType]="'floating'"
+      [textPlaceholder]="'Escribe aquí...'"
+      [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
+      [iconState]="false"
+      [iconColor]="'#101828'"
+      [iconPosition]="'left'"
+    /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
+
+    <cygnus-input
+      [inputCustomType]="'label-interactive'"
+      [textPlaceholder]="'Escribe aquí...'"
+      [pseudoIconCLPPhone]="true"
+      [iconPosition]="'left'"
+    />
+
+    <cygnus-input
+      [inputCustomType]="'floating'"
+      [textPlaceholder]="'Escribe aquí...'"
+      [pseudoIconCLPPhone]="true"
+      [iconPosition]="'left'"
+    />
+  `;
+
+  cygnusInputDisabledHtml: string = `
+    <cygnus-input
+      [inputCustomType]="'label-interactive'"
+      [textPlaceholder]="'Escribe aquí...'"
+      [pseudoIconCLPPhone]="true"
+      [iconPosition]="'left'"
+      [textPlaceholder]="'123-45 6789'"
+      [inputDisabled]="true"
+    />
+  `;
+
+  cygnusInputFileHtml: string = `
+    <cygnus-input
+      [inputCustomType]="'file'"
+      [textLabel]="'Subir imagen'"
+    />
+  `;
 
 }
