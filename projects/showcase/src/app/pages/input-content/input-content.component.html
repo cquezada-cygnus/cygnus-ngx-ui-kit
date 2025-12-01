@@ -386,35 +386,6 @@
     </div>
   </section>
 
-  <!-- Input telefono -->
-  <section id="input-telefono">
-    <div class="min-h-[140px] rounded-lg border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-1 text-xl font-semibold">Input con validador de telefono</h2>
-
-              <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
-
-                <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-4 md:space-y-6" action="#">
-                  <div class="flex-col w-full max-w-sm space-y-4">
-
-                      <!-- input con validador de número de teléfono -->
-                       <cygnus-input
-                          [inputCustomType]="'label-top'"
-                          [inputColor]="inputPhoneColor()"
-                          [textLabel]="'Teléfono'"
-                          [hintColor]="true"
-                          [textHint]="textPhoneHint()"
-                          [control]="phoneForm.controls.phone"
-                          [inputClearValue]="inputClearValue()"
-                        />
-
-                  </div>
-                </form>
-              </div>
-          </div>
-      </div>
-  </section>
-
   <!-- Input disabled -->
   <section id="input-disabled">
     <div class="min-h-[140px] rounded-lg border mb-14">
@@ -464,6 +435,55 @@
                 language="html"
                 lineNumbers></code>
         </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input telefono -->
+  <section id="input-telefono">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-6 text-xl font-semibold">Input con validador de telefono</h2>
+
+        <div class="flex flex-col items-center justify-center w-full gap-8 mb-4">
+
+          <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-4 md:space-y-6 w-full items-center" action="#">
+            <div class="flex-col w-full max-w-sm space-y-4">
+
+              <!-- input con validador de número de teléfono -->
+              <cygnus-input
+                [inputCustomType]="'label-top'"
+                [inputColor]="inputPhoneColor()"
+                [textLabel]="'Teléfono'"
+                [hintColor]="true"
+                [textHint]="textPhoneHint()"
+                [control]="phoneForm.controls.phone"
+                [inputClearValue]="inputClearValue()"
+              />
+
+            </div>
+          </form>
+        </div>
+        <pre>
+          <code [highlight]="cygnusInputPhoneValidatorImportTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+
+        <pre>
+          <code [highlight]="cygnusInputPhoneValidatorCodeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+
+        <pre>
+          <code [highlight]="cygnusInputPhoneValidatorHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
       </div>
     </div>
   </section>

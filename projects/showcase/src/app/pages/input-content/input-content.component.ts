@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, output, signal } from '@angular/core';
 import { ReactiveFormsModule, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
-import { InputColor } from 'ngx-cygnus-ui/types/public-api';
+import { InputColor } from 'ngx-cygnus-ui/types';
 import { cgPhone } from 'ngx-cygnus-ui/validators';
 
 import { Highlight } from 'ngx-highlightjs';
@@ -33,7 +33,6 @@ export class InputContentComponent implements OnInit {
 
   ngOnInit() {
     this.inputStatusManager();
-    // this.formStatusManager();
   }
 
   inputStatusManager() {
@@ -46,21 +45,11 @@ export class InputContentComponent implements OnInit {
           this.textPhoneHint.set('El formato del teléfono es inválido');
         }
       } else {
-        this.inputPhoneColor.set('base');
+        this.inputPhoneColor.set('success');
         this.textPhoneHint.set('');
       }
     });
   }
-
-  // formStatusManager() {
-  //   this.phoneForm.statusChanges.subscribe(status => {
-  //     if (status === 'VALID') {
-  //       this.btnSubmitColor.set('btn-primary');
-  //     } else {
-  //       this.btnSubmitColor.set('btn-disabled');
-  //     }
-  //   });
-  // }
 
   onSubmit() {
       this.inputClearValue.set(true);
@@ -320,6 +309,88 @@ export class InputContentComponent implements OnInit {
       [inputCustomType]="'file'"
       [textLabel]="'Subir imagen'"
     />
+  `;
+
+  cygnusInputPhoneValidatorImportTs: string = `
+    import { Component, inject, OnInit, output, signal } from '@angular/core';
+    import { ReactiveFormsModule, NonNullableFormBuilder, Validators } from '@angular/forms';
+
+    import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
+    import { InputColor } from 'ngx-cygnus-ui/types';
+    import { cgPhone } from 'ngx-cygnus-ui/validators';
+
+    @Component({
+      selector: 'app-component',
+      imports: [
+        ReactiveFormsModule,
+        CygnusInputComponent,
+      ],
+      templateUrl: './app-component.component.html',
+      styleUrl: './app-component.component.scss'
+    })
+    export class AppComponentComponent implements OnInit { }
+  `;
+
+  cygnusInputPhoneValidatorCodeTs: string = `
+    ...
+    export class AppComponentComponent implements OnInit {
+
+      inputClearValue = signal<boolean>(false);
+      outputPhone = output<any>();
+      nonNullableFb = inject(NonNullableFormBuilder);
+      phoneForm = this.nonNullableFb.group({
+        phone: ['',
+          [Validators.required, cgPhone()]
+        ],
+      });
+
+      textPhoneHint = signal<string>('');
+      inputPhoneColor = signal<InputColor>('base');
+
+      ngOnInit() {
+        this.inputStatusManager();
+      }
+
+      inputStatusManager() {
+        this.phoneForm.get('phone')?.statusChanges.subscribe(status => {
+          if (this.phoneForm.get('phone')?.errors) {
+            this.inputPhoneColor.set('error');
+            if (this.phoneForm.get('phone')?.errors!['required']) {
+              this.textPhoneHint.set('Debe indicar un teléfono');
+            } else if (this.phoneForm.get('phone')?.errors!['cgPhone']) {
+              this.textPhoneHint.set('El formato del teléfono es inválido');
+            }
+          } else {
+            this.inputPhoneColor.set('success');
+            this.textPhoneHint.set('');
+          }
+        });
+      }
+
+      onSubmit() {
+          this.inputClearValue.set(true);
+          this.phoneForm.markAllAsTouched();
+          this.outputPhone.emit(this.phoneForm.value);
+      }
+
+    }
+  `;
+
+  cygnusInputPhoneValidatorHtml: string = `
+    <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-4 md:space-y-6 w-full items-center" action="#">
+      <div class="flex-col w-full max-w-sm space-y-4">
+        <!-- input con validador de número de teléfono -->
+        <cygnus-input
+          [inputCustomType]="'label-top'"
+          [inputColor]="inputPhoneColor()"
+          [textLabel]="'Teléfono'"
+          [hintColor]="true"
+          [textHint]="textPhoneHint()"
+          [control]="phoneForm.controls.phone"
+          [inputClearValue]="inputClearValue()"
+        />
+      </div>
+    </form>
   `;
 
 }
