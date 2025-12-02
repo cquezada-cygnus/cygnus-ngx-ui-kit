@@ -1,6 +1,5 @@
 <section id="simple-alert-explanation">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+  <div class="min-h-[140px] rounded-lg border mb-14">
     <div class="p-4 pb-4">
       <h2 class="mb-2 text-xl font-semibold">Cómo usar cygnus-alert-simple</h2>
       <p class="mb-8 text-gray-600 text-md">
@@ -45,8 +44,7 @@
 </section>
 
 <section id="simple-alert">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+  <div class="min-h-[140px] rounded-lg border mb-14">
     <div class="p-4 pb-4">
       <h2 class="mb-2 text-xl font-semibold">Alerta simple</h2>
       <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
@@ -98,8 +96,7 @@
 </section>
 
 <section id="alert-icon">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+  <div class="min-h-[140px] rounded-lg border mb-14">
     <div class="p-4 pb-4">
       <h2 class="mb-2 text-xl font-semibold">Alerta con icono</h2>
       <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
@@ -157,8 +154,7 @@
 </section>
 
 <section id="alert-equis">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+  <div class="min-h-[140px] rounded-lg border mb-14">
     <div class="p-4 pb-4">
       <h2 class="mb-2 text-xl font-semibold">Alertas con equis de cierre</h2>
 
@@ -462,11 +458,18 @@
         />
         <cygnus-alert-counter-blocked
           [tryCounter]="3"
+          (btnAlertIsClickedEvent)="exampleAlertCounterBlockedEvent()"
         />
 
         <pre class="w-full">
           <code [highlight]="alertCounterBlockedExample"
                 language="html"
+                lineNumbers></code>
+        </pre>
+
+        <pre class="w-full">
+          <code [highlight]="alertCounterBlockedExampleTs"
+                language="ts"
                 lineNumbers></code>
         </pre>
 

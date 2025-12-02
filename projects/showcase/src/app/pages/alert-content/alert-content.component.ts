@@ -94,6 +94,10 @@ export class AlertContentComponent {
     />
   `;
 
+  exampleAlertCounterBlockedEvent() {
+    console.log('AlertCounterBlocked click event');
+  }
+
   alertSimple: string = `
     <!-- COMPONENTE: Alerta de información -->
     <cygnus-alert-simple
@@ -337,7 +341,17 @@ export class AlertContentComponent {
     />
     <cygnus-alert-counter-blocked
       [tryCounter]="3"
+      (btnAlertIsClickedEvent)="exampleAlertCounterBlockedEvent()"
     />
+  `;
+
+  alertCounterBlockedExampleTs: string = `
+    ...
+    export class AppComponentComponent {
+      exampleAlertCounterBlockedEvent() {
+        console.log('AlertCounterBlocked click event');
+      }
+    }
   `;
 
   btnClickedEvent(event: boolean) {
