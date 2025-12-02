@@ -431,6 +431,22 @@
           [tryCounter]: Esta alerta cambia su contenido según el valor de un contador. En tryCounter se debe indicar un número de 0 a 3. Es ideal para alertas de login donde se debe emitir un mensaje diferente según la cantidad de intentos de login.
         </p>
 
+        <p class="mb-8 text-gray-600 text-md">
+          Puedes capturar el evento click en un botón dentro de la alerta para ejecutar alguna acción en respuesta.
+        </p>
+
+        <pre class="w-full">
+          <code [highlight]="alertCounterBlockedExample"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <pre class="w-full">
+          <code [highlight]="alertCounterBlockedExampleTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
       </div>
 
 
@@ -439,8 +455,7 @@
 </section>
 
 <section id="alert-counter-blocked">
-  <div
-    class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+  <div class="min-h-[140px] rounded-lg border mb-14">
     <div class="p-4 pb-4">
       <h2 class="mb-2 text-xl font-semibold">Alerta dinámica para Login</h2>
       <p class="mb-8 text-gray-600 text-md">Esta alerta aparece y cambia según el valor de intentos fallidos de 0 a 3. Sin intentos fallidos no aparece, entre 1 y 2 intentos aparece una alerta de advertencia y a partir de 3 intentos aparece la alerta roja.</p>
