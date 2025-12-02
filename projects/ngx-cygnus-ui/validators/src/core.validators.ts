@@ -259,9 +259,6 @@ function rutFormula(rut: string): boolean {
   // convertir el rut en un arreglo de números sin guión y sin verificador, pero reservando el verificador en una variable a parte
   let userVerificador = rut.split('-')[1];
   const rutNumberArr = rut.split('-')[0].split('');
-  console.log('rutNumberArr:', rutNumberArr);
-  console.log('userVerificador:', userVerificador);
-
 
   // variables necesarias para calcular el número verificador válido
   const numRefArr = [2,3,4,5,6,7];
@@ -282,26 +279,18 @@ function rutFormula(rut: string): boolean {
     }
   }
 
-
-  console.log('suma:', suma);
-
   modulo = suma % 11;
   modulo = 11 - modulo;
-  console.log('modulo:', modulo);
+
   if (modulo !== 11 && modulo !== 10) { // si el módulo no es 10 ni 11, se calcula un verificador mayor que cero, menor que 10 (por eso no hay 'else if')
-    console.log('si el módulo no es 10 ni 11');
     verificador = modulo.toString();
   }
   if (modulo === 11) { // si el módulo es 11, el verificador es '0'
-    console.log('si el módulo es 11');
     verificador = (0).toString();
   }
   if (modulo === 10) { // si el módulo es 10, el verificador es 'K'
-    console.log('si el módulo es 10');
     verificador = 'K';
   }
-
-  console.log('verificador:',verificador);
 
   if (userVerificador.toUpperCase() === verificador.toUpperCase()) {
     return true;
