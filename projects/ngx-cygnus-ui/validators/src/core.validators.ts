@@ -247,7 +247,7 @@ export function cgRutValidator(): ValidatorFn {
       return { invalidRutFormat: true };
     }
 
-    if (!rutFormula(rut)) {
+    if (!rutFormula(rut)) { // Modulo 11
       return { invalidValidator: true };
     }
 

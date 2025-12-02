@@ -459,6 +459,8 @@
                 [textHint]="textPhoneHint()"
                 [control]="phoneForm.controls.phone"
                 [inputClearValue]="inputClearValue()"
+                [pseudoIconCLPPhone]="true"
+                [iconPosition]="'left'"
               />
 
             </div>
@@ -483,6 +485,36 @@
                 language="html"
                 lineNumbers></code>
         </pre>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="input-validadores">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-6 text-xl font-semibold">Input Validadores</h2>
+
+        <p class="mb-8 text-gray-600 text-md">
+          Para utilizar los validadores, el input debe encontrarse dentro de un formulario y en la configuración .ts de dicho formulario se agrega el tipo de validación. En ngx-cygnus-ui disponemos de los siguientes validadores:
+        </p>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>cgRequired(): Validador requerido con mensaje personalizado.</li>
+          <li>cgPhone(): Validador de teléfono chileno (9 dígitos).</li>
+          <li>cgEmail(): Validador de email.</li>
+          <li>cgNumber(): Validador de solo números.</li>
+          <li>cgInteger(): Validador de solo números enteros.</li>
+          <li>cgRequiredPhone(): Validador combinado para teléfono requerido con formato específico.</li>
+          <li>cgRequiredEmail(): Validador combinado para email requerido.</li>
+          <li>cgRutValidator(): Validador de formato de rut.</li>
+          <li>specificValueValidator(expectedValue: string): Valida si se obtuvo un resultado específico.</li>
+        </ul>
+
+        <p class="mb-8 text-gray-600 text-md">
+          También se pueden utilizar validadores propios de &commat;angular/forms (Validators).
+        </p>
+
 
       </div>
     </div>

@@ -388,6 +388,8 @@ export class InputContentComponent implements OnInit {
           [textHint]="textPhoneHint()"
           [control]="phoneForm.controls.phone"
           [inputClearValue]="inputClearValue()"
+          [pseudoIconCLPPhone]="true"
+          [iconPosition]="'left'"
         />
       </div>
     </form>
