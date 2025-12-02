@@ -260,6 +260,10 @@ function rutFormula(rut: string): boolean {
   let userVerificador = rut.split('-')[1];
   const rutNumberArr = rut.split('-')[0].split('');
 
+  if (rutNumberArr.length < 5) { // se considera que los ruts con menos de 5 dígitos son inválidos
+    return false;
+  }
+
   // variables necesarias para calcular el número verificador válido
   const numRefArr = [2,3,4,5,6,7];
   let suma = 0;
@@ -282,7 +286,7 @@ function rutFormula(rut: string): boolean {
   modulo = suma % 11;
   modulo = 11 - modulo;
 
-  if (modulo !== 11 && modulo !== 10) { // si el módulo no es 10 ni 11, se calcula un verificador mayor que cero, menor que 10 (por eso no hay 'else if')
+  if (modulo !== 11 && modulo !== 10) { // si el módulo no es 10 ni 11
     verificador = modulo.toString();
   }
   if (modulo === 11) { // si el módulo es 11, el verificador es '0'
