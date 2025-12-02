@@ -247,8 +247,53 @@ export function cgRutValidator(): ValidatorFn {
       return { invalidRutFormat: true };
     }
 
+    if (!rutFormula(rut)) {
+      return { invalidValidator: true };
+    }
+
     return null; // Valid
   };
+}
+
+function rutFormula(rut: string): boolean {
+  // convertir el rut en un arreglo de números sin guión y sin verificador, pero reservando el verificador en una variable a parte
+  let userVerificador = rut.split('-')[1];
+  const rutNumberArr = rut.split('-')[0].split('');
+
+  // variables necesarias para calcular el número verificador válido
+  const numRefArr = [2,3,4,5,6,7];
+  let suma = 0;
+  let modulo = 0;
+  let verificador = '';
+  let indexNumRef = 0;
+
+  // iterar sobre cada digito del rut (sin guion ni verificador) para calcular el verificador válido
+  for (let i = rutNumberArr.length-1; i >= 0 ; i--) {
+    const elem = +(rutNumberArr[i]); // convertir el string en número
+    const num = numRefArr[indexNumRef];
+    suma = suma +( elem * num );
+    indexNumRef += 1;
+
+    if (indexNumRef === numRefArr.length) {
+      indexNumRef = 0;
+    }
+  }
+
+  modulo = suma % 11;
+  if (modulo !== 11 && modulo !== 10) { // si el módulo no es 10 ni 11, se calcula un verificador mayor que cero, menor que 10 (por eso no hay 'else if')
+    modulo = 11 - modulo;
+    verificador = modulo.toString();
+  }
+  if (modulo === 11) { // si el módulo es 11, el verificador es '0'
+    verificador = (0).toString();
+  }
+  if (modulo === 10) { // si el módulo es 10, el verificador es 'K'
+    verificador = 'K';
+  }
+
+  if (userVerificador.toUpperCase() === verificador.toUpperCase()) {
+    return true;
+  } else return false;
 }
 
 export function specificValueValidator(expectedValue: string): ValidatorFn {
