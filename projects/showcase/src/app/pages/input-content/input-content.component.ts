@@ -376,6 +376,39 @@ export class InputContentComponent implements OnInit {
     }
   `;
 
+  cygnusInputValidatorsExamplesTs: string = `
+    import { Component, inject } from '@angular/core';
+    import { ReactiveFormsModule, NonNullableFormBuilder, Validators } from '@angular/forms';
+
+    import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
+    import { InputColor } from 'ngx-cygnus-ui/types';
+    import { cgRutValidator, cgEmail, cgPhone } from 'ngx-cygnus-ui/validators';
+
+    @Component({
+      selector: 'app-component',
+      imports: [
+        ReactiveFormsModule,
+        CygnusInputComponent,
+      ],
+      templateUrl: './app-component.component.html',
+      styleUrl: './app-component.component.scss'
+    })
+    export class AppComponentComponent implements OnInit {
+      nonNullableFb = inject(NonNullableFormBuilder);
+      exampleForm = this.nonNullableFb.group({
+        rut: ['',
+          [Validators.required, cgRutValidator()]
+        ],
+        email: ['',
+          [Validators.required, cgEmail()]
+        ],
+        phone: ['',
+          [Validators.required, cgPhone()]
+        ],
+      });
+    }
+  `;
+
   cygnusInputPhoneValidatorHtml: string = `
     <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-4 md:space-y-6 w-full items-center" action="#">
       <div class="flex-col w-full max-w-sm space-y-4">
