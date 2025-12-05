@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, effect, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
 import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
-import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
+import { IconPosition } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
 import { FormControl } from '@angular/forms';
 
