@@ -1,7 +1,7 @@
 import { Component, input, OnInit, signal, WritableSignal } from '@angular/core';
 import { TW_CLASS } from '../const/tailwind.const';
-import { IconBtnColor, IconBtnSize, IconPosition } from 'ngx-cygnus-ui/types';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconPosition } from 'ngx-cygnus-ui/types';
+import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
 @Component({
   selector: 'cygnus-badge',
@@ -18,9 +18,9 @@ export class CygnusBadgeComponent implements OnInit {
   badgeAllClasses:WritableSignal<string> = signal<string>('');
   badgeIconAsset = input<string>('');
   badgeIconPosition = input<IconPosition>('right');
-  badgeIconColor = input<IconBtnColor>('#344054');
+  badgeIconColor = input<IconColorText>('thrgray');
   badgeIconOnly: boolean = false;
-  badgeIconSize: IconBtnSize = '1.25rem';
+  badgeIconSize: IconTextSize = 'lg';
   btnBadge: boolean = false;
   badgeState: boolean = false;
   badgeStateClassesIcon: string = '';

@@ -2,10 +2,9 @@
 <div [class]="badgeAllClasses()" >
   @if (badgeIconAsset()!=='' && badgeIconPosition()==='left') {
     <lib-ngx-cygnus-icons
-      [width]="badgeIconSize"
-      [height]="badgeIconSize"
-      [color]="badgeIconColor()"
-      [route]="badgeIconAsset()"
+      [size]="badgeIconSize"
+      [textColor]="badgeIconColor()"
+      [textRoute]="badgeIconAsset()"
     />
   }
   @if (badgeState) {
@@ -21,20 +20,18 @@
       (click)="badgeClose()"
     >
       <lib-ngx-cygnus-icons
-        [width]="badgeIconSize"
-        [height]="badgeIconSize"
-        [color]="'#ffffff'"
-        [route]="'assets/icons/svg/General/x-close.svg'"
+        [size]="badgeIconSize"
+        [textColor]="'white'"
+        [textRoute]="'x-close'"
       />
     </button>
   }
 
   @if (badgeIconAsset()!=='' && badgeIconPosition()==='right') {
     <lib-ngx-cygnus-icons
-      [width]="badgeIconSize"
-      [height]="badgeIconSize"
-      [color]="badgeIconColor()"
-      [route]="badgeIconAsset()"
+      [size]="badgeIconSize"
+      [textColor]="badgeIconColor()"
+      [textRoute]="badgeIconAsset()"
     />
   }
 </div>

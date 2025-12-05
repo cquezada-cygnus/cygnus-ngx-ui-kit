@@ -26,10 +26,9 @@
       (click)="itemSelected()"
     >
       <lib-ngx-cygnus-icons class="mr-2"
-        [width]="'1.5rem'"
-        [height]="'1.5rem'"
-        [color]="'#344054'"
-        [route]="itemContent()?.iconAssetText||''"
+        [size]="'xl'"
+        [textColor]="'thrgray'"
+        [textRoute]="itemContent()?.iconAssetText||''"
       />
         {{itemContent()?.itemText}}
     </a>
@@ -42,10 +41,9 @@
     (click)="itemSelected()"
   >
     <lib-ngx-cygnus-icons class="mr-2"
-        [width]="'1.5rem'"
-        [height]="'1.5rem'"
-        [color]="'#e7000b'"
-        [route]="itemContent()?.iconAssetText||''"
+        [size]="'xl'"
+        [textColor]="'mediumred'"
+        [textRoute]="itemContent()?.iconAssetText||''"
       />
     {{itemContent()?.itemText}}
 </a>

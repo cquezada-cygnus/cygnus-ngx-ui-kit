@@ -6,10 +6,9 @@
         <div class="mr-2 center-icon">
 
           <lib-ngx-cygnus-icons
-            [width]="iconLeftSize()"
-            [height]="iconLeftSize()"
-            [route]="iconLeftAsset()"
-            [color]="iconLeftColor()"
+            [size]="iconLeftSize()"
+            [textColor]="iconLeftColor()"
+            [textRoute]="iconLeftAsset()"
           />
 
         </div>
@@ -18,10 +17,9 @@
       <div class="icon-star text-warning-400">
 
         <lib-ngx-cygnus-icons
-          [width]="iconRightSize()"
-          [height]="iconRightSize()"
-          [route]="iconRightAsset()"
-          [color]="iconRightColor()"
+          [size]="iconRightSize()"
+          [textColor]="iconRightColor()"
+          [textRoute]="iconRightAsset()"
         />
 
       </div>
@@ -38,10 +36,9 @@
     >
       {{cardLinkText()}}
       <lib-ngx-cygnus-icons
-        [width]="iconArrowSize()"
-        [height]="iconArrowSize()"
-        [route]="iconArrowAsset()"
-        [color]="iconArrowColor()"
+        [size]="iconArrowSize()"
+        [textColor]="iconArrowColor()"
+        [textRoute]="iconArrowAsset()"
       />
     </cygnus-button-link>
     }

@@ -3,10 +3,9 @@
   <div [class]="TW_CLASS.CARD + ' ' + TW_CLASS.CARD_PANEL">
     <div [class]="'mb-6 ' +  TW_CLASS.CARD_ICON">
       <lib-ngx-cygnus-icons
-        [width]="'3rem'"
-        [height]="'3rem'"
-        [route]="'assets/icons/backups/cygnus-logo.svg'"
-        [color]="CYGNUS_LOGO_COLOR"
+        [size]="'xxxxl'"
+        [textColor]="CYGNUS_LOGO_COLOR"
+        [textRoute]="'cygnus-logo'"
       />
     </div>
     <h4 [class]="TW_CLASS.CARD_TITLE">Acceso a sistemas</h4>
@@ -16,7 +15,7 @@
 
       <cygnus-input
         [inputCustomType]="'fieldset-legend-label'"
-        [textPlaceholder]="'12345678K'"
+        [textPlaceholder]="'12345678-K'"
         [inputColor]="inputRutColor()"
         [hintColor]="true"
         [textHint]="textRutHint()"

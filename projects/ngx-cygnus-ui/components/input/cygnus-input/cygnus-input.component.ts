@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, effect, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition, IconInputColor } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
@@ -24,8 +24,8 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   iconAsset = input<string>('');
   iconState = input<boolean>(false); // true para identificar el estilo del input cuando es ícono de success/warning/error
   iconPosition = input<IconPosition>('right');
-  iconColor = input<IconInputColor>('#101828');
-  iconSize = input<string>('19px');
+  iconColor = input<IconColorText>('black');
+  iconSize = input<IconTextSize>('lg');
   pseudoIconCLPPhone = input<boolean>(false);
   hintColor = input<boolean>(false);
   textLabel = input<string>('');

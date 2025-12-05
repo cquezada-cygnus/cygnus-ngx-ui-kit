@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 
 @Component({
@@ -13,17 +13,17 @@ import { CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 export class CygnusMainboardCardComponent {
   // assets/icons/svg/General/speedometer-04.svg
   // assets/icons/svg/General/hearts.svg
-  iconLeftColor = input<string>('#155eef');
+  iconLeftColor = input<IconColorText>('lightmediumblue');
   iconLeftAsset = input<string>('assets/icons/svg/General/speedometer-04.svg');
-  iconLeftSize  = input<string>('3rem');
+  iconLeftSize  = input<IconTextSize>('xxxxl');
 
-  iconRightColor = input<string>('#fdb022');
+  iconRightColor = input<IconColorText>('yellow');
   iconRightAsset = input<string>('assets/icons/svg/General/hearts.svg');
-  iconRightSize  = input<string>('1.1rem');
+  iconRightSize  = input<IconTextSize>('');
 
-  iconArrowColor = input<string>('#155eef');
+  iconArrowColor = input<IconColorText>('lightmediumblue');
   iconArrowAsset = input<string>('assets/icons/svg/Arrows/arrow-narrow-right.svg');
-  iconArrowSize  = input<string>('1rem');
+  iconArrowSize  = input<IconTextSize>('');
 
   cardTitle = input<string>('');
   cardText  = input<string>('');

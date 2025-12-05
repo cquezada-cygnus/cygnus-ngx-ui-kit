@@ -129,7 +129,7 @@ export class InputContentComponent implements OnInit {
       [inputCustomType]="'label-top'"
       [inputColor]="'success'"
       [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
-      [iconColor]="'#12b76a'"
+      [iconColor]="'lightgreen'"
       [textLabel]="'Email'"
       [textHint] ="'Este es un texto de ayuda para el usuario.'"
     />
@@ -139,7 +139,7 @@ export class InputContentComponent implements OnInit {
       [inputCustomType]="'label-top'"
       [inputColor]="'warning'"
       [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
-      [iconColor]="'#f79009'"
+      [iconColor]="'lightamber'"
       [textLabel]="'Email'"
       [textHint] ="'Este es un texto de ayuda para el usuario.'"
     />
@@ -149,7 +149,7 @@ export class InputContentComponent implements OnInit {
       [inputCustomType]="'label-top'"
       [inputColor]="'error'"
       [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
-      [iconColor]="'#f04438'"
+      [iconColor]="'lightred'"
       [textLabel]="'Email'"
       [textHint] ="'Este es un texto de ayuda para el usuario.'"
     />
@@ -168,7 +168,7 @@ export class InputContentComponent implements OnInit {
       [inputCustomType]="'label-interactive'"
       [inputColor]="'success'"
       [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
-      [iconColor]="'#12b76a'"
+      [iconColor]="'lightgreen'"
       [textLabel]="'Email'"
       [textHint] ="'Este es un texto de ayuda para el usuario.'"
     />
@@ -178,7 +178,7 @@ export class InputContentComponent implements OnInit {
       [inputCustomType]="'label-interactive'"
       [inputColor]="'warning'"
       [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
-      [iconColor]="'#f79009'"
+      [iconColor]="'lightamber'"
       [textLabel]="'Email'"
       [textHint] ="'Este es un texto de ayuda para el usuario.'"
     />
@@ -188,7 +188,7 @@ export class InputContentComponent implements OnInit {
       [inputCustomType]="'label-interactive'"
       [inputColor]="'error'"
       [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
-      [iconColor]="'#f04438'"
+      [iconColor]="'lightred'"
       [textLabel]="'Email'"
       [textHint] ="'Este es un texto de ayuda para el usuario.'"
     />
@@ -209,7 +209,7 @@ export class InputContentComponent implements OnInit {
       [inputColor]="'success'"
       [iconAsset]="'assets/icons/svg/General/check-circle.svg'"
       [iconState]="true"
-      [iconColor]="'#12b76a'"
+      [iconColor]="'lightgreen'"
       [textHint]="'Este es un texto de ayuda para el usuario.'"
     />
 
@@ -221,7 +221,7 @@ export class InputContentComponent implements OnInit {
       [inputColor]="'warning'"
       [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-triangle.svg'"
       [iconState]="true"
-      [iconColor]="'#f79009'"
+      [iconColor]="'lightamber'"
       [textHint]="'Este es un texto de ayuda para el usuario.'"
     />
 
@@ -233,7 +233,7 @@ export class InputContentComponent implements OnInit {
       [inputColor]="'error'"
       [iconAsset]="'assets/icons/svg/Alerts&Feedback/alert-circle.svg'"
       [iconState]="true"
-      [iconColor]="'#f04438'"
+      [iconColor]="'lightred'"
       [textHint]="'Este es un texto de ayuda para el usuario.'"
     />
   `;
@@ -245,7 +245,7 @@ export class InputContentComponent implements OnInit {
       [textPlaceholder]="'Escribe aquí...'"
       [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
       [iconState]="false"
-      [iconColor]="'#101828'"
+      [iconColor]="'black'"
       [iconPosition]="'right'"
     /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
 
@@ -254,7 +254,7 @@ export class InputContentComponent implements OnInit {
       [textPlaceholder]="'Escribe aquí...'"
       [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
       [iconState]="false"
-      [iconColor]="'#101828'"
+      [iconColor]="'black'"
       [iconPosition]="'right'"
     /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
 
@@ -265,7 +265,7 @@ export class InputContentComponent implements OnInit {
       [textPlaceholder]="'Escribe aquí...'"
       [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
       [iconState]="false"
-      [iconColor]="'#101828'"
+      [iconColor]="'black'"
       [iconPosition]="'left'"
     /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
 
@@ -274,7 +274,7 @@ export class InputContentComponent implements OnInit {
       [textPlaceholder]="'Escribe aquí...'"
       [iconAsset]="'assets/icons/svg/General/search-sm.svg'"
       [iconState]="false"
-      [iconColor]="'#101828'"
+      [iconColor]="'black'"
       [iconPosition]="'left'"
     /> <!-- si no indica la posición del ícono, por defecto es a la derecha -->
 

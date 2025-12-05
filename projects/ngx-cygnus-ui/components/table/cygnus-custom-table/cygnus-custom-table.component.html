@@ -129,17 +129,15 @@
                       @if (toggleEdit() && toggleEditIndex()===i) {
                         <td class="flex justify-center align-center py-4">
                           <lib-ngx-cygnus-icons class="mr-2"
-                            [width]="'1.5rem'"
-                            [height]="'1.5rem'"
-                            [color]="'#667085'"
-                            [route]="'assets/icons/svg/General/save-01.svg'"
+                            [size]="'xl'"
+                            [textColor]="'mediumgray'"
+                            [textRoute]="'save-01'"
                             (click)="emitDataModified(); setToggleEdit(i);"
                           />
                           <lib-ngx-cygnus-icons class="mr-2"
-                            [width]="'1.5rem'"
-                            [height]="'1.5rem'"
-                            [color]="'#667085'"
-                            [route]="'assets/icons/svg/General/x.svg'"
+                            [size]="'xl'"
+                            [textColor]="'mediumgray'"
+                            [textRoute]="'x'"
                             (click)="setToggleEdit(i, true)"
                           />
                         </td>
@@ -234,17 +232,15 @@
                       @if (toggleEdit() && toggleEditIndex()===i) {
                         <td class="flex justify-center align-center py-4">
                           <lib-ngx-cygnus-icons class="mr-2"
-                            [width]="'1.5rem'"
-                            [height]="'1.5rem'"
-                            [color]="'#667085'"
-                            [route]="'assets/icons/svg/General/save-01.svg'"
+                            [size]="'xl'"
+                            [textColor]="'mediumgray'"
+                            [textRoute]="'save-01'"
                             (click)="emitDataModified(); setToggleEdit(i);"
                           />
                           <lib-ngx-cygnus-icons class="mr-2"
-                            [width]="'1.5rem'"
-                            [height]="'1.5rem'"
-                            [color]="'#667085'"
-                            [route]="'assets/icons/svg/General/x.svg'"
+                            [size]="'xl'"
+                            [textColor]="'mediumgray'"
+                            [textRoute]="'x'"
                             (click)="setToggleEdit(i, true)"
                           />
                         </td>

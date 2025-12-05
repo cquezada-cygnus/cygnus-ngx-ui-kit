@@ -63,20 +63,18 @@
     @if (iconAsset()!=='' && iconPosition()==='right') {
       <div [class]="'absolute flex items-center inset-y-3 end-2 ' + (inputCustomType()==='floating' ? 'h-5': 'h-6')">
         <lib-ngx-cygnus-icons
-          [width]="iconSize()"
-          [height]="iconSize()"
-          [color]="iconColor()"
-          [route]="iconAsset()"
+          [size]="iconSize()"
+          [textColor]="iconColor()"
+          [textRoute]="iconAsset()"
           (click)="notifyIconClicked()"
         />
       </div>
     } @else if (iconAsset()!=='' && iconPosition()==='left') {
       <div class="absolute flex items-center pointer-events-none ps-2 inset-y-0 start-0">
         <lib-ngx-cygnus-icons
-          [width]="iconSize()"
-          [height]="iconSize()"
-          [color]="iconColor()"
-          [route]="iconAsset()"
+          [size]="iconSize()"
+          [textColor]="iconColor()"
+          [textRoute]="iconAsset()"
           (click)="notifyIconClicked()"
         />
       </div>

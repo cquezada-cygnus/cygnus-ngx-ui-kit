@@ -1,7 +1,6 @@
 import { Component, effect, input, OnInit, output, signal } from '@angular/core';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
-import { IconAlertColor } from 'ngx-cygnus-ui/types';
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 
 @Component({
@@ -17,7 +16,7 @@ export class CygnusAlertCounterBlockedComponent {
   showAlert  = signal<boolean>(false);
 
   alertWithBtn = signal<boolean>(false);
-  alertIconColor: IconAlertColor = '#193cb8';
+  alertIconColor: IconColorText = 'blue';
 
   alertIconAsset = input<string>('assets/icons/svg/Alerts&Feedback/alert-circle.svg');
   alertTitle = signal<string>('');
@@ -98,15 +97,15 @@ export class CygnusAlertCounterBlockedComponent {
   addTailwindClasses(customClass: string): string {
     switch (customClass) {
       case 'alert-red':
-        this.alertIconColor = '#c10007';
+        this.alertIconColor = 'red';
         this.buttonType.set('btn-error');
         return this.TW_CLASS.ALERT_CONTENT_RED;
       case 'alert-yellow':
-        this.alertIconColor = '#a65f00';
+        this.alertIconColor = 'amber';
         this.buttonType.set('btn-warning');
         return this.TW_CLASS.ALERT_CONTENT_YELLOW;
       default:
-        this.alertIconColor = '#a65f00';
+        this.alertIconColor = 'amber';
         this.buttonType.set('btn-warning');
         return this.TW_CLASS.ALERT_CONTENT_YELLOW;
     }
@@ -115,15 +114,15 @@ export class CygnusAlertCounterBlockedComponent {
   addTailwindIsFullClasses(customClass: string): string {
     switch (customClass) {
       case 'alert-red':
-        this.alertIconColor = '#c10007';
+        this.alertIconColor = 'red';
         this.buttonType.set('btn-error');
         return this.TW_CLASS.ALERT_CONTENT_FULL_RED;
       case 'alert-yellow':
-        this.alertIconColor = '#a65f00';
+        this.alertIconColor = 'amber';
         this.buttonType.set('btn-warning');
         return this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW;
       default:
-        this.alertIconColor = '#a65f00';
+        this.alertIconColor = 'amber';
         this.buttonType.set('btn-warning');
         return this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY;
     }

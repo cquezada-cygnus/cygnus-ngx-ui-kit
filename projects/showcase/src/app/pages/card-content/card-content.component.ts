@@ -180,8 +180,8 @@ export class CardContentComponent {
 
   cygnusCardIconTextHTMLExample: string = `
     <cygnus-card-icon-text
-      [iconSize]="'40px'"
-      [iconColor]="'#528bff'"
+      [iconSize]="'xxxxl'"
+      [iconColor]="'secgray'"
       [iconRoute]="'assets/icons/svg/Charts/presentation-chart-01.svg'"
       [cardText]="'Administración de RRHH Cygnus'"
     />

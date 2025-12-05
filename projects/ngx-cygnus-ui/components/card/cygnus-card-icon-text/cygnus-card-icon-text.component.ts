@@ -1,5 +1,9 @@
 import { Component, input } from '@angular/core';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import {
+  IconColorText,
+  IconTextSize,
+  NgxCygnusIconsComponent
+} from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 
 @Component({
@@ -12,8 +16,8 @@ import { TW_CLASS } from '../const/tailwind.const';
 export class CygnusCardIconTextComponent {
   TW_CLASS = TW_CLASS;
 
-  iconSize  = input<string>('');
-  iconColor = input<string>('');
+  iconSize  = input<IconTextSize>('');
+  iconColor = input<IconColorText>('secgray');
   iconRoute = input<string>('');
   cardText  = input<string>('');
 

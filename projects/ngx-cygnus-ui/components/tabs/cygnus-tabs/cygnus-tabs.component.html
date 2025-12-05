@@ -18,10 +18,9 @@
             >
             @if (showIcon()) {
               <lib-ngx-cygnus-icons class="mr-2"
-                [width]="'1rem'"
-                [height]="'1rem'"
-                [color]="'#45556c'"
-                [route]="tab.iconAsset || ''"
+                [size]="''"
+                [textColor]="'gray'"
+                [textRoute]="tab.iconAsset || ''"
               />
             }
               <span>{{tab.option}}</span>

@@ -1,6 +1,6 @@
 import { Component, effect, input, OnInit, signal } from '@angular/core';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
-import { BtnAnimationOption, IconBtnColor, IconBtnSize, IconPosition } from 'ngx-cygnus-ui/types';
+import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { BtnAnimationOption } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
 
 @Component({
@@ -13,8 +13,8 @@ export class CygnusButtonHoverAnimationComponent implements OnInit {
   btnTypes = input<string>('btn');
   btnAllClasses = signal<string>('');
   btnIconOnly: boolean = false;
-  btnIconColor: IconBtnColor = '#ffffff';
-  btnIconSize: IconBtnSize = '1.25rem';
+  btnIconColor: IconColorText = 'white';
+  btnIconSize: IconTextSize = 'lg';
   btnAnimationOption = input<BtnAnimationOption>('A');
   btnIsDisabled: boolean = false;
 
@@ -49,31 +49,31 @@ export class CygnusButtonHoverAnimationComponent implements OnInit {
     this.btnIconOnly = false;
     switch (customClass) {
       case 'btn':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor = 'white';
         return this.TW_CLASS.BTN_PRIMARY;
       case 'btn-primary':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor = 'white';
         return this.TW_CLASS.BTN_PRIMARY;
       case 'btn-secondary':
-        this.btnIconColor = '#1d2939';
+        this.btnIconColor = 'lightblack';
         return this.TW_CLASS.BTN_SECONDARY;
       case 'btn-accent':
-        this.btnIconColor = '#2970ff';
+        this.btnIconColor = 'lightblue';
         return this.TW_CLASS.BTN_ACCENT;
       case 'btn-success':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor = 'white';
         return this.TW_CLASS.BTN_GREEN;
       case 'btn-warning':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor = 'white';
         return this.TW_CLASS.BTN_AMBER;
       case 'btn-error':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor = 'white';
         return this.TW_CLASS.BTN_RED;
       case 'btn-ghost':
-        this.btnIconColor = '#1d2939';
+        this.btnIconColor = 'lightblack';
         return this.TW_CLASS.BTN_GHOST;
       case 'btn-disabled':
-        this.btnIconColor = '#ffffff';
+        this.btnIconColor = 'white';
         this.btnIsDisabled = true;
         return this.TW_CLASS.BTN_DISABLED;
       case 'btn-block':
@@ -89,16 +89,16 @@ export class CygnusButtonHoverAnimationComponent implements OnInit {
       case 'btn-size-xl':
         return this.TW_CLASS.BTN_SIZE_XL;
       case 'btn-icon-xs':
-        this.btnIconSize = '0.75rem';
+        this.btnIconSize = 'xs';
         return '';
       case 'btn-icon-sm':
-        this.btnIconSize = '0.875rem';
+        this.btnIconSize = 'sm';
         return '';
       case 'btn-icon':
-        this.btnIconSize = '1rem';
+        this.btnIconSize = '';
         return '';
       case 'btn-icon-lg':
-        this.btnIconSize = '1.25rem';
+        this.btnIconSize = 'lg';
         return '';
       case 'btn-icon-only':
         this.btnIconOnly = true;

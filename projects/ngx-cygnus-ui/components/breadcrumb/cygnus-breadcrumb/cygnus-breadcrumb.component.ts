@@ -1,6 +1,6 @@
 import { Component, input, OnInit, signal } from '@angular/core';
 import { RouterLink, } from '@angular/router';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 import { BreadcrumbItem, DropdownItemData } from 'ngx-cygnus-ui/interfaces';
 import { CygnusDropdownComponent } from 'ngx-cygnus-ui/components/dropdown';
@@ -20,18 +20,18 @@ export class CygnusBreadcrumbComponent implements OnInit {
   itemsArr = input<BreadcrumbItem[]>([]);
   setBlock = input<boolean>(false);
   setMoreIcon = input<boolean>(false);
-  iconColor = signal<string>('#344054');
+  iconColor = signal<IconColorText>('thrgray');
 
   moreIconArrLeft: BreadcrumbItem[] = [];
   moreIconArrDropdown: DropdownItemData[] = [];
   moreIconArrRight: BreadcrumbItem[] = [];
 
   iconColorOnMouseEnter() {
-    this.iconColor.set('#1447e6'); // azul
+    this.iconColor.set('mediumblue'); // azul
   }
 
   iconColorOnMouseLeave() {
-    this.iconColor.set('#344054'); // gris oscuro
+    this.iconColor.set('thrgray'); // gris oscuro
   }
 
   ngOnInit(): void {

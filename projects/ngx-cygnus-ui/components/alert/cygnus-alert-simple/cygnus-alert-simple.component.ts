@@ -1,7 +1,6 @@
 import { Component, input, OnInit, signal } from '@angular/core';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
-import { IconAlertColor } from 'ngx-cygnus-ui/types';
 
 @Component({
   selector: 'cygnus-alert-simple',
@@ -20,7 +19,7 @@ export class CygnusAlertSimpleComponent implements OnInit {
 
   alertIcon  = input<boolean>(false);
   alertEquis = input<boolean>(false);
-  alertIconColor: IconAlertColor = '#193cb8';
+  alertIconColor: IconColorText = 'blue';
   alertTitle = input<string>('');
   alertContent = input<string>('');
 
@@ -52,22 +51,22 @@ export class CygnusAlertSimpleComponent implements OnInit {
   addTailwindClasses(customClass: string): string {
     switch (customClass) {
       case 'alert-primary':
-        this.alertIconColor = '#193cb8';
+        this.alertIconColor = 'blue';
         return this.TW_CLASS.ALERT_SIMPLE_PRIMARY;
       case 'alert-red':
-        this.alertIconColor = '#c10007';
+        this.alertIconColor = 'red';
         return this.TW_CLASS.ALERT_SIMPLE_RED;
       case 'alert-green':
-        this.alertIconColor = '#008236';
+        this.alertIconColor = 'green';
         return this.TW_CLASS.ALERT_SIMPLE_GREEN;
       case 'alert-yellow':
-        this.alertIconColor = '#a65f00';
+        this.alertIconColor = 'amber';
         return this.TW_CLASS.ALERT_SIMPLE_YELLOW;
       case 'alert-gray':
-        this.alertIconColor = '#364153';
+        this.alertIconColor = 'secgray';
         return this.TW_CLASS.ALERT_SIMPLE_GRAY;
       default:
-        this.alertIconColor = '#193cb8';
+        this.alertIconColor = 'blue';
         return this.TW_CLASS.ALERT_SIMPLE_PRIMARY;
     }
   }
@@ -75,22 +74,22 @@ export class CygnusAlertSimpleComponent implements OnInit {
   addTailwindEquisClasses(customClass: string): string {
     switch (customClass) {
       case 'alert-primary':
-        this.alertIconColor = '#193cb8';
+        this.alertIconColor = 'blue';
         return this.TW_CLASS.ALERT_SIMPLE_EQUIS_PRIMARY;
       case 'alert-red':
-        this.alertIconColor = '#c10007';
+        this.alertIconColor = 'red';
         return this.TW_CLASS.ALERT_SIMPLE_EQUIS_RED;
       case 'alert-green':
-        this.alertIconColor = '#008236';
+        this.alertIconColor = 'green';
         return this.TW_CLASS.ALERT_SIMPLE_EQUIS_GREEN;
       case 'alert-yellow':
-        this.alertIconColor = '#a65f00';
+        this.alertIconColor = 'amber';
         return this.TW_CLASS.ALERT_SIMPLE_EQUIS_YELLOW;
       case 'alert-gray':
-        this.alertIconColor = '#364153';
+        this.alertIconColor = 'secgray';
         return this.TW_CLASS.ALERT_SIMPLE_EQUIS_GRAY;
       default:
-        this.alertIconColor = '#193cb8';
+        this.alertIconColor = 'blue';
         return this.TW_CLASS.ALERT_SIMPLE_EQUIS_PRIMARY;
     }
   }

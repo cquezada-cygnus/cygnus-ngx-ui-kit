@@ -8,10 +8,9 @@
       'inline-flex items-center z-40 ml-2 -mr-1 ' +
       (btnIsDisabled ? '' : 'transition-all duration-300 group-hover:translate-x-1')
     "
-    [width]="btnIconSize"
-    [height]="btnIconSize"
-    [color]="btnIconColor"
-    [route]="'assets/icons/svg/Arrows/arrow-right.svg'"
+    [size]="btnIconSize"
+    [textColor]="btnIconColor"
+    [textRoute]="'arrow-right'"
   />
   @if (btnAnimationOption()==='B') {
     <div

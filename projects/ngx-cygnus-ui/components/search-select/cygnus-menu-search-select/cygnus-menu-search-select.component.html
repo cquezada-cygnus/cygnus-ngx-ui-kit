@@ -4,10 +4,9 @@
     type="button">
       <span class="whitespace-nowrap"  >{{menuSearchText()}}</span>
       <lib-ngx-cygnus-icons class="inline-flex items-center h-2.5 ms-2.5"
-        [width]="'19px'"
-        [height]="'19px'"
-        [color]="'#101828'"
-        [route]="'assets/icons/backups/chevron-down.svg'"
+        [size]="'lg'"
+        [textColor]="'black'"
+        [textRoute]="'chevron-down'"
       />
     </button>
     <ul [class]="TW_CLASS.UL_BASE"
@@ -38,10 +37,9 @@
     (click)="sendSearch()"
   >
     <lib-ngx-cygnus-icons class="h-full flex items-center"
-      [width]="'1.5rem'"
-      [height]="'1.5rem'"
-      [color]="'#ffffff'"
-      [route]="'assets/icons/svg/General/search-sm.svg'"
+      [size]="'xl'"
+      [textColor]="'white'"
+      [textRoute]="'search-sm'"
     />
   </button>
 </div>

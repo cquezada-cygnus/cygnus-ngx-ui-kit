@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ReactiveFormsModule, Validators, NonNullableFormBuilder } from '@angular/forms';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputColor, BtnCustomType } from 'ngx-cygnus-ui/types';
@@ -20,7 +20,7 @@ import { cgEmail, cgPhone, cgRutValidator } from 'ngx-cygnus-ui/validators';
 })
 export class CygnusCardShowValidatorsComponent implements OnInit {
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
-  CYGNUS_LOGO_COLOR: string = '#cc5224';
+  CYGNUS_LOGO_COLOR: IconColorText = 'cygnus';
 
   textRutHint = signal<string>('');
   inputRutColor = signal<InputColor>('base');

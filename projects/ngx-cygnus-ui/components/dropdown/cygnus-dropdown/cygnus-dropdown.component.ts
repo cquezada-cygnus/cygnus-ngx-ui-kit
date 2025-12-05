@@ -1,5 +1,5 @@
 import { Component, HostListener, input, model, OnInit, output, signal } from '@angular/core';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 import { DropdownItemType } from 'ngx-cygnus-ui/types';
 import { DropdownItemData } from 'ngx-cygnus-ui/interfaces';
@@ -27,7 +27,7 @@ export class CygnusDropdownComponent implements OnInit {
   dropdownClosed = signal<boolean>(true);
   dropdownItemSelected = output<DropdownItemData | undefined>();
 
-  iconBGColor = signal<string>('#344054');
+  iconBGColor = signal<IconColorText>('thrgray');
 
   ngOnInit() {
     // Generar ID único si no se proporciona
@@ -40,11 +40,11 @@ export class CygnusDropdownComponent implements OnInit {
   }
 
   iconColorOnMouseEnter() {
-    this.iconBGColor.set('#1447e6'); // azul
+    this.iconBGColor.set('mediumblue');
   }
 
   iconColorOnMouseLeave() {
-    this.iconBGColor.set('#344054'); // gris oscuro
+    this.iconBGColor.set('thrgray');
   }
 
   itemSelected(event: DropdownItemData | undefined) {

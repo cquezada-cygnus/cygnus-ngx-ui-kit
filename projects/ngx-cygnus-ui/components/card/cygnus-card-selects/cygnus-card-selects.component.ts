@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule, Validators, NonNullableFormBuilder } from '@angular/forms';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent, CygnusButtonLinkComponent } from 'ngx-cygnus-ui/components/button';
 import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { BtnCustomType } from 'ngx-cygnus-ui/types';
@@ -21,7 +21,7 @@ import { specificValueValidator } from 'ngx-cygnus-ui/validators';
 })
 export class CygnusCardSelectsComponent implements AfterViewInit {
 TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
-  CYGNUS_LOGO_COLOR: string = '#cc5224';
+  CYGNUS_LOGO_COLOR: IconColorText = 'cygnus';
 
   options: SelectGeneric[] = [
     {option: 'Valor 1', value: '0001'},

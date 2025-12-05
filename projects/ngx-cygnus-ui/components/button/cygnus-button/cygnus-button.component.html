@@ -12,19 +12,17 @@
   }
   @if (btnIconExist && btnIconRouteLeft()!=='') {
     <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
-      [width]="btnIconSize"
-      [height]="btnIconSize"
-      [color]="btnIconColor()"
-      [route]="btnIconRouteLeft()"
+      [size]="btnIconSize"
+      [textColor]="btnIconColor()"
+      [textRoute]="btnIconRouteLeft()"
     />
   }
     <ng-content></ng-content>
   @if (btnIconExist && btnIconRouteRight()!=='') {
     <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
-      [width]="btnIconSize"
-      [height]="btnIconSize"
-      [color]="btnIconColor()"
-      [route]="btnIconRouteRight()"
+      [size]="btnIconSize"
+      [textColor]="btnIconColor()"
+      [textRoute]="btnIconRouteRight()"
     />
   }
 
