@@ -212,17 +212,17 @@ export class CardContentComponent {
       [cardText]="''"
       [cardLinkText]="'Ingresar'"
 
-      [iconLeftColor]="'#155eef'"
+      [iconLeftColor]="'lightmediumblue'"
       [iconLeftAsset]="'assets/icons/svg/General/speedometer-04.svg'"
-      [iconLeftSize ]="'3rem'"
+      [iconLeftSize ]="'xxxxl'"
 
-      [iconRightColor]="'#fdb022'"
+      [iconRightColor]="'yellow'"
       [iconRightAsset]="'assets/icons/svg/General/hearts.svg'"
-      [iconRightSize ]="'1.1rem'"
+      [iconRightSize ]="''"
 
-      [iconArrowColor]="'#155eef'"
+      [iconArrowColor]="'lightmediumblue'"
       [iconArrowAsset]="'assets/icons/svg/Arrows/arrow-narrow-right.svg'"
-      [iconArrowSize ]="'1rem'"
+      [iconArrowSize ]="''"
     />
   `;
 

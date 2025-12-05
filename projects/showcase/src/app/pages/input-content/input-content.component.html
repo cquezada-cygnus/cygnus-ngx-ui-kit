@@ -37,10 +37,10 @@
           <li>[textLabel]: Recibe un string que indica el texto que va arriba del input a modo de encabezado.</li>
           <li>[inputSize]: Recibe un string que indica el tamaño del input. Si no se indica, tiene un tamaño estándar. Puede tener los siguientes valores: 'sm' y 'lg'.</li>
           <li>[inputColor]: Recibe un string que indica el color del input. Puede recibir los siguientes valores: 'success', 'warning', 'error'. Si no recibe nada, el color es estándar.</li>
-          <li>[iconAsset]: Recibe un string que indica la url de un ícono dentro de la biblioteca ngx-cygnus-icons.</li>
+          <li>[iconAsset]: Recibe un string que indica la url o nombre de un ícono dentro de la biblioteca ngx-cygnus-icons.</li>
           <li>[iconColor]: Recibe un string que indica el color de un ícono dentro del input. Puede recibir los siguientes valores: 'success', 'warning', 'error'. Si no recibe nada, el color es estándar.</li>
           <li>[iconState]: Recibe un boolean: true para identificar el estilo del input cuando es ícono de success/warning/error. Por defecto su valor es false.</li>
-          <li>[iconSize]: Recibe un string que indica el tamaño del ícono dentro del input. Por defecto tiene el valor '19px'.</li>
+          <li>[iconSize]: Recibe un string que indica el tamaño del ícono dentro del input. Por defecto tiene el valor 'lg'.</li>
           <li>[iconPosition]: Recibe un string que indica la posición del ícono dentro del input. Su valor puede ser 'right' o 'left'. Por defecto tiene el valor 'right'.</li>
           <li>[pseudoIconCLPPhone]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar el comienzo del número de teléfono para Chile.</li>
           <li>[hintColor]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si el texto por debajo del input se va a colorear o si va a mantener un color estándar.</li>
@@ -399,7 +399,7 @@
               [textPlaceholder]="'Escribe aquí...'"
               [pseudoIconCLPPhone]="true"
               [iconPosition]="'left'"
-              [textPlaceholder]="'123-45 6789'"
+              [textPlaceholder]="'123456789'"
               [inputDisabled]="true"
             />
 
