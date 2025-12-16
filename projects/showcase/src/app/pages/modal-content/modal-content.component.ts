@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 import { CygnusModalComponent } from 'ngx-cygnus-ui/components/modal';
+import { CygnusCustomTableComponent } from 'ngx-cygnus-ui/components/table';
+
+import * as EMPRESAS from '../../../json/EMPRESAS.json';
 
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
@@ -10,6 +13,7 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
   imports: [
     CygnusButtonComponent,
     CygnusModalComponent,
+    CygnusCustomTableComponent,
     Highlight, HighlightLineNumbers,
   ],
   templateUrl: './modal-content.component.html',
@@ -18,6 +22,7 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 export class ModalContentComponent {
   showModalSimple: boolean = false;
   showModalEquis : boolean = false;
+  showModalContenido : boolean = false;
 
   toggleModalSimple():void {
     this.showModalSimple = !this.showModalSimple;
@@ -25,6 +30,20 @@ export class ModalContentComponent {
   toggleModalEquis():void {
     this.showModalEquis = !this.showModalEquis;
   }
+
+  toggleModalContenido():void {
+    this.showModalContenido = !this.showModalContenido;
+  }
+
+  EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
+
+  empresasEditArr: string[] = [
+    'NOMBRE DE FANTASIA', 'EMAIL', 'DIRECCION',
+  ];
+
+  showEditedData(data: any) {
+    console.log('showEditedData: ', data);
+  };
 
   cygnusModalImportTs: string = `
     import { Component } from '@angular/core';
@@ -109,12 +128,13 @@ export class ModalContentComponent {
 
     <cygnus-modal
       [modalTitle]="'Esta es una simple Modal'"
-      [modalContent]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
-                      reiciendis voluptates repellendus, eum sunt architecto quam praesentium?
-                      Nesciunt velit consequatur reiciendis expedita natus, hic veniam quisquam quam
-                      dolorum.'"
       [(showModal)]="showModalSimple"
-    />
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
+      reiciendis voluptates repellendus, eum sunt architecto quam praesentium?
+      Nesciunt velit consequatur reiciendis expedita natus, hic veniam quisquam quam
+      dolorum. HOLI HOLI
+    </cygnus-modal>
   `;
 
   cygnusModalEquisHtml: string = `
@@ -122,13 +142,14 @@ export class ModalContentComponent {
 
     <cygnus-modal
       [modalTitle]="'Esta es una simple Modal'"
-      [modalContent]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
-                      reiciendis voluptates repellendus, eum sunt architecto quam praesentium?
-                      Nesciunt velit consequatur reiciendis expedita natus, hic veniam quisquam quam
-                      dolorum.'"
       [(showModal)]="showModalEquis"
       [withX]="true"
-    />
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur
+      reiciendis voluptates repellendus, eum sunt architecto quam praesentium?
+      Nesciunt velit consequatur reiciendis expedita natus, hic veniam quisquam quam
+      dolorum.
+    </cygnus-modal>
   `;
 
 }
