@@ -114,6 +114,15 @@ export class SelectSearchContentComponent {
     />
   `;
 
+  cygnusSearchMultisearchHtml: string = `
+    <cygnus-search-select
+      [items]="options"
+      [showOptionsAutomatically]="true"
+      (outputMultisearch)="printSearch($event)"
+      [multisearch]="true"
+    />
+  `;
+
   cygnusMenuSearchSelImportTs: string = `
     import { Component } from '@angular/core';
     import {

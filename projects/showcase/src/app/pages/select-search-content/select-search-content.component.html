@@ -89,14 +89,14 @@
         </div>
 
         <p class="mb-8 text-secondary-600 text-md">
-          Multisearch.
+          Al indicar [multisearch]="true" Se obtiene un componente de búsqueda de palabras clave que se podrán ir seleccionando y el componente emitirá en un evento los elementos seleccionados. Puedes recibir los elementos seleccionados de (outputMultisearch) y utilizarlos para filtrar los elementos de una tabla por ejemplo. Si se elimina alguno de los elementos seleccionados, se vuelve a emitir el evento actualizado.
         </p>
 
-        <!-- <pre>
-          <code [highlight]="cygnusSearchSelAutHtml"
+        <pre>
+          <code [highlight]="cygnusSearchMultisearchHtml"
                 language="html"
                 lineNumbers></code>
-        </pre> -->
+        </pre>
 
         <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
           <div class="flex-col w-full max-w-sm space-y-4">
