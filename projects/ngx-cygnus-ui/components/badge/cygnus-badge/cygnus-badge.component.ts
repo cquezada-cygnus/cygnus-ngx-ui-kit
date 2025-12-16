@@ -23,8 +23,10 @@ export class CygnusBadgeComponent implements OnInit {
   badgeIconSize: IconTextSize = 'lg';
   btnBadge: boolean = false;
   badgeState: boolean = false;
+  btnBadgeOutlined: boolean = false;
   badgeStateClassesIcon: string = '';
   badgeIsClosed = signal<boolean>(false);
+  xBGColor = signal<IconColorText>('white');
 
   ngOnInit(){
     const setClasses = this.setBadgeClasses(this.getBadgeClasses(this.badgeTypes()));
@@ -48,6 +50,7 @@ export class CygnusBadgeComponent implements OnInit {
     this.badgeIconOnly = false;
     this.btnBadge = false;
     this.badgeState = false;
+    this.btnBadgeOutlined = false;
     this.badgeStateClassesIcon = '';
     switch (customClass) {
       case 'badge-xs':
@@ -82,6 +85,11 @@ export class CygnusBadgeComponent implements OnInit {
       case 'badge-btn':
         this.btnBadge = true;
         return this.TW_CLASS.BADGE_BTN;
+      case 'badge-btn-outlined':
+        this.btnBadge = true;
+        this.btnBadgeOutlined = true;
+        this.xBGColor.set('mediumblue');
+        return this.TW_CLASS.BADGE_BTN_OUTLINED;
       case 'badge-state-success':
         this.badgeState = true;
         this.badgeStateClassesIcon = this.TW_CLASS.BADGE_STATE_ICON_GREEN;
@@ -97,6 +105,18 @@ export class CygnusBadgeComponent implements OnInit {
 
   badgeClose() {
     this.badgeIsClosed.set(true);
+  }
+
+  xColorOnMouseEnter() {
+    if (this.btnBadgeOutlined) {
+      this.xBGColor.set('white');
+    }
+  }
+
+  xColorOnMouseLeave() {
+    if (this.btnBadgeOutlined) {
+      this.xBGColor.set('mediumblue');
+    }
   }
 
 }

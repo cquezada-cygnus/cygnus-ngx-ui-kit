@@ -6,10 +6,7 @@
     [textRoute]="'search-sm'"
   />
   <input type="text"
-    [class]="
-      TW_CLASS.INPUT_BASE + ' ' +
-      '!pl-9'
-    "
+    [class]="TW_CLASS.INPUT_BASE + ' !pl-9'"
     [placeholder]="placeholder()"
     [formControl]="searchControl"
     (keyup)="keyupSendSearch()"
@@ -35,4 +32,16 @@
     <li [class]="TW_CLASS.LI_BASE" (click)="setInputSearchAfterChooseOption(item)" >{{item.option}}</li>
   }
 </ul>
+
+@if (multisearch()) {
+  <div class="flex w-full mt-1 mb-4">
+  @for (item of multisearchArr; track item.value) {
+    <cygnus-badge
+      (click)="deleteMultisearchItem(item)"
+      [badgeTypes]="'badge-btn-outlined'"
+      [badgeText]="item.option"
+    />
+  }
+  </div>
+}
 

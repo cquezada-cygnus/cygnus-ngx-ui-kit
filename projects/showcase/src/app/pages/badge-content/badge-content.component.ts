@@ -118,6 +118,11 @@ export class BadgeContentComponent {
       [badgeTypes]="'badge-btn'"
       [badgeText]="'Inadmisible'"
     />
+
+    <cygnus-badge
+      [badgeTypes]="'badge-btn-outlined'"
+      [badgeText]="'Inadmisible'"
+    />
   `;
 
   exampleBadgeStatus: string = `

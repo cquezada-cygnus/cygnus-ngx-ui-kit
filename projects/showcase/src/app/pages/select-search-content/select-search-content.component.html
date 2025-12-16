@@ -87,6 +87,29 @@
 
           </div>
         </div>
+
+        <p class="mb-8 text-secondary-600 text-md">
+          Multisearch.
+        </p>
+
+        <!-- <pre>
+          <code [highlight]="cygnusSearchSelAutHtml"
+                language="html"
+                lineNumbers></code>
+        </pre> -->
+
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+          <div class="flex-col w-full max-w-sm space-y-4">
+
+            <cygnus-search-select
+              [items]="options"
+              [showOptionsAutomatically]="true"
+              (outputMultisearch)="printSearch($event)"
+              [multisearch]="true"
+            />
+
+          </div>
+        </div>
       </div>
     </div>
   </section>

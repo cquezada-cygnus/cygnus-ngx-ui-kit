@@ -1,5 +1,9 @@
 @if (!badgeIsClosed()) {
-<div [class]="badgeAllClasses()" >
+<div
+  [class]="badgeAllClasses()"
+  (mouseenter)="xColorOnMouseEnter()"
+  (mouseleave)="xColorOnMouseLeave()"
+>
   @if (badgeIconAsset()!=='' && badgeIconPosition()==='left') {
     <lib-ngx-cygnus-icons
       [size]="badgeIconSize"
@@ -21,7 +25,7 @@
     >
       <lib-ngx-cygnus-icons
         [size]="badgeIconSize"
-        [textColor]="'white'"
+        [textColor]="xBGColor()"
         [textRoute]="'x-close'"
       />
     </button>

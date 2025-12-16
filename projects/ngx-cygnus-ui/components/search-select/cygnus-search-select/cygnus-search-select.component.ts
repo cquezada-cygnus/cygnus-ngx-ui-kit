@@ -1,15 +1,17 @@
-import { Component, input, OnInit, output, signal } from '@angular/core';
-import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
-import { TW_CLASS } from '../const/tailwind.const';
+import { Component, input, model, OnInit, output, signal, inject, ChangeDetectorRef } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
-import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 import { debounceTime } from 'rxjs';
+import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
+import { TW_CLASS } from '../const/tailwind.const';
+import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 
 @Component({
   selector: 'cygnus-search-select',
   imports: [
     ReactiveFormsModule,
     NgxCygnusIconsComponent,
+    CygnusBadgeComponent,
   ],
   templateUrl: './cygnus-search-select.component.html',
 })
@@ -30,6 +32,12 @@ export class CygnusSearchSelectComponent implements OnInit {
   showOptionsAutomatically = input<boolean>(false);
   outputSearch = output<string | [string, SelectGeneric]>();
 
+  multisearch = model<boolean>(false);
+  multisearchArr:SelectGeneric[] = [];
+  outputMultisearch = output<SelectGeneric[]>();
+
+
+
   ngOnInit(): void {
     if (this.showOptionsAutomatically()) {
       this.searchControl.valueChanges.pipe(debounceTime(150)).subscribe(value => {
@@ -47,9 +55,28 @@ export class CygnusSearchSelectComponent implements OnInit {
   }
 
   setInputSearchAfterChooseOption(item: SelectGeneric) {
-    this.itemSelected.set(item);
-    this.searchControl.patchValue(item.option);
-    this.isInvisible.set(true);
+    if (this.multisearch()) {
+      const foundSearch: SelectGeneric | undefined = this.multisearchArr.find(itemSearch => itemSearch.option === item.option );
+      if (!foundSearch) { // ver si el elemento ya está en la lista antes de agregarlo otra vez
+        this.multisearchArr.push(item);
+      }
+      this.searchControl.patchValue('');
+      this.isInvisible.set(true);
+      this.sendSearchMultisearch();
+    } else {
+      this.itemSelected.set(item);
+      this.searchControl.patchValue(item.option);
+      this.isInvisible.set(true);
+    }
+  }
+
+  deleteMultisearchItem(item: SelectGeneric) {
+    this.multisearchArr = this.multisearchArr.filter(s => s !== item);
+    this.sendSearchMultisearch(); // enviar evento para actualizar el multisearch vigente
+  }
+
+  sendSearchMultisearch() {
+    this.outputMultisearch.emit(this.multisearchArr);
   }
 
   sendSearch() {
