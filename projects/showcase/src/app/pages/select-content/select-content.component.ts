@@ -113,7 +113,8 @@ export class SelectContentComponent {
   `;
 
   cygnusSelAutoWidthHtml: string = `
-    <cygnus-select [options]="options" />
+    <!-- COMPONENTE: Selector AutoWidth -->
+    <cygnus-select [options]="optionsTestAutoWidth" [selAutoWidth]="true"  />
   `;
 
 }

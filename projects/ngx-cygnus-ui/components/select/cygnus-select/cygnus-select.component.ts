@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 import { TW_CLASS } from '../const/tailwind.const';
 import { AutoWidthSelectDirective } from 'ngx-cygnus-ui/directives';
@@ -24,6 +24,7 @@ export class CygnusSelectComponent {
   private static idCounter = 0;
 
   control = input<FormControl<string>>();
+  isSelected = output<string>();
 
   TW_CLASS = TW_CLASS;
   selId = signal<string>('');
@@ -44,6 +45,7 @@ export class CygnusSelectComponent {
     this.control()?.setValue(value);
     this.control()?.markAsDirty();
     this.control()?.markAsTouched();
+    this.isSelected.emit(value);
   }
 
   selGetSize():string {

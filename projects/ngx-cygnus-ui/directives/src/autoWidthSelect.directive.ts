@@ -7,7 +7,11 @@ export class AutoWidthSelectDirective {
 
   @Input('autoWidthSelectDirective') autoWidthSelectActive: boolean = false;
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef) {
+    // inicializar un tamaño predeterminado
+    const selectElement: HTMLSelectElement = this.elementRef.nativeElement;
+    selectElement.style.width = `8rem`;
+  }
 
   @HostListener('change')
   onChange() {

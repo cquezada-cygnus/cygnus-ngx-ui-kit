@@ -10,6 +10,7 @@ import { TableType } from 'ngx-cygnus-ui/types';
 import { SelectCollection, SelectGeneric, TableBadge } from 'ngx-cygnus-ui/interfaces';
 import { CygnusSearchSelectComponent } from "ngx-cygnus-ui/components/search-select";
 
+
 @Component({
   selector: 'cygnus-custom-table',
   imports: [
@@ -38,12 +39,10 @@ export class CygnusCustomTableComponent implements OnInit {
   doubleKeyUp2 = input<string>('');
   doubleKeydown = input<string>('');
 
-  documentsPerPage = signal(10); // Cantidad de documentos a mostrar por página
-  currentPage = signal(1); // Página actual (empieza en 1)
-  currentCounter:number = 1;
+  documentsPerPage = signal(5); // Cantidad de documentos a mostrar por página
+  currentCounter:number = 1; // Página actual (empieza en 1)
   init = signal<number>(1);
   limit = signal<number>(3);
-  maxCounter = input<number>(0);
 
   tdEditArr = input<string[]>([]); // if tdEditArr.length > 0, aparece btn editar
   toggleEdit = signal<boolean>(false);
@@ -56,13 +55,20 @@ export class CygnusCustomTableComponent implements OnInit {
   selectKeyArr = input<SelectCollection[]>([]);
   options: SelectGeneric[] = [];
 
+  docsPerPage: SelectGeneric[] = [
+    {option: '5 documentos', value: 5},
+    {option: '10 documentos', value: 10},
+    {option: '20 documentos', value: 20},
+    {option: '50 documentos', value: 50},
+  ];
+
   showSearch = input<boolean>(false);
 
   ngOnInit(): void {
     this.showDataTable.set(this.dataTable());
     this.setColumnsHead();
 
-    if (this.maxCounter()>0) {
+    if (this.dataTable().length>0) { // si hay documentos, mostrarlos
       this.showContent();
     }
   }
@@ -181,13 +187,6 @@ export class CygnusCustomTableComponent implements OnInit {
     }
   }
 
-  // showContent() {
-  //   const total = this.showDataTable().length;
-  //   const amountPerPage = Math.ceil(total / this.maxCounter());
-  //   this.init.set(amountPerPage*(this.currentCounter-1));
-  //   this.limit.set((amountPerPage*this.currentCounter)-1);
-  // }
-
   search(searchTerm: string | [string, SelectGeneric]) {
     if ( typeof searchTerm === 'string' ) {
       if (searchTerm.length==0) { // mostrar la tabla completa si no hay búsqueda
@@ -205,7 +204,7 @@ export class CygnusCustomTableComponent implements OnInit {
         });
       }) );
 
-      this.showContent(); // actualizar paginación (funciona raro pero funciona, podría mejorar (¿?))
+      this.showContent();
     }
   }
 

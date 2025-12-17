@@ -171,7 +171,6 @@
           <cygnus-custom-table
             [dataTable]="CLIENTES"
             [tableType]="'stripped-hover'"
-            [maxCounter]="10"
             [showSearch]="false"
           />
         }
@@ -209,7 +208,6 @@
             [doubleKeyUp1]="'NOMBRES'"
             [doubleKeyUp2]="'APELLIDOS'"
             [doubleKeydown]="'EMAIL'"
-            [maxCounter]="10"
             [showSearch]="true"
           />
         }
@@ -259,7 +257,6 @@
           <cygnus-custom-table
             [dataTable]="EMPRESAS"
             [tableType]="'stripped-hover'"
-            [maxCounter]="5"
             [tdEditArr]="empresasEditArr"
             (emitModifiedData)="showEditedData($event)"
             [showSearch]="false"

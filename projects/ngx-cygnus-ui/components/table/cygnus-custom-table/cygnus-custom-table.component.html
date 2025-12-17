@@ -1,19 +1,25 @@
 <div class="flex flex-col items-center justify-center gap-4 mb-4">
   <div class="flex flex-col w-full">
 
-    @if (showSearch()) {
     <div class="flex flex-wrap items-center justify-between py-4 space-y-4 bg-white flex-column md:flex-row md:space-y-0">
-      <div>
-        <!-- SELECT... si es que lo vas a utilizar para filtrar -->
+      <div><!-- Selector de documentos por página -->
+        <cygnus-select
+          [options]="docsPerPage"
+          (isSelected)="documentsPerPage.set(+$event); showContent();"
+          [selSize]="''"
+          [selAutoWidth]="true"
+        />
       </div>
+      @if (showSearch()) {
       <div class="relative min-w-xs scroll-me-0">
         <cygnus-search-select
           [typeAutoSearch]="true"
           (outputSearch)="search($event)"
         />
       </div>
+      }
     </div>
-    }
+
 
     <div class="-m-1.5 overflow-x-auto">
       <div class="p-1.5 min-w-full inline-block align-middle">
@@ -40,110 +46,7 @@
               <tbody>
                 @for (item of showDataTable(); track $index; let i = $index; let isEven = $even) {
 
-                  @if (maxCounter()>0 && i >= init() && i <= limit()) { <!-- MUESTRA RESTRINGIENDO POR LIMITE-->
-
-                    <tr
-                      [class]="
-                        ((tableType()==='hover') ? TW_CLASS.TABLE_HOVER : '') + ' ' +
-                        ((tableType()==='stripped-hover' || tableType()==='double') ? TW_CLASS.TABLE_HOVER_STRIPPED : '')
-                      "
-                      (mouseenter)="item.isHover=true"
-                      (mouseleave)="item.isHover=false"
-                    >
-
-                      @for (key of columnsHead(); track $index) {
-                        @if (tableType()==='double' &&
-                            ( key.includes(doubleKeyUp2()) || key.includes(doubleKeydown())) ) {
-
-                        } @else {
-
-                          <td
-                            [class]="
-                              TW_CLASS.TABLE_TD + ' ' +
-                              (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
-                            "
-                          >
-
-                            @if (tableType()==='double' && (key.includes(doubleKeyUp1())) ) {
-                                <div class="text-sm font-medium text-secondary-900">
-                                  {{item[doubleKeyUp1()] + ' ' + item[doubleKeyUp2()]}}
-                                </div>
-                                <div class="text-sm text-secondary-500">
-                                    {{item[doubleKeydown()]}}
-                                </div>
-                            }
-                            @else {
-
-                              @if (selectKeyArr() && selectKeyArr().length>0 && key===getKeyOfSelOption(key, item)) {
-                                <div class="min-w-[15rem]">
-                                  <cygnus-select [options]="options" />
-                                </div>
-                              }
-
-                              @else if (badgeKey() && badgeKey()?.key===key) {
-
-                                <cygnus-badge
-                                  [badgeTypes]="'badge-sm ' + badgeColor(item[key])"
-                                  [badgeText]="item[key]"
-                                />
-
-                              }
-
-                              @else if (tdEditArr().length && toggleEdit() && toggleEditIndex()===i && keyIsEditable(key)) {
-                                <div class="min-w-[15rem]">
-                                  <cygnus-input
-                                    [inputCustomType]="'base'"
-                                    [textPlaceholder]="'...'"
-                                    (inputValueOutput)="getOutputData($event,key,i)"
-                                    [initializeInputValue]="item[key]"
-                                  />
-                                </div>
-
-                              } @else {
-                                {{item[key]}}
-
-                              }
-
-                            }
-
-                          </td>
-                        }
-
-                      }
-                      @if (tdEditArr().length>0 && !toggleEdit()) {
-                        <td
-                          [class]="
-                            TW_CLASS.TABLE_TD + ' ' +
-                            TW_CLASS.ACTIONS
-                          "
-                        >
-                          <cygnus-button-link
-                            [btnLinkType]="'btn-link'"
-                            [btnRouterLinkText]="''"
-                            (click)="setToggleEdit(i)"
-                          >
-                            Editar
-                          </cygnus-button-link>
-                        </td>
-                      }
-                      @if (toggleEdit() && toggleEditIndex()===i) {
-                        <td class="flex justify-center align-center py-4">
-                          <lib-ngx-cygnus-icons class="mr-2"
-                            [size]="'xl'"
-                            [textColor]="'mediumgray'"
-                            [textRoute]="'save-01'"
-                            (click)="emitDataModified(); setToggleEdit(i);"
-                          />
-                          <lib-ngx-cygnus-icons class="mr-2"
-                            [size]="'xl'"
-                            [textColor]="'mediumgray'"
-                            [textRoute]="'x'"
-                            (click)="setToggleEdit(i, true)"
-                          />
-                        </td>
-                      }
-                    </tr>
-                  } @else if (maxCounter()<=0) { <!-- MUESTRA SIN LIMITE TODO LO QUE HAYA -->
+                  @if (i >= init() && i <= limit()) { <!-- MUESTRA RESTRINGIENDO POR LIMITE-->
 
                     <tr
                       [class]="
@@ -257,13 +160,6 @@
         </div>
       </div>
     </div>
-    <!-- Selector de documentos por página -->
-    <select #mySelectElement (change)="documentsPerPage.set(+(mySelectElement.value)); currentPage.set(1); showContent()">
-      <option value="5">5 documentos</option>
-      <option value="10" selected>10 documentos</option>
-      <option value="20">20 documentos</option>
-      <option value="50">50 documentos</option>
-    </select>
     @if (getTotalPages()>0) {
       <div class="flex content-center">
         <cygnus-pagination
@@ -274,15 +170,5 @@
         />
       </div>
     }
-    <!-- @if (maxCounter()>0) {
-      <div class="flex content-center">
-        <cygnus-pagination
-          [paginationType]="'normal'"
-          [(currentCounter)]="currentCounter"
-          [maxCounter]="maxCounter()"
-          (click)="showContent()"
-        />
-      </div>
-    } -->
   </div>
 </div>
