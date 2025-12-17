@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SelectCollection, TableBadge, TableItem } from 'ngx-cygnus-ui/interfaces';
-import { CygnusCustomTableComponent, CygnusTableComponent } from 'ngx-cygnus-ui/components/table';
+import { SelectCollection, TableBadge } from 'ngx-cygnus-ui/interfaces';
+import { CygnusCustomTableComponent } from 'ngx-cygnus-ui/components/table';
 import * as CLIENTES from '../../../json/CLIENTES.json';
 import * as EMPRESAS from '../../../json/EMPRESAS.json';
 import * as COMPANY_COLAB from '../../../json/COMPANY_COLAB.json';
@@ -13,7 +13,6 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 @Component({
   selector: 'app-table-content',
   imports: [
-    CygnusTableComponent,
     CygnusCustomTableComponent,
     Highlight, HighlightLineNumbers,
   ],
@@ -23,19 +22,16 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 export class TableContentComponent {
 
   customTableCLIENTES: string = `
-    <!-- COMPONENTE: cygnus-custom-table -->
     @if (CLIENTES) {
       <cygnus-custom-table
         [dataTable]="CLIENTES"
         [tableType]="'stripped-hover'"
-        [maxCounter]="10"
         [showSearch]="false"
       />
     }
   `;
 
   customTableCLIENTESDoubleSearch: string = `
-    <!-- COMPONENTE: cygnus-custom-table -->
     @if (CLIENTES) {
       <cygnus-custom-table
         [dataTable]="CLIENTES"
@@ -43,19 +39,16 @@ export class TableContentComponent {
         [doubleKeyUp1]="'NOMBRES'"
         [doubleKeyUp2]="'APELLIDOS'"
         [doubleKeydown]="'EMAIL'"
-        [maxCounter]="10"
         [showSearch]="true"
       />
     }
   `;
 
   customTableEMPRESAS: string = `
-    <!-- COMPONENTE: cygnus-custom-table -->
     @if (EMPRESAS) {
       <cygnus-custom-table
         [dataTable]="EMPRESAS"
         [tableType]="'stripped-hover'"
-        [maxCounter]="5"
         [tdEditArr]="empresasEditArr"
         (emitModifiedData)="showEditedData($event)"
         [showSearch]="false"
@@ -77,7 +70,6 @@ export class TableContentComponent {
   `;
 
   customTableCOMPANY_COLAB: string = `
-    <!-- COMPONENTE: cygnus-custom-table -->
     @if (COMPANY_COLAB) {
       <cygnus-custom-table
         [dataTable]="COMPANY_COLAB"
@@ -98,7 +90,6 @@ export class TableContentComponent {
   `;
 
   customTableEMPRESAS_CLIENTES: string = `
-  <!-- COMPONENTE: cygnus-custom-table -->
     @if (EMPRESAS_CLIENTES) {
       <cygnus-custom-table
         [dataTable]="EMPRESAS_CLIENTES"
@@ -189,25 +180,6 @@ export class TableContentComponent {
       EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
     }
   `;
-
-  tableBasicArr: TableItem[] = [
-    { name: 'Juan Pérez', age: '45', email: 'florencia.mardonez.@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo' },
-    { name: 'Jaime Valverde', age: '27', email: 'nidia.perez@sitio.com', address: 'Polo Sur 304, Ñuñoa', state: 'Activo' },
-    { name: 'José Lopez', age: '31', email: 'carla.fuentealba@sitio.com', address: 'Santa Isabel 1904, Santiago', state: 'Activo' },
-  ];
-
-  tableSelectPagArr: TableItem[] = [
-    { name: 'Carla Díaz', age: '45', email: 'carla.diaz@email.cl', address: 'Argomedo 601, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Lider', id: '20010510' },
-    { name: 'Sandra Narvaez', age: '27', email: 'sandra.narvaez@email.cl', address: 'Polo Sur 304, Ñuñoa', state: 'Activo', startDate: '24/01/2023', company: 'Falabella', id: '20010511' },
-    { name: 'Carla Fuentealba', age: '31', email: 'carla.fuentealba@sitio.com', address: 'Santa Isabel 1904, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Cencosud', id: '20010512' },
-    { name: 'Florencia Mardonez', age: '45', email: 'florencia.mardonez.@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Lider', id: '20010513' },
-    { name: 'Nidia Pérez', age: '27', email: 'nidia.perez@sitio.com', address: 'Polo Sur 304, Ñuñoa', state: 'Activo', startDate: '24/01/2023', company: 'Falabella', id: '20010514' },
-    { name: 'Carla Fuentealba', age: '31', email: 'carla.fuentealba@sitio.com', address: 'Santa Isabel 1904, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Cencosud', id: '20010515' },
-    { name: 'Juan Pérez', age: '45', email: 'florencia.mardonez.@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Lider', id: '20010516'  },
-    { name: 'Jaime Valverde', age: '27', email: 'nidia.perez@sitio.com', address: 'Polo Sur 304, Ñuñoa', state: 'Activo', startDate: '24/01/2023', company: 'Falabella', id: '20010517' },
-    { name: 'José Lopez', age: '31', email: 'carla.fuentealba@sitio.com', address: 'Santa Isabel 1904, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Cencosud', id: '20010518' },
-    { name: 'Juana Zapata', age: '45', email: 'jzd@sitio.com', address: 'Argomedo 601, Santiago', state: 'Activo', startDate: '24/01/2023', company: 'Luchetti', id: '20010519'  },
-  ];
 
   CLIENTES = JSON.parse(JSON.stringify(CLIENTES)).default;
   EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;

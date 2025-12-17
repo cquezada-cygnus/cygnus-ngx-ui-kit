@@ -7,106 +7,6 @@
         fácilmente con búsqueda, paginación, botones de acción y más</p>
   </header>
 
-  <!-- basic-table -->
-  <section id="basic-table">
-    <div class="min-h-[140px] rounded-lg border mb-14">
-      <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">Tabla básica</h2>
-        <p class="mb-8 text-secondary-600 text-md">Usando el marcado de tabla más básico, así es como se
-            ven las tablas.
-            Todos los ejemplos son responsivos: las tablas permiten desplazarse horizontalmente con
-            facilidad.</p>
-
-        <!-- COMPONENTE: Tabla básica -->
-        <cygnus-table [(tableItems)]="tableBasicArr" />
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Striped rows -->
-  <section id="striped-rows">
-    <div class="min-h-[140px] rounded-lg border mb-14">
-      <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">Filas rayadas</h2>
-        <p class="mb-8 text-secondary-600 text-md">Utilice este ejemplo para aumentar la legibilidad de
-            los conjuntos de datos alternando el color de fondo de cada segunda
-            fila de tabla.</p>
-
-
-          <!-- COMPONENTE: Filas rayadas -->
-          <cygnus-table [tableType]="'stripped'" [(tableItems)]="tableBasicArr" />
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- hoverable-rows -->
-  <section id="hoverable-rows">
-    <div class="min-h-[140px] rounded-lg border mb-14">
-      <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">Estado hover</h2>
-        <p class="mb-8 text-secondary-600 text-md">Utilice este ejemplo para cambiar el color de fondo
-            de una fila de datos al pasar el cursor sobre el elemento.</p>
-
-          <!-- COMPONENTE: Tabla con hover -->
-          <cygnus-table [tableType]="'hover'" [(tableItems)]="tableBasicArr" />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- striped-hover-rows -->
-  <section id="striped-hover-rows">
-    <div class="min-h-[140px] rounded-lg border mb-14">
-      <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">Filas rayadas con estado hover</h2>
-        <p class="mb-8 text-secondary-600 text-md">Una tabla con elementos que muestra si los usuarios están activos o no.</p>
-
-        <!-- COMPONENTE: Filas rayadas con estado hover -->
-        <cygnus-table [tableType]="'stripped-hover'" [(tableItems)]="tableBasicArr" />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- double-rows -->
-  <section id="double-rows">
-    <div class="min-h-[140px] rounded-lg border mb-14">
-      <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">Doble fila en una celda</h2>
-        <p class="mb-8 text-secondary-600 text-md">Una tabla con elementos que muestra si los usuarios
-            están activos o no.</p>
-
-          <!-- COMPONENTE: Tabla con doble fila en celda -->
-          <cygnus-table [tableType]="'double'" [(tableItems)]="tableBasicArr" />
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- select-rows -->
-  <section id="select-rows">
-      <div class="min-h-[140px] rounded-lg border mb-14">
-          <div class="p-4 pb-4">
-              <h2 class="mb-2 text-xl font-semibold">Selección de filas y paginación</h2>
-              <p class="mb-8 text-secondary-600 text-md">Las filas se pueden seleccionar haciendo que la
-                  primera
-                  columna sea una columna seleccionable.</p>
-
-              <!-- COMPONENTE: Tabla con doble fila en celda y páginación -->
-              <cygnus-table [tableType]="'select'" [(tableItems)]="tableSelectPagArr" />
-
-          </div>
-
-      </div>
-  </section>
-
-
-
   <!-- cygnus-custom-table instrucciones generales -->
   <section id="cygnus-custom-table-general-instructions">
     <div class="min-h-[140px] rounded-lg border mb-14">
@@ -162,7 +62,6 @@
 
         <p>"CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
         <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
-        <p>[maxCounter] se implementa cuando uno quiere agregar paginación a la tabla. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
         <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
         <br>
 
@@ -195,9 +94,7 @@
 
         <p>"CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
         <p>'double' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Double se refiere a que habrán elementos en la tabla que se fusionarán en el mismo td. Para saber cuáles elementos se van a fusionar, debes indicar qué keys del JSON se van a fusionar utilizando [doubleKeyUp1] (se posiciona el contenido de la llave arriba a la izquierda), [doubleKeyUp2] (se posiciona el contenido de la llave arriba a la derecha) y [doubleKeydown] (se posiciona el contenido de la llave abajo). Está diseñado para posicionar el nombre, apellido y correo.</p>
-        <p>[maxCounter] se implementa cuando uno quiere agregar paginación a la tabla. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
         <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
-        <p>Si se implementa [maxCounter] (paginación) y [showSearch] (filtro de búsqueda) en la misma tabla, se actualiza la paginación con las busquedas pero van quedando páginas vacías.</p>
         <br>
 
         <!-- COMPONENTE: cygnus-custom-table -->
@@ -232,7 +129,6 @@
 
         <p>"EMPRESAS" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
         <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
-        <p>[maxCounter] se implementa cuando uno quiere agregar paginación a la tabla. Se debe indicar en cuántas páginas se quiere dividir la tabla y por dentro el componente dividirá los elementos entre todas las páginas. Si hay demasiadas páginas, van a quedar algunas páginas vacías.</p>
         <p>[tdEditArr] cuando se encuentra implementado se utiliza para indicar qué elementos de la tabla se pueden editar. Debes entregar un arreglo que contenga strings que correspondan a las keys del JSON que quieres que se puedan editar. Al presionar el link "editar" en la última columna, aparece el modo edición del documento para los elementos que se indicó que se pueden editar.</p>
 
         <pre>
