@@ -257,7 +257,24 @@
         </div>
       </div>
     </div>
-    @if (maxCounter()>0) {
+    <!-- Selector de documentos por página -->
+    <select #mySelectElement (change)="documentsPerPage.set(+(mySelectElement.value)); currentPage.set(1); showContent()">
+      <option value="5">5 documentos</option>
+      <option value="10" selected>10 documentos</option>
+      <option value="20">20 documentos</option>
+      <option value="50">50 documentos</option>
+    </select>
+    @if (getTotalPages()>0) {
+      <div class="flex content-center">
+        <cygnus-pagination
+          [paginationType]="'normal'"
+          [(currentCounter)]="currentCounter"
+          [maxCounter]="getTotalPages()"
+          (click)="showContent()"
+        />
+      </div>
+    }
+    <!-- @if (maxCounter()>0) {
       <div class="flex content-center">
         <cygnus-pagination
           [paginationType]="'normal'"
@@ -266,6 +283,6 @@
           (click)="showContent()"
         />
       </div>
-    }
+    } -->
   </div>
 </div>

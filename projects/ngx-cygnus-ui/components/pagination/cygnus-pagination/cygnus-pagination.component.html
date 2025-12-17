@@ -9,7 +9,8 @@
       Anterior
     </cygnus-button>
 
-    @for (item of [].constructor(maxCounter()); track item; let idx = $index) {
+    <!-- Dejo este código comentado aquí para que cuando estén aburridos se rían de lo feo que funciona (y funciona) -->
+    <!-- @for (item of [].constructor(maxCounter()); track item; let idx = $index) {
       <cygnus-button
         [btnTypes]="
           ( idx+1==currentCounter() ? 'btn-primary ' : 'btn-ghost ') +
@@ -19,8 +20,23 @@
       >
         {{idx+1}}
       </cygnus-button>
-    }
+    } -->
 
+    @for (item of getVisiblePages(); track item) {
+      @if (item === '...') {
+        <span class="px-2 text-gray-400">...</span>
+      } @else {
+        <cygnus-button
+          [btnTypes]="
+            ( item===currentCounter() ? 'btn-primary ' : 'btn-ghost ') +
+            ( paginationType()==='circle' ? 'btn-circle btn-pagination-circle-size':'btn-pagination-size')
+          "
+          (click)="goToSelfPosition(+item)"
+        >
+          {{item}}
+        </cygnus-button>
+      }
+    }
 
     <cygnus-button
       [btnTypes]="'btn-ghost btn-size-xs btn-icon-sm'"

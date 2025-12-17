@@ -7,7 +7,7 @@ import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { TableType } from 'ngx-cygnus-ui/types';
-import { EditableTableItem, SelectCollection, SelectGeneric, TableBadge } from 'ngx-cygnus-ui/interfaces';
+import { SelectCollection, SelectGeneric, TableBadge } from 'ngx-cygnus-ui/interfaces';
 import { CygnusSearchSelectComponent } from "ngx-cygnus-ui/components/search-select";
 
 @Component({
@@ -38,6 +38,8 @@ export class CygnusCustomTableComponent implements OnInit {
   doubleKeyUp2 = input<string>('');
   doubleKeydown = input<string>('');
 
+  documentsPerPage = signal(10); // Cantidad de documentos a mostrar por página
+  currentPage = signal(1); // Página actual (empieza en 1)
   currentCounter:number = 1;
   init = signal<number>(1);
   limit = signal<number>(3);
@@ -151,10 +153,40 @@ export class CygnusCustomTableComponent implements OnInit {
 
   showContent() {
     const total = this.showDataTable().length;
-    const amountPerPage = Math.ceil(total / this.maxCounter());
-    this.init.set(amountPerPage*(this.currentCounter-1));
-    this.limit.set((amountPerPage*this.currentCounter)-1);
+    const docsPerPage = this.documentsPerPage();
+    // const currentPg = this.currentPage();
+    const currentPg = this.currentCounter;
+
+    // Calcular el índice inicial (0-based)
+    this.init.set((currentPg - 1) * docsPerPage);
+
+    // Calcular el índice final
+    // Asegurarse de no exceder el total de documentos
+    const endIndex = (currentPg * docsPerPage) - 1;
+    this.limit.set(Math.min(endIndex, total - 1));
   }
+
+  // Método auxiliar para calcular el total de páginas
+  getTotalPages(): number {
+    const total = this.showDataTable().length;
+    return Math.ceil(total / this.documentsPerPage());
+  }
+
+  goToPage(pageNumber: number) {
+    const totalPages = this.getTotalPages();
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      // this.currentPage.set(pageNumber);
+      this.currentCounter=pageNumber; // para el paginador externo
+      this.showContent();
+    }
+  }
+
+  // showContent() {
+  //   const total = this.showDataTable().length;
+  //   const amountPerPage = Math.ceil(total / this.maxCounter());
+  //   this.init.set(amountPerPage*(this.currentCounter-1));
+  //   this.limit.set((amountPerPage*this.currentCounter)-1);
+  // }
 
   search(searchTerm: string | [string, SelectGeneric]) {
     if ( typeof searchTerm === 'string' ) {
