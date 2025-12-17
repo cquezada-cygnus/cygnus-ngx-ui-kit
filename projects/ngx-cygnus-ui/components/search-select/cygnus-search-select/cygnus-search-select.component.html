@@ -1,5 +1,5 @@
 
-<div class="relative">
+<div class="relative"  [id]="selectSearchId()">
   <lib-ngx-cygnus-icons class="ml-2 absolute h-full flex items-center"
     [size]="'xl'"
     [textColor]="'gray'"
@@ -10,6 +10,7 @@
     [placeholder]="placeholder()"
     [formControl]="searchControl"
     (keyup)="keyupSendSearch()"
+    (click)="clickShowOptions()"
   />
 
   @if (!typeAutoSearch()) {

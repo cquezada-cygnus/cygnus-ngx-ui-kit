@@ -1,4 +1,4 @@
-import { Component, input, model, OnInit, output, signal, inject, ChangeDetectorRef } from '@angular/core';
+import { Component, input, model, OnInit, output, signal, HostListener } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
@@ -25,18 +25,21 @@ export class CygnusSearchSelectComponent implements OnInit {
   itemSelected = signal<SelectGeneric>(this.emptyItemSelected);
   isInvisible = signal<boolean>(true);
 
+  showAfterClick = input<boolean>(false);
+
   typeAutoSearch = input<boolean>(false);
 
   placeholder = input<string>('Escribe aquí...');
 
-  showOptionsAutomatically = input<boolean>(false);
+  showOptionsAutomatically = model<boolean>(false);
   outputSearch = output<string | [string, SelectGeneric]>();
 
   multisearch = model<boolean>(false);
   multisearchArr:SelectGeneric[] = [];
   outputMultisearch = output<SelectGeneric[]>();
 
-
+  selectSearchId = signal<string>('');
+  private static idCounter = 0;
 
   ngOnInit(): void {
     if (this.showOptionsAutomatically()) {
@@ -51,6 +54,13 @@ export class CygnusSearchSelectComponent implements OnInit {
           this.isInvisible.set(true);
         }
       });
+    }
+
+    // Generar ID único si no se proporciona
+    this.selectSearchId.set(`cg-select-search-${++CygnusSearchSelectComponent.idCounter}`);
+
+    if (this.multisearch()) { // multisearch funciona mejor cuando se muestran automáticamente las opciones mientras se escribe
+      this.showOptionsAutomatically.set(true);
     }
   }
 
@@ -91,6 +101,25 @@ export class CygnusSearchSelectComponent implements OnInit {
 
   keyupSendSearch() {
     if(this.typeAutoSearch()) this.sendSearch();
+  }
+
+  clickShowOptions() {
+    if (this.showAfterClick()) {
+      if (this.filteredItems.length == 0) {
+        this.filteredItems = this.items();
+      }
+      this.isInvisible.set(false);
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) { // invisibilizar el menu cuando se haga click fuera de él
+    if (
+      !(event.target == document.getElementById(this.selectSearchId())) && // si NO se hace click en dropdown
+      !(document.getElementById(this.selectSearchId())?.contains(event.target as Node)) // si NO se hace click en hijos del dropdown
+    ) {
+      if (!this.isInvisible()) this.isInvisible.set(true); // invisibilizar opciones
+    }
   }
 
 }

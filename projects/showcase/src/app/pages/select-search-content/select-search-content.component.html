@@ -67,7 +67,7 @@
         </div>
 
         <p class="mb-8 text-secondary-600 text-md">
-          Puedes cambiar el comportamiento del selector con [showOptionsAutomatically] ingresando un boolean.
+          Puedes cambiar el comportamiento del selector con [showOptionsAutomatically] ingresando un boolean. Al estar activado, mostrará las opciones mientras escribes en lugar de mostrar las opciones cuando presionas el botón buscar.
         </p>
 
         <pre>
@@ -98,6 +98,10 @@
                 lineNumbers></code>
         </pre>
 
+        <p class="mb-8 text-secondary-600 text-md">
+          [multisearch] funciona mejor cuando [showOptionsAutomatically]="true", por lo tanto aunque no se indique explícitamente, por defecto showOptionsAutomatically es true cuando multisearch es true.
+        </p>
+
         <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
           <div class="flex-col w-full max-w-sm space-y-4">
 
@@ -106,6 +110,7 @@
               [showOptionsAutomatically]="true"
               (outputMultisearch)="printSearch($event)"
               [multisearch]="true"
+              [showAfterClick]="true"
             />
 
           </div>
@@ -168,7 +173,7 @@
         </div>
 
         <p class="mb-8 text-secondary-600 text-md">
-          Puedes cambiar el comportamiento del selector con [showOptionsAutomatically] ingresando un boolean.
+          Puedes cambiar el comportamiento del selector con [showOptionsAutomatically] ingresando un boolean.  Al estar activado, mostrará las opciones mientras escribes en lugar de mostrar las opciones cuando presionas el botón buscar.
         </p>
 
         <pre>
