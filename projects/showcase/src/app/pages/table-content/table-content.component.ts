@@ -215,4 +215,8 @@ export class TableContentComponent {
     {key: 'ID USUARIO', format: 'number'},
   ];
 
+  CCOLAB_filtroColumnas: string[] = [
+    'COMPAÑIA', 'NOMBRE', 'EMAIL', 'TIPO DE INDUSTRIA', 'PRESUPUESTO'
+  ];
+
 }

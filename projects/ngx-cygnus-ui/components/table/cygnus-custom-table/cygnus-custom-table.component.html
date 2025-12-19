@@ -2,13 +2,32 @@
   <div class="flex flex-col w-full">
 
     <div class="flex flex-wrap items-center justify-between py-4 space-y-4 bg-white flex-column md:flex-row md:space-y-0">
-      <div style="width: 8rem;"><!-- Selector de documentos por página -->
-        <cygnus-select
-          [options]="docsPerPage"
-          (isSelected)="documentsPerPage.set(+$event); showContent();"
-          [selSize]="''"
-          [selAutoWidth]="true"
-        />
+      <div class="flex items-center">
+        <div style="width: 9.5rem;" ><!-- Selector de documentos por página -->
+          <cygnus-select
+            [options]="docsPerPage"
+            (isSelected)="documentsPerPage.set(+$event); showContent();"
+            [selSize]="''"
+          />
+        </div>
+        @if (filtroColumnas().length > 0) {
+          @if (!toggleFiltroCol()) {
+            <lib-ngx-cygnus-icons class="ml-2"
+              [size]="'xl'"
+              [textColor]="'mediumgray'"
+              [textRoute]="'eye-off'"
+              (click)="setToggleFiltroCol()"
+            />
+          } @else {
+            <lib-ngx-cygnus-icons class="ml-2"
+              [size]="'xl'"
+              [textColor]="'mediumgray'"
+              [textRoute]="'eye'"
+              (click)="setToggleFiltroCol()"
+            />
+          }
+
+        }
       </div>
       @if (showSearch()) {
       <div class="relative min-w-xs scroll-me-0">

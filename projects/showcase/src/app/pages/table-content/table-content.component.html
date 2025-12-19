@@ -261,4 +261,47 @@
     </div>
   </section>
 
+  <!-- cygnus-custom-table filtrar columnas -->
+  <section id="cygnus-custom-table-badge">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table Filtrar Columnas</h2>
+        <p class="mb-8 text-secondary-600 text-md">A veces una tabla puede tener muchísimas columnas y nos interesa visualizar solo algunas de ellas. Para eso debemos entregarle a la tabla un arreglo de strings donde cada string corresponda a un key de la columna de la tabla que se quiera mostrar. Las demás columnas se ignorarán al renderizar la vista.</p>
+
+        <pre>
+          <code [highlight]="customTableCOMPANY_COLAB"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>"COMPANY_COLAB" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
+        <p>[badgeKey] aquí debes indicar en un objeto cuál key del JSON corresponde a la información que se transformará en badge y qué valores del key se deben pintar en determinado estilo: stateActive se pinta de verde, stateWarning se pinta de amarillo y stateError se pinta de rojo. Está pensado para que sólo una columna de la tabla pueda contener un badge.</p>
+
+        <pre>
+          <code [highlight]="codeBadgeKey"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <br>
+
+        <!-- COMPONENTE: cygnus-custom-table -->
+        @if (COMPANY_COLAB) {
+          <cygnus-custom-table
+            [dataTable]="COMPANY_COLAB"
+            [tableType]="'stripped-hover'"
+            [badgeKey]="badgeKey"
+            [showSearch]="true"
+            [tdFormatKeysArr]="tdFormatKeysArr"
+            [filtroColumnas]="CCOLAB_filtroColumnas"
+          />
+        }
+
+      </div>
+
+    </div>
+  </section>
+
 </main>

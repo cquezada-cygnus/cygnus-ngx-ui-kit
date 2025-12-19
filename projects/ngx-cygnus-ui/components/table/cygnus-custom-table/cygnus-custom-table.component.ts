@@ -1,4 +1,4 @@
-import { Component, input, OnInit, output, signal } from '@angular/core';
+import { Component, effect, input, OnInit, output, signal } from '@angular/core';
 import { TW_CLASS } from '../const/tailwind.const';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
@@ -71,12 +71,29 @@ export class CygnusCustomTableComponent implements OnInit {
 
   showSearch = input<boolean>(false);
 
+  filtroColumnas = input<string[]>([]);
+  toggleFiltroCol = signal<boolean>(true);
+
+
   ngOnInit(): void {
     this.showDataTable.set(this.dataTable());
-    this.setColumnsHead();
+    if (this.filtroColumnas().length == 0) { // si no hay filtroColumnas, mostrar todas las columnas
+      this.setColumnsHead();
+    } else { // si hay filtroColumnas, mostrar solo las columnas indicadas
+      this.setFilterColumnsHead();
+    }
 
     if (this.dataTable().length>0) { // si hay documentos, mostrarlos
       this.showContent();
+    }
+  }
+
+  setToggleFiltroCol() {
+    this.toggleFiltroCol.update( value => !value );
+    if (this.toggleFiltroCol()) {
+      this.setFilterColumnsHead();
+    } else {
+      this.setColumnsHead();
     }
   }
 
@@ -91,8 +108,6 @@ export class CygnusCustomTableComponent implements OnInit {
     }
     return '';
   }
-
-
 
   getKeyOfSelOption(key: string, item: any): string {
     this.options = [];
@@ -173,8 +188,23 @@ export class CygnusCustomTableComponent implements OnInit {
   }
 
   setColumnsHead() {
+    this.columnsHead.set([]);
     for (const key in this.showDataTable()[0]) {
-      this.columnsHead.update(currentItems => [...currentItems, key]);
+      if (!key.toUpperCase().includes('isHover'.toUpperCase())) { // 'isHover' se utiliza para manejar los eventos (mouseenter) y (mouseleave), no forma parte de los datos de la tabla.
+        this.columnsHead.update(currentItems => [...currentItems, key]);
+      }
+    }
+  }
+
+  setFilterColumnsHead() {
+    this.columnsHead.set([]);
+    for (const key in this.showDataTable()[0]) {
+      if (!key.toUpperCase().includes('isHover'.toUpperCase())) { // 'isHover' se utiliza para manejar los eventos (mouseenter) y (mouseleave), no forma parte de los datos de la tabla.
+        const column = this.filtroColumnas().find(item => item.includes(key));
+        if (column && key.toUpperCase().includes(column.toUpperCase()) ) {
+          this.columnsHead.update(currentItems => [...currentItems, key]);
+        }
+      }
     }
   }
 
