@@ -79,6 +79,12 @@ export class SelectContentComponent {
     <cygnus-select [options]="options" />
   `;
 
+  cygnusSelWidthHtml: string = `
+    <div style="width: 8rem;">
+      <cygnus-select [options]="options" />
+    </div>
+  `;
+
   cygnusSelSizeHtml: string = `
     <!-- COMPONENTE: Selector XS -->
     <cygnus-select [options]="options" [selSize]="'xs'" />

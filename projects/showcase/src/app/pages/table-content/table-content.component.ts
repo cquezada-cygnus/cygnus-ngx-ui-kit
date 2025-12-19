@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SelectCollection, TableBadge } from 'ngx-cygnus-ui/interfaces';
+import { SelectCollection, TableBadge, TdFormat } from 'ngx-cygnus-ui/interfaces';
 import { CygnusCustomTableComponent } from 'ngx-cygnus-ui/components/table';
 import * as CLIENTES from '../../../json/CLIENTES.json';
 import * as EMPRESAS from '../../../json/EMPRESAS.json';
@@ -203,6 +203,16 @@ export class TableContentComponent {
 
   empresasSelectArr:SelectCollection[]  = [
     {key:'CLIENTES', keyItems: ['NOMBRES', 'APELLIDOS', 'EMAIL']}
+  ];
+
+  tdFormatKeysArr: TdFormat[] = [
+    {key: 'PRESUPUESTO', format: 'money'},
+    {key: 'RUT', format: 'rut'},
+    {key: 'emp_autoid', format: 'number'},
+    {key: 'id', format: 'number'},
+    {key: 'cli_autoid', format: 'number'},
+    {key: 'TELEFONO', format: 'number'},
+    {key: 'ID USUARIO', format: 'number'},
   ];
 
 }

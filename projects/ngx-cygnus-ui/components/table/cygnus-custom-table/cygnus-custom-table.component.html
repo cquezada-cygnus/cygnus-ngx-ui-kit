@@ -2,7 +2,7 @@
   <div class="flex flex-col w-full">
 
     <div class="flex flex-wrap items-center justify-between py-4 space-y-4 bg-white flex-column md:flex-row md:space-y-0">
-      <div><!-- Selector de documentos por página -->
+      <div style="width: 8rem;"><!-- Selector de documentos por página -->
         <cygnus-select
           [options]="docsPerPage"
           (isSelected)="documentsPerPage.set(+$event); showContent();"
@@ -66,6 +66,7 @@
                           <td
                             [class]="
                               TW_CLASS.TABLE_TD + ' ' +
+                              (shouldAlignRight(key) ? 'text-right' : '') + ' ' +
                               (((tableType()==='stripped' || tableType()==='stripped-hover' || tableType()==='double') && !isEven) ? (((tableType()==='stripped-hover' || tableType()==='double') && item.isHover )?  TW_CLASS.TABLE_HOVER_STRIPPED : TW_CLASS.TABLE_STRIPPED) : '')
                             "
                           >
@@ -106,7 +107,22 @@
                                 </div>
 
                               } @else {
-                                {{item[key]}}
+
+                                @if (shouldApplyFormat(key)==='rut') {
+                                  {{ item[key] | rutFormat }}
+                                }
+
+                                @else if (shouldApplyFormat(key)==='money') {
+                                  {{ item[key] | currency:'CLP':'symbol':'1.0-0':'es-CL' }}
+                                }
+
+                                @else if (shouldApplyFormat(key)==='money') {
+                                  {{ item[key] | number }}
+                                }
+
+                                @else {
+                                  {{item[key]}}
+                                }
 
                               }
 

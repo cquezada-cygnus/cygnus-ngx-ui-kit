@@ -7,8 +7,10 @@ import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { TableType } from 'ngx-cygnus-ui/types';
-import { SelectCollection, SelectGeneric, TableBadge } from 'ngx-cygnus-ui/interfaces';
+import { SelectCollection, SelectGeneric, TableBadge, TdFormat } from 'ngx-cygnus-ui/interfaces';
 import { CygnusSearchSelectComponent } from "ngx-cygnus-ui/components/search-select";
+import { RutFormatPipe } from 'ngx-cygnus-ui/pipes';
+import { CurrencyPipe, DecimalPipe } from '@angular/common';
 
 
 @Component({
@@ -21,6 +23,9 @@ import { CygnusSearchSelectComponent } from "ngx-cygnus-ui/components/search-sel
     CygnusInputComponent,
     CygnusSelectComponent,
     CygnusSearchSelectComponent,
+    RutFormatPipe,
+    CurrencyPipe,
+    DecimalPipe,
 ],
   templateUrl: './cygnus-custom-table.component.html',
 })
@@ -55,6 +60,8 @@ export class CygnusCustomTableComponent implements OnInit {
   selectKeyArr = input<SelectCollection[]>([]);
   options: SelectGeneric[] = [];
 
+  tdFormatKeysArr = input<TdFormat[]>([]);
+
   docsPerPage: SelectGeneric[] = [
     {option: '5 documentos', value: 5},
     {option: '10 documentos', value: 10},
@@ -72,6 +79,20 @@ export class CygnusCustomTableComponent implements OnInit {
       this.showContent();
     }
   }
+
+  shouldAlignRight(key: string): boolean {
+    return this.tdFormatKeysArr().some(item => item.key.toUpperCase().includes(key.toUpperCase()));
+  }
+
+  shouldApplyFormat(key: string): string {
+    const tdFormatObj: TdFormat | undefined = this.tdFormatKeysArr().find(item => item.key.toUpperCase().includes(key.toUpperCase()));
+    if (tdFormatObj) {
+      return tdFormatObj.format;
+    }
+    return '';
+  }
+
+
 
   getKeyOfSelOption(key: string, item: any): string {
     this.options = [];

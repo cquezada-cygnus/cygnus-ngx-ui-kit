@@ -71,6 +71,7 @@
             [dataTable]="CLIENTES"
             [tableType]="'stripped-hover'"
             [showSearch]="false"
+            [tdFormatKeysArr]="tdFormatKeysArr"
           />
         }
 
@@ -106,6 +107,7 @@
             [doubleKeyUp2]="'APELLIDOS'"
             [doubleKeydown]="'EMAIL'"
             [showSearch]="true"
+            [tdFormatKeysArr]="tdFormatKeysArr"
           />
         }
 
@@ -156,6 +158,7 @@
             [tdEditArr]="empresasEditArr"
             (emitModifiedData)="showEditedData($event)"
             [showSearch]="false"
+            [tdFormatKeysArr]="tdFormatKeysArr"
           />
         }
 
@@ -197,6 +200,7 @@
             [tableType]="'stripped-hover'"
             [badgeKey]="badgeKey"
             [showSearch]="true"
+            [tdFormatKeysArr]="tdFormatKeysArr"
           />
         }
 
@@ -248,6 +252,7 @@
             [tableType]="'stripped-hover'"
             [selectKeyArr]="empresasSelectArr"
             [showSearch]="true"
+            [tdFormatKeysArr]="tdFormatKeysArr"
           />
         }
 

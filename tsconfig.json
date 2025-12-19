@@ -198,6 +198,12 @@
       ],
       "ngx-cygnus-ui/directives": [
         "./projects/ngx-cygnus-ui/directives",
+      ],
+       "ngx-cygnus-ui/pipes/*": [
+        "./projects/ngx-cygnus-ui/pipes/*",
+      ],
+      "ngx-cygnus-ui/pipes": [
+        "./projects/ngx-cygnus-ui/pipes",
       ]
     },
     "skipLibCheck": true,
