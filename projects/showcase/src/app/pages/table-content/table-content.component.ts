@@ -27,6 +27,7 @@ export class TableContentComponent {
         [dataTable]="CLIENTES"
         [tableType]="'stripped-hover'"
         [showSearch]="false"
+        [tdFormatKeysArr]="tdFormatKeysArr"
       />
     }
   `;
@@ -40,6 +41,7 @@ export class TableContentComponent {
         [doubleKeyUp2]="'APELLIDOS'"
         [doubleKeydown]="'EMAIL'"
         [showSearch]="true"
+        [tdFormatKeysArr]="tdFormatKeysArr"
       />
     }
   `;
@@ -52,6 +54,7 @@ export class TableContentComponent {
         [tdEditArr]="empresasEditArr"
         (emitModifiedData)="showEditedData($event)"
         [showSearch]="false"
+        [tdFormatKeysArr]="tdFormatKeysArr"
       />
     }
   `;
@@ -74,8 +77,9 @@ export class TableContentComponent {
       <cygnus-custom-table
         [dataTable]="COMPANY_COLAB"
         [tableType]="'stripped-hover'"
-        [badgeKey]="badgeKey"
         [showSearch]="true"
+        [tdFormatKeysArr]="tdFormatKeysArr"
+        [filtroColumnas]="CCOLAB_filtroColumnas"
       />
     }
   `;
@@ -96,6 +100,7 @@ export class TableContentComponent {
         [tableType]="'stripped-hover'"
         [selectKeyArr]="empresasSelectArr"
         [showSearch]="true"
+        [tdFormatKeysArr]="tdFormatKeysArr"
       />
     }
   `;
@@ -179,6 +184,35 @@ export class TableContentComponent {
     export class AppComponentComponent {
       EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
     }
+  `;
+
+  tdFormatKeysArrTs: string = `
+    tdFormatKeysArr: TdFormat[] = [
+      {key: 'PRESUPUESTO', format: 'money'},
+      {key: 'RUT', format: 'rut'},
+      {key: 'emp_autoid', format: 'number'},
+      {key: 'id', format: 'number'},
+      {key: 'cli_autoid', format: 'number'},
+      {key: 'TELEFONO', format: 'number'},
+      {key: 'ID USUARIO', format: 'number'},
+    ];
+  `;
+
+  tdFormatTs: string = `
+    export interface TdFormat {
+      key: string,
+      format: TdFormatType
+    }
+  `;
+
+  TdFormatTypeTs: string = `
+    export type TdFormatType = "number" | "money" | "rut";
+  `;
+
+  customTablefiltroColumnas: string = `
+    CCOLAB_filtroColumnas: string[] = [
+      'COMPAÑIA', 'NOMBRE', 'EMAIL', 'TIPO DE INDUSTRIA', 'PRESUPUESTO'
+    ];
   `;
 
   CLIENTES = JSON.parse(JSON.stringify(CLIENTES)).default;

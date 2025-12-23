@@ -52,7 +52,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table simple</h2>
-        <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla.</p>
+        <p class="mb-8 text-secondary-600 text-md"><b>[dataTable]</b> recibe cualquier tipo de JSON y lo renderiza en una tabla.</p>
 
         <pre>
           <code [highlight]="customTableCLIENTES"
@@ -60,10 +60,29 @@
                 lineNumbers></code>
         </pre>
 
-        <p>"CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
-        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
-        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>"CLIENTES"</b> corresponde a un JSON con los datos que se van a mostrar. En <b>[dataTable]</b> se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p><b>'stripped-hover'</b> es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar. En <b>[tableType]</b> se debe entregar el tipo de tabla.</p>
+        <p><b>[showSearch]</b> se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[tdFormatKeysArr]</b> Se utiliza cuando uno quiere dar un formato específico a ciertos números que pueden ser rut, dinero o números. Se debe entregar un arreglo de objetos de tipo <b>TdFormat</b> donde cada key corresponde al nombre de la columna donde habrá algún tipo de número y cada <b>format</b> corresponde al tipo de formato que se utilizará. </p>
         <br>
+
+        <pre>
+          <code [highlight]="tdFormatKeysArrTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="tdFormatTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="TdFormatTypeTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
         <!-- COMPONENTE: cygnus-custom-table -->
         @if (CLIENTES) {
@@ -85,7 +104,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table double</h2>
-        <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla. 'double' indica que un casillero de la tabla tiene doble dato.</p>
+        <p class="mb-8 text-secondary-600 text-md"><b>[dataTable]</b> Recibe cualquier tipo de JSON y lo renderiza en una tabla. <b>'double'</b> indica que un casillero de la tabla tiene doble dato.</p>
 
         <pre>
           <code [highlight]="customTableCLIENTESDoubleSearch"
@@ -93,9 +112,10 @@
                 lineNumbers></code>
         </pre>
 
-        <p>"CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
-        <p>'double' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Double se refiere a que habrán elementos en la tabla que se fusionarán en el mismo td. Para saber cuáles elementos se van a fusionar, debes indicar qué keys del JSON se van a fusionar utilizando [doubleKeyUp1] (se posiciona el contenido de la llave arriba a la izquierda), [doubleKeyUp2] (se posiciona el contenido de la llave arriba a la derecha) y [doubleKeydown] (se posiciona el contenido de la llave abajo). Está diseñado para posicionar el nombre, apellido y correo.</p>
-        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>"CLIENTES"</b> corresponde a un JSON con los datos que se van a mostrar. En <b>[dataTable]</b> se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p><b>'double'</b> es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Double se refiere a que habrán elementos en la tabla que se fusionarán en el mismo td. Para saber cuáles elementos se van a fusionar, debes indicar qué keys del JSON se van a fusionar utilizando <b>[doubleKeyUp1]</b> (se posiciona el contenido de la llave arriba a la izquierda), <b>[doubleKeyUp2]</b> (se posiciona el contenido de la llave arriba a la derecha) y <b>[doubleKeydown]</b> (se posiciona el contenido de la llave abajo). Está diseñado para posicionar el nombre, apellido y correo.</p>
+        <p><b>[showSearch]</b> se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[tdFormatKeysArr]</b> Se utiliza cuando uno quiere dar un formato específico a ciertos números que pueden ser rut, dinero o números. Se debe entregar un arreglo de objetos de tipo <b>TdFormat</b> donde cada key corresponde al nombre de la columna donde habrá algún tipo de número y cada <b>format</b> corresponde al tipo de formato que se utilizará. </p>
         <br>
 
         <!-- COMPONENTE: cygnus-custom-table -->
@@ -121,7 +141,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table can edit</h2>
-        <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla. Al presionar editar, te permite modificar las partes que indiques y envia los cambios para que los puedas guardar.</p>
+        <p class="mb-8 text-secondary-600 text-md"><b>[dataTable]</b> recibe cualquier tipo de JSON y lo renderiza en una tabla. Al presionar editar, te permite modificar las partes que indiques y envia los cambios para que los puedas guardar.</p>
 
         <pre>
           <code [highlight]="customTableEMPRESAS"
@@ -129,9 +149,10 @@
                 lineNumbers></code>
         </pre>
 
-        <p>"EMPRESAS" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
-        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
-        <p>[tdEditArr] cuando se encuentra implementado se utiliza para indicar qué elementos de la tabla se pueden editar. Debes entregar un arreglo que contenga strings que correspondan a las keys del JSON que quieres que se puedan editar. Al presionar el link "editar" en la última columna, aparece el modo edición del documento para los elementos que se indicó que se pueden editar.</p>
+        <p><b>"EMPRESAS"</b> corresponde a un JSON con los datos que se van a mostrar. En <b>[dataTable]</b> se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p><b>'stripped-hover'</b> es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar. En <b>[tableType]</b> se debe entregar el tipo de tabla.</p>
+        <p><b>[tdEditArr]</b> cuando se encuentra implementado se utiliza para indicar qué elementos de la tabla se pueden editar. Debes entregar un arreglo que contenga strings que correspondan a las keys del JSON que quieres que se puedan editar. Al presionar el link "editar" en la última columna, aparece el modo edición del documento para los elementos que se indicó que se pueden editar.</p>
+        <p>'NOMBRE DE FANTASIA', 'EMAIL' y 'DIRECCION' corresponden a los nombres de las columnas que serán editables.</p>
 
         <pre>
           <code [highlight]="codeEmpresasEditArr"
@@ -139,7 +160,7 @@
                 lineNumbers></code>
         </pre>
 
-        <p>(emitModifiedData) es un evento que entrega el resultado de la edición del documento de la tabla. Contiene el elemento original y el resultado de la edición.</p>
+        <p><b>(emitModifiedData)</b> es un evento que entrega el resultado de la edición del documento de la tabla. Contiene el elemento original y el resultado de la edición.</p>
 
         <pre>
           <code [highlight]="eventEmitModifiedData"
@@ -147,7 +168,8 @@
                 lineNumbers></code>
         </pre>
 
-        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[showSearch]</b> se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[tdFormatKeysArr]</b> Se utiliza cuando uno quiere dar un formato específico a ciertos números que pueden ser rut, dinero o números. Se debe entregar un arreglo de objetos de tipo <b>TdFormat</b> donde cada key corresponde al nombre de la columna donde habrá algún tipo de número y cada <b>format</b> corresponde al tipo de formato que se utilizará. </p>
         <br>
 
         <!-- COMPONENTE: cygnus-custom-table -->
@@ -172,7 +194,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table badge</h2>
-        <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla. Se indica pintar como badge los estados.</p>
+        <p class="mb-8 text-secondary-600 text-md"><b>[dataTable]</b> recibe cualquier tipo de JSON y lo renderiza en una tabla. Se indica pintar como badge los estados.</p>
 
         <pre>
           <code [highlight]="customTableCOMPANY_COLAB"
@@ -180,9 +202,9 @@
                 lineNumbers></code>
         </pre>
 
-        <p>"COMPANY_COLAB" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
-        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
-        <p>[badgeKey] aquí debes indicar en un objeto cuál key del JSON corresponde a la información que se transformará en badge y qué valores del key se deben pintar en determinado estilo: stateActive se pinta de verde, stateWarning se pinta de amarillo y stateError se pinta de rojo. Está pensado para que sólo una columna de la tabla pueda contener un badge.</p>
+        <p><b>"COMPANY_COLAB"</b> corresponde a un JSON con los datos que se van a mostrar. En <b>[dataTable]</b> se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p><b>'stripped-hover'</b> es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar. En <b>[tableType]</b> se debe entregar el tipo de tabla.</p>
+        <p><b>[badgeKey]</b> aquí debes indicar en un objeto cuál key del JSON corresponde a la información que se transformará en badge y qué valores del key se deben pintar en determinado estilo: <b>stateActive</b> se pinta de verde, <b>stateWarning</b> se pinta de amarillo y <b>stateError</b> se pinta de rojo. Está pensado para que sólo una columna de la tabla pueda contener un badge.</p>
 
         <pre>
           <code [highlight]="codeBadgeKey"
@@ -191,6 +213,7 @@
         </pre>
 
         <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[tdFormatKeysArr]</b> Se utiliza cuando uno quiere dar un formato específico a ciertos números que pueden ser rut, dinero o números. Se debe entregar un arreglo de objetos de tipo <b>TdFormat</b> donde cada key corresponde al nombre de la columna donde habrá algún tipo de número y cada <b>format</b> corresponde al tipo de formato que se utilizará. </p>
         <br>
 
         <!-- COMPONENTE: cygnus-custom-table -->
@@ -214,7 +237,7 @@
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table select</h2>
-        <p class="mb-8 text-secondary-600 text-md">Tabla recibe cualquier tipo de JSON y lo renderiza en una tabla. Se indica pintar como select listado de keys de la tabla.</p>
+        <p class="mb-8 text-secondary-600 text-md"><b>[dataTable]</b> recibe cualquier tipo de JSON y lo renderiza en una tabla. Se indica pintar como select listado de keys de la tabla.</p>
 
         <pre>
           <code [highlight]="customTableEMPRESAS_CLIENTES"
@@ -222,9 +245,9 @@
                 lineNumbers></code>
         </pre>
 
-        <p>"EMPRESAS_CLIENTES" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
-        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
-        <p>[selectKeyArr] al ser implementado tomará las keys indicadas para mostrarlas en el JSON con un selector y entre las opciones mostrará la lista que contenga esa llave del JSON.</p>
+        <p><b>"EMPRESAS_CLIENTES"</b> corresponde a un JSON con los datos que se van a mostrar. En <b>[dataTable]</b> se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p><b>'stripped-hover'</b> es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar. En <b>[tableType]</b> se debe entregar el tipo de tabla.</p>
+        <p><b>[selectKeyArr]</b> al ser implementado tomará las keys indicadas para mostrarlas en el JSON con un selector y entre las opciones mostrará la lista que contenga esa llave del JSON.</p>
 
         <pre>
           <code [highlight]="codeEmpresasSelectArr"
@@ -240,9 +263,10 @@
                 lineNumbers></code>
         </pre>
 
-        <p>Para mostrar las opciones de forma más compacta y simple, en keyItems se indica un array con strings que indican las llaves de, en este caso CLIENTES que se mostrarán en el texto de las opciones, pero por dentro al elegir la opción se indica el objeto del JSON completo.</p>
+        <p>Para mostrar las opciones de forma más compacta y simple, en keyItems se indica un array con strings que indican las llaves que se mostrarán en el texto de las opciones, pero por dentro al elegir la opción se indica el objeto del JSON completo.</p>
 
-        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[showSearch]</b> se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[tdFormatKeysArr]</b> Se utiliza cuando uno quiere dar un formato específico a ciertos números que pueden ser rut, dinero o números. Se debe entregar un arreglo de objetos de tipo <b>TdFormat</b> donde cada key corresponde al nombre de la columna donde habrá algún tipo de número y cada <b>format</b> corresponde al tipo de formato que se utilizará. </p>
         <br>
 
         <!-- COMPONENTE: cygnus-custom-table -->
@@ -262,7 +286,7 @@
   </section>
 
   <!-- cygnus-custom-table filtrar columnas -->
-  <section id="cygnus-custom-table-badge">
+  <section id="cygnus-custom-table-filter">
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table Filtrar Columnas</h2>
@@ -274,25 +298,24 @@
                 lineNumbers></code>
         </pre>
 
-        <p>"COMPANY_COLAB" corresponde a un JSON con los datos que se van a mostrar. En [dataTable] se deben entregar los datos que se quieren visualizar en la tabla. </p>
-        <p>'stripped-hover' es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar.</p>
-        <p>[badgeKey] aquí debes indicar en un objeto cuál key del JSON corresponde a la información que se transformará en badge y qué valores del key se deben pintar en determinado estilo: stateActive se pinta de verde, stateWarning se pinta de amarillo y stateError se pinta de rojo. Está pensado para que sólo una columna de la tabla pueda contener un badge.</p>
+        <p><b>"COMPANY_COLAB"</b> corresponde a un JSON con los datos que se van a mostrar. En <b>[dataTable]</b> se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p><b>'stripped-hover'</b> es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar. En <b>[tableType]</b> se debe entregar el tipo de tabla.</p>
+        <p><b>[showSearch]</b> se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[tdFormatKeysArr]</b> Se utiliza cuando uno quiere dar un formato específico a ciertos números que pueden ser rut, dinero o números. Se debe entregar un arreglo de objetos de tipo <b>TdFormat</b> donde cada key corresponde al nombre de la columna donde habrá algún tipo de número y cada <b>format</b> corresponde al tipo de formato que se utilizará. </p>
+        <p><b>[filtroColumnas]</b> se utiliza para indicar qué columnas se van a mostrar para ocultar todas las demás. Si está configurado, aparecerá un ícono de ojo en la tabla, el cual es un toggle que permitirá mostrar todo o mostrar sólo las columnas seleccionadas en filtroColumnas al hacerle click. Debes entregarle un arreglo de strings donde los strings correspondan a las llaves de las columnas que quieras mostrar.</p>
+        <br>
 
         <pre>
-          <code [highlight]="codeBadgeKey"
+          <code [highlight]="customTablefiltroColumnas"
                 language="ts"
                 lineNumbers></code>
         </pre>
-
-        <p>[showSearch] se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
-        <br>
 
         <!-- COMPONENTE: cygnus-custom-table -->
         @if (COMPANY_COLAB) {
           <cygnus-custom-table
             [dataTable]="COMPANY_COLAB"
             [tableType]="'stripped-hover'"
-            [badgeKey]="badgeKey"
             [showSearch]="true"
             [tdFormatKeysArr]="tdFormatKeysArr"
             [filtroColumnas]="CCOLAB_filtroColumnas"
