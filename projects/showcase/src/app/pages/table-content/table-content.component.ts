@@ -217,7 +217,91 @@ export class TableContentComponent {
   `;
 
   customTableMultisearch: string = `
-    .............
+    @if (PRUEBA_MULTIB) {
+      <cygnus-custom-table
+        [dataTable]="PRUEBA_MULTIB"
+        [tableType]="'stripped-hover'"
+        [showSearch]="true"
+        [tdFormatKeysArr]="tdFormatKeysArr"
+        [multiSearch]="true"
+      />
+    }
+  `;
+
+  PRUEBA_MULTIB_ts: string = `
+    import { Component } from '@angular/core';
+    import { SelectCollection, TableBadge, TdFormat } from 'ngx-cygnus-ui/interfaces';
+    import { CygnusCustomTableComponent } from 'ngx-cygnus-ui/components/table';
+    ...
+    import * as PRUEBA_MULTIB from '../../../json/JSONPRUEBA.json';
+
+    @Component({
+      selector: 'app-table-content',
+      imports: [
+        CygnusCustomTableComponent,
+        Highlight, HighlightLineNumbers,
+      ],
+      templateUrl: './table-content.component.html',
+      styleUrl: './table-content.component.scss',
+    })
+    export class TableContentComponent {
+      ...
+
+      PRUEBA_MULTIB = JSON.parse(JSON.stringify(PRUEBA_MULTIB)).default.Table;
+
+    }
+  `;
+
+  PRUEBA_MULTIB_json: string = `
+    {
+      "Table": [
+        {
+          "TIPO_REQ": "EST",
+          "ID_REQ": 192466,
+          "FOLIO_REQ": 312707,
+          "FECHA_ENVIO": "14/04/2025",
+          "EMPRESA": "OPRO",
+          "CUENTA": "COMERCIAL CASTRO",
+          "DESC_CARGO": "PREPARADOR DE PEDIDO",
+          "CANTIDAD_SOLICITADOS": 1.0,
+          "CANTIDAD_ASIGNADA": 0,
+          "DESC_CCOSTO": "REGION METROPOLITANA",
+          "LUGAR_TRABAJO_UI": "Vista Alegre 2403, Cerrillos",
+          "LUGAR_TRABAJO": "Vista Alegre 2403, Cerrillos",
+          "FECHA_INICIO": "14/04/2025",
+          "FECHA_TERMINO": "12/07/2025",
+          "JORNADA": "44HS5D",
+          "HORARIO": "Lunes a Viernes de 07:00 a 17:00 con 60 minutos de colación.",
+          "COMUNA": "0333",
+          "GENERO": null,
+          "MOTIVO": "AUMENTOS OCASIONALES",
+          "OBSERVACIONES": "",
+          "OBSERVACION_CURRICULAR": "&nbsp;",
+          "ResponsableNombre": "FRANCISCO JOSE JAQUEIH ARTUS",
+          "ESTADO": "FEEDBACK",
+          "DIAS_RESTANTES": -253,
+          "SEMAFORO": "sem-rojo",
+          "COD_CLIENTE": "770386209",
+          "CLIENTE": "COMERCIAL CASTRO",
+          "COD_CUENTA": "EST_CAST",
+          "COD_CCOSTO": "0001",
+          "COD_CARGO": "0367",
+          "CANTIDAD_ACEPTADOS": 0,
+          "CANTIDAD_RECHAZADOS": 0,
+          "LIQUIDO_ESTIMADO": 612000.0,
+          "TURNO": "",
+          "EXPERIENCIA": "",
+          "LEY21015": "",
+          "DESC_MOTIVO": "Refuerzo del equipo del CD",
+          "lugares_trabajo": "",
+          "ResponsableUsrId": "64838",
+          "EstadoNombre": "FEEDBACK",
+          "EstadoId": null
+        },
+        ...
+        ...
+      ]
+    }
   `;
 
   CLIENTES = JSON.parse(JSON.stringify(CLIENTES)).default;
