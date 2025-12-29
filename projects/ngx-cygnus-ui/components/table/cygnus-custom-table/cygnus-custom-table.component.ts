@@ -88,37 +88,7 @@ export class CygnusCustomTableComponent implements OnInit {
     if (this.dataTable().length>0) { // si hay documentos, mostrarlos
       this.showContent();
     }
-
-    // multisearch opciones
-    // if (this.multiSearch()) {
-    //   this.dataTable().forEach(elem => {
-    //     if (!this.multiOptId.some(op => op?.option?.toString().toUpperCase().includes(elem[this.multiSearch()!.column_id].toString().toUpperCase()))) {
-    //       this.multiOptId.push({option: elem[this.multiSearch()!.column_id], value: elem[this.multiSearch()!.column_id]});
-    //     }
-    //     if (!this.multiOptX.some(op => op?.option?.toUpperCase().includes(elem[this.multiSearch()!.column_x].toUpperCase()))) {
-    //       this.multiOptX.push({option: elem[this.multiSearch()!.column_x], value: elem[this.multiSearch()!.column_x]});
-    //     }
-    //   });
-    // }
   }
-
-  // setMultisearchOptionsDynamically(search:string):SelectGeneric[]  {
-  //   console.log('setMultisearchOptionsDynamically search:',search);
-  //   console.log('setMultisearchOptionsDynamically search:',search);
-  //   if (this.multiOptId.some((op => op.option.toString().toUpperCase().includes(search.toUpperCase())) )) {
-  //     return this.multiOptId;
-  //   } else if ( this.multiOptX.some(op => op.option.toUpperCase().includes(search.toUpperCase())) ) {
-  //   console.log('else if search multiOptX');
-  //     return this.multiOptX;
-  //   }
-  //   return [];
-  // }
-
-  // setItemsArrMultisearch(event: any) {
-  //   console.log('setItemsArrMultisearch event:',event);
-  //   this.multisearchItems.set(this.setMultisearchOptionsDynamically(event[0]));
-  //   console.log('multisearchItems:',this.multisearchItems());
-  // }
 
   setToggleFiltroCol() {
     this.toggleFiltroCol.update( value => !value );
@@ -246,7 +216,21 @@ export class CygnusCustomTableComponent implements OnInit {
     this.multisearchSetOptions();
   }
 
-  printSearch(event: any) {}
+  multiSearchRun(event: SelectCollectOptions) {
+    if (event.selects.length===0) {
+      this.showDataTable.set(this.dataTable());
+    } else {
+      const toShowDataTable:any[] = [];
+      this.dataTable().forEach(item => {
+        event.selects.forEach(select => {
+          if (item[event.key].toString().toUpperCase().includes(select.option.toString().toUpperCase())) {
+            toShowDataTable.push(item);
+          }
+        });
+      });
+      this.showDataTable.set(toShowDataTable);
+    }
+  }
 
   multisearchSetOptions() {
     const updateSelects = this.columnsHeadMultisearch();
@@ -315,33 +299,6 @@ export class CygnusCustomTableComponent implements OnInit {
 
       this.showContent();
     }
-  }
-
-  searchMultiSearch(event: SelectGeneric[]) {
-    console.log('multiSearch:', event);
-    if (event.length==0) { // mostrar la tabla completa si no hay búsqueda
-      this.showDataTable.set(this.dataTable());
-      return;
-    }
-
-    this.showDataTable.set( this.dataTable().filter(item => {
-      // Check if any value in the current object contains the search term
-      return Object.values(item).some(value => {
-        if (typeof value === 'string') {
-          for (const word in event) {
-
-            console.log('searchMultiSearch word:',word);
-
-
-            return value.toLowerCase().includes(word.toLowerCase());
-
-          }
-        }
-        return false; // Ignore non-string values for this search
-      });
-    }) );
-
-    this.showContent();
   }
 
 }

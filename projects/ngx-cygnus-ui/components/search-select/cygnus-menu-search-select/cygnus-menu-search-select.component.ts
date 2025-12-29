@@ -44,7 +44,7 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
 
   multisearch = model<boolean>(false);
   multisearchArr:SelectGeneric[] = [];
-  outputMultisearch = output<SelectGeneric[]>();
+  outputMultisearch = output<SelectCollectOptions>();
 
   ngOnInit() {
     // Generar ID único si no se proporciona
@@ -106,7 +106,7 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
   }
 
   sendSearchMultisearch() {
-    this.outputMultisearch.emit(this.multisearchArr);
+    this.outputMultisearch.emit({key:this.menuSearchText(), selects:this.multisearchArr}); // SelectCollectOptions
   }
 
   sendSearch() {
