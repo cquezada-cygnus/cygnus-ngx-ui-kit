@@ -20,6 +20,9 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
   drowpdownSearchId = signal<string>('');
   drowpdownSearchBtnId = signal<string>('');
 
+  inputSearchId = signal<string>('');
+  inputSearchBtnId = signal<string>('');
+
   TW_CLASS = TW_CLASS;
 
   isInvisible = signal<boolean>(true);
@@ -51,6 +54,9 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
     this.drowpdownSearchId.set(`cg-dropdown-search-${++CygnusMenuSearchSelectComponent.idCounter}`);
     this.drowpdownSearchBtnId.set(`cg-dropdown-search-btn-${++CygnusMenuSearchSelectComponent.idCounter}`);
 
+    this.inputSearchId.set(`cg-input-search-id-${++CygnusMenuSearchSelectComponent.idCounter}`);
+    this.inputSearchBtnId.set(`cg-input-search-btn-${++CygnusMenuSearchSelectComponent.idCounter}`);
+
     this.menuSearchText.set(this.menuSearchDefaultText());
 
     if (this.multisearch()) { // multisearch funciona mejor cuando se muestran automáticamente las opciones mientras se escribe
@@ -76,6 +82,13 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
 
   toggleInvisible() {
     this.isInvisible.set(!this.isInvisible()); // invisibilizar opciones
+  }
+
+  toggleShowMenu() {
+    if (this.filteredItems.length<1) {
+      this.filteredItems = this.items();
+    }
+    this.isInvisibleOptions.update( value => !value ); // invisibilizar opciones
   }
 
   selectMenu(selected: string, index: number) {
@@ -126,6 +139,18 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
       !(document.getElementById(this.drowpdownSearchId())?.contains(event.target as Node)) // si NO se hace click en hijos del dropdown
     ) {
       if (!this.isInvisible()) this.isInvisible.set(true); // invisibilizar opciones
+    }
+
+    if (
+
+        !(event.target == document.getElementById(this.inputSearchId())) && // si NO se hace click en input
+        !(document.getElementById(this.inputSearchId())?.contains(event.target as Node)) // si NO se hace click en hijos del input
+        &&
+        !(event.target == document.getElementById(this.inputSearchBtnId())) && // si NO se hace click en input
+        !(document.getElementById(this.inputSearchBtnId())?.contains(event.target as Node)) // si NO se hace click en hijos del input
+
+    ) {
+      if (!this.isInvisibleOptions()) this.isInvisibleOptions.set(true); // invisibilizar opciones
     }
   }
 

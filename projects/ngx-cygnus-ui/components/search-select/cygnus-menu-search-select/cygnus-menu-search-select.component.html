@@ -24,8 +24,10 @@
     [class]="
       'rounded-none border border-gray-300 bg-white focus:border-primary-700 focus:outline-none focus:ring-primary-700 active:border-primary-700 w-full px-4'
     "
+    [id]="inputSearchId()"
     [placeholder]="placeholder()"
     [formControl]="searchControl"
+    (click)="toggleShowMenu()"
   />
   <button type="submit"
     [class]="
@@ -34,6 +36,7 @@
       TW_CLASS.BTN_PRIMARY + ' ' +
       'flex items-center'
     "
+    [id]="inputSearchBtnId()"
     (click)="sendSearch()"
   >
     <lib-ngx-cygnus-icons class="h-full flex items-center"
