@@ -29,13 +29,21 @@
 
         }
       </div>
-      @if (showSearch()) {
+      @if (showSearch() && !multiSearch()) {
       <div class="relative min-w-xs scroll-me-0">
         <cygnus-search-select
           [typeAutoSearch]="true"
           (outputSearch)="search($event)"
         />
       </div>
+      }
+      @if (showSearch() && multiSearch()) {
+        <cygnus-menu-search-select
+          [menuSearchContentArr]="columnsHeadMultisearch()"
+          [showOptionsAutomatically]="true"
+          (outputMultisearch)="printSearch($event)"
+          [multisearch]="true"
+        />
       }
     </div>
 

@@ -1,15 +1,17 @@
-import { Component, HostListener, input, OnInit, output, signal } from '@angular/core';
+import { Component, HostListener, input, model, OnInit, output, signal } from '@angular/core';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 import { SelectCollectOptions, SelectGeneric } from 'ngx-cygnus-ui/interfaces';
-import { ReactiveFormsModule, FormControl } from '@angular/forms';
-import { debounceTime } from 'rxjs';
+import { CygnusBadgeComponent } from 'ngx-cygnus-ui/components/badge';
 
 @Component({
   selector: 'cygnus-menu-search-select',
   imports: [
     ReactiveFormsModule,
     NgxCygnusIconsComponent,
+    CygnusBadgeComponent,
   ],
   templateUrl: './cygnus-menu-search-select.component.html',
 })
@@ -37,8 +39,12 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
 
   placeholder = input<string>('Buscar...');
 
-  showOptionsAutomatically = input<boolean>(false);
+  showOptionsAutomatically = model<boolean>(false);
   outputSearch = output<string | [string, SelectGeneric]>();
+
+  multisearch = model<boolean>(false);
+  multisearchArr:SelectGeneric[] = [];
+  outputMultisearch = output<SelectGeneric[]>();
 
   ngOnInit() {
     // Generar ID único si no se proporciona
@@ -47,12 +53,16 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
 
     this.menuSearchText.set(this.menuSearchDefaultText());
 
+    if (this.multisearch()) { // multisearch funciona mejor cuando se muestran automáticamente las opciones mientras se escribe
+      this.showOptionsAutomatically.set(true);
+    }
+
     // mostrar opciones según menú seleccionado
     if (this.showOptionsAutomatically()) {
       this.searchControl.valueChanges.pipe(debounceTime(150)).subscribe(value => {
         if (value != '' && value != null && value != undefined && this.itemSelected().option!=value) {
           this.filteredItems = this.items().filter( item =>
-            item.option.toUpperCase().includes(value.toUpperCase())
+            item.option.toString().toUpperCase().includes(value.toUpperCase())
           );
           this.isInvisibleOptions.set(false);
         } else {
@@ -75,9 +85,28 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
   }
 
   setInputSearchAfterChooseOption(item: SelectGeneric) {
-    this.itemSelected.set(item);
-    this.searchControl.patchValue(item.option);
-    this.isInvisibleOptions.set(true);
+    if (this.multisearch()) {
+      const foundSearch: SelectGeneric | undefined = this.multisearchArr.find(itemSearch => itemSearch.option === item.option );
+      if (!foundSearch) { // ver si el elemento ya está en la lista antes de agregarlo otra vez
+        this.multisearchArr.push(item);
+      }
+      this.searchControl.patchValue('');
+      this.isInvisible.set(true);
+      this.sendSearchMultisearch();
+    } else {
+      this.itemSelected.set(item);
+      this.searchControl.patchValue(item.option);
+      this.isInvisibleOptions.set(true);
+    }
+  }
+
+  deleteMultisearchItem(item: SelectGeneric) {
+    this.multisearchArr = this.multisearchArr.filter(s => s !== item);
+    this.sendSearchMultisearch(); // enviar evento para actualizar el multisearch vigente
+  }
+
+  sendSearchMultisearch() {
+    this.outputMultisearch.emit(this.multisearchArr);
   }
 
   sendSearch() {

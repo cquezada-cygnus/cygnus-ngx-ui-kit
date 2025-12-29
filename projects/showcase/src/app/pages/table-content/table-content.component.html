@@ -327,4 +327,41 @@
     </div>
   </section>
 
+  <!-- cygnus-custom-table multisearch -->
+  <section id="cygnus-custom-table-multisearch">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">cygnus-custom-table multisearch</h2>
+        <p class="mb-8 text-secondary-600 text-md"><b>[multisearch]</b> recibe un boolean para indicar que se desea aplicar multibúsqueda, de manera que la búsqueda coincida con alguna de las palabras seleccionadas.</p>
+
+        <pre>
+          <code [highlight]="customTableMultisearch"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <p><b>"CLIENTES"</b> corresponde a un JSON con los datos que se van a mostrar. En <b>[dataTable]</b> se deben entregar los datos que se quieren visualizar en la tabla. </p>
+        <p><b>'stripped-hover'</b> es un tipo de tabla. Se encuentran implementados los siguientes tipos de tabla: "basic", "stripped", "hover", "stripped-hover", "double" y "select". Stripped-hover se refiere a que habrá una franja de color alternada por cada elemento de la tabla, y además al posicionar el mouse sobre algún elemento, éste se va a destacar. En <b>[tableType]</b> se debe entregar el tipo de tabla.</p>
+        <p><b>[showSearch]</b> se utiliza para elegir si se quiere mostrar o no el buscador en la cabecera de la tabla. el buscador busca cualquier string dentro de la tabla y muestra los datos que coinciden automáticamente. Si no hay nada escrito en el buscador, se muestra toda la tabla.</p>
+        <p><b>[tdFormatKeysArr]</b> Se utiliza cuando uno quiere dar un formato específico a ciertos números que pueden ser rut, dinero o números. Se debe entregar un arreglo de objetos de tipo <b>TdFormat</b> donde cada key corresponde al nombre de la columna donde habrá algún tipo de número y cada <b>format</b> corresponde al tipo de formato que se utilizará. </p>
+        <br>
+
+
+
+        <!-- COMPONENTE: cygnus-custom-table -->
+        @if (CLIENTES) {
+          <cygnus-custom-table
+            [dataTable]="PRUEBA_MULTIB"
+            [tableType]="'stripped-hover'"
+            [showSearch]="true"
+            [tdFormatKeysArr]="tdFormatKeysArr"
+            [multiSearch]="true"
+          />
+        }
+
+      </div>
+
+    </div>
+  </section>
+
 </main>

@@ -5,6 +5,7 @@ import * as CLIENTES from '../../../json/CLIENTES.json';
 import * as EMPRESAS from '../../../json/EMPRESAS.json';
 import * as COMPANY_COLAB from '../../../json/COMPANY_COLAB.json';
 import * as EMPRESAS_CLIENTES from '../../../json/EMPRESAS_CLIENTES.json';
+import * as PRUEBA_MULTIB from '../../../json/JSONPRUEBA.json';
 
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
@@ -215,10 +216,15 @@ export class TableContentComponent {
     ];
   `;
 
+  customTableMultisearch: string = `
+    .............
+  `;
+
   CLIENTES = JSON.parse(JSON.stringify(CLIENTES)).default;
   EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
   COMPANY_COLAB = JSON.parse(JSON.stringify(COMPANY_COLAB)).default;
   EMPRESAS_CLIENTES = JSON.parse(JSON.stringify(EMPRESAS_CLIENTES)).default;
+  PRUEBA_MULTIB = JSON.parse(JSON.stringify(PRUEBA_MULTIB)).default.Table;
 
   badgeKey: TableBadge = {
     key: 'ESTADO',

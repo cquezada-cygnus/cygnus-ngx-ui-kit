@@ -7,8 +7,8 @@ import { CygnusPaginationComponent } from 'ngx-cygnus-ui/components/pagination';
 import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
 import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { TableType } from 'ngx-cygnus-ui/types';
-import { SelectCollection, SelectGeneric, TableBadge, TdFormat } from 'ngx-cygnus-ui/interfaces';
-import { CygnusSearchSelectComponent } from "ngx-cygnus-ui/components/search-select";
+import { SelectCollection, SelectGeneric, SelectCollectOptions, TableBadge, TdFormat } from 'ngx-cygnus-ui/interfaces';
+import { CygnusSearchSelectComponent, CygnusMenuSearchSelectComponent } from "ngx-cygnus-ui/components/search-select";
 import { RutFormatPipe } from 'ngx-cygnus-ui/pipes';
 import { CurrencyPipe, DecimalPipe } from '@angular/common';
 
@@ -23,6 +23,7 @@ import { CurrencyPipe, DecimalPipe } from '@angular/common';
     CygnusInputComponent,
     CygnusSelectComponent,
     CygnusSearchSelectComponent,
+    CygnusMenuSearchSelectComponent,
     RutFormatPipe,
     CurrencyPipe,
     DecimalPipe,
@@ -38,6 +39,7 @@ export class CygnusCustomTableComponent implements OnInit {
   showDataTable = signal<any[]>(this.dataTable());
 
   columnsHead = signal<string[]>([]);
+  columnsHeadMultisearch = signal<SelectCollectOptions[]>([]);
   displayedColumns = signal<string[]>([]);
 
   doubleKeyUp1 = input<string>('');
@@ -69,11 +71,11 @@ export class CygnusCustomTableComponent implements OnInit {
     {option: '50 documentos', value: 50},
   ];
 
-  showSearch = input<boolean>(false);
+  showSearch  = input<boolean>(false);
+  multiSearch = input<boolean>(false);
 
   filtroColumnas = input<string[]>([]);
   toggleFiltroCol = signal<boolean>(true);
-
 
   ngOnInit(): void {
     this.showDataTable.set(this.dataTable());
@@ -86,7 +88,37 @@ export class CygnusCustomTableComponent implements OnInit {
     if (this.dataTable().length>0) { // si hay documentos, mostrarlos
       this.showContent();
     }
+
+    // multisearch opciones
+    // if (this.multiSearch()) {
+    //   this.dataTable().forEach(elem => {
+    //     if (!this.multiOptId.some(op => op?.option?.toString().toUpperCase().includes(elem[this.multiSearch()!.column_id].toString().toUpperCase()))) {
+    //       this.multiOptId.push({option: elem[this.multiSearch()!.column_id], value: elem[this.multiSearch()!.column_id]});
+    //     }
+    //     if (!this.multiOptX.some(op => op?.option?.toUpperCase().includes(elem[this.multiSearch()!.column_x].toUpperCase()))) {
+    //       this.multiOptX.push({option: elem[this.multiSearch()!.column_x], value: elem[this.multiSearch()!.column_x]});
+    //     }
+    //   });
+    // }
   }
+
+  // setMultisearchOptionsDynamically(search:string):SelectGeneric[]  {
+  //   console.log('setMultisearchOptionsDynamically search:',search);
+  //   console.log('setMultisearchOptionsDynamically search:',search);
+  //   if (this.multiOptId.some((op => op.option.toString().toUpperCase().includes(search.toUpperCase())) )) {
+  //     return this.multiOptId;
+  //   } else if ( this.multiOptX.some(op => op.option.toUpperCase().includes(search.toUpperCase())) ) {
+  //   console.log('else if search multiOptX');
+  //     return this.multiOptX;
+  //   }
+  //   return [];
+  // }
+
+  // setItemsArrMultisearch(event: any) {
+  //   console.log('setItemsArrMultisearch event:',event);
+  //   this.multisearchItems.set(this.setMultisearchOptionsDynamically(event[0]));
+  //   console.log('multisearchItems:',this.multisearchItems());
+  // }
 
   setToggleFiltroCol() {
     this.toggleFiltroCol.update( value => !value );
@@ -189,23 +221,49 @@ export class CygnusCustomTableComponent implements OnInit {
 
   setColumnsHead() {
     this.columnsHead.set([]);
+    this.columnsHeadMultisearch.set([]);
     for (const key in this.showDataTable()[0]) {
       if (!key.toUpperCase().includes('isHover'.toUpperCase())) { // 'isHover' se utiliza para manejar los eventos (mouseenter) y (mouseleave), no forma parte de los datos de la tabla.
         this.columnsHead.update(currentItems => [...currentItems, key]);
+        this.columnsHeadMultisearch.update(currentItems => [...currentItems, {key:key,selects:[]}]);
       }
     }
+    this.multisearchSetOptions();
   }
 
   setFilterColumnsHead() {
     this.columnsHead.set([]);
+    this.columnsHeadMultisearch.set([]);
     for (const key in this.showDataTable()[0]) {
       if (!key.toUpperCase().includes('isHover'.toUpperCase())) { // 'isHover' se utiliza para manejar los eventos (mouseenter) y (mouseleave), no forma parte de los datos de la tabla.
         const column = this.filtroColumnas().find(item => item.includes(key));
         if (column && key.toUpperCase().includes(column.toUpperCase()) ) {
           this.columnsHead.update(currentItems => [...currentItems, key]);
+          this.columnsHeadMultisearch.update(currentItems => [...currentItems, {key:key,selects:[]}]);
         }
       }
     }
+    this.multisearchSetOptions();
+  }
+
+  printSearch(event: any) {}
+
+  multisearchSetOptions() {
+    const updateSelects = this.columnsHeadMultisearch();
+
+    updateSelects.forEach(US => {
+      const key = US['key'];
+      this.showDataTable().forEach(elem => {
+
+        if (elem[key]) {
+          if (
+             US['selects'].length===0 ||
+            !US['selects'].find(item => item.option.toString().toUpperCase().includes(elem[key].toString().toUpperCase()) || undefined) ) {
+             US['selects'].push({option:elem[key], value:elem[key]});
+          }
+        }
+      });
+    });
   }
 
   showContent() {
@@ -257,6 +315,33 @@ export class CygnusCustomTableComponent implements OnInit {
 
       this.showContent();
     }
+  }
+
+  searchMultiSearch(event: SelectGeneric[]) {
+    console.log('multiSearch:', event);
+    if (event.length==0) { // mostrar la tabla completa si no hay búsqueda
+      this.showDataTable.set(this.dataTable());
+      return;
+    }
+
+    this.showDataTable.set( this.dataTable().filter(item => {
+      // Check if any value in the current object contains the search term
+      return Object.values(item).some(value => {
+        if (typeof value === 'string') {
+          for (const word in event) {
+
+            console.log('searchMultiSearch word:',word);
+
+
+            return value.toLowerCase().includes(word.toLowerCase());
+
+          }
+        }
+        return false; // Ignore non-string values for this search
+      });
+    }) );
+
+    this.showContent();
   }
 
 }

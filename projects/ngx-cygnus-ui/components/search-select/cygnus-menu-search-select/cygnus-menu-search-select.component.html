@@ -43,6 +43,17 @@
     />
   </button>
 </div>
+@if (multisearch()) {
+  <div class="flex w-full mt-1 mb-4">
+  @for (item of multisearchArr; track item.value) {
+    <cygnus-badge
+      (click)="deleteMultisearchItem(item)"
+      [badgeTypes]="'badge-btn-outlined'"
+      [badgeText]="item.option"
+    />
+  }
+  </div>
+}
 <ul
   [class]="TW_CLASS.UL_BASE"
   [class.invisible]="isInvisibleOptions()"
