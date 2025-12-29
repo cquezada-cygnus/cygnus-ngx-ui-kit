@@ -43,6 +43,25 @@
     />
   </button>
 </div>
+<div class="flex justify-end">
+  <span></span>
+  <ul
+    [class]="TW_CLASS.UL_BASE"
+    [class.invisible]="isInvisibleOptions()"
+  >
+    @for (item of filteredItems; track $index; let i = $index;) {
+      <li [class]="TW_CLASS.LI_BASE" (click)="setInputSearchAfterChooseOption(item)" >{{item.option}}</li>
+    }
+  </ul>
+</div>
+<!-- <ul
+  [class]="TW_CLASS.UL_BASE"
+  [class.invisible]="isInvisibleOptions()"
+>
+  @for (item of filteredItems; track $index; let i = $index;) {
+    <li [class]="TW_CLASS.LI_BASE" (click)="setInputSearchAfterChooseOption(item)" >{{item.option}}</li>
+  }
+</ul> -->
 @if (multisearch()) {
   <div class="flex w-full mt-1 mb-4">
   @for (item of multisearchArr; track item.value) {
@@ -54,11 +73,4 @@
   }
   </div>
 }
-<ul
-  [class]="TW_CLASS.UL_BASE"
-  [class.invisible]="isInvisibleOptions()"
->
-  @for (item of filteredItems; track $index; let i = $index;) {
-    <li [class]="TW_CLASS.LI_BASE" (click)="setInputSearchAfterChooseOption(item)" >{{item.option}}</li>
-  }
-</ul>
+
