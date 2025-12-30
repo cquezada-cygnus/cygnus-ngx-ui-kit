@@ -152,4 +152,61 @@ export class ModalContentComponent {
     </cygnus-modal>
   `;
 
+  showModalContenidoHtml: string = `
+    <cygnus-button [btnTypes]="'btn-primary'" (click)="toggleModalContenido()" >Abrir Modal</cygnus-button>
+
+    <cygnus-modal
+      [modalTitle]="'Modal con contenido'"
+      [(showModal)]="showModalContenido"
+    >
+      <!-- COMPONENTE: cygnus-custom-table -->
+      @if (EMPRESAS) {
+        <cygnus-custom-table
+          [dataTable]="EMPRESAS"
+          [tableType]="'stripped-hover'"
+          [tdEditArr]="empresasEditArr"
+          (emitModifiedData)="showEditedData($event)"
+          [showSearch]="false"
+        />
+      }
+    </cygnus-modal>
+  `;
+
+  showModalContenidoTs: string = `
+    import { Component } from '@angular/core';
+    import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
+    import { CygnusModalComponent } from 'ngx-cygnus-ui/components/modal';
+    import { CygnusCustomTableComponent } from 'ngx-cygnus-ui/components/table';
+
+    import * as EMPRESAS from '../../../json/EMPRESAS.json';
+
+    @Component({
+      selector: 'app-modal-content',
+      imports: [
+        CygnusButtonComponent,
+        CygnusModalComponent,
+        CygnusCustomTableComponent,
+      ],
+      templateUrl: './modal-content.component.html',
+      styleUrl: './modal-content.component.scss'
+    })
+    export class ModalContentComponent {
+
+      // código para gestionar el modal
+      showModalContenido : boolean = false;
+      toggleModalContenido():void {
+        this.showModalContenido = !this.showModalContenido;
+      }
+
+      // código para gestionar la tabla que se encuentra dentro del modal
+      EMPRESAS = JSON.parse(JSON.stringify(EMPRESAS)).default;
+      empresasEditArr: string[] = [
+        'NOMBRE DE FANTASIA', 'EMAIL', 'DIRECCION',
+      ];
+      showEditedData(data: any) {
+        console.log('showEditedData: ', data);
+      };
+    }
+  `;
+
 }

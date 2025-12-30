@@ -36,7 +36,7 @@
         </pre>
 
         <p class="mb-8 text-secondary-600 text-md">
-          En el archivo .ts crea un arreglo cuyos elementos cumplan con la interfaz SelectGeneric para desplegarlos en el selector. Para obtener el resultado de la selección, puedes usar un método para capturar el resultado.
+          En el archivo .ts crea un arreglo cuyos elementos cumplan con la interfaz <b>SelectGeneric</b> para desplegarlos en el selector. Para obtener el resultado de la selección, puedes usar un método para capturar el resultado.
         </p>
 
         <pre>
@@ -67,7 +67,7 @@
         </div>
 
         <p class="mb-8 text-secondary-600 text-md">
-          Puedes cambiar el comportamiento del selector con [showOptionsAutomatically] ingresando un boolean. Al estar activado, mostrará las opciones mientras escribes en lugar de mostrar las opciones cuando presionas el botón buscar.
+          Puedes cambiar el comportamiento del selector con <b>[showOptionsAutomatically]</b> ingresando un boolean. Al estar activado, mostrará las opciones mientras escribes en lugar de mostrar las opciones cuando presionas el botón buscar.
         </p>
 
         <pre>
@@ -89,7 +89,7 @@
         </div>
 
         <p class="mb-8 text-secondary-600 text-md">
-          Al indicar [multisearch]="true" Se obtiene un componente de búsqueda de palabras clave que se podrán ir seleccionando y el componente emitirá en un evento los elementos seleccionados. Puedes recibir los elementos seleccionados de (outputMultisearch) y utilizarlos para filtrar los elementos de una tabla por ejemplo. Si se elimina alguno de los elementos seleccionados, se vuelve a emitir el evento actualizado.
+          Al indicar <b>[multisearch]="true"</b> Se obtiene un componente de búsqueda de palabras clave que se podrán ir seleccionando y el componente emitirá en un evento los elementos seleccionados. Puedes recibir los elementos seleccionados de <b>(outputMultisearch)</b> y utilizarlos para filtrar los elementos de una tabla por ejemplo. Si se elimina alguno de los elementos seleccionados, se vuelve a emitir el evento actualizado.
         </p>
 
         <pre>
@@ -99,7 +99,7 @@
         </pre>
 
         <p class="mb-8 text-secondary-600 text-md">
-          [multisearch] funciona mejor cuando [showOptionsAutomatically]="true", por lo tanto aunque no se indique explícitamente, por defecto showOptionsAutomatically es true cuando multisearch es true.
+          <b>[multisearch]</b> funciona mejor cuando <b>[showOptionsAutomatically]="true"</b>, por lo tanto aunque no se indique explícitamente, por defecto showOptionsAutomatically es true cuando multisearch es true.
         </p>
 
         <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
@@ -124,12 +124,7 @@
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Selector con menú desplegable</h2>
         <p class="mb-8 text-secondary-600 text-md">Este ejemplo de entrada de búsqueda incluye un menú
-            desplegable para filtrar las categorías de búsqueda. Los usuarios
-            pueden seleccionar entre distintas categorías, como Dashboards, UI Kits y Components, antes
-            de ingresar su consulta de
-            búsqueda. Este diseño ayuda a refinar las búsquedas y brinda resultados más precisos.</p>
-        <p class="text-secondary-600 text-md">Nota: este componente trae un script para que el dropdown
-            funcione</p>
+            desplegable para filtrar las categorías de búsqueda. Este diseño ayuda a refinar las búsquedas y brinda resultados más precisos.</p>
 
         <p class="mb-8 text-secondary-600 text-md">
           Importar el componente de la biblioteca ngx-cygnus-ui y algunas interfaces que podrías necesitar en el archivo .ts del componente donde lo vas a implementar.
@@ -142,7 +137,7 @@
         </pre>
 
         <p class="mb-8 text-secondary-600 text-md">
-          En el archivo .ts crea un arreglo cuyos elementos cumplan con la interfaz SelectGeneric para desplegarlos en el selector. Para obtener el resultado de la selección, puedes usar un método para capturar el resultado.
+          En el archivo .ts crea un arreglo cuyos elementos cumplan con la interfaz <b>SelectGeneric</b> para desplegarlos en el selector. Para obtener el resultado de la selección, puedes usar un método para capturar el resultado.
         </p>
 
         <pre>
@@ -173,7 +168,7 @@
         </div>
 
         <p class="mb-8 text-secondary-600 text-md">
-          Puedes cambiar el comportamiento del selector con [showOptionsAutomatically] ingresando un boolean.  Al estar activado, mostrará las opciones mientras escribes en lugar de mostrar las opciones cuando presionas el botón buscar.
+          Puedes cambiar el comportamiento del selector con <b>[showOptionsAutomatically]</b> ingresando un boolean.  Al estar activado, mostrará las opciones mientras escribes en lugar de mostrar las opciones cuando presionas el botón buscar.
         </p>
 
         <pre>
@@ -203,9 +198,8 @@
       <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Selector con menú desplegable y multisearch</h2>
         <p class="mb-8 text-secondary-600 text-md">
-
+          Este componente recibe el listado de categorías y las opciones por categoría como en la sección anterior, pero además permite seleccionar más de una opción dentro de una misma categoría, las cuales se mostrarán debajo del selector y se pueden eliminar con un click cuando no sean necesarias.
         </p>
-
 
         <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
           <div class="flex flex-col w-full max-w-lg space-y-4">
@@ -219,6 +213,12 @@
 
           </div>
         </div>
+
+        <pre>
+          <code [highlight]="cygnusMultisearchHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
 
       </div>
     </div>

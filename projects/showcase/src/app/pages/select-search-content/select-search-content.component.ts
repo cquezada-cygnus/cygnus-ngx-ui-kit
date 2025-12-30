@@ -195,4 +195,13 @@ export class SelectSearchContentComponent {
     />
   `;
 
+  cygnusMultisearchHtml: string = `
+    <cygnus-menu-search-select
+      [menuSearchContentArr]="menuSearchContentArr"
+      [showOptionsAutomatically]="true"
+      (outputMultisearch)="printSearch($event)"
+      [multisearch]="true"
+    />
+  `;
+
 }

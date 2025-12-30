@@ -31,24 +31,24 @@
         </pre>
 
         <ul class="mb-8 text-gray-600 text-md list-none">
-          <li>[inputCustomType]: Recibe un string que indica el tipo de input que se va a utilizar. Existen los tipos: "base", "fieldset-legend-label", "label-top", "label-interactive", "floating", "file".</li>
-          <li>[textPlaceholder]: Recibe un string que indica el texto del placeholder.</li>
-          <li>[textHint]: Recibe un string que indica el texto que va debajo del input para entregar instrucciones al usuario.</li>
-          <li>[textLabel]: Recibe un string que indica el texto que va arriba del input a modo de encabezado.</li>
-          <li>[inputSize]: Recibe un string que indica el tamaño del input. Si no se indica, tiene un tamaño estándar. Puede tener los siguientes valores: 'sm' y 'lg'.</li>
-          <li>[inputColor]: Recibe un string que indica el color del input. Puede recibir los siguientes valores: 'success', 'warning', 'error'. Si no recibe nada, el color es estándar.</li>
-          <li>[iconAsset]: Recibe un string que indica la url o nombre de un ícono dentro de la biblioteca ngx-cygnus-icons.</li>
-          <li>[iconColor]: Recibe un string que indica el color de un ícono dentro del input. Puede recibir los siguientes valores: 'success', 'warning', 'error'. Si no recibe nada, el color es estándar.</li>
-          <li>[iconState]: Recibe un boolean: true para identificar el estilo del input cuando es ícono de success/warning/error. Por defecto su valor es false.</li>
-          <li>[iconSize]: Recibe un string que indica el tamaño del ícono dentro del input. Por defecto tiene el valor 'lg'.</li>
-          <li>[iconPosition]: Recibe un string que indica la posición del ícono dentro del input. Su valor puede ser 'right' o 'left'. Por defecto tiene el valor 'right'.</li>
-          <li>[pseudoIconCLPPhone]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar el comienzo del número de teléfono para Chile.</li>
-          <li>[hintColor]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si el texto por debajo del input se va a colorear o si va a mantener un color estándar.</li>
-          <li>[inputDisabled]: Recibe un boolean. Por defecto su valor es false. Se utiliza para desabilitar o no el input.</li>
-          <li>[typePassword]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si hay que ocultar el contenido del input en caso de que sea para indicar un password.</li>
-          <li>[inputClearValue]: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si se requiere que se limpie el input.</li>
-          <li>[initializeInputValue]: Recibe un string para inicializar el valor del input.</li>
-          <li>[control]: Se utiliza para conectar el input a un formulario.</li>
+          <li><b>[inputCustomType]</b>: Recibe un string que indica el tipo de input que se va a utilizar. Existen los tipos: "base", "fieldset-legend-label", "label-top", "label-interactive", "floating", "file".</li>
+          <li><b>[textPlaceholder]</b>: Recibe un string que indica el texto del placeholder.</li>
+          <li><b>[textHint]</b>: Recibe un string que indica el texto que va debajo del input para entregar instrucciones al usuario.</li>
+          <li><b>[textLabel]</b>: Recibe un string que indica el texto que va arriba del input a modo de encabezado.</li>
+          <li><b>[inputSize]</b>: Recibe un string que indica el tamaño del input. Si no se indica, tiene un tamaño estándar. Puede tener los siguientes valores: 'sm' y 'lg'.</li>
+          <li><b>[inputColor]</b>: Recibe un string que indica el color del input. Puede recibir los siguientes valores: 'success', 'warning', 'error'. Si no recibe nada, el color es estándar.</li>
+          <li><b>[iconAsset]</b>: Recibe un string que indica la url o nombre de un ícono dentro de la biblioteca ngx-cygnus-icons.</li>
+          <li><b>[iconColor]</b>: Recibe un string que indica el color de un ícono dentro del input. Puede recibir los siguientes valores: 'success', 'warning', 'error'. Si no recibe nada, el color es estándar.</li>
+          <li><b>[iconState]</b>: Recibe un boolean: true para identificar el estilo del input cuando es ícono de success/warning/error. Por defecto su valor es false.</li>
+          <li><b>[iconSize]</b>: Recibe un string que indica el tamaño del ícono dentro del input. Por defecto tiene el valor 'lg'.</li>
+          <li><b>[iconPosition]</b>: Recibe un string que indica la posición del ícono dentro del input. Su valor puede ser 'right' o 'left'. Por defecto tiene el valor 'right'.</li>
+          <li><b>[pseudoIconCLPPhone]</b>: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar el comienzo del número de teléfono para Chile.</li>
+          <li><b>[hintColor]</b>: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si el texto por debajo del input se va a colorear o si va a mantener un color estándar.</li>
+          <li><b>[inputDisabled]</b>: Recibe un boolean. Por defecto su valor es false. Se utiliza para desabilitar o no el input.</li>
+          <li><b>[typePassword]</b>: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si hay que ocultar el contenido del input en caso de que sea para indicar un password.</li>
+          <li><b>[inputClearValue]</b>: Recibe un boolean. Por defecto su valor es false. Se utiliza para indicar si se requiere que se limpie el input.</li>
+          <li><b>[initializeInputValue]</b>: Recibe un string para inicializar el valor del input.</li>
+          <li><b>[control]</b>: Se utiliza para conectar el input a un formulario.</li>
         </ul>
       </div>
     </div>
@@ -500,15 +500,15 @@
         </p>
 
         <ul class="mb-8 text-gray-600 text-md list-none">
-          <li>cgRequired(): Validador requerido con mensaje personalizado.</li>
-          <li>cgPhone(): Validador de teléfono chileno (9 dígitos).</li>
-          <li>cgEmail(): Validador de email.</li>
-          <li>cgNumber(): Validador de solo números.</li>
-          <li>cgInteger(): Validador de solo números enteros.</li>
-          <li>cgRequiredPhone(): Validador combinado para teléfono requerido con formato específico.</li>
-          <li>cgRequiredEmail(): Validador combinado para email requerido.</li>
-          <li>cgRutValidator(): Validador de formato de rut.</li>
-          <li>specificValueValidator(expectedValue: string): Valida si se obtuvo un resultado específico.</li>
+          <li><b>cgRequired()</b>: Validador requerido con mensaje personalizado.</li>
+          <li><b>cgPhone()</b>: Validador de teléfono chileno (9 dígitos).</li>
+          <li><b>cgEmail()</b>: Validador de email.</li>
+          <li><b>cgNumber()</b>: Validador de solo números.</li>
+          <li><b>cgInteger()</b>: Validador de solo números enteros.</li>
+          <li><b>cgRequiredPhone()</b>: Validador combinado para teléfono requerido con formato específico.</li>
+          <li><b>cgRequiredEmail()</b>: Validador combinado para email requerido.</li>
+          <li><b>cgRutValidator()</b>: Validador de formato de rut.</li>
+          <li><b>specificValueValidator(expectedValue: string)</b>: Valida si se obtuvo un resultado específico.</li>
         </ul>
 
         <p class="mb-8 text-gray-600 text-md">
