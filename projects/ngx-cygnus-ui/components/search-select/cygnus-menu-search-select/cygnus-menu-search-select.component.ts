@@ -95,6 +95,7 @@ export class CygnusMenuSearchSelectComponent implements OnInit {
     this.menuSearchText.set(selected);
     this.isInvisible.set(true); // invisibilizar opciones
     this.items.set(this.menuSearchContentArr()[index].selects); // se debe mostrar en la búsqueda los items correspondientes al menu seleccionado
+    this.multisearchArr = []; // inicializar listado de opciones seleccionadas
   }
 
   setInputSearchAfterChooseOption(item: SelectGeneric) {
