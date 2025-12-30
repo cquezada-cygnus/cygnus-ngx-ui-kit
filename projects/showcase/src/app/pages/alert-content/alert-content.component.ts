@@ -224,6 +224,15 @@ export class AlertContentComponent {
     />
   `;
 
+  alertContenidoTs: string = `
+    ...
+    export class AlertContentComponent {
+      btnClickedEvent(event: boolean) {
+        console.log('cygnus-alert-contenido btnClickedEvent:',event);
+      }
+    }
+  `;
+
   alertContenidoPrimary: string = `
     <cygnus-alert-contenido
       [alertTypes]="'alert-primary'"
