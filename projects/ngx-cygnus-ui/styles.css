@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@source "./components/**/*.{html,ts}";
+@source "./pages/**/*.{html,ts}";
+
+/* CRÍTICO: Importar las utilidades explícitamente */
+/* Importar todas las capas */
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
 @theme {
   /*  Colores primarios (azules) */
   --color-primary-25: #F5F8FF;

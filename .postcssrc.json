@@ -1,9 +1,7 @@
 {
   "plugins": {
     "@tailwindcss/postcss": {
-      "optimize": {
-        "minify": true
-      }
+      "base": "./projects/ngx-cygnus-ui"
     }
   }
 }
