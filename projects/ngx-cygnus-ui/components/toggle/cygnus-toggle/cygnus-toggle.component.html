@@ -3,6 +3,7 @@
   <input
   #cygnusToggle
   [class]="
+    'toggle-base' + ' ' +
     TW_CLASS.TOGGLE_BASE + ' ' +
     (inputIsDisabled() ? TW_CLASS.TOGGLE_DISABLED : '') + ' ' +
     (checkedCustomColor() ? setCheckedCustomColor() : TW_CLASS.TOGGLE_PRIMARY)
@@ -20,6 +21,7 @@
       #cygnusToggle
       [id]="toggleId()"
       [class]="
+        'toggle-base' + ' ' +
         TW_CLASS.TOGGLE_BASE + ' ' +
         (inputIsDisabled() ? TW_CLASS.TOGGLE_DISABLED : '') + ' ' +
         (checkedCustomColor() ? setCheckedCustomColor() : TW_CLASS.TOGGLE_PRIMARY)

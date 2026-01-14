@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
-@source "./components/**/*.{html,ts}";
-@source "./pages/**/*.{html,ts}";
-
 /* CRÍTICO: Importar las utilidades explícitamente */
 /* Importar todas las capas */
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+/* @import "tailwindcss/preflight";
+@import "tailwindcss/utilities"; */
+
+
+@source "./components/**/*.{js,jsx,ts,tsx,html}";
+@source "./pages/**/*.{js,jsx,ts,tsx,html}";
+
 
 @theme {
+
   /*  Colores primarios (azules) */
   --color-primary-25: #F5F8FF;
   --color-primary-50: #EFF4FF;
@@ -137,3 +140,5 @@
   --cg-z-popover: 1050;
   --cg-z-tooltip: 1060;
 }
+
+

@@ -9,6 +9,11 @@ import { FormControl } from '@angular/forms';
     RouterLink,
   ],
   templateUrl: './cygnus-toggle.component.html',
+  styles: `
+    .toggle-base:checked::after {
+      transform: translateX(calc(65% + 2px));
+    }
+  `
 })
 export class CygnusToggleComponent implements OnInit {
   private static idCounter = 0;
