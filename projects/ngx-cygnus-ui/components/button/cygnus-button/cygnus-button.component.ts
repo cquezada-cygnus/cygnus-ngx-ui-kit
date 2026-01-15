@@ -23,8 +23,10 @@ export class CygnusButtonComponent implements OnInit {
   btnIsLoading = input<boolean>(false);
   btnIconLoadingSize = input<IconLoadingSize>('size-4');
   btnIsDisabled = signal<boolean>(false);
+
   btnIconOutlined = signal<boolean>(false);
   btnIconOutlinedColor = signal<string>('');
+  btnIconOutlinedTransparent = input<boolean>(true);
 
   constructor() {
     effect(() => { // actualizar color del botón cuando cambie this.btnTypes()
