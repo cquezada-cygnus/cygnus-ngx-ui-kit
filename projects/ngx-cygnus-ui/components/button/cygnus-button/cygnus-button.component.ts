@@ -24,6 +24,7 @@ export class CygnusButtonComponent implements OnInit {
   btnIconLoadingSize = input<IconLoadingSize>('size-4');
   btnIsDisabled = signal<boolean>(false);
   btnIconOutlined = signal<boolean>(false);
+  btnIconOutlinedColor = signal<string>('');
 
   constructor() {
     effect(() => { // actualizar color del botón cuando cambie this.btnTypes()
@@ -97,23 +98,33 @@ export class CygnusButtonComponent implements OnInit {
       case 'btn-outlined':
         this.btnIconColor.set('blue');
         this.btnIconOutlined.set(true);
+        this.btnIconOutlinedColor.set('blue');
         return this.TW_CLASS.BTN_OUTLINED;
       case 'btn-outlined-red':
         this.btnIconColor.set('red');
         this.btnIconOutlined.set(true);
+        this.btnIconOutlinedColor.set('red');
         return this.TW_CLASS.BTN_OUTLINED_RED;
       case 'btn-outlined-green':
         this.btnIconColor.set('green');
         this.btnIconOutlined.set(true);
+        this.btnIconOutlinedColor.set('green');
         return this.TW_CLASS.BTN_OUTLINED_GREEN;
       case 'btn-outlined-amber':
         this.btnIconColor.set('amber');
         this.btnIconOutlined.set(true);
+        this.btnIconOutlinedColor.set('amber');
         return this.TW_CLASS.BTN_OUTLINED_AMBER;
       case 'btn-outlined-gray':
         this.btnIconColor.set('secgray');
         this.btnIconOutlined.set(true);
+        this.btnIconOutlinedColor.set('secgray');
         return this.TW_CLASS.BTN_OUTLINED_GRAY;
+      case 'btn-outlined-cygnus':
+        this.btnIconColor.set('cygnus');
+        this.btnIconOutlined.set(true);
+        this.btnIconOutlinedColor.set('cygnus');
+        return this.TW_CLASS.BTN_OUTLINED_CYGNUS;
       case 'btn-disabled':
         this.btnIconColor.set('blue');
         this.btnIsDisabled.set(true);
@@ -197,8 +208,23 @@ export class CygnusButtonComponent implements OnInit {
   }
 
   onMouseLeave() {
-    if (this.btnIconOutlined()) {
+    if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='blue' ) {
       this.btnIconColor.set('blue');
+    }
+    if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='red' ) {
+      this.btnIconColor.set('red');
+    }
+    if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='green' ) {
+      this.btnIconColor.set('green');
+    }
+    if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='amber' ) {
+      this.btnIconColor.set('amber');
+    }
+    if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='secgray' ) {
+      this.btnIconColor.set('secgray');
+    }
+    if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='cygnus' ) {
+      this.btnIconColor.set('cygnus');
     }
   }
 }

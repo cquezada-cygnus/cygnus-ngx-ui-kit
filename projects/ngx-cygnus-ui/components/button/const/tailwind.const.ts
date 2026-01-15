@@ -17,6 +17,7 @@ export const TW_CLASS = {
   BTN_OUTLINED_GREEN: 'bg-transparent border-green-700 text-green-700 hover:bg-green-700 hover:text-green-50 hover:shadow-md focus:ring-green-300',
   BTN_OUTLINED_AMBER: 'bg-transparent border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-amber-50 hover:shadow-md focus:ring-amber-300',
   BTN_OUTLINED_GRAY: 'bg-transparent border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-gray-50 hover:shadow-md focus:ring-gray-300',
+  BTN_OUTLINED_CYGNUS: 'bg-transparent border-cygnus-500 text-cygnus-500 hover:bg-cygnus-500 hover:text-cygnus-50 hover:shadow-md focus:ring-cygnus-500',
   BTN_DISABLED: 'text-white bg-blue-400 cursor-not-allowed',
   BTN_BLOCK: 'hover:shadow-md !w-full',
   BTN_SIZE_XS: '!px-2.5 !py-1.5 !text-sm',
