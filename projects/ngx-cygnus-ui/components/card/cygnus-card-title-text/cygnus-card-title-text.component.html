@@ -1,10 +1,40 @@
-<div class="flex items-center justify-center w-full max-w-xs gap-4 mb-4">
-  <a href="#" [class]="TW_CLASS.CARD_BODY">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+<div
+  class="flex items-center justify-center w-full gap-4 mb-4"
+  [class]="
+    (sizeTitle()==='bold-lg') ? 'max-w-xs' : 'max-w-sm'
+  "
+>
+  <a href="#"
+    [class]="
+      TW_CLASS.CARD_BODY + ' ' +
+      ((sizeTitle()==='bold-lg') ? 'p-6' : 'pt-1 pb-1 pl-8 pr-8')
+    "
+  >
+    <h5
+      [class]="
+       (sizeTitle()==='bold-lg') ?
+        'mb-2 text-2xl font-bold tracking-tight text-gray-900' :
+        'mb-2 text-base font-semibold tracking-tight text-gray-600'
+      "
+    >
       {{cardTitle()}}
     </h5>
-    <p class="font-normal text-gray-700">
-      {{cardText()}}
+    <p
+      [class]="
+        (sizeTitle()==='bold-lg') ?
+          'font-normal text-gray-700' :
+          'font-medium text-sm text-gray-500'">
+      <span>{{cardText()}}</span>
+      @if (cardIcon()) {
+
+      <lib-ngx-cygnus-icons [class]="'ml-2'"
+        [size]="''"
+        [textColor]="'lightblack'"
+        [textRoute]="cardIcon()"
+      />
+
+      }
     </p>
+
   </a>
 </div>

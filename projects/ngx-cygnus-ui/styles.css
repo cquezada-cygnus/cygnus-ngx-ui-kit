@@ -8,6 +8,11 @@
 
 @theme {
 
+  /* Configurar Nunito Sans como fuente principal */
+  /* Solicitar al usuario que la instale */
+  --font-nunito-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+
   --color-cygnus-50: #fdf6ef;
   --color-cygnus-100: #faeada;
   --color-cygnus-200: #f5d1b3;
@@ -148,5 +153,6 @@
   --cg-z-popover: 1050;
   --cg-z-tooltip: 1060;
 }
+
 
 
