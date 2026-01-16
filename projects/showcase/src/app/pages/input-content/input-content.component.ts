@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, output, signal } from '@angular/core';
 import { ReactiveFormsModule, NonNullableFormBuilder, Validators } from '@angular/forms';
-import { CygnusInputComponent } from 'ngx-cygnus-ui/components/input';
+import { CygnusInputComponent, CygnusDropzoneInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputColor } from 'ngx-cygnus-ui/types';
 import { cgPhone } from 'ngx-cygnus-ui/validators';
 
@@ -12,6 +12,7 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
   imports: [
     ReactiveFormsModule,
     CygnusInputComponent,
+    CygnusDropzoneInputComponent,
     Highlight, HighlightLineNumbers,
   ],
   templateUrl: './input-content.component.html',

@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
-    "@cygnus/ngx-cygnus-icons": "file:cygnus-ngx-cygnus-icons-1.0.0.tgz",
+    "@cygnus/ngx-cygnus-icons": "file:cygnus-ngx-cygnus-icons-1.0.1.tgz",
     "highlight.js": "^11.11.1",
     "ngx-highlightjs": "12.0.0",
     "rxjs": "~7.8.0",
