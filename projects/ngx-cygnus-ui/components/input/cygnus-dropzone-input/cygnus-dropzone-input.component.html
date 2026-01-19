@@ -1,4 +1,5 @@
 <div class="flex items-center justify-center w-full">
+  @if (!onlyBtn()) {
   <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 bg-indigo-100 rounded-lg border-2 border-dashed [stroke-dasharray:5_5] cursor-pointer hover:bg-indigo-200 shadow-lg">
     <div class="flex flex-col items-center justify-center text-body pt-5 pb-6">
       <h4 class="font-[var(--font-nunito-sans)] font-bold text-center pl-9 pr-9 pb-2">{{titleText()}}</h4>
@@ -23,4 +24,19 @@
     </div>
     <input id="dropzone-file" type="file" class="hidden" />
   </label>
+
+} @else {
+  <label for="dropzone-file" class="flex flex-col items-center justify-center w-full bg-indigo-100 rounded-lg border-2 border-dashed [stroke-dasharray:5_5] cursor-pointer hover:bg-indigo-200 shadow-lg">
+    <div class="flex flex-col items-center justify-center text-body p-4">
+      <cygnus-button
+        [btnTypes]="'btn-indigo btn-icon'"
+        [btnIconRouteLeft]="'file'"
+      >
+        {{btnText()}}
+      </cygnus-button>
+    </div>
+
+    <input id="dropzone-file" type="file" class="hidden" />
+  </label>
+}
 </div>

@@ -18,5 +18,6 @@ export class CygnusDropzoneInputComponent {
   secondText = input<string>('');
   thirdText = input<string>('');
   btnText = input<string>('');
+  onlyBtn = input<boolean>(false);
 
 }
