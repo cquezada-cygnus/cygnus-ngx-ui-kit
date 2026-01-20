@@ -1,0 +1,3320 @@
+[
+    {
+        "id_item": 1,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Desarrollador Front-End",
+        "busqueda": "Desarrollador Front-End"
+    },
+    {
+        "id_item": 2,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Desarrollador Back-End",
+        "busqueda": "Desarrollador Back-End"
+    },
+    {
+        "id_item": 3,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Desarrollador Full Stack",
+        "busqueda": "Desarrollador Full Stack"
+    },
+    {
+        "id_item": 4,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Desarrollador Mobile",
+        "busqueda": "Desarrollador Mobile"
+    },
+    {
+        "id_item": 5,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Arquitecto",
+        "busqueda": "Arquitecto"
+    },
+    {
+        "id_item": 6,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Arquitecto Cloud",
+        "busqueda": "Arquitecto Cloud"
+    },
+    {
+        "id_item": 7,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Lider Técnico",
+        "busqueda": "Lider Tecnico"
+    },
+    {
+        "id_item": 8,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Especialista en Machine Learning / IA",
+        "busqueda": "Especialista en Machine Learning / IA"
+    },
+    {
+        "id_item": 9,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Soporte Técnico / Mesa de Ayuda",
+        "busqueda": "Soporte Tecnico / Mesa de Ayuda"
+    },
+    {
+        "id_item": 10,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Analista de Soporte",
+        "busqueda": "Analista de Soporte"
+    },
+    {
+        "id_item": 11,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Ingeniero de Soporte",
+        "busqueda": "Ingeniero de Soporte"
+    },
+    {
+        "id_item": 12,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Operador de Sistemas",
+        "busqueda": "Operador de Sistemas"
+    },
+    {
+        "id_item": 13,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Administrador de Redes",
+        "busqueda": "Administrador de Redes"
+    },
+    {
+        "id_item": 14,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Administrador de Redes y Sistemas",
+        "busqueda": "Administrador de Redes y Sistemas"
+    },
+    {
+        "id_item": 15,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Administrador de Base de Datos (DBA)",
+        "busqueda": "Administrador de Base de Datos (DBA)"
+    },
+    {
+        "id_item": 16,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Jefe de Infraestructura",
+        "busqueda": "Jefe de Infraestructura"
+    },
+    {
+        "id_item": 17,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Jefe de Soporte",
+        "busqueda": "Jefe de Soporte"
+    },
+    {
+        "id_item": 18,
+        "categoria": "TI",
+        "seccion": "Datos y Analítica",
+        "cargo": "Analista de Datos",
+        "busqueda": "Analista de Datos"
+    },
+    {
+        "id_item": 19,
+        "categoria": "TI",
+        "seccion": "Datos y Analítica",
+        "cargo": "Analista de BI (Business Intelligence)",
+        "busqueda": "Analista de BI (Business Intelligence)"
+    },
+    {
+        "id_item": 20,
+        "categoria": "TI",
+        "seccion": "Datos y Analítica",
+        "cargo": "Ingeniero de Datos / Data Engineer",
+        "busqueda": "Ingeniero de Datos / Data Engineer"
+    },
+    {
+        "id_item": 21,
+        "categoria": "TI",
+        "seccion": "Datos y Analítica",
+        "cargo": "Data Scientist / Científico de Datos",
+        "busqueda": "Data Scientist / Cientifico de Datos"
+    },
+    {
+        "id_item": 22,
+        "categoria": "TI",
+        "seccion": "Seguridad Informática",
+        "cargo": "Asistente de Seguridad Informática",
+        "busqueda": "Asistente de Seguridad Informatica"
+    },
+    {
+        "id_item": 23,
+        "categoria": "TI",
+        "seccion": "Seguridad Informática",
+        "cargo": "Ingeniero en Seguridad Informática",
+        "busqueda": "Ingeniero en Seguridad Informatica"
+    },
+    {
+        "id_item": 24,
+        "categoria": "TI",
+        "seccion": "Seguridad Informática",
+        "cargo": "Analista de Ciberseguridad",
+        "busqueda": "Analista de Ciberseguridad"
+    },
+    {
+        "id_item": 25,
+        "categoria": "TI",
+        "seccion": "Seguridad Informática",
+        "cargo": "Ingeniero en Seguridad / Cybersecurity",
+        "busqueda": "Ingeniero en Seguridad / Cybersecurity"
+    },
+    {
+        "id_item": 26,
+        "categoria": "TI",
+        "seccion": "Seguridad Informática",
+        "cargo": "Ethical Hacker / Pentester",
+        "busqueda": "Ethical Hacker / Pentester"
+    },
+    {
+        "id_item": 27,
+        "categoria": "TI",
+        "seccion": "Seguridad Informática",
+        "cargo": "Jefe de Seguridad Informática",
+        "busqueda": "Jefe de Seguridad Informatica"
+    },
+    {
+        "id_item": 28,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "IT Project Manager / Gerente de Proyectos TI",
+        "busqueda": "IT Project Manager / Gerente de Proyectos TI"
+    },
+    {
+        "id_item": 29,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Product Owner",
+        "busqueda": "Product Owner"
+    },
+    {
+        "id_item": 30,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Scrum Master",
+        "busqueda": "Scrum Master"
+    },
+    {
+        "id_item": 31,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Consultor de Sistemas",
+        "busqueda": "Consultor de Sistemas"
+    },
+    {
+        "id_item": 32,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Consultor ERP / CRM",
+        "busqueda": "Consultor ERP / CRM"
+    },
+    {
+        "id_item": 33,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Consultor SAP / ERP",
+        "busqueda": "Consultor SAP / ERP"
+    },
+    {
+        "id_item": 34,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Líder de Transformación Digital",
+        "busqueda": "Lider de Transformacion Digital"
+    },
+    {
+        "id_item": 35,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Gerente de Innovación",
+        "busqueda": "Gerente de Innovacion"
+    },
+    {
+        "id_item": 36,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Gerente de Transformación Digital",
+        "busqueda": "Gerente de Transformacion Digital"
+    },
+    {
+        "id_item": 37,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Gerente de TI",
+        "busqueda": "Gerente de TI"
+    },
+    {
+        "id_item": 38,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Jefe de Desarrollo",
+        "busqueda": "Jefe de Desarrollo"
+    },
+    {
+        "id_item": 39,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Jefe de Arquitectura TI",
+        "busqueda": "Jefe de Arquitectura TI"
+    },
+    {
+        "id_item": 40,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Jefe de Proyectos TI",
+        "busqueda": "Jefe de Proyectos TI"
+    },
+    {
+        "id_item": 41,
+        "categoria": "TI",
+        "seccion": "DevOps y Cloud",
+        "cargo": "Ingeniero DevOps",
+        "busqueda": "Ingeniero DevOps"
+    },
+    {
+        "id_item": 42,
+        "categoria": "TI",
+        "seccion": "DevOps y Cloud",
+        "cargo": "Arquitecto Cloud",
+        "busqueda": "Arquitecto Cloud"
+    },
+    {
+        "id_item": 43,
+        "categoria": "RRHH",
+        "seccion": "Reclutamiento y Selección",
+        "cargo": "Analista de Reclutamiento y Selección",
+        "busqueda": "Analista de Reclutamiento y Seleccion"
+    },
+    {
+        "id_item": 44,
+        "categoria": "RRHH",
+        "seccion": "Reclutamiento y Selección",
+        "cargo": "Consultor de Reclutamiento y Selección",
+        "busqueda": "Consultor de Reclutamiento y Seleccion"
+    },
+    {
+        "id_item": 45,
+        "categoria": "RRHH",
+        "seccion": "Reclutamiento y Selección",
+        "cargo": "Jefe de Reclutamiento y Selección",
+        "busqueda": "Jefe de Reclutamiento y Seleccion"
+    },
+    {
+        "id_item": 46,
+        "categoria": "RRHH",
+        "seccion": "Reclutamiento y Selección",
+        "cargo": "Head Hunter / Consultor de Búsqueda Ejecutiva",
+        "busqueda": "Head Hunter / Consultor de Busqueda Ejecutiva"
+    },
+    {
+        "id_item": 47,
+        "categoria": "RRHH",
+        "seccion": "Reclutamiento y Selección",
+        "cargo": "Asistente de Selección",
+        "busqueda": "Asistente de Seleccion"
+    },
+    {
+        "id_item": 48,
+        "categoria": "RRHH",
+        "seccion": "Gestión de Personas",
+        "cargo": "Analista de Recursos Humanos",
+        "busqueda": "Analista de Recursos Humanos"
+    },
+    {
+        "id_item": 49,
+        "categoria": "RRHH",
+        "seccion": "Gestión de Personas",
+        "cargo": "Asistente de Recursos Humanos",
+        "busqueda": "Asistente de Recursos Humanos"
+    },
+    {
+        "id_item": 50,
+        "categoria": "RRHH",
+        "seccion": "Gestión de Personas",
+        "cargo": "Jefe de Recursos Humanos",
+        "busqueda": "Jefe de Recursos Humanos"
+    },
+    {
+        "id_item": 51,
+        "categoria": "RRHH",
+        "seccion": "Gestión de Personas",
+        "cargo": "Generalista de Recursos Humanos",
+        "busqueda": "Generalista de Recursos Humanos"
+    },
+    {
+        "id_item": 52,
+        "categoria": "RRHH",
+        "seccion": "Gestión de Personas",
+        "cargo": "Gerente de Recursos Humanos / Gerente de Personas",
+        "busqueda": "Gerente de Recursos Humanos / Gerente de Personas"
+    },
+    {
+        "id_item": 53,
+        "categoria": "RRHH",
+        "seccion": "Desarrollo Organizacional",
+        "cargo": "Analista de Desarrollo Organizacional",
+        "busqueda": "Analista de Desarrollo Organizacional"
+    },
+    {
+        "id_item": 54,
+        "categoria": "RRHH",
+        "seccion": "Desarrollo Organizacional",
+        "cargo": "Jefe de Desarrollo Organizacional",
+        "busqueda": "Jefe de Desarrollo Organizacional"
+    },
+    {
+        "id_item": 55,
+        "categoria": "RRHH",
+        "seccion": "Desarrollo Organizacional",
+        "cargo": "Gerente de Desarrollo Organizacional",
+        "busqueda": "Gerente de Desarrollo Organizacional"
+    },
+    {
+        "id_item": 56,
+        "categoria": "RRHH",
+        "seccion": "Capacitación y Formación",
+        "cargo": "Analista de Capacitación",
+        "busqueda": "Analista de Capacitacion"
+    },
+    {
+        "id_item": 57,
+        "categoria": "RRHH",
+        "seccion": "Capacitación y Formación",
+        "cargo": "Jefe de Capacitación",
+        "busqueda": "Jefe de Capacitacion"
+    },
+    {
+        "id_item": 58,
+        "categoria": "Operaciones",
+        "seccion": "Producción y Manufactura",
+        "cargo": "Operario de Producción",
+        "busqueda": "Operario de Produccion"
+    },
+    {
+        "id_item": 59,
+        "categoria": "Operaciones",
+        "seccion": "Producción y Manufactura",
+        "cargo": "Jefe de Producción",
+        "busqueda": "Jefe de Produccion"
+    },
+    {
+        "id_item": 60,
+        "categoria": "Operaciones",
+        "seccion": "Producción y Manufactura",
+        "cargo": "Supervisor de Producción",
+        "busqueda": "Supervisor de Produccion"
+    },
+    {
+        "id_item": 61,
+        "categoria": "Operaciones",
+        "seccion": "Producción y Manufactura",
+        "cargo": "Gerente de Producción",
+        "busqueda": "Gerente de Produccion"
+    },
+    {
+        "id_item": 62,
+        "categoria": "Operaciones",
+        "seccion": "Producción y Manufactura",
+        "cargo": "Analista de Control de Calidad",
+        "busqueda": "Analista de Control de Calidad"
+    },
+    {
+        "id_item": 63,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Chofer",
+        "busqueda": "Chofer"
+    },
+    {
+        "id_item": 64,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Operador de Grúa Horquilla",
+        "busqueda": "Operador de Grua Horquilla"
+    },
+    {
+        "id_item": 65,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Supervisor de Logística",
+        "busqueda": "Supervisor de Logistica"
+    },
+    {
+        "id_item": 66,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Jefe de Logística",
+        "busqueda": "Jefe de Logistica"
+    },
+    {
+        "id_item": 67,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Coordinador de Cuenta - Logística",
+        "busqueda": "Coordinador de Cuenta - Logistica"
+    },
+    {
+        "id_item": 68,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Gerente de Logística",
+        "busqueda": "Gerente de Logistica"
+    },
+    {
+        "id_item": 69,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Despachador/a",
+        "busqueda": "Despachador/a"
+    },
+    {
+        "id_item": 70,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Coordinador de Transporte",
+        "busqueda": "Coordinador de Transporte"
+    },
+    {
+        "id_item": 71,
+        "categoria": "Operaciones",
+        "seccion": "Logística y Distribución",
+        "cargo": "Planificador de Rutas",
+        "busqueda": "Planificador de Rutas"
+    },
+    {
+        "id_item": 72,
+        "categoria": "Operaciones",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Asistente de Abastecimiento",
+        "busqueda": "Asistente de Abastecimiento"
+    },
+    {
+        "id_item": 73,
+        "categoria": "Operaciones",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Analista de Abastecimiento",
+        "busqueda": "Analista de Abastecimiento"
+    },
+    {
+        "id_item": 74,
+        "categoria": "Operaciones",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Supervisor de Abastecimiento",
+        "busqueda": "Supervisor de Abastecimiento"
+    },
+    {
+        "id_item": 75,
+        "categoria": "Operaciones",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Jefe de Compras",
+        "busqueda": "Jefe de Compras"
+    },
+    {
+        "id_item": 76,
+        "categoria": "Operaciones",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Gerente de Compras y Abastecimiento",
+        "busqueda": "Gerente de Compras y Abastecimiento"
+    },
+    {
+        "id_item": 77,
+        "categoria": "Operaciones",
+        "seccion": "Mantenimiento y Servicios Generales",
+        "cargo": "Técnico en Mantenimiento",
+        "busqueda": "Tecnico en Mantenimiento"
+    },
+    {
+        "id_item": 78,
+        "categoria": "Operaciones",
+        "seccion": "Mantenimiento y Servicios Generales",
+        "cargo": "Supervisor de Mantenimiento",
+        "busqueda": "Supervisor de Mantenimiento"
+    },
+    {
+        "id_item": 79,
+        "categoria": "Operaciones",
+        "seccion": "Mantenimiento y Servicios Generales",
+        "cargo": "Jefe de Mantenimiento",
+        "busqueda": "Jefe de Mantenimiento"
+    },
+    {
+        "id_item": 80,
+        "categoria": "Operaciones",
+        "seccion": "Mantenimiento y Servicios Generales",
+        "cargo": "Gerente de Mantenimiento",
+        "busqueda": "Gerente de Mantenimiento"
+    },
+    {
+        "id_item": 81,
+        "categoria": "Operaciones",
+        "seccion": "Mantenimiento y Servicios Generales",
+        "cargo": "Jefe de Servicios Generales",
+        "busqueda": "Jefe de Servicios Generales"
+    },
+    {
+        "id_item": 82,
+        "categoria": "Operaciones",
+        "seccion": "Mantenimiento y Servicios Generales",
+        "cargo": "Gerente de Servicios Generales",
+        "busqueda": "Gerente de Servicios Generales"
+    },
+    {
+        "id_item": 83,
+        "categoria": "Operaciones",
+        "seccion": "Planificación y Control de Operaciones",
+        "cargo": "Analista de Planificación",
+        "busqueda": "Analista de Planificacion"
+    },
+    {
+        "id_item": 84,
+        "categoria": "Operaciones",
+        "seccion": "Planificación y Control de Operaciones",
+        "cargo": "Supervisor de Control de Gestión",
+        "busqueda": "Supervisor de Control de Gestion"
+    },
+    {
+        "id_item": 85,
+        "categoria": "Operaciones",
+        "seccion": "Planificación y Control de Operaciones",
+        "cargo": "Jefe de Planificación y Control",
+        "busqueda": "Jefe de Planificacion y Control"
+    },
+    {
+        "id_item": 86,
+        "categoria": "Operaciones",
+        "seccion": "Planificación y Control de Operaciones",
+        "cargo": "Gerente de Operaciones",
+        "busqueda": "Gerente de Operaciones"
+    },
+    {
+        "id_item": 87,
+        "categoria": "Operaciones",
+        "seccion": "Salud y Seguridad en Operaciones",
+        "cargo": "Prevencionista de Riesgos",
+        "busqueda": "Prevencionista de Riesgos"
+    },
+    {
+        "id_item": 88,
+        "categoria": "Operaciones",
+        "seccion": "Salud y Seguridad en Operaciones",
+        "cargo": "Jefe de Seguridad Operacional",
+        "busqueda": "Jefe de Seguridad Operacional"
+    },
+    {
+        "id_item": 89,
+        "categoria": "Operaciones",
+        "seccion": "Salud y Seguridad en Operaciones",
+        "cargo": "Gerente de Seguridad Operacional",
+        "busqueda": "Gerente de Seguridad Operacional"
+    },
+    {
+        "id_item": 90,
+        "categoria": "Operaciones",
+        "seccion": "Mejora Continua y Calidad",
+        "cargo": "Analista de Mejora Continua",
+        "busqueda": "Analista de Mejora Continua"
+    },
+    {
+        "id_item": 91,
+        "categoria": "Operaciones",
+        "seccion": "Mejora Continua y Calidad",
+        "cargo": "Jefe de Mejora Continua",
+        "busqueda": "Jefe de Mejora Continua"
+    },
+    {
+        "id_item": 92,
+        "categoria": "Operaciones",
+        "seccion": "Mejora Continua y Calidad",
+        "cargo": "Consultor Lean / Six Sigma",
+        "busqueda": "Consultor Lean / Six Sigma"
+    },
+    {
+        "id_item": 93,
+        "categoria": "Operaciones",
+        "seccion": "Reposición y Abastecimiento",
+        "cargo": "Reponedor/Mercaderista",
+        "busqueda": "Reponedor/Mercaderista"
+    },
+    {
+        "id_item": 94,
+        "categoria": "Operaciones",
+        "seccion": "Reposición y Abastecimiento",
+        "cargo": "Supervisor/a de Reposición",
+        "busqueda": "Supervisor/a de Reposicion"
+    },
+    {
+        "id_item": 95,
+        "categoria": "Operaciones",
+        "seccion": "Reposición y Abastecimiento",
+        "cargo": "Jefe/a de Abastecimiento en Tienda",
+        "busqueda": "Jefe/a de Abastecimiento en Tienda"
+    },
+    {
+        "id_item": 96,
+        "categoria": "Operaciones",
+        "seccion": "Reposición y Abastecimiento",
+        "cargo": "Coordinador de Cuenta Reposición",
+        "busqueda": "Coordinador de Cuenta Reposicion"
+    },
+    {
+        "id_item": 97,
+        "categoria": "Operaciones",
+        "seccion": "Atención y Ventas",
+        "cargo": "Vendedor/a de Tienda",
+        "busqueda": "Vendedor/a de Tienda"
+    },
+    {
+        "id_item": 98,
+        "categoria": "Operaciones",
+        "seccion": "Atención y Ventas",
+        "cargo": "Asistente de Ventas",
+        "busqueda": "Asistente de Ventas"
+    },
+    {
+        "id_item": 99,
+        "categoria": "Operaciones",
+        "seccion": "Atención y Ventas",
+        "cargo": "Cajero/a",
+        "busqueda": "Cajero/a"
+    },
+    {
+        "id_item": 100,
+        "categoria": "Operaciones",
+        "seccion": "Atención y Ventas",
+        "cargo": "Supervisor/a de Ventas",
+        "busqueda": "Supervisor/a de Ventas"
+    },
+    {
+        "id_item": 101,
+        "categoria": "Operaciones",
+        "seccion": "Gestión y Supervisión",
+        "cargo": "Subjefe/a de Tienda",
+        "busqueda": "Subjefe/a de Tienda"
+    },
+    {
+        "id_item": 102,
+        "categoria": "Operaciones",
+        "seccion": "Gestión y Supervisión",
+        "cargo": "Jefe/a de Tienda",
+        "busqueda": "Jefe/a de Tienda"
+    },
+    {
+        "id_item": 103,
+        "categoria": "Operaciones",
+        "seccion": "Gestión y Supervisión",
+        "cargo": "Supervisor/a de Turno",
+        "busqueda": "Supervisor/a de Turno"
+    },
+    {
+        "id_item": 104,
+        "categoria": "Operaciones",
+        "seccion": "Prevención y Seguridad",
+        "cargo": "Guardia de Seguridad en Tienda",
+        "busqueda": "Guardia de Seguridad en Tienda"
+    },
+    {
+        "id_item": 105,
+        "categoria": "Operaciones",
+        "seccion": "Prevención y Seguridad",
+        "cargo": "Supervisor/a de Seguridad",
+        "busqueda": "Supervisor/a de Seguridad"
+    },
+    {
+        "id_item": 106,
+        "categoria": "Operaciones",
+        "seccion": "Visual Merchandising",
+        "cargo": "Visual Merchandiser",
+        "busqueda": "Visual Merchandiser"
+    },
+    {
+        "id_item": 107,
+        "categoria": "Operaciones",
+        "seccion": "Visual Merchandising",
+        "cargo": "Supervisor/a de Visual Merchandising",
+        "busqueda": "Supervisor/a de Visual Merchandising"
+    },
+    {
+        "id_item": 108,
+        "categoria": "Operaciones",
+        "seccion": "Bodega y Logística Interna",
+        "cargo": "Operario/a de Bodega en Tienda",
+        "busqueda": "Operario/a de Bodega en Tienda"
+    },
+    {
+        "id_item": 109,
+        "categoria": "Operaciones",
+        "seccion": "Bodega y Logística Interna",
+        "cargo": "Supervisor/a de Bodega",
+        "busqueda": "Supervisor/a de Bodega"
+    },
+    {
+        "id_item": 110,
+        "categoria": "Operaciones",
+        "seccion": "Limpieza y Servicios Generales",
+        "cargo": "Personal de Aseo en Tienda",
+        "busqueda": "Personal de Aseo en Tienda"
+    },
+    {
+        "id_item": 111,
+        "categoria": "Ventas",
+        "seccion": "Ventas Terreno",
+        "cargo": "Ejecutivo de Ventas Terreno",
+        "busqueda": "Ejecutivo de Ventas Terreno"
+    },
+    {
+        "id_item": 112,
+        "categoria": "Ventas",
+        "seccion": "Ventas Terreno",
+        "cargo": "Jefe de Ventas Terreno",
+        "busqueda": "Jefe de Ventas Terreno"
+    },
+    {
+        "id_item": 113,
+        "categoria": "Ventas",
+        "seccion": "Ventas Terreno",
+        "cargo": "Gerente de Ventas Terreno",
+        "busqueda": "Gerente de Ventas Terreno"
+    },
+    {
+        "id_item": 114,
+        "categoria": "Ventas",
+        "seccion": "Ventas Retail",
+        "cargo": "Vendedor/a de Tienda",
+        "busqueda": "Vendedor/a de Tienda"
+    },
+    {
+        "id_item": 115,
+        "categoria": "Ventas",
+        "seccion": "Ventas Retail",
+        "cargo": "Supervisor de Tienda",
+        "busqueda": "Supervisor de Tienda"
+    },
+    {
+        "id_item": 116,
+        "categoria": "Ventas",
+        "seccion": "Ventas Retail",
+        "cargo": "Jefe de Tienda",
+        "busqueda": "Jefe de Tienda"
+    },
+    {
+        "id_item": 117,
+        "categoria": "Ventas",
+        "seccion": "Ventas Retail",
+        "cargo": "Visual Merchandiser",
+        "busqueda": "Visual Merchandiser"
+    },
+    {
+        "id_item": 118,
+        "categoria": "Ventas",
+        "seccion": "Ventas Retail",
+        "cargo": "Gerente de Sucursal",
+        "busqueda": "Gerente de Sucursal"
+    },
+    {
+        "id_item": 119,
+        "categoria": "Ventas",
+        "seccion": "Ventas Corporativas",
+        "cargo": "Key Account Manager (KAM)",
+        "busqueda": "Key Account Manager (KAM)"
+    },
+    {
+        "id_item": 120,
+        "categoria": "Ventas",
+        "seccion": "Ventas Corporativas",
+        "cargo": "Supervisor de Ventas Corporativas",
+        "busqueda": "Supervisor de Ventas Corporativas"
+    },
+    {
+        "id_item": 121,
+        "categoria": "Ventas",
+        "seccion": "Ventas Corporativas",
+        "cargo": "Jefe de Ventas Corporativas",
+        "busqueda": "Jefe de Ventas Corporativas"
+    },
+    {
+        "id_item": 122,
+        "categoria": "Ventas",
+        "seccion": "Ventas Corporativas",
+        "cargo": "Gerente Comercial",
+        "busqueda": "Gerente Comercial"
+    },
+    {
+        "id_item": 123,
+        "categoria": "Ventas",
+        "seccion": "Ventas Digitales",
+        "cargo": "Ejecutivo/a de Canales Digitales",
+        "busqueda": "Ejecutivo/a de Canales Digitales"
+    },
+    {
+        "id_item": 124,
+        "categoria": "Ventas",
+        "seccion": "Ventas Digitales",
+        "cargo": "Gerente de Ventas Digitales",
+        "busqueda": "Gerente de Ventas Digitales"
+    },
+    {
+        "id_item": 125,
+        "categoria": "Ventas",
+        "seccion": "Postventa y Atención al Cliente",
+        "cargo": "Ejecutivo de Postventa",
+        "busqueda": "Ejecutivo de Postventa"
+    },
+    {
+        "id_item": 126,
+        "categoria": "Ventas",
+        "seccion": "Postventa y Atención al Cliente",
+        "cargo": "Ejecutivo de Atención al Cliente",
+        "busqueda": "Ejecutivo de Atencion al Cliente"
+    },
+    {
+        "id_item": 127,
+        "categoria": "Ventas",
+        "seccion": "Postventa y Atención al Cliente",
+        "cargo": "Supervisor de Atención al Cliente",
+        "busqueda": "Supervisor de Atencion al Cliente"
+    },
+    {
+        "id_item": 128,
+        "categoria": "Ventas",
+        "seccion": "Postventa y Atención al Cliente",
+        "cargo": "Jefe de Atención al Cliente",
+        "busqueda": "Jefe de Atencion al Cliente"
+    },
+    {
+        "id_item": 129,
+        "categoria": "Ventas",
+        "seccion": "Postventa y Atención al Cliente",
+        "cargo": "Gerente de Postventa y Atención al Cliente",
+        "busqueda": "Gerente de Postventa y Atencion al Cliente"
+    },
+    {
+        "id_item": 130,
+        "categoria": "Ventas",
+        "seccion": "Trade Marketing",
+        "cargo": "Ejecutivo Trade Marketing",
+        "busqueda": "Ejecutivo Trade Marketing"
+    },
+    {
+        "id_item": 131,
+        "categoria": "Ventas",
+        "seccion": "Trade Marketing",
+        "cargo": "Supervisor de Trade Marketing",
+        "busqueda": "Supervisor de Trade Marketing"
+    },
+    {
+        "id_item": 132,
+        "categoria": "Ventas",
+        "seccion": "Trade Marketing",
+        "cargo": "Jefe de Trade Marketing",
+        "busqueda": "Jefe de Trade Marketing"
+    },
+    {
+        "id_item": 133,
+        "categoria": "Ventas",
+        "seccion": "Trade Marketing",
+        "cargo": "Gerente de Trade Marketing",
+        "busqueda": "Gerente de Trade Marketing"
+    },
+    {
+        "id_item": 134,
+        "categoria": "Ventas",
+        "seccion": "Televentas",
+        "cargo": "Operador de Call Center",
+        "busqueda": "Operador de Call Center"
+    },
+    {
+        "id_item": 135,
+        "categoria": "Ventas",
+        "seccion": "Televentas",
+        "cargo": "Supervisor de Televentas",
+        "busqueda": "Supervisor de Televentas"
+    },
+    {
+        "id_item": 136,
+        "categoria": "Ventas",
+        "seccion": "Televentas",
+        "cargo": "Jefe de Televentas",
+        "busqueda": "Jefe de Televentas"
+    },
+    {
+        "id_item": 137,
+        "categoria": "Ventas",
+        "seccion": "Dirección Comercial",
+        "cargo": "Jefe de Ventas",
+        "busqueda": "Jefe de Ventas"
+    },
+    {
+        "id_item": 138,
+        "categoria": "Ventas",
+        "seccion": "Dirección Comercial",
+        "cargo": "Gerente Comercial",
+        "busqueda": "Gerente Comercial"
+    },
+    {
+        "id_item": 139,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico General",
+        "busqueda": "Medico General"
+    },
+    {
+        "id_item": 140,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico Especialista",
+        "busqueda": "Medico Especialista"
+    },
+    {
+        "id_item": 141,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico Cirujano",
+        "busqueda": "Medico Cirujano"
+    },
+    {
+        "id_item": 142,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico Internista",
+        "busqueda": "Medico Internista"
+    },
+    {
+        "id_item": 143,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico Pediatra",
+        "busqueda": "Medico Pediatra"
+    },
+    {
+        "id_item": 144,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico Ginecólogo",
+        "busqueda": "Medico Ginecologo"
+    },
+    {
+        "id_item": 145,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico Traumatólogo",
+        "busqueda": "Medico Traumatologo"
+    },
+    {
+        "id_item": 146,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico Radiólogo",
+        "busqueda": "Medico Radiologo"
+    },
+    {
+        "id_item": 147,
+        "categoria": "Salud",
+        "seccion": "Área Médica",
+        "cargo": "Médico de Urgencia",
+        "busqueda": "Medico de Urgencia"
+    },
+    {
+        "id_item": 148,
+        "categoria": "Salud",
+        "seccion": "Área de Enfermería",
+        "cargo": "Enfermero/a",
+        "busqueda": "Enfermero/a"
+    },
+    {
+        "id_item": 149,
+        "categoria": "Salud",
+        "seccion": "Área de Enfermería",
+        "cargo": "Técnico en Enfermería (TENS)",
+        "busqueda": "Tecnico en Enfermeria (TENS)"
+    },
+    {
+        "id_item": 150,
+        "categoria": "Salud",
+        "seccion": "Área de Enfermería",
+        "cargo": "Enfermero/a Jefe",
+        "busqueda": "Enfermero/a Jefe"
+    },
+    {
+        "id_item": 151,
+        "categoria": "Salud",
+        "seccion": "Área de Enfermería",
+        "cargo": "Paramédico",
+        "busqueda": "Paramedico"
+    },
+    {
+        "id_item": 152,
+        "categoria": "Salud",
+        "seccion": "Área de Kinesiología y Rehabilitación",
+        "cargo": "Kinesiólogo/a",
+        "busqueda": "Kinesiologo/a"
+    },
+    {
+        "id_item": 153,
+        "categoria": "Salud",
+        "seccion": "Área de Kinesiología y Rehabilitación",
+        "cargo": "Terapeuta Ocupacional",
+        "busqueda": "Terapeuta Ocupacional"
+    },
+    {
+        "id_item": 154,
+        "categoria": "Salud",
+        "seccion": "Área de Kinesiología y Rehabilitación",
+        "cargo": "Fonoaudiólogo/a",
+        "busqueda": "Fonoaudiologo/a"
+    },
+    {
+        "id_item": 155,
+        "categoria": "Salud",
+        "seccion": "Área de Kinesiología y Rehabilitación",
+        "cargo": "Fisiatra",
+        "busqueda": "Fisiatra"
+    },
+    {
+        "id_item": 156,
+        "categoria": "Salud",
+        "seccion": "Área de Imagenología",
+        "cargo": "Tecnólogo Médico en Imagenología",
+        "busqueda": "Tecnologo Medico en Imagenologia"
+    },
+    {
+        "id_item": 157,
+        "categoria": "Salud",
+        "seccion": "Área de Imagenología",
+        "cargo": "Radiólogo/a",
+        "busqueda": "Radiologo/a"
+    },
+    {
+        "id_item": 158,
+        "categoria": "Salud",
+        "seccion": "Área de Imagenología",
+        "cargo": "Técnico en Radiología",
+        "busqueda": "Tecnico en Radiologia"
+    },
+    {
+        "id_item": 159,
+        "categoria": "Salud",
+        "seccion": "Área de Laboratorio",
+        "cargo": "Técnico de Laboratorio Clínico",
+        "busqueda": "Tecnico de Laboratorio Clinico"
+    },
+    {
+        "id_item": 160,
+        "categoria": "Salud",
+        "seccion": "Área de Laboratorio",
+        "cargo": "Bioquímico/a",
+        "busqueda": "Bioquimico/a"
+    },
+    {
+        "id_item": 161,
+        "categoria": "Salud",
+        "seccion": "Área de Odontología",
+        "cargo": "Dentista / Cirujano Dentista",
+        "busqueda": "Dentista / Cirujano Dentista"
+    },
+    {
+        "id_item": 162,
+        "categoria": "Salud",
+        "seccion": "Área de Farmacia",
+        "cargo": "Químico Farmacéutico",
+        "busqueda": "Quimico Farmaceutico"
+    },
+    {
+        "id_item": 163,
+        "categoria": "Salud",
+        "seccion": "Área de Farmacia",
+        "cargo": "Técnico en Farmacia",
+        "busqueda": "Tecnico en Farmacia"
+    },
+    {
+        "id_item": 164,
+        "categoria": "Salud",
+        "seccion": "Área de Matronería",
+        "cargo": "Matrona / Matrón",
+        "busqueda": "Matrona / Matron"
+    },
+    {
+        "id_item": 165,
+        "categoria": "Salud",
+        "seccion": "Área Psicológica",
+        "cargo": "Psicólogo/a Clínico",
+        "busqueda": "Psicologo/a Clinico"
+    },
+    {
+        "id_item": 166,
+        "categoria": "Salud",
+        "seccion": "Área Psicológica",
+        "cargo": "Psicólogo/a Organizacional",
+        "busqueda": "Psicologo/a Organizacional"
+    },
+    {
+        "id_item": 167,
+        "categoria": "Salud",
+        "seccion": "Área Psicológica",
+        "cargo": "Psicólogo/a Infantil",
+        "busqueda": "Psicologo/a Infantil"
+    },
+    {
+        "id_item": 168,
+        "categoria": "Salud",
+        "seccion": "Área Nutrición y Dietética",
+        "cargo": "Nutricionista",
+        "busqueda": "Nutricionista"
+    },
+    {
+        "id_item": 169,
+        "categoria": "Salud",
+        "seccion": "Área Nutrición y Dietética",
+        "cargo": "Técnico en Nutrición y Dietética",
+        "busqueda": "Tecnico en Nutricion y Dietetica"
+    },
+    {
+        "id_item": 170,
+        "categoria": "Salud",
+        "seccion": "Administración en Salud",
+        "cargo": "Recepcionista Clínica",
+        "busqueda": "Recepcionista Clinica"
+    },
+    {
+        "id_item": 171,
+        "categoria": "Salud",
+        "seccion": "Administración en Salud",
+        "cargo": "Secretaria Médica",
+        "busqueda": "Secretaria Medica"
+    },
+    {
+        "id_item": 172,
+        "categoria": "Salud",
+        "seccion": "Administración en Salud",
+        "cargo": "Administrador de Clínica",
+        "busqueda": "Administrador de Clinica"
+    },
+    {
+        "id_item": 173,
+        "categoria": "Salud",
+        "seccion": "Administración en Salud",
+        "cargo": "Coordinador de Servicios de Salud",
+        "busqueda": "Coordinador de Servicios de Salud"
+    },
+    {
+        "id_item": 174,
+        "categoria": "Salud",
+        "seccion": "Área de Cirugía",
+        "cargo": "Enfermero/a de Pabellón",
+        "busqueda": "Enfermero/a de Pabellon"
+    },
+    {
+        "id_item": 175,
+        "categoria": "Educación",
+        "seccion": "Docencia Básica",
+        "cargo": "Profesor/a de Educación Básica",
+        "busqueda": "Profesor/a de Educacion Basica"
+    },
+    {
+        "id_item": 176,
+        "categoria": "Educación",
+        "seccion": "Docencia Básica",
+        "cargo": "Profesor/a de Asignatura (Lenguaje, Matemáticas, Ciencias, etc.)",
+        "busqueda": "Profesor/a de Asignatura (Lenguaje, Matematicas, Ciencias, etc.)"
+    },
+    {
+        "id_item": 177,
+        "categoria": "Educación",
+        "seccion": "Docencia Básica",
+        "cargo": "Profesor/a de Educación Diferencial",
+        "busqueda": "Profesor/a de Educacion Diferencial"
+    },
+    {
+        "id_item": 178,
+        "categoria": "Educación",
+        "seccion": "Docencia Media",
+        "cargo": "Profesor/a de Educación Media",
+        "busqueda": "Profesor/a de Educacion Media"
+    },
+    {
+        "id_item": 179,
+        "categoria": "Educación",
+        "seccion": "Educación Parvularia",
+        "cargo": "Educadora de Párvulos",
+        "busqueda": "Educadora de Parvulos"
+    },
+    {
+        "id_item": 180,
+        "categoria": "Educación",
+        "seccion": "Educación Parvularia",
+        "cargo": "Técnico en Educación Parvularia",
+        "busqueda": "Tecnico en Educacion Parvularia"
+    },
+    {
+        "id_item": 181,
+        "categoria": "Educación",
+        "seccion": "Educación Parvularia",
+        "cargo": "Asistente de Párvulos",
+        "busqueda": "Asistente de Parvulos"
+    },
+    {
+        "id_item": 182,
+        "categoria": "Educación",
+        "seccion": "Educación Superior",
+        "cargo": "Docente Universitario/a",
+        "busqueda": "Docente Universitario/a"
+    },
+    {
+        "id_item": 183,
+        "categoria": "Educación",
+        "seccion": "Educación Física y Deportes",
+        "cargo": "Coordinador/a de Deportes",
+        "busqueda": "Coordinador/a de Deportes"
+    },
+    {
+        "id_item": 184,
+        "categoria": "Educación",
+        "seccion": "Educación Física y Deportes",
+        "cargo": "Entrenador/a",
+        "busqueda": "Entrenador/a"
+    },
+    {
+        "id_item": 185,
+        "categoria": "Educación",
+        "seccion": "Gestión Educativa",
+        "cargo": "Inspector/a General",
+        "busqueda": "Inspector/a General"
+    },
+    {
+        "id_item": 186,
+        "categoria": "Educación",
+        "seccion": "Gestión Educativa",
+        "cargo": "Coordinador/a Académico/a",
+        "busqueda": "Coordinador/a Academico/a"
+    },
+    {
+        "id_item": 187,
+        "categoria": "Educación",
+        "seccion": "Gestión Educativa",
+        "cargo": "UTP (Unidad Técnico Pedagógica)",
+        "busqueda": "UTP (Unidad Tecnico Pedagogica)"
+    },
+    {
+        "id_item": 188,
+        "categoria": "Educación",
+        "seccion": "Gestión Educativa",
+        "cargo": "Orientador/a Educacional",
+        "busqueda": "Orientador/a Educacional"
+    },
+    {
+        "id_item": 189,
+        "categoria": "Educación",
+        "seccion": "Gestión Educativa",
+        "cargo": "Psicopedagogo/a",
+        "busqueda": "Psicopedagogo/a"
+    },
+    {
+        "id_item": 190,
+        "categoria": "Educación",
+        "seccion": "Gestión Educativa",
+        "cargo": "Encargado/a de Convivencia Escolar",
+        "busqueda": "Encargado/a de Convivencia Escolar"
+    },
+    {
+        "id_item": 191,
+        "categoria": "Educación",
+        "seccion": "Gestión Educativa",
+        "cargo": "Administrador/a Escolar",
+        "busqueda": "Administrador/a Escolar"
+    },
+    {
+        "id_item": 192,
+        "categoria": "Educación",
+        "seccion": "Apoyo y Servicios",
+        "cargo": "Psicólogo/a Escolar",
+        "busqueda": "Psicologo/a Escolar"
+    },
+    {
+        "id_item": 193,
+        "categoria": "Educación",
+        "seccion": "Apoyo y Servicios",
+        "cargo": "Fonoaudiólogo/a Escolar",
+        "busqueda": "Fonoaudiologo/a Escolar"
+    },
+    {
+        "id_item": 194,
+        "categoria": "Educación",
+        "seccion": "Apoyo y Servicios",
+        "cargo": "Terapeuta Ocupacional Escolar",
+        "busqueda": "Terapeuta Ocupacional Escolar"
+    },
+    {
+        "id_item": 195,
+        "categoria": "Educación",
+        "seccion": "Apoyo y Servicios",
+        "cargo": "Asistente Social Escolar",
+        "busqueda": "Asistente Social Escolar"
+    },
+    {
+        "id_item": 196,
+        "categoria": "Educación",
+        "seccion": "Apoyo y Servicios",
+        "cargo": "Encargado/a de Inclusión",
+        "busqueda": "Encargado/a de Inclusion"
+    },
+    {
+        "id_item": 197,
+        "categoria": "Servicios",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Operario/a de Aseo",
+        "busqueda": "Operario/a de Aseo"
+    },
+    {
+        "id_item": 198,
+        "categoria": "Servicios",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Supervisor/a de Aseo",
+        "busqueda": "Supervisor/a de Aseo"
+    },
+    {
+        "id_item": 199,
+        "categoria": "Servicios",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Jefe/a de Servicios Generales",
+        "busqueda": "Jefe/a de Servicios Generales"
+    },
+    {
+        "id_item": 200,
+        "categoria": "Servicios",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Coordinador de Cuenta Aseo",
+        "busqueda": "Coordinador de Cuenta Aseo"
+    },
+    {
+        "id_item": 201,
+        "categoria": "Servicios",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Guardia de Seguridad",
+        "busqueda": "Guardia de Seguridad"
+    },
+    {
+        "id_item": 202,
+        "categoria": "Servicios",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Supervisor/a de Seguridad",
+        "busqueda": "Supervisor/a de Seguridad"
+    },
+    {
+        "id_item": 203,
+        "categoria": "Servicios",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Jefe/a de Seguridad",
+        "busqueda": "Jefe/a de Seguridad"
+    },
+    {
+        "id_item": 204,
+        "categoria": "Servicios",
+        "seccion": "Alimentación y Casino",
+        "cargo": "Manipulador/a de Alimentos",
+        "busqueda": "Manipulador/a de Alimentos"
+    },
+    {
+        "id_item": 205,
+        "categoria": "Servicios",
+        "seccion": "Alimentación y Casino",
+        "cargo": "Maestro/a de Cocina",
+        "busqueda": "Maestro/a de Cocina"
+    },
+    {
+        "id_item": 206,
+        "categoria": "Servicios",
+        "seccion": "Alimentación y Casino",
+        "cargo": "Supervisor/a de Casino",
+        "busqueda": "Supervisor/a de Casino"
+    },
+    {
+        "id_item": 207,
+        "categoria": "Servicios",
+        "seccion": "Alimentación y Casino",
+        "cargo": "Jefe/a de Alimentación",
+        "busqueda": "Jefe/a de Alimentacion"
+    },
+    {
+        "id_item": 208,
+        "categoria": "Servicios",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Recepcionista",
+        "busqueda": "Recepcionista"
+    },
+    {
+        "id_item": 209,
+        "categoria": "Servicios",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Telefonista",
+        "busqueda": "Telefonista"
+    },
+    {
+        "id_item": 210,
+        "categoria": "Servicios",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Encargado/a de Recepción",
+        "busqueda": "Encargado/a de Recepcion"
+    },
+    {
+        "id_item": 211,
+        "categoria": "Servicios",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Anfitrión/a",
+        "busqueda": "Anfitrion/a"
+    },
+    {
+        "id_item": 212,
+        "categoria": "Servicios",
+        "seccion": "Jardinería y Áreas Verdes",
+        "cargo": "Jardinero/a",
+        "busqueda": "Jardinero/a"
+    },
+    {
+        "id_item": 213,
+        "categoria": "Servicios",
+        "seccion": "Jardinería y Áreas Verdes",
+        "cargo": "Supervisor/a de Áreas Verdes",
+        "busqueda": "Supervisor/a de Areas Verdes"
+    },
+    {
+        "id_item": 214,
+        "categoria": "Servicios",
+        "seccion": "Mantención y Servicios Generales",
+        "cargo": "Técnico/a de Mantención",
+        "busqueda": "Tecnico/a de Mantencion"
+    },
+    {
+        "id_item": 215,
+        "categoria": "Servicios",
+        "seccion": "Mantención y Servicios Generales",
+        "cargo": "Supervisor/a de Mantención",
+        "busqueda": "Supervisor/a de Mantencion"
+    },
+    {
+        "id_item": 216,
+        "categoria": "Servicios",
+        "seccion": "Mantención y Servicios Generales",
+        "cargo": "Jefe/a de Servicios Generales",
+        "busqueda": "Jefe/a de Servicios Generales"
+    },
+    {
+        "id_item": 217,
+        "categoria": "Servicios",
+        "seccion": "Logística y Distribución",
+        "cargo": "Operario/a de Bodega",
+        "busqueda": "Operario/a de Bodega"
+    },
+    {
+        "id_item": 218,
+        "categoria": "Servicios",
+        "seccion": "Logística y Distribución",
+        "cargo": "Chofer",
+        "busqueda": "Chofer"
+    },
+    {
+        "id_item": 219,
+        "categoria": "Servicios",
+        "seccion": "Logística y Distribución",
+        "cargo": "Supervisor/a de Logística",
+        "busqueda": "Supervisor/a de Logistica"
+    },
+    {
+        "id_item": 220,
+        "categoria": "Servicios",
+        "seccion": "Logística y Distribución",
+        "cargo": "Coordinador de Cuenta Logística",
+        "busqueda": "Coordinador de Cuenta Logistica"
+    },
+    {
+        "id_item": 221,
+        "categoria": "Servicios",
+        "seccion": "Lavandería",
+        "cargo": "Operario/a de Lavandería",
+        "busqueda": "Operario/a de Lavanderia"
+    },
+    {
+        "id_item": 222,
+        "categoria": "Servicios",
+        "seccion": "Lavandería",
+        "cargo": "Supervisor/a de Lavandería",
+        "busqueda": "Supervisor/a de Lavanderia"
+    },
+    {
+        "id_item": 223,
+        "categoria": "Servicios",
+        "seccion": "Servicios Funerarios",
+        "cargo": "Asistente Funerario/a",
+        "busqueda": "Asistente Funerario/a"
+    },
+    {
+        "id_item": 224,
+        "categoria": "Servicios",
+        "seccion": "Servicios Funerarios",
+        "cargo": "Chofer de Carroza",
+        "busqueda": "Chofer de Carroza"
+    },
+    {
+        "id_item": 225,
+        "categoria": "Servicios",
+        "seccion": "Servicios Funerarios",
+        "cargo": "Jefe/a de Servicios Funerarios",
+        "busqueda": "Jefe/a de Servicios Funerarios"
+    },
+    {
+        "id_item": 226,
+        "categoria": "Logística",
+        "seccion": "Operaciones Logísticas",
+        "cargo": "Operario/a de Bodega",
+        "busqueda": "Operario/a de Bodega"
+    },
+    {
+        "id_item": 227,
+        "categoria": "Logística",
+        "seccion": "Operaciones Logísticas",
+        "cargo": "Picking / Armador/a de Pedidos",
+        "busqueda": "Picking / Armador/a de Pedidos"
+    },
+    {
+        "id_item": 228,
+        "categoria": "Logística",
+        "seccion": "Operaciones Logísticas",
+        "cargo": "Operador/a de Grúa Horquilla",
+        "busqueda": "Operador/a de Grua Horquilla"
+    },
+    {
+        "id_item": 229,
+        "categoria": "Logística",
+        "seccion": "Operaciones Logísticas",
+        "cargo": "Operador/a de Transpaleta Eléctrica",
+        "busqueda": "Operador/a de Transpaleta Electrica"
+    },
+    {
+        "id_item": 230,
+        "categoria": "Logística",
+        "seccion": "Operaciones Logísticas",
+        "cargo": "Supervisor/a de Bodega",
+        "busqueda": "Supervisor/a de Bodega"
+    },
+    {
+        "id_item": 231,
+        "categoria": "Logística",
+        "seccion": "Operaciones Logísticas",
+        "cargo": "Jefe/a de Bodega",
+        "busqueda": "Jefe/a de Bodega"
+    },
+    {
+        "id_item": 232,
+        "categoria": "Logística",
+        "seccion": "Operaciones Logísticas",
+        "cargo": "Coordinador/a Logístico/a",
+        "busqueda": "Coordinador/a Logistico/a"
+    },
+    {
+        "id_item": 233,
+        "categoria": "Logística",
+        "seccion": "Transporte y Distribución",
+        "cargo": "Chofer Clase B",
+        "busqueda": "Chofer Clase B"
+    },
+    {
+        "id_item": 234,
+        "categoria": "Logística",
+        "seccion": "Transporte y Distribución",
+        "cargo": "Chofer Clase A2 / A4",
+        "busqueda": "Chofer Clase A2 / A4"
+    },
+    {
+        "id_item": 235,
+        "categoria": "Logística",
+        "seccion": "Transporte y Distribución",
+        "cargo": "Chofer Repartidor",
+        "busqueda": "Chofer Repartidor"
+    },
+    {
+        "id_item": 236,
+        "categoria": "Logística",
+        "seccion": "Transporte y Distribución",
+        "cargo": "Coordinador/a de Transporte",
+        "busqueda": "Coordinador/a de Transporte"
+    },
+    {
+        "id_item": 237,
+        "categoria": "Logística",
+        "seccion": "Transporte y Distribución",
+        "cargo": "Planificador/a de Rutas",
+        "busqueda": "Planificador/a de Rutas"
+    },
+    {
+        "id_item": 238,
+        "categoria": "Logística",
+        "seccion": "Transporte y Distribución",
+        "cargo": "Supervisor/a de Transporte",
+        "busqueda": "Supervisor/a de Transporte"
+    },
+    {
+        "id_item": 239,
+        "categoria": "Logística",
+        "seccion": "Transporte y Distribución",
+        "cargo": "Jefe/a de Transporte",
+        "busqueda": "Jefe/a de Transporte"
+    },
+    {
+        "id_item": 240,
+        "categoria": "Logística",
+        "seccion": "Transporte y Distribución",
+        "cargo": "Gerente de Transporte",
+        "busqueda": "Gerente de Transporte"
+    },
+    {
+        "id_item": 241,
+        "categoria": "Logística",
+        "seccion": "Planificación y Control Logístico",
+        "cargo": "Analista de Inventario",
+        "busqueda": "Analista de Inventario"
+    },
+    {
+        "id_item": 242,
+        "categoria": "Logística",
+        "seccion": "Planificación y Control Logístico",
+        "cargo": "Analista de Control de Gestión",
+        "busqueda": "Analista de Control de Gestion"
+    },
+    {
+        "id_item": 243,
+        "categoria": "Logística",
+        "seccion": "Planificación y Control Logístico",
+        "cargo": "Supervisor/a de Control de Gestión",
+        "busqueda": "Supervisor/a de Control de Gestion"
+    },
+    {
+        "id_item": 244,
+        "categoria": "Logística",
+        "seccion": "Planificación y Control Logístico",
+        "cargo": "Jefe/a de Planificación y Control Logístico",
+        "busqueda": "Jefe/a de Planificacion y Control Logistico"
+    },
+    {
+        "id_item": 245,
+        "categoria": "Logística",
+        "seccion": "Planificación y Control Logístico",
+        "cargo": "Gerente de Planificación Logística",
+        "busqueda": "Gerente de Planificacion Logistica"
+    },
+    {
+        "id_item": 246,
+        "categoria": "Logística",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Asistente de Abastecimiento",
+        "busqueda": "Asistente de Abastecimiento"
+    },
+    {
+        "id_item": 247,
+        "categoria": "Logística",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Analista de Abastecimiento",
+        "busqueda": "Analista de Abastecimiento"
+    },
+    {
+        "id_item": 248,
+        "categoria": "Logística",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Supervisor/a de Abastecimiento",
+        "busqueda": "Supervisor/a de Abastecimiento"
+    },
+    {
+        "id_item": 249,
+        "categoria": "Logística",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Jefe/a de Compras",
+        "busqueda": "Jefe/a de Compras"
+    },
+    {
+        "id_item": 250,
+        "categoria": "Logística",
+        "seccion": "Abastecimiento y Compras",
+        "cargo": "Gerente de Compras y Abastecimiento",
+        "busqueda": "Gerente de Compras y Abastecimiento"
+    },
+    {
+        "id_item": 251,
+        "categoria": "Logística",
+        "seccion": "Seguridad y Prevención",
+        "cargo": "Prevencionista de Riesgos",
+        "busqueda": "Prevencionista de Riesgos"
+    },
+    {
+        "id_item": 252,
+        "categoria": "Logística",
+        "seccion": "Seguridad y Prevención",
+        "cargo": "Supervisor/a de Seguridad",
+        "busqueda": "Supervisor/a de Seguridad"
+    },
+    {
+        "id_item": 253,
+        "categoria": "Logística",
+        "seccion": "Seguridad y Prevención",
+        "cargo": "Jefe/a de Seguridad Logística",
+        "busqueda": "Jefe/a de Seguridad Logistica"
+    },
+    {
+        "id_item": 254,
+        "categoria": "Logística",
+        "seccion": "Gerencia y Alta Dirección",
+        "cargo": "Jefe/a de Logística",
+        "busqueda": "Jefe/a de Logistica"
+    },
+    {
+        "id_item": 255,
+        "categoria": "Logística",
+        "seccion": "Gerencia y Alta Dirección",
+        "cargo": "Gerente de Logística",
+        "busqueda": "Gerente de Logistica"
+    },
+    {
+        "id_item": 256,
+        "categoria": "Finanzas",
+        "seccion": "Atención al Cliente",
+        "cargo": "Supervisor/a de Atención al Cliente",
+        "busqueda": "Supervisor/a de Atencion al Cliente"
+    },
+    {
+        "id_item": 257,
+        "categoria": "Finanzas",
+        "seccion": "Operaciones Bancarias",
+        "cargo": "Asistente de Operaciones",
+        "busqueda": "Asistente de Operaciones"
+    },
+    {
+        "id_item": 258,
+        "categoria": "Finanzas",
+        "seccion": "Operaciones Bancarias",
+        "cargo": "Supervisor/a de Operaciones",
+        "busqueda": "Supervisor/a de Operaciones"
+    },
+    {
+        "id_item": 259,
+        "categoria": "Finanzas",
+        "seccion": "Operaciones Bancarias",
+        "cargo": "Jefe/a de Operaciones Bancarias",
+        "busqueda": "Jefe/a de Operaciones Bancarias"
+    },
+    {
+        "id_item": 260,
+        "categoria": "Finanzas",
+        "seccion": "Operaciones Bancarias",
+        "cargo": "Back Office Bancario",
+        "busqueda": "Back Office Bancario"
+    },
+    {
+        "id_item": 261,
+        "categoria": "Finanzas",
+        "seccion": "Créditos y Evaluaciones",
+        "cargo": "Ejecutivo/a de Créditos",
+        "busqueda": "Ejecutivo/a de Creditos"
+    },
+    {
+        "id_item": 262,
+        "categoria": "Finanzas",
+        "seccion": "Créditos y Evaluaciones",
+        "cargo": "Analista de Créditos",
+        "busqueda": "Analista de Creditos"
+    },
+    {
+        "id_item": 263,
+        "categoria": "Finanzas",
+        "seccion": "Créditos y Evaluaciones",
+        "cargo": "Analista de Riesgos",
+        "busqueda": "Analista de Riesgos"
+    },
+    {
+        "id_item": 264,
+        "categoria": "Finanzas",
+        "seccion": "Créditos y Evaluaciones",
+        "cargo": "Supervisor/a de Créditos",
+        "busqueda": "Supervisor/a de Creditos"
+    },
+    {
+        "id_item": 265,
+        "categoria": "Finanzas",
+        "seccion": "Créditos y Evaluaciones",
+        "cargo": "Jefe/a de Créditos y Evaluaciones",
+        "busqueda": "Jefe/a de Creditos y Evaluaciones"
+    },
+    {
+        "id_item": 266,
+        "categoria": "Finanzas",
+        "seccion": "Inversiones y Mercado de Capitales",
+        "cargo": "Ejecutivo/a de Inversiones",
+        "busqueda": "Ejecutivo/a de Inversiones"
+    },
+    {
+        "id_item": 267,
+        "categoria": "Finanzas",
+        "seccion": "Inversiones y Mercado de Capitales",
+        "cargo": "Analista de Inversiones",
+        "busqueda": "Analista de Inversiones"
+    },
+    {
+        "id_item": 268,
+        "categoria": "Finanzas",
+        "seccion": "Inversiones y Mercado de Capitales",
+        "cargo": "Jefe/a de Inversiones",
+        "busqueda": "Jefe/a de Inversiones"
+    },
+    {
+        "id_item": 269,
+        "categoria": "Finanzas",
+        "seccion": "Riesgo y Cumplimiento",
+        "cargo": "Analista de Riesgos",
+        "busqueda": "Analista de Riesgos"
+    },
+    {
+        "id_item": 270,
+        "categoria": "Finanzas",
+        "seccion": "Riesgo y Cumplimiento",
+        "cargo": "Analista de Cumplimiento",
+        "busqueda": "Analista de Cumplimiento"
+    },
+    {
+        "id_item": 271,
+        "categoria": "Finanzas",
+        "seccion": "Riesgo y Cumplimiento",
+        "cargo": "Oficial de Cumplimiento",
+        "busqueda": "Oficial de Cumplimiento"
+    },
+    {
+        "id_item": 272,
+        "categoria": "Finanzas",
+        "seccion": "Riesgo y Cumplimiento",
+        "cargo": "Jefe/a de Riesgos y Cumplimiento",
+        "busqueda": "Jefe/a de Riesgos y Cumplimiento"
+    },
+    {
+        "id_item": 273,
+        "categoria": "Finanzas",
+        "seccion": "Tesorería y Finanzas Corporativas",
+        "cargo": "Analista de Tesorería",
+        "busqueda": "Analista de Tesoreria"
+    },
+    {
+        "id_item": 274,
+        "categoria": "Finanzas",
+        "seccion": "Tesorería y Finanzas Corporativas",
+        "cargo": "Jefe/a de Tesorería",
+        "busqueda": "Jefe/a de Tesoreria"
+    },
+    {
+        "id_item": 275,
+        "categoria": "Finanzas",
+        "seccion": "Tesorería y Finanzas Corporativas",
+        "cargo": "Analista de Finanzas Corporativas",
+        "busqueda": "Analista de Finanzas Corporativas"
+    },
+    {
+        "id_item": 276,
+        "categoria": "Finanzas",
+        "seccion": "Tesorería y Finanzas Corporativas",
+        "cargo": "Gerente de Finanzas Corporativas",
+        "busqueda": "Gerente de Finanzas Corporativas"
+    },
+    {
+        "id_item": 277,
+        "categoria": "Finanzas",
+        "seccion": "Auditoría y Control Interno",
+        "cargo": "Analista de Auditoría Interna",
+        "busqueda": "Analista de Auditoria Interna"
+    },
+    {
+        "id_item": 278,
+        "categoria": "Finanzas",
+        "seccion": "Auditoría y Control Interno",
+        "cargo": "Supervisor/a de Auditoría",
+        "busqueda": "Supervisor/a de Auditoria"
+    },
+    {
+        "id_item": 279,
+        "categoria": "Finanzas",
+        "seccion": "Auditoría y Control Interno",
+        "cargo": "Jefe/a de Auditoría",
+        "busqueda": "Jefe/a de Auditoria"
+    },
+    {
+        "id_item": 280,
+        "categoria": "Finanzas",
+        "seccion": "Auditoría y Control Interno",
+        "cargo": "Gerente de Auditoría",
+        "busqueda": "Gerente de Auditoria"
+    },
+    {
+        "id_item": 281,
+        "categoria": "Finanzas",
+        "seccion": "Banca Digital y Tecnología",
+        "cargo": "Ejecutivo/a de Canales Digitales",
+        "busqueda": "Ejecutivo/a de Canales Digitales"
+    },
+    {
+        "id_item": 282,
+        "categoria": "Finanzas",
+        "seccion": "Banca Digital y Tecnología",
+        "cargo": "Analista de Canales Digitales",
+        "busqueda": "Analista de Canales Digitales"
+    },
+    {
+        "id_item": 283,
+        "categoria": "Finanzas",
+        "seccion": "Banca Digital y Tecnología",
+        "cargo": "Jefe/a de Canales Digitales",
+        "busqueda": "Jefe/a de Canales Digitales"
+    },
+    {
+        "id_item": 284,
+        "categoria": "Finanzas",
+        "seccion": "Banca Digital y Tecnología",
+        "cargo": "Gerente de Banca Digital",
+        "busqueda": "Gerente de Banca Digital"
+    },
+    {
+        "id_item": 285,
+        "categoria": "Finanzas",
+        "seccion": "Alta Dirección",
+        "cargo": "Gerente de Sucursal",
+        "busqueda": "Gerente de Sucursal"
+    },
+    {
+        "id_item": 286,
+        "categoria": "Finanzas",
+        "seccion": "Alta Dirección",
+        "cargo": "Gerente de Zona",
+        "busqueda": "Gerente de Zona"
+    },
+    {
+        "id_item": 287,
+        "categoria": "Finanzas",
+        "seccion": "Alta Dirección",
+        "cargo": "Gerente Comercial",
+        "busqueda": "Gerente Comercial"
+    },
+    {
+        "id_item": 288,
+        "categoria": "Legal",
+        "seccion": "Asesoría Jurídica",
+        "cargo": "Abogado/a Corporativo/a",
+        "busqueda": "Abogado/a Corporativo/a"
+    },
+    {
+        "id_item": 289,
+        "categoria": "Legal",
+        "seccion": "Asesoría Jurídica",
+        "cargo": "Abogado/a Senior",
+        "busqueda": "Abogado/a Senior"
+    },
+    {
+        "id_item": 290,
+        "categoria": "Legal",
+        "seccion": "Asesoría Jurídica",
+        "cargo": "Abogado/a Junior",
+        "busqueda": "Abogado/a Junior"
+    },
+    {
+        "id_item": 291,
+        "categoria": "Legal",
+        "seccion": "Asesoría Jurídica",
+        "cargo": "Jefe/a de Asesoría Jurídica",
+        "busqueda": "Jefe/a de Asesoria Juridica"
+    },
+    {
+        "id_item": 292,
+        "categoria": "Legal",
+        "seccion": "Asesoría Jurídica",
+        "cargo": "Gerente Legal",
+        "busqueda": "Gerente Legal"
+    },
+    {
+        "id_item": 293,
+        "categoria": "Legal",
+        "seccion": "Compliance y Ética",
+        "cargo": "Analista de Compliance",
+        "busqueda": "Analista de Compliance"
+    },
+    {
+        "id_item": 294,
+        "categoria": "Legal",
+        "seccion": "Compliance y Ética",
+        "cargo": "Jefe/a de Compliance",
+        "busqueda": "Jefe/a de Compliance"
+    },
+    {
+        "id_item": 295,
+        "categoria": "Legal",
+        "seccion": "Compliance y Ética",
+        "cargo": "Gerente de Compliance",
+        "busqueda": "Gerente de Compliance"
+    },
+    {
+        "id_item": 296,
+        "categoria": "Legal",
+        "seccion": "Contratos y Negociaciones",
+        "cargo": "Abogado/a de Contratos",
+        "busqueda": "Abogado/a de Contratos"
+    },
+    {
+        "id_item": 297,
+        "categoria": "Legal",
+        "seccion": "Contratos y Negociaciones",
+        "cargo": "Analista Legal de Contratos",
+        "busqueda": "Analista Legal de Contratos"
+    },
+    {
+        "id_item": 298,
+        "categoria": "Legal",
+        "seccion": "Contratos y Negociaciones",
+        "cargo": "Jefe/a de Contratos",
+        "busqueda": "Jefe/a de Contratos"
+    },
+    {
+        "id_item": 299,
+        "categoria": "Legal",
+        "seccion": "Contratos y Negociaciones",
+        "cargo": "Gerente de Contratos",
+        "busqueda": "Gerente de Contratos"
+    },
+    {
+        "id_item": 300,
+        "categoria": "Legal",
+        "seccion": "Litigios y Defensa",
+        "cargo": "Abogado/a Litigante",
+        "busqueda": "Abogado/a Litigante"
+    },
+    {
+        "id_item": 301,
+        "categoria": "Legal",
+        "seccion": "Litigios y Defensa",
+        "cargo": "Abogado/a Penalista",
+        "busqueda": "Abogado/a Penalista"
+    },
+    {
+        "id_item": 302,
+        "categoria": "Legal",
+        "seccion": "Litigios y Defensa",
+        "cargo": "Abogado/a Laboralista",
+        "busqueda": "Abogado/a Laboralista"
+    },
+    {
+        "id_item": 303,
+        "categoria": "Legal",
+        "seccion": "Litigios y Defensa",
+        "cargo": "Asistente Legal de Litigios",
+        "busqueda": "Asistente Legal de Litigios"
+    },
+    {
+        "id_item": 304,
+        "categoria": "Legal",
+        "seccion": "Litigios y Defensa",
+        "cargo": "Jefe/a de Litigios",
+        "busqueda": "Jefe/a de Litigios"
+    },
+    {
+        "id_item": 305,
+        "categoria": "Legal",
+        "seccion": "Propiedad Intelectual y Marcas",
+        "cargo": "Abogado/a de Propiedad Intelectual",
+        "busqueda": "Abogado/a de Propiedad Intelectual"
+    },
+    {
+        "id_item": 306,
+        "categoria": "Legal",
+        "seccion": "Propiedad Intelectual y Marcas",
+        "cargo": "Abogado/a de Patentes y Marcas",
+        "busqueda": "Abogado/a de Patentes y Marcas"
+    },
+    {
+        "id_item": 307,
+        "categoria": "Legal",
+        "seccion": "Propiedad Intelectual y Marcas",
+        "cargo": "Jefe/a de Propiedad Intelectual",
+        "busqueda": "Jefe/a de Propiedad Intelectual"
+    },
+    {
+        "id_item": 308,
+        "categoria": "Legal",
+        "seccion": "Derecho Regulatorio y Administrativo",
+        "cargo": "Abogado/a Regulatorio/a",
+        "busqueda": "Abogado/a Regulatorio/a"
+    },
+    {
+        "id_item": 309,
+        "categoria": "Legal",
+        "seccion": "Derecho Regulatorio y Administrativo",
+        "cargo": "Jefe/a de Asuntos Regulatorios",
+        "busqueda": "Jefe/a de Asuntos Regulatorios"
+    },
+    {
+        "id_item": 310,
+        "categoria": "Legal",
+        "seccion": "Derecho Regulatorio y Administrativo",
+        "cargo": "Gerente de Asuntos Públicos y Regulatorios",
+        "busqueda": "Gerente de Asuntos Publicos y Regulatorios"
+    },
+    {
+        "id_item": 311,
+        "categoria": "Legal",
+        "seccion": "Asistencia Legal y Paralegal",
+        "cargo": "Técnico/a Jurídico/a",
+        "busqueda": "Tecnico/a Juridico/a"
+    },
+    {
+        "id_item": 312,
+        "categoria": "Legal",
+        "seccion": "Asistencia Legal y Paralegal",
+        "cargo": "Asistente Legal",
+        "busqueda": "Asistente Legal"
+    },
+    {
+        "id_item": 313,
+        "categoria": "Legal",
+        "seccion": "Asistencia Legal y Paralegal",
+        "cargo": "Secretario/a Legal",
+        "busqueda": "Secretario/a Legal"
+    },
+    {
+        "id_item": 314,
+        "categoria": "Legal",
+        "seccion": "Alta Dirección",
+        "cargo": "Gerente de Asuntos Corporativos",
+        "busqueda": "Gerente de Asuntos Corporativos"
+    },
+    {
+        "id_item": 315,
+        "categoria": "Construcción y Obras",
+        "seccion": "Ingeniería y Proyectos",
+        "cargo": "Ingeniero/a Civil",
+        "busqueda": "Ingeniero/a Civil"
+    },
+    {
+        "id_item": 316,
+        "categoria": "Construcción y Obras",
+        "seccion": "Ingeniería y Proyectos",
+        "cargo": "Ingeniero/a en Construcción",
+        "busqueda": "Ingeniero/a en Construccion"
+    },
+    {
+        "id_item": 317,
+        "categoria": "Construcción y Obras",
+        "seccion": "Ingeniería y Proyectos",
+        "cargo": "Ingeniero/a en Prevención de Riesgos",
+        "busqueda": "Ingeniero/a en Prevencion de Riesgos"
+    },
+    {
+        "id_item": 318,
+        "categoria": "Construcción y Obras",
+        "seccion": "Ingeniería y Proyectos",
+        "cargo": "Ingeniero/a en Obras Civiles",
+        "busqueda": "Ingeniero/a en Obras Civiles"
+    },
+    {
+        "id_item": 319,
+        "categoria": "Construcción y Obras",
+        "seccion": "Ingeniería y Proyectos",
+        "cargo": "Ingeniero/a en Estructuras",
+        "busqueda": "Ingeniero/a en Estructuras"
+    },
+    {
+        "id_item": 320,
+        "categoria": "Construcción y Obras",
+        "seccion": "Ingeniería y Proyectos",
+        "cargo": "Jefe/a de Proyecto",
+        "busqueda": "Jefe/a de Proyecto"
+    },
+    {
+        "id_item": 321,
+        "categoria": "Construcción y Obras",
+        "seccion": "Arquitectura y Diseño",
+        "cargo": "Arquitecto/a",
+        "busqueda": "Arquitecto/a"
+    },
+    {
+        "id_item": 322,
+        "categoria": "Construcción y Obras",
+        "seccion": "Arquitectura y Diseño",
+        "cargo": "Dibujante Técnico",
+        "busqueda": "Dibujante Tecnico"
+    },
+    {
+        "id_item": 323,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Maestro/a de Obra",
+        "busqueda": "Maestro/a de Obra"
+    },
+    {
+        "id_item": 324,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Operario/a de Construcción",
+        "busqueda": "Operario/a de Construccion"
+    },
+    {
+        "id_item": 325,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Albañil",
+        "busqueda": "Albanil"
+    },
+    {
+        "id_item": 326,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Carpintero/a",
+        "busqueda": "Carpintero/a"
+    },
+    {
+        "id_item": 327,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Yesero/a",
+        "busqueda": "Yesero/a"
+    },
+    {
+        "id_item": 328,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Pintor/a de Obra",
+        "busqueda": "Pintor/a de Obra"
+    },
+    {
+        "id_item": 329,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Supervisor/a de Obra",
+        "busqueda": "Supervisor/a de Obra"
+    },
+    {
+        "id_item": 330,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Jefe/a de Terreno",
+        "busqueda": "Jefe/a de Terreno"
+    },
+    {
+        "id_item": 331,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Topógrafo/a",
+        "busqueda": "Topografo/a"
+    },
+    {
+        "id_item": 332,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Trazador/a",
+        "busqueda": "Trazador/a"
+    },
+    {
+        "id_item": 333,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Maquinista / Operador de Maquinaria Pesada",
+        "busqueda": "Maquinista / Operador de Maquinaria Pesada"
+    },
+    {
+        "id_item": 334,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Prevencionista de Riesgos en Obra",
+        "busqueda": "Prevencionista de Riesgos en Obra"
+    },
+    {
+        "id_item": 335,
+        "categoria": "Construcción y Obras",
+        "seccion": "Planificación y Control",
+        "cargo": "Analista de Planificación",
+        "busqueda": "Analista de Planificacion"
+    },
+    {
+        "id_item": 336,
+        "categoria": "Construcción y Obras",
+        "seccion": "Planificación y Control",
+        "cargo": "Inspector/a Técnico de Obra (ITO)",
+        "busqueda": "Inspector/a Tecnico de Obra (ITO)"
+    },
+    {
+        "id_item": 337,
+        "categoria": "Construcción y Obras",
+        "seccion": "Planificación y Control",
+        "cargo": "Jefe/a de Planificación y Control de Obra",
+        "busqueda": "Jefe/a de Planificacion y Control de Obra"
+    },
+    {
+        "id_item": 338,
+        "categoria": "Construcción y Obras",
+        "seccion": "Calidad y Seguridad",
+        "cargo": "Inspector/a de Calidad",
+        "busqueda": "Inspector/a de Calidad"
+    },
+    {
+        "id_item": 339,
+        "categoria": "Construcción y Obras",
+        "seccion": "Calidad y Seguridad",
+        "cargo": "Supervisor/a de Seguridad",
+        "busqueda": "Supervisor/a de Seguridad"
+    },
+    {
+        "id_item": 340,
+        "categoria": "Construcción y Obras",
+        "seccion": "Calidad y Seguridad",
+        "cargo": "Jefe/a de Calidad y Seguridad",
+        "busqueda": "Jefe/a de Calidad y Seguridad"
+    },
+    {
+        "id_item": 341,
+        "categoria": "Construcción y Obras",
+        "seccion": "Abastecimiento y Logística",
+        "cargo": "Encargado/a de Bodega",
+        "busqueda": "Encargado/a de Bodega"
+    },
+    {
+        "id_item": 342,
+        "categoria": "Construcción y Obras",
+        "seccion": "Abastecimiento y Logística",
+        "cargo": "Operador/a de Bodega",
+        "busqueda": "Operador/a de Bodega"
+    },
+    {
+        "id_item": 343,
+        "categoria": "Construcción y Obras",
+        "seccion": "Abastecimiento y Logística",
+        "cargo": "Encargado/a de Compras",
+        "busqueda": "Encargado/a de Compras"
+    },
+    {
+        "id_item": 344,
+        "categoria": "Construcción y Obras",
+        "seccion": "Abastecimiento y Logística",
+        "cargo": "Jefe/a de Logística de Obra",
+        "busqueda": "Jefe/a de Logistica de Obra"
+    },
+    {
+        "id_item": 345,
+        "categoria": "Construcción y Obras",
+        "seccion": "Administración y Oficina Técnica",
+        "cargo": "Asistente Administrativo/a de Obra",
+        "busqueda": "Asistente Administrativo/a de Obra"
+    },
+    {
+        "id_item": 346,
+        "categoria": "Construcción y Obras",
+        "seccion": "Administración y Oficina Técnica",
+        "cargo": "Administrador/a de Obra",
+        "busqueda": "Administrador/a de Obra"
+    },
+    {
+        "id_item": 347,
+        "categoria": "Construcción y Obras",
+        "seccion": "Administración y Oficina Técnica",
+        "cargo": "Jefe/a de Oficina Técnica",
+        "busqueda": "Jefe/a de Oficina Tecnica"
+    },
+    {
+        "id_item": 348,
+        "categoria": "Hosteleria",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Recepcionista de Hotel",
+        "busqueda": "Recepcionista de Hotel"
+    },
+    {
+        "id_item": 349,
+        "categoria": "Hosteleria",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Conserje",
+        "busqueda": "Conserje"
+    },
+    {
+        "id_item": 350,
+        "categoria": "Hosteleria",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Botones",
+        "busqueda": "Botones"
+    },
+    {
+        "id_item": 351,
+        "categoria": "Hosteleria",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Supervisor/a de Recepción",
+        "busqueda": "Supervisor/a de Recepcion"
+    },
+    {
+        "id_item": 352,
+        "categoria": "Hosteleria",
+        "seccion": "Recepción y Atención al Cliente",
+        "cargo": "Jefe/a de Recepción",
+        "busqueda": "Jefe/a de Recepcion"
+    },
+    {
+        "id_item": 353,
+        "categoria": "Hosteleria",
+        "seccion": "Reservas y Ventas",
+        "cargo": "Agente de Reservas",
+        "busqueda": "Agente de Reservas"
+    },
+    {
+        "id_item": 354,
+        "categoria": "Hosteleria",
+        "seccion": "Reservas y Ventas",
+        "cargo": "Supervisor/a de Reservas",
+        "busqueda": "Supervisor/a de Reservas"
+    },
+    {
+        "id_item": 355,
+        "categoria": "Hosteleria",
+        "seccion": "Reservas y Ventas",
+        "cargo": "Jefe/a de Reservas y Ventas",
+        "busqueda": "Jefe/a de Reservas y Ventas"
+    },
+    {
+        "id_item": 356,
+        "categoria": "Hosteleria",
+        "seccion": "Alojamiento y Pisos",
+        "cargo": "Encargado/a de Lavandería",
+        "busqueda": "Encargado/a de Lavanderia"
+    },
+    {
+        "id_item": 357,
+        "categoria": "Hosteleria",
+        "seccion": "Alojamiento y Pisos",
+        "cargo": "Jefe/a de Alojamiento",
+        "busqueda": "Jefe/a de Alojamiento"
+    },
+    {
+        "id_item": 358,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Mozo/a / Garzón",
+        "busqueda": "Mozo/a / Garzon"
+    },
+    {
+        "id_item": 359,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Barista",
+        "busqueda": "Barista"
+    },
+    {
+        "id_item": 360,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Bartender",
+        "busqueda": "Bartender"
+    },
+    {
+        "id_item": 361,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Chef",
+        "busqueda": "Chef"
+    },
+    {
+        "id_item": 362,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Cocinero/a",
+        "busqueda": "Cocinero/a"
+    },
+    {
+        "id_item": 363,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Ayudante de Cocina",
+        "busqueda": "Ayudante de Cocina"
+    },
+    {
+        "id_item": 364,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Pastelero/a",
+        "busqueda": "Pastelero/a"
+    },
+    {
+        "id_item": 365,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Supervisor/a de Alimentos y Bebidas",
+        "busqueda": "Supervisor/a de Alimentos y Bebidas"
+    },
+    {
+        "id_item": 366,
+        "categoria": "Hosteleria",
+        "seccion": "Alimentos y Bebidas",
+        "cargo": "Jefe/a de Alimentos y Bebidas",
+        "busqueda": "Jefe/a de Alimentos y Bebidas"
+    },
+    {
+        "id_item": 367,
+        "categoria": "Hosteleria",
+        "seccion": "Eventos y Banquetes",
+        "cargo": "Coordinador/a de Eventos",
+        "busqueda": "Coordinador/a de Eventos"
+    },
+    {
+        "id_item": 368,
+        "categoria": "Hosteleria",
+        "seccion": "Mantenimiento y Servicios Técnicos",
+        "cargo": "Técnico/a de Mantenimiento",
+        "busqueda": "Tecnico/a de Mantenimiento"
+    },
+    {
+        "id_item": 369,
+        "categoria": "Hosteleria",
+        "seccion": "Mantenimiento y Servicios Técnicos",
+        "cargo": "Supervisor/a de Mantenimiento",
+        "busqueda": "Supervisor/a de Mantenimiento"
+    },
+    {
+        "id_item": 370,
+        "categoria": "Hosteleria",
+        "seccion": "Mantenimiento y Servicios Técnicos",
+        "cargo": "Jefe/a de Mantenimiento",
+        "busqueda": "Jefe/a de Mantenimiento"
+    },
+    {
+        "id_item": 371,
+        "categoria": "Hosteleria",
+        "seccion": "Animación y Entretenimiento",
+        "cargo": "Animador/a Turístico/a",
+        "busqueda": "Animador/a Turistico/a"
+    },
+    {
+        "id_item": 372,
+        "categoria": "Hosteleria",
+        "seccion": "Animación y Entretenimiento",
+        "cargo": "Monitor/a Deportivo/a",
+        "busqueda": "Monitor/a Deportivo/a"
+    },
+    {
+        "id_item": 373,
+        "categoria": "Hosteleria",
+        "seccion": "Animación y Entretenimiento",
+        "cargo": "Jefe/a de Animación y Entretenimiento",
+        "busqueda": "Jefe/a de Animacion y Entretenimiento"
+    },
+    {
+        "id_item": 374,
+        "categoria": "Hosteleria",
+        "seccion": "Spa y Bienestar",
+        "cargo": "Terapeuta de Spa",
+        "busqueda": "Terapeuta de Spa"
+    },
+    {
+        "id_item": 375,
+        "categoria": "Hosteleria",
+        "seccion": "Spa y Bienestar",
+        "cargo": "Masajista",
+        "busqueda": "Masajista"
+    },
+    {
+        "id_item": 376,
+        "categoria": "Hosteleria",
+        "seccion": "Spa y Bienestar",
+        "cargo": "Supervisor/a de Spa",
+        "busqueda": "Supervisor/a de Spa"
+    },
+    {
+        "id_item": 377,
+        "categoria": "Hosteleria",
+        "seccion": "Spa y Bienestar",
+        "cargo": "Jefe/a de Bienestar",
+        "busqueda": "Jefe/a de Bienestar"
+    },
+    {
+        "id_item": 378,
+        "categoria": "Hosteleria",
+        "seccion": "Gestión y Administración",
+        "cargo": "Asistente Administrativo/a de Hotel",
+        "busqueda": "Asistente Administrativo/a de Hotel"
+    },
+    {
+        "id_item": 379,
+        "categoria": "Hosteleria",
+        "seccion": "Gestión y Administración",
+        "cargo": "Encargado/a de Compras",
+        "busqueda": "Encargado/a de Compras"
+    },
+    {
+        "id_item": 380,
+        "categoria": "Hosteleria",
+        "seccion": "Gestión y Administración",
+        "cargo": "Contador/a de Hotel",
+        "busqueda": "Contador/a de Hotel"
+    },
+    {
+        "id_item": 381,
+        "categoria": "Hosteleria",
+        "seccion": "Gestión y Administración",
+        "cargo": "Jefe/a de Administración",
+        "busqueda": "Jefe/a de Administracion"
+    },
+    {
+        "id_item": 382,
+        "categoria": "Hosteleria",
+        "seccion": "Gestión y Administración",
+        "cargo": "Gerente de Hotel",
+        "busqueda": "Gerente de Hotel"
+    },
+    {
+        "id_item": 383,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Operario/a de Aseo",
+        "busqueda": "Operario/a de Aseo"
+    },
+    {
+        "id_item": 384,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Supervisor/a de Aseo",
+        "busqueda": "Supervisor/a de Aseo"
+    },
+    {
+        "id_item": 385,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Encargado/a de Servicios Generales",
+        "busqueda": "Encargado/a de Servicios Generales"
+    },
+    {
+        "id_item": 386,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Jefe/a de Aseo",
+        "busqueda": "Jefe/a de Aseo"
+    },
+    {
+        "id_item": 387,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Personal de Limpieza Hospitalaria",
+        "busqueda": "Personal de Limpieza Hospitalaria"
+    },
+    {
+        "id_item": 388,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Aseo y Limpieza",
+        "cargo": "Operario/a de Lavandería",
+        "busqueda": "Operario/a de Lavanderia"
+    },
+    {
+        "id_item": 389,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Guardia de Seguridad",
+        "busqueda": "Guardia de Seguridad"
+    },
+    {
+        "id_item": 390,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Guardia de Seguridad Nocturno",
+        "busqueda": "Guardia de Seguridad Nocturno"
+    },
+    {
+        "id_item": 391,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Controlador/a de Acceso",
+        "busqueda": "Controlador/a de Acceso"
+    },
+    {
+        "id_item": 392,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Supervisor/a de Seguridad",
+        "busqueda": "Supervisor/a de Seguridad"
+    },
+    {
+        "id_item": 393,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Jefe/a de Seguridad",
+        "busqueda": "Jefe/a de Seguridad"
+    },
+    {
+        "id_item": 394,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Gerente de Seguridad",
+        "busqueda": "Gerente de Seguridad"
+    },
+    {
+        "id_item": 395,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Operador/a de CCTV",
+        "busqueda": "Operador/a de CCTV"
+    },
+    {
+        "id_item": 396,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Patrullero/a",
+        "busqueda": "Patrullero/a"
+    },
+    {
+        "id_item": 397,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Prevencionista de Riesgos",
+        "busqueda": "Prevencionista de Riesgos"
+    },
+    {
+        "id_item": 398,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Inspector/a de Seguridad",
+        "busqueda": "Inspector/a de Seguridad"
+    },
+    {
+        "id_item": 399,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Escolta / Personal de Protección VIP",
+        "busqueda": "Escolta / Personal de Proteccion VIP"
+    },
+    {
+        "id_item": 400,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Seguridad y Vigilancia",
+        "cargo": "Analista de Seguridad",
+        "busqueda": "Analista de Seguridad"
+    },
+    {
+        "id_item": 401,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Servicios Especiales",
+        "cargo": "Operador/a de Limpieza de Vidrios en Altura",
+        "busqueda": "Operador/a de Limpieza de Vidrios en Altura"
+    },
+    {
+        "id_item": 402,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Servicios Especiales",
+        "cargo": "Especialista en Sanitización y Desinfección",
+        "busqueda": "Especialista en Sanitizacion y Desinfeccion"
+    },
+    {
+        "id_item": 403,
+        "categoria": "Aseo y Seguridad",
+        "seccion": "Servicios Especiales",
+        "cargo": "Operador/a de Maquinaria de Limpieza",
+        "busqueda": "Operador/a de Maquinaria de Limpieza"
+    },
+    {
+        "id_item": 404,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Operador/a de Planta",
+        "busqueda": "Operador/a de Planta"
+    },
+    {
+        "id_item": 405,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Operador/a de Rajo Abierto",
+        "busqueda": "Operador/a de Rajo Abierto"
+    },
+    {
+        "id_item": 406,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Operador/a Subterráneo/a",
+        "busqueda": "Operador/a Subterraneo/a"
+    },
+    {
+        "id_item": 407,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Operador de Grúas Móviles",
+        "busqueda": "Operador de Gruas Moviles"
+    },
+    {
+        "id_item": 408,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Topadorista",
+        "busqueda": "Topadorista"
+    },
+    {
+        "id_item": 409,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Perforista",
+        "busqueda": "Perforista"
+    },
+    {
+        "id_item": 410,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Blaster (Especialista en Tronaduras)",
+        "busqueda": "Blaster (Especialista en Tronaduras)"
+    },
+    {
+        "id_item": 411,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Chófer de Camión Alto Tonelaje",
+        "busqueda": "Chofer de Camion Alto Tonelaje"
+    },
+    {
+        "id_item": 412,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Técnico/a de Operaciones Mineras",
+        "busqueda": "Tecnico/a de Operaciones Mineras"
+    },
+    {
+        "id_item": 413,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Supervisor/a de Operaciones",
+        "busqueda": "Supervisor/a de Operaciones"
+    },
+    {
+        "id_item": 414,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Jefe/a de Turno",
+        "busqueda": "Jefe/a de Turno"
+    },
+    {
+        "id_item": 415,
+        "categoria": "Minería",
+        "seccion": "Operaciones Mineras",
+        "cargo": "Jefe/a de Operaciones Mineras",
+        "busqueda": "Jefe/a de Operaciones Mineras"
+    },
+    {
+        "id_item": 416,
+        "categoria": "Minería",
+        "seccion": "Geología y Exploración",
+        "cargo": "Geólogo/a de Exploración",
+        "busqueda": "Geologo/a de Exploracion"
+    },
+    {
+        "id_item": 417,
+        "categoria": "Minería",
+        "seccion": "Geología y Exploración",
+        "cargo": "Geólogo/a de Producción",
+        "busqueda": "Geologo/a de Produccion"
+    },
+    {
+        "id_item": 418,
+        "categoria": "Minería",
+        "seccion": "Geología y Exploración",
+        "cargo": "Asistente de Geología",
+        "busqueda": "Asistente de Geologia"
+    },
+    {
+        "id_item": 419,
+        "categoria": "Minería",
+        "seccion": "Geología y Exploración",
+        "cargo": "Cartógrafo/a",
+        "busqueda": "Cartografo/a"
+    },
+    {
+        "id_item": 420,
+        "categoria": "Minería",
+        "seccion": "Geología y Exploración",
+        "cargo": "Supervisor/a de Geología",
+        "busqueda": "Supervisor/a de Geologia"
+    },
+    {
+        "id_item": 421,
+        "categoria": "Minería",
+        "seccion": "Geología y Exploración",
+        "cargo": "Jefe/a de Geología",
+        "busqueda": "Jefe/a de Geologia"
+    },
+    {
+        "id_item": 422,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Técnico/a en Mantenimiento de Equipos Pesados",
+        "busqueda": "Tecnico/a en Mantenimiento de Equipos Pesados"
+    },
+    {
+        "id_item": 423,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Mecánico/a Industrial",
+        "busqueda": "Mecanico/a Industrial"
+    },
+    {
+        "id_item": 424,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Eléctrico/a Industrial",
+        "busqueda": "Electrico/a Industrial"
+    },
+    {
+        "id_item": 425,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Supervisor/a de Mantenimiento",
+        "busqueda": "Supervisor/a de Mantenimiento"
+    },
+    {
+        "id_item": 426,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Jefe/a de Mantenimiento",
+        "busqueda": "Jefe/a de Mantenimiento"
+    },
+    {
+        "id_item": 427,
+        "categoria": "Minería",
+        "seccion": "Procesos y Metalurgia",
+        "cargo": "Metalurgista",
+        "busqueda": "Metalurgista"
+    },
+    {
+        "id_item": 428,
+        "categoria": "Minería",
+        "seccion": "Procesos y Metalurgia",
+        "cargo": "Químico/a Metalúrgico/a",
+        "busqueda": "Quimico/a Metalurgico/a"
+    },
+    {
+        "id_item": 429,
+        "categoria": "Minería",
+        "seccion": "Procesos y Metalurgia",
+        "cargo": "Operador/a de Planta Concentradora",
+        "busqueda": "Operador/a de Planta Concentradora"
+    },
+    {
+        "id_item": 430,
+        "categoria": "Minería",
+        "seccion": "Procesos y Metalurgia",
+        "cargo": "Técnico/a Metalúrgico/a",
+        "busqueda": "Tecnico/a Metalurgico/a"
+    },
+    {
+        "id_item": 431,
+        "categoria": "Minería",
+        "seccion": "Procesos y Metalurgia",
+        "cargo": "Supervisor/a de Planta",
+        "busqueda": "Supervisor/a de Planta"
+    },
+    {
+        "id_item": 432,
+        "categoria": "Minería",
+        "seccion": "Procesos y Metalurgia",
+        "cargo": "Jefe/a de Metalurgia",
+        "busqueda": "Jefe/a de Metalurgia"
+    },
+    {
+        "id_item": 433,
+        "categoria": "Minería",
+        "seccion": "Seguridad y Medio Ambiente",
+        "cargo": "Prevencionista de Riesgos en Minería",
+        "busqueda": "Prevencionista de Riesgos en Mineria"
+    },
+    {
+        "id_item": 434,
+        "categoria": "Minería",
+        "seccion": "Seguridad y Medio Ambiente",
+        "cargo": "Inspector/a de Seguridad Minera",
+        "busqueda": "Inspector/a de Seguridad Minera"
+    },
+    {
+        "id_item": 435,
+        "categoria": "Minería",
+        "seccion": "Seguridad y Medio Ambiente",
+        "cargo": "Inspector/a Ambiental",
+        "busqueda": "Inspector/a Ambiental"
+    },
+    {
+        "id_item": 436,
+        "categoria": "Minería",
+        "seccion": "Seguridad y Medio Ambiente",
+        "cargo": "Supervisor/a HSEC",
+        "busqueda": "Supervisor/a HSEC"
+    },
+    {
+        "id_item": 437,
+        "categoria": "Minería",
+        "seccion": "Seguridad y Medio Ambiente",
+        "cargo": "Jefe/a de Seguridad y Medio Ambiente",
+        "busqueda": "Jefe/a de Seguridad y Medio Ambiente"
+    },
+    {
+        "id_item": 438,
+        "categoria": "Minería",
+        "seccion": "Logística y Abastecimiento",
+        "cargo": "Operador/a de Bodega Minera",
+        "busqueda": "Operador/a de Bodega Minera"
+    },
+    {
+        "id_item": 439,
+        "categoria": "Minería",
+        "seccion": "Logística y Abastecimiento",
+        "cargo": "Supervisor/a de Abastecimiento",
+        "busqueda": "Supervisor/a de Abastecimiento"
+    },
+    {
+        "id_item": 440,
+        "categoria": "Minería",
+        "seccion": "Logística y Abastecimiento",
+        "cargo": "Jefe/a de Logística y Abastecimiento",
+        "busqueda": "Jefe/a de Logistica y Abastecimiento"
+    },
+    {
+        "id_item": 441,
+        "categoria": "Minería",
+        "seccion": "Administración y Apoyo",
+        "cargo": "Asistente Administrativo/a de Faena",
+        "busqueda": "Asistente Administrativo/a de Faena"
+    },
+    {
+        "id_item": 442,
+        "categoria": "Minería",
+        "seccion": "Administración y Apoyo",
+        "cargo": "Coordinador/a de Turnos",
+        "busqueda": "Coordinador/a de Turnos"
+    },
+    {
+        "id_item": 443,
+        "categoria": "Minería",
+        "seccion": "Administración y Apoyo",
+        "cargo": "Jefe/a de Administración de Faena",
+        "busqueda": "Jefe/a de Administracion de Faena"
+    },
+    {
+        "id_item": 444,
+        "categoria": "Minería",
+        "seccion": "Alta Dirección",
+        "cargo": "Gerente de Operaciones Mineras",
+        "busqueda": "Gerente de Operaciones Mineras"
+    },
+    {
+        "id_item": 445,
+        "categoria": "Minería",
+        "seccion": "Alta Dirección",
+        "cargo": "Gerente de Mina",
+        "busqueda": "Gerente de Mina"
+    },
+    {
+        "id_item": 446,
+        "categoria": "Minería",
+        "seccion": "Alta Dirección",
+        "cargo": "Gerente de Planta",
+        "busqueda": "Gerente de Planta"
+    },
+    {
+        "id_item": 447,
+        "categoria": "Construcción y Obras",
+        "seccion": "Obra y Terreno",
+        "cargo": "Soldador",
+        "busqueda": "Soldador"
+    },
+    {
+        "id_item": 448,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Soldador Industrial",
+        "busqueda": "Soldador Industrial"
+    },
+    {
+        "id_item": 449,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Ayudante Eléctrico",
+        "busqueda": "Ayudante Electrico"
+    },
+    {
+        "id_item": 450,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Técnico en Mantención Industrial",
+        "busqueda": "Tecnico en Mantencion Industrial"
+    },
+    {
+        "id_item": 451,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Técnico en Mantención Eléctrico",
+        "busqueda": "Tecnico en Mantencion Electrico"
+    },
+    {
+        "id_item": 452,
+        "categoria": "Ventas",
+        "seccion": "Ventas Terreno",
+        "cargo": "Visitador Médico",
+        "busqueda": "Visitador Medico"
+    },
+    {
+        "id_item": 453,
+        "categoria": "Salud",
+        "seccion": "Área de Farmacia",
+        "cargo": "Dermoconsejera/o",
+        "busqueda": "Dermoconsejera/o"
+    },
+    {
+        "id_item": 454,
+        "categoria": "Salud",
+        "seccion": "Área de Farmacia",
+        "cargo": "Visitador/a Médico",
+        "busqueda": "Visitador/a Medico"
+    },
+    {
+        "id_item": 455,
+        "categoria": "Salud",
+        "seccion": "Área de Farmacia",
+        "cargo": "Demostrador/a Clínico",
+        "busqueda": "Demostrador/a Clinico"
+    },
+    {
+        "id_item": 456,
+        "categoria": "Operaciones",
+        "seccion": "Reposición y Abastecimiento",
+        "cargo": "Operador/a de Fiambrería",
+        "busqueda": "Operador/a de Fiambreria"
+    },
+    {
+        "id_item": 457,
+        "categoria": "Marketing y Comunicaciones",
+        "seccion": "Comunicaciones Corporativas",
+        "cargo": "Periodista",
+        "busqueda": "Periodista"
+    },
+    {
+        "id_item": 458,
+        "categoria": "Marketing y Comunicaciones",
+        "seccion": "Comunicaciones Corporativas",
+        "cargo": "Encargado/a de Comunicaciones",
+        "busqueda": "Encargado/a de Comunicaciones"
+    },
+    {
+        "id_item": 459,
+        "categoria": "Marketing y Comunicaciones",
+        "seccion": "Marketing Digital y Contenido",
+        "cargo": "Community Manager",
+        "busqueda": "Community Manager"
+    },
+    {
+        "id_item": 460,
+        "categoria": "Marketing y Comunicaciones",
+        "seccion": "Marketing Digital y Contenido",
+        "cargo": "Comunicador/a Audiovisual",
+        "busqueda": "Comunicador/a Audiovisual"
+    },
+    {
+        "id_item": 461,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Analista QA",
+        "busqueda": "Analista QA"
+    },
+    {
+        "id_item": 462,
+        "categoria": "TI",
+        "seccion": "Desarrollo",
+        "cargo": "Practicante",
+        "busqueda": "Practicante"
+    },
+    {
+        "id_item": 463,
+        "categoria": "RRHH",
+        "seccion": "Gestión de Personas",
+        "cargo": "Practicante Gestión de Personas",
+        "busqueda": "Practicante Gestion de Personas"
+    },
+    {
+        "id_item": 464,
+        "categoria": "RRHH",
+        "seccion": "Reclutamiento y Selección",
+        "cargo": "Practicante Reclutamiento y Selección",
+        "busqueda": "Practicante Reclutamiento y Seleccion"
+    },
+    {
+        "id_item": 465,
+        "categoria": "Operaciones",
+        "seccion": "Planificación y Control de Operaciones",
+        "cargo": "Practicante Control de Gestión",
+        "busqueda": "Practicante Control de Gestion"
+    },
+    {
+        "id_item": 466,
+        "categoria": "Operaciones",
+        "seccion": "Prevención y Seguridad",
+        "cargo": "Practicante Prevención de Riesgos",
+        "busqueda": "Practicante Prevencion de Riesgos"
+    },
+    {
+        "id_item": 467,
+        "categoria": "TI",
+        "seccion": "Soporte e Infraestructura",
+        "cargo": "Practicante Soporte e Infraestructura",
+        "busqueda": "Practicante Soporte e Infraestructura"
+    },
+    {
+        "id_item": 468,
+        "categoria": "TI",
+        "seccion": "Datos y Analítica",
+        "cargo": "Practicante Datos y Analítica",
+        "busqueda": "Practicante Datos y Analitica"
+    },
+    {
+        "id_item": 469,
+        "categoria": "TI",
+        "seccion": "Seguridad Informática",
+        "cargo": "Practicante Seguridad Informática",
+        "busqueda": "Practicante Seguridad Informatica"
+    },
+    {
+        "id_item": 470,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Practicante Gestión y Proyectos",
+        "busqueda": "Practicante Gestion y Proyectos"
+    },
+    {
+        "id_item": 471,
+        "categoria": "Ventas",
+        "seccion": "Dirección Comercial",
+        "cargo": "Analista Comercial",
+        "busqueda": "Analista Comercial"
+    },
+    {
+        "id_item": 472,
+        "categoria": "TI",
+        "seccion": "Gestión y Proyectos",
+        "cargo": "Ingeniero de Proyectos",
+        "busqueda": "Ingeniero de Proyectos"
+    },
+    {
+        "id_item": 473,
+        "categoria": "Minería",
+        "seccion": "Mantenimiento y Equipos",
+        "cargo": "Coordinador/a de Mantenimiento",
+        "busqueda": "Coordinador/a de Mantenimiento"
+    },
+    {
+        "id_item": 474,
+        "categoria": "Ventas",
+        "seccion": "Ventas Retail",
+        "cargo": "Promotor Retail",
+        "busqueda": "Promotor Retail"
+    }
+]

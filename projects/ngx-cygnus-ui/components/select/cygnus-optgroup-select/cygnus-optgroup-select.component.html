@@ -1,0 +1,59 @@
+
+  <fieldset class="fieldset">
+@if (selectLabel()!=='') {
+    <label class="block mb-1 text-sm font-medium text-gray-800" >Label</label>
+}
+    <select
+      #selectCategory
+      [id]="selId()"
+      [class]="
+        TW_CLASS.SELECT + ' ' +
+        selGetSize() + ' ' +
+        selGetType() + ' ' +
+        (isDisabled() ? TW_CLASS.SELECT_DISABLED : '')
+      "
+      [disabled]="isDisabled()"
+      [style.display]="showOptgroup() ? 'none' : 'block'"
+      (change)="onCategorySelected($event)"
+    >
+    <!-- (change)="setValue(selectCategory.value)" -->
+
+      <option value="" disabled selected>Selecciona una categoría</option>
+
+      <!-- Agrupa dinámicamente -->
+      @for (cat of dataEntries | keyvalue; track $index) {
+        <option [value]="cat.key">{{cat.key}}</option>
+      }
+
+    </select>
+
+    <select
+      #selectSectionOpt
+      [id]="selIdOptGroup()"
+      [class]="
+        TW_CLASS.SELECT + ' ' +
+        selGetSize() + ' ' +
+        selGetType()
+      "
+      [style.display]="showOptgroup() ? 'block' : 'none'"
+    >
+
+      <option value="VOLVER">← Volver a categorías</option>
+
+      <!-- Agrupa dinámicamente -->
+      @for (sec of dataEntries[categorySelected!] | keyvalue; track $index) {
+        <optgroup [label]="sec.key">
+
+          @for (op of $any(sec.value); track $index) {
+             <option [value]="op[categoryItem()]">{{ op[categoryItem()] }}</option>
+          }
+
+        </optgroup>
+      }
+
+    </select>
+
+@if (selectHint()!=='') {
+    <p class="mt-1 text-sm text-gray-500">{{selectHint()}}</p>
+}
+  </fieldset>

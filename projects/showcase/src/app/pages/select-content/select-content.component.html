@@ -268,4 +268,30 @@
     </div>
   </section>
 
+  <!-- Select Optgroup -->
+  <section id="select-width-automatic">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Selector Optgroup </h2>
+        <p class="mb-8 text-gray-600 text-md">selector que agrupa categorías y opciones por categoría.</p>
+
+        <div
+          class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+
+          <!-- COMPONENTE: Selector Optgroup -->
+          <cygnus-optgroup-select
+            [OPTGROUPDATA]="OPTGROUPDATA"
+            [categoryName]="'categoria'"
+            [categorySection]="'seccion'"
+            [categoryItem]="'cargo'"
+          />
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
 </main>

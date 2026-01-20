@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
+import { CygnusOptgroupSelectComponent, CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 
+import * as OPTGROUPDATA from '../../../json/postulaqui-categorias-secciones.json';
+
 @Component({
   selector: 'app-select-content',
   imports: [
     CygnusSelectComponent,
+    CygnusOptgroupSelectComponent,
     Highlight, HighlightLineNumbers,
   ],
   templateUrl: './select-content.component.html',
@@ -31,6 +34,13 @@ export class SelectContentComponent {
     {option: 'Tengo un problema de red', value:'london'},
     {option: 'Tengo un problema administrativo', value:'washington'},
   ];
+
+  // postulaqui-categorias-secciones.json
+  OPTGROUPDATA = JSON.parse(JSON.stringify(OPTGROUPDATA)).default;
+
+  constructor() {
+    console.log('OPTGROUPDATA:',this.OPTGROUPDATA);
+  }
 
   cygnusSelImportTs: string = `
     import { Component } from '@angular/core';
