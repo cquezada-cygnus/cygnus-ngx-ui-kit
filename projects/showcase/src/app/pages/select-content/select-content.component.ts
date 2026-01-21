@@ -38,8 +38,14 @@ export class SelectContentComponent {
   // postulaqui-categorias-secciones.json
   OPTGROUPDATA = JSON.parse(JSON.stringify(OPTGROUPDATA)).default;
 
+
   constructor() {
     console.log('OPTGROUPDATA:',this.OPTGROUPDATA);
+  }
+
+  optgroupSelection(opt: string): void {
+    console.log('optgroupSelection:',opt);
+
   }
 
   cygnusSelImportTs: string = `
