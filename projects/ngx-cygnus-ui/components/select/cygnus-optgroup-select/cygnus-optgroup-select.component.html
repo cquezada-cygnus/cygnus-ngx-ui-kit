@@ -36,9 +36,10 @@
         selGetType()
       "
       [style.display]="showOptgroup() ? 'block' : 'none'"
+      (change)="onSecOptSelected($event)"
     >
-
-      <option value="VOLVER">← Volver a categorías</option>
+      <option value="" disabled selected>Selecciona una opción</option>
+      <option [value]="secOpVolver">← Volver a categorías</option>
 
       <!-- Agrupa dinámicamente -->
       @for (sec of dataEntries[categorySelected!] | keyvalue; track $index) {

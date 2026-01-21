@@ -1,6 +1,7 @@
-import { Component, input, OnInit, output, signal } from '@angular/core';
+import { Component, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl } from '@angular/forms';
+
 import { TW_CLASS } from '../const/tailwind.const';
 
 @Component({
@@ -23,6 +24,8 @@ export class CygnusOptgroupSelectComponent implements OnInit {
   private static idCounter = 0;
 
   control = input<FormControl<string>>();
+  selectCategory = viewChild<ElementRef<HTMLSelectElement>>('selectCategory'); // resetear el valor de los select cuando se quiere cambiar la categoría
+  selectSectionOpt = viewChild<ElementRef<HTMLSelectElement>>('selectSectionOpt'); // resetear el valor de los select cuando se quiere cambiar la categoría
   isSelected = output<string>();
 
   TW_CLASS = TW_CLASS;
@@ -42,6 +45,8 @@ export class CygnusOptgroupSelectComponent implements OnInit {
   categoryItem = input<string>('');
 
   categorySelected: string | null = null;
+  secOpSelected: string | null = null;
+  secOpVolver: string = 'VOLVERselectCategory';
   showOptgroup = signal<boolean>(false);
 
   ngOnInit() {
@@ -63,7 +68,38 @@ export class CygnusOptgroupSelectComponent implements OnInit {
     this.categorySelected = target.value;
 
     if (!this.categorySelected) return;
+    this.resetearSecOptSelected();
     this.showOptgroup.set(true);
+  }
+
+  onSecOptSelected(event: Event): void {
+    const target = event.target as HTMLSelectElement;
+    this.secOpSelected = target.value;
+
+    if (this.secOpSelected===this.secOpVolver) {
+      this.showOptgroup.set(false);
+      this.resetearCategorySelected();
+    }
+  }
+
+  resetearCategorySelected() {
+    const selectElement = this.selectCategory()!.nativeElement;
+
+    // 1. Cambiar el DOM
+    selectElement.value = '';
+
+    // 2. Actualizar el FormControl (esto es lo importante)
+    // formControl.setValue('opcion2');
+  }
+
+  resetearSecOptSelected() {
+    const selectElement = this.selectSectionOpt()!.nativeElement;
+
+    // 1. Cambiar el DOM
+    selectElement.value = '';
+
+    // 2. Actualizar el FormControl (esto es lo importante)
+    // formControl.setValue('opcion2');
   }
 
   setCategoriesAndSections() {
