@@ -167,6 +167,7 @@
           [alertEquis]="true"
           [alertTitle]="'¡Alerta de información!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          (isClosed)="showAlertClosed($event)"
         />
 
         <!-- COMPONENTE: Alerta de error -->
@@ -176,6 +177,7 @@
           [alertEquis]="true"
           [alertTitle]="'¡Alerta de error!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          (isClosed)="showAlertClosed($event)"
         />
 
         <!-- COMPONENTE: Alerta de éxito -->
@@ -185,6 +187,7 @@
           [alertEquis]="true"
           [alertTitle]="'¡Alerta de éxito!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          (isClosed)="showAlertClosed($event)"
         />
 
         <!-- COMPONENTE: Alerta de advertencia -->
@@ -194,6 +197,7 @@
           [alertEquis]="true"
           [alertTitle]="'¡Alerta de advertencia!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          (isClosed)="showAlertClosed($event)"
         />
 
         <!-- COMPONENTE: Alerta simple -->
@@ -203,6 +207,7 @@
           [alertEquis]="true"
           [alertTitle]="'¡Alerta simple!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          (isClosed)="showAlertClosed($event)"
         />
 
       </div>

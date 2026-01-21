@@ -367,4 +367,8 @@ export class AlertContentComponent {
     console.log('cygnus-alert-contenido btnClickedEvent:',event);
   }
 
+  showAlertClosed(event: any) {
+    console.log('showAlertClosed:', JSON.stringify(event));
+  }
+
 }

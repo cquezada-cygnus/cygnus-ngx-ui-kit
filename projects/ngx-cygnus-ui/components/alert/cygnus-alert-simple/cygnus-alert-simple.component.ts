@@ -1,4 +1,4 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, input, OnInit, output, signal } from '@angular/core';
 import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 
@@ -25,6 +25,8 @@ export class CygnusAlertSimpleComponent implements OnInit {
 
   alertTypes = input<string>('');
   alertAllClasses = signal<string>('');
+
+  isClosed = output<any>();
 
   ngOnInit(){
     const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
@@ -95,6 +97,7 @@ export class CygnusAlertSimpleComponent implements OnInit {
   }
 
   hideAlert() {
+    this.isClosed.emit({"alertTitle": this.alertTitle(), "alertContent": this.alertContent()});
     this.showAlert.set(false);
   }
 }
