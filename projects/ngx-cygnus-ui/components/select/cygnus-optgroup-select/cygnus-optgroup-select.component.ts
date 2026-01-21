@@ -80,6 +80,8 @@ export class CygnusOptgroupSelectComponent implements OnInit {
       this.showOptgroup.set(false);
       this.resetearCategorySelected();
     }
+    // Actualizar el FormControl con el valor seleccionado (que no es volver o vacío)
+    this.setValue(this.secOpSelected);
   }
 
   resetearCategorySelected() {
@@ -89,7 +91,7 @@ export class CygnusOptgroupSelectComponent implements OnInit {
     selectElement.value = '';
 
     // 2. Actualizar el FormControl (esto es lo importante)
-    // formControl.setValue('opcion2');
+    this.setValue('');
   }
 
   resetearSecOptSelected() {
@@ -99,7 +101,7 @@ export class CygnusOptgroupSelectComponent implements OnInit {
     selectElement.value = '';
 
     // 2. Actualizar el FormControl (esto es lo importante)
-    // formControl.setValue('opcion2');
+    this.setValue('');
   }
 
   setCategoriesAndSections() {
@@ -135,8 +137,6 @@ export class CygnusOptgroupSelectComponent implements OnInit {
         }
       });
     }
-
-    console.log('this.objCatSecOpt:',this.objCatSecOpt);
 
   }
 
