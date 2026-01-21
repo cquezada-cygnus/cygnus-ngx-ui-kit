@@ -1,5 +1,5 @@
 import { Component, ElementRef, inject, input, OnInit, output, signal, viewChild } from '@angular/core';
-import { CommonModule, KeyValuePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormControl } from '@angular/forms';
 
 import { TW_CLASS } from '../const/tailwind.const';
