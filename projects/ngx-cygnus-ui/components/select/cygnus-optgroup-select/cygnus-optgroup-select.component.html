@@ -18,11 +18,11 @@
     >
     <!-- (change)="setValue(selectCategory.value)" -->
 
-      <option value="" disabled selected>Selecciona una categoría</option>
+      <option class="bg-gray-500 text-gray-50" value="" disabled selected>Selecciona una categoría</option>
 
       <!-- Agrupa dinámicamente -->
       @for (cat of dataEntries | keyvalue; track $index) {
-        <option [value]="cat.key">{{cat.key}}</option>
+        <option class="hover:bg-gray-400" [value]="cat.key">{{cat.key}}</option>
       }
 
     </select>
@@ -38,15 +38,15 @@
       [style.display]="showOptgroup() ? 'block' : 'none'"
       (change)="onSecOptSelected($event)"
     >
-      <option value="" disabled selected>Selecciona una opción</option>
-      <option [value]="secOpVolver">← Volver a categorías</option>
+      <option class="bg-gray-500 text-gray-50" value="" disabled selected>Selecciona una opción</option>
+      <option class="bg-blue-900 text-blue-50" [value]="secOpVolver">← Volver a categorías</option>
 
       <!-- Agrupa dinámicamente -->
       @for (sec of dataEntries[categorySelected!] | keyvalue; track $index) {
         <optgroup [label]="sec.key">
 
           @for (op of $any(sec.value); track $index) {
-             <option [value]="op[categoryItem()]">{{ op[categoryItem()] }}</option>
+             <option class="hover:bg-gray-400" [value]="op[categoryItem()]">{{ op[categoryItem()] }}</option>
           }
 
         </optgroup>
