@@ -43,8 +43,8 @@ export class SelectContentComponent {
     console.log('OPTGROUPDATA:',this.OPTGROUPDATA);
   }
 
-  optgroupSelection(opt: string): void {
-    console.log('optgroupSelection:',opt);
+  optgroupSelection(opt: any): void {
+    console.log('optgroupSelection:', opt);
 
   }
 

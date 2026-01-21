@@ -46,7 +46,7 @@
         <optgroup [label]="sec.key">
 
           @for (op of $any(sec.value); track $index) {
-             <option class="hover:bg-gray-400" [value]="op[categoryItem()]">{{ op[categoryItem()] }}</option>
+             <option class="hover:bg-gray-400" [value]="op  | json">{{ op[categoryItem()] }}</option>
           }
 
         </optgroup>

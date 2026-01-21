@@ -1,5 +1,5 @@
-import { Component, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ElementRef, inject, input, OnInit, output, signal, viewChild } from '@angular/core';
+import { CommonModule, KeyValuePipe } from '@angular/common';
 import { FormControl } from '@angular/forms';
 
 import { TW_CLASS } from '../const/tailwind.const';
@@ -45,9 +45,10 @@ export class CygnusOptgroupSelectComponent implements OnInit {
   categoryItem = input<string>('');
 
   categorySelected: string | null = null;
-  secOpSelected: string | null = null;
+  secOpSelected: any = null;
   secOpVolver: string = 'VOLVERselectCategory';
   showOptgroup = signal<boolean>(false);
+
 
   ngOnInit() {
     // Generar ID único si no se proporciona
@@ -140,7 +141,7 @@ export class CygnusOptgroupSelectComponent implements OnInit {
 
   }
 
-  setValue(value:string ) {
+  setValue(value:any ) {
     this.control()?.setValue(value);
     this.control()?.markAsDirty();
     this.control()?.markAsTouched();
