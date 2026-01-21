@@ -22,7 +22,7 @@
         {{btnText()}}
       </cygnus-button>
     </div>
-    <input id="dropzone-file" type="file" class="hidden" />
+    <input id="dropzone-file" type="file" class="hidden" accept="application/pdf,.pdf" (change)="onFileSelected($event)" />
   </label>
 
 } @else {
@@ -36,7 +36,7 @@
       </cygnus-button>
     </div>
 
-    <input id="dropzone-file" type="file" class="hidden" />
+    <input id="dropzone-file" type="file" class="hidden" accept="application/pdf,.pdf" (change)="onFileSelected($event)" />
   </label>
 }
 </div>
