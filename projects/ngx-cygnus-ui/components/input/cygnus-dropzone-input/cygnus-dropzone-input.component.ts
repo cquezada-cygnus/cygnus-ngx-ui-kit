@@ -20,6 +20,8 @@ export class CygnusDropzoneInputComponent {
   btnText = input<string>('');
   onlyBtn = input<boolean>(false);
 
+  btnColor = input<string>('btn-indigo');
+
   base64: string | null = null;
   fileName: string = '';
   fileSize: number = 0;
