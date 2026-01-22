@@ -28,6 +28,7 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 export class AlertContentComponent {
 
   showModalAlert: boolean = false;
+  showModalAlertError: boolean = false;
 
   importCygnusAlertSimple: string = `
     import { Component } from '@angular/core';
@@ -382,6 +383,10 @@ export class AlertContentComponent {
 
   openAlertModal() {
     this.showModalAlert = !this.showModalAlert;
+  }
+
+  openAlertModalError() {
+    this.showModalAlertError = !this.showModalAlertError;
   }
 
 }

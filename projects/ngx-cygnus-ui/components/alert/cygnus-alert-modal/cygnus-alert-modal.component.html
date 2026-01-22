@@ -24,15 +24,25 @@
 
       <lib-ngx-cygnus-icons
         [size]="'xl'"
-        [textColor]="'lightblack'"
+        [textColor]="alertIconColor() || ''"
         [textRoute]="'x-close'"
+        (click)="toggleModal()"
       />
 
     </div>
-    <div class="relative font-light leading-normal text-gray-600 overflow-auto flex-1 min-h-0"
-     >
+    <div class="relative font-light leading-normal text-gray-600 overflow-auto flex-1 min-h-0">
       <ng-content></ng-content>
     </div>
+    @if (alertBtnClose()) {
+    <div class="flex flex-col mt-3">
+      <cygnus-button
+        [btnTypes]="buttonType() + ' btn-icon btn-block'"
+        (click)="toggleModal()"
+      >
+        {{btnFullText()}}
+      </cygnus-button>
+    </div>
+    }
   </div>
 </div>
 }

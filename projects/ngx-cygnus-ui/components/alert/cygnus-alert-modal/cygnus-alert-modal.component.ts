@@ -20,6 +20,7 @@ export class CygnusAlertModalComponent implements OnInit {
 
   modalTitle = input<string>('');
   btnFullText = input<string>('Aceptar');
+  alertBtnClose = input<boolean>(false);
 
   showModal = model<boolean>(false);
   alertTypes = input<string>('');
