@@ -24,4 +24,6 @@ export const TW_CLASS = {
   ALERT_CONTENT_FULL_GREEN: 'text-green-800 border-green-300 bg-green-50',
   ALERT_CONTENT_FULL_YELLOW: 'text-amber-800 border-amber-300 bg-amber-50',
   ALERT_CONTENT_FULL_GRAY: 'text-gray-800 border-gray-300 bg-gray-50',
+
+  ALERT_CONTENT_CONFIRM: 'text-green-800 bg-green-100 border-none',
 }

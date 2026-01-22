@@ -31,6 +31,8 @@ export class CygnusAlertModalComponent implements OnInit {
   alertIconAsset = input<string>('');
   buttonType = signal<string>('');
 
+  alertConfirm: boolean = false;
+
   ngOnInit(){
     const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
     this.alertAllClasses.set(setClasses);
@@ -63,6 +65,11 @@ export class CygnusAlertModalComponent implements OnInit {
         this.alertIconColor.set('green');
         this.buttonType.set('btn-success');
         return this.TW_CLASS.ALERT_CONTENT_FULL_GREEN;
+      case 'alert-confirm':
+        this.alertIconColor.set('green');
+        this.buttonType.set('btn-success');
+        this.alertConfirm = true;
+        return this.TW_CLASS.ALERT_CONTENT_CONFIRM;
       case 'alert-yellow':
         this.alertIconColor.set('amber');
         this.buttonType.set('btn-warning');
