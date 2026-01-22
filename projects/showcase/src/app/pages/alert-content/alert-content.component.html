@@ -503,3 +503,30 @@
     </div>
   </div>
 </section>
+
+<section id="alert-modal">
+  <div class="min-h-[140px] rounded-lg border mb-14">
+    <div class="p-4 pb-4">
+      <h2 class="mb-2 text-xl font-semibold">Alert Modal</h2>
+      <p class="mb-8 text-gray-600 text-md">Esta alerta se puede usar para llamar aún más la atención del usuario.</p>
+      <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+
+        <cygnus-button [btnTypes]="'btn-primary'" (click)="openAlertModal()" >Abrir Modal</cygnus-button>
+
+        <cygnus-alert-modal
+          [(showModal)]="showModalAlert"
+          [alertTypes]="'alert-gray'"
+          [modalTitle]="'Alert title prueba'"
+          [alertIconAsset]="'check-circle'"
+        >
+          <p>El formulario quedará prellenado con los datos de tu CV.</p>
+          <div class="flex flex-col items-center w-full p-4">
+            <span class="animate-spin inline-block border-2 border-t-transparent rounded-full size-8"></span>
+          </div>
+          <p>Espera un momento por favor...</p>
+        </cygnus-alert-modal>
+
+      </div>
+    </div>
+  </div>
+</section>

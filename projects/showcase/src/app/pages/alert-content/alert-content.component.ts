@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+
 import {
   CygnusAlertContenidoComponent,
   CygnusAlertCounterBlockedComponent,
-  CygnusAlertSimpleComponent
+  CygnusAlertSimpleComponent,
+  CygnusAlertModalComponent,
 } from 'ngx-cygnus-ui/components/alert';
+
+import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
@@ -14,12 +18,17 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
     CygnusAlertSimpleComponent,
     CygnusAlertContenidoComponent,
     CygnusAlertCounterBlockedComponent,
+    CygnusAlertModalComponent,
+    CygnusButtonComponent,
     Highlight, HighlightLineNumbers,
   ],
   templateUrl: './alert-content.component.html',
   styleUrl: './alert-content.component.scss'
 })
 export class AlertContentComponent {
+
+  showModalAlert: boolean = false;
+
   importCygnusAlertSimple: string = `
     import { Component } from '@angular/core';
     import {
@@ -369,6 +378,10 @@ export class AlertContentComponent {
 
   showAlertClosed(event: any) {
     console.log('showAlertClosed:', JSON.stringify(event));
+  }
+
+  openAlertModal() {
+    this.showModalAlert = !this.showModalAlert;
   }
 
 }

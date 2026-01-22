@@ -27,6 +27,7 @@ export class CygnusDropzoneInputComponent {
   isLoading: boolean = false;
   errorMessage: string = '';
 
+  outputIniciaLectura = output<boolean>();
   outputBase64 = output<string>();
   outputErrorMsge = output<string>();
 
@@ -44,6 +45,7 @@ export class CygnusDropzoneInputComponent {
     const input = event.target as HTMLInputElement;
 
     if (input.files && input.files.length > 0) {
+      this.outputIniciaLectura.emit(true);
       const file = input.files[0];
 
       // Validar tipo de archivo

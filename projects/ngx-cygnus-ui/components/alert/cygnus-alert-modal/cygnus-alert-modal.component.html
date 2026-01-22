@@ -1,0 +1,38 @@
+@if (showModal()) {
+<div
+  class="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300 p-4"
+  (click)="handleBlurClick($event)"
+>
+  <div
+    [class]="
+      TW_CLASS.ALERT_CONTENT_BASE + ' ' +
+      alertAllClasses() + ' ' +
+      'max-w-xs'
+    "
+  >
+    <div class="flex items-center justify-between text-lg font-medium">
+      <div class="flex items-center pb-1">
+        @if (alertIconAsset()) {
+          <lib-ngx-cygnus-icons class="me-2"
+            [size]="'lg'"
+            [textColor]="alertIconColor() || ''"
+            [textRoute]="alertIconAsset()"
+          />
+        }
+        {{modalTitle()}}
+      </div>
+
+      <lib-ngx-cygnus-icons
+        [size]="'xl'"
+        [textColor]="'lightblack'"
+        [textRoute]="'x-close'"
+      />
+
+    </div>
+    <div class="relative font-light leading-normal text-gray-600 overflow-auto flex-1 min-h-0"
+     >
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+}

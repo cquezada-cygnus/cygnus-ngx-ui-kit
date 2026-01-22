@@ -12,7 +12,6 @@ export class CygnusModalComponent {
   private static idCounter = 0;
 
   modalTitle = input<string>('');
-  modalContent = input<string>('');
   withX = input<boolean>(false);
   showModal = model<boolean>(false);
   confirmarData = output<any>();
