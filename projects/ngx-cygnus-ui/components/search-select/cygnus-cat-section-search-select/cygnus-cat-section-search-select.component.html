@@ -1,3 +1,15 @@
+<div class="w-full">
+  @for (cargo of arrSelection; track cargo.id_item) {
+  <cygnus-alert-simple
+    [alertTypes]="alertType()"
+    [alertIcon]="false"
+    [alertEquis]="true"
+    [alertTitle]="cargo['cargo']"
+    [alertContent]="''"
+    (isClosed)="cargoDeleted($event, cargo)"
+  />
+  }
+</div>
 <div  #targetSelectSearchDiv class="relative"  [id]="selectSearchId()">
 
   <input type="text"
