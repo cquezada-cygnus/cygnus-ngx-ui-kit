@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {
   CygnusMenuSearchSelectComponent,
-  CygnusSearchSelectComponent
+  CygnusSearchSelectComponent,
+  CygnusCatSectionSearchSelectComponent,
 } from 'ngx-cygnus-ui/components/search-select';
 import {
   SelectCollectOptions,
@@ -11,18 +12,24 @@ import {
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 
+import * as OPTGROUPDATA from '../../../json/postulaqui-categorias-secciones.json';
+
 
 @Component({
   selector: 'app-select-search-content',
   imports: [
     CygnusSearchSelectComponent,
     CygnusMenuSearchSelectComponent,
+    CygnusCatSectionSearchSelectComponent,
     Highlight, HighlightLineNumbers,
   ],
   templateUrl: './select-search-content.component.html',
   styleUrl: './select-search-content.component.scss'
 })
 export class SelectSearchContentComponent {
+
+  // postulaqui-categorias-secciones.json
+  OPTGROUPDATA = JSON.parse(JSON.stringify(OPTGROUPDATA)).default;
 
   menuSearchContentArr: SelectCollectOptions[] = [
     {key: 'Contratos', selects: [

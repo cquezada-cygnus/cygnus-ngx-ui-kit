@@ -39,10 +39,6 @@ export class SelectContentComponent {
   OPTGROUPDATA = JSON.parse(JSON.stringify(OPTGROUPDATA)).default;
 
 
-  constructor() {
-    console.log('OPTGROUPDATA:',this.OPTGROUPDATA);
-  }
-
   optgroupSelection(opt: any): void {
     console.log('optgroupSelection:', opt);
 

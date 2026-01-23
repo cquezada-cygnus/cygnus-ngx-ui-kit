@@ -224,4 +224,35 @@
     </div>
   </section>
 
+  <section id="select-size">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Selector con categorias, secciones, busqueda por todas las categorías y búsqueda dentro de la categoría</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Este componente recibe un JSON con los cargos. Cada cargo tiene categoría y sección. El mismo componente reconoce las categorías y secciones. Al abrir el desplegable por primera vez, se verán las categorías. Si se selecciona una categoría se verán las secciones y los cargos dentro de cada sección.
+        </p>
+        <p class="mb-8 text-secondary-600 text-md">
+          Puedes elegir desde el menú el cargo o puedes escribirlo. Si no has seleccionado categoría, te mostrará el cargo de cualquier categoría que coincidad con tu búsqueda. Si seleccionaste categoría, te mostrará el cargo que coincida con tu búsqueda dentro de la categoría seleccionada.
+        </p>
+        <p class="mb-8 text-secondary-600 text-md">
+          Puedes de-seleccionar la categoría con la opción volver.
+        </p>
+
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+          <div class="flex flex-col w-full max-w-lg space-y-4">
+
+            <cygnus-cat-section-search-select
+              [OPTGROUPDATA]="OPTGROUPDATA"
+              [categoryName]="'categoria'"
+              [categorySection]="'seccion'"
+              [categoryItem]="'cargo'"
+            />
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </main>
