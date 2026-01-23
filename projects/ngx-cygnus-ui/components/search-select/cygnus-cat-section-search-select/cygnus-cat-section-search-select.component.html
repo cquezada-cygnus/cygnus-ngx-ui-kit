@@ -1,15 +1,17 @@
+@if (arrSelection.length > 0) {
 <div class="w-full">
   @for (cargo of arrSelection; track cargo.id_item) {
   <cygnus-alert-simple
     [alertTypes]="alertType()"
     [alertIcon]="false"
     [alertEquis]="true"
-    [alertTitle]="cargo['cargo']"
+    [alertTitle]="cargo[categoryItem()]"
     [alertContent]="''"
     (isClosed)="cargoDeleted($event, cargo)"
   />
   }
 </div>
+}
 <div  #targetSelectSearchDiv class="relative"  [id]="selectSearchId()">
 
   <input type="text"
@@ -51,7 +53,7 @@
     <li class="bg-gray-400 font-semibold" >{{ sec.key }}</li>
 
     @for (op of $any(sec.value); track $index) {
-      <li class="hover:bg-gray-300" (click)="onItemSelected(op)">{{ op[categoryItem()] }}</li>
+      <li [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-300'" (click)="onItemSelected(op)">{{ op[categoryItem()] }}</li>
     }
   }
 </ul>

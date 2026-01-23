@@ -1,4 +1,4 @@
-import { Component, HostListener, input, OnInit, signal } from '@angular/core';
+import { Component, input, OnInit, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -98,6 +98,14 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
 
   cargoDeleted(event: any, cargo:any) {
     this.arrSelection = this.arrSelection.filter(s => s.id_item !== cargo.id_item);
+    console.log('cargoDeleted arr:',this.arrSelection);
+  }
+
+  markAsSelected(item:any): boolean {
+    if (this.arrSelection.length > 0) {
+      return this.arrSelection.some(elem => elem.id_item === item.id_item);
+    }
+    return false;
   }
 
   setCategoriesAndSections() {
