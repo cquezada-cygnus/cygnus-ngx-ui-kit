@@ -1,4 +1,4 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, HostListener, input, OnInit, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { debounceTime } from 'rxjs';
@@ -23,7 +23,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   TW_CLASS = TW_CLASS;
 
   searchControl = new FormControl('');
-  isInvisible = signal<boolean>(true);
+  isInvisible = signal<boolean>(false);
   placeholder = input<string>('Escribe aquí...');
 
   OPTGROUPDATA = input<any>();
@@ -49,12 +49,16 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   arrSelection: any[] = [];
 
   selectSearchId = signal<string>('');
+  ulShowCategoriesId = signal<string>('');
+  ulShowSecOptId = signal<string>('');
   private static idCounter = 0;
 
 
   ngOnInit(): void {
     // Generar ID único si no se proporciona
     this.selectSearchId.set(`cg-cat-section-select-search-${++CygnusCatSectionSearchSelectComponent.idCounter}`);
+    this.ulShowCategoriesId.set(`cg-cat-section-select-search-ul-cat-${++CygnusCatSectionSearchSelectComponent.idCounter}`);
+    this.ulShowSecOptId.set(`cg-cat-section-select-search-ul-sec-${++CygnusCatSectionSearchSelectComponent.idCounter}`);
 
     // Recibir JSON para generar categorías y secciones
     this.setCategoriesAndSections();
@@ -70,6 +74,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   }
 
   openUl() {
+    this.isInvisible.set(false);
     if (!this.categorySelected) { // si no está seleccionada la categoría, mostrar menú de categorías
       this.showCategories.set(true);
     }
@@ -87,12 +92,14 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
         this.showWithoutCategorySelected.set(true);
         this.showCategories.set(false);
         this.showSecOpt.set(true);
+        this.isInvisible.set(false);
       }
       // Si se selecciona la categoría: Busca la palabra en esa categoría
       else {
         this.filterWithCategorySelected.set(true);
         this.showCategories.set(false);
         this.showSecOpt.set(true);
+        this.isInvisible.set(false);
       }
 
     });
@@ -119,12 +126,14 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
     if (!this.categorySelected) return;
     this.showCategories.set(false);
     this.showSecOpt.set(true);
+    this.isInvisible.set(false);
   }
 
   onItemSelected(item:any): void {
     if (item === this.secOpVolver) { // volver al menú de categorías
       this.showSecOpt.set(false);
       this.showCategories.set(true);
+      this.isInvisible.set(false);
     } else {
       this.secOpSelected = item;
       console.log('onItemSelected item:',item);
@@ -190,5 +199,24 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
       });
     }
 
+  }
+  // ulShowCategoriesId
+  // ulShowSecOptId
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) { // invisibilizar el menu cuando se haga click fuera de él
+    if (
+      !(event.target == document.getElementById(this.selectSearchId())) && // si NO se hace click en dropdown
+      !(document.getElementById(this.selectSearchId())?.contains(event.target as Node)) && // si NO se hace click en hijos del dropdown
+      !(event.target == document.getElementById(this.ulShowCategoriesId())) && // si NO se hace click en ul ulShowCategoriesId
+      !(document.getElementById(this.ulShowCategoriesId())?.contains(event.target as Node)) &&
+      !(event.target == document.getElementById(this.ulShowSecOptId())) && // si NO se hace click en ul ulShowSecOptId
+      !(document.getElementById(this.ulShowSecOptId())?.contains(event.target as Node))
+    ) {
+      console.log('this.selectSearchId was NOT clicked');
+
+      if (!this.isInvisible()) this.isInvisible.set(true); // invisibilizar opciones
+    } else {
+      console.log('this.selectSearchId was clicked');
+    }
   }
 }
