@@ -43,6 +43,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   showSecOpt = signal<boolean>(false);
   showCategories = signal<boolean>(false);
   showWithoutCategorySelected = signal<boolean>(false);
+  filterWithCategorySelected = signal<boolean>(false);
 
   maxLengthSelection = input<number>(3);
   arrSelection: any[] = [];
@@ -76,6 +77,8 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
 
   filterInputSearch() {
     this.searchControl.valueChanges.pipe(debounceTime(150)).subscribe(value => {
+      this.showWithoutCategorySelected.set(false);
+      this.filterWithCategorySelected.set(false);
       console.log('filterInputSearch value:', value);
       this.filterValue = value;
       // Si no se selecciona categoría: buscar la palabra en todas las categorías.
@@ -87,7 +90,9 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
       }
       // Si se selecciona la categoría: Busca la palabra en esa categoría
       else {
-
+        this.filterWithCategorySelected.set(true);
+        this.showCategories.set(false);
+        this.showSecOpt.set(true);
       }
 
     });
