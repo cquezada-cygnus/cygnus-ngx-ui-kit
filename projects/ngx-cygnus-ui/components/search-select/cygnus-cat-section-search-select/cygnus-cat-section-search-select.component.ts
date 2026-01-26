@@ -160,6 +160,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
     if (this.arrSelection.length===0) {
       this.categorySelected = null;
       this.secOpSelected = null;
+      this.showSecOpt.set(false);
     }
   }
 
