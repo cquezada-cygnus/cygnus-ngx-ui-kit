@@ -18,6 +18,7 @@
     [class]="TW_CLASS.INPUT_BASE + ' !pr-9' "
     [placeholder]="placeholder()"
     (click)="openUl()"
+    [formControl]="searchControl"
   />
 
   <lib-ngx-cygnus-icons class="ml-2 absolute h-full flex items-center inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 bg-gray-200"
@@ -48,13 +49,30 @@
   <li class="bg-gray-500 text-gray-50" >Selecciona una opción</li>
   <li class="bg-blue-900 text-blue-50" (click)="onItemSelected(secOpVolver)">← Volver a categorías</li>
 
-  <!-- Agrupa dinámicamente -->
-  @for (sec of dataEntries[categorySelected!] | keyvalue; track $index) {
-    <li class="bg-gray-400 font-semibold" >{{ sec.key }}</li>
+  @if (!showWithoutCategorySelected()) {
+    <!-- Agrupa dinámicamente -->
+    @for (sec of dataEntries[categorySelected!] | keyvalue; track $index) {
+      <li class="bg-gray-400 font-semibold" >{{ sec.key }}</li>
 
-    @for (op of $any(sec.value); track $index) {
-      <li [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-300'" (click)="onItemSelected(op)">{{ op[categoryItem()] }}</li>
+      @for (op of $any(sec.value); track op.id_item) {
+        <li [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-300'" (click)="onItemSelected(op)">{{ op[categoryItem()] }}</li>
+      }
     }
+  } @else {
+    @for (cat of dataEntries | keyvalue; track $index) {
+      <!-- Agrupa dinámicamente -->
+      @for (sec of dataEntries[$any(cat.key)] | keyvalue; track $index) {
+
+        @if (setFilteredOptions(sec.value)) {
+          <li class="bg-gray-400 font-semibold" >{{ sec.key }}</li>
+          @for (op of dataFilteredEntries; track op.id_item) {
+            <li [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-300'" (click)="onItemSelected(op)">{{ op[categoryItem()] }}</li>
+          }
+        }
+
+      }
+    }
+
   }
 </ul>
 }
