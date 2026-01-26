@@ -70,7 +70,6 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
     this.showDataEntries = Object.fromEntries(this.showDataEntries);
     // showDataEntries y dataEntries tienen exactamente los mismos datos porque showDataEntries cambiará sus datos según se elija filtrar o no por lo escrito en el input de búsqueda. Por lo cual se necesita que exista un dataEntries que no cambie. ShowDataEntries estará cambiando según el uso.
     this.filterInputSearch();
-    console.log('showDataEntries:',this.showDataEntries);
 
   }
 
@@ -85,7 +84,6 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
     this.searchControl.valueChanges.pipe(debounceTime(150)).subscribe(value => {
       this.showWithoutCategorySelected.set(false);
       this.filterWithCategorySelected.set(false);
-      console.log('filterInputSearch value:', value);
       this.filterValue = value;
       // Si no se selecciona categoría: buscar la palabra en todas las categorías.
       if (!this.categorySelected) {
@@ -122,7 +120,6 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
 
   onCategorySelected(cat: any): void {
     this.categorySelected = cat;
-    console.log('onCategorySelected this.categorySelected:',this.categorySelected);
 
     if (!this.categorySelected) return;
     this.showCategories.set(false);
@@ -137,7 +134,6 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
       this.isInvisible.set(false);
     } else {
       this.secOpSelected = item;
-      console.log('onItemSelected item:',item);
       // agregar a la lista
       this.storeItemSelected(item);
       // mostrar en la lista
