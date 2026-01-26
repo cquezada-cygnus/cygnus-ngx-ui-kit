@@ -1,4 +1,4 @@
-import { Component, HostListener, input, OnInit, signal } from '@angular/core';
+import { Component, HostListener, input, OnInit, output, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { debounceTime } from 'rxjs';
@@ -47,6 +47,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
 
   maxLengthSelection = input<number>(3);
   arrSelection: any[] = [];
+  outputItemsSelected = output<any[]>();
 
   selectSearchId = signal<string>('');
   ulShowCategoriesId = signal<string>('');
@@ -140,7 +141,9 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
       // agregar a la lista
       this.storeItemSelected(item);
       // mostrar en la lista
-      // cambiar color de la opción y que no se vuelva a seleccionar
+      // cambiar color de la opción y que no se vuelva a seleccionar -> markAsSelected()
+      // enviar como output la lista seleccionada
+      this.outputItemsSelected.emit(this.arrSelection);
     }
   }
 
@@ -149,13 +152,15 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
       if (this.arrSelection.length < this.maxLengthSelection() && !this.arrSelection.some(sel => sel.id_item == item.id_item)) { // Si ya hay 3 cargos seleccionados, no se guarda. Si ya está guardado, no lo guarda.
         this.arrSelection.push(item);
       }
-      console.log('storeItemSelected arr:',this.arrSelection);
     }
   }
 
   cargoDeleted(event: any, cargo:any) {
     this.arrSelection = this.arrSelection.filter(s => s.id_item !== cargo.id_item);
-    console.log('cargoDeleted arr:',this.arrSelection);
+    if (this.arrSelection.length===0) {
+      this.categorySelected = null;
+      this.secOpSelected = null;
+    }
   }
 
   markAsSelected(item:any): boolean {
@@ -200,8 +205,8 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
     }
 
   }
-  // ulShowCategoriesId
-  // ulShowSecOptId
+
+
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) { // invisibilizar el menu cuando se haga click fuera de él
     if (
@@ -212,11 +217,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
       !(event.target == document.getElementById(this.ulShowSecOptId())) && // si NO se hace click en ul ulShowSecOptId
       !(document.getElementById(this.ulShowSecOptId())?.contains(event.target as Node))
     ) {
-      console.log('this.selectSearchId was NOT clicked');
-
       if (!this.isInvisible()) this.isInvisible.set(true); // invisibilizar opciones
-    } else {
-      console.log('this.selectSearchId was clicked');
     }
   }
 }
