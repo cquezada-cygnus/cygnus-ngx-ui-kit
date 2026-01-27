@@ -16,6 +16,9 @@
       [autoWidthSelectDirective]="selAutoWidth()"
       (change)="setValue(cygnusSelect.value)"
     >
+      @if (selInstructionOpDisabled()) {
+        <option class="" value="" disabled selected>{{selInstructionOpDisabled()}}</option>
+      }
       @for (op of options(); track $index) {
         <option [value]="op.value">{{op.option}}</option>
       }

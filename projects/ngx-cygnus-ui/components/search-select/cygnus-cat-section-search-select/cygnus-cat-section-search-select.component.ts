@@ -153,6 +153,9 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
 
   cargoDeleted(event: any, cargo:any) {
     this.arrSelection = this.arrSelection.filter(s => s.id_item !== cargo.id_item);
+    // enviar como output la lista actualizada
+    this.outputItemsSelected.emit(this.arrSelection);
+    // inicializar menu
     if (this.arrSelection.length===0) {
       this.categorySelected = null;
       this.secOpSelected = null;

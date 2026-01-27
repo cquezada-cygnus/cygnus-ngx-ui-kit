@@ -35,6 +35,7 @@ export class CygnusSelectComponent {
   selectLabel = input<string>('');
   selectHint = input<string>('');
   selAutoWidth = input<boolean>(false);
+  selInstructionOpDisabled = input<string>();
 
   ngOnInit() {
     // Generar ID único si no se proporciona
