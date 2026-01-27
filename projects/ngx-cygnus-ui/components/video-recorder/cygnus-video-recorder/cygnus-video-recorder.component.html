@@ -1,0 +1,57 @@
+<div class="max-w-2xl mx-auto p-6">
+
+  <!-- Video Preview -->
+  @if (mostrarGrabacion) {
+  <video
+    #videoPreview
+    autoplay
+    muted
+    class="w-full rounded-lg bg-black mb-4">
+  </video>
+  }
+  <!-- Temporizador -->
+  <div class="text-center text-3xl font-bold mb-6">
+    {{ tiempo }}
+  </div>
+
+  <!-- Botones -->
+  <div class="flex gap-4 justify-center items-center">
+
+    <!-- Botón VERDE: Iniciar -->
+
+    <button
+      (click)="iniciar()"
+      [disabled]="grabando"
+      class="flex items-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold disabled:border-gray-200 disabled:bg-green-300 disabled:shadow-none">
+      <lib-ngx-cygnus-icons class="me-2"
+        [size]="'xl'"
+        [textColor]="'white'"
+        [textRoute]="'mic'"
+      />
+      Iniciar
+    </button>
+
+    <!-- Botón ROJO: Detener -->
+
+    <button
+      (click)="detener()"
+      [disabled]="!grabando"
+      class="flex items-center bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold disabled:border-gray-200 disabled:bg-red-300 disabled:shadow-none">
+      <lib-ngx-cygnus-icons class="me-2"
+        [size]="'xl'"
+        [textColor]="'white'"
+        [textRoute]="'stop-circle'"
+      />
+      Detener
+    </button>
+
+
+  </div>
+
+  <!-- Mensaje cuando se detiene automáticamente -->
+  @if (detenidoAutomaticamente) {
+  <div class="mt-4 p-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded-lg text-center">
+    Se ha alcanzado el límite de grabación ({{ formatearTiempo(duracionMaxima()) }}).
+  </div>
+  }
+</div>

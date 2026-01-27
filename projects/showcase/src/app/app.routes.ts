@@ -120,6 +120,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/login-content/login-content.component').then( (c) => c.LoginContentComponent )
   },
   {
+    path: 'video-recorder',
+    loadComponent: () => import('./pages/video-recorder-content/video-recorder-content.component').then( (c) => c.VideoRecorderContentComponent )
+  },
+  {
     path: '**',
     redirectTo: ''
   }
