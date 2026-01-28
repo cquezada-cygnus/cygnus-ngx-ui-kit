@@ -10,7 +10,12 @@
   </video>
   }
   <!-- Temporizador -->
-  <div class="text-center text-3xl font-bold mb-6">
+  <div class="flex items-center justify-center text-center text-lg font-base mb-6">
+    <lib-ngx-cygnus-icons class="mr-2"
+      [size]="'lg'"
+      [textColor]="'lightblack'"
+      [textRoute]="'clock'"
+    />
     {{ tiempo }}
   </div>
 
@@ -18,31 +23,33 @@
   <div class="flex gap-4 justify-center items-center">
 
     <!-- Botón VERDE: Iniciar -->
-
     <button
       (click)="iniciar()"
       [disabled]="grabando"
-      class="flex items-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold disabled:border-gray-200 disabled:bg-green-300 disabled:shadow-none">
+      class="flex max-w-40 items-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold disabled:border-gray-200 disabled:bg-green-300 disabled:shadow-none">
       <lib-ngx-cygnus-icons class="me-2"
         [size]="'xl'"
         [textColor]="'white'"
         [textRoute]="'mic'"
       />
-      Iniciar
+      <div class="flex flex-col">
+        Iniciar grabación
+      </div>
     </button>
 
     <!-- Botón ROJO: Detener -->
-
     <button
       (click)="detener()"
       [disabled]="!grabando"
-      class="flex items-center bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold disabled:border-gray-200 disabled:bg-red-300 disabled:shadow-none">
+      class="flex max-w-40 items-center bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold disabled:border-gray-200 disabled:bg-red-300 disabled:shadow-none">
       <lib-ngx-cygnus-icons class="me-2"
         [size]="'xl'"
         [textColor]="'white'"
         [textRoute]="'stop-circle'"
       />
-      Detener
+      <div class="flex flex-col">
+        Detener grabación
+      </div>
     </button>
 
 

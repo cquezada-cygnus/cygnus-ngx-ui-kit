@@ -38,6 +38,8 @@ export class CygnusVideoRecorderComponent {
       // 2. Mostrar video en pantalla
       const video = document.querySelector('video') as HTMLVideoElement;
       video.srcObject = stream;
+      video.muted = true; // CRÍTICO: Mantener siempre muted para evitar acople del audio con los parlantes
+      video.volume = 0;   // Extra seguridad: volumen a 0
 
       // 3. Crear grabador
       this.mediaRecorder = new MediaRecorder(stream);
