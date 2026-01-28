@@ -1,246 +1,210 @@
-import { Component, input, output, inject, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, input, output, inject, OnDestroy, ChangeDetectorRef, viewChild, ElementRef } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { VideoGrabado } from 'ngx-cygnus-ui/interfaces';
 
 @Component({
   selector: 'cygnus-video-recorder',
-  imports: [
-    NgxCygnusIconsComponent,
-],
+  imports: [NgxCygnusIconsComponent],
   templateUrl: './cygnus-video-recorder.component.html',
 })
 export class CygnusVideoRecorderComponent implements OnDestroy {
 
-  // Inyección de dependencias (Angular 19 style)
   private sanitizer = inject(DomSanitizer);
   private cd = inject(ChangeDetectorRef);
 
-  // duración máxima en segundos (por defecto 60 = 1 minuto)
-  duracionMaxima = input<number>(60);
+  // REFERENCIA AL VIDEO EN VIVO (Angular 19 Signal ViewChild)
+  videoLiveElement = viewChild<ElementRef<HTMLVideoElement>>('videoLive');
 
-  // Emite el video cuando termina la grabación
+  duracionMaxima = input<number>(60);
   videoListo = output<VideoGrabado>();
 
-  // Estado
   grabando = false;
   procesando = false;
-  tiempo = '00:00';
   mostrarGrabacion = false;
   detenidoAutomaticamente = false;
 
-  // Variables para la revisión del video
+  tiempo = '00:00';
   videoParaRevisar: VideoGrabado | null = null;
   urlVideoSegura: SafeUrl | null = null;
 
-  // Internos MediaRecorder
   private mediaRecorder: any;
   private pedazos: any[] = [];
   private segundos = 0;
   private intervalo: any;
-  private streamActual: MediaStream | null = null; // Guardamos referencia para limpiar bien
-
+  private streamActual: MediaStream | null = null;
 
   async iniciar() {
-    this.descartarGrabacion(); // Limpieza preventiva
+    // 1. Limpieza preventiva
+    this.resetearEstadoCompleto();
+
+    // 2. Activamos la bandera para mostrar el HTML del video
     this.mostrarGrabacion = true;
-    // Resetear flag de detención automática
-    this.detenidoAutomaticamente = false;
+
+    // 3. ¡CRÍTICO! Forzamos a Angular a pintar el <video> en el DOM ahora mismo
+    this.cd.detectChanges();
+
     try {
-      // 1. Pedir acceso a cámara y micrófono
       const stream = await navigator.mediaDevices.getUserMedia({
         video: true,
         audio: true
       });
+
       this.streamActual = stream;
 
-      // 2. Mostrar video en pantalla
-      // Esperar un tick para que el elemento videoLive exista en el DOM
-      setTimeout(() => {
-        const videoElement = document.querySelector('video') as HTMLVideoElement;
-        if (videoElement) {
-          videoElement.srcObject = stream;
-          videoElement.muted = true; // Muted mientras graba para evitar feedback
-          videoElement.volume = 0;
-        }
-      }, 0);
+      // 4. Usamos la referencia segura de Angular (ya no document.querySelector)
+      const videoEl = this.videoLiveElement()?.nativeElement;
 
-      // 3. Crear grabador
+      if (videoEl) {
+        videoEl.srcObject = stream;
+        videoEl.muted = true;
+        videoEl.volume = 0;
+        // Promesa de play() para evitar errores de pantalla negra
+        await videoEl.play();
+      } else {
+        console.error('No se encontró el elemento de video en el DOM');
+      }
+
       this.mediaRecorder = new MediaRecorder(stream);
 
-      // 4. Guardar lo que se va grabando
       this.mediaRecorder.ondataavailable = (evento: any) => {
         if (evento.data && evento.data.size > 0) {
           this.pedazos.push(evento.data);
         }
       };
 
-      // 5. Al parar, solo procesamos para revisión, NO emitimos todavía
       this.mediaRecorder.onstop = async () => {
         await this.prepararVideoParaRevision();
       };
 
-      // 6. Iniciar grabación
       this.mediaRecorder.start();
       this.grabando = true;
-
-      // 7. Iniciar contador de tiempo
       this.iniciarContador();
 
     } catch (error) {
-      alert('No se pudo acceder a la cámara o micrófono');
-      console.error(error);
-      this.mostrarGrabacion = false;
+      console.error('Error al acceder a la cámara:', error);
+      alert('No se pudo acceder a la cámara');
+      this.resetearEstadoCompleto();
     }
   }
 
   detener(automatico = false) {
-    // Marcar si fue detenido automáticamente
-    if (automatico) {
-      this.detenidoAutomaticamente = true;
-    }
+    if (automatico) this.detenidoAutomaticamente = true;
+    this.procesando = true;
 
-    // Detener grabación
     if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
       this.mediaRecorder.stop();
     }
+
     this.grabando = false;
     this.detenerRecursosHardware();
-
-    // this.mostrarGrabacion = false;
-
-    // // Detener contador
-    // clearInterval(this.intervalo);
-    // this.segundos = 0;
-    // this.tiempo = '00:00';
-
-    // // Apagar cámara
-    // const video = document.querySelector('video') as HTMLVideoElement;
-    // const stream = video.srcObject as MediaStream;
-    // stream.getTracks().forEach(track => track.stop());
-    // video.srcObject = null;
-  }
-
-  // Separa la lógica de apagar la cámara para reutilizarla
-  private detenerRecursosHardware() {
-    clearInterval(this.intervalo);
-
-    if (this.streamActual) {
-      this.streamActual.getTracks().forEach(track => track.stop());
-      this.streamActual = null;
-    }
-
-    // Limpiar src del elemento video si existe
-    const videoElement = document.querySelector('video') as HTMLVideoElement;
-    if (videoElement) {
-      videoElement.srcObject = null;
-    }
-  }
-
-  // ==========================================
-  // LÓGICA DE REVISIÓN Y EMISIÓN
-  // ==========================================
-
-  private async prepararVideoParaRevision() {
-    try {
-      this.procesando = true;
-
-      const blob = new Blob(this.pedazos, { type: 'video/webm' });
-      const base64 = await this.blobABase64(blob);
-      const duracionFinal = this.segundos;
-      const tiempoFinal = Date.now();
-
-      // 1. Guardamos el objeto listo para emitir
-      this.videoParaRevisar = {
-        blob: blob,
-        base64: base64,
-        duracion: duracionFinal,
-        timestamp: tiempoFinal,
-        tipo: 'video/webm'
-      };
-
-      // 2. Creamos URL segura para previsualizar sin emitir aún
-      const objectUrl = URL.createObjectURL(blob);
-      this.urlVideoSegura = this.sanitizer.bypassSecurityTrustUrl(objectUrl);
-
-      // Limpiamos los pedazos raw, pero mantenemos el objeto final
-      this.pedazos = [];
-      this.procesando = false;
-
-      // Ocultamos la vista "live" (se maneja en el HTML con @if)
-      this.mostrarGrabacion = false;
-
-      // FORZAR LA DETECCIÓN DE CAMBIOS
-      // Esto le dice a Angular: "Oye, cambié variables, actualiza el HTML ahora mismo"
-      this.cd.detectChanges();
-
-    } catch (error) {
-      console.error('Error procesando video', error);
-      this.procesando = false;
-      this.cd.detectChanges();
-    }
   }
 
   confirmarEnvio() {
     if (this.videoParaRevisar) {
       this.videoListo.emit(this.videoParaRevisar);
-      console.log('📤 Video confirmado y emitido');
-
-      // Opcional: Limpiar después de enviar o dejarlo visible
-      // this.descartarGrabacion();
     }
+    this.resetearEstadoCompleto();
   }
 
   descartarGrabacion() {
+    this.resetearEstadoCompleto();
+  }
+
+  private resetearEstadoCompleto() {
+    this.detenerRecursosHardware();
+
     this.videoParaRevisar = null;
     this.urlVideoSegura = null;
     this.pedazos = [];
     this.segundos = 0;
     this.tiempo = '00:00';
-    this.detenidoAutomaticamente = false;
+    this.grabando = false;
+    this.procesando = false;
     this.mostrarGrabacion = false;
-    this.cd.detectChanges(); // Actualizar vista al descartar
+    this.detenidoAutomaticamente = false;
+
+    this.cd.detectChanges();
   }
 
-  // ==========================================
-  // UTILIDADES
-  // ==========================================
+  private detenerRecursosHardware() {
+    clearInterval(this.intervalo);
 
-  private iniciarContador() {
-    this.segundos = 0; // Resetear explícitamente al iniciar
-    this.tiempo = '00:00';
-    this.intervalo = setInterval(() => {
-      this.segundos++;
-      this.tiempo = this.formatearTiempo(this.segundos);
-      // Usamos markForCheck si usas OnPush, o dejamos que angular lo detecte
-      this.cd.markForCheck();
+    // Detener tracks del stream
+    if (this.streamActual) {
+      this.streamActual.getTracks().forEach(track => track.stop());
+      this.streamActual = null;
+    }
 
-      // AUTO-STOP: Detener automáticamente al alcanzar el límite
-      if (this.segundos >= this.duracionMaxima()) {
-        this.detener(true);
+    // Limpiar srcObject del video live si existe actualmente
+    const videoEl = this.videoLiveElement()?.nativeElement;
+    if (videoEl) {
+      videoEl.srcObject = null;
+    }
+  }
+
+  // ... (Resto de métodos: formatearTiempo, blobABase64, prepararVideoParaRevision, etc. iguales que antes) ...
+
+  // Incluir el método prepararVideoParaRevision y blobABase64 del mensaje anterior
+  private async prepararVideoParaRevision() {
+      try {
+        const blob = new Blob(this.pedazos, { type: 'video/webm' });
+        const base64 = await this.blobABase64(blob);
+        const duracionFinal = this.segundos;
+        const tiempoFinal = Date.now();
+
+        this.videoParaRevisar = {
+          blob: blob,
+          base64: base64,
+          duracion: duracionFinal,
+          timestamp: tiempoFinal,
+          tipo: 'video/webm'
+        };
+
+        const objectUrl = URL.createObjectURL(blob);
+        this.urlVideoSegura = this.sanitizer.bypassSecurityTrustUrl(objectUrl);
+
+        this.pedazos = [];
+        this.procesando = false;
+        this.mostrarGrabacion = false;
+        this.cd.detectChanges();
+
+      } catch (error) {
+        console.error('Error procesando', error);
+        this.resetearEstadoCompleto();
       }
-    }, 1000);
-  }
+    }
 
-  formatearTiempo(totalSegundos: number): string {
-    const mins = Math.floor(totalSegundos / 60);
-    const secs = totalSegundos % 60;
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-  }
+    private iniciarContador() {
+        this.segundos = 0;
+        this.tiempo = '00:00';
+        this.intervalo = setInterval(() => {
+          this.segundos++;
+          this.tiempo = this.formatearTiempo(this.segundos);
+          this.cd.markForCheck();
 
-  private blobABase64(blob: Blob): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result as string);
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
-    });
-  }
+          if (this.segundos >= this.duracionMaxima()) {
+            this.detener(true);
+          }
+        }, 1000);
+      }
 
-  // Buena práctica: Limpiar si el componente se destruye
+      formatearTiempo(totalSegundos: number): string {
+        const mins = Math.floor(totalSegundos / 60);
+        const secs = totalSegundos % 60;
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      }
+
+      private blobABase64(blob: Blob): Promise<string> {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result as string);
+          reader.onerror = reject;
+          reader.readAsDataURL(blob);
+        });
+      }
+
   ngOnDestroy() {
-    this.detenerRecursosHardware();
+    this.resetearEstadoCompleto();
   }
-
 }
