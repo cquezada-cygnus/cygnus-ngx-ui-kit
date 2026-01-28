@@ -1,64 +1,113 @@
 <div class="max-w-2xl mx-auto p-6">
 
-  <!-- Video Preview -->
-  @if (mostrarGrabacion) {
+  <!-- Video Live -->
+  @if (mostrarGrabacion && !videoParaRevisar) {
   <video
-    #videoPreview
+    #videoLive
     autoplay
     muted
-    class="w-full rounded-lg bg-black mb-4">
+    playsinline
+    class="w-full rounded-lg bg-black mb-4 shadow-lg border border-gray-800">
   </video>
   }
-  <!-- Temporizador -->
-  <div class="flex items-center justify-center text-center text-lg font-base mb-6">
-    <lib-ngx-cygnus-icons class="mr-2"
-      [size]="'lg'"
-      [textColor]="'lightblack'"
-      [textRoute]="'clock'"
-    />
-    {{ tiempo }}
+  @if (procesando) {
+  <div class="flex flex-col items-center justify-center p-8 animate-pulse">
+    <div class="text-blue-600 font-semibold text-lg">Procesando video...</div>
+    <div class="text-sm text-gray-500">Por favor espera un momento</div>
   </div>
+  }
+  @if (videoParaRevisar && !procesando) {
+    <div class="mb-6 animate-in fade-in duration-300">
+      <h3 class="text-center text-lg font-semibold mb-2 text-gray-700">Revisar Grabación</h3>
+
+      <video
+        [src]="urlVideoSegura"
+        controls
+        playsinline
+        class="w-full rounded-lg bg-black shadow-lg border border-gray-300">
+      </video>
+
+      <div class="text-center mt-2 text-sm text-gray-500">
+        Duración: {{ formatearTiempo(videoParaRevisar.duracion) }}
+      </div>
+    </div>
+  }
+
+  <!-- Temporizador -->
+  @if (!videoParaRevisar) {
+    <div class="flex items-center justify-center text-center text-lg font-base mb-6">
+      <lib-ngx-cygnus-icons class="mr-2"
+        [size]="'lg'"
+        [textColor]="'lightblack'"
+        [textRoute]="'clock'"
+      />
+      {{ tiempo }}
+    </div>
+  }
 
   <!-- Botones -->
   <div class="flex gap-4 justify-center items-center">
 
-    <!-- Botón VERDE: Iniciar -->
-    <button
-      (click)="iniciar()"
-      [disabled]="grabando"
-      class="flex max-w-40 items-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold disabled:border-gray-200 disabled:bg-green-300 disabled:shadow-none">
-      <lib-ngx-cygnus-icons class="me-2"
-        [size]="'xl'"
-        [textColor]="'white'"
-        [textRoute]="'mic'"
-      />
-      <div class="flex flex-col">
-        Iniciar grabación
-      </div>
-    </button>
+    @if (!videoParaRevisar) {
+      <button
+        (click)="iniciar()"
+        [disabled]="grabando"
+        class="flex max-w-45 items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
+        <lib-ngx-cygnus-icons class="me-2"
+          [size]="'xl'"
+          [textColor]="grabando ? 'gray' : 'white'"
+          [textRoute]="'mic'"
+        />
+        <div class="flex flex-col">
+          Iniciar
+        </div>
+      </button>
 
-    <!-- Botón ROJO: Detener -->
-    <button
-      (click)="detener()"
-      [disabled]="!grabando"
-      class="flex max-w-40 items-center bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold disabled:border-gray-200 disabled:bg-red-300 disabled:shadow-none">
-      <lib-ngx-cygnus-icons class="me-2"
-        [size]="'xl'"
-        [textColor]="'white'"
-        [textRoute]="'stop-circle'"
-      />
-      <div class="flex flex-col">
-        Detener grabación
-      </div>
-    </button>
+      <button
+        (click)="detener()"
+        [disabled]="!grabando"
+        class="flex max-w-45 items-center bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
+        <lib-ngx-cygnus-icons class="me-2"
+          [size]="'xl'"
+          [textColor]="!grabando ? 'gray' : 'white'"
+          [textRoute]="'stop-circle'"
+        />
+        <div class="flex flex-col">
+          Detener
+        </div>
+      </button>
+    }
+    @else {
+      <button
+        (click)="descartarGrabacion()"
+        class="flex items-center bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-all cursor-pointer">
+        <lib-ngx-cygnus-icons class="me-2"
+          [size]="'xl'"
+          [textColor]="'white'"
+          [textRoute]="'trash'"
+        />
+        <span>Descartar</span>
+      </button>
+
+      <button
+        (click)="confirmarEnvio()"
+        class="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-md cursor-pointer">
+        <lib-ngx-cygnus-icons class="me-2"
+          [size]="'xl'"
+          [textColor]="'white'"
+          [textRoute]="'check-circle'"
+        />
+        <span>Enviar Grabación</span>
+      </button>
+    }
 
 
   </div>
 
   <!-- Mensaje cuando se detiene automáticamente -->
-  @if (detenidoAutomaticamente) {
-  <div class="mt-4 p-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded-lg text-center">
-    Se ha alcanzado el límite de grabación ({{ formatearTiempo(duracionMaxima()) }}).
-  </div>
+  @if (detenidoAutomaticamente && !videoParaRevisar) {
+    <div class="mt-4 p-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded-lg text-center animate-pulse">
+      Se ha alcanzado el límite de grabación ({{ formatearTiempo(duracionMaxima()) }}).
+    </div>
   }
 </div>

@@ -6,3 +6,4 @@ export * from './src/list.interface';
 export * from './src/table.interface';
 export * from './src/breadcrumb-item.interface';
 export * from './src/tab.interface';
+export * from './src/video-recorder.interface';
