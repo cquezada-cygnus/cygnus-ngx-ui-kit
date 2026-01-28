@@ -1,6 +1,15 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
+
+// Interfaz para los datos del video
+export interface VideoGrabado {
+  blob: Blob;           // El archivo de video completo
+  base64: string;       // El video en formato base64
+  duracion: number;     // Duración en segundos
+  timestamp: number;    // Momento de la grabación
+  tipo: string;         // Tipo de archivo (video/webm)
+}
 
 @Component({
   selector: 'cygnus-video-recorder',
@@ -13,7 +22,12 @@ export class CygnusVideoRecorderComponent {
   // duración máxima en segundos (por defecto 60 = 1 minuto)
   duracionMaxima = input<number>(60);
 
+  // Emite el video cuando termina la grabación
+  videoListo = output<VideoGrabado>();
+
+
   grabando = false;
+  procesando = false;
   tiempo = '00:00';
   mostrarGrabacion = false;
   detenidoAutomaticamente = false;
@@ -49,18 +63,9 @@ export class CygnusVideoRecorderComponent {
         this.pedazos.push(evento.data);
       };
 
-      // 5. Cuando termine, descargar el video
-      this.mediaRecorder.onstop = () => {
-        const blob = new Blob(this.pedazos, { type: 'video/webm' });
-        const url = URL.createObjectURL(blob);
-
-        // Descargar automáticamente
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'mi-video.webm';
-        a.click();
-
-        this.pedazos = [];
+      // 5. Cuando termine, CONVERTIR Y EMITIR (no descargar)
+      this.mediaRecorder.onstop = async () => {
+        await this.procesarYEmitirVideo();
       };
 
       // 6. Iniciar grabación
@@ -117,6 +122,70 @@ export class CygnusVideoRecorderComponent {
     const mins = Math.floor(totalSegundos / 60);
     const secs = totalSegundos % 60;
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  // 🎬 AQUÍ ES DONDE SE PROCESA EL VIDEO
+  private async procesarYEmitirVideo() {
+    try {
+      this.procesando = true;
+      console.log('🔄 Procesando video...');
+
+      // 1. Crear el Blob con todos los pedazos
+      const blob = new Blob(this.pedazos, { type: 'video/webm' });
+      console.log('📦 Blob creado:', blob.size, 'bytes');
+
+      // 2. Convertir Blob a Base64
+      const base64 = await this.blobABase64(blob);
+      console.log('✅ Conversión a base64 completada');
+
+      // 3. Calcular duración real
+      const duracion = this.segundos;
+      const tiempoFinal = Date.now();
+
+      // 4. Crear objeto con toda la información
+      const videoData: VideoGrabado = {
+        blob: blob,
+        base64: base64,
+        duracion: duracion,
+        timestamp: tiempoFinal,
+        tipo: 'video/webm'
+      };
+
+      // 5. 📤 EMITIR el video mediante el output
+      this.videoListo.emit(videoData);
+      console.log('📤 Video emitido al componente padre');
+
+      // 6. Limpiar
+      this.pedazos = [];
+      this.segundos = 0;
+      this.tiempo = '00:00';
+      this.procesando = false;
+
+    } catch (error) {
+      console.error('❌ Error al procesar video:', error);
+      this.procesando = false;
+      alert('Error al procesar el video');
+    }
+  }
+
+  // 🔄 Convertir Blob a Base64
+  private blobABase64(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        // El resultado incluye el prefijo "data:video/webm;base64,"
+        const base64 = reader.result as string;
+        resolve(base64);
+      };
+
+      reader.onerror = () => {
+        reject(new Error('Error al convertir blob a base64'));
+      };
+
+      // Iniciar la lectura del blob
+      reader.readAsDataURL(blob);
+    });
   }
 
 }
