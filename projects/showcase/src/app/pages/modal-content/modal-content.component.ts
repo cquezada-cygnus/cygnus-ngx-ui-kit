@@ -45,6 +45,11 @@ export class ModalContentComponent {
     console.log('showEditedData: ', data);
   };
 
+  sendData():void {
+    console.log('sendData ');
+    this.toggleModalContenido();
+  }
+
   cygnusModalImportTs: string = `
     import { Component } from '@angular/core';
     import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';

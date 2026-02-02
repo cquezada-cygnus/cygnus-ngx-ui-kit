@@ -20,10 +20,10 @@ export class CygnusModalComponent {
     this.showModal.update( current => !current );
   }
 
-  sendData():void {
-    this.confirmarData.emit(`custom data`);
-    this.toggleModal();
-  }
+  // sendData():void {
+  //   this.confirmarData.emit(`custom data`);
+  //   this.toggleModal();
+  // }
 
   handleBlurClick(event: MouseEvent): void {
     // Check if the element that was clicked is the one with the event listener
