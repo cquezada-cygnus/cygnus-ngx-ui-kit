@@ -15,7 +15,11 @@
 <div  #targetSelectSearchDiv class="relative"  [id]="selectSearchId()">
 
   <input type="text"
-    [class]="TW_CLASS.INPUT_BASE + ' !pr-9' "
+    [class]="
+      TW_CLASS.INPUT_BASE + ' !pr-9' + ' ' +
+      (inputStatusColor()==='success' ? TW_CLASS.INPUT_SUCCESS : '') + ' ' +
+      (inputStatusColor()==='error' ? TW_CLASS.INPUT_ERROR : '')
+    "
     [placeholder]="placeholder()"
     (click)="openUl()"
     [formControl]="searchControl"

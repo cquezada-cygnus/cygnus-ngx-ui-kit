@@ -37,6 +37,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   categoryItem = input<string>('');
   categoryIdItem = input<string>('');
   alertType = input<string>('alert-yellow');
+  inputStatusColor = input<string>('');
 
   categorySelected: string | null = null;
   secOpSelected: any = null;
