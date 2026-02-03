@@ -35,6 +35,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   categoryName = input<string>('');
   categorySection = input<string>('');
   categoryItem = input<string>('');
+  categoryIdItem = input<string>('');
   alertType = input<string>('alert-yellow');
 
   categorySelected: string | null = null;
@@ -145,14 +146,14 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
 
   storeItemSelected(item:any): void {
     if (item) { // si la opt es un string vacio, no lo guarda.
-      if (this.arrSelection.length < this.maxLengthSelection() && !this.arrSelection.some(sel => sel.id_item == item.id_item)) { // Si ya hay 3 cargos seleccionados, no se guarda. Si ya está guardado, no lo guarda.
+      if (this.arrSelection.length < this.maxLengthSelection() && !this.arrSelection.some(sel => sel[this.categoryIdItem()] == item[this.categoryIdItem()])) { // Si ya hay 3 cargos seleccionados, no se guarda. Si ya está guardado, no lo guarda.
         this.arrSelection.push(item);
       }
     }
   }
 
   cargoDeleted(event: any, cargo:any) {
-    this.arrSelection = this.arrSelection.filter(s => s.id_item !== cargo.id_item);
+    this.arrSelection = this.arrSelection.filter(s => s[this.categoryIdItem()] !== cargo[this.categoryIdItem()]);
     // enviar como output la lista actualizada
     this.outputItemsSelected.emit(this.arrSelection);
     // inicializar menu
@@ -165,7 +166,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
 
   markAsSelected(item:any): boolean {
     if (this.arrSelection.length > 0) {
-      return this.arrSelection.some(elem => elem.id_item === item.id_item);
+      return this.arrSelection.some(elem => elem[this.categoryIdItem()] === item[this.categoryIdItem()]);
     }
     return false;
   }

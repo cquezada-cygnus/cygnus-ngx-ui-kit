@@ -1,6 +1,6 @@
 @if (arrSelection.length > 0) {
 <div class="w-full">
-  @for (cargo of arrSelection; track cargo.id_item) {
+  @for (cargo of arrSelection; track cargo[categoryIdItem()]) {
   <cygnus-alert-simple
     [alertTypes]="alertType()"
     [alertIcon]="false"
@@ -60,7 +60,7 @@
       @if (filterWithCategorySelected()) {
         @if (setFilteredOptions(sec.value)) {
           <li class="bg-gray-400 font-semibold" >{{ sec.key }}</li>
-          @for (op of dataFilteredEntries; track op.id_item) {
+          @for (op of dataFilteredEntries; track op[categoryIdItem()]) {
             <li [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-300'" (click)="onItemSelected(op)">{{ op[categoryItem()] }}</li>
           }
         }
@@ -68,7 +68,7 @@
       } @else {
         <li class="bg-gray-400 font-semibold" >{{ sec.key }}</li>
 
-        @for (op of $any(sec.value); track op.id_item) {
+        @for (op of $any(sec.value); track op[categoryIdItem()]) {
           <li [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-300'" (click)="onItemSelected(op)">{{ op[categoryItem()] }}</li>
         }
       }
@@ -81,7 +81,7 @@
 
         @if (setFilteredOptions(sec.value)) {
           <li class="bg-gray-400 font-semibold" >{{ sec.key }}</li>
-          @for (op of dataFilteredEntries; track op.id_item) {
+          @for (op of dataFilteredEntries; track op[categoryIdItem()]) {
             <li [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-300'" (click)="onItemSelected(op)">{{ op[categoryItem()] }}</li>
           }
         }
