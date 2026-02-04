@@ -25,6 +25,7 @@ export class CygnusSelectComponent {
 
   control = input<FormControl<string>>();
   isSelected = output<string>();
+  selectIsBlur = output<boolean>();
 
   TW_CLASS = TW_CLASS;
   selId = signal<string>('');
@@ -69,6 +70,10 @@ export class CygnusSelectComponent {
       default:
         return this.TW_CLASS.SELECT_GENERIC;
     }
+  }
+
+  generateBlurEvent() {
+    this.selectIsBlur.emit(true);
   }
 
 }
