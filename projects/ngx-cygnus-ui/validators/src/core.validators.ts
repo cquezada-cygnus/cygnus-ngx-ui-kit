@@ -251,8 +251,14 @@ export function cgRutValidator(): ValidatorFn {
       return { invalidValidator: true };
     }
 
-    const digitRepeatedRegex = /^(.)\1{2,}$/; // si hay 3 o más dígitos repetidos en un rut como 11111111-1
-    if (!digitRepeatedRegex.test(rut)) {
+    // error
+    // const digitRepeatedRegex = /^(.)\1{2,}$/; // si hay 3 o más dígitos repetidos en un rut como 11111111-1
+    // if (!digitRepeatedRegex.test(rut)) {
+    //   return { invalidDigitRepeated: true };
+    // }
+
+    const digitRepeatedRegex = /^(.)\1+-[0-9kK]$/; // Detecta 111111-1, 222222-2, etc.
+    if (digitRepeatedRegex.test(rut)) {
       return { invalidDigitRepeated: true };
     }
 
