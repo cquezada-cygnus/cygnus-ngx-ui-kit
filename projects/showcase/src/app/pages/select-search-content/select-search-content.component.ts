@@ -69,6 +69,10 @@ export class SelectSearchContentComponent {
     console.log('printSearch:', event);
   }
 
+  customBlurEventTest(event: boolean) {
+    console.log('customBlurEventTest ',event);
+  }
+
   cygnusSearchSelImportTs: string = `
     import { Component } from '@angular/core';
     import {

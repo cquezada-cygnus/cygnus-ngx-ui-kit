@@ -23,6 +23,7 @@
     [placeholder]="placeholder()"
     (click)="openUl()"
     [formControl]="searchControl"
+    (blur)="outputBlur.emit(true)"
   />
 
   <lib-ngx-cygnus-icons class="ml-2 absolute h-full flex items-center inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 bg-gray-200"
