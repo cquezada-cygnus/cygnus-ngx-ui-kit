@@ -33,6 +33,9 @@ export class CygnusCheckboxComponent implements OnInit {
   checkboxText = input<string>('');
   checkboxHint = input<string>('');
 
+  checkboxLink = input<string>('');
+  checkboxLinkText = input<string>('');
+
   constructor() {
     effect(() => {
       this.checkboxRef()!.nativeElement.checked = this.checkedIn() || false;

@@ -16,6 +16,9 @@
       addTailwindClasses(btnLinkType()) + ' ' +
       (paddingOk() ? 'px-4' : '')
     "
+     [href]="hrefLink()"
+     target="_blank"
+     rel="noopener noreferrer"
   >
     <ng-content></ng-content>
   </a>

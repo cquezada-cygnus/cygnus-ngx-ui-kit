@@ -16,7 +16,19 @@
     <label [for]="checkboxId()" class="sr-only">Checkbox</label>
   } @else if (checkboxType()==='text' || checkboxType()==='text-hint') {
     <div [class]="TW_CLASS.CHECKBOX_TEXT">
-      <label for="checkboxId()" class="checkbox-label">{{checkboxText()}}</label>
+      <label for="checkboxId()" class="checkbox-label">
+        {{checkboxText()}}
+        @if (checkboxLink() && checkboxLinkText()) {
+        <a
+          [href]="checkboxLink()"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-2"
+        >
+          {{checkboxLinkText()}}
+        </a>
+        }
+      </label>
       @if (checkboxType()==='text-hint') {
         <p [class]="TW_CLASS.CHECKBOX_HINT">{{checkboxHint()}}</p>
       }

@@ -139,4 +139,29 @@
     </div>
   </section>
 
+  <section id="checkbox-hint-text">
+    <div
+      class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Checkbox con texto, texto de ayuda y link</h2>
+        <p class="mb-8 text-gray-600 text-md">
+
+        </p>
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+
+          <cygnus-checkbox
+            [checkboxType]="'text-hint'"
+            [checkboxText]="'Acepta los '"
+            [checkboxHint]="'Recuerda mi datos'"
+            [checkboxLink]="'https://postulaaqui.cl/condiciones/terminos_y_condiciones.pdf'"
+            [checkboxLinkText]="'términos y condiciones'"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
 </main>
