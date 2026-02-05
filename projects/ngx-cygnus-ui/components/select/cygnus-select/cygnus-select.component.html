@@ -16,6 +16,7 @@
       [autoWidthSelectDirective]="selAutoWidth()"
       (change)="setValue(cygnusSelect.value)"
       (blur)="generateBlurEvent()"
+      [formControl]="control()"
     >
       @if (selInstructionOpDisabled()) {
         <option class="" value="" disabled selected>{{selInstructionOpDisabled()}}</option>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CygnusOptgroupSelectComponent, CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 
@@ -6,6 +6,7 @@ import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 
 import * as OPTGROUPDATA from '../../../json/postulaqui-categorias-secciones.json';
+import { NonNullableFormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-select-content',
@@ -17,7 +18,7 @@ import * as OPTGROUPDATA from '../../../json/postulaqui-categorias-secciones.jso
   templateUrl: './select-content.component.html',
   styleUrl: './select-content.component.scss'
 })
-export class SelectContentComponent {
+export class SelectContentComponent implements OnInit {
   options: SelectGeneric[] = [
     {option: 'Valor 1', value: '0001'},
     {option: 'Valor 2', value: '0002'},
@@ -38,10 +39,19 @@ export class SelectContentComponent {
   // postulaqui-categorias-secciones.json
   OPTGROUPDATA = JSON.parse(JSON.stringify(OPTGROUPDATA)).default;
 
+  nonNullableFb = inject(NonNullableFormBuilder);
+  selectForm = this.nonNullableFb.group({
+    sel: ['', [] ],
+  });
 
   optgroupSelection(opt: any): void {
     console.log('optgroupSelection:', opt);
+  }
 
+  ngOnInit(): void {
+    this.selectForm.patchValue({
+      sel: '0005'
+    });
   }
 
   cygnusSelImportTs: string = `

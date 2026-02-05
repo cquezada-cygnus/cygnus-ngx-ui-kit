@@ -2,12 +2,13 @@ import { Component, input, output, signal } from '@angular/core';
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 import { TW_CLASS } from '../const/tailwind.const';
 import { AutoWidthSelectDirective } from 'ngx-cygnus-ui/directives';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'cygnus-select',
   imports: [
-    AutoWidthSelectDirective
+    AutoWidthSelectDirective,
+    ReactiveFormsModule,
   ],
   templateUrl: './cygnus-select.component.html',
   styles: `select {
@@ -23,7 +24,7 @@ import { FormControl } from '@angular/forms';
 export class CygnusSelectComponent {
   private static idCounter = 0;
 
-  control = input<FormControl<string>>();
+  control = input<FormControl<string>>(new FormControl());
   isSelected = output<string>();
   selectIsBlur = output<boolean>();
 
