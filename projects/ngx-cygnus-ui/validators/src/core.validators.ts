@@ -151,9 +151,6 @@ export function cgInteger(message?: string): ValidatorFn {
   };
 }
 
-/**
- * ✅ NUEVO: Validador combinado para campos requeridos con formato específico
- */
 export function cgRequiredPhone(message?: string): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const value = control.value;
@@ -193,9 +190,6 @@ export function cgRequiredPhone(message?: string): ValidatorFn {
   };
 }
 
-/**
- * ✅ NUEVO: Validador combinado para email requerido
- */
 export function cgRequiredEmail(message?: string): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const value = control.value;
@@ -236,10 +230,11 @@ export function cgRequiredEmail(message?: string): ValidatorFn {
 
 export function cgRutValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
-    const rut = control.value;
-    if (!rut) {
-      return null; // Don't validate if the field is empty
-    }
+    let rut = control.value;
+    if (!rut) return null; // Don't validate if the field is empty
+
+    // Limpiamos puntos y convertimos a mayúsculas para estandarizar
+    rut = rut.replace(/\./g, '').toUpperCase();
 
     // Example validation logic (simplified - a complete solution would use Modulo 11)
     const rutRegex = /^[0-9]+-[0-9kK]{1}$/;
@@ -250,12 +245,6 @@ export function cgRutValidator(): ValidatorFn {
     if (!rutFormula(rut)) { // Modulo 11
       return { invalidValidator: true };
     }
-
-    // error
-    // const digitRepeatedRegex = /^(.)\1{2,}$/; // si hay 3 o más dígitos repetidos en un rut como 11111111-1
-    // if (!digitRepeatedRegex.test(rut)) {
-    //   return { invalidDigitRepeated: true };
-    // }
 
     const digitRepeatedRegex = /^(.)\1+-[0-9kK]$/; // Detecta 111111-1, 222222-2, etc.
     if (digitRepeatedRegex.test(rut)) {

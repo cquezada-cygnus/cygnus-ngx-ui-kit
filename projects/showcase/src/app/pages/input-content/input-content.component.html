@@ -561,4 +561,20 @@
     </div>
   </section>
 
+  <section>
+    <form autocomplete="off" [formGroup]="RutForm" class=" flex flex-col space-y-4">
+
+      <cygnus-input
+        [inputCustomType]="'fieldset-legend-label'"
+        [textPlaceholder]="'12345678-K'"
+        [hintColor]="true"
+        [textHint]="''"
+        [textLabel]="'RUT'"
+        [control]="RutForm.controls.rut"
+        [isRutFormatActive]="true"
+        [useRutDots]="true"
+      />
+    </form>
+  </section>
+
 </main>

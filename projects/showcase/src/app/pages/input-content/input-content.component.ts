@@ -2,7 +2,7 @@ import { Component, inject, OnInit, output, signal } from '@angular/core';
 import { ReactiveFormsModule, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { CygnusInputComponent, CygnusDropzoneInputComponent } from 'ngx-cygnus-ui/components/input';
 import { InputColor } from 'ngx-cygnus-ui/types';
-import { cgPhone } from 'ngx-cygnus-ui/validators';
+import { cgPhone, cgRutValidator } from 'ngx-cygnus-ui/validators';
 
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
@@ -31,6 +31,12 @@ export class InputContentComponent implements OnInit {
 
   textPhoneHint = signal<string>('');
   inputPhoneColor = signal<InputColor>('base');
+
+  RutForm = this.nonNullableFb.group({
+    rut: ['',
+      [Validators.required, cgRutValidator()]
+    ],
+  });
 
   ngOnInit() {
     this.inputStatusManager();

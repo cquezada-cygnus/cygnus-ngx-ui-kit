@@ -4,10 +4,14 @@ import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
 import { FormControl } from '@angular/forms';
+import { RutFormatDirective } from 'ngx-cygnus-ui/directives';
 
 @Component({
   selector: 'cygnus-input',
-  imports: [NgxCygnusIconsComponent],
+  imports: [
+    NgxCygnusIconsComponent,
+    RutFormatDirective,
+  ],
   templateUrl: './cygnus-input.component.html',
 })
 export class CygnusInputComponent implements OnInit, AfterViewInit {
@@ -16,6 +20,8 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
 
   control = input<FormControl<string>>();
+  isRutFormatActive = input<boolean>(false);
+  useRutDots = input<boolean>(false);
 
   inputId = signal<string>('');
   inputCustomType = input<InputCustomType>('base');
