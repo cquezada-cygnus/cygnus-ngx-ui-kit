@@ -89,6 +89,7 @@
         <span>Descartar</span>
       </button>
 
+      @if (mostrarBotonEnviarGrabacion()) {
       <button
         (click)="confirmarEnvio()"
         class="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-md cursor-pointer">
@@ -99,6 +100,8 @@
         />
         <span>Enviar Grabación</span>
       </button>
+      }
+
     }
 
 
