@@ -19,6 +19,7 @@ export class CygnusDropzoneInputComponent {
   thirdText = input<string>('');
   btnText = input<string>('');
   onlyBtn = input<boolean>(false);
+  horizontalText = input<boolean>(false);
 
   btnColor = input<string>('btn-indigo');
 
