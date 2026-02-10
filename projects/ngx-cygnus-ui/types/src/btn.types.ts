@@ -1,5 +1,6 @@
 export type BtnCustomType =
   'btn' |
+  'btn-cygnus' |
   'btn-primary' |
   'btn-secondary' |
   'btn-accent' |
