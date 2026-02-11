@@ -111,7 +111,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
     this.dataFilteredEntries = [];
     for (let i = 0; i < arrOptions.length; i++) {
       const elem = arrOptions[i];
-      if (elem.cargo.toUpperCase().includes(this.filterValue?.toUpperCase())) {
+      if (elem[this.categoryItem()].toUpperCase().includes(this.filterValue?.toUpperCase())) {
         this.dataFilteredEntries.push(elem);
       }
     }
