@@ -1,6 +1,6 @@
 export const TW_CLASS = {
 
-  INPUT_BASE: 'px-3 py-3 block w-full text-sm transition duration-300 bg-white border rounded-lg shadow-sm placeholder:text-gray-500 text-gray-700 focus:ring-1 focus:outline-none focus:shadow',
+  INPUT_BASE: 'px-3 py-3 block w-full text-sm transition duration-300 bg-white border rounded-lg shadow-sm placeholder:text-gray-300 text-gray-700 focus:ring-1 focus:outline-none focus:shadow',
 
   INPUT_GENERIC: 'border-gray-300 focus:border-primary-700 focus:ring-primary-700',
   INPUT_SUCCESS: '!border-success-500 !focus:border-success-500 !focus:ring-success-500',
@@ -11,7 +11,7 @@ export const TW_CLASS = {
   INPUT_FLOATING: '!pb-2 !pt-6 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none focus:pb-2 !focus:pt-6 ![&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2',
   INPUT_FLOATING_ICON: '!pb-3 !pt-3 placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none !focus:pt-3 focus:pb-3 ![&:not(:placeholder-shown)]:pt-3 [&:not(:placeholder-shown)]:pb-3 !autofill:pt-3 autofill:pb-3',
 
-  INPUT_TOP_BASE: 'px-4 !shadow-xs !placeholder:text-gray-400 !focus:outline-hidden focus:shadow-sm',
+  INPUT_TOP_BASE: 'px-4 !shadow-xs !placeholder:text-gray-300 !focus:outline-hidden focus:shadow-sm',
   INPUT_TOP_GENERIC: 'border-gray-300 focus:ring-primary-700 focus:border-primary-700',
   INPUT_TOP_SUCCESS: 'border-2 border-success-600 focus:ring-success-700 focus:border-success-700',
   INPUT_TOP_WARNING: 'border-2 border-warning-500 focus:ring-warning-500 focus:border-warning-500',
@@ -19,9 +19,9 @@ export const TW_CLASS = {
 
   INPUT_INTERACTIVE_BASE: 'px-4 py-3',
   INPUT_INTERACTIVE_GENERIC: '',
-  INPUT_INTERACTIVE_SUCCESS: 'placeholder:text-success-500 placeholder:bg-gray-50 text-gray-700 border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow active:bg-white',
-  INPUT_INTERACTIVE_WARNING: 'placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow active:bg-white',
-  INPUT_INTERACTIVE_ERROR: 'placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 border-error-600 !focus:ring-error-700 !focus:border-error-700 focus:shadow active:bg-white',
+  INPUT_INTERACTIVE_SUCCESS: 'placeholder:text-gray-300 placeholder:bg-gray-50 text-gray-700 border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow active:bg-white',
+  INPUT_INTERACTIVE_WARNING: 'placeholder:text-gray-300 placeholder:bg-gray-50 text-gray-700 border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow active:bg-white',
+  INPUT_INTERACTIVE_ERROR: 'placeholder:text-gray-300 placeholder:bg-gray-50 text-gray-700 border-error-600 !focus:ring-error-700 !focus:border-error-700 focus:shadow active:bg-white',
 
   INPUT_FILE: '!px-0 !py-0 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 file:cursor-pointer cursor-pointer',
 
