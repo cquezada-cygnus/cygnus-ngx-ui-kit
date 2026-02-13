@@ -18,6 +18,7 @@ export class CygnusVideoRecorderComponent implements OnDestroy {
 
   duracionMaxima = input<number>(60);
   videoListo = output<VideoGrabado>();
+  noHayVideoGrabado = output<boolean>();
 
   grabando = false;
   procesando = false;
@@ -161,6 +162,8 @@ export class CygnusVideoRecorderComponent implements OnDestroy {
   confirmarEnvio() {
     if (this.videoParaRevisar) {
       this.videoListo.emit(this.videoParaRevisar);
+    } else {
+      this.noHayVideoGrabado.emit(true);
     }
     this.resetearEstadoCompleto();
   }
