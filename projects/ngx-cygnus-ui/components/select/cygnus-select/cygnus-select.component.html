@@ -15,7 +15,8 @@
             TW_CLASS.SELECT + ' ' +
             selGetSize() + ' ' +
             selGetType() + ' ' +
-            (isDisabled() ? TW_CLASS.SELECT_DISABLED : '')
+            (isDisabled() ? TW_CLASS.SELECT_DISABLED : '') + ' ' +
+            (control().value === '' || control().value === null ? 'text-gray-300!' : '')
           "
           [disabled]="isDisabled()"
           [autoWidthSelectDirective]="selAutoWidth()"
@@ -24,10 +25,10 @@
           [formControl]="control()"
         >
           @if (selInstructionOpDisabled()) {
-            <option class="" value="" disabled selected>{{selInstructionOpDisabled()}}</option>
+            <option  class="text-gray-300!" value="" disabled selected>{{selInstructionOpDisabled()}}</option>
           }
           @for (op of options(); track $index) {
-            <option [value]="op.value">{{op.option}}</option>
+            <option  class="text-gray-700" [value]="op.value">{{op.option}}</option>
           }
         </select>
 
