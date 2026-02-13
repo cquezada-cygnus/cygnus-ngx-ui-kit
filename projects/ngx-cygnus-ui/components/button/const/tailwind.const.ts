@@ -40,4 +40,7 @@ export const TW_CLASS = {
   BTN_LINK_NAVBAR: 'text-sm font-medium text-gray-500 inline-flex items-center w-full px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-white',
   BTN_LINK_NAVBAR_ACTIVE: '!text-blue-700 !bg-blue-100 !hover:text-blue-600',
   BTN_A: 'group relative overflow-hidden focus:ring-4 inline-flex items-center rounded-lg justify-center',
+
+  // Botón con gradient background
+  BTN_GRADIENT: 'bg-gradient-to-r from-[#5850EC] to-[#F94C00] text-[#F6FEF9] hover:opacity-90 transition-opacity',
 }

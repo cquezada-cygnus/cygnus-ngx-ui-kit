@@ -833,6 +833,54 @@
     </div>
   </section>
 
+  <section id="button-colours">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4">
+        <h2 class="mb-4 text-xl font-semibold">GRADIENT</h2>
+
+        <div class="flex flex-wrap items-center w-full gap-3 mb-4">
+
+          <!-- COMPONENTE: Botón primario -->
+          <cygnus-button [btnTypes]="'btn-primary'" [gradientButton]="true" >Primario</cygnus-button>
+          <!-- COMPONENTE: Botón secundario -->
+          <cygnus-button [btnTypes]="'btn-secondary'" [gradientButton]="true" >Secundario</cygnus-button>
+          <!-- COMPONENTE: Botón informativo -->
+          <cygnus-button [btnTypes]="'btn-accent'" [gradientButton]="true" >Informativo</cygnus-button>
+          <!-- COMPONENTE: Botón gris -->
+          <cygnus-button [btnTypes]="'btn-gray'" [gradientButton]="true" >Gris</cygnus-button>
+          <!-- COMPONENTE: Botón éxito -->
+          <cygnus-button [btnTypes]="'btn-success'" [gradientButton]="true" >Éxito</cygnus-button>
+          <!-- COMPONENTE: Botón red -->
+          <cygnus-button [btnTypes]="'btn-error'" [gradientButton]="true" >Red</cygnus-button>
+          <!-- COMPONENTE: Botón Advertencia -->
+          <cygnus-button [btnTypes]="'btn-warning'" [gradientButton]="true" >Advertencia</cygnus-button>
+
+          <cygnus-button
+            [btnTypes]="'btn-ghost btn-icon-only'"
+            [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+            [gradientButton]="true"
+          >
+          </cygnus-button>
+          <cygnus-button
+            [btnTypes]="'btn-outlined btn-icon-only'"
+            [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+            [gradientButton]="true"
+          >
+          </cygnus-button>
+          <cygnus-button
+            [btnTypes]="'btn-primary btn-icon-only'"
+            [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+            [gradientButton]="true"
+          >
+          </cygnus-button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 

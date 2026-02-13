@@ -6,6 +6,7 @@
   (mouseleave)="onMouseLeave()"
   [class.bg-transparent]="(btnIconOutlined() && btnIconOutlinedTransparent()) ? true : false"
   [class.bg-white]="(btnIconOutlined() && !btnIconOutlinedTransparent()) ? true : false"
+  [ngClass]="gradientButton() ? TW_CLASS.BTN_GRADIENT : ''"
 >
   @if (btnIconExist && btnIsLoading()) {
     <div [class]="TW_CLASS.BTN_ICON_LOADING + (!btnIconOnly ? ' mr-2 ': ' ') + btnIconLoadingSize() "  role="status" aria-label="loading">
@@ -15,7 +16,7 @@
   @if (btnIconExist && btnIconRouteLeft()!=='') {
     <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
       [size]="btnIconSize"
-      [textColor]="btnIconColor()"
+      [textColor]="gradientButton() ? '#F6FEF9' : btnIconColor()"
       [textRoute]="btnIconRouteLeft()"
     />
   }
@@ -23,7 +24,7 @@
   @if (btnIconExist && btnIconRouteRight()!=='') {
     <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
       [size]="btnIconSize"
-      [textColor]="btnIconColor()"
+      [textColor]="gradientButton() ? '#F6FEF9' : btnIconColor()"
       [textRoute]="btnIconRouteRight()"
     />
   }

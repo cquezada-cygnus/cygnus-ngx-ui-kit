@@ -1,11 +1,12 @@
 import { Component, effect, input, OnInit, signal, WritableSignal } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { IconLoadingSize } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
 
 @Component({
   selector: 'cygnus-button',
-  imports: [NgxCygnusIconsComponent],
+  imports: [NgxCygnusIconsComponent, NgClass],
   templateUrl: 'cygnus-button.component.html',
 })
 export class CygnusButtonComponent implements OnInit {
@@ -27,6 +28,8 @@ export class CygnusButtonComponent implements OnInit {
   btnIconOutlined = signal<boolean>(false);
   btnIconOutlinedColor = signal<string>('');
   btnIconOutlinedTransparent = input<boolean>(true);
+
+  gradientButton = input<boolean>(false);
 
   constructor() {
     effect(() => { // actualizar color del botón cuando cambie this.btnTypes()
