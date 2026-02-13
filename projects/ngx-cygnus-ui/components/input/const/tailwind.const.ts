@@ -58,4 +58,11 @@ export const TW_CLASS = {
 
   INPUT_SIZE_SM: '!p-2.5',
   INPUT_SIZE_LG: '!p-4',
+
+  // Wrapper para gradient border
+  GRADIENT_WRAPPER: 'relative rounded-lg p-[2px] bg-gradient-to-r from-[#5850EC] to-[#F94C00]',
+  GRADIENT_INNER: 'bg-white rounded-[6px]', // Ajusta el color de fondo según tu diseño
+
+  // Versión sin gradient (normal)
+  NORMAL_WRAPPER: 'relative',
 }

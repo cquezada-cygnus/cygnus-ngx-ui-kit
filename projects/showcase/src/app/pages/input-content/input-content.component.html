@@ -587,4 +587,52 @@
     </form>
   </section>
 
+  <section>
+    <h4>gradient</h4>
+    <form autocomplete="off" [formGroup]="RutForm" class=" flex flex-col space-y-4">
+
+      <cygnus-input
+        [inputCustomType]="'fieldset-legend-label'"
+        [textPlaceholder]="'12345678-K'"
+        [hintColor]="true"
+        [textHint]="''"
+        [textLabel]="'RUT'"
+        [control]="RutForm.controls.rut"
+        [isRutFormatActive]="true"
+        [useRutDots]="true"
+        [gradientBorder]="true"
+      />
+    </form>
+    <br>
+    <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-4 md:space-y-6 w-full items-center" action="#">
+      <div class="flex-col w-full max-w-sm space-y-4">
+
+        <!-- input con validador de número de teléfono -->
+        <cygnus-input
+          [inputCustomType]="'label-top'"
+          [inputColor]="inputPhoneColor()"
+          [textLabel]="'Teléfono'"
+          [hintColor]="true"
+          [textHint]="textPhoneHint()"
+          [control]="phoneForm.controls.phone"
+          [inputClearValue]="inputClearValue()"
+          [pseudoIconCLPPhone]="true"
+          [iconPosition]="'left'"
+          [gradientBorder]="true"
+        />
+
+      </div>
+    </form>
+    <br>
+
+    <!-- COMPONENTE: Input con label -->
+    <cygnus-input
+      [inputCustomType]="'fieldset-legend-label'"
+      [textPlaceholder]="'esto es un placeholder'"
+      [textHint]="'Este es un texto de ayuda para el usuario.'"
+      [textLabel]="'Custom label'"
+      [gradientBorder]="true"
+    />
+  </section>
+
 </main>

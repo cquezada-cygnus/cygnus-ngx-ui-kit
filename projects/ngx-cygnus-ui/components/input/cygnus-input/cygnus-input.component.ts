@@ -47,6 +47,8 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   initializeInputValue = input<string>('');
   inputValueOutput = output<string>();
 
+  gradientBorder = input<boolean>(false);
+
   constructor() {
     effect(() => { // limpiar input si se solicita
       if (!this.inputClearValue()) {
