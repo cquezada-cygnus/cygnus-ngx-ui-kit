@@ -3,28 +3,36 @@
 @if (selectLabel()!=='') {
     <label class="block mb-1 text-sm font-medium text-gray-800" >{{selectLabel()}}</label>
 }
-    <select
-      #cygnusSelect
-      [id]="selId()"
-      [class]="
-        TW_CLASS.SELECT + ' ' +
-        selGetSize() + ' ' +
-        selGetType() + ' ' +
-        (isDisabled() ? TW_CLASS.SELECT_DISABLED : '')
-      "
-      [disabled]="isDisabled()"
-      [autoWidthSelectDirective]="selAutoWidth()"
-      (change)="setValue(cygnusSelect.value)"
-      (blur)="generateBlurEvent()"
-      [formControl]="control()"
-    >
-      @if (selInstructionOpDisabled()) {
-        <option class="" value="" disabled selected>{{selInstructionOpDisabled()}}</option>
-      }
-      @for (op of options(); track $index) {
-        <option [value]="op.value">{{op.option}}</option>
-      }
-    </select>
+
+    <!-- Wrapper condicional para gradient border -->
+    <div [class]="gradientBorder() ? TW_CLASS.GRADIENT_WRAPPER : TW_CLASS.NORMAL_WRAPPER">
+      <div [class]="gradientBorder() ? TW_CLASS.GRADIENT_INNER : ''">
+
+        <select
+          #cygnusSelect
+          [id]="selId()"
+          [class]="
+            TW_CLASS.SELECT + ' ' +
+            selGetSize() + ' ' +
+            selGetType() + ' ' +
+            (isDisabled() ? TW_CLASS.SELECT_DISABLED : '')
+          "
+          [disabled]="isDisabled()"
+          [autoWidthSelectDirective]="selAutoWidth()"
+          (change)="setValue(cygnusSelect.value)"
+          (blur)="generateBlurEvent()"
+          [formControl]="control()"
+        >
+          @if (selInstructionOpDisabled()) {
+            <option class="" value="" disabled selected>{{selInstructionOpDisabled()}}</option>
+          }
+          @for (op of options(); track $index) {
+            <option [value]="op.value">{{op.option}}</option>
+          }
+        </select>
+
+      </div><!-- Wrapper condicional para gradient border -->
+    </div><!-- Wrapper condicional para gradient border -->
 
 @if (selectHint()!=='') {
     <p class="mt-1 text-sm text-gray-500">{{selectHint()}}</p>

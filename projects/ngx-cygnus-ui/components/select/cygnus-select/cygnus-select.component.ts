@@ -38,6 +38,7 @@ export class CygnusSelectComponent {
   selectHint = input<string>('');
   selAutoWidth = input<boolean>(false);
   selInstructionOpDisabled = input<string>();
+  gradientBorder = input<boolean>(false);
 
   ngOnInit() {
     // Generar ID único si no se proporciona

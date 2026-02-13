@@ -14,6 +14,13 @@ export const TW_CLASS = {
 
   SELECT_WIDTH_AUTHOMATIC: '!placeholder:text-slate-400 !text-slate-700 !border-slate-200 rounded py-2 focus:outline-none !focus:border-slate-400 !hover:border-slate-400 shadow-sm focus:shadow-md min-w-[50px]',
 
-  SELECT_DISABLED: 'shadow-sm opacity-50 pointer-events-none placeholder:text-secondary-400 text-secondary-700 border-secondary-200 ease focus:outline-none focus:border-secondary-400 hover:border-secondary-400'
+  SELECT_DISABLED: 'shadow-sm opacity-50 pointer-events-none placeholder:text-secondary-400 text-secondary-700 border-secondary-200 ease focus:outline-none focus:border-secondary-400 hover:border-secondary-400',
+
+  // Wrapper para gradient border
+  GRADIENT_WRAPPER: 'relative rounded-lg p-[2px] bg-gradient-to-r from-[#5850EC] to-[#F94C00]',
+  GRADIENT_INNER: 'bg-white rounded-[6px]',
+
+  // Versión sin gradient (normal)
+  NORMAL_WRAPPER: 'relative',
 }
 
