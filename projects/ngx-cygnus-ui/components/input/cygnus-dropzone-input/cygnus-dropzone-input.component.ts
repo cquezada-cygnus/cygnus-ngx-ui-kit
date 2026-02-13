@@ -22,6 +22,7 @@ export class CygnusDropzoneInputComponent {
   horizontalText = input<boolean>(false);
 
   btnColor = input<string>('btn-indigo');
+  gradientButton = input<boolean>(false);
 
   base64: string | null = null;
   fileName: string = '';
