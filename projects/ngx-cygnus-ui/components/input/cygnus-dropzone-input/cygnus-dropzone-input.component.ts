@@ -42,6 +42,8 @@ export class CygnusDropzoneInputComponent {
     'image/jpeg': '.jpg',
     'image/jpg': '.jpg',
     'image/png': '.png',
+    'image/pjpeg': '.jpg',  // Formato JPEG progresivo
+    'image/jfif': '.jpg',   // Otro formato JPEG común
   };
 
   onDragOver(event: DragEvent): void {
@@ -105,16 +107,31 @@ export class CygnusDropzoneInputComponent {
   }
 
   isValidFileType(file: File): boolean {
-    // Validar por MIME type
+
+    // Obtener la extensión del archivo
+    const extension = '.' + file.name.split('.').pop()?.toLowerCase();
+
+    // Lista de extensiones permitidas
+    const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png'];
+
+    // Validar primero por extensión (más confiable)
+    if (allowedExtensions.includes(extension)) {
+      return true;
+    }
+
+    // Validación secundaria por MIME type (como fallback)
     if (this.allowedTypes.hasOwnProperty(file.type)) {
       return true;
     }
 
-    // Validación adicional por extensión (como fallback)
-    const extension = '.' + file.name.split('.').pop()?.toLowerCase();
-    const allowedExtensions = Object.values(this.allowedTypes);
+    // Si ninguna validación pasa, rechazar el archivo
+    console.log('Archivo rechazado:', {
+      nombre: file.name,
+      extension: extension,
+      mimeType: file.type
+    });
 
-    return allowedExtensions.includes(extension);
+    return false;
   }
 
   convertToBase64(file: File): void {
@@ -124,6 +141,8 @@ export class CygnusDropzoneInputComponent {
       this.base64 = reader.result as string; // El resultado incluye el prefijo, ejemplo "data:application/pdf;base64,"
       this.isLoading = false;
       // Enviar convertido
+      console.log('output Base64:',this.base64);
+
       this.outputBase64.emit(this.base64);
     }
 
