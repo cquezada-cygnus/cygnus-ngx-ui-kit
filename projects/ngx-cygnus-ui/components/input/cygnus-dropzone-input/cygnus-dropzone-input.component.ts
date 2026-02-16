@@ -30,6 +30,7 @@ export class CygnusDropzoneInputComponent {
   fileType: string = '';
   isLoading: boolean = false;
   errorMessage: string = '';
+  isDragging: boolean = false; // Para feedback visual
 
   outputIniciaLectura = output<boolean>();
   outputBase64 = output<string>();
@@ -41,35 +42,66 @@ export class CygnusDropzoneInputComponent {
     'image/jpeg': '.jpg',
     'image/jpg': '.jpg',
     'image/png': '.png',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document': '.docx',
-    'application/msword': '.doc'
   };
+
+  onDragOver(event: DragEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.isDragging = true;
+  }
+
+  onDragLeave(event: DragEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.isDragging = false;
+  }
+
+  onDrop(event: DragEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.isDragging = false;
+
+    const files = event.dataTransfer?.files;
+
+    if (files && files.length > 0) {
+      this.processFile(files[0]);
+      // Limpiar el input file para permitir subir el mismo archivo después
+      const fileInput = document.getElementById('dropzone-file') as HTMLInputElement;
+      if (fileInput) {
+        fileInput.value = '';
+      }
+    } else {
+      console.log('No files found in drop event');
+    }
+  }
 
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
 
     if (input.files && input.files.length > 0) {
-      this.outputIniciaLectura.emit(true);
-      const file = input.files[0];
-
-      // Validar tipo de archivo
-      if (!this.isValidFileType(file)) {
-        this.errorMessage = 'Tipo de archivo no permitido. Solo se aceptan: PDF, JPG, PNG, DOC, DOCX';
-        this.outputErrorMsge.emit(this.errorMessage);
-        this.resetFile();
-        return;
-      }
-
-      this.isLoading = true;
-      this.errorMessage = '';
-      this.fileName = file.name;
-      this.fileSize = file.size;
-      this.fileType = file.type;
-
-      // Convertir a base64
-      this.convertToBase64(file);
-
+      this.processFile(input.files[0]);
     }
+  }
+
+  processFile(file: File): void {
+    this.outputIniciaLectura.emit(true);
+
+    // Validar tipo de archivo
+    if (!this.isValidFileType(file)) {
+      this.errorMessage = 'Tipo de archivo no permitido. Solo se aceptan: PDF, JPG, PNG.';
+      this.outputErrorMsge.emit(this.errorMessage);
+      this.resetFile();
+      return;
+    }
+
+    this.isLoading = true;
+    this.errorMessage = '';
+    this.fileName = file.name;
+    this.fileSize = file.size;
+    this.fileType = file.type;
+
+    // Convertir a base64
+    this.convertToBase64(file);
   }
 
   isValidFileType(file: File): boolean {
@@ -91,7 +123,6 @@ export class CygnusDropzoneInputComponent {
     reader.onload = () => {
       this.base64 = reader.result as string; // El resultado incluye el prefijo, ejemplo "data:application/pdf;base64,"
       this.isLoading = false;
-
       // Enviar convertido
       this.outputBase64.emit(this.base64);
     }
@@ -104,7 +135,6 @@ export class CygnusDropzoneInputComponent {
     };
 
     reader.readAsDataURL(file);
-
   }
 
 
