@@ -54,8 +54,13 @@
           [disabled]="inputDisabled()"
           [readOnly]="inputDisabled()"
           (focusout)="setValue(cygnusInput.value)"
+
           [appRutFormat]="isRutFormatActive()"
           [withDots]="useRutDots()"
+
+          [appMaxLengthTruncate]="useTruncate()"
+          [limit]="truncateLength()"
+          [onlyNumbers]="onlyNumbers()"
         >
         @if (inputCustomType()!=='base' && inputCustomType()!=='fieldset-legend-label' && inputCustomType()!=='file' ) {
           <label [for]="inputId()"

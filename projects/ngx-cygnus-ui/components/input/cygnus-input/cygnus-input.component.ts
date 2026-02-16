@@ -5,12 +5,14 @@ import { IconPosition } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
 import { FormControl } from '@angular/forms';
 import { RutFormatDirective } from 'ngx-cygnus-ui/directives';
+import { MaxLengthTruncateDirective } from 'ngx-cygnus-ui/directives';
 
 @Component({
   selector: 'cygnus-input',
   imports: [
     NgxCygnusIconsComponent,
     RutFormatDirective,
+    MaxLengthTruncateDirective,
   ],
   templateUrl: './cygnus-input.component.html',
 })
@@ -48,6 +50,11 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   inputValueOutput = output<string>();
 
   gradientBorder = input<boolean>(false);
+
+  // Nuevos controles para la directiva MaxLengthTruncateDirective
+  useTruncate = input<boolean>(false);
+  truncateLength = input<number>(9);
+  onlyNumbers = input<boolean>(true); // Para activar/desactivar la lógica
 
   constructor() {
     effect(() => { // limpiar input si se solicita
