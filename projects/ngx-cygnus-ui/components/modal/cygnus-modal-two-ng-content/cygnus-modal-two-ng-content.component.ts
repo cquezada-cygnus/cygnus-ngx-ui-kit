@@ -12,6 +12,8 @@ import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 export class CygnusModalTwoNgContentComponent {
   withX = input<boolean>(false);
   showModal = model<boolean>(false);
+  inputMaxW = input<string>('max-w-[95vw] md:max-w-[85vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[55vw]');
+  inputMaxH = input<string>('max-h-[90vh]');
 
   toggleModal():void {
     this.showModal.update( current => !current );

@@ -4,7 +4,12 @@
   (click)="handleBlurClick($event)"
 >
   <div
-    class="relative w-full max-w-[95vw] md:max-w-[85vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[55vw] max-h-[90vh] flex flex-col rounded-lg bg-white shadow-sm"
+    [class]="
+      'relative w-full' + ' ' +
+      inputMaxW() + ' ' +
+      inputMaxH() + ' ' +
+      'flex flex-col rounded-lg bg-white shadow-sm'
+    "
   >
     <div class="flex items-center justify-between p-4 sm:p-6 text-xl font-medium text-gray-800 shrink-0 border-b border-gray-200">
       {{modalTitle()}}
