@@ -1,29 +1,21 @@
-import { Component, input, model, output } from '@angular/core';
+import { Component, input, model } from '@angular/core';
+
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 
 @Component({
-  selector: 'cygnus-modal',
+  selector: 'lib-cygnus-modal-two-ng-content',
   imports: [
     CygnusButtonComponent,
   ],
-  templateUrl: './cygnus-modal.component.html',
+  templateUrl: './cygnus-modal-two-ng-content.component.html',
 })
-export class CygnusModalComponent {
-  private static idCounter = 0;
-
-  modalTitle = input<string>('');
+export class CygnusModalTwoNgContentComponent {
   withX = input<boolean>(false);
   showModal = model<boolean>(false);
-  // confirmarData = output<any>();
 
   toggleModal():void {
     this.showModal.update( current => !current );
   }
-
-  // sendData():void {
-  //   this.confirmarData.emit(`custom data`);
-  //   this.toggleModal();
-  // }
 
   handleBlurClick(event: MouseEvent): void {
     // Check if the element that was clicked is the one with the event listener
@@ -31,5 +23,4 @@ export class CygnusModalComponent {
       this.toggleModal();
     } // else Click originated from a child element, Blur handler ignored.
   }
-
 }

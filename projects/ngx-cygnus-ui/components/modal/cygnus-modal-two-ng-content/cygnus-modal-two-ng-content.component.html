@@ -1,0 +1,27 @@
+@if (showModal()) {
+<div
+  class="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300 p-4"
+  (click)="handleBlurClick($event)"
+>
+  <div
+    class="relative w-full max-w-[95vw] md:max-w-[85vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[55vw] max-h-[90vh] flex flex-col rounded-lg bg-white shadow-sm"
+  >
+    <div class="flex items-center justify-between p-4 sm:p-6 text-xl font-medium text-gray-800 shrink-0 border-b border-gray-200">
+      <ng-content select="[modal-title]"></ng-content>
+
+      @if (withX()) {
+        <cygnus-button
+          [btnTypes]="'btn-gray btn-circle btn-icon-only-size-xs'"
+          [btnIconRouteRight]="'x-close'"
+          (click)="toggleModal()"
+        />
+      }
+    </div>
+    <div class="relative px-4 sm:px-6 py-4 font-light leading-normal text-gray-600 overflow-auto flex-1 min-h-0"
+     >
+      <ng-content select="[modal-content]"></ng-content>
+    </div>
+
+  </div>
+</div>
+}
