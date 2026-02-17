@@ -74,6 +74,14 @@
         [gradientButton]="gradientButton()"
       >
         {{btnText()}}
+        @if (btnText()===fileName()) {
+          <lib-ngx-cygnus-icons
+            class="ml-3"
+            [size]="'lg'"
+            [textColor]="'white'"
+            [textRoute]="'x-close'"
+          />
+        }
       </cygnus-button>
     </div>
     <input
@@ -101,6 +109,14 @@
         [gradientButton]="gradientButton()"
       >
         {{btnText()}}
+        @if (btnText()===fileName()) {
+          <lib-ngx-cygnus-icons
+            class="ml-3"
+            [size]="'lg'"
+            [textColor]="'white'"
+            [textRoute]="'x-close'"
+          />
+        }
       </cygnus-button>
     </div>
 
