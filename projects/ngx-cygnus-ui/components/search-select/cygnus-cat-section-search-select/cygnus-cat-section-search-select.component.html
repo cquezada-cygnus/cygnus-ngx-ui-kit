@@ -12,7 +12,11 @@
   }
 </div>
 }
-<div  #targetSelectSearchDiv class="relative"  [id]="selectSearchId()">
+
+
+<div #targetSelectSearchDiv class="relative"  [id]="selectSearchId()">
+
+  @if (!isDisabled()) {
 
   <input type="text"
     [class]="
@@ -32,9 +36,29 @@
     [textRoute]="'search-sm'"
   />
 
+  } @else {
+
+  <input type="text"
+    [class]="
+      TW_CLASS.INPUT_BASE + ' !pr-9' + ' ' +
+      TW_CLASS.INPUT_DISABLED
+    "
+    [disabled]="true"
+  />
+
+  <lib-ngx-cygnus-icons
+    class="ml-2 absolute h-full flex items-center inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 bg-gray-200 cursor-not-allowed opacity-60 pointer-events-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none"
+    [size]="'xl'"
+    [textColor]="'gray'"
+    [textRoute]="'search-sm'"
+  />
+
+}
+
 </div>
 
-@if (showCategories()) {
+
+@if (!isDisabled() && showCategories()) {
 <ul
   class="absolute bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto p-1.5 rounded-lg shadow-lg z-10"
   [style.width.px]="targetSelectSearchDiv.offsetWidth"
@@ -48,7 +72,7 @@
 </ul>
 }
 
-@if (showSecOpt()) {
+@if (!isDisabled() && showSecOpt()) {
 <ul
   class="absolute bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto p-1.5 rounded-lg shadow-lg z-10"
   [style.width.px]="targetSelectSearchDiv.offsetWidth"
@@ -97,3 +121,5 @@
   }
 </ul>
 }
+
+
