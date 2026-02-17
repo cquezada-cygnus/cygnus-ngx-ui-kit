@@ -25,6 +25,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   searchControl = new FormControl('');
   isInvisible = signal<boolean>(false);
   placeholder = input<string>('Escribe aquí...');
+  isDisabled = input<boolean>(false);
 
   OPTGROUPDATA = input<any>();
   objCatSecOpt: Record<string, any> = {}; // A record of string keys and any values
