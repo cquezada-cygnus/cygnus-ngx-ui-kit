@@ -20,19 +20,12 @@
           class="ml-9 mr-9"
           [btnTypes]="btnColor() + ' btn-icon'"
           [btnIconRouteLeft]="'file'"
+          [btnIconRouteRight]="iconRight() ? 'x-close' : '' "
           (click)="$event.preventDefault()"
           style="pointer-events: none;"
           [gradientButton]="gradientButton()"
         >
           {{btnText()}}
-          @if (btnText()===fileName()) {
-            <lib-ngx-cygnus-icons
-              class="ml-3"
-              [size]="'lg'"
-              [textColor]="'white'"
-              [textRoute]="'x-close'"
-            />
-          }
         </cygnus-button>
       </div>
       <input
@@ -69,19 +62,12 @@
       <cygnus-button
         [btnTypes]="btnColor() + ' btn-icon'"
         [btnIconRouteLeft]="'file'"
+        [btnIconRouteRight]="iconRight() ? 'x-close' : '' "
         (click)="$event.preventDefault()"
         style="pointer-events: none;"
         [gradientButton]="gradientButton()"
       >
         {{btnText()}}
-        @if (btnText()===fileName()) {
-          <lib-ngx-cygnus-icons
-            class="ml-3"
-            [size]="'lg'"
-            [textColor]="'white'"
-            [textRoute]="'x-close'"
-          />
-        }
       </cygnus-button>
     </div>
     <input
@@ -104,19 +90,12 @@
       <cygnus-button
         [btnTypes]="btnColor() + ' btn-icon'"
         [btnIconRouteLeft]="'file'"
+        [btnIconRouteRight]="iconRight() ? 'x-close' : '' "
         (click)="$event.preventDefault()"
         style="pointer-events: none;"
         [gradientButton]="gradientButton()"
       >
         {{btnText()}}
-        @if (btnText()===fileName()) {
-          <lib-ngx-cygnus-icons
-            class="ml-3"
-            [size]="'lg'"
-            [textColor]="'white'"
-            [textRoute]="'x-close'"
-          />
-        }
       </cygnus-button>
     </div>
 

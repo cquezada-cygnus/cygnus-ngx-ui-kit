@@ -20,6 +20,7 @@ export class CygnusDropzoneInputComponent {
   btnText = input<string>('');
   onlyBtn = input<boolean>(false);
   horizontalText = input<boolean>(false);
+  iconRight = input<boolean>(false);
 
   btnColor = input<string>('btn-indigo');
   gradientButton = input<boolean>(false);
