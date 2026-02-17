@@ -28,7 +28,9 @@
     [disabled]="isDisabled()"
   />
 
-  <lib-ngx-cygnus-icons class="ml-2 absolute h-full flex items-center inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 bg-gray-200"
+  <lib-ngx-cygnus-icons
+    class="ml-2 absolute h-full flex items-center inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 bg-gray-200"
+    [class]="(isDisabled() ? 'cursor-not-allowed opacity-60 pointer-events-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none' : '' )"
     [size]="'xl'"
     [textColor]="'gray'"
     [textRoute]="'search-sm'"
