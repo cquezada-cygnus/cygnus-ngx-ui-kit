@@ -3,7 +3,7 @@ import { Component, input, model } from '@angular/core';
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 
 @Component({
-  selector: 'lib-cygnus-modal-two-ng-content',
+  selector: 'cygnus-modal-two-ng-content',
   imports: [
     CygnusButtonComponent,
   ],
