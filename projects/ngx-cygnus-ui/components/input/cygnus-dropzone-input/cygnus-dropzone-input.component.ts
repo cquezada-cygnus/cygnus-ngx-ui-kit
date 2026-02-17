@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
@@ -25,7 +25,7 @@ export class CygnusDropzoneInputComponent {
   gradientButton = input<boolean>(false);
 
   base64: string | null = null;
-  fileName: string = '';
+  fileName = signal<string>('');
   fileSize: number = 0;
   fileType: string = '';
   isLoading: boolean = false;
@@ -99,7 +99,7 @@ export class CygnusDropzoneInputComponent {
 
     this.isLoading = true;
     this.errorMessage = '';
-    this.fileName = file.name;
+    this.fileName.set(file.name);
     this.fileSize = file.size;
     this.fileType = file.type;
 
@@ -142,7 +142,7 @@ export class CygnusDropzoneInputComponent {
       this.base64 = reader.result as string; // El resultado incluye el prefijo, ejemplo "data:application/pdf;base64,"
       this.isLoading = false;
       // Enviar convertido
-      this.outputFileName.emit(this.fileName);
+      this.outputFileName.emit(this.fileName());
       this.outputBase64.emit(this.base64);
     }
 
@@ -159,7 +159,7 @@ export class CygnusDropzoneInputComponent {
 
   resetFile(): void {
     this.base64 = null;
-    this.fileName = '';
+    this.fileName.set('');
     this.fileSize = 0;
   }
 
