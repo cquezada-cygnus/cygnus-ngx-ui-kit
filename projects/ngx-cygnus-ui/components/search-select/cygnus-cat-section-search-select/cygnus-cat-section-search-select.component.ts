@@ -1,4 +1,4 @@
-import { Component, effect, HostListener, input, OnInit, output, signal } from '@angular/core';
+import { Component, HostListener, input, OnInit, output, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { debounceTime } from 'rxjs';
@@ -25,7 +25,6 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   searchControl = new FormControl('');
   isInvisible = signal<boolean>(false);
   placeholder = input<string>('Escribe aquí...');
-  isDisabled = input<boolean>(false);
 
   OPTGROUPDATA = input<any>();
   objCatSecOpt: Record<string, any> = {}; // A record of string keys and any values
@@ -58,16 +57,6 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   ulShowSecOptId = signal<string>('');
   private static idCounter = 0;
 
-  constructor() {
-    effect(() => {
-      if (this.isDisabled()) {
-        this.searchControl.disable();
-      } else {
-        this.searchControl.enable();
-      }
-    });
-  }
-
 
   ngOnInit(): void {
     // Generar ID único si no se proporciona
@@ -88,11 +77,9 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   }
 
   openUl() {
-    if (!this.isDisabled()) {
-      this.isInvisible.set(false);
-      if (!this.categorySelected) { // si no está seleccionada la categoría, mostrar menú de categorías
-        this.showCategories.set(true);
-      }
+    this.isInvisible.set(false);
+    if (!this.categorySelected) { // si no está seleccionada la categoría, mostrar menú de categorías
+      this.showCategories.set(true);
     }
   }
 
