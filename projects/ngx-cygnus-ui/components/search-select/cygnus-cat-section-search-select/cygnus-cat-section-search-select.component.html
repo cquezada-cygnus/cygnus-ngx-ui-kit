@@ -26,6 +26,7 @@
     [formControl]="searchControl"
     (blur)="outputBlur.emit(true)"
     [disabled]="isDisabled()"
+    [attr.disabled]="isDisabled() ? true : null"
   />
 
   <lib-ngx-cygnus-icons
