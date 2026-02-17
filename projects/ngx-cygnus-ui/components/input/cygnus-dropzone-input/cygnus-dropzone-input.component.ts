@@ -33,6 +33,7 @@ export class CygnusDropzoneInputComponent {
   isDragging: boolean = false; // Para feedback visual
 
   outputIniciaLectura = output<boolean>();
+  outputFileName = output<string>();
   outputBase64 = output<string>();
   outputErrorMsge = output<string>();
 
@@ -141,8 +142,7 @@ export class CygnusDropzoneInputComponent {
       this.base64 = reader.result as string; // El resultado incluye el prefijo, ejemplo "data:application/pdf;base64,"
       this.isLoading = false;
       // Enviar convertido
-      console.log('output Base64:',this.base64);
-
+      this.outputFileName.emit(this.fileName);
       this.outputBase64.emit(this.base64);
     }
 
