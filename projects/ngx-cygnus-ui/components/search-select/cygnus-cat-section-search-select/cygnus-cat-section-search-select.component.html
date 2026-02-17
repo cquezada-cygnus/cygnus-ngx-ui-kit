@@ -18,7 +18,8 @@
     [class]="
       TW_CLASS.INPUT_BASE + ' !pr-9' + ' ' +
       (inputStatusColor()==='success' ? TW_CLASS.INPUT_SUCCESS : '') + ' ' +
-      (inputStatusColor()==='error' ? TW_CLASS.INPUT_ERROR : '')
+      (inputStatusColor()==='error' ? TW_CLASS.INPUT_ERROR : '') + ' ' +
+      (isDisabled() ? TW_CLASS.INPUT_DISABLED : '')
     "
     [placeholder]="placeholder()"
     (click)="openUl()"

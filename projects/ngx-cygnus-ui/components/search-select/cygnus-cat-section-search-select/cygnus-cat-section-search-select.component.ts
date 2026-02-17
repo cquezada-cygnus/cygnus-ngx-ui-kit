@@ -78,9 +78,11 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   }
 
   openUl() {
-    this.isInvisible.set(false);
-    if (!this.categorySelected) { // si no está seleccionada la categoría, mostrar menú de categorías
-      this.showCategories.set(true);
+    if (!this.isDisabled()) {
+      this.isInvisible.set(false);
+      if (!this.categorySelected) { // si no está seleccionada la categoría, mostrar menú de categorías
+        this.showCategories.set(true);
+      }
     }
   }
 
