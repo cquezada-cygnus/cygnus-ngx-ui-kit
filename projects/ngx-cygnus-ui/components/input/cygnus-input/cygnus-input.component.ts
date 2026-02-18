@@ -57,10 +57,22 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   onlyNumbers = input<boolean>(true); // Para activar/desactivar la lógica
 
   constructor() {
-    effect(() => { // limpiar input si se solicita
+    effect(() => {
+      const val = this.initializeInputValue(); // señal reactiva
+      const input = this.cygnusInput();
+      if (input) {
+        input.nativeElement.value = val;
+        input.nativeElement.textContent = val;
+      }
+    });
+
+    effect(() => {
       if (!this.inputClearValue()) {
-        this.cygnusInput()!.nativeElement.textContent = '';
-        this.cygnusInput()!.nativeElement.value = '';
+        const input = this.cygnusInput();
+        if (input) {
+          input.nativeElement.textContent = '';
+          input.nativeElement.value = '';
+        }
       }
     });
   }
