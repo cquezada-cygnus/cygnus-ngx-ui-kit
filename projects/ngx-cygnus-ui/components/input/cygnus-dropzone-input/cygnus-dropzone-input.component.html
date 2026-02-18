@@ -30,7 +30,7 @@
       </div>
       <input
         id="dropzone-file" type="file" class="hidden"
-        accept="application/pdf,.pdf,image/jpeg,.jpg,image/png,.png"
+        [accept]="inputAccept()"
         (change)="onFileSelected($event)"
       />
     </label>
@@ -72,7 +72,7 @@
     </div>
     <input
       id="dropzone-file" type="file" class="hidden"
-      accept="application/pdf,.pdf,image/jpeg,.jpg,image/png,.png"
+      [accept]="inputAccept()"
       (change)="onFileSelected($event)"
     />
   </label>
@@ -101,7 +101,7 @@
 
     <input
       id="dropzone-file" type="file" class="hidden"
-      accept="application/pdf,.pdf,image/jpeg,.jpg,image/png,.png"
+      [accept]="inputAccept()"
       (change)="onFileSelected($event)"
     />
   </label>

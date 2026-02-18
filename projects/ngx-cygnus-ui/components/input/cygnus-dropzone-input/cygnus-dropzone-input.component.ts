@@ -33,20 +33,30 @@ export class CygnusDropzoneInputComponent {
   errorMessage: string = '';
   isDragging: boolean = false; // Para feedback visual
 
+  inputErrorMsge = input<string>('Tipo de archivo no permitido. Solo se aceptan: PDF, JPG, PNG, DOC.');
+
   outputIniciaLectura = output<boolean>();
   outputFileName = output<string>();
   outputBase64 = output<string>();
   outputErrorMsge = output<string>();
 
   // Tipos de archivo permitidos
-  allowedTypes = {
+  allowedTypes = input({
     'application/pdf': '.pdf',
     'image/jpeg': '.jpg',
     'image/jpg': '.jpg',
     'image/png': '.png',
     'image/pjpeg': '.jpg',  // Formato JPEG progresivo
     'image/jfif': '.jpg',   // Otro formato JPEG común
-  };
+    'application/msword': '.doc',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document': '.docx',
+    'application/docx': '.docx'
+  });
+
+  // Lista de extensiones permitidas
+  allowedExtensions = input<string[]>(['.pdf', '.jpg', '.jpeg', '.png', '.doc', '.docx']);
+
+  inputAccept = input<string>('application/pdf,.pdf,image/jpeg,.jpg,image/png,.png,.doc,.docx');
 
   onDragOver(event: DragEvent): void {
     event.preventDefault();
@@ -92,7 +102,7 @@ export class CygnusDropzoneInputComponent {
 
     // Validar tipo de archivo
     if (!this.isValidFileType(file)) {
-      this.errorMessage = 'Tipo de archivo no permitido. Solo se aceptan: PDF, JPG, PNG.';
+      this.errorMessage = this.inputErrorMsge();
       this.outputErrorMsge.emit(this.errorMessage);
       this.resetFile();
       return;
@@ -113,11 +123,8 @@ export class CygnusDropzoneInputComponent {
     // Obtener la extensión del archivo
     const extension = '.' + file.name.split('.').pop()?.toLowerCase();
 
-    // Lista de extensiones permitidas
-    const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png'];
-
     // Validar primero por extensión (más confiable)
-    if (allowedExtensions.includes(extension)) {
+    if (this.allowedExtensions().includes(extension)) {
       return true;
     }
 
