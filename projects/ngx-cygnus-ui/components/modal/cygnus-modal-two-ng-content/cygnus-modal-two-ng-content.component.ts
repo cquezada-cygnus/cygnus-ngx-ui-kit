@@ -14,6 +14,7 @@ export class CygnusModalTwoNgContentComponent {
   showModal = model<boolean>(false);
   inputMaxW = input<string>('max-w-[95vw] md:max-w-[85vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[55vw]');
   inputMaxH = input<string>('max-h-[90vh]');
+  closeOnBlur = input<boolean>(true); // si es true, se puede cerrar al hacer click afuera del modal
 
   toggleModal():void {
     this.showModal.update( current => !current );
@@ -21,7 +22,7 @@ export class CygnusModalTwoNgContentComponent {
 
   handleBlurClick(event: MouseEvent): void {
     // Check if the element that was clicked is the one with the event listener
-    if (event.target === event.currentTarget) { //Blur div clicked directly!
+    if (event.target === event.currentTarget && this.closeOnBlur()) { //Blur div clicked directly!
       this.toggleModal();
     } // else Click originated from a child element, Blur handler ignored.
   }

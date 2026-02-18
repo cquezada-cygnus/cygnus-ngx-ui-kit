@@ -32,6 +32,7 @@ export class CygnusAlertModalComponent implements OnInit {
   buttonType = signal<string>('');
 
   alertConfirm: boolean = false;
+  closeOnBlur = input<boolean>(true); // si es true, se puede cerrar al hacer click afuera del modal
 
   ngOnInit(){
     const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
@@ -91,7 +92,7 @@ export class CygnusAlertModalComponent implements OnInit {
 
   handleBlurClick(event: MouseEvent): void {
     // Check if the element that was clicked is the one with the event listener
-    if (event.target === event.currentTarget) { //Blur div clicked directly!
+    if (event.target === event.currentTarget && this.closeOnBlur()) { //Blur div clicked directly!
       this.toggleModal();
     } // else Click originated from a child element, Blur handler ignored.
   }
