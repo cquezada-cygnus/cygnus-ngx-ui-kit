@@ -1,4 +1,4 @@
-import { Component, input, model, OnInit, signal } from '@angular/core';
+import { Component, HostListener, input, model, OnInit, signal } from '@angular/core';
 
 import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
@@ -33,6 +33,7 @@ export class CygnusAlertModalComponent implements OnInit {
 
   alertConfirm: boolean = false;
   closeOnBlur = input<boolean>(true); // si es true, se puede cerrar al hacer click afuera del modal
+  closeOnEscape = input<boolean>(true); // permitir/bloquear el cierre con tecla Escape
 
   ngOnInit(){
     const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
@@ -97,4 +98,10 @@ export class CygnusAlertModalComponent implements OnInit {
     } // else Click originated from a child element, Blur handler ignored.
   }
 
+  @HostListener('document:keydown.escape') // Escucha eventos de teclado en todo el documento
+  handleEscapeKey() {
+    if (this.showModal() && this.closeOnEscape()) { // Si el modal está abierto y la opción está habilitada, cerramos
+      this.toggleModal();
+    }
+  }
 }

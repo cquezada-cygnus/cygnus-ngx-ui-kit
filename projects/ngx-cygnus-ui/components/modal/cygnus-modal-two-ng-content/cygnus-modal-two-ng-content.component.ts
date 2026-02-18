@@ -1,4 +1,4 @@
-import { Component, input, model } from '@angular/core';
+import { Component, HostListener, input, model } from '@angular/core';
 
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 
@@ -15,6 +15,7 @@ export class CygnusModalTwoNgContentComponent {
   inputMaxW = input<string>('max-w-[95vw] md:max-w-[85vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[55vw]');
   inputMaxH = input<string>('max-h-[90vh]');
   closeOnBlur = input<boolean>(true); // si es true, se puede cerrar al hacer click afuera del modal
+  closeOnEscape = input<boolean>(true); // permitir/bloquear el cierre con tecla Escape
 
   toggleModal():void {
     this.showModal.update( current => !current );
@@ -25,5 +26,12 @@ export class CygnusModalTwoNgContentComponent {
     if (event.target === event.currentTarget && this.closeOnBlur()) { //Blur div clicked directly!
       this.toggleModal();
     } // else Click originated from a child element, Blur handler ignored.
+  }
+
+  @HostListener('document:keydown.escape') // Escucha eventos de teclado en todo el documento
+  handleEscapeKey() {
+    if (this.showModal() && this.closeOnEscape()) { // Si el modal está abierto y la opción está habilitada, cerramos
+      this.toggleModal();
+    }
   }
 }
