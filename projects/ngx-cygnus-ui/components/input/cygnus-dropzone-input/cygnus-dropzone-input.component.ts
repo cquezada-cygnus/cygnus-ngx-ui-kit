@@ -39,6 +39,7 @@ export class CygnusDropzoneInputComponent {
   outputFileName = output<string>();
   outputBase64 = output<string>();
   outputErrorMsge = output<string>();
+  outputTypeError = output<string>(); // TYPE, SIZE, READER
 
   // Tipos de archivo permitidos
   allowedTypes = input({
@@ -55,8 +56,13 @@ export class CygnusDropzoneInputComponent {
 
   // Lista de extensiones permitidas
   allowedExtensions = input<string[]>(['.pdf', '.jpg', '.jpeg', '.png', '.doc', '.docx']);
-
   inputAccept = input<string>('application/pdf,.pdf,image/jpeg,.jpg,image/png,.png,.doc,.docx');
+
+  // Límite en MB (por defecto 15)
+  maxFileSizeUpload = input<number>(15);
+
+  // Mensaje personalizable para error de tamaño
+  sizeErrorMsge = input<string>('El archivo excede el tamaño máximo permitido.');
 
   onDragOver(event: DragEvent): void {
     event.preventDefault();
@@ -100,13 +106,28 @@ export class CygnusDropzoneInputComponent {
   processFile(file: File): void {
     this.outputIniciaLectura.emit(true);
 
-    // Validar tipo de archivo
+    // 1. Validar tipo de archivo
     if (!this.isValidFileType(file)) {
       this.errorMessage = this.inputErrorMsge();
       this.outputErrorMsge.emit(this.errorMessage);
+      this.outputTypeError.emit('TYPE');
       this.resetFile();
       return;
     }
+
+    // 2. Validar tamaño de archivo (Nueva validación)
+    // Convertimos MB a Bytes: MB * 1024 * 1024
+    const maxBytes = this.maxFileSizeUpload() * 1024 * 1024;
+
+    if (file.size > maxBytes) {
+      this.errorMessage = `${this.sizeErrorMsge()} (Máx: ${this.maxFileSizeUpload()}MB)`;
+      this.outputErrorMsge.emit(this.errorMessage);
+      this.outputTypeError.emit('SIZE');
+      this.resetFile();
+      return;
+    }
+
+    // 3. Si pasa las validaciones, procedemos
 
     this.isLoading = true;
     this.errorMessage = '';
@@ -157,6 +178,7 @@ export class CygnusDropzoneInputComponent {
     reader.onerror = () => {
       this.errorMessage = 'Error al leer el archivo';
       this.outputErrorMsge.emit(this.errorMessage);
+      this.outputTypeError.emit('READER');
       this.isLoading = false;
       this.resetFile();
     };
