@@ -40,6 +40,7 @@ export class CygnusDropzoneInputComponent {
   outputBase64 = output<string>();
   outputErrorMsge = output<string>();
   outputTypeError = output<string>(); // TYPE, SIZE, READER
+  outputDocDocx = output<File>(); // docx tienen proceso distinto en nuestro backend
 
   // Tipos de archivo permitidos
   allowedTypes = input({
@@ -134,6 +135,13 @@ export class CygnusDropzoneInputComponent {
     this.fileName.set(file.name);
     this.fileSize = file.size;
     this.fileType = file.type;
+
+
+    // en caso de doc o docx, emitir objeto del video y terminar
+    if (file.type==='application/msword' || file.type==='application/vnd.openxmlformats-officedocument.wordprocessingml.document' || file.type==='application/docx') {
+      this.outputDocDocx.emit(file);
+      return;
+    }
 
     // Convertir a base64
     this.convertToBase64(file);
