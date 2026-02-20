@@ -5,7 +5,7 @@
         TW_CLASS.RADIOBUTTON_INPUT + ' ' +
         (isDisabled() ? TW_CLASS.RADIOBUTTON_INPUT_DISABLED : '')
       "
-      [name]="inputId()"
+      [name]="control().status"
       type="radio"
       [id]="inputId()"
       [checked]="isChecked()"

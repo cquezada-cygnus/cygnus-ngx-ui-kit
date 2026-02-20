@@ -1,4 +1,5 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
+import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusRadioButtonComponent } from 'ngx-cygnus-ui/components/radio-button';
@@ -18,6 +19,12 @@ export class CygnusDrowpdownItemComponent {
   dropdownItemType = input<DropdownItemType>('simple');
   itemContent = input<DropdownItemData>();
   itemSelectedEmit = output<DropdownItemData | undefined>();
+
+  nonNullableFb = inject(NonNullableFormBuilder);
+
+  radioForm = this.nonNullableFb.group({
+    radiodrop: ['', [Validators.required]],
+  });
 
   itemSelected() {
     this.itemSelectedEmit.emit(this.itemContent());
