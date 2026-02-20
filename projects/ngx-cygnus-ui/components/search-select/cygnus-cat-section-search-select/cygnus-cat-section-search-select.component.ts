@@ -50,6 +50,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   filterWithCategorySelected = signal<boolean>(false);
 
   maxLengthSelection = input<number>(3);
+  inputArrSelection = input<any[]>();
   arrSelection: any[] = [];
   outputItemsSelected = output<any[]>();
 
@@ -58,6 +59,13 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   ulShowSecOptId = signal<string>('');
   private static idCounter = 0;
 
+  constructor() {
+    if (this.inputArrSelection() && this.inputArrSelection()!.length > 0) { // inicializar valores seleccionados previamente en caso de existir
+      this.inputArrSelection()!.forEach(elem => {
+        this.arrSelection.push(elem);
+      });
+    }
+  }
 
   ngOnInit(): void {
     // Generar ID único si no se proporciona
