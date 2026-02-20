@@ -16,6 +16,7 @@ export class CygnusModalTwoNgContentComponent {
   inputMaxH = input<string>('max-h-[90vh]');
   closeOnBlur = input<boolean>(true); // si es true, se puede cerrar al hacer click afuera del modal
   closeOnEscape = input<boolean>(true); // permitir/bloquear el cierre con tecla Escape
+  twTitleFontWeight = input<string>('font-medium');
 
   toggleModal():void {
     this.showModal.update( current => !current );
