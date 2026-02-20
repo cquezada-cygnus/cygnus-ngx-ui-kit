@@ -59,13 +59,6 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   ulShowSecOptId = signal<string>('');
   private static idCounter = 0;
 
-  constructor() {
-    if (this.inputArrSelection() && this.inputArrSelection()!.length > 0) { // inicializar valores seleccionados previamente en caso de existir
-      this.inputArrSelection()!.forEach(elem => {
-        this.arrSelection.push(elem);
-      });
-    }
-  }
 
   ngOnInit(): void {
     // Generar ID único si no se proporciona
@@ -82,7 +75,15 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
     this.showDataEntries = Object.fromEntries(this.showDataEntries);
     // showDataEntries y dataEntries tienen exactamente los mismos datos porque showDataEntries cambiará sus datos según se elija filtrar o no por lo escrito en el input de búsqueda. Por lo cual se necesita que exista un dataEntries que no cambie. ShowDataEntries estará cambiando según el uso.
     this.filterInputSearch();
+    this.inicializarSeleccion();
+  }
 
+  inicializarSeleccion() {
+    if (this.inputArrSelection() && this.inputArrSelection()!.length > 0) { // inicializar valores seleccionados previamente en caso de existir
+      this.inputArrSelection()!.forEach(elem => {
+        this.arrSelection.push(elem);
+      });
+    }
   }
 
   openUl() {
