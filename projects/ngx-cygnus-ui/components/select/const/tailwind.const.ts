@@ -24,7 +24,7 @@ export const TW_CLASS = {
   NORMAL_WRAPPER: 'relative',
 
   HINT_TEXT   : 'mt-1 text-sm text-gray-500',
-  HINT_SUCCESS: '!text-success-600',
-  HINT_ERROR  : '!text-error-600',
+  HINT_SUCCESS: 'mt-1 text-sm !text-success-600',
+  HINT_ERROR  : 'mt-1 text-sm !text-error-600',
 }
 
