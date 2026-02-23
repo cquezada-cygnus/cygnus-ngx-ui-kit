@@ -22,5 +22,9 @@ export const TW_CLASS = {
 
   // Versión sin gradient (normal)
   NORMAL_WRAPPER: 'relative',
+
+  HINT_TEXT   : 'mt-1 text-sm text-gray-500',
+  HINT_SUCCESS: '!text-success-600',
+  HINT_ERROR  : '!text-error-600',
 }
 

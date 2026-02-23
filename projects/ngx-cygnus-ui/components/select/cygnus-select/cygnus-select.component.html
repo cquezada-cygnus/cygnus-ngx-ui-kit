@@ -36,7 +36,7 @@
     </div><!-- Wrapper condicional para gradient border -->
 
 @if (selectHint()!=='') {
-    <p class="mt-1 text-sm text-gray-500">{{selectHint()}}</p>
+    <p [class]="hintGetColor()" >{{selectHint()}}</p>
 }
   </fieldset>
 

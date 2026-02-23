@@ -39,6 +39,7 @@ export class CygnusSelectComponent {
   selAutoWidth = input<boolean>(false);
   selInstructionOpDisabled = input<string>();
   gradientBorder = input<boolean>(false);
+  hintColor = input<boolean>(false);
 
   ngOnInit() {
     // Generar ID único si no se proporciona
@@ -72,6 +73,20 @@ export class CygnusSelectComponent {
       default:
         return this.TW_CLASS.SELECT_GENERIC;
     }
+  }
+
+  hintGetColor():string {
+    if (this.hintColor()) {
+      switch (this.selState()) {
+        case 'success':
+          return this.TW_CLASS.HINT_SUCCESS;
+        case 'error':
+          return this.TW_CLASS.HINT_ERROR;
+        default:
+          return '';
+      }
+    }
+    return '';
   }
 
   generateBlurEvent() {
