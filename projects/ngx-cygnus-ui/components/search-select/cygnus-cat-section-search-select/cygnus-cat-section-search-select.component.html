@@ -13,7 +13,6 @@
 </div>
 }
 
-
 <div #targetSelectSearchDiv class="relative"  [id]="selectSearchId()">
 
   @if (!isDisabled()) {
@@ -61,26 +60,26 @@
 
 @if (!isDisabled() && showCategories()) {
 <ul
-  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto p-1.5 rounded-lg shadow-lg z-10"
+  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10"
   [style.width.px]="targetSelectSearchDiv.offsetWidth"
   [class.invisible]="isInvisible()"
   [id]="ulShowCategoriesId()"
 >
-  <li class="bg-gray-400 text-gray-50 p-1" value="" >Selecciona una categoría</li>
+  <li class="bg-gray-400 text-gray-50 p-1.5" value="" >Selecciona una categoría</li>
   @for (cat of dataEntries | keyvalue; track $index) {
-    <li class="hover:bg-gray-100 p-1" (click)="onCategorySelected(cat.key)">{{cat.key}}</li>
+    <li class="hover:bg-gray-100 p-1.5" (click)="onCategorySelected(cat.key)">{{cat.key}}</li>
   }
 </ul>
 }
 
 @if (!isDisabled() && showSecOpt()) {
 <ul
-  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto p-1.5 rounded-lg shadow-lg z-10"
+  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10"
   [style.width.px]="targetSelectSearchDiv.offsetWidth"
   [class.invisible]="isInvisible()"
   [id]="ulShowSecOptId()"
 >
-  <li class="flex items-center bg-gray-400 text-gray-50 p-1 pl-0" (click)="onItemSelected(secOpVolver)">
+  <li class="flex items-center bg-gray-400 text-gray-50 p-1.5 pl-0" (click)="onItemSelected(secOpVolver)">
     <lib-ngx-cygnus-icons class="ml-3 mr-2"
       [size]="'xl'"
       [textColor]="'white'"
@@ -95,10 +94,10 @@
 
       @if (filterWithCategorySelected()) {
         @if (setFilteredOptions(sec.value)) {
-          <li class="bg-gray-200 font-semibold p-1" >{{ sec.key }}</li>
+          <li class="bg-gray-200 font-semibold p-1.5" >{{ sec.key }}</li>
           @for (op of dataFilteredEntries; track op[categoryIdItem()]) {
             <li
-              class="p-1"
+              class="p-1.5"
               [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-100'"
               (click)="onItemSelected(op)"
             >{{ op[categoryItem()] }}</li>
@@ -106,11 +105,11 @@
         }
 
       } @else {
-        <li class="bg-gray-200 font-semibold p-1" >{{ sec.key }}</li>
+        <li class="bg-gray-200 font-semibold p-1.5" >{{ sec.key }}</li>
 
         @for (op of $any(sec.value); track op[categoryIdItem()]) {
           <li
-            class="p-1"
+            class="p-1.5"
             [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-100'"
             (click)="onItemSelected(op)"
           >{{ op[categoryItem()] }}</li>
@@ -124,10 +123,10 @@
       @for (sec of dataEntries[$any(cat.key)] | keyvalue; track $index) {
 
         @if (setFilteredOptions(sec.value)) {
-          <li class="bg-gray-200 font-semibold p-1" >{{ sec.key }}</li>
+          <li class="bg-gray-200 font-semibold p-1.5" >{{ sec.key }}</li>
           @for (op of dataFilteredEntries; track op[categoryIdItem()]) {
             <li
-              class="p-1"
+              class="p-1.5"
               [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-100'"
               (click)="onItemSelected(op)"
             >{{ op[categoryItem()] }}</li>
