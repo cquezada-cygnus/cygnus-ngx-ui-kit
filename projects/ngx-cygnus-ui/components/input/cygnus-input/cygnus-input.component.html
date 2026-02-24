@@ -53,7 +53,8 @@
           [placeholder]="textPlaceholder()"
           [disabled]="inputDisabled()"
           [readOnly]="inputDisabled()"
-          (focusout)="setValue(cygnusInput.value)"
+
+          (input)="setValue(cygnusInput.value)"
 
           [appRutFormat]="isRutFormatActive()"
           [withDots]="useRutDots()"
@@ -62,6 +63,7 @@
           [limit]="truncateLength()"
           [onlyNumbers]="onlyNumbers()"
         >
+        <!-- (focusout)="setValue(cygnusInput.value)" -->
         @if (inputCustomType()!=='base' && inputCustomType()!=='fieldset-legend-label' && inputCustomType()!=='file' ) {
           <label [for]="inputId()"
             [class]="
