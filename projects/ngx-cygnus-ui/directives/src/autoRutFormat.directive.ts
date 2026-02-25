@@ -10,9 +10,17 @@ export class RutFormatDirective {
   readonly appRutFormatEnabled = input<boolean>(true, { alias: 'appRutFormat' });
 
   private readonly el = inject(ElementRef);
-
-  // Inyectamos NgControl de forma segura
   private readonly control = inject(NgControl, { self: true, optional: true });
+
+  @HostListener('keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    if (!this.appRutFormatEnabled()) return;
+
+    // Impedir que se escriba un espacio directamente
+    if (event.key === ' ') {
+      event.preventDefault();
+    }
+  }
 
   @HostListener('input', ['$event'])
   onInput(event: any) {
