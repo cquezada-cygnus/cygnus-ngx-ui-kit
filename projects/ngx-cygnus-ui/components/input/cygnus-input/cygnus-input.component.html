@@ -62,6 +62,10 @@
           [appMaxLengthTruncate]="useTruncate()"
           [limit]="truncateLength()"
           [onlyNumbers]="onlyNumbers()"
+
+          appOnlyLetters
+          [onlyLettersEnabled]="isLetterOnly()"
+          [onlyLettersMaxLength]="isLetterOnlyMaxChars()"
         >
         <!-- (focusout)="setValue(cygnusInput.value)" -->
         @if (inputCustomType()!=='base' && inputCustomType()!=='fieldset-legend-label' && inputCustomType()!=='file' ) {

@@ -6,6 +6,7 @@ import { TW_CLASS } from '../const/tailwind.const';
 import { FormControl } from '@angular/forms';
 import { RutFormatDirective } from 'ngx-cygnus-ui/directives';
 import { MaxLengthTruncateDirective } from 'ngx-cygnus-ui/directives';
+import { OnlyLettersDirective } from 'ngx-cygnus-ui/directives';
 
 @Component({
   selector: 'cygnus-input',
@@ -13,6 +14,7 @@ import { MaxLengthTruncateDirective } from 'ngx-cygnus-ui/directives';
     NgxCygnusIconsComponent,
     RutFormatDirective,
     MaxLengthTruncateDirective,
+    OnlyLettersDirective,
   ],
   templateUrl: './cygnus-input.component.html',
 })
@@ -55,6 +57,9 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   useTruncate = input<boolean>(false);
   truncateLength = input<number>(9);
   onlyNumbers = input<boolean>(true); // Para activar/desactivar la lógica
+
+  isLetterOnly = input<boolean>(false);
+  isLetterOnlyMaxChars = input<number>(50);
 
   constructor() {
     effect(() => {
