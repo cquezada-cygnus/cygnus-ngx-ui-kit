@@ -21,19 +21,19 @@ Permitir números, letras y caracteres básicos
 export class CustomInputTextDirective {
   private el = inject(ElementRef);
 
-  // Input signals coincidiendo con los nombres que usas en tu componente
+  // Input signals
   customInputTextEnabled = input<boolean>(true);
   customInputTextMaxLength = input<number>(200);
+  customInputTextMinLength = input<number>(0); // <-- Nuevo Input Signal
 
-  // Regex para permitir letras (incluyendo acentos), números, espacios y los símbolos específicos
   private readonly allowedCharsRegex = /^[a-zA-Z0-9áéíóúñÁÉÍÓÚÑ\s\#\-\/\,\.]*$/;
 
-  @HostListener('input', ['$event'])
-  onInput(event: InputEvent): void {
+  @HostListener('input')
+  onInput(): void {
     if (!this.customInputTextEnabled()) return;
 
     const inputElement = this.el.nativeElement as HTMLInputElement;
-    const originalValue = inputElement.value ?? ''; // Evita el error de undefined
+    const originalValue = inputElement.value ?? '';
 
     // 1. Filtrar caracteres prohibidos
     let cleanedValue = originalValue
@@ -42,19 +42,15 @@ export class CustomInputTextDirective {
       .join('');
 
     // 2. Impedir más de dos espacios juntos
-    // Esta regex reemplaza 3 o más espacios por solo 2, o puedes usar /\s{2,}/g para dejar máximo 1.
     cleanedValue = cleanedValue.replace(/\s{3,}/g, '  ');
 
-    // 3. Truncar por longitud máxima
+    // 3. Truncar por longitud máxima (Input Signal)
     if (cleanedValue.length > this.customInputTextMaxLength()) {
       cleanedValue = cleanedValue.substring(0, this.customInputTextMaxLength());
     }
 
-    // 4. Actualizar solo si el valor cambió para evitar loops infinitos de eventos
     if (originalValue !== cleanedValue) {
-      inputElement.value = cleanedValue;
-      // Importante: Disparar evento para que (input)="setValue(...)" en tu componente capture el cambio
-      inputElement.dispatchEvent(new Event('input'));
+      this.updateValue(inputElement, cleanedValue);
     }
   }
 
@@ -63,27 +59,27 @@ export class CustomInputTextDirective {
     if (!this.customInputTextEnabled()) return;
 
     const inputElement = this.el.nativeElement as HTMLInputElement;
-    const value = inputElement.value ?? '';
+    let value = inputElement.value ?? '';
 
-    // 5. Impedir espacios al inicio/final y que no sea "solo espacios"
+    // 4. Trim inicial/final
     let finalValue = value.trim();
 
-    // Si el resultado es vacío pero el input tenía algo (o solo espacios),
-    // lo reseteamos para cumplir "no permitir solo espacios"
-    if (value.length > 0 && finalValue.length === 0) {
-      finalValue = '';
+    // 5. Lógica de mínimo de caracteres
+    // Si no llega al mínimo, decidimos si limpiar el campo o dejarlo para que el validador de Angular actúe
+    if (finalValue.length > 0 && finalValue.length < this.customInputTextMinLength()) {
+      // Opción A: Limpiar si es muy corto (ajusta según tu necesidad de UX)
+      // finalValue = '';
+      console.warn(`Longitud mínima no alcanzada (${this.customInputTextMinLength()} requeridos)`);
     }
 
     if (inputElement.value !== finalValue) {
-      inputElement.value = finalValue;
-      inputElement.dispatchEvent(new Event('input'));
+      this.updateValue(inputElement, finalValue);
     }
   }
 
-  // Manejo de pegado para asegurar limpieza inmediata
-  @HostListener('paste', ['$event'])
-  onPaste(event: ClipboardEvent): void {
-    if (!this.customInputTextEnabled()) return;
-    // Dejamos que el evento 'input' se encargue de la limpieza después del paste
+  // Método auxiliar para mantener el flujo de datos sincronizado
+  private updateValue(element: HTMLInputElement, value: string): void {
+    element.value = value;
+    element.dispatchEvent(new Event('input', { bubbles: true }));
   }
 }

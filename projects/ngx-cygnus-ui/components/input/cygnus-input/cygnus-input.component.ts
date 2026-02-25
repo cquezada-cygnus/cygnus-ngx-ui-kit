@@ -68,14 +68,17 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
 
   isLetterOnly = input<boolean>(false);
   isLetterOnlyMaxChars = input<number>(50);
+  isLetterOnlyMinChars = input<number>(2);
 
   emailFormatterEnabled = input<boolean>(false);
 
   customInputTextEnabled = input<boolean>(false);
   customInputTextMaxLength = input<number>(200);
+  customInputTextMinLength = input<number>(5);
 
   textEmpresaEnabled = input<boolean>(false);
   textEmpresaMaxLength = input<number>(100);
+  textEmpresaMinLength = input<number>(2);
 
   constructor() {
     effect(() => {

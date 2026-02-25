@@ -66,6 +66,7 @@
           appOnlyLetters
           [onlyLettersEnabled]="isLetterOnly()"
           [onlyLettersMaxLength]="isLetterOnlyMaxChars()"
+          [onlyLettersMinLength]="isLetterOnlyMinChars()"
 
           appEmailFormatter
           [emailFormatterEnabled]="emailFormatterEnabled()"
@@ -73,10 +74,12 @@
           appCustomInputText
           [customInputTextEnabled]="customInputTextEnabled()"
           [customInputTextMaxLength]="customInputTextMaxLength()"
+          [customInputTextMinLength]="customInputTextMinLength()"
 
           appTextEmpresa
           [textEmpresaEnabled]="textEmpresaEnabled()"
           [textEmpresaMaxLength]="textEmpresaMaxLength()"
+          [textEmpresaMinLength]="textEmpresaMinLength()"
         >
         <!-- (focusout)="setValue(cygnusInput.value)" -->
         @if (inputCustomType()!=='base' && inputCustomType()!=='fieldset-legend-label' && inputCustomType()!=='file' ) {

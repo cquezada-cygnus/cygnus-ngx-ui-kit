@@ -36,6 +36,7 @@ Regex: /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s\-']{3,100}$/
 export class OnlyLettersDirective implements Validator {
   // Configuración mediante Signals
   onlyLettersEnabled = input<boolean>(true);
+  onlyLettersMinLength = input<number>(2);
   onlyLettersMaxLength = input<number>(50);
 
   constructor(private el: ElementRef<HTMLInputElement>) {}
@@ -52,23 +53,20 @@ export class OnlyLettersDirective implements Validator {
     const controlKeys = ['Backspace', 'Tab', 'End', 'Home', 'ArrowLeft', 'ArrowRight', 'Delete', 'Enter'];
     if (controlKeys.includes(event.key)) return;
 
-    // Solo permitir letras, tildes, ñ, espacios, guiones y apóstrofes
     const charRegex = /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s\-']$/;
     if (!charRegex.test(event.key)) {
       event.preventDefault();
       return;
     }
 
-    // Reglas de espacios en tiempo real
     if (event.key === ' ') {
-      // No espacio al inicio ni doble espacio
       if (selectionStart === 0 || value.charAt(selectionStart - 1) === ' ' || value.charAt(selectionStart) === ' ') {
         event.preventDefault();
       }
     }
   }
 
-  // 2. Limpieza automática al PEGAR (Paste)
+  // 2. Limpieza automática al PEGAR
   @HostListener('paste', ['$event'])
   onPaste(event: ClipboardEvent) {
     if (!this.onlyLettersEnabled()) return;
@@ -77,24 +75,18 @@ export class OnlyLettersDirective implements Validator {
     const clipboardData = event.clipboardData;
     const pastedText = clipboardData?.getData('text') || '';
 
-    // Limpiamos el texto pegado:
-    // - Quitamos caracteres prohibidos
-    // - Colapsamos múltiples espacios a uno solo
-    // - Trim inicial (el final se encarga el blur o la validación)
     const cleanedText = pastedText
       .replace(/[^a-záéíóúñA-ZÁÉÍÓÚÑ\s\-']/g, '')
       .replace(/\s+/g, ' ')
       .trimStart()
       .slice(0, this.onlyLettersMaxLength());
 
-    // Insertar el texto limpio en la posición del cursor
     const input = this.el.nativeElement;
     const start = input.selectionStart ?? 0;
     const end = input.selectionEnd ?? 0;
     const newValue = input.value.substring(0, start) + cleanedText + input.value.substring(end);
 
     input.value = newValue;
-    // Disparamos el evento input para que Angular Forms se entere del cambio
     input.dispatchEvent(new Event('input'));
   }
 
@@ -112,21 +104,34 @@ export class OnlyLettersDirective implements Validator {
     }
   }
 
-  // 4. Validación para el estado del Formulario
+  // 4. Validación dinámica
   validate(control: AbstractControl): ValidationErrors | null {
     if (!this.onlyLettersEnabled() || !control.value) return null;
 
     const value = control.value as string;
+    const min = this.onlyLettersMinLength();
+    const max = this.onlyLettersMaxLength();
 
-    // Explicación Regex:
-    // ^(?! ) -> No empieza con espacio
-    // (?!.* ) -> No permite dos espacios seguidos
-    // [..]{2,max} -> Caracteres permitidos y longitud
-    // (?<! )$ -> No termina con espacio (Lookbehind)
+    // Construcción dinámica del Regex usando los valores de los Signals
+    // Explicación:
+    // ^(?! ) -> No inicia con espacio
+    // [..]{min,max} -> Caracteres permitidos con rango dinámico
+    // (?<! )$ -> No termina con espacio
     const regex = new RegExp(
-      `^(?! )(?!.* )[a-záéíóúñA-ZÁÉÍÓÚÑ\\s\\-']{2,${this.onlyLettersMaxLength()}}(?<! )$`
+      `^(?! )[a-záéíóúñA-ZÁÉÍÓÚÑ\\s\\-']{${min},${max}}(?<! )$`
     );
 
-    return regex.test(value) ? null : { 'onlyLetters': true };
+    // Verificación adicional: No permitir espacios dobles internos
+    const hasDoubleSpaces = /\s\s/.test(value);
+
+    const isValid = regex.test(value) && !hasDoubleSpaces;
+
+    return isValid ? null : {
+      'onlyLetters': {
+        requiredMin: min,
+        requiredMax: max,
+        actualLength: value.length
+      }
+    };
   }
 }
