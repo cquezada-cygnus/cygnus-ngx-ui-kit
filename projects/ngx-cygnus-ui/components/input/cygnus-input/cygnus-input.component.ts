@@ -4,9 +4,12 @@ import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
 import { FormControl } from '@angular/forms';
-import { RutFormatDirective } from 'ngx-cygnus-ui/directives';
-import { MaxLengthTruncateDirective } from 'ngx-cygnus-ui/directives';
-import { OnlyLettersDirective } from 'ngx-cygnus-ui/directives';
+import {
+  EmailFormatterDirective,
+  RutFormatDirective,
+  MaxLengthTruncateDirective,
+  OnlyLettersDirective,
+} from 'ngx-cygnus-ui/directives';
 
 @Component({
   selector: 'cygnus-input',
@@ -15,6 +18,7 @@ import { OnlyLettersDirective } from 'ngx-cygnus-ui/directives';
     RutFormatDirective,
     MaxLengthTruncateDirective,
     OnlyLettersDirective,
+    EmailFormatterDirective,
   ],
   templateUrl: './cygnus-input.component.html',
 })
@@ -60,6 +64,8 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
 
   isLetterOnly = input<boolean>(false);
   isLetterOnlyMaxChars = input<number>(50);
+
+  emailFormatterEnabled = input<boolean>(false);
 
   constructor() {
     effect(() => {

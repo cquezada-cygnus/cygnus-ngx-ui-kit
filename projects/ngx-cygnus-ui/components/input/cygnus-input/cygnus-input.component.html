@@ -66,6 +66,9 @@
           appOnlyLetters
           [onlyLettersEnabled]="isLetterOnly()"
           [onlyLettersMaxLength]="isLetterOnlyMaxChars()"
+
+          appEmailFormatter
+          [emailFormatterEnabled]="emailFormatterEnabled()"
         >
         <!-- (focusout)="setValue(cygnusInput.value)" -->
         @if (inputCustomType()!=='base' && inputCustomType()!=='fieldset-legend-label' && inputCustomType()!=='file' ) {
