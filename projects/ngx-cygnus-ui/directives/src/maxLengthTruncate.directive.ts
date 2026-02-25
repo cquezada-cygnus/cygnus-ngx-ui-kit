@@ -11,7 +11,7 @@ export class MaxLengthTruncateDirective {
   onlyNumbers = input<boolean>(true);
 
   constructor(@Optional() @Self() private ngControl: NgControl) {
-    // 💡 Efecto para detectar cambios automáticos (programáticos)
+    // para detectar cambios automáticos (programáticos)
     effect(() => {
       const control = this.ngControl?.control;
       if (!control || !this.enabled()) return;
