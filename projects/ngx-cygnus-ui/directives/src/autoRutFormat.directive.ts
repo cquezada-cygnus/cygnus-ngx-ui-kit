@@ -1,6 +1,15 @@
 import { Directive, HostListener, input, ElementRef, inject, Optional, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
+/*
+RUT (*)
+Formato válido: 12345678-9 o 12.345.678-9 (Actualmente se autoformatea, lo cual es correcto)
+Dígito verificador correcto (algoritmo módulo 11)
+Longitud: 8-9 dígitos + verificador
+No permitir letras (excepto K/k en verificador)
+No permitir solo espacios
+*/
+
 @Directive({
   selector: '[appRutFormat]',
   standalone: true

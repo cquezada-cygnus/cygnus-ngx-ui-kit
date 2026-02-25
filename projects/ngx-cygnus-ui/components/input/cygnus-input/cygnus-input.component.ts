@@ -10,6 +10,7 @@ import {
   MaxLengthTruncateDirective,
   OnlyLettersDirective,
   CustomInputTextDirective,
+  TextEmpresaDirective,
 } from 'ngx-cygnus-ui/directives';
 
 @Component({
@@ -21,6 +22,7 @@ import {
     OnlyLettersDirective,
     EmailFormatterDirective,
     CustomInputTextDirective,
+    TextEmpresaDirective,
   ],
   templateUrl: './cygnus-input.component.html',
 })
@@ -71,6 +73,9 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
 
   customInputTextEnabled = input<boolean>(false);
   customInputTextMaxLength = input<number>(200);
+
+  textEmpresaEnabled = input<boolean>(false);
+  textEmpresaMaxLength = input<number>(100);
 
   constructor() {
     effect(() => {

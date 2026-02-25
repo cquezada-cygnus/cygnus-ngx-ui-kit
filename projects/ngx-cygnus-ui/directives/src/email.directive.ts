@@ -1,5 +1,16 @@
 import { Directive, HostListener, ElementRef, input } from '@angular/core';
 
+/*
+Correo electrónico (*)
+Formato válido: usuario@dominio.extensión
+Debe contener "@" exactamente una vez
+Dominio con al menos un punto
+Longitud: 6-254 caracteres
+No permitir espacios
+Convertir a minúsculas automáticamente
+Regex: /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+*/
+
 @Directive({
   selector: '[appEmailFormatter]',
   standalone: true

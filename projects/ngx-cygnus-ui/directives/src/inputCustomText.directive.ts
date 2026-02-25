@@ -1,5 +1,19 @@
 import { Directive, input, HostListener, ElementRef, inject } from '@angular/core';
 
+/*
+Dirección (*)
+Longitud: 5-200 caracteres
+Permitir: letras, números, espacios, #, -, /, comas, puntos
+No permitir solo espacios
+No símbolos extraños (@, $, %, etc.)
+Regex: /^[a-zA-Z0-9áéíóúñÁÉÍÓÚÑ\s\#\-\/\,\.]{5,200}$/
+
+Depto/Casa/Condominio/Otro
+Opcional
+Longitud máxima: 50 caracteres
+Permitir números, letras y caracteres básicos
+*/
+
 @Directive({
   selector: '[appCustomInputText]',
   standalone: true

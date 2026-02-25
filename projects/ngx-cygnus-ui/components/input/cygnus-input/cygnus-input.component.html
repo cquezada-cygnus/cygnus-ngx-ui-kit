@@ -73,6 +73,10 @@
           appCustomInputText
           [customInputTextEnabled]="customInputTextEnabled()"
           [customInputTextMaxLength]="customInputTextMaxLength()"
+
+          appTextEmpresa
+          [textEmpresaEnabled]="textEmpresaEnabled()"
+          [textEmpresaMaxLength]="textEmpresaMaxLength()"
         >
         <!-- (focusout)="setValue(cygnusInput.value)" -->
         @if (inputCustomType()!=='base' && inputCustomType()!=='fieldset-legend-label' && inputCustomType()!=='file' ) {

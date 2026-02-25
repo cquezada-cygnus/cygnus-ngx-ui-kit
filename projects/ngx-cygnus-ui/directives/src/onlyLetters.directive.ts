@@ -1,6 +1,27 @@
 import { Directive, input, HostListener, ElementRef } from '@angular/core';
 import { NG_VALIDATORS, Validator, AbstractControl, ValidationErrors } from '@angular/forms';
 
+/*
+Nombres (*):
+
+Solo letras (a-z, A-Z, tildes, ñ)
+Espacios permitidos (nombres compuestos)
+Guiones y apóstrofes permitidos
+Longitud: 2-50 caracteres
+No permitir números ni símbolos especiales
+No permitir solo espacios
+Regex: /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s\-']{2,50}$/
+
+Nombre de referencia (en modal de referencias)
+
+Solo letras, espacios, tildes, ñ
+Longitud: 3-100 caracteres
+No permitir solo espacios en blanco
+No números ni símbolos
+Regex: /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s\-']{3,100}$/
+
+*/
+
 @Directive({
   selector: '[appOnlyLetters]',
   standalone: true,
