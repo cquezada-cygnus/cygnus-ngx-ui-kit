@@ -1,54 +1,83 @@
-import { Directive, HostListener, input, Optional, Self, effect } from '@angular/core';
+import { Directive, HostListener, input, Optional, Self, OnDestroy, ElementRef, Renderer2 } from '@angular/core';
 import { NgControl } from '@angular/forms';
+import { Subject, takeUntil } from 'rxjs';
 
 @Directive({
   selector: '[appMaxLengthTruncate]',
   standalone: true
 })
-export class MaxLengthTruncateDirective {
+export class MaxLengthTruncateDirective implements OnDestroy {
   enabled = input<boolean>(false, { alias: 'appMaxLengthTruncate' });
   limit = input<number>(9);
   onlyNumbers = input<boolean>(true);
 
-  constructor(@Optional() @Self() private ngControl: NgControl) {
-    // 💡 Efecto para detectar cambios automáticos (programáticos)
-    effect(() => {
-      const control = this.ngControl?.control;
-      if (!control || !this.enabled()) return;
+  private destroy$ = new Subject<void>();
 
-      // Escuchamos los cambios de valor del control
-      // Usamos valueChanges para reaccionar a cambios externos
-      const value = control.value;
-      const processed = this.processValue(value);
-
-      if (value !== processed) {
-        // Actualizamos el control sin disparar eventos infinitos
-        control.setValue(processed, { emitEvent: false });
-      }
-    });
+  constructor(
+    @Optional() @Self() private ngControl: NgControl,
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) {
+    this.listenToProgrammaticChanges();
   }
 
-  @HostListener('input', ['$event'])
-  onInput(event: Event): void {
-    if (!this.enabled()) return;
-    const inputElement = event.target as HTMLInputElement;
-    const processed = this.processValue(inputElement.value);
+  private listenToProgrammaticChanges() {
+    this.ngControl?.valueChanges
+      ?.pipe(takeUntil(this.destroy$))
+      .subscribe((value) => {
+        if (!this.enabled()) return;
+        const processed = this.processValue(value);
 
-    inputElement.value = processed;
-    if (this.ngControl?.control) {
-      this.ngControl.control.setValue(processed, { emitEvent: false });
+        if (value !== processed) {
+          // Actualizamos el modelo sin disparar eventos infinitos
+          this.ngControl.control?.setValue(processed, { emitEvent: false });
+          // Sincronizamos la vista (el input visual)
+          this.renderer.setProperty(this.el.nativeElement, 'value', processed);
+        }
+      });
+  }
+
+  // 1. Bloqueo visual: Evita que caracteres no deseados aparezcan al teclear
+  @HostListener('keypress', ['$event'])
+  onKeyPress(event: KeyboardEvent): void {
+    if (!this.enabled() || !this.onlyNumbers()) return;
+
+    const pattern = /[0-9]/;
+    const inputChar = String.fromCharCode(event.charCode);
+
+    if (!pattern.test(inputChar)) {
+      event.preventDefault(); // El carácter ni siquiera llega a aparecer en el input
     }
   }
 
-  // Lógica de limpieza centralizada
+  // 2. Limpieza visual: Maneja el pegado (paste) y el autocompletado
+  @HostListener('input', ['$event'])
+  onInput(event: Event): void {
+    if (!this.enabled()) return;
+
+    const inputElement = event.target as HTMLInputElement;
+    const originalValue = inputElement.value;
+    const processed = this.processValue(originalValue);
+
+    if (originalValue !== processed) {
+      this.renderer.setProperty(this.el.nativeElement, 'value', processed);
+      this.ngControl.control?.setValue(processed, { emitEvent: false });
+    }
+  }
+
   private processValue(val: any): string {
-    let value = String(val || '');
+    let value = String(val ?? '');
     if (this.onlyNumbers()) {
       value = value.replace(/\D/g, '');
     }
     if (value.length > this.limit()) {
-      value = value.slice(-this.limit());
+      value = value.slice(0, this.limit()); // Truncamos al límite
     }
     return value;
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
