@@ -60,7 +60,7 @@
 
 @if (!isDisabled() && showCategories()) {
 <ul
-  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10"
+  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10  max-h-60 overflow-y-auto"
   [style.width.px]="targetSelectSearchDiv.offsetWidth"
   [class.invisible]="isInvisible()"
   [id]="ulShowCategoriesId()"
@@ -74,7 +74,7 @@
 
 @if (!isDisabled() && showSecOpt()) {
 <ul
-  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10"
+  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto"
   [style.width.px]="targetSelectSearchDiv.offsetWidth"
   [class.invisible]="isInvisible()"
   [id]="ulShowSecOptId()"
