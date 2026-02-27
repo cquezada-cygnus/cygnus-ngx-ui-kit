@@ -1,4 +1,4 @@
-import { Component, HostListener, input, model, OnInit, output, signal } from '@angular/core';
+import { Component, computed, HostListener, input, model, OnInit, output, signal } from '@angular/core';
 import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 import { DropdownItemType } from 'ngx-cygnus-ui/types';
@@ -22,21 +22,40 @@ export class CygnusDropdownComponent implements OnInit {
 
   dropdownMenuTitle = model<string>('');
   dropdownItemType = input<DropdownItemType>('simple');
+  dropdownBtnType = input<string>('btn-primary');
+  btnIconOutlinedTransparent = input<boolean>(false);
+  dropdownCerrarSesionOption = input<boolean>(false);
   dropdownRadioIconAsset = input<string>('');
+  dropdownRadioIconAssetRight = input<string>('chevron-down');
   dropdownItemDataArr = input<DropdownItemData[]>([]);
   dropdownClosed = signal<boolean>(true);
   dropdownItemSelected = output<DropdownItemData | undefined>();
 
   iconBGColor = signal<IconColorText>('thrgray');
+  readonly alignment = input<'center' | 'left' | 'right'>('center');
 
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.dropdownId.set(`cg-dropdown-${++CygnusDropdownComponent.idCounter}`);
   }
 
+  // Creamos un computed para manejar las clases de Tailwind dinámicamente
+  protected dropdownClasses = computed(() => {
+    const align = this.alignment();
+
+    const baseClasses = 'absolute z-10 min-w-[180px] rounded-lg border border-gray-200 bg-white py-2 shadow-lg top-full mt-1';
+
+    const alignmentMap = {
+      'center': 'left-1/2 -translate-x-1/2',
+      'left': 'left-0',
+      'right': 'right-0'
+    };
+
+    return `${baseClasses} ${alignmentMap[align]}`;
+  });
+
   toggleDropdown() {
     this.dropdownClosed.update( current => !current );
-
   }
 
   iconColorOnMouseEnter() {

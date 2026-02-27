@@ -61,7 +61,9 @@
           <cygnus-dropdown
             [dropdownMenuTitle]="'Dropdown'"
             [dropdownItemType]="'simple'"
+            [dropdownBtnType]="'btn-primary btn-size-sm'"
             [dropdownItemDataArr]="dropdownSimpleItemDataArr"
+            [alignment]="'left'"
           />
         </div>
 
@@ -91,8 +93,10 @@
           <cygnus-dropdown
             [dropdownMenuTitle]="'Úlitmos 30 días'"
             [dropdownItemType]="'radiobutton'"
+            [dropdownBtnType]="'btn-secondary btn-size-lg'"
             [dropdownRadioIconAsset]="'assets/icons/svg/Time/clock.svg'"
             [dropdownItemDataArr]="dropdownRadiobuttonItemDataArr"
+            [alignment]="'right'"
           />
         </div>
 
@@ -122,7 +126,9 @@
           <cygnus-dropdown
             [dropdownMenuTitle]="'JP'"
             [dropdownItemType]="'iconText'"
+            [dropdownBtnType]="'btn-gray btn-size-sm btn-circle'"
             [dropdownItemDataArr]="dropdownIconTextItemDataArr"
+            [alignment]="'center'"
           />
         </div>
 

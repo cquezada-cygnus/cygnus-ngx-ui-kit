@@ -2,32 +2,22 @@
 
   <div
     [id]="dropdownId()"
-    [class]="
-      (dropdownItemType()==='iconText' ? 'flex flex-col items-center' : 'inline-block' )
-    "
+    [class]="'relative flex flex-col items-center w-fit'"
   >
+
     <cygnus-button
       class="relative"
-      [btnTypes]="
-        (dropdownItemType()==='simple' ? 'btn-primary' : '') + ' ' +
-        (dropdownItemType()==='radiobutton' ? 'btn-secondary btn-size-lg' : '') + ' ' +
-        (dropdownItemType()==='iconText' ? 'btn-gray btn-circle' : '') + ' ' +
-        'btn-size-sm' + ' ' +
-        ((dropdownItemType()==='simple' || dropdownItemType()==='radiobutton' ) ? 'btn-icon' : '')
-      "
+      [btnTypes]="dropdownBtnType()"
       [btnIconRouteLeft]="dropdownRadioIconAsset()"
-      [btnIconRouteRight]="'assets/icons/backups/chevron-down.svg'"
+      [btnIconRouteRight]="dropdownRadioIconAssetRight()"
+      [btnIconOutlinedTransparent]="btnIconOutlinedTransparent()"
       (click)="toggleDropdown()"
     >
       {{dropdownMenuTitle()}}
     </cygnus-button>
 
     <ul
-      [class]="
-        'absolute ' +
-        'pt-1 text-gray-700 z-10 min-w-[180px]  rounded-lg border border-gray-200 bg-white py-2 shadow-lg focus:outline-hidden ' +
-        ( dropdownItemType()==='iconText' ? 'mt-6' : 'mt-1')
-      "
+      [class]="dropdownClasses()"
       [class.invisible]="dropdownClosed()"
     >
 
@@ -38,7 +28,7 @@
           (itemSelectedEmit)="itemSelected($event)"
         />
       }
-      @if (dropdownItemType()==='iconText') {
+      @if (dropdownCerrarSesionOption()) {
 
         <hr class="h-px mt-2 bg-gray-100 border-0 dark:bg-gray-100">
 
@@ -56,9 +46,6 @@
 
       }
     </ul>
-
-
-
   </div>
 
 } @else {
