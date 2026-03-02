@@ -16,4 +16,6 @@ export class CygnusCardTitleTextComponent {
   cardText = input<string>('');
   cardIcon = input<string>('');
   sizeTitle = input<string>('');
+  borderNone = input<boolean>(false);
+  textCenter = input<boolean>(false);
 }

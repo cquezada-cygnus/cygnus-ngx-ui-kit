@@ -1,5 +1,5 @@
 <div
-  class="flex items-center justify-center w-full gap-4 mb-4"
+  class="flex w-full gap-4 mb-4"
   [class]="
     (sizeTitle()==='bold-lg') ? 'max-w-xs' : 'max-w-sm'
   "
@@ -7,14 +7,17 @@
   <a href="#"
     [class]="
       TW_CLASS.CARD_BODY + ' ' +
-      ((sizeTitle()==='bold-lg') ? 'p-6' : 'pt-1 pb-1 pl-8 pr-8')
+      ((sizeTitle()==='bold-lg') ? 'p-6' : 'pt-1 pb-1 pl-3 pr-3') + ' ' +
+      (borderNone() ? 'border-none' : 'pl-0 pr-0' ) + ' ' +
+      (textCenter() ? 'text-center' : '' ) + ' ' +
+      'dark:bg-transparent dark:hover:bg-gray-700'
     "
   >
     <h5
       [class]="
        (sizeTitle()==='bold-lg') ?
-        'mb-2 text-2xl font-bold tracking-tight text-gray-900' :
-        'mb-2 text-base font-semibold tracking-tight text-gray-600'
+        'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white' :
+        'mb-2 text-base font-semibold tracking-tight text-gray-600 dark:text-white'
       "
     >
       {{cardTitle()}}
@@ -22,16 +25,25 @@
     <p
       [class]="
         (sizeTitle()==='bold-lg') ?
-          'font-normal text-gray-700' :
-          'font-medium text-sm text-gray-500'">
-      <span>{{cardText()}}</span>
+          'font-normal text-gray-700 dark:text-white' :
+          'font-medium text-sm text-gray-500 dark:text-white'">
+      {{cardText()}}
       @if (cardIcon()) {
 
-      <lib-ngx-cygnus-icons [class]="'ml-2'"
-        [size]="''"
-        [textColor]="'lightblack'"
-        [textRoute]="cardIcon()"
-      />
+      <span class="inline-block dark:hidden">
+        <lib-ngx-cygnus-icons [class]="'ml-2'"
+          [size]="''"
+          [textColor]="'lightblack'"
+          [textRoute]="cardIcon()"
+        />
+      </span>
+      <span class="hidden dark:inline-block ">
+        <lib-ngx-cygnus-icons [class]="'ml-2'"
+          [size]="''"
+          [textColor]="'white'"
+          [textRoute]="cardIcon()"
+        />
+      </span>
 
       }
     </p>
