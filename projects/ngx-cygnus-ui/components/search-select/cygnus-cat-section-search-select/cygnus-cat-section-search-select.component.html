@@ -29,11 +29,21 @@
     (blur)="outputBlur.emit(true)"
   />
 
-  <lib-ngx-cygnus-icons class="ml-2 absolute h-full flex items-center inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 bg-gray-200"
-    [size]="'xl'"
-    [textColor]="'gray'"
-    [textRoute]="'search-sm'"
-  />
+  <span class="hidden dark:flex items-center  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-500">
+    <lib-ngx-cygnus-icons class=""
+      [size]="'xl'"
+      [textColor]="'white'"
+      [textRoute]="'search-sm'"
+    />
+  </span>
+  <span class="flex items-center dark:hidden  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-500">
+    <lib-ngx-cygnus-icons class=" "
+      [size]="'xl'"
+      [textColor]="'gray'"
+      [textRoute]="'search-sm'"
+    />
+  </span>
+
 
   } @else {
 
