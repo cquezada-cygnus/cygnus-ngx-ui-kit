@@ -58,6 +58,7 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
 
   initializeInputValue = input<string>('');
   inputValueOutput = output<string>();
+  inputIsBlur = output<boolean>();
 
   gradientBorder = input<boolean>(false);
 
@@ -113,6 +114,11 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
 
   notifyIconClicked(): void {
     this.iconClicked.emit('iconClicked');
+  }
+
+  setInputIsBlur(value: string): void {
+    this.setValue(value);
+    this.inputIsBlur.emit(true);
   }
 
   setValue(value:string ) {

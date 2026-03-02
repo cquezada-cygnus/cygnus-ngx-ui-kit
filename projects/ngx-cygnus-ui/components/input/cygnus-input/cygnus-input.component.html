@@ -55,6 +55,7 @@
           [readOnly]="inputDisabled()"
 
           (input)="setValue(cygnusInput.value)"
+          (blur)="setInputIsBlur(cygnusInput.value)"
 
           [appRutFormat]="isRutFormatActive()"
           [withDots]="useRutDots()"
