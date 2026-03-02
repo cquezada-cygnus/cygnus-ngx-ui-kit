@@ -1,7 +1,7 @@
 
   <fieldset class="fieldset">
 @if (selectLabel()!=='') {
-    <label class="block mb-1 text-sm font-medium text-gray-800" >{{selectLabel()}}</label>
+    <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-white" >{{selectLabel()}}</label>
 }
 
     <!-- Wrapper condicional para gradient border -->
@@ -16,7 +16,7 @@
             selGetSize() + ' ' +
             selGetType() + ' ' +
             (isDisabled() ? TW_CLASS.SELECT_DISABLED : '') + ' ' +
-            (control().value === '' || control().value === null ? 'text-gray-300!' : '')
+            (control().value === '' || control().value === null ? 'text-gray-300! dark:text-gray-500!' : '')
           "
           [disabled]="isDisabled()"
           [autoWidthSelectDirective]="selAutoWidth()"
@@ -25,10 +25,10 @@
           [formControl]="control()"
         >
           @if (selInstructionOpDisabled()) {
-            <option  class="text-gray-300!" value="" disabled selected>{{selInstructionOpDisabled()}}</option>
+            <option  class="text-gray-300! dark:text-gray-500!" value="" disabled selected>{{selInstructionOpDisabled()}}</option>
           }
           @for (op of options(); track $index) {
-            <option  class="text-gray-700" [value]="op.value">{{op.option}}</option>
+            <option  class="text-gray-700 dark:text-gray-50" [value]="op.value">{{op.option}}</option>
           }
         </select>
 
