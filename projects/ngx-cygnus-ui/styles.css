@@ -5,6 +5,9 @@
 @source "./pages/**/*.{js,jsx,ts,tsx,html}";
 @source "./safelist-tailwind/**/*.{html}";
 
+/* 1. Definimos la variante para que funcione con la clase .dark */
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 @theme {
 
@@ -152,7 +155,27 @@
   --cg-z-modal: 1040;
   --cg-z-popover: 1050;
   --cg-z-tooltip: 1060;
+
+  /* 2. Definimos tus colores personalizados usando variables */
+  --color-footer-bg: #FFF5E6;
+  --color-salmon-bg: #FFF5E6;
 }
 
+/* 3. Ajustamos tus clases para que usen las variables y cambien en dark */
+.bg-footer-color {
+  background-color: var(--color-footer-bg);
+
+  @variant dark {
+    background-color: #344054; /* Color para modo oscuro */
+  }
+}
+
+.fondo-salmon {
+  background-color: var(--color-salmon-bg) !important;
+
+  @variant dark {
+    background-color: #101828 !important; /* Color oscuro para el salmón */
+  }
+}
 
 
