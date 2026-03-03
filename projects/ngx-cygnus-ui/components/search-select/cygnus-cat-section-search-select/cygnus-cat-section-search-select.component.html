@@ -70,21 +70,21 @@
 
 @if (!isDisabled() && showCategories()) {
 <ul
-  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10  max-h-60 overflow-y-auto"
+  class="absolute mt-1 bg-white dark:bg-gray-700 border border-slate-200 dark:border-gray-600 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10  max-h-60 overflow-y-auto"
   [style.width.px]="targetSelectSearchDiv.offsetWidth"
   [class.invisible]="isInvisible()"
   [id]="ulShowCategoriesId()"
 >
   <li class="bg-gray-400 text-gray-50 p-1.5" value="" >Selecciona una categoría</li>
   @for (cat of dataEntries | keyvalue; track $index) {
-    <li class="hover:bg-gray-100 p-1.5" (click)="onCategorySelected(cat.key)">{{cat.key}}</li>
+    <li class="dark:text-white hover:bg-gray-100 dark:hover:bg-gray-500 p-1.5" (click)="onCategorySelected(cat.key)">{{cat.key}}</li>
   }
 </ul>
 }
 
 @if (!isDisabled() && showSecOpt()) {
 <ul
-  class="absolute mt-1 bg-white border border-slate-200 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto"
+  class="absolute mt-1 bg-white dark:bg-gray-700 border border-slate-200 dark:border-gray-600 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto"
   [style.width.px]="targetSelectSearchDiv.offsetWidth"
   [class.invisible]="isInvisible()"
   [id]="ulShowSecOptId()"
@@ -104,23 +104,23 @@
 
       @if (filterWithCategorySelected()) {
         @if (setFilteredOptions(sec.value)) {
-          <li class="bg-gray-200 font-semibold p-1.5" >{{ sec.key }}</li>
+          <li class="bg-gray-200 font-semibold p-1.5 dark:text-gray-600" >{{ sec.key }}</li>
           @for (op of dataFilteredEntries; track op[categoryIdItem()]) {
             <li
               class="p-1.5"
-              [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-100'"
+              [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'dark:text-white hover:bg-gray-100 dark:hover:bg-gray-500'"
               (click)="onItemSelected(op)"
             >{{ op[categoryItem()] }}</li>
           }
         }
 
       } @else {
-        <li class="bg-gray-200 font-semibold p-1.5" >{{ sec.key }}</li>
+        <li class="bg-gray-200 font-semibold p-1.5 dark:text-gray-600" >{{ sec.key }}</li>
 
         @for (op of $any(sec.value); track op[categoryIdItem()]) {
           <li
             class="p-1.5"
-            [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-100'"
+            [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'dark:text-white hover:bg-gray-100 dark:hover:bg-gray-500'"
             (click)="onItemSelected(op)"
           >{{ op[categoryItem()] }}</li>
         }
@@ -133,11 +133,11 @@
       @for (sec of dataEntries[$any(cat.key)] | keyvalue; track $index) {
 
         @if (setFilteredOptions(sec.value)) {
-          <li class="bg-gray-200 font-semibold p-1.5" >{{ sec.key }}</li>
+          <li class="bg-gray-200 font-semibold p-1.5 dark:text-gray-600" >{{ sec.key }}</li>
           @for (op of dataFilteredEntries; track op[categoryIdItem()]) {
             <li
               class="p-1.5"
-              [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'hover:bg-gray-100'"
+              [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'dark:text-white hover:bg-gray-100 dark:hover:bg-gray-500'"
               (click)="onItemSelected(op)"
             >{{ op[categoryItem()] }}</li>
           }
