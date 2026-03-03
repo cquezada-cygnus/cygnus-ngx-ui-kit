@@ -16,6 +16,19 @@
   --font-nunito-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
   --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
 
+
+  --color-orange-cygnus-50: '#D7C5AC';
+  --color-orange-cygnus-100: '#CCBDA8';
+  --color-orange-cygnus-200: '#D8B382';
+  --color-orange-cygnus-300: '#F3A949';
+  --color-orange-cygnus-400: '#F49316';
+  --color-orange-cygnus-500: '#CF7807';
+  --color-orange-cygnus-600: '#A05C03';
+  --color-orange-cygnus-700: '#6F3F01';
+  --color-orange-cygnus-800: '#452A08';
+  --color-orange-cygnus-900: '#3F2A0D';
+  --color-orange-cygnus-950: '#3A2912';
+
   --color-cygnus-50: #fdf6ef;
   --color-cygnus-100: #faeada;
   --color-cygnus-200: #f5d1b3;
