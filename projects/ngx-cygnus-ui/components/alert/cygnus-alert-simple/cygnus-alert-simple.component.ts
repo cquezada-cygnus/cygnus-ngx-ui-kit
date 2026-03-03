@@ -1,4 +1,4 @@
-import { Component, input, OnInit, output, signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 
@@ -13,86 +13,63 @@ import { TW_CLASS } from '../const/tailwind.const';
     }
   `,
 })
-export class CygnusAlertSimpleComponent implements OnInit {
+export class CygnusAlertSimpleComponent {
   TW_CLASS = TW_CLASS;
-  showAlert  = signal<boolean>(true);
+  showAlert = signal<boolean>(true);
 
-  alertIcon  = input<boolean>(false);
+  // Inputs (Signals)
+  alertIcon = input<boolean>(false);
   alertEquis = input<boolean>(false);
-  alertIconColor: IconColorText = 'blue';
   alertTitle = input<string>('');
   alertContent = input<string>('');
-
   alertTypes = input<string>('');
-  alertAllClasses = signal<string>('');
-
   isClosed = output<any>();
 
-  ngOnInit(){
-    const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
-    this.alertAllClasses.set(setClasses);
-  }
+  // --- Lógica Reactiva ---
 
-  getAlertClasses(stringClasses: string): string[] {
-    return stringClasses.split(' ');
-  }
+  // 1. Calculamos el color del icono automáticamente basándonos en el tipo
+  // Esto reemplaza las llamadas a .set() que hacías en los switches
+  alertIconColor = computed<IconColorText>(() => {
+    const type = this.alertTypes();
+    if (type.includes('alert-primary')) return 'blue';
+    if (type.includes('alert-red')) return 'red';
+    if (type.includes('alert-green')) return 'green';
+    if (type.includes('alert-yellow')) return 'amber';
+    if (type.includes('alert-gray')) return 'secgray';
+    return 'blue';
+  });
 
-  setAlertClasses(arrStringClasses: string[]): string {
-    let stringClasses = '';
-    for (let i = 0; i < arrStringClasses.length; i++) {
-      const elem = arrStringClasses[i];
-      if (this.alertEquis()) {
-        stringClasses = stringClasses + (this.addTailwindEquisClasses(elem) + ' ');
-      } else {
-        stringClasses = stringClasses + (this.addTailwindClasses(elem) + ' ');
-      }
-    }
-    return stringClasses;
-  }
+  // 2. Calculamos todas las clases de Tailwind automáticamente
+  alertAllClasses = computed(() => {
+    const types = this.alertTypes().split(' ');
+    return types.map(t => {
+      return this.alertEquis()
+        ? this.addTailwindEquisClasses(t)
+        : this.addTailwindClasses(t);
+    }).join(' ');
+  });
+
+  // --- Tus métodos de ayuda (limpios de efectos secundarios) ---
 
   addTailwindClasses(customClass: string): string {
     switch (customClass) {
-      case 'alert-primary':
-        this.alertIconColor = 'blue';
-        return this.TW_CLASS.ALERT_SIMPLE_PRIMARY;
-      case 'alert-red':
-        this.alertIconColor = 'red';
-        return this.TW_CLASS.ALERT_SIMPLE_RED;
-      case 'alert-green':
-        this.alertIconColor = 'green';
-        return this.TW_CLASS.ALERT_SIMPLE_GREEN;
-      case 'alert-yellow':
-        this.alertIconColor = 'amber';
-        return this.TW_CLASS.ALERT_SIMPLE_YELLOW;
-      case 'alert-gray':
-        this.alertIconColor = 'secgray';
-        return this.TW_CLASS.ALERT_SIMPLE_GRAY;
-      default:
-        this.alertIconColor = 'blue';
-        return this.TW_CLASS.ALERT_SIMPLE_PRIMARY;
+      case 'alert-primary': return this.TW_CLASS.ALERT_SIMPLE_PRIMARY;
+      case 'alert-red':     return this.TW_CLASS.ALERT_SIMPLE_RED;
+      case 'alert-green':   return this.TW_CLASS.ALERT_SIMPLE_GREEN;
+      case 'alert-yellow':  return this.TW_CLASS.ALERT_SIMPLE_YELLOW;
+      case 'alert-gray':    return this.TW_CLASS.ALERT_SIMPLE_GRAY;
+      default:              return this.TW_CLASS.ALERT_SIMPLE_PRIMARY;
     }
   }
 
   addTailwindEquisClasses(customClass: string): string {
     switch (customClass) {
-      case 'alert-primary':
-        this.alertIconColor = 'blue';
-        return this.TW_CLASS.ALERT_SIMPLE_EQUIS_PRIMARY;
-      case 'alert-red':
-        this.alertIconColor = 'red';
-        return this.TW_CLASS.ALERT_SIMPLE_EQUIS_RED;
-      case 'alert-green':
-        this.alertIconColor = 'green';
-        return this.TW_CLASS.ALERT_SIMPLE_EQUIS_GREEN;
-      case 'alert-yellow':
-        this.alertIconColor = 'amber';
-        return this.TW_CLASS.ALERT_SIMPLE_EQUIS_YELLOW;
-      case 'alert-gray':
-        this.alertIconColor = 'secgray';
-        return this.TW_CLASS.ALERT_SIMPLE_EQUIS_GRAY;
-      default:
-        this.alertIconColor = 'blue';
-        return this.TW_CLASS.ALERT_SIMPLE_EQUIS_PRIMARY;
+      case 'alert-primary': return this.TW_CLASS.ALERT_SIMPLE_EQUIS_PRIMARY;
+      case 'alert-red':     return this.TW_CLASS.ALERT_SIMPLE_EQUIS_RED;
+      case 'alert-green':   return this.TW_CLASS.ALERT_SIMPLE_EQUIS_GREEN;
+      case 'alert-yellow':  return this.TW_CLASS.ALERT_SIMPLE_EQUIS_YELLOW;
+      case 'alert-gray':    return this.TW_CLASS.ALERT_SIMPLE_EQUIS_GRAY;
+      default:              return this.TW_CLASS.ALERT_SIMPLE_EQUIS_PRIMARY;
     }
   }
 

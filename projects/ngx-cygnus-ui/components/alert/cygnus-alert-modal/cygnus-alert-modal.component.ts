@@ -1,4 +1,4 @@
-import { Component, HostListener, input, model, OnInit, signal } from '@angular/core';
+import { Component, computed, HostListener, input, model } from '@angular/core';
 
 import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
@@ -15,92 +15,63 @@ import { TW_CLASS } from '../const/tailwind.const';
   ],
   templateUrl: './cygnus-alert-modal.component.html',
 })
-export class CygnusAlertModalComponent implements OnInit {
+export class CygnusAlertModalComponent {
   TW_CLASS = TW_CLASS;
 
+  // Inputs & Models
   modalTitle = input<string>('');
   btnFullText = input<string>('Aceptar');
   alertBtnClose = input<boolean>(false);
-
   showModal = model<boolean>(false);
   alertTypes = input<string>('');
-  alertAllClasses = signal<string>('');
-
-  alertWithBtn = input<boolean>(true);
-  alertIconColor = model<IconColorText | null>(null);
   alertIconAsset = input<string>('');
-  buttonType = signal<string>('');
+  closeOnBlur = input<boolean>(true);
+  closeOnEscape = input<boolean>(true);
 
-  alertConfirm: boolean = false;
-  closeOnBlur = input<boolean>(true); // si es true, se puede cerrar al hacer click afuera del modal
-  closeOnEscape = input<boolean>(true); // permitir/bloquear el cierre con tecla Escape
+  // --- Lógica de Configuración Computada ---
 
-  ngOnInit(){
-    const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
-    this.alertAllClasses.set(setClasses);
-  }
+  private config = computed(() => {
+    const type = this.alertTypes();
 
-  getAlertClasses(stringClasses: string): string[] {
-    return stringClasses.split(' ');
-  }
-
-  setAlertClasses(arrStringClasses: string[]): string {
-    let stringClasses = '';
-    for (let i = 0; i < arrStringClasses.length; i++) {
-      const elem = arrStringClasses[i];
-      stringClasses = stringClasses + (this.addTailwindIsFullClasses(elem) + ' ');
+    if (type.includes('alert-red')) {
+      return { color: 'red' as IconColorText, btn: 'btn-error', classes: this.TW_CLASS.ALERT_CONTENT_FULL_RED };
     }
-    return stringClasses;
-  }
-
-  addTailwindIsFullClasses(customClass: string): string {
-    switch (customClass) {
-      case 'alert-primary':
-        this.alertIconColor.set('blue');
-        this.buttonType.set('btn-primary');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY;
-      case 'alert-red':
-        this.alertIconColor.set('red');
-        this.buttonType.set('btn-error');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_RED;
-      case 'alert-green':
-        this.alertIconColor.set('green');
-        this.buttonType.set('btn-success');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_GREEN;
-      case 'alert-confirm':
-        this.alertIconColor.set('green');
-        this.buttonType.set('btn-success');
-        this.alertConfirm = true;
-        return this.TW_CLASS.ALERT_CONTENT_CONFIRM;
-      case 'alert-yellow':
-        this.alertIconColor.set('amber');
-        this.buttonType.set('btn-warning');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW;
-      case 'alert-gray':
-        this.alertIconColor.set('secgray');
-        this.buttonType.set('btn-full-gray');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_GRAY;
-      default:
-        this.alertIconColor.set('blue');
-        this.buttonType.set('btn-primary');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY;
+    if (type.includes('alert-green')) {
+      return { color: 'green' as IconColorText, btn: 'btn-success', classes: this.TW_CLASS.ALERT_CONTENT_FULL_GREEN };
     }
-  }
+    if (type.includes('alert-confirm')) {
+      return { color: 'green' as IconColorText, btn: 'btn-success', classes: this.TW_CLASS.ALERT_CONTENT_CONFIRM };
+    }
+    if (type.includes('alert-yellow')) {
+      return { color: 'amber' as IconColorText, btn: 'btn-warning', classes: this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW };
+    }
+    if (type.includes('alert-gray')) {
+      return { color: 'secgray' as IconColorText, btn: 'btn-full-gray', classes: this.TW_CLASS.ALERT_CONTENT_FULL_GRAY };
+    }
 
-  toggleModal():void {
-    this.showModal.update( current => !current );
+    // Default / Primary
+    return { color: 'blue' as IconColorText, btn: 'btn-primary', classes: this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY };
+  });
+
+  // Signals derivados para el template
+  alertIconColor = computed(() => this.config().color);
+  buttonType = computed(() => this.config().btn);
+  alertAllClasses = computed(() => this.config().classes);
+
+  // Métodos
+  toggleModal(): void {
+    this.showModal.update(current => !current);
   }
 
   handleBlurClick(event: MouseEvent): void {
-    // Check if the element that was clicked is the one with the event listener
-    if (event.target === event.currentTarget && this.closeOnBlur()) { //Blur div clicked directly!
+    if (event.target === event.currentTarget && this.closeOnBlur()) {
       this.toggleModal();
-    } // else Click originated from a child element, Blur handler ignored.
+    }
   }
 
-  @HostListener('document:keydown.escape') // Escucha eventos de teclado en todo el documento
+  @HostListener('document:keydown.escape')
   handleEscapeKey() {
-    if (this.showModal() && this.closeOnEscape()) { // Si el modal está abierto y la opción está habilitada, cerramos
+    if (this.showModal() && this.closeOnEscape()) {
       this.toggleModal();
     }
   }

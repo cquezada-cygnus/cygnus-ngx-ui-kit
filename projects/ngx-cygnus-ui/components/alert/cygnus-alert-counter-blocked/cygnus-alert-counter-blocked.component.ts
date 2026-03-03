@@ -1,4 +1,4 @@
-import { Component, effect, input, OnInit, output, signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
@@ -13,120 +13,68 @@ import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 })
 export class CygnusAlertCounterBlockedComponent {
   TW_CLASS = TW_CLASS;
-  showAlert  = signal<boolean>(false);
+  readonly maxCounter = 3;
 
-  alertWithBtn = signal<boolean>(false);
-  alertIconColor: IconColorText = 'blue';
-
-  alertIconAsset = input<string>('assets/icons/svg/Alerts&Feedback/alert-circle.svg');
-  alertTitle = signal<string>('');
-  alertContent = signal<string>('');
-  btnFullText = signal<string>('Aceptar');
-
-  alertTypes = signal<string>('');
-  alertAllClasses = signal<string>('');
-  buttonType = signal<string>('');
-
-  maxCounter: number = 3;
+  // Inputs
   tryCounter = input<number>(0);
-  errorTitle = 'Bloqueo de cuenta';
-  errorContent = '';
-  warningTitle = 'Alerta de bloqueo de cuenta';
-  warningContent = '';
+  alertIconAsset = input<string>('assets/icons/svg/Alerts&Feedback/alert-circle.svg');
 
+  // Outputs
   btnAlertIsClickedEvent = output<boolean>();
 
-  constructor() {
-    effect(() => { // actualizar color y contenido del alert cuando se indique
+  // --- 1. Estado Base: Toda la lógica de negocio depende de tryCounter ---
+  private state = computed(() => {
+    const count = this.tryCounter();
 
-      this.errorContent = `
-        Tu cuenta ha sido bloqueada por “${this.tryCounter()}” cantidad de intentos fallidos. Espera 30 minutos o comunícate con recursos humanos.
-      `;
-      this.warningContent = `
-        Has hecho “${this.tryCounter()}” ${this.customIntentoText(this.tryCounter())} de inicio de sesión.
-        Tienes ${this.maxCounter - this.tryCounter()} ${this.customIntentoText(this.maxCounter - this.tryCounter())} más, si no, se bloqueará tu cuenta y tendrás que esperar 30 minutos.
-      `;
+    if (count === 0) return { show: false };
 
-      if (this.tryCounter()===0) {
-        this.showAlert.set(false);
-      } else if (this.tryCounter()>0 && this.tryCounter()<3) {
-        this.alertTypes.set('alert-yellow');
-        this.alertWithBtn.set(false);
-        this.alertTitle.set(this.warningTitle);
-        this.alertContent.set(this.warningContent);
-        this.showAlert.set(true);
-      } else {
-        this.alertTypes.set('alert-red');
-        this.alertWithBtn.set(true);
-        this.alertTitle.set(this.errorTitle);
-        this.alertContent.set(this.errorContent);
-        this.showAlert.set(true);
-      }
-
-      const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
-      this.alertAllClasses.set(setClasses);
-
-    });
-  }
-
-  customIntentoText(num: number):string {
-    if (num===1) {
-      return 'intento';
-    } else {
-      return 'intentos';
+    if (count > 0 && count < this.maxCounter) {
+      const remaining = this.maxCounter - count;
+      return {
+        show: true,
+        type: 'alert-yellow',
+        withBtn: false,
+        title: 'Alerta de bloqueo de cuenta',
+        content: `Has hecho “${count}” ${this.plural(count)} de inicio de sesión. Tienes ${remaining} ${this.plural(remaining)} más, si no, se bloqueará tu cuenta.`,
+        color: 'amber' as IconColorText,
+        btn: 'btn-warning'
+      };
     }
-  }
 
-  getAlertClasses(stringClasses: string): string[] {
-    return stringClasses.split(' ');
-  }
+    // Bloqueado (count >= 3)
+    return {
+      show: true,
+      type: 'alert-red',
+      withBtn: true,
+      title: 'Bloqueo de cuenta',
+      content: `Tu cuenta ha sido bloqueada por “${count}” cantidad de intentos fallidos. Espera 30 minutos o comunícate con recursos humanos.`,
+      color: 'red' as IconColorText,
+      btn: 'btn-error'
+    };
+  });
 
-  setAlertClasses(arrStringClasses: string[]): string {
-    let stringClasses = '';
-    for (let i = 0; i < arrStringClasses.length; i++) {
-      const elem = arrStringClasses[i];
-      if (this.alertWithBtn()) {
-        stringClasses = stringClasses + (this.addTailwindIsFullClasses(elem) + ' ');
-      } else {
-        stringClasses = stringClasses + (this.addTailwindClasses(elem) + ' ');
-      }
+  // --- 2. Signals Derivados para la Vista ---
+  showAlert = computed(() => this.state().show);
+  alertWithBtn = computed(() => this.state().withBtn ?? false);
+  alertTitle = computed(() => this.state().title ?? '');
+  alertContent = computed(() => this.state().content ?? '');
+  alertIconColor = computed(() => this.state().color ?? 'blue');
+  buttonType = computed(() => this.state().btn ?? '');
+  btnFullText = signal<string>('Aceptar'); // Este puede seguir siendo signal si no cambia
+
+  // --- 3. Clases de Tailwind (Reactivo al cambio de tema/estado) ---
+  alertAllClasses = computed(() => {
+    const s = this.state();
+    if (!s.show) return '';
+
+    if (s.type === 'alert-red') {
+      return s.withBtn ? this.TW_CLASS.ALERT_CONTENT_FULL_RED : this.TW_CLASS.ALERT_CONTENT_RED;
     }
-    return stringClasses;
-  }
+    return s.withBtn ? this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW : this.TW_CLASS.ALERT_CONTENT_YELLOW;
+  });
 
-  addTailwindClasses(customClass: string): string {
-    switch (customClass) {
-      case 'alert-red':
-        this.alertIconColor = 'red';
-        this.buttonType.set('btn-error');
-        return this.TW_CLASS.ALERT_CONTENT_RED;
-      case 'alert-yellow':
-        this.alertIconColor = 'amber';
-        this.buttonType.set('btn-warning');
-        return this.TW_CLASS.ALERT_CONTENT_YELLOW;
-      default:
-        this.alertIconColor = 'amber';
-        this.buttonType.set('btn-warning');
-        return this.TW_CLASS.ALERT_CONTENT_YELLOW;
-    }
-  }
-
-  addTailwindIsFullClasses(customClass: string): string {
-    switch (customClass) {
-      case 'alert-red':
-        this.alertIconColor = 'red';
-        this.buttonType.set('btn-error');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_RED;
-      case 'alert-yellow':
-        this.alertIconColor = 'amber';
-        this.buttonType.set('btn-warning');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW;
-      default:
-        this.alertIconColor = 'amber';
-        this.buttonType.set('btn-warning');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY;
-    }
-  }
+  // Helpers
+  private plural = (n: number) => n === 1 ? 'intento' : 'intentos';
 
   alertWithBtnClick() {
     this.btnAlertIsClickedEvent.emit(true);

@@ -1,4 +1,4 @@
-import { Component, input, OnInit, output, signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { TW_CLASS } from '../const/tailwind.const';
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
@@ -11,112 +11,71 @@ import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
   ],
   templateUrl: './cygnus-alert-contenido.component.html',
 })
-export class CygnusAlertContenidoComponent implements OnInit {
+export class CygnusAlertContenidoComponent {
   TW_CLASS = TW_CLASS;
-  showAlert  = signal<boolean>(true);
+  showAlert = signal<boolean>(true);
 
+  // Inputs
   alertWithBtn = input<boolean>(true);
   btnIsFull = input<boolean>(false);
-  alertIconColor: IconColorText = 'blue';
-
   alertIconAsset = input<string>('assets/icons/svg/Alerts&Feedback/alert-circle.svg');
   alertTitle = input<string>('');
   alertContent = input<string>('');
   btnFullText = input<string>('Aceptar');
-
   alertTypes = input<string>('');
-  alertAllClasses = signal<string>('');
-  buttonType = signal<string>('');
-  buttonOutlinedType = signal<string>('');
 
+  // Outputs
   btnClickedEvent = output<boolean>();
 
-  ngOnInit(){
-    const setClasses = this.setAlertClasses(this.getAlertClasses(this.alertTypes()));
-    this.alertAllClasses.set(setClasses);
-  }
+  // --- Lógica Computada Centralizada ---
 
-  getAlertClasses(stringClasses: string): string[] {
-    return stringClasses.split(' ');
-  }
+  /**
+   * Creamos un estado derivado que procesa el string de alertTypes.
+   * Esto evita repetir switches innecesarios.
+   */
+  private alertConfig = computed(() => {
+    const type = this.alertTypes();
 
-  setAlertClasses(arrStringClasses: string[]): string {
-    let stringClasses = '';
-    for (let i = 0; i < arrStringClasses.length; i++) {
-      const elem = arrStringClasses[i];
-      if (this.btnIsFull()) {
-        stringClasses = stringClasses + (this.addTailwindIsFullClasses(elem) + ' ');
-      } else {
-        stringClasses = stringClasses + (this.addTailwindClasses(elem) + ' ');
-      }
+    if (type.includes('alert-red')) {
+      return { color: 'red' as IconColorText, btn: 'btn-error', btnOutlined: 'btn-outlined-red', key: 'red' };
     }
-    return stringClasses;
-  }
-
-  addTailwindClasses(customClass: string): string {
-    switch (customClass) {
-      case 'alert-primary':
-        this.alertIconColor = 'blue';
-        this.buttonType.set('btn-primary');
-        this.buttonOutlinedType.set('btn-outlined');
-        return this.TW_CLASS.ALERT_CONTENT_PRIMARY;
-      case 'alert-red':
-        this.alertIconColor = 'red';
-        this.buttonType.set('btn-error');
-        this.buttonOutlinedType.set('btn-outlined-red');
-        return this.TW_CLASS.ALERT_CONTENT_RED;
-      case 'alert-green':
-        this.alertIconColor = 'green';
-        this.buttonType.set('btn-success');
-        this.buttonOutlinedType.set('btn-outlined-green');
-        return this.TW_CLASS.ALERT_CONTENT_GREEN;
-      case 'alert-yellow':
-        this.alertIconColor = 'amber';
-        this.buttonType.set('btn-warning');
-        this.buttonOutlinedType.set('btn-outlined-amber');
-        return this.TW_CLASS.ALERT_CONTENT_YELLOW;
-      case 'alert-gray':
-        this.alertIconColor = 'secgray';
-        this.buttonType.set('btn-full-gray');
-        this.buttonOutlinedType.set('btn-outlined-gray');
-        return this.TW_CLASS.ALERT_CONTENT_GRAY;
-      default:
-        this.alertIconColor = 'blue';
-        this.buttonType.set('btn-primary');
-        this.buttonOutlinedType.set('btn-outlined');
-        return this.TW_CLASS.ALERT_CONTENT_PRIMARY;
+    if (type.includes('alert-green')) {
+      return { color: 'green' as IconColorText, btn: 'btn-success', btnOutlined: 'btn-outlined-green', key: 'green' };
     }
-  }
-
-  addTailwindIsFullClasses(customClass: string): string {
-    switch (customClass) {
-      case 'alert-primary':
-        this.alertIconColor = 'blue';
-        this.buttonType.set('btn-primary');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY;
-      case 'alert-red':
-        this.alertIconColor = 'red';
-        this.buttonType.set('btn-error');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_RED;
-      case 'alert-green':
-        this.alertIconColor = 'green';
-        this.buttonType.set('btn-success');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_GREEN;
-      case 'alert-yellow':
-        this.alertIconColor = 'amber';
-        this.buttonType.set('btn-warning');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW;
-      case 'alert-gray':
-        this.alertIconColor = 'secgray';
-        this.buttonType.set('btn-full-gray');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_GRAY;
-      default:
-        this.alertIconColor = 'blue';
-        this.buttonType.set('btn-primary');
-        return this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY;
+    if (type.includes('alert-yellow')) {
+      return { color: 'amber' as IconColorText, btn: 'btn-warning', btnOutlined: 'btn-outlined-amber', key: 'yellow' };
     }
-  }
+    if (type.includes('alert-gray')) {
+      return { color: 'secgray' as IconColorText, btn: 'btn-full-gray', btnOutlined: 'btn-outlined-gray', key: 'gray' };
+    }
 
+    // Default (Primary)
+    return { color: 'blue' as IconColorText, btn: 'btn-primary', btnOutlined: 'btn-outlined', key: 'primary' };
+  });
+
+  // Derivamos los valores individuales de la configuración
+  alertIconColor = computed(() => this.alertConfig().color);
+  buttonType = computed(() => this.alertConfig().btn);
+  buttonOutlinedType = computed(() => this.alertConfig().btnOutlined);
+
+  // Clases dinámicas del contenedor
+  alertAllClasses = computed(() => {
+    const config = this.alertConfig();
+    const isFull = this.btnIsFull();
+
+    // Mapeo directo usando la "key" de la configuración
+    const classMap: Record<string, string> = {
+      primary: isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY : this.TW_CLASS.ALERT_CONTENT_PRIMARY,
+      red:     isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_RED     : this.TW_CLASS.ALERT_CONTENT_RED,
+      green:   isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_GREEN   : this.TW_CLASS.ALERT_CONTENT_GREEN,
+      yellow:  isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW  : this.TW_CLASS.ALERT_CONTENT_YELLOW,
+      gray:    isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_GRAY    : this.TW_CLASS.ALERT_CONTENT_GRAY,
+    };
+
+    return classMap[config.key] || classMap['primary'];
+  });
+
+  // Métodos de acción
   hideAlert() {
     this.showAlert.set(false);
   }
