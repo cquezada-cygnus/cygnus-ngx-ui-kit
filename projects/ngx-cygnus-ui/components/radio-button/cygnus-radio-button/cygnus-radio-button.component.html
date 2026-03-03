@@ -1,37 +1,30 @@
 <div class="flex items-center">
-    <input
-      #cygnusRadioInput
-      [class]="
-        TW_CLASS.RADIOBUTTON_INPUT + ' ' +
-        (isDisabled() ? TW_CLASS.RADIOBUTTON_INPUT_DISABLED : '')
-      "
-      [name]="control().status"
-      type="radio"
-      [id]="inputId()"
-      [checked]="isChecked()"
-      [value]="labelText()"
-      [disabled]="isDisabled()"
-      (change)="onRadioChange()"
-    >
-    <label
-      [class]="
-        TW_CLASS.RADIOBUTTON_LABEL + ' ' +
-        (isDisabled() ? TW_CLASS.RADIOBUTTON_LABEL_DISABLED : '')
-      "
-      [for]="inputId()"
-    >
+  <input
+    #cygnusRadioInput
+    type="radio"
+    [id]="inputId()"
+    [name]="control().status"
+    [checked]="isChecked()"
+    [disabled]="isDisabled()"
+    [value]="labelText()"
+    (change)="onRadioChange()"
+    [class]="TW_CLASS.RADIOBUTTON_INPUT + ' ' + (isDisabled() ? TW_CLASS.RADIOBUTTON_INPUT_DISABLED : '')"
+    [style]="dynamicStyles()"
+  >
 
-      @if (linkText()!='' && linkUrl()!='') {
-        <p class="text-base text-gray-600">
-          {{labelText()}}
-          <a [routerLink]="linkUrl()" class="font-medium underline hover:text-gray-800">
-            {{linkText()}}
-          </a>
-        </p>
-      }  @else {
-        {{labelText()}}
-      }
-    </label>
+  <label
+    [for]="inputId()"
+    [class]="TW_CLASS.RADIOBUTTON_LABEL + ' ' + (isDisabled() ? TW_CLASS.RADIOBUTTON_LABEL_DISABLED : '')"
+  >
+    @if (linkText() !== '' && linkUrl() !== '') {
+      <p class="text-base text-gray-600 dark:text-white">
+        {{ labelText() }}
+        <a [routerLink]="linkUrl()" class="font-medium underline hover:text-gray-800 dark:hover:text-gray-600">
+          {{ linkText() }}
+        </a>
+      </p>
+    } @else {
+      {{ labelText() }}
+    }
+  </label>
 </div>
-
-
