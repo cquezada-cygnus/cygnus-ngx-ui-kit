@@ -16,7 +16,7 @@
     <label [for]="checkboxId()" class="sr-only">Checkbox</label>
   } @else if (checkboxType()==='text' || checkboxType()==='text-hint') {
     <div [class]="TW_CLASS.CHECKBOX_TEXT">
-      <label for="checkboxId()" class="checkbox-label">
+      <label for="checkboxId()" class="checkbox-label" [class]="TW_CLASS.CHECKBOX_LABEL">
         {{checkboxText()}}
         @if (checkboxLink() && checkboxLinkText()) {
         <a
