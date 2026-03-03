@@ -9,7 +9,4 @@ import { FormControl } from '@angular/forms';
 export class CygnusRadioGroupComponent {
   control = input<FormControl<string>>();
   legend = input<string>('');
-
-  // Agrega las clases de Tailwind 4 directamente al host
-  @HostBinding('class') clasesHost = 'dark:bg-gray-700 dark:border-gray-600';
 }
