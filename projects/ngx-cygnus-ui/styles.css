@@ -187,6 +187,16 @@
   /* --background-radial-dark: radial-gradient(circle, var(--color-gray-700), var(--color-gray-800)); */ /* nome funcionó */
 }
 
+/* Forzamos que la clase grayscale afecte a TODO */
+.grayscale {
+  filter: grayscale(100%) !important;
+}
+
+/* Opcional: Si quieres que la transición sea suave */
+html {
+  transition: filter 0.5s ease-in-out;
+}
+
 /* 3. Ajustamos tus clases para que usen las variables y cambien en dark */
 .bg-footer-color {
   background-color: var(--color-footer-bg);
