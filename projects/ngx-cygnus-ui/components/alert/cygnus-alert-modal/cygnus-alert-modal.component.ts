@@ -27,6 +27,8 @@ export class CygnusAlertModalComponent {
   alertIconAsset = input<string>('');
   closeOnBlur = input<boolean>(true);
   closeOnEscape = input<boolean>(true);
+  withX = input<boolean>(false);
+  setAlertIconColor = input<IconColorText>();
 
   // --- Lógica de Configuración Computada ---
 
@@ -34,23 +36,41 @@ export class CygnusAlertModalComponent {
     const type = this.alertTypes();
 
     if (type.includes('alert-red')) {
-      return { color: 'red' as IconColorText, btn: 'btn-error', classes: this.TW_CLASS.ALERT_CONTENT_FULL_RED };
+      return {
+        color: 'red' as IconColorText, btn: 'btn-error',
+        classes: this.TW_CLASS.ALERT_CONTENT_MODAL_RED
+      };
     }
     if (type.includes('alert-green')) {
-      return { color: 'green' as IconColorText, btn: 'btn-success', classes: this.TW_CLASS.ALERT_CONTENT_FULL_GREEN };
+      return {
+        color: 'green' as IconColorText, btn: 'btn-success',
+        classes: this.TW_CLASS.ALERT_CONTENT_MODAL_GREEN
+      };
     }
     if (type.includes('alert-confirm')) {
-      return { color: 'green' as IconColorText, btn: 'btn-success', classes: this.TW_CLASS.ALERT_CONTENT_CONFIRM };
+      return {
+        color: 'green' as IconColorText, btn: 'btn-success',
+        classes: this.TW_CLASS.ALERT_CONTENT_MODAL_GREEN
+      };
     }
     if (type.includes('alert-yellow')) {
-      return { color: 'amber' as IconColorText, btn: 'btn-warning', classes: this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW };
+      return {
+        color: 'amber' as IconColorText, btn: 'btn-warning',
+        classes: this.TW_CLASS.ALERT_CONTENT_MODAL_YELLOW
+      };
     }
     if (type.includes('alert-gray')) {
-      return { color: 'secgray' as IconColorText, btn: 'btn-full-gray', classes: this.TW_CLASS.ALERT_CONTENT_FULL_GRAY };
+      return {
+        color: 'secgray' as IconColorText, btn: 'btn-full-gray',
+        classes: this.TW_CLASS.ALERT_CONTENT_MODAL_GRAY
+      };
     }
 
     // Default / Primary
-    return { color: 'blue' as IconColorText, btn: 'btn-primary', classes: this.TW_CLASS.ALERT_CONTENT_FULL_PRIMARY };
+    return {
+      color: 'blue' as IconColorText, btn: 'btn-primary',
+      classes: this.TW_CLASS.ALERT_CONTENT_MODAL_PRIMARY
+    };
   });
 
   // Signals derivados para el template

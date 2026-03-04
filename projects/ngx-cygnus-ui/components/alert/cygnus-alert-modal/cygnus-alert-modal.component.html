@@ -5,7 +5,7 @@
 >
   <div
     [class]="
-      TW_CLASS.ALERT_CONTENT_BASE + ' ' +
+      TW_CLASS.ALERT_CONTENT_MODAL_BASE + ' ' +
       alertAllClasses() + ' ' +
       'max-w-xs'
     "
@@ -14,21 +14,21 @@
       <div class="flex items-center pb-1 font-semibold">
         @if (alertIconAsset()) {
           <lib-ngx-cygnus-icons class="me-2"
-            [size]="'lg'"
-            [textColor]="alertIconColor() || ''"
+            [size]="'xxxl'"
+            [textColor]="setAlertIconColor() || alertIconColor() || ''"
             [textRoute]="alertIconAsset()"
           />
         }
         {{modalTitle()}}
       </div>
-
+      @if (withX()) {
       <lib-ngx-cygnus-icons
         [size]="'xl'"
         [textColor]="alertIconColor() || ''"
         [textRoute]="'x-close'"
         (click)="toggleModal()"
       />
-
+      }
     </div>
     <div class="relative font-light leading-normal text-gray-600 overflow-auto flex-1 min-h-0">
       <ng-content></ng-content>
