@@ -1,9 +1,11 @@
 import { Component, HostListener, input, model, output } from '@angular/core';
+import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
 
 @Component({
   selector: 'cygnus-modal',
   imports: [
+    NgxCygnusIconsComponent,
     CygnusButtonComponent,
   ],
   templateUrl: './cygnus-modal.component.html',
