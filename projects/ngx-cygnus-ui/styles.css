@@ -16,7 +16,6 @@
   --font-nunito-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
   --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-
   --color-orange-cygnus-50: #D7C5AC;
   --color-orange-cygnus-100: #CCBDA8;
   --color-orange-cygnus-200: #D8B382;
@@ -184,6 +183,8 @@
   /* 2. Definimos tus colores personalizados usando variables */
   --color-footer-bg: #FFF5E6;
   --color-salmon-bg: #FFF5E6;
+
+  /* --background-radial-dark: radial-gradient(circle, var(--color-gray-700), var(--color-gray-800)); */ /* nome funcionó */
 }
 
 /* 3. Ajustamos tus clases para que usen las variables y cambien en dark */
@@ -200,6 +201,15 @@
 
   @variant dark {
     background-color: #101828 !important; /* Color oscuro para el salmón */
+  }
+}
+
+.background-radial-dark {
+  /* La idea es que no haga nada si no es dark */
+
+  /* Estado Modo Oscuro */
+  @variant dark {
+    background-image: radial-gradient(circle, var(--color-gray-700), var(--color-gray-800)) !important;
   }
 }
 
