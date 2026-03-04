@@ -29,9 +29,9 @@ export const TW_CLASS = {
   ALERT_CONTENT_CONFIRM: 'text-green-800 dark:text-green-400 bg-green-100 dark:bg-gray-800 border-green-100 dark:border-green-600',
 
   ALERT_CONTENT_MODAL_BASE: 'p-4 mb-4 border rounded-lg',
-  ALERT_CONTENT_MODAL_PRIMARY: 'text-blue-800 dark:text-blue-400 border-blue-300 bg-blue-50 dark:border-blue-600 dark:bg-gray-800 dark:text-white',
-  ALERT_CONTENT_MODAL_RED: 'text-red-800 dark:text-red-400 border-red-300 bg-red-50 dark:border-red-600 dark:bg-gray-800 dark:text-white',
-  ALERT_CONTENT_MODAL_GREEN: 'text-green-800 dark:text-green-400 border-green-300 bg-green-50 dark:border-green-600 dark:bg-gray-800 dark:text-white',
-  ALERT_CONTENT_MODAL_YELLOW: 'text-amber-800 dark:text-amber-400 border-amber-300 bg-amber-50 dark:border-amber-600 dark:bg-gray-800 dark:text-white',
-  ALERT_CONTENT_MODAL_GRAY: 'text-gray-800 dark:text-gray-400 border-gray-300 bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-white',
+  ALERT_CONTENT_MODAL_PRIMARY: 'text-blue-800 dark:text-blue-400 border-blue-300 bg-blue-50 dark:border-blue-400 dark:bg-gray-800',
+  ALERT_CONTENT_MODAL_RED: 'text-red-800 dark:text-red-400 border-red-300 bg-red-50 dark:border-red-400 dark:bg-gray-800',
+  ALERT_CONTENT_MODAL_GREEN: 'text-green-800 dark:text-green-400 border-green-300 bg-green-50 dark:border-green-400 dark:bg-gray-800',
+  ALERT_CONTENT_MODAL_YELLOW: 'text-amber-800 dark:text-amber-400 border-amber-300 bg-amber-50 dark:border-amber-400 dark:bg-gray-800',
+  ALERT_CONTENT_MODAL_GRAY: 'text-gray-800 dark:text-gray-400 border-gray-300 bg-gray-50 dark:border-gray-400 dark:bg-gray-800',
 }
