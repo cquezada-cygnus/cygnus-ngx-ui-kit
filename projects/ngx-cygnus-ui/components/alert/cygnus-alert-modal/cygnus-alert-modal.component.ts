@@ -50,7 +50,7 @@ export class CygnusAlertModalComponent {
     if (type.includes('alert-confirm')) {
       return {
         color: 'green' as IconColorText, btn: 'btn-success',
-        classes: this.TW_CLASS.ALERT_CONTENT_MODAL_GREEN
+        classes: this.TW_CLASS.ALERT_CONTENT_CONFIRM
       };
     }
     if (type.includes('alert-yellow')) {
