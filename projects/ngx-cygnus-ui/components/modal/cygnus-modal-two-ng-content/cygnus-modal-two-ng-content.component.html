@@ -8,26 +8,37 @@
       'relative w-full' + ' ' +
       inputMaxW() + ' ' +
       inputMaxH() + ' ' +
-      'flex flex-col rounded-lg bg-white shadow-sm'
+      'flex flex-col rounded-lg bg-white dark:bg-gray-800 shadow-sm dark:border-gray-600'
     "
   >
     <div
       [class]="
-        'flex items-center justify-between p-4 sm:p-6 text-xl text-gray-800 shrink-0 border-b border-gray-200' + ' ' +
+        'flex items-center justify-between p-4 sm:p-6 text-xl text-gray-800 dark:text-white shrink-0 border-b border-gray-200 dark:border-gray-600' + ' ' +
         twTitleFontWeight()
       "
     >
       <ng-content select="[modal-title]"></ng-content>
 
       @if (withX()) {
-        <cygnus-button
-          [btnTypes]="'btn-gray btn-circle btn-icon-only-size-xs'"
-          [btnIconRouteRight]="'x-close'"
-          (click)="toggleModal()"
-        />
+        <div class="hidden dark:block">
+          <lib-ngx-cygnus-icons
+            [size]="'xl'"
+            [textColor]="'white'"
+            [textRoute]="'x-close'"
+            (click)="toggleModal()"
+          />
+        </div>
+        <div class="block dark:hidden">
+          <lib-ngx-cygnus-icons
+            [size]="'xl'"
+            [textColor]="'lightblack'"
+            [textRoute]="'x-close'"
+            (click)="toggleModal()"
+          />
+        </div>
       }
     </div>
-    <div class="relative px-4 sm:px-6 py-4 font-light leading-normal text-gray-600 overflow-auto flex-1 min-h-0"
+    <div class="relative px-4 sm:px-6 py-4 font-light leading-normal text-gray-600 dark:text-white overflow-auto flex-1 min-h-0"
      >
       <ng-content select="[modal-content]"></ng-content>
     </div>
