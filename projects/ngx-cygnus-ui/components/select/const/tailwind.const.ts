@@ -8,9 +8,9 @@ export const TW_CLASS = {
 
   SELECT_GENERIC: 'text-gray-700 dark:text-white border-gray-300 dark:border-gray-600 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-gray-400 dark:focus:border-gray-700 hover:border-gray-400 dark:hover:border-gray-700',
 
-  SELECT_ERROR: 'shadow-sm !border-error-500 !placeholder:text-error-400 !focus:border-error-500 !hover:border-error-300 focus:shadow-sm !focus:ring-error-700',
+  SELECT_ERROR: 'text-gray-700 dark:text-white shadow-sm !border-error-500 !placeholder:text-error-400 !focus:border-error-500 !hover:border-error-300 focus:shadow-sm !focus:ring-error-700',
 
-  SELECT_SUCCESS: 'shadow-sm !border-success-500 !placeholder:text-success-400 !focus:border-success-500 !hover:border-success-300 focus:shadow-sm !focus:ring-success-700',
+  SELECT_SUCCESS: 'text-gray-700 dark:text-white shadow-sm !border-success-500 !placeholder:text-success-400 !focus:border-success-500 !hover:border-success-300 focus:shadow-sm !focus:ring-success-700',
 
   SELECT_WIDTH_AUTHOMATIC: '!placeholder:text-slate-400 !text-slate-700 !border-slate-200 dark:border-slate-600 rounded py-2 focus:outline-none !focus:border-slate-400 !dark:focus:border-slate-700 !hover:border-slate-400 !dark:hover:border-slate-700 shadow-sm focus:shadow-md min-w-[50px]',
 
