@@ -1,8 +1,8 @@
 export const TW_CLASS = {
   BADGE_XS: 'inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full ms-2',
-  BADGE_SM: 'rounded-full bg-gray-100 dark:bg-gray-700 py-0.5 px-2.5 border border-transparent dark:border-gray-500 text-xs text-gray-700 dark:text-gray-300 transition-all shadow-sm',
-  BADGE: 'rounded-full bg-gray-100 dark:bg-gray-700 py-0.5 px-2.5 border border-transparent dark:border-gray-500 text-sm text-gray-700 dark:text-gray-300 transition-all shadow-sm',
-  BADGE_LG: 'px-3 py-1 text-sm transition-all border-transparent dark:border-gray-500 rounded-full shadow-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700',
+  BADGE_SM: 'rounded-full bg-gray-100 dark:bg-gray-700 py-0.5 px-2.5 border border-transparent text-xs text-gray-700 dark:text-gray-300 transition-all shadow-sm',
+  BADGE: 'rounded-full bg-gray-100 dark:bg-gray-700 py-0.5 px-2.5 border border-transparent text-sm text-gray-700 dark:text-gray-300 transition-all shadow-sm',
+  BADGE_LG: 'px-3 py-1 text-sm transition-all border-transparent rounded-full shadow-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700',
   BADGE_PRIMARY: 'text-sm transition-all border-transparent rounded-full shadow-sm text-primary-600 dark:text-primary-300 bg-primary-100 dark:bg-gray-700 dark:border-primary-300 text-center',
   BADGE_GRAY: 'text-sm transition-all border-transparent rounded-full shadow-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 dark:border-gray-300 text-center',
   BADGE_RED: 'text-sm transition-all border-transparent rounded-full shadow-sm !text-red-600 dark:text-red-300 !bg-red-100 dark:bg-gray-700 dark:border-red-300 text-center',
