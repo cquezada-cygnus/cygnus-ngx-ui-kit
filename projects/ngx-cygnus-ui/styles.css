@@ -184,7 +184,8 @@
   --color-footer-bg: #FFF5E6;
   --color-salmon-bg: #FFF5E6;
 
-  /* --background-radial-dark: radial-gradient(circle, var(--color-gray-700), var(--color-gray-800)); */ /* nome funcionó */
+  /* breakpoint mobile */
+  --breakpoint-samsung-galaxy: 391px;
 }
 
 /* Forzamos que la clase grayscale afecte a TODO */
