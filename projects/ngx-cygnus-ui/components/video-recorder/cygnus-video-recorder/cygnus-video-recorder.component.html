@@ -35,12 +35,22 @@
 
   <!-- Temporizador -->
   @if (!videoParaRevisar) {
-    <div class="flex items-center justify-center text-center text-lg font-base mb-6">
-      <lib-ngx-cygnus-icons class="mr-2"
-        [size]="'lg'"
-        [textColor]="'lightblack'"
-        [textRoute]="'clock'"
-      />
+    <div class="flex items-center justify-center text-center text-lg font-base mb-6 text-gray-900 dark:text-white">
+      <span class="hidden dark:flex">
+        <lib-ngx-cygnus-icons class="mr-2"
+          [size]="'lg'"
+          [textColor]="'white'"
+          [textRoute]="'clock'"
+        />
+      </span>
+      <span class="flex dark:hidden">
+        <lib-ngx-cygnus-icons class="mr-2"
+          [size]="'lg'"
+          [textColor]="'lightblack'"
+          [textRoute]="'clock'"
+        />
+      </span>
+
       {{ tiempo }}
     </div>
   }
