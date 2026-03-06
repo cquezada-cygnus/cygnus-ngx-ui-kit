@@ -97,6 +97,9 @@ export class CygnusButtonComponent implements OnInit {
       case 'btn-cygnus':
         this.btnIconColor.set('white');
         return this.TW_CLASS.BTN_CYGNUS;
+      case 'btn-accesibilidad-cygnus':
+        this.btnIconColor.set('cygnus');
+        return this.TW_CLASS.BTN_ACCESIBILIDAD_CYGNUS;
       case 'btn-sidebar':
         this.btnIconColor.set('blue');
         return this.TW_CLASS.BTN_SIDEBAR;

@@ -1,6 +1,6 @@
 {
   "name": "cygnus-ngx-ui-kit",
-  "version": "1.7.9-20260306",
+  "version": "1.8.0-20260306",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
