@@ -62,36 +62,36 @@
       <button
         (click)="iniciar()"
         [disabled]="grabando"
-        class="flex max-w-45 items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
-        <lib-ngx-cygnus-icons class="me-2"
+        class="flex max-w-40 items-center bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
+        <lib-ngx-cygnus-icons class="me-3"
           [size]="'xl'"
           [textColor]="grabando ? 'gray' : 'white'"
           [textRoute]="'mic'"
         />
-        <div class="flex flex-col">
-          Iniciar
+        <div class="flex flex-col text-start">
+          Iniciar grabación
         </div>
       </button>
 
       <button
         (click)="detener()"
         [disabled]="!grabando"
-        class="flex max-w-45 items-center bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
-        <lib-ngx-cygnus-icons class="me-2"
+        class="flex max-w-40 items-center bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
+        <lib-ngx-cygnus-icons class="me-3"
           [size]="'xl'"
           [textColor]="!grabando ? 'gray' : 'white'"
           [textRoute]="'stop-circle'"
         />
-        <div class="flex flex-col">
-          Detener
+        <div class="flex flex-col text-start">
+          Detener grabación
         </div>
       </button>
     }
     @else {
       <button
         (click)="descartarGrabacion()"
-        class="flex items-center bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-all cursor-pointer">
-        <lib-ngx-cygnus-icons class="me-2"
+        class="flex items-center bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold transition-all cursor-pointer">
+        <lib-ngx-cygnus-icons class="me-3"
           [size]="'xl'"
           [textColor]="'white'"
           [textRoute]="'trash'"
@@ -102,8 +102,8 @@
       @if (mostrarBotonEnviarGrabacion()) {
       <button
         (click)="confirmarEnvio()"
-        class="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-md cursor-pointer">
-        <lib-ngx-cygnus-icons class="me-2"
+        class="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-semibold transition-all shadow-md cursor-pointer">
+        <lib-ngx-cygnus-icons class="me-3"
           [size]="'xl'"
           [textColor]="'white'"
           [textRoute]="'check-circle'"
