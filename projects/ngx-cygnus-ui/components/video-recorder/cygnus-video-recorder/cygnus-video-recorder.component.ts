@@ -2,11 +2,15 @@ import { Component, input, output, inject, OnDestroy, ChangeDetectorRef, viewChi
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { VideoGrabado } from 'ngx-cygnus-ui/interfaces';
+import { FormatTimePipe } from 'ngx-cygnus-ui/pipes';
 
 @Component({
   selector: 'cygnus-video-recorder',
   standalone: true,
-  imports: [NgxCygnusIconsComponent],
+  imports: [
+    NgxCygnusIconsComponent,
+    FormatTimePipe,
+  ],
   templateUrl: './cygnus-video-recorder.component.html',
 })
 export class CygnusVideoRecorderComponent implements OnDestroy {
