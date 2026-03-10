@@ -10,6 +10,20 @@ import { NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
     NgxCygnusIconsComponent,
   ],
   templateUrl: './cygnus-dropzone-input.component.html',
+  styles: `
+    /* Cuando el label tiene cursor default, permitimos que sus hijos
+   (el botón) definan su propio cursor sin interferencias */
+    label.cursor-default cygnus-button {
+      cursor: alias !important;
+    }
+
+    /* Opcional: Si cygnus-button renderiza un <button> interno,
+      necesitamos llegar hasta él */
+    label.cursor-default cygnus-button :host-context(button),
+    label.cursor-default cygnus-button button {
+      cursor: alias !important;
+    }
+  `,
 })
 export class CygnusDropzoneInputComponent {
 
@@ -40,6 +54,7 @@ export class CygnusDropzoneInputComponent {
   outputBase64 = output<string>();
   outputErrorMsge = output<string>();
   outputTypeError = output<string>(); // TYPE, SIZE, READER
+  outputOnRemoveFile = output<void>();
 
   // Tipos de archivo permitidos
   allowedTypes = input({
@@ -63,6 +78,18 @@ export class CygnusDropzoneInputComponent {
 
   // Mensaje personalizable para error de tamaño
   sizeErrorMsge = input<string>('El archivo excede el tamaño máximo permitido.');
+
+  onRemoveFile(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation(); // Evita que el click llegue al label y abra el selector
+
+    this.resetFile();
+    this.outputOnRemoveFile.emit();
+
+    // Opcional: limpiar el input físico
+    const fileInput = document.getElementById('dropzone-file') as HTMLInputElement;
+    if (fileInput) fileInput.value = '';
+  }
 
   onDragOver(event: DragEvent): void {
     event.preventDefault();
