@@ -1,5 +1,5 @@
 export const TW_CLASS = {
-  BTN: 'cursor-pointer flex justify-center items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:outline-none focus:shadow-none data-[shape=pill]:rounded-full data-[width=full]:w-full px-5 py-2.5 text-sm disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed',
+  BTN: 'cursor-pointer flex justify-center items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:outline-none focus:shadow-none data-[shape=pill]:rounded-full data-[width=full]:w-full px-5 py-2.5 text-base disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed',
   BTN_PRIMARY: 'bg-blue-600 border-blue-600 text-blue-50 hover:bg-blue-800 hover:border-blue-800 focus:ring-blue-300',
   BTN_SECONDARY: 'text-gray-700 dark:text-white bg-gray-25 dark:bg-transparent border-gray-300 dark:border-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-300 hover:border-gray-300 focus:ring-gray-300',
   BTN_ACCENT: 'text-blue-700 border-blue-50 bg-blue-50 hover:bg-blue-100 hover:text-blue-600 focus:ring-gray-300',
