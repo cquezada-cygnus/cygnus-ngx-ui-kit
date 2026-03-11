@@ -215,8 +215,8 @@ html {
   }
 }
 
-.background-radial-dark {
-  /* La idea es que no haga nada si no es dark */
+.background-radial {
+  background-image: radial-gradient(circle, var(--color-white), var(--color-salmon-bg)) !important;
 
   /* Estado Modo Oscuro */
   @variant dark {
