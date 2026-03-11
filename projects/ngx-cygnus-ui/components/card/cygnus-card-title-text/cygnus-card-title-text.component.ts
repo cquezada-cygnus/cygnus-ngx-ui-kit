@@ -17,4 +17,5 @@ export class CygnusCardTitleTextComponent {
   sizeTitle = input<string>('');
   borderNone = input<boolean>(false);
   textCenter = input<boolean>(false);
+  tailwindClases = input<string>('bg-white hover:bg-gray-100');
 }
