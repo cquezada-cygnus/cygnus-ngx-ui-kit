@@ -27,7 +27,9 @@
         (sizeTitle()==='bold-lg') ?
           'font-normal text-gray-700 dark:text-white' :
           'font-medium text-sm text-gray-500 dark:text-white'">
-      {{cardText()}}
+
+      <ng-content></ng-content>
+
       @if (cardIcon()) {
 
       <span class="inline-block dark:hidden">

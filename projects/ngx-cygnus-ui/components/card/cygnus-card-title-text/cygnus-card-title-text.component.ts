@@ -13,7 +13,6 @@ import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ng
 export class CygnusCardTitleTextComponent {
   TW_CLASS = TW_CLASS;
   cardTitle = input<string>('');
-  cardText = input<string>('');
   cardIcon = input<string>('');
   sizeTitle = input<string>('');
   borderNone = input<boolean>(false);
