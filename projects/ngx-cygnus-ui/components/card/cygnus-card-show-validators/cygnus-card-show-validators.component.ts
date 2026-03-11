@@ -74,7 +74,7 @@ export class CygnusCardShowValidatorsComponent implements OnInit {
       }
     });
     this.cardLoginForm.get('phone')?.statusChanges.subscribe(status => {
-      console.log('phone errors: ',this.cardLoginForm.get('phone')?.errors);
+      // console.log('phone errors: ',this.cardLoginForm.get('phone')?.errors);
 
       if (this.cardLoginForm.get('phone')?.errors) {
         this.inputPhoneColor.set('error');
@@ -85,7 +85,7 @@ export class CygnusCardShowValidatorsComponent implements OnInit {
       }
     });
     this.cardLoginForm.get('mail')?.statusChanges.subscribe(status => {
-      console.log('mail errors: ',this.cardLoginForm.get('mail')?.errors);
+      // console.log('mail errors: ',this.cardLoginForm.get('mail')?.errors);
 
       if (this.cardLoginForm.get('mail')?.errors) {
         this.inputMailColor.set('warning');
@@ -100,10 +100,10 @@ export class CygnusCardShowValidatorsComponent implements OnInit {
   formStatusManager() {
     this.cardLoginForm.statusChanges.subscribe(status => {
       if (status === 'VALID') {
-        console.log('form valid');
+        // console.log('form valid');
         this.btnSubmitColor.set('btn-primary');
       } else {
-        console.log('form no valid');
+        // console.log('form no valid');
         this.btnSubmitColor.set('btn-disabled');
       }
     });
@@ -111,7 +111,7 @@ export class CygnusCardShowValidatorsComponent implements OnInit {
 
   onSubmit() {
     if (this.btnSubmitColor()!=='btn-disabled') {
-      console.log('onSubmit: ',this.cardLoginForm.value);
+      // console.log('onSubmit: ',this.cardLoginForm.value);
       this.inputClearValue.set(true);
       this.cardLoginForm.markAllAsTouched();
     }

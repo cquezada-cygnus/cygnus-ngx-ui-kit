@@ -60,11 +60,11 @@ TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya l
   formStatusManager() {
     this.cardSelForm.statusChanges.subscribe(status => {
       if (status === 'VALID') {
-        console.log('form valid');
-        console.log(this.cardSelForm.controls.opt.value);
+        // console.log('form valid');
+        // console.log(this.cardSelForm.controls.opt.value);
         this.btnSubmitColor.set('btn-primary');
       } else {
-        console.log('form no valid');
+        // console.log('form no valid');
         this.btnSubmitColor.set('btn-disabled');
       }
     });
@@ -72,7 +72,7 @@ TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya l
 
   onSubmit() {
     if (this.btnSubmitColor()!=='btn-disabled') {
-      console.log('onSubmit: ',this.cardSelForm.value);
+      // console.log('onSubmit: ',this.cardSelForm.value);
       this.cardSelForm.markAllAsTouched();
     }
   }

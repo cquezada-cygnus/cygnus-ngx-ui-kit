@@ -24,7 +24,7 @@ export class CygnusCollapsibleComponent {
   collapsableTitle = input<string>('');
 
   toggleCollapse() {
-    console.log('toggleCollapse(): ',!this.toggleIsOpen());
+    // console.log('toggleCollapse(): ',!this.toggleIsOpen());
     this.toggleIsOpen.update( current => !current );
   }
 }

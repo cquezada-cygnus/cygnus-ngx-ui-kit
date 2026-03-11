@@ -60,7 +60,7 @@ export class CygnusOptgroupSelectComponent implements OnInit {
     // Convert the record to an array of entries (key-value pairs)
     this.dataEntries = Object.entries(this.objCatSecOpt);
     this.dataEntries = Object.fromEntries(this.dataEntries);
-    console.log('this.dataEntries:',this.dataEntries);
+    // console.log('this.dataEntries:',this.dataEntries);
 
   }
 

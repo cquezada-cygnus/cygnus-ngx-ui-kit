@@ -72,10 +72,10 @@ export class CygnusCardLoginComponent implements OnInit {
   formStatusManager() {
     this.cardLoginForm.statusChanges.subscribe(status => {
       if (status === 'VALID') {
-        console.log('form valid');
+        // console.log('form valid');
         this.btnSubmitColor.set('btn-primary');
       } else {
-        console.log('form no valid');
+        // console.log('form no valid');
         this.btnSubmitColor.set('btn-disabled');
       }
     });
@@ -83,7 +83,7 @@ export class CygnusCardLoginComponent implements OnInit {
 
   onSubmit() {
     if (this.btnSubmitColor()!=='btn-disabled') {
-      console.log('onSubmit: ',this.cardLoginForm.value);
+      // console.log('onSubmit: ',this.cardLoginForm.value);
       this.inputClearValue.set(true);
       this.cardLoginForm.markAllAsTouched();
     }

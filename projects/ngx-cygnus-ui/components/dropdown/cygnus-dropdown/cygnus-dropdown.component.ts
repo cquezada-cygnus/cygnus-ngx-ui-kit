@@ -67,7 +67,7 @@ export class CygnusDropdownComponent implements OnInit {
   }
 
   itemSelected(event: DropdownItemData | undefined) {
-    console.log('cygnus-dropdown itemSelected:', event);
+    // console.log('cygnus-dropdown itemSelected:', event);
     if (this.dropdownItemType() != 'iconText') {
       this.dropdownMenuTitle.set(event?.itemText || this.dropdownMenuTitle());
     }

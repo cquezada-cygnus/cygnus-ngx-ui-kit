@@ -37,7 +37,7 @@ export class CygnusToggleComponent implements OnInit {
   }
 
   setValue(value:boolean ) {
-    console.log('input is checked?: ', value);
+    // console.log('input is checked?: ', value);
 
     this.control()?.setValue(value);
     this.control()?.markAsDirty();
