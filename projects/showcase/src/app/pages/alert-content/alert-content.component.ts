@@ -30,6 +30,7 @@ export class AlertContentComponent {
   showModalAlert: boolean = false;
   showModalAlertError: boolean = false;
   showModalConfirm: boolean = false;
+  showModalAnimado: boolean = false;
 
   importCygnusAlertSimple: string = `
     import { Component } from '@angular/core';
@@ -392,6 +393,10 @@ export class AlertContentComponent {
 
   openAlertModalConfirm() {
     this.showModalConfirm = !this.showModalConfirm;
+  }
+
+  openAlertModalAnimado() {
+    this.showModalAnimado = !this.showModalAnimado;
   }
 
 }

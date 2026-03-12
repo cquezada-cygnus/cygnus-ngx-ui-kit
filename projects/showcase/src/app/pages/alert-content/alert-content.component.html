@@ -556,6 +556,22 @@
         </cygnus-alert-modal>
 
       </div>
+
+      <div class="flex flex-col items-center justify-center w-full gap-4 mb-4">
+
+        <cygnus-button [btnTypes]="'btn-primary'" (click)="openAlertModalAnimado()" >Abrir Modal animado</cygnus-button>
+
+        <cygnus-alert-modal
+          [(showModal)]="showModalAnimado"
+          [alertTypes]="'alert-confirm'"
+          [modalTitle]="'Tus datos han sido cargados exitosamente'"
+          [alertIconAsset]="'check-circle'"
+          [flexItemsPosition]="'items-end'"
+        >
+          <p>Agrega los datos que no coinciden con los datos entregados en tu CV</p>
+        </cygnus-alert-modal>
+
+      </div>
     </div>
   </div>
 </section>

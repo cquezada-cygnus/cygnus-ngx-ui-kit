@@ -29,8 +29,22 @@ export class CygnusAlertModalComponent {
   closeOnEscape = input<boolean>(true);
   withX = input<boolean>(false);
   setAlertIconColor = input<IconColorText>();
+  flexItemsPosition = input<'items-center' | 'items-end' | 'items-start'>('items-center'); // 'items-end'
 
   // --- Lógica de Configuración Computada ---
+
+  // Gestion clase de flexItemsPosition y su animación
+  containerConfig = computed(() => {
+    const pos = this.flexItemsPosition();
+
+    // Mapeamos la posición al desplazamiento inicial
+    const translateValue = pos === 'items-start' ? '+100%' : pos === 'items-end' ? '-100%' : '0';
+
+    return {
+      classes: `${pos} ${pos === 'items-center' ? '' : 'animate-slide-in'}`,
+      style: { '--translate-x': translateValue }
+    };
+  });
 
   private config = computed(() => {
     const type = this.alertTypes();

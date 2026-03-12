@@ -186,6 +186,20 @@
 
   /* breakpoint mobile */
   --breakpoint-samsung-galaxy: 391px;
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(var(--translate-x, 0));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Registramos la animación */
+  --animate-slide-in: slide-in 0.4s ease-out;
 }
 
 /* Forzamos que la clase grayscale afecte a TODO */
