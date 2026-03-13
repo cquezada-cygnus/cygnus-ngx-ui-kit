@@ -16,7 +16,7 @@
   --font-nunito-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
   --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-orange-cygnus-50: #D7C5AC;
+  --color-orange-cygnus-50 : #D7C5AC;
   --color-orange-cygnus-100: #CCBDA8;
   --color-orange-cygnus-200: #D8B382;
   --color-orange-cygnus-300: #F3A949;
@@ -28,7 +28,7 @@
   --color-orange-cygnus-900: #3F2A0D;
   --color-orange-cygnus-950: #3A2912;
 
-  --color-salmon-cygnus-50: #FDEAD5;
+  --color-salmon-cygnus-50 : #FDEAD5;
   --color-salmon-cygnus-100: #FDE1C4;
   --color-salmon-cygnus-200: #FDD5AA;
   --color-salmon-cygnus-300: #FFC68A;
@@ -39,6 +39,30 @@
   --color-salmon-cygnus-800: #874C0D;
   --color-salmon-cygnus-900: #5A3711;
   --color-salmon-cygnus-950: #3B2711;
+
+  --color-postulaaqui-50 : #FFF5E6; /* UIColors/Postula_Aqui/Background */
+  --color-postulaaqui-100: #FFEFD6;
+  --color-postulaaqui-200: #FFE4BD;
+  --color-postulaaqui-300: #FFD89E;
+  --color-postulaaqui-400: #FFC46B;
+  --color-postulaaqui-500: #FFAF38;
+  --color-postulaaqui-600: #FF9B05;
+  --color-postulaaqui-700: #D17D00;
+  --color-postulaaqui-800: #A06308;
+  --color-postulaaqui-900: #704910;
+  --color-postulaaqui-950: #493312;
+
+  --color-postulaaqui-orange-50 : #CBA495;
+  --color-postulaaqui-orange-100: #BE9F92;
+  --color-postulaaqui-orange-200: #CE8669;
+  --color-postulaaqui-orange-300: #ED622B; /* UIColors/Postula_Aqui/Orange */
+  --color-postulaaqui-orange-400: #D6480F;
+  --color-postulaaqui-orange-500: #A9370A;
+  --color-postulaaqui-orange-600: #7A2605;
+  --color-postulaaqui-orange-700: #4A1702;
+  --color-postulaaqui-orange-800: #431A09;
+  --color-postulaaqui-orange-900: #3E1C0E;
+  --color-postulaaqui-orange-950: #3A1E13;
 
   --color-cygnus-50: #fdf6ef;
   --color-cygnus-100: #faeada;
@@ -181,8 +205,8 @@
   --cg-z-tooltip: 1060;
 
   /* 2. Definimos tus colores personalizados usando variables */
-  --color-footer-bg: #FFF5E6;
-  --color-salmon-bg: #FFF5E6;
+  --color-footer-bg: #FFF5E6;  /* UIColors/Postula_Aqui/Background */
+  --color-salmon-bg: #FFF5E6;  /* UIColors/Postula_Aqui/Background */
 
   /* breakpoint mobile */
   --breakpoint-samsung-galaxy: 391px;

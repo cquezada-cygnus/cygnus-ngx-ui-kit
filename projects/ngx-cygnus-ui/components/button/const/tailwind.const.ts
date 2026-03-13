@@ -11,6 +11,7 @@ export const TW_CLASS = {
   BTN_INDIGO: 'border-transparent text-white bg-indigo-600 hover:bg-indigo-700 focus:bg-indigo-700 focus:ring-indigo-300 hover:border-transparent',
   BTN_CYGNUS: 'border-transparent text-white bg-cygnus-600 hover:bg-cygnus-700 focus:bg-cygnus-700 focus:ring-cygnus-300 hover:border-transparent',
   BTN_ACCESIBILIDAD_CYGNUS: 'border-transparent text-cygnus-600 bg-white hover:text-cygnus-700 focus:bg-gray-100 focus:ring-gray-100 hover:border-transparent',
+  BTN_POSTULAAQUI_ORANGE: 'border-postulaaqui-orange-300 text-postulaaqui-orange-300 bg-postulaaqui-50 focus:bg-postulaaqui-200 hover:border-postulaaqui-orange-300 hover:bg-cygnus-500 hover:text-cygnus-50 hover:shadow-md focus:ring-cygnus-500',
   BTN_SIDEBAR: 'justify-start bg-gray-50 border-transparent text-blue-800 hover:bg-blue-800/10 hover:border-blue-800/10 shadow-none hover:shadow-none',
   BTN_CIRCLE: '!p-2.5 !rounded-full min-w-[40px] inline-flex justify-center items-center gap-x-2 disabled:pointer-events-none',
   BTN_GHOST: 'text-blue-800 bg-transparent border-transparent !shadow-none hover:bg-blue-700/5 hover:border-blue-700/5 !hover:shadow-none focus:ring-blue-300 focus:border-gray-800 transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',

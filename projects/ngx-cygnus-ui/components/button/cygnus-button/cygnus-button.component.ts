@@ -28,6 +28,7 @@ export class CygnusButtonComponent implements OnInit {
   btnIconOutlined = signal<boolean>(false);
   btnIconOutlinedColor = signal<string>('');
   btnIconOutlinedTransparent = input<boolean>(true);
+  btnPostulaaquiOrange = signal<boolean>(false);
 
   gradientButton = input<boolean>(false);
 
@@ -100,6 +101,12 @@ export class CygnusButtonComponent implements OnInit {
       case 'btn-accesibilidad-cygnus':
         this.btnIconColor.set('cygnus');
         return this.TW_CLASS.BTN_ACCESIBILIDAD_CYGNUS;
+      case 'btn-postulaaqui-orange':
+        this.btnPostulaaquiOrange.set(true);
+        this.btnIconColor.set('postulaaqui-orange');
+        this.btnIconOutlined.set(true);
+        this.btnIconOutlinedColor.set('postulaaqui-orange');
+        return this.TW_CLASS.BTN_POSTULAAQUI_ORANGE;
       case 'btn-sidebar':
         this.btnIconColor.set('blue');
         return this.TW_CLASS.BTN_SIDEBAR;
@@ -239,6 +246,9 @@ export class CygnusButtonComponent implements OnInit {
     }
     if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='cygnus' ) {
       this.btnIconColor.set('cygnus');
+    }
+    if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='postulaaqui-orange' ) {
+      this.btnIconColor.set('postulaaqui-orange');
     }
   }
 }

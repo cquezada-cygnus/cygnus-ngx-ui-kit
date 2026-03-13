@@ -4,8 +4,8 @@
   [disabled]="btnIsDisabled()"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()"
-  [class.bg-transparent]="(btnIconOutlined() && btnIconOutlinedTransparent()) ? true : false"
-  [class.bg-white]="(btnIconOutlined() && !btnIconOutlinedTransparent()) ? true : false"
+  [class.bg-transparent]="(!btnPostulaaquiOrange() && btnIconOutlined() && btnIconOutlinedTransparent()) ? true : false"
+  [class.bg-white]="(!btnPostulaaquiOrange() && btnIconOutlined() && !btnIconOutlinedTransparent()) ? true : false"
   [ngClass]="gradientButton() ? TW_CLASS.BTN_GRADIENT : ''"
 >
   @if (btnIconExist && btnIsLoading()) {
