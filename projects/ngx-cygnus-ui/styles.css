@@ -262,4 +262,17 @@ html {
   }
 }
 
+/* En el CSS de tu librería o global */
+cygnus-portal-outlet {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none; /* No bloquea la app */
+}
+
+/* IMPORTANTE: Los hijos directos del outlet deben recuperar los clicks */
+cygnus-portal-outlet > * {
+  pointer-events: auto;
+}
+
 
