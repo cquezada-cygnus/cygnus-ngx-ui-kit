@@ -1,6 +1,9 @@
 export type BtnCustomType =
   'btn' |
   'btn-cygnus' |
+  'btn-primary-cygnus' |
+  'btn-accesibilidad-cygnus' |
+  'btn-postulaaqui-orange' |
   'btn-primary' |
   'btn-secondary' |
   'btn-accent' |
@@ -10,9 +13,11 @@ export type BtnCustomType =
   'btn-sidebar' |
   'btn-purple' |
   'btn-indigo' |
+  'btn-blue-violet' |
   'btn-pink' |
   'btn-ghost' |
   'btn-outlined' |
+  'btn-outlined-cygnus' |
   'btn-disabled' |
   'btn-block' |
   'btn-circle' |

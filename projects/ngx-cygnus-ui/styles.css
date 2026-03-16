@@ -76,6 +76,30 @@
   --color-cygnus-900: #702d1e;
   --color-cygnus-950: #3c150e;
 
+  --color-primary-cygnus-50 : #D6AF9F;
+  --color-primary-cygnus-100: #C9A99C;
+  --color-primary-cygnus-200: #DB9070;
+  --color-primary-cygnus-300: #CB8262;
+  --color-primary-cygnus-400: #F94C00;
+  --color-primary-cygnus-500: #C73C00;
+  --color-primary-cygnus-600: #942C00;
+  --color-primary-cygnus-700: #611D00;
+  --color-primary-cygnus-800: #491804;
+  --color-primary-cygnus-900: #431B0A;
+  --color-primary-cygnus-950: #3D1D0F;
+
+  --color-blue-violet-50 : #edf2ff;
+  --color-blue-violet-100: #dfe6ff;
+  --color-blue-violet-200: #c5d1ff;
+  --color-blue-violet-300: #a2b2ff;
+  --color-blue-violet-400: #7d8afc;
+  --color-blue-violet-500: #5e62f6;
+  --color-blue-violet-600: #5850ec;
+  --color-blue-violet-700: #3e33cf;
+  --color-blue-violet-800: #332ca7;
+  --color-blue-violet-900: #2e2b84;
+  --color-blue-violet-950: #1d194d;
+
   /*  Colores primarios (azules) */
   --color-primary-25: #F5F8FF;
   --color-primary-50: #EFF4FF;
