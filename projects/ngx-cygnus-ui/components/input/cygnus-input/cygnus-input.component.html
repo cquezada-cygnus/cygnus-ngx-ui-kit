@@ -28,9 +28,14 @@
       <div [class]="gradientBorder() ? TW_CLASS.GRADIENT_INNER : 'relative'"><!-- Wrapper condicional para gradient border -->
 
         @if (pseudoIconCLPPhone()===true) {
-          <div [class]="TW_CLASS.ELEMENT_LEFT">
-            +56
-          </div>
+          <span
+            class="flex items-center mr-2 absolute h-full inset-y-0 !px-3 rounded-none rounded-l-lg element-left  bg-gray-200 dark:bg-gray-700"
+            [class]="gradientBorder() ? 'border-t-2 border-b-2 border-l-0 border-r-2' : 'border border-gray-300 dark:border-gray-600'"
+          >
+            <span [class]="'inset-y-0 flex items-center pointer-events-none start-0  text-sm font-semibold text-gray-600 dark:text-white'">
+              +56
+            </span>
+          </span>
         }
         <input
           #cygnusInput
@@ -47,7 +52,7 @@
             inputGetTopColor() + ' ' +
             inputGetInteractiveColor() + ' ' +
             inputGetSize() + ' ' +
-            (iconPosition()==='left' ? 'pl-9' : '') + ' ' +
+            (iconPosition()==='left' ? (pseudoIconCLPPhone() ? 'pl-15' : 'pl-9' ) : '') + ' ' +
             (inputDisabled()? TW_CLASS.INPUT_DISABLED : '')
           "
           [placeholder]="textPlaceholder()"
