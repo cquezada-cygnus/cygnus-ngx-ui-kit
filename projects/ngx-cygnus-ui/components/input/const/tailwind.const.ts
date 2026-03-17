@@ -1,6 +1,6 @@
 export const TW_CLASS = {
 
-  INPUT_BASE: 'px-3 py-3 block w-full text-sm transition duration-300 bg-white dark:bg-gray-700 border dark:border-gray-600 rounded-lg shadow-sm placeholder:text-gray-300 dark:placeholder:text-gray-500 text-gray-700 dark:text-white focus:ring-1 focus:outline-none focus:shadow',
+  INPUT_BASE: 'px-3 py-3 block w-full text-sm transition duration-300 bg-white dark:bg-gray-700 border dark:border-gray-600 rounded-lg shadow-sm placeholder:text-gray-300 dark:placeholder:text-gray-500 text-gray-700 dark:text-white focus:ring-1 focus:outline-none focus:shadow text-neutral-900',
 
   INPUT_GENERIC: 'border-gray-300 focus:border-primary-700 focus:ring-primary-700',
   INPUT_SUCCESS: '!border-success-500 !focus:border-success-500 !focus:ring-success-500',
@@ -19,13 +19,13 @@ export const TW_CLASS = {
 
   INPUT_INTERACTIVE_BASE: 'px-4 py-3',
   INPUT_INTERACTIVE_GENERIC: '',
-  INPUT_INTERACTIVE_SUCCESS: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 dark:text-white border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow active:bg-white',
-  INPUT_INTERACTIVE_WARNING: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 dark:text-white border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow active:bg-white',
-  INPUT_INTERACTIVE_ERROR: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50 text-gray-700 dark:text-white border-error-600 !focus:ring-error-700 !focus:border-error-700 focus:shadow active:bg-white',
+  INPUT_INTERACTIVE_SUCCESS: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50  text-neutral-900 dark:text-white border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow active:bg-white',
+  INPUT_INTERACTIVE_WARNING: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50  text-neutral-900 dark:text-white border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow active:bg-white',
+  INPUT_INTERACTIVE_ERROR: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50  text-neutral-900 dark:text-white border-error-600 !focus:ring-error-700 !focus:border-error-700 focus:shadow active:bg-white',
 
   INPUT_FILE: '!px-0 !py-0 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 file:cursor-pointer cursor-pointer',
 
-  LABEL_BASE: 'block mb-1 text-sm font-medium text-gray-800 dark:text-white',
+  LABEL_BASE: 'block mb-1 text-sm font-medium text-gray-900 dark:text-white',
 
   LABEL_FLOATING_BASE: 'absolute top-0 start-0 !p-4 !pl-3 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500 dark:peer-focus:text-gray-50 peer-[:not(:placeholder-shown)]:scale-90 peer-[:not(:placeholder-shown)]:translate-x-0.5 peer-[:not(:placeholder-shown)]:-translate-y-1.5 peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-50',
 
@@ -46,7 +46,7 @@ export const TW_CLASS = {
   LABEL_INTERACTIVE_COLOR_WARNING: 'text-warning-600 peer-focus:text-warning-600 peer-placeholder-shown:text-warning-700',
   LABEL_INTERACTIVE_COLOR_ERROR  : 'text-error-600 peer-focus:text-error-600 peer-placeholder-shown:text-error-700',
 
-  FIELDSET_LEGEND: 'block mb-1 text-sm font-medium text-gray-800 dark:text-white',
+  FIELDSET_LEGEND: 'block mb-1 text-sm font-medium text-gray-900 dark:text-white',
 
   ELEMENT_RIGHT: 'absolute',
   ELEMENT_LEFT : 'absolute inset-y-0 flex items-center pointer-events-none start-0 ps-2 text-sm font-semibold text-gray-600 dark:text-white',
@@ -61,7 +61,7 @@ export const TW_CLASS = {
 
   // Wrapper para gradient border
   GRADIENT_WRAPPER: 'relative rounded-lg p-[2px] bg-gradient-to-r from-[#5850EC] to-[#F94C00]',
-  GRADIENT_INNER: 'bg-warning-25 rounded-[0.5rem]', // Ajusta el color de fondo según tu diseño
+  GRADIENT_INNER: 'bg-warning-25 rounded-[0.5rem]',
 
   // Versión sin gradient (normal)
   NORMAL_WRAPPER: 'relative',
