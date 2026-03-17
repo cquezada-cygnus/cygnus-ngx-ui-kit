@@ -1,0 +1,163 @@
+<div class="hidden">
+  <div class="animate-spin size-8 size-10 border-2 border-4"></div>
+
+  <div class="border-slate-700 border-gray-200 border-indigo-500/30 border-slate-200 border-gray-300"></div>
+
+  <div class="border-t-emerald-400 border-t-blue-600 border-t-indigo-500 border-t-blue-500 border-t-red-500"></div>
+
+  <div class="border-r-slate-700 border-b-slate-700 border-l-slate-700"></div>
+  <div class="border-r-slate-200 border-b-slate-200 border-l-slate-200"></div>
+
+  <div class="ring-2 ring-4 ring-slate-700"></div>
+</div>
+
+
+
+<!--
+La lógica que seguí es la misma que tu safelist original:
+
+border-*-700 → color oscuro para el track de 3 lados (right/bottom/left)
+border-*-200 → color claro alternativo para modo light
+border-*-400/500 → color vivo para el arco activo (border-t-*)
+border-*-500/30 → variante semitransparente (estilo indigo/30) para el spinner de anillo completo
+ring-* → por si usas spinners con ring en vez de border
+-->
+
+<div class="hidden">
+  <!-- Sizes & animation -->
+  <div class="animate-spin size-8 size-10 border-2 border-4"></div>
+
+  <!-- Base border colors (track/background ring) -->
+  <div class="
+    border-orange-cygnus-700 border-orange-cygnus-200
+    border-salmon-cygnus-700 border-salmon-cygnus-200
+    border-postulaaqui-700 border-postulaaqui-200
+    border-postulaaqui-orange-700 border-postulaaqui-orange-200
+    border-cygnus-700 border-cygnus-200
+    border-primary-cygnus-700 border-primary-cygnus-200
+    border-blue-violet-700 border-blue-violet-200
+    border-brand-700 border-brand-200
+  "></div>
+
+  <!-- Transparent ring variants (like border-indigo-500/30) -->
+  <div class="
+    border-orange-cygnus-500/30 border-orange-cygnus-400/30
+    border-salmon-cygnus-500/30 border-salmon-cygnus-400/30
+    border-postulaaqui-500/30 border-postulaaqui-400/30
+    border-postulaaqui-orange-500/30 border-postulaaqui-orange-300/30
+    border-cygnus-500/30 border-cygnus-400/30
+    border-primary-cygnus-500/30 border-primary-cygnus-400/30
+    border-blue-violet-500/30 border-blue-violet-400/30
+    border-brand-500/30 border-brand-400/30
+  "></div>
+
+  <!-- border-t (spinner active arc) -->
+  <div class="
+    border-t-orange-cygnus-400 border-t-orange-cygnus-500
+    border-t-salmon-cygnus-400 border-t-salmon-cygnus-500
+    border-t-postulaaqui-400 border-t-postulaaqui-500
+    border-t-postulaaqui-orange-300 border-t-postulaaqui-orange-400
+    border-t-cygnus-400 border-t-cygnus-500
+    border-t-primary-cygnus-400 border-t-primary-cygnus-500
+    border-t-blue-violet-400 border-t-blue-violet-500
+    border-t-brand-400 border-t-brand-500
+  "></div>
+
+  <!-- border-r / border-b / border-l dark track -->
+  <div class="
+    border-r-orange-cygnus-700 border-b-orange-cygnus-700 border-l-orange-cygnus-700
+    border-r-salmon-cygnus-700 border-b-salmon-cygnus-700 border-l-salmon-cygnus-700
+    border-r-postulaaqui-700 border-b-postulaaqui-700 border-l-postulaaqui-700
+    border-r-postulaaqui-orange-700 border-b-postulaaqui-orange-700 border-l-postulaaqui-orange-700
+    border-r-cygnus-700 border-b-cygnus-700 border-l-cygnus-700
+    border-r-primary-cygnus-700 border-b-primary-cygnus-700 border-l-primary-cygnus-700
+    border-r-blue-violet-700 border-b-blue-violet-700 border-l-blue-violet-700
+    border-r-brand-700 border-b-brand-700 border-l-brand-700
+  "></div>
+
+  <!-- border-r / border-b / border-l light track -->
+  <div class="
+    border-r-orange-cygnus-200 border-b-orange-cygnus-200 border-l-orange-cygnus-200
+    border-r-salmon-cygnus-200 border-b-salmon-cygnus-200 border-l-salmon-cygnus-200
+    border-r-postulaaqui-200 border-b-postulaaqui-200 border-l-postulaaqui-200
+    border-r-postulaaqui-orange-200 border-b-postulaaqui-orange-200 border-l-postulaaqui-orange-200
+    border-r-cygnus-200 border-b-cygnus-200 border-l-cygnus-200
+    border-r-primary-cygnus-200 border-b-primary-cygnus-200 border-l-primary-cygnus-200
+    border-r-blue-violet-200 border-b-blue-violet-200 border-l-blue-violet-200
+    border-r-brand-200 border-b-brand-200 border-l-brand-200
+  "></div>
+
+  <!-- ring utilities -->
+  <div class="
+    ring-2 ring-4
+    ring-orange-cygnus-700 ring-orange-cygnus-400
+    ring-salmon-cygnus-700 ring-salmon-cygnus-400
+    ring-postulaaqui-700 ring-postulaaqui-400
+    ring-postulaaqui-orange-700 ring-postulaaqui-orange-300
+    ring-cygnus-700 ring-cygnus-400
+    ring-primary-cygnus-700 ring-primary-cygnus-400
+    ring-blue-violet-700 ring-blue-violet-400
+    ring-brand-700 ring-brand-400
+  "></div>
+</div>
+
+
+
+<!--
+La lógica del patrón es:
+
+border-*-600 (y 500/700) → color del track completo, el "fondo" del spinner
+border-t-*-50 (y 100/200/300) → color claro del arco activo, que contrasta sobre el track oscuro
+-->
+
+<div class="hidden">
+  <!-- Spinner: border completo (track) + border-t (arco activo) -->
+
+  <!-- orange-cygnus como track -->
+  <div class="border-orange-cygnus-600 border-t-orange-cygnus-50 border-t-salmon-cygnus-50 border-t-postulaaqui-50 border-t-cygnus-50 border-t-primary-cygnus-50 border-t-blue-violet-50 border-t-brand-50"></div>
+
+  <!-- salmon-cygnus como track -->
+  <div class="border-salmon-cygnus-600 border-t-orange-cygnus-50 border-t-salmon-cygnus-50 border-t-postulaaqui-50 border-t-cygnus-50 border-t-primary-cygnus-50 border-t-blue-violet-50 border-t-brand-50"></div>
+
+  <!-- postulaaqui como track -->
+  <div class="border-postulaaqui-600 border-t-orange-cygnus-50 border-t-salmon-cygnus-50 border-t-postulaaqui-50 border-t-cygnus-50 border-t-primary-cygnus-50 border-t-blue-violet-50 border-t-brand-50"></div>
+
+  <!-- postulaaqui-orange como track -->
+  <div class="border-postulaaqui-orange-600 border-t-orange-cygnus-50 border-t-salmon-cygnus-50 border-t-postulaaqui-50 border-t-cygnus-50 border-t-primary-cygnus-50 border-t-blue-violet-50 border-t-brand-50"></div>
+
+  <!-- cygnus como track -->
+  <div class="border-cygnus-600 border-t-orange-cygnus-50 border-t-salmon-cygnus-50 border-t-postulaaqui-50 border-t-cygnus-50 border-t-primary-cygnus-50 border-t-blue-violet-50 border-t-brand-50"></div>
+
+  <!-- primary-cygnus como track -->
+  <div class="border-primary-cygnus-600 border-t-orange-cygnus-50 border-t-salmon-cygnus-50 border-t-postulaaqui-50 border-t-cygnus-50 border-t-primary-cygnus-50 border-t-blue-violet-50 border-t-brand-50"></div>
+
+  <!-- blue-violet como track -->
+  <div class="border-blue-violet-600 border-t-orange-cygnus-50 border-t-salmon-cygnus-50 border-t-postulaaqui-50 border-t-cygnus-50 border-t-primary-cygnus-50 border-t-blue-violet-50 border-t-brand-50"></div>
+
+  <!-- brand como track -->
+  <div class="border-brand-600 border-t-orange-cygnus-50 border-t-salmon-cygnus-50 border-t-postulaaqui-50 border-t-cygnus-50 border-t-primary-cygnus-50 border-t-blue-violet-50 border-t-brand-50"></div>
+
+  <!-- Variantes de intensidad del track (500, 700) -->
+  <div class="
+    border-orange-cygnus-500 border-orange-cygnus-700
+    border-salmon-cygnus-500 border-salmon-cygnus-700
+    border-postulaaqui-500 border-postulaaqui-700
+    border-postulaaqui-orange-500 border-postulaaqui-orange-700
+    border-cygnus-500 border-cygnus-700
+    border-primary-cygnus-500 border-primary-cygnus-700
+    border-blue-violet-500 border-blue-violet-700
+    border-brand-500 border-brand-700
+  "></div>
+
+  <!-- Variantes del arco activo con colores más saturados (100, 200, 300) -->
+  <div class="
+    border-t-orange-cygnus-100 border-t-orange-cygnus-200 border-t-orange-cygnus-300
+    border-t-salmon-cygnus-100 border-t-salmon-cygnus-200 border-t-salmon-cygnus-300
+    border-t-postulaaqui-100 border-t-postulaaqui-200 border-t-postulaaqui-300
+    border-t-postulaaqui-orange-100 border-t-postulaaqui-orange-200 border-t-postulaaqui-orange-300
+    border-t-cygnus-100 border-t-cygnus-200 border-t-cygnus-300
+    border-t-primary-cygnus-100 border-t-primary-cygnus-200 border-t-primary-cygnus-300
+    border-t-blue-violet-100 border-t-blue-violet-200 border-t-blue-violet-300
+    border-t-brand-100 border-t-brand-200 border-t-brand-300
+  "></div>
+</div>

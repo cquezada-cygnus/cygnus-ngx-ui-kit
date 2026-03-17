@@ -100,6 +100,18 @@
   --color-blue-violet-900: #2e2b84;
   --color-blue-violet-950: #1d194d;
 
+  --color-brand-50 : #fdf6ef;
+  --color-brand-100: #faeada;
+  --color-brand-200: #f5d1b3;
+  --color-brand-300: #eeb383;
+  --color-brand-400: #e68a51;
+  --color-brand-500: #e06c2f;
+  --color-brand-600: #cc5224;
+  --color-brand-700: #ae4020;
+  --color-brand-800: #8b3521;
+  --color-brand-900: #702d1e;
+  --color-brand-950: #3c150e;
+
   /*  Colores primarios (azules) */
   --color-primary-25: #F5F8FF;
   --color-primary-50: #EFF4FF;
