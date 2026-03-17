@@ -61,7 +61,7 @@ export const TW_CLASS = {
 
   // Wrapper para gradient border
   GRADIENT_WRAPPER: 'relative rounded-lg p-[2px] bg-gradient-to-r from-[#5850EC] to-[#F94C00]',
-  GRADIENT_INNER: 'bg-white rounded-[6px]', // Ajusta el color de fondo según tu diseño
+  GRADIENT_INNER: 'bg-warning-25 rounded-[0.5rem]', // Ajusta el color de fondo según tu diseño
 
   // Versión sin gradient (normal)
   NORMAL_WRAPPER: 'relative',
