@@ -2,7 +2,7 @@
   @if (!onlyBtn() && horizontalText()) {
     <label
       for="dropzone-file"
-      class="flex flex-row items-center justify-around w-full bg-indigo-100 rounded-lg border-2 border-dashed [stroke-dasharray:5_5] hover:bg-indigo-200 shadow-lg dark:bg-transparent dark:hover:bg-gray-700/75 dark:border-indigo-400"
+      class="flex flex-row items-center justify-around w-full bg-indigo-100 rounded-lg border-2 border-dashed border-blue-violet-600 [stroke-dasharray:5_5] hover:bg-indigo-200 shadow-lg dark:bg-transparent dark:hover:bg-gray-700/75 dark:border-indigo-400"
       [class.cursor-pointer]="!iconRight()"
       [class.cursor-default]="iconRight()"
       [class.bg-indigo-300]="isDragging"
@@ -43,7 +43,7 @@
   @else if (!onlyBtn()) {
   <label
     for="dropzone-file"
-    class="flex flex-col items-center justify-center w-full bg-indigo-100 rounded-lg border-2 border-dashed [stroke-dasharray:5_5] hover:bg-indigo-200 shadow-lg dark:bg-gray-700 dark:hover:bg-gray-700/75 dark:border-indigo-400"
+    class="flex flex-col items-center justify-center w-full bg-indigo-100 rounded-lg border-2 border-dashed border-blue-violet-600 [stroke-dasharray:5_5] hover:bg-indigo-200 shadow-lg dark:bg-gray-700 dark:hover:bg-gray-700/75 dark:border-indigo-400"
     [class.cursor-pointer]="!iconRight()"
     [class.cursor-default]="iconRight()"
     [class.bg-indigo-300]="isDragging"
@@ -97,7 +97,7 @@
 } @else {
   <label
     for="dropzone-file"
-    class="flex flex-col items-center justify-center w-full bg-indigo-100 rounded-lg border-2 border-dashed [stroke-dasharray:5_5]  hover:bg-indigo-200 shadow-lg dark:bg-transparent dark:hover:bg-gray-700/75 dark:border-indigo-400"
+    class="flex flex-col items-center justify-center w-full bg-indigo-100 rounded-lg border-2 border-dashed border-blue-violet-600 [stroke-dasharray:5_5]  hover:bg-indigo-200 shadow-lg dark:bg-transparent dark:hover:bg-gray-700/75 dark:border-indigo-400"
     [class.cursor-pointer]="!iconRight()"
     [class.cursor-default]="iconRight()"
     [class.bg-indigo-300]="isDragging"
