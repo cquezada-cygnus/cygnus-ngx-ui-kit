@@ -31,7 +31,7 @@ export const TW_CLASS = {
   ALERT_CONTENT_MODAL_BASE: 'p-4 mb-4 border rounded-lg',
   ALERT_CONTENT_MODAL_PRIMARY: 'text-blue-700 dark:text-blue-400 border-blue-300 bg-blue-50 dark:border-blue-400 dark:bg-gray-800',
   ALERT_CONTENT_MODAL_RED: 'text-red-700 dark:text-red-400 border-red-300 bg-error-100 dark:border-red-400 dark:bg-gray-800',
-  ALERT_CONTENT_MODAL_GREEN: 'text-green-700 dark:text-green-400 border-green-300 bg-green-50 dark:border-green-400 dark:bg-gray-800',
+  ALERT_CONTENT_MODAL_GREEN: 'text-success-700 dark:text-green-400 border-green-300 bg-success-100 dark:border-green-400 dark:bg-gray-800',
   ALERT_CONTENT_MODAL_YELLOW: 'text-amber-700 dark:text-amber-400 border-amber-300 bg-amber-50 dark:border-amber-400 dark:bg-gray-800',
   ALERT_CONTENT_MODAL_GRAY: 'text-gray-700 dark:text-white border-gray-300 bg-gray-50 dark:border-gray-600 dark:bg-gray-800',
 }

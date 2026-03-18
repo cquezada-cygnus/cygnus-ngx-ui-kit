@@ -15,7 +15,7 @@
       containerConfig().classes
     "
   >
-    <div class="flex items-center justify-between text-lg font-medium">
+    <div class="flex items-center justify-between text-base font-medium">
       <div class="flex items-center pb-1 font-semibold">
         @if (alertIconAsset()) {
           <lib-ngx-cygnus-icons class="me-2"
@@ -35,7 +35,7 @@
       />
       }
     </div>
-    <div class="relative font-light leading-normal text-gray-600 overflow-auto flex-1 min-h-0">
+    <div class="relative font-light text-sm leading-normal text-gray-600 overflow-auto flex-1 min-h-0">
       <ng-content></ng-content>
     </div>
     @if (alertBtnClose()) {
