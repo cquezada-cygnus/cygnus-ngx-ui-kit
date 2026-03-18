@@ -4,7 +4,7 @@
     'fixed inset-0 z-[999] flex flex-col justify-end bg-black/60 backdrop-blur-sm transition-opacity duration-300 p-4 pointer-events-auto ' +
     flexItemsPosition()
   "
-  [style]="containerConfig().style"
+  [style]="containerConfig()!.style"
   (click)="handleBlurClick($event)"
 >
   <div
@@ -12,7 +12,7 @@
       TW_CLASS.ALERT_CONTENT_MODAL_BASE + ' ' +
       alertAllClasses() + ' ' +
       'max-w-'+maxWidth() + ' ' +
-      containerConfig().classes
+      containerConfig()!.classes
     "
   >
     <div class="flex items-center justify-between text-base font-medium">

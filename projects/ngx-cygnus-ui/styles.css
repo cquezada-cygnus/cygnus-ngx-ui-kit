@@ -258,8 +258,30 @@
     }
   }
 
-  /* Registramos la animación */
+  /* Registramos la animación slide-in */
   --animate-slide-in: slide-in 0.4s ease-out;
+
+
+  /* La animación dura 1s, suaviza el final y se queda en el último frame */
+  --animate-settle-right: settle-right 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+
+  @keyframes settle-right {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    60% {
+      /* Sobrepasa la posición hacia el centro */
+      transform: translateX(-10%);
+      opacity: 1;
+    }
+    100% {
+      /* Se asienta en su lugar final (a la vista) */
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
 }
 
 /* Forzamos que la clase grayscale afecte a TODO */

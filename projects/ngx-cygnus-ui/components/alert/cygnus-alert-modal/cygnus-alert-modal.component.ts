@@ -31,21 +31,38 @@ export class CygnusAlertModalComponent {
   withX = input<boolean>(false);
   setAlertIconColor = input<IconColorText>();
   flexItemsPosition = input<'items-center' | 'items-end' | 'items-start'>('items-center'); // 'items-end'
+  animationType = input<'bounce-right' | 'center-to-right'>('bounce-right');
 
   // --- Lógica de Configuración Computada ---
 
-  // Gestion clase de flexItemsPosition y su animación
   containerConfig = computed(() => {
     const pos = this.flexItemsPosition();
+    const type = this.animationType();
 
-    // Mapeamos la posición al desplazamiento inicial
-    const translateValue = pos === 'items-start' ? '+100%' : pos === 'items-end' ? '-100%' : '0';
+    // Definimos la configuración para cada tipo de animación
+    const handlers: Record<string, () => { className: string; tx?: string }> = {
+      // Caso 1: Rebote que se asienta a la derecha
+      'bounce-right': () => ({
+        className: pos === 'items-end' ? 'animate-settle-right' : '',
+        tx: '0' // No suele requerir variable dinámica si el keyframe es fijo
+      }),
+
+      // Caso 2: Tu animación original de deslizamiento dinámico
+      'center-to-right': () => ({
+        className: pos === 'items-center' ? '' : 'animate-slide-in',
+        tx: pos === 'items-start' ? '+100%' : pos === 'items-end' ? '-100%' : '0'
+      })
+    };
+
+    // Obtenemos la configuración según el tipo, con un fallback seguro
+    const config = handlers[type]?.() ?? { className: '', tx: '0' };
 
     return {
-      classes: `${pos} ${pos === 'items-center' ? '' : 'animate-slide-in'}`,
-      style: { '--translate-x': translateValue }
+      classes: `${pos} ${config.className}`,
+      style: { '--translate-x': config.tx }
     };
   });
+
 
   private config = computed(() => {
     const type = this.alertTypes();
