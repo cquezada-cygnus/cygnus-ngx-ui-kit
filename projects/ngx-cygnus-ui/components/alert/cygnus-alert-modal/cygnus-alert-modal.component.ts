@@ -21,6 +21,7 @@ export class CygnusAlertModalComponent {
   // Inputs & Models
   modalTitle = input<string>('');
   btnFullText = input<string>('Aceptar');
+  maxWidth = input<'md' | 'xs'>('xs');
   alertBtnClose = input<boolean>(false);
   showModal = model<boolean>(false);
   alertTypes = input<string>('');
