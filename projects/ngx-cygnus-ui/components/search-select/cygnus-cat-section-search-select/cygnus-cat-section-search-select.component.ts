@@ -23,7 +23,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
   TW_CLASS = TW_CLASS;
 
   searchControl = new FormControl('');
-  isInvisible = signal<boolean>(false);
+  isInvisible = signal<boolean>(true);
   placeholder = input<string>('Escribe aquí...');
   isDisabled = input<boolean>(false);
 
@@ -219,9 +219,26 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
 
   }
 
+  setInvisible() {
+    if (!this.isInvisible()) this.isInvisible.set(true); // invisibilizar opciones
+  }
+
+  toggleInvisible() {
+    // Si vamos a pasar a estado visible (estaba invisible)
+    if (this.isInvisible()) {
+      // Si no hay ninguna sección activa, forzamos que se vea la raíz (categorías)
+      if (!this.showCategories() && !this.showSecOpt()) {
+        this.showCategories.set(true);
+      }
+    }
+    // toggle normal
+    this.isInvisible.update( value => !value );
+  }
+
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) { // invisibilizar el menu cuando se haga click fuera de él
+
     if (
       !(event.target == document.getElementById(this.selectSearchId())) && // si NO se hace click en dropdown
       !(document.getElementById(this.selectSearchId())?.contains(event.target as Node)) && // si NO se hace click en hijos del dropdown
@@ -230,7 +247,7 @@ export class CygnusCatSectionSearchSelectComponent implements OnInit {
       !(event.target == document.getElementById(this.ulShowSecOptId())) && // si NO se hace click en ul ulShowSecOptId
       !(document.getElementById(this.ulShowSecOptId())?.contains(event.target as Node))
     ) {
-      if (!this.isInvisible()) this.isInvisible.set(true); // invisibilizar opciones
+      this.setInvisible(); // invisibilizar opciones
     }
   }
 }
