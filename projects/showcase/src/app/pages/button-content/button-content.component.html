@@ -50,6 +50,12 @@
           <li>'btn-success': botón color verde.</li>
           <li>'btn-warning': botón color amarillo.</li>
           <li>'btn-error': botón color rojo.</li>
+          <li>'btn-indigo': botón color indigo de tailwind.</li>
+          <li>'btn-blue-violet': botón color indigo en una variante de Cygnus.</li>
+          <li>'btn-cygnus': botón color cygnus directo del ícono.</li>
+          <li>'btn-primary-cygnus': botón color cygnus en otra variante.</li>
+          <li>'btn-accesibilidad-cygnus': botón color cygnus configurado para botón accesibilidad.</li>
+          <li>'btn-postulaaqui-orange': botón color plataforma postula aquí.</li>
           <li>'btn-sidebar': botón diseñado para el sidebar del mainboard.</li>
           <li>'btn-ghost': botón fantasma.</li>
           <li>'btn-ghost-gray': botón fantasma gris.</li>
@@ -58,8 +64,10 @@
           <li>'btn-outlined-green': botón blanco que se vuelve verde.</li>
           <li>'btn-outlined-amber': botón blanco que se vuelve ámbar.</li>
           <li>'btn-outlined-gray': botón blanco que se vuelve gris.</li>
+          <li>'btn-outlined-cygnus': botón blanco que se vuelve color cygnus.</li>
           <li>'btn-disabled': botón inactivo.</li>
           <li>'btn-block': botón que ocupa todo el ancho disponible.</li>
+          <li>'btn-circle': botón circular.</li>
 
           <li>'btn-pagination-circle-size': tamaño predeterminado del botón de paginación con forma de círculo.</li>
           <li>'btn-pagination-size': tamaño predeterminado del botón de paginación.</li>
@@ -69,7 +77,8 @@
           <li>'btn-size-lg': botón grande.</li>
           <li>'btn-size-xl': botón muy grande.</li>
           <li>'btn-icon-xs': indica que el botón tiene ícono y es de tamaño pequeño.</li>
-          <li>'btn-icon': indica que el botón tiene ícono y es de tamaño estándar.</li>
+          <li>'btn-icon-sm': indica que el botón tiene ícono y es de tamaño mediano.</li>
+          <li>'btn-icon': indica que el botón tiene ícono y es de tamaño lg por defecto.</li>
           <li>'btn-icon-lg': indica que el botón tiene ícono y es de tamaño grande.</li>
           <li>'btn-icon-xl': indica que el botón tiene ícono y es de tamaño muy grande.</li>
           <li>'btn-icon-only': indica que el botón tiene sólo ícono, nada más, y es de tamaño estándar.</li>
@@ -160,6 +169,8 @@
 
             <!-- COMPONENTE: Botón fantasma -->
             <cygnus-button [btnTypes]="'btn-ghost'" >Fantasma</cygnus-button>
+            <!-- COMPONENTE: Botón fantasma gris -->
+            <cygnus-button [btnTypes]="'btn-ghost-gray'" >Fantasma Gris</cygnus-button>
             <!-- COMPONENTE: Botón Outline -->
             <cygnus-button [btnTypes]="'btn-outlined'" >Outline</cygnus-button>
             <!-- COMPONENTE: Botón Sólido/simple/primary -->
@@ -184,43 +195,146 @@
       <div class="p-4">
         <h2 class="mb-4 text-xl font-semibold">Colores de Botones</h2>
 
-        <div class="flex flex-wrap items-center w-full gap-3 mb-4">
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-wrap justify-center gap-4 item">
 
-          <!-- COMPONENTE: Botón primario -->
-          <cygnus-button [btnTypes]="'btn-primary'" >Primario</cygnus-button>
-          <!-- COMPONENTE: Botón secundario -->
-          <cygnus-button [btnTypes]="'btn-secondary'" >Secundario</cygnus-button>
-          <!-- COMPONENTE: Botón informativo -->
-          <cygnus-button [btnTypes]="'btn-accent'" >Informativo</cygnus-button>
-          <!-- COMPONENTE: Botón gris -->
-          <cygnus-button [btnTypes]="'btn-gray'" >Gris</cygnus-button>
-          <!-- COMPONENTE: Botón éxito -->
-          <cygnus-button [btnTypes]="'btn-success'" >Éxito</cygnus-button>
-          <!-- COMPONENTE: Botón red -->
-          <cygnus-button [btnTypes]="'btn-error'" >Red</cygnus-button>
-          <!-- COMPONENTE: Botón Advertencia -->
-          <cygnus-button [btnTypes]="'btn-warning'" >Advertencia</cygnus-button>
-          <!-- COMPONENTE: Botón enlace -->
-          <cygnus-button-link
-            [btnLinkType]="'btn-link'"
-            [btnRouterLinkText]="''"
-          >
-            Botón enlace
-          </cygnus-button-link>
-          <!-- COMPONENTE: Botón enlace simple -->
-          <cygnus-button-link
-            [btnLinkType]="'btn-link-simple'"
-            [btnRouterLinkText]="''"
-          >
-            Enlace simple
-          </cygnus-button-link>
+            <!-- COMPONENTE: Botón primario -->
+            <cygnus-button [btnTypes]="'btn-primary'" >Primario</cygnus-button>
+            <!-- COMPONENTE: Botón secundario -->
+            <cygnus-button [btnTypes]="'btn-secondary'" >Secundario</cygnus-button>
+            <!-- COMPONENTE: Botón informativo -->
+            <cygnus-button [btnTypes]="'btn-accent'" >Informativo</cygnus-button>
+            <!-- COMPONENTE: Botón gris -->
+            <cygnus-button [btnTypes]="'btn-gray'" >Gris</cygnus-button>
+            <!-- COMPONENTE: Botón éxito -->
+            <cygnus-button [btnTypes]="'btn-success'" >Éxito</cygnus-button>
+            <!-- COMPONENTE: Botón red -->
+            <cygnus-button [btnTypes]="'btn-error'" >Red</cygnus-button>
+            <!-- COMPONENTE: Botón Advertencia -->
+            <cygnus-button [btnTypes]="'btn-warning'" >Advertencia</cygnus-button>
+            <!-- COMPONENTE: Botón enlace -->
+            <cygnus-button-link
+              [btnLinkType]="'btn-link'"
+              [btnRouterLinkText]="''"
+            >
+              Botón enlace
+            </cygnus-button-link>
+            <!-- COMPONENTE: Botón enlace simple -->
+            <cygnus-button-link
+              [btnLinkType]="'btn-link-simple'"
+              [btnRouterLinkText]="''"
+            >
+              Enlace simple
+            </cygnus-button-link>
 
+          </div>
         </div>
         <pre class="w-full">
           <code [highlight]="btnColorsExample"
                 language="html"
                 lineNumbers></code>
         </pre>
+
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-wrap justify-center gap-4 item">
+
+            <!-- COMPONENTE: Botón primario -->
+            <cygnus-button [btnTypes]="'btn-indigo'" >Indigo</cygnus-button>
+            <!-- COMPONENTE: Botón secundario -->
+            <cygnus-button [btnTypes]="'btn-blue-violet'" >Blue Violet</cygnus-button>
+            <!-- COMPONENTE: Botón informativo -->
+            <cygnus-button [btnTypes]="'btn-cygnus'" >Cygnus</cygnus-button>
+            <!-- COMPONENTE: Botón gris -->
+            <cygnus-button [btnTypes]="'btn-primary-cygnus'" >Primary Cygnus</cygnus-button>
+            <!-- COMPONENTE: Botón éxito -->
+            <cygnus-button [btnTypes]="'btn-accesibilidad-cygnus'" >Accesibilidad Cygnus</cygnus-button>
+            <!-- COMPONENTE: Botón red -->
+            <cygnus-button [btnTypes]="'btn-postulaaqui-orange'" >PostulaAqui Orange</cygnus-button>
+            <!-- COMPONENTE: Botón Advertencia -->
+            <cygnus-button [btnTypes]="'btn-full-gray'" >Full Gray</cygnus-button>
+
+          </div>
+        </div>
+        <pre class="w-full">
+          <code [highlight]="btnColors2Example"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-wrap justify-center gap-4 item">
+
+            <!-- COMPONENTE: Botón Outline Red -->
+            <cygnus-button [btnTypes]="'btn-outlined-red'" >Botón Outlined Red</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Verde -->
+            <cygnus-button [btnTypes]="'btn-outlined-green'" >Botón Outlined Verde</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Amber -->
+            <cygnus-button [btnTypes]="'btn-outlined-amber'" >Botón Outlined Amber</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Gris -->
+            <cygnus-button [btnTypes]="'btn-outlined-gray'" >Botón Outlined Gris</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Cygnus -->
+            <cygnus-button [btnTypes]="'btn-outlined-cygnus'" >Botón Outline Cygnus</cygnus-button>
+
+          </div>
+        </div>
+
+        <pre class="w-full">
+          <code [highlight]="btnOutlinedVariantesExample"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-gray-600 text-md">
+          Botones Outlined pueden tener color transparente o color blanco de fondo.
+        </p>
+
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-wrap justify-center gap-4 item bg-gray-900 pt-5 pb-5">
+
+            <!-- COMPONENTE: Botón Outlined -->
+            <cygnus-button [btnTypes]="'btn-outlined'" [btnIconOutlinedTransparent]="false" >Botón Outlined</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Red -->
+            <cygnus-button [btnTypes]="'btn-outlined-red'" [btnIconOutlinedTransparent]="false" >Botón Outlined Red</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Verde -->
+            <cygnus-button [btnTypes]="'btn-outlined-green'" [btnIconOutlinedTransparent]="false" >Botón Outlined Verde</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Amber -->
+            <cygnus-button [btnTypes]="'btn-outlined-amber'" [btnIconOutlinedTransparent]="false" >Botón Outlined Amber</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Gris -->
+            <cygnus-button [btnTypes]="'btn-outlined-gray'" [btnIconOutlinedTransparent]="false" >Botón Outlined Gris</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Cygnus -->
+            <cygnus-button [btnTypes]="'btn-outlined-cygnus'" [btnIconOutlinedTransparent]="false" >Botón Outline Cygnus</cygnus-button>
+
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full gap-4 mb-4">
+          <div class="flex flex-wrap justify-center gap-4 item bg-gray-900 pt-5 pb-5">
+
+            <!-- COMPONENTE: Botón Outlined -->
+            <cygnus-button [btnTypes]="'btn-outlined'">Botón Outlined</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Red -->
+            <cygnus-button [btnTypes]="'btn-outlined-red'">Botón Outlined Red</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Verde -->
+            <cygnus-button [btnTypes]="'btn-outlined-green'">Botón Outlined Verde</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Amber -->
+            <cygnus-button [btnTypes]="'btn-outlined-amber'">Botón Outlined Amber</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Gris -->
+            <cygnus-button [btnTypes]="'btn-outlined-gray'">Botón Outlined Gris</cygnus-button>
+            <!-- COMPONENTE: Botón Outline Cygnus -->
+            <cygnus-button [btnTypes]="'btn-outlined-cygnus'">Botón Outline Cygnus</cygnus-button>
+
+          </div>
+        </div>
+
+        <pre class="w-full">
+          <code [highlight]="btnOutlinedVariantesTransparent"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <p class="mb-8 text-gray-600 text-md">
+          <b>[btnIconOutlinedTransparent]</b>: Opcional. Por defecto su valor es true. Cuando es false, el botón tiene fondo blanco en lugar de color transparente.
+        </p>
       </div>
 
     </div>

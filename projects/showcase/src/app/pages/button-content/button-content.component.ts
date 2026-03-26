@@ -62,10 +62,65 @@ export class ButtonContentComponent {
   btnVariantesExample: string = `
     <!-- COMPONENTE: Botón fantasma -->
     <cygnus-button [btnTypes]="'btn-ghost'" >Fantasma</cygnus-button>
+    <!-- COMPONENTE: Botón fantasma gris -->
+    <cygnus-button [btnTypes]="'btn-ghost-gray'" >Fantasma Gris</cygnus-button>
     <!-- COMPONENTE: Botón Outline -->
     <cygnus-button [btnTypes]="'btn-outlined'" >Outline</cygnus-button>
     <!-- COMPONENTE: Botón Sólido/simple/primary -->
     <cygnus-button [btnTypes]="'btn'" >Sólido</cygnus-button>
+  `;
+
+  btnOutlinedVariantesExample: string = `
+    <!-- COMPONENTE: Botón Outline Red -->
+    <cygnus-button [btnTypes]="'btn-outlined-red'" >Botón Outlined Red</cygnus-button>
+    <!-- COMPONENTE: Botón Outline Verde -->
+    <cygnus-button [btnTypes]="'btn-outlined-green'" >Botón Outlined Verde</cygnus-button>
+    <!-- COMPONENTE: Botón Outline Amber -->
+    <cygnus-button [btnTypes]="'btn-outlined-amber'" >Botón Outlined Amber</cygnus-button>
+    <!-- COMPONENTE: Botón Outline Gris -->
+    <cygnus-button [btnTypes]="'btn-outlined-gray'" >Botón Outlined Gris</cygnus-button>
+    <!-- COMPONENTE: Botón Outline Cygnus -->
+    <cygnus-button [btnTypes]="'btn-outlined-cygnus'" >Botón Outline Cygnus</cygnus-button>
+  `;
+
+  btnOutlinedVariantesTransparent: string = `
+    <div class="flex items-center justify-center w-full gap-4 mb-4">
+      <div class="flex flex-wrap justify-center gap-4 item bg-gray-900 pt-5 pb-5">
+
+        <!-- COMPONENTE: Botón Outlined -->
+        <cygnus-button [btnTypes]="'btn-outlined'" [btnIconOutlinedTransparent]="false" >Botón Outlined</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Red -->
+        <cygnus-button [btnTypes]="'btn-outlined-red'" [btnIconOutlinedTransparent]="false" >Botón Outlined Red</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Verde -->
+        <cygnus-button [btnTypes]="'btn-outlined-green'" [btnIconOutlinedTransparent]="false" >Botón Outlined Verde</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Amber -->
+        <cygnus-button [btnTypes]="'btn-outlined-amber'" [btnIconOutlinedTransparent]="false" >Botón Outlined Amber</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Gris -->
+        <cygnus-button [btnTypes]="'btn-outlined-gray'" [btnIconOutlinedTransparent]="false" >Botón Outlined Gris</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Cygnus -->
+        <cygnus-button [btnTypes]="'btn-outlined-cygnus'" [btnIconOutlinedTransparent]="false" >Botón Outline Cygnus</cygnus-button>
+
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center w-full gap-4 mb-4">
+      <div class="flex flex-wrap justify-center gap-4 item bg-gray-900 pt-5 pb-5">
+
+        <!-- COMPONENTE: Botón Outlined -->
+        <cygnus-button [btnTypes]="'btn-outlined'">Botón Outlined</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Red -->
+        <cygnus-button [btnTypes]="'btn-outlined-red'">Botón Outlined Red</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Verde -->
+        <cygnus-button [btnTypes]="'btn-outlined-green'">Botón Outlined Verde</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Amber -->
+        <cygnus-button [btnTypes]="'btn-outlined-amber'">Botón Outlined Amber</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Gris -->
+        <cygnus-button [btnTypes]="'btn-outlined-gray'">Botón Outlined Gris</cygnus-button>
+        <!-- COMPONENTE: Botón Outline Cygnus -->
+        <cygnus-button [btnTypes]="'btn-outlined-cygnus'">Botón Outline Cygnus</cygnus-button>
+
+      </div>
+    </div>
   `;
 
   btnColorsExample: string = `
@@ -97,6 +152,16 @@ export class ButtonContentComponent {
     >
       Enlace simple
     </cygnus-button-link>
+  `;
+
+  btnColors2Example: string = `
+    <cygnus-button [btnTypes]="'btn-indigo'" >Indigo</cygnus-button>
+    <cygnus-button [btnTypes]="'btn-blue-violet'" >Blue Violet</cygnus-button>
+    <cygnus-button [btnTypes]="'btn-cygnus'" >Cygnus</cygnus-button>
+    <cygnus-button [btnTypes]="'btn-primary-cygnus'" >Primary Cygnus</cygnus-button>
+    <cygnus-button [btnTypes]="'btn-accesibilidad-cygnus'" >Accesibilidad Cygnus</cygnus-button>
+    <cygnus-button [btnTypes]="'btn-postulaaqui-orange'" >PostulaAqui Orange</cygnus-button>
+    <cygnus-button [btnTypes]="'btn-full-gray'" >Full Gray</cygnus-button>
   `;
 
   btnSizesExample: string = `
