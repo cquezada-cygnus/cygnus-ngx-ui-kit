@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./partials/index-cygnus-ui/index-cygnus-ui.component').then( (c) => c.IndexCygnusUiComponent )
   },
   {
+    path: 'fonts',
+    loadComponent: () => import('./pages/fonts-content/fonts-content.component').then( (c) => c.FontsContentComponent )
+  },
+  {
     path: 'accordion',
     loadComponent: () => import('./pages/accordion-content/accordion-content.component').then( (c) => c.AccordionContentComponent )
   },
