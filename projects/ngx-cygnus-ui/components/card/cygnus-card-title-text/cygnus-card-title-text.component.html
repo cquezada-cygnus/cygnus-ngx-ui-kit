@@ -4,10 +4,10 @@
     (sizeTitle()==='bold-lg') ? 'max-w-xs' : 'max-w-sm'
   "
 >
-  <a href="#"
+  <a
     [class]="
       'flex flex-col max-w-sm border border-gray-200 shadow-xs rounded-lg' + ' ' +
-      ((sizeTitle()==='bold-lg') ? 'p-6' : 'pt-1 pb-1 pl-3 pr-3') + ' ' +
+      ((sizeTitle()==='bold-lg') ? 'pt-6 pb-6 pl-3 pr-3' : 'pt-1 pb-1 pl-3 pr-3') + ' ' +
       (borderNone() ? 'border-none' : 'pl-0 pr-0' ) + ' ' +
       (textCenter() ? 'text-center' : '' ) + ' ' +
       tailwindClases() + ' ' +

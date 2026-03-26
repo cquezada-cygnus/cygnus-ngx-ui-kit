@@ -174,8 +174,20 @@ export class CardContentComponent {
   cygnusCardTitleTextHTMLExample: string = `
     <cygnus-card-title-text
       [cardTitle]="'Cygnus - gestión de equipos colaborativos'"
-      [cardText]="'Este es un texto dentro del cuerpo de una tarjeta.'"
-    />
+      [cardIcon]="'users-01'"
+      [sizeTitle]="'bold-lg'"
+    >
+      Este es un texto dentro del cuerpo de una tarjeta.
+    </cygnus-card-title-text>
+  `;
+
+  cygnusCardTitleTextSmallHTMLExample: string = `
+    <cygnus-card-title-text
+      [cardTitle]="'No tengo curriculum'"
+      [cardIcon]="'arrow-narrow-down'"
+    >
+      Prefiero llenar mis datos manualmente
+    </cygnus-card-title-text>
   `;
 
   cygnusCardIconTextHTMLExample: string = `

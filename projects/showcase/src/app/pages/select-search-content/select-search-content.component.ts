@@ -73,6 +73,13 @@ export class SelectSearchContentComponent {
     console.log('customBlurEventTest ',event);
   }
 
+  interfazSelectGeneric: string = `
+    export interface SelectGeneric {
+      value: any,
+      option: string,
+    }
+  `;
+
   cygnusSearchSelImportTs: string = `
     import { Component } from '@angular/core';
     import {
@@ -131,6 +138,15 @@ export class SelectSearchContentComponent {
       [showOptionsAutomatically]="true"
       (outputMultisearch)="printSearch($event)"
       [multisearch]="true"
+    />
+  `;
+
+  typeAutoSearchHtml: string = `
+    <cygnus-search-select
+      [items]="options"
+      [showOptionsAutomatically]="true"
+      (outputSearch)="printSearch($event)"
+      [typeAutoSearch]="true"
     />
   `;
 

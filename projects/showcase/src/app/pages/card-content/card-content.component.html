@@ -71,11 +71,11 @@
   <section id="card-body">
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
-        <h2 class="mb-4 text-xl font-semibold">Cuerpo de tarjeta</h2>
+        <h2 class="mb-4 text-xl font-semibold">Cygnus-card-title-text</h2>
 
         <cygnus-card-title-text
           [cardTitle]="'Cygnus - gestión de equipos colaborativos'"
-          [cardIcon]="''"
+          [cardIcon]="'users-01'"
           [sizeTitle]="'bold-lg'"
         >
           Este es un texto dentro del cuerpo de una tarjeta.
@@ -94,26 +94,37 @@
         </pre>
 
         <ul class="mb-8 text-gray-600 text-md list-none">
-          <li>[cardTitle]: Texto que irá en el título de la tarjeta.</li>
-          <li>[cardText]: Texto que irá en el contenido de la tarjeta.</li>
+          <li>[cardTitle]: Opcional. Texto que irá en el título de la tarjeta.</li>
+          <li>[cardIcon]: Opcional. Texto que representa el ícono de ngx-cygnus-icons que irá ubicado al final del contenido de la tarjeta. Si está vacío, no se agrega ícono.</li>
+          <li>[sizeTitle]: Opcional. Se puede indicar 'bold-lg' o vacío. Tiene configuración para un tamaño distinto de la tarjeta y del título en caso de indicarse 'bold-lg' o no.</li>
         </ul>
 
         <cygnus-card-title-text
           [cardTitle]="'No tengo curriculum'"
           [cardIcon]="'arrow-narrow-down'"
-          [sizeTitle]="''"
         >
           Prefiero llenar mis datos manualmente
         </cygnus-card-title-text>
 
-      </div>
-    </div>
-  </section>
+        <pre>
+          <code [highlight]="cygnusCardTitleTextTsExample"
+                language="ts"
+                lineNumbers></code>
+        </pre>
 
-  <section id="card-body">
-    <div class="min-h-[140px] rounded-lg border mb-14">
+        <pre>
+          <code [highlight]="cygnusCardTitleTextSmallHTMLExample"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+        <ul class="mb-8 text-gray-600 text-md list-none">
+          <li>[cardTitle]: Opcional. Texto que irá en el título de la tarjeta.</li>
+          <li>[cardIcon]: Opcional. Texto que representa el ícono de ngx-cygnus-icons que irá ubicado al final del contenido de la tarjeta. Si está vacío, no se agrega ícono.</li>
+        </ul>
+
+      </div>
       <div class="p-4 pb-4">
-        <h2 class="mb-4 text-xl font-semibold">Cuerpo de tarjeta</h2>
         <div class="flex items-center w-full max-w-xs gap-4 mb-4">
 
           <cygnus-card-icon-text
@@ -138,7 +149,7 @@
 
         <ul class="mb-8 text-gray-600 text-md list-none">
           <li>[iconSize]: String que indica el tamaño del ícono.</li>
-          <li>[iconColor]: String que indica el color del ícono.</li>
+          <li>[iconColor]: String que indica el color del ícono según los colores configurados en ngx-cygnus-icons.</li>
           <li>[iconRoute]: String que indica la ruta o el nombre del ícono dentro de la biblioteca ngx-cygnus-icons.</li>
           <li>[cardText]: Texto que irá en el contenido de la tarjeta.</li>
         </ul>
@@ -146,6 +157,8 @@
       </div>
     </div>
   </section>
+
+
   <section id="simple-card">
     <div class="min-h-[140px] rounded-lg border mb-14">
       <div class="p-4 pb-4">
@@ -176,7 +189,7 @@
 
         <ul class="mb-8 text-gray-600 text-md list-none">
           <li>[iconSize]: String que indica el tamaño del ícono.</li>
-          <li>[iconColor]: String que indica el color del ícono.</li>
+          <li>[iconColor]: String que indica el color del ícono según los colores configurados en ngx-cygnus-icons.</li>
           <li>[iconRoute]: String que indica la ruta o el nombre del ícono dentro de la biblioteca ngx-cygnus-icons.</li>
           <li>[cardText]: Texto que irá en el contenido de la tarjeta.</li>
           <li>(clicked): Evento que indica cuándo el botón de la tarjeta ha sido clickeado.</li>

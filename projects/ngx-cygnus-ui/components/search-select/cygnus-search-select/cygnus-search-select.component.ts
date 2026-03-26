@@ -78,6 +78,9 @@ export class CygnusSearchSelectComponent implements OnInit {
       this.searchControl.patchValue(item.option);
       this.isInvisible.set(true);
     }
+    if (this.typeAutoSearch()) {
+      this.sendAutosearch();
+    }
   }
 
   deleteMultisearchItem(item: SelectGeneric) {
@@ -89,6 +92,11 @@ export class CygnusSearchSelectComponent implements OnInit {
     this.outputMultisearch.emit(this.multisearchArr);
   }
 
+  sendAutosearch() {
+    this.outputSearch.emit([ this.searchControl.value || '', this.itemSelected()||this.emptyItemSelected ]);
+    this.isInvisible.set(true);
+  }
+
   sendSearch() {
     if (!this.showOptionsAutomatically()) {
       this.outputSearch.emit(this.searchControl.value || '');
@@ -97,6 +105,12 @@ export class CygnusSearchSelectComponent implements OnInit {
       this.itemSelected.set(this.emptyItemSelected);
     }
     if(!this.typeAutoSearch()) this.searchControl.patchValue('');
+    setTimeout(() => {
+      if (this.typeAutoSearch() && this.filteredItems[0].option.toLowerCase()==this.searchControl.value?.toLowerCase()) {
+        this.sendAutosearch();
+      }
+    }, 0);
+
   }
 
   keyupSendSearch() {
