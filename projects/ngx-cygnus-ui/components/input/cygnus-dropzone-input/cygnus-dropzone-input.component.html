@@ -1,5 +1,5 @@
-<div class="flex items-center justify-center w-full">
-  @if (!onlyBtn() && horizontalText()) {
+<div [class]="invisibleLabel() ? 'w-full' : 'flex items-center justify-center w-full'">
+  @if (!onlyBtn() && horizontalText() && !invisibleLabel()) {
     <label
       for="dropzone-file"
       class="flex flex-row items-center justify-around w-full bg-indigo-100 rounded-lg border-2 border-dashed border-blue-violet-600 [stroke-dasharray:5_5] hover:bg-indigo-200 shadow-lg dark:bg-transparent dark:hover:bg-gray-700/75 dark:border-indigo-400"
@@ -40,7 +40,46 @@
     </label>
 
   }
-  @else if (!onlyBtn()) {
+  @else if (!onlyBtn() && horizontalText() && invisibleLabel()) { <!-- NUEVO invisibleLabel() -->
+    <div class="flex flex-row items-center text-body pt-5 pb-6">
+      <label
+        for="dropzone-file"
+        class="mr-9"
+        [class.cursor-pointer]="!iconRight()"
+        [class.cursor-default]="iconRight()"
+        (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)"
+        (drop)="onDrop($event)"
+      >
+        <cygnus-button
+
+          [style.pointer-events]="iconRight() ? 'auto' : 'none'"
+          [style.cursor]="iconRight() ? 'alias !important' : 'none'"
+          [class.z-10]="iconRight()"
+          [btnTypes]="btnColor() + ' btn-icon'"
+          [btnIconRouteLeft]="'file'"
+          [btnIconRouteRight]="iconRight() ? 'x-close' : '' "
+          (click)="iconRight() ? onRemoveFile($event) : $event.preventDefault()"
+          [gradientButton]="gradientButton()"
+        >
+          {{btnText()}}
+        </cygnus-button>
+        <input
+          id="dropzone-file" type="file" class="hidden"
+          [accept]="inputAccept()"
+          (change)="onFileSelected($event)"
+        />
+      </label>
+      <div class="flex flex-col mr-9 dark:text-white">
+        <h4 class="font-[var(--font-inter)] font-bold text-left text-lg pb-2">{{titleText()}}</h4>
+        <p class="mb-2 text-sm">
+          <span class="font-[var(--font-nunito-sans)] text-left mb-4"> {{firstText()}}</span>
+        </p>
+      </div>
+    </div>
+
+  }
+  @else if (!onlyBtn() && !invisibleLabel()) {
   <label
     for="dropzone-file"
     class="flex flex-col items-center justify-center w-full bg-indigo-100 rounded-lg border-2 border-dashed border-blue-violet-600 [stroke-dasharray:5_5] hover:bg-indigo-200 shadow-lg dark:bg-gray-700 dark:hover:bg-gray-700/75 dark:border-indigo-400"
@@ -78,7 +117,12 @@
     />
   </label>
 
-} @else {
+}
+@else if (onlyBtn() && invisibleLabel()) {  <!-- NUEVO invisibleLabel() -->
+
+}
+
+@else {
   <label
     for="dropzone-file"
     class="flex flex-col items-center justify-center w-full bg-indigo-100 rounded-lg border-2 border-dashed border-blue-violet-600 [stroke-dasharray:5_5]  hover:bg-indigo-200 shadow-lg dark:bg-transparent dark:hover:bg-gray-700/75 dark:border-indigo-400"
