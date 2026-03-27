@@ -81,6 +81,15 @@ export class RadioButtonContentComponent {
     </cygnus-radio-group>
   `;
 
+  cygnusRadioButtonHorizontalHtml: string = `
+    <cygnus-radio-group [control]="radioForm.controls.radioExample" [orientation]="'row'">
+      <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Chile'" class="pr-4" />
+      <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Perú'" class="pr-4" />
+      <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Argentina'" class="pr-4" />
+      <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Brasil'" [isDisabled]="true" />
+    </cygnus-radio-group>
+  `;
+
   cygnusRadioLinkHtml: string = `
     <cygnus-radio-group [control]="radioLinkForm.controls.radioExample">
       <cygnus-radio-button

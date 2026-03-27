@@ -133,4 +133,38 @@
     </div>
   </section>
 
+  <section id="radio-simple">
+    <div class="min-h-[140px] rounded-lg border mb-14">
+      <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Radiobuttons horizontal</h2>
+        <p class="mb-8 text-gray-600 text-md">
+          Con <b>[orientation]</b> indicamos 'row' para que se desplieguen las opciones con orientación horizontal (por defecto tendrá valor 'col' para indicar orientación vertical). Si las opciones quedan demasiado juntas unas con otras, se puede añadir un padding a cada cygnus-radio-button
+        </p>
+        <div class="inline-flex items-center">
+
+          <cygnus-radio-group [control]="radioForm.controls.radioExample" [orientation]="'row'">
+            <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Chile'" class="pr-4" />
+            <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Perú'" class="pr-4" />
+            <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Argentina'" class="pr-4" />
+            <cygnus-radio-button [control]="radioForm.controls.radioExample" [labelText]="'Brasil'" [isDisabled]="true"  />
+          </cygnus-radio-group>
+
+        </div>
+
+        <pre>
+          <code [highlight]="cygnusRadioButtonFormTs"
+                language="ts"
+                lineNumbers></code>
+        </pre>
+
+        <pre>
+          <code [highlight]="cygnusRadioButtonHorizontalHtml"
+                language="html"
+                lineNumbers></code>
+        </pre>
+
+      </div>
+    </div>
+  </section>
+
 </main>

@@ -9,4 +9,5 @@ import { FormControl } from '@angular/forms';
 export class CygnusRadioGroupComponent {
   control = input<FormControl<string>>();
   legend = input<string>('');
+  orientation = input<'col' | 'row'>('col');
 }
