@@ -112,6 +112,18 @@
   --color-brand-900: #702d1e;
   --color-brand-950: #3c150e;
 
+  --color-primary-red-50 : #D6AF9F;
+  --color-primary-red-100: #C9A99C;
+  --color-primary-red-200: #DB9070;
+  --color-primary-red-300: #CB8262;
+  --color-primary-red-400: #E75213;
+  --color-primary-red-500: #C63C00;
+  --color-primary-red-600: #942C00;
+  --color-primary-red-700: #611D00;
+  --color-primary-red-800: #491804;
+  --color-primary-red-900: #431B0A;
+  --color-primary-red-950: #3D1D0F;
+
   /*  Colores primarios (azules) */
   --color-primary-25: #F5F8FF;
   --color-primary-50: #EFF4FF;

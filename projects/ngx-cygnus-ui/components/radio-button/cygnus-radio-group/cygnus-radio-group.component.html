@@ -1,4 +1,4 @@
-<fieldset [class]="`flex flex-${orientation()} space-y-4`">
+<fieldset [class]="`flex flex-${orientation()} ${(orientation()==='col' ? 'space-y-4' : 'space-x-4')}`">
   @if (legend()) {
     <legend>
       {{ legend() }}
