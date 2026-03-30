@@ -90,8 +90,8 @@
     (drop)="onDrop($event)"
   >
     <div class="flex flex-col items-center justify-center text-body pt-4 pb-4 dark:text-white">
-      <h4 class="font-[var(--font-nunito-sans)] text-blue-violet-800 font-bold text-2xl text-center pl-2 pr-2 samsung-galaxy:pl-9 samsung-galaxy:pr-9 pb-2">{{titleText()}}</h4>
-      <p class="mb-4 text-xl font-semibold text-blue-violet-700">
+      <h4 class="font-[var(--font-nunito-sans)] text-blue-violet-800 font-bold text-lg md:text-2xl text-center pl-2 pr-2 samsung-galaxy:pl-9 samsung-galaxy:pr-9 pb-2">{{titleText()}}</h4>
+      <p class="mb-4 text-base md:text-xl font-semibold text-blue-violet-700">
         <span class="font-[var(--font-inter)]">{{firstText()}}</span>
         <span class="font-[var(--font-nunito-sans)]"> {{secondText()}}</span>
       </p>
@@ -107,7 +107,7 @@
       >
         {{btnText()}}
       </cygnus-button>
-      <p class="text-sm mt-4 text-blue-violet-700">{{thirdText()}}</p>
+      <p class="text-center text-sm mt-4 text-blue-violet-700">{{thirdText()}}</p>
     </div>
     <input
       id="dropzone-file" type="file" class="hidden"
