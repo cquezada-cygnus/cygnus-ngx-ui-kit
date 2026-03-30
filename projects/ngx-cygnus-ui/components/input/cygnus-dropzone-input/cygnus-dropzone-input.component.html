@@ -52,7 +52,6 @@
         (drop)="onDrop($event)"
       >
         <cygnus-button
-
           [style.pointer-events]="iconRight() ? 'auto' : 'none'"
           [style.cursor]="iconRight() ? 'alias !important' : 'none'"
           [class.z-10]="iconRight()"
@@ -119,6 +118,35 @@
 
 }
 @else if (onlyBtn() && invisibleLabel()) {  <!-- NUEVO invisibleLabel() -->
+  <div class="flex w-fit">
+    <label
+      for="dropzone-file"
+      [class.cursor-pointer]="!iconRight()"
+      [class.cursor-default]="iconRight()"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)"
+      (drop)="onDrop($event)"
+    >
+      <cygnus-button
+        [style.pointer-events]="iconRight() ? 'auto' : 'none'"
+        [style.cursor]="iconRight() ? 'alias !important' : 'none'"
+        [class.z-10]="iconRight()"
+        [btnTypes]="btnColor() + ' btn-icon'"
+        [btnIconRouteLeft]="'file'"
+        [btnIconRouteRight]="iconRight() ? 'x-close' : '' "
+        (click)="iconRight() ? onRemoveFile($event) : $event.preventDefault()"
+        [gradientButton]="gradientButton()"
+      >
+        {{btnText()}}
+      </cygnus-button>
+      <input
+        id="dropzone-file" type="file" class="hidden"
+        [accept]="inputAccept()"
+        (change)="onFileSelected($event)"
+      />
+    </label>
+  </div>
+
 
 }
 
