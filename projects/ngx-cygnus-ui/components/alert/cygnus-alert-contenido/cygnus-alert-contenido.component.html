@@ -3,6 +3,7 @@
   <div id="alert-additional-content-1"
     [class]="
       (btnIsFull() ? TW_CLASS.ALERT_CONTENT_BASE : TW_CLASS.ALERT_CONTENT_FULL_BASE) + ' ' +
+      (isRounded() ? 'rounded-lg' : '') + ' ' +
       alertAllClasses() + ' '
     "
     role="alert"

@@ -2,7 +2,8 @@
   <div
     [class]="
       TW_CLASS.ALERT_SIMPLE_BASE + ' ' +
-      (alertEquis() ? TW_CLASS.ALERT_SIMPLE_EQUIS_BASE : '') + ' ' +
+      (isRounded() ? 'rounded-lg' : '') + ' ' +
+      (alertEquis() ? (TW_CLASS.ALERT_SIMPLE_EQUIS_BASE + ' ' + (isRounded() ? 'rounded-md' : '') ) : '') + ' ' +
       alertAllClasses() + ' '
     "
     role="alert"

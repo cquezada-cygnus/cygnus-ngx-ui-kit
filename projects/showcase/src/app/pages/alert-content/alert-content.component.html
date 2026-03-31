@@ -83,6 +83,21 @@
           [alertTitle]="'¡Alerta simple!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
         />
+
+        <!-- COMPONENTE: Alerta simple -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-indigo'"
+          [alertTitle]="'¡Alerta simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
+
+        <!-- COMPONENTE: Alerta simple -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-indigo'"
+          [alertTitle]="'¡Alerta simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          [isRounded]="false"
+        />
       </div>
 
       <pre>
@@ -139,6 +154,23 @@
           [alertIcon]="true"
           [alertTitle]="'¡Alerta simple!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
+
+        <!-- COMPONENTE: Alerta simple -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-indigo'"
+          [alertIcon]="true"
+          [alertTitle]="'¡Alerta simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+        />
+
+        <!-- COMPONENTE: Alerta simple -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-indigo'"
+          [alertIcon]="true"
+          [alertTitle]="'¡Alerta simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          [isRounded]="false"
         />
 
       </div>
@@ -208,6 +240,27 @@
           [alertTitle]="'¡Alerta simple!'"
           [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
           (isClosed)="showAlertClosed($event)"
+        />
+
+        <!-- COMPONENTE: Alerta simple -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-indigo'"
+          [alertIcon]="true"
+          [alertEquis]="true"
+          [alertTitle]="'¡Alerta simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          (isClosed)="showAlertClosed($event)"
+        />
+
+        <!-- COMPONENTE: Alerta simple -->
+         <cygnus-alert-simple
+          [alertTypes]="'alert-indigo'"
+          [alertIcon]="true"
+          [alertEquis]="true"
+          [alertTitle]="'¡Alerta simple!'"
+          [alertContent]="'Cambie algunas cosas e intente enviar de nuevo.'"
+          (isClosed)="showAlertClosed($event)"
+          [isRounded]="false"
         />
 
       </div>
@@ -406,6 +459,45 @@
               lineNumbers></code>
       </pre>
 
+      <cygnus-alert-contenido
+        [alertTypes]="'alert-indigo'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+        (btnClickedEvent)="btnClickedEvent($event)"
+      />
+
+      <cygnus-alert-contenido
+        [btnIsFull]="true"
+        [alertTypes]="'alert-indigo'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+        (btnClickedEvent)="btnClickedEvent($event)"
+      />
+
+      <cygnus-alert-contenido
+        [alertTypes]="'alert-indigo'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+        (btnClickedEvent)="btnClickedEvent($event)"
+        [isRounded]="false"
+      />
+
+      <cygnus-alert-contenido
+        [btnIsFull]="true"
+        [alertTypes]="'alert-indigo'"
+        [alertTitle]="'Esto es una alerta informativa'"
+        [alertContent]="`
+          Más información sobre este éxito informativo aquí. Este texto de ejemplo va a ser un poco más largo para que puedas ver cómo funciona el espaciado dentro de una alerta con este tipo de contenido.
+        `"
+        (btnClickedEvent)="btnClickedEvent($event)"
+        [isRounded]="false"
+      />
 
     </div>
   </div>

@@ -1,6 +1,6 @@
 {
   "name": "cygnus-ngx-ui-kit",
-  "version": "1.15.4-20260330",
+  "version": "1.16.0-20260331",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -24,7 +24,7 @@
     "@angular/platform-browser": "19.2.19",
     "@angular/platform-browser-dynamic": "19.2.19",
     "@angular/router": "19.2.19",
-    "@cygnus/ngx-cygnus-icons": "file:cygnus-ngx-cygnus-icons-2.0.2-20260312.tgz",
+    "@cygnus/ngx-cygnus-icons": "file:cygnus-ngx-cygnus-icons-2.0.3-20260331.tgz",
     "highlight.js": "^11.11.1",
     "ngx-highlightjs": "12.0.0",
     "rxjs": "~7.8.0",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "19.2.19",
+    "@angular/cdk": "^19.2.19",
     "@angular/cli": "19.2.19",
     "@angular/compiler-cli": "19.2.19",
     "@tailwindcss/postcss": "^4.0.0-alpha.30",

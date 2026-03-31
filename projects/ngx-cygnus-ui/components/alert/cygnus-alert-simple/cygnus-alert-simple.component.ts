@@ -24,6 +24,7 @@ export class CygnusAlertSimpleComponent {
   alertContent = input<string>('');
   alertTypes = input<string>('');
   isClosed = output<any>();
+  isRounded = input<boolean>(true);
 
   // --- Lógica Reactiva ---
 
@@ -36,6 +37,7 @@ export class CygnusAlertSimpleComponent {
     if (type.includes('alert-green')) return 'green';
     if (type.includes('alert-yellow')) return 'amber';
     if (type.includes('alert-gray')) return 'secgray';
+    if (type.includes('alert-indigo')) return 'indigo';
     return 'blue';
   });
 
@@ -58,6 +60,7 @@ export class CygnusAlertSimpleComponent {
       case 'alert-green':   return this.TW_CLASS.ALERT_SIMPLE_GREEN;
       case 'alert-yellow':  return this.TW_CLASS.ALERT_SIMPLE_YELLOW;
       case 'alert-gray':    return this.TW_CLASS.ALERT_SIMPLE_GRAY;
+      case 'alert-indigo':  return this.TW_CLASS.ALERT_SIMPLE_INDIGO;
       default:              return this.TW_CLASS.ALERT_SIMPLE_PRIMARY;
     }
   }
@@ -69,6 +72,7 @@ export class CygnusAlertSimpleComponent {
       case 'alert-green':   return this.TW_CLASS.ALERT_SIMPLE_EQUIS_GREEN;
       case 'alert-yellow':  return this.TW_CLASS.ALERT_SIMPLE_EQUIS_YELLOW;
       case 'alert-gray':    return this.TW_CLASS.ALERT_SIMPLE_EQUIS_GRAY;
+      case 'alert-indigo':  return this.TW_CLASS.ALERT_SIMPLE_EQUIS_INDIGO;
       default:              return this.TW_CLASS.ALERT_SIMPLE_EQUIS_PRIMARY;
     }
   }

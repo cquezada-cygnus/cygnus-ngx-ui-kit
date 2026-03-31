@@ -23,6 +23,7 @@ export class CygnusAlertContenidoComponent {
   alertContent = input<string>('');
   btnFullText = input<string>('Aceptar');
   alertTypes = input<string>('');
+  isRounded = input<boolean>(true);
 
   // Outputs
   btnClickedEvent = output<boolean>();
@@ -48,6 +49,9 @@ export class CygnusAlertContenidoComponent {
     if (type.includes('alert-gray')) {
       return { color: 'secgray' as IconColorText, btn: 'btn-full-gray', btnOutlined: 'btn-outlined-gray', key: 'gray' };
     }
+    if (type.includes('alert-indigo')) {
+      return { color: 'indigo' as IconColorText, btn: 'btn-indigo', btnOutlined: 'btn-outlined-gray', key: 'indigo' };
+    }
 
     // Default (Primary)
     return { color: 'blue' as IconColorText, btn: 'btn-primary', btnOutlined: 'btn-outlined', key: 'primary' };
@@ -70,6 +74,7 @@ export class CygnusAlertContenidoComponent {
       green:   isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_GREEN   : this.TW_CLASS.ALERT_CONTENT_GREEN,
       yellow:  isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_YELLOW  : this.TW_CLASS.ALERT_CONTENT_YELLOW,
       gray:    isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_GRAY    : this.TW_CLASS.ALERT_CONTENT_GRAY,
+      indigo:  isFull ? this.TW_CLASS.ALERT_CONTENT_FULL_INDIGO  : this.TW_CLASS.ALERT_CONTENT_INDIGO,
     };
 
     return classMap[config.key] || classMap['primary'];
