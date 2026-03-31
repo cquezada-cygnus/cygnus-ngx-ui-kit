@@ -118,8 +118,9 @@
 
 }
 @else if (onlyBtn() && invisibleLabel()) {  <!-- NUEVO invisibleLabel() -->
-  <div class="flex w-fit">
+  <div class="flex" [class]="wFull() ? 'w-full' : 'w-fit'">
     <label
+      [class]="wFull() ? 'w-full' : 'w-fit'"
       for="dropzone-file"
       [class.cursor-pointer]="!iconRight()"
       [class.cursor-default]="iconRight()"

@@ -1,4 +1,4 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, HostBinding, input, output, signal } from '@angular/core';
 
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 
@@ -22,6 +22,9 @@ import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
       cursor: alias !important;
     }
   `,
+  host: {
+    '[class.w-full]': 'wFull()', // Se vincula directamente a la ejecución de la signal
+  }
 })
 export class CygnusDropzoneInputComponent {
 
@@ -34,6 +37,7 @@ export class CygnusDropzoneInputComponent {
   horizontalText = input<boolean>(false);
   iconRight = input<boolean>(false);
   invisibleLabel = input<boolean>(false);
+  wFull = input<boolean>(false);
 
   btnColor = input<string>('btn-blue-violet');
   gradientButton = input<boolean>(false);
