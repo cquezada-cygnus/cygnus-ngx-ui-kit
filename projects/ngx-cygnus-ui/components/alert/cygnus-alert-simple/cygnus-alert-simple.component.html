@@ -8,11 +8,11 @@
     "
     role="alert"
   >
-  @if (alertIcon()) {
+  @if (alertIcon()!='') {
     <lib-ngx-cygnus-icons class="me-2"
       [size]="''"
       [textColor]="alertIconColor()"
-      [textRoute]="'alert-circle'"
+      [textRoute]="alertIcon()"
     />
   }
     <span class="font-medium">

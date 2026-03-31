@@ -18,7 +18,7 @@ export class CygnusAlertSimpleComponent {
   showAlert = signal<boolean>(true);
 
   // Inputs (Signals)
-  alertIcon = input<boolean>(false);
+  alertIcon = input<string>('');
   alertEquis = input<boolean>(false);
   alertTitle = input<string>('');
   alertContent = input<string>('');
