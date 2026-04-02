@@ -1,51 +1,38 @@
 import { AfterViewInit, Component, effect, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
 import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
-import { IconPosition } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
 import { FormControl } from '@angular/forms';
 import {
-  EmailFormatterDirective,
-  RutFormatDirective,
   MaxLengthTruncateDirective,
   OnlyLettersDirective,
   CustomInputTextDirective,
-  TextEmpresaDirective,
 } from 'ngx-cygnus-ui/directives';
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 
 @Component({
-  selector: 'cygnus-input',
+  selector: 'cygnus-menu-phone-input',
   imports: [
     NgxCygnusIconsComponent,
-    RutFormatDirective,
     MaxLengthTruncateDirective,
     OnlyLettersDirective,
-    EmailFormatterDirective,
     CustomInputTextDirective,
-    TextEmpresaDirective,
   ],
-  templateUrl: './cygnus-input.component.html',
+  templateUrl: './cygnus-menu-phone-input.component.html',
 })
-export class CygnusInputComponent implements OnInit, AfterViewInit {
+export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
   private static idCounter = 0;
 
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
 
   control = input<FormControl<string>>();
-  isRutFormatActive = input<boolean>(false);
-  useRutDots = input<boolean>(false);
 
   inputId = signal<string>('');
   inputCustomType = input<InputCustomType>('base');
   inputColor = input<InputColor>('base');
   inputSize = input<InputSize>('');
-  iconAsset = input<string>('');
-  iconState = input<boolean>(false); // true para identificar el estilo del input cuando es ícono de success/warning/error
-  iconPosition = input<IconPosition>('right');
   iconColor = input<IconColorText>('black');
   iconSize = input<IconTextSize>('lg');
-  pseudoIconCLPPhone = input<boolean>(false);
   hintColor = input<boolean>(false);
   textLabel = input<string>('');
   textHint = input<string>('');
@@ -76,7 +63,6 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   isLetterOnlyMaxChars = input<number>(50);
   isLetterOnlyMinChars = input<number>(2);
 
-  emailFormatterEnabled = input<boolean>(false);
 
   customInputTextEnabled = input<boolean>(false);
   customInputTextMaxLength = input<number>(200);
@@ -109,7 +95,7 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     // Generar ID único si no se proporciona
-    this.inputId.set(`cg-input-${++CygnusInputComponent.idCounter}`);
+    this.inputId.set(`cg-input-${++CygnusMenuPhoneInputComponent.idCounter}`);
   }
 
   ngAfterViewInit() {
@@ -117,8 +103,13 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
     this.cygnusInput()!.nativeElement.textContent = this.initializeInputValue();
   }
 
-  notifyIconClicked(): void {
-    this.iconClicked.emit('iconClicked');
+  toggleInvisiblePhoneDrop() {
+    this.isInvisiblePhoneDrop.set(!this.isInvisiblePhoneDrop()); // invisibilizar opciones
+  }
+
+  selectMenuPhoneDrop(selected: string, index: number) {
+    this.menuSearchTextPhoneDrop.set(selected);
+    this.isInvisiblePhoneDrop.set(true); // invisibilizar opciones
   }
 
   setInputIsBlur(value: string): void {
@@ -170,60 +161,6 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
     }
   }
 
-  inputGetInteractiveColor():string {
-    if (this.inputCustomType()==='label-interactive') {
-      switch (this.inputColor()) {
-        case 'success':
-          return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_SUCCESS);
-        case 'warning':
-          return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_WARNING);
-        case 'error':
-          return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_ERROR);
-        default:
-          return (this.TW_CLASS.INPUT_INTERACTIVE_BASE + ' ' + this.TW_CLASS.INPUT_INTERACTIVE_GENERIC);
-      }
-    } else return '';
-  }
-
-  labelFloatingGetColor():string {
-    switch (this.inputColor()) {
-      case 'success':
-        return this.TW_CLASS.LABEL_FLOATING_SUCCESS;
-      case 'warning':
-        return this.TW_CLASS.LABEL_FLOATING_WARNING;
-      case 'error':
-        return this.TW_CLASS.LABEL_FLOATING_ERROR;
-      default:
-        return '';
-    }
-  }
-
-  labelTopGetColor():string {
-    switch (this.inputColor()) {
-      case 'success':
-        return this.TW_CLASS.LABEL_TOP_SUCCESS;
-      case 'warning':
-        return this.TW_CLASS.LABEL_TOP_WARNING;
-      case 'error':
-        return this.TW_CLASS.LABEL_TOP_ERROR;
-      default:
-        return this.TW_CLASS.LABEL_TOP_BASE;
-    }
-  }
-
-  labelInteractiveGetColor():string {
-    switch (this.inputColor()) {
-      case 'success':
-        return this.TW_CLASS.LABEL_INTERACTIVE_COLOR_SUCCESS;
-      case 'warning':
-        return this.TW_CLASS.LABEL_INTERACTIVE_COLOR_WARNING;
-      case 'error':
-        return this.TW_CLASS.LABEL_INTERACTIVE_COLOR_ERROR;
-      default:
-        return this.TW_CLASS.LABEL_INTERACTIVE_COLOR_BASE;
-    }
-  }
-
   hintGetColor():string {
     if (this.hintColor()) {
       switch (this.inputColor()) {
@@ -240,19 +177,5 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
     return '';
   }
 
-  labelColorGetType() {
-    if (this.inputCustomType()==='floating') return this.labelFloatingGetColor();
-    if (this.inputCustomType()==='label-top') return this.labelTopGetColor();
-    if (this.inputCustomType()==='label-interactive') return this.labelInteractiveGetColor();
-    return '';
-  }
-
-  labelGetType():string {
-    if (this.inputCustomType()==='fieldset-legend-label') return this.TW_CLASS.FIELDSET_LEGEND;
-    if (this.inputCustomType()==='label-top') return this.TW_CLASS.LABEL_TOP_BASE;
-    if (this.inputCustomType()==='label-interactive') return this.TW_CLASS.LABEL_INTERACTIVE_BASE;
-    if (this.inputCustomType()==='floating') return (this.TW_CLASS.LABEL_BASE + ' ' + this.TW_CLASS.LABEL_FLOATING_BASE);
-    return '';
-  }
-
 }
+
