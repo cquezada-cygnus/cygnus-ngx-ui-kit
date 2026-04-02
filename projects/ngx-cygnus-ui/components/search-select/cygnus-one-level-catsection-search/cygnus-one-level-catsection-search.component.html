@@ -27,6 +27,7 @@
     (click)="openUl()"
     [formControl]="searchControl"
     (blur)="outputBlur.emit(true)"
+    (focus)="onFocus()"
   />
 
   <span

@@ -1,4 +1,4 @@
-import { Component, HostListener, input, OnInit, output, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, input, OnInit, output, signal, ViewChild } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { debounceTime } from 'rxjs';
@@ -54,6 +54,7 @@ export class CygnusOneLevelCatSectionSearchComponent implements OnInit {
   ulShowSecOptId = signal<string>('');
   private static idCounter = 0;
 
+  @ViewChild('targetSelectSearchDiv') targetSelectSearchDiv!: ElementRef;
 
   ngOnInit(): void {
     // Generar ID único si no se proporciona
@@ -78,6 +79,19 @@ export class CygnusOneLevelCatSectionSearchComponent implements OnInit {
       this.inputArrSelection()!.forEach(elem => {
         this.arrSelection.push(elem);
       });
+    }
+  }
+
+  onFocus() {
+    const isMobile = window.innerWidth < 768; // Breakpoint 'md' de Tailwind
+    if (isMobile) {
+      // Añadimos un pequeño delay para esperar a que el teclado se despliegue
+      setTimeout(() => {
+        this.targetSelectSearchDiv.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start' // Alinea el input a la parte superior de la pantalla
+        });
+      }, 300);
     }
   }
 

@@ -203,6 +203,34 @@
   <section id="select-size">
     <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
       <div class="p-4 pb-4">
+        <h2 class="mb-2 text-xl font-semibold">Selector de búsqueda cygnus-one-level-catsection-search</h2>
+        <p class="mb-8 text-secondary-600 text-md">
+          Este componente recibe un JSON con los cargos. Cada cargo tiene categoría y sección. El mismo componente reconoce las categorías y secciones. En los encabezados se separan las categorías macro con un '/' de las secciones de dicha categoría. Dentro de dichos encabezados se despliegan los cargos asociados a cada categoría/sección.
+        </p>
+
+        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+
+          <div class="flex flex-col w-full max-w-lg space-y-4">
+
+            <cygnus-one-level-catsection-search
+              [OPTGROUPDATA]="OPTGROUPDATA"
+              [categoryName]="'categoria'"
+              [categorySection]="'seccion'"
+              [categoryItem]="'cargo'"
+              [categoryIdItem]="'id_item'"
+              [inputStatusColor]="''"
+            />
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="select-size">
+    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
+      <div class="p-4 pb-4">
         <h2 class="mb-2 text-xl font-semibold">Selector con menú desplegable y multisearch</h2>
         <p class="mb-8 text-secondary-600 text-md">
           Este componente recibe el listado de categorías y las opciones por categoría como en la sección anterior, pero además permite seleccionar más de una opción dentro de una misma categoría, las cuales se mostrarán debajo del selector y se pueden eliminar con un click cuando no sean necesarias.
@@ -323,32 +351,6 @@
     </div>
   </section>
 
-  <section id="select-size">
-    <div class="grid min-h-[140px] w-full place-items-left overflow-x-scroll rounded-lg lg:overflow-visible border mb-14">
-      <div class="p-4 pb-4">
-        <h2 class="mb-2 text-xl font-semibold">Selector de búsqueda cygnus-one-level-catsection-search</h2>
-        <p class="mb-8 text-secondary-600 text-md">
-          Este componente recibe un JSON con los cargos. Cada cargo tiene categoría y sección. El mismo componente reconoce las categorías y secciones. En los encabezados se separan las categorías macro con un '/' de las secciones de dicha categoría. Dentro de dichos encabezados se despliegan los cargos asociados a cada categoría/sección.
-        </p>
 
-        <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-
-          <div class="flex flex-col w-full max-w-lg space-y-4">
-
-            <cygnus-one-level-catsection-search
-              [OPTGROUPDATA]="OPTGROUPDATA"
-              [categoryName]="'categoria'"
-              [categorySection]="'seccion'"
-              [categoryItem]="'cargo'"
-              [categoryIdItem]="'id_item'"
-              [inputStatusColor]="''"
-            />
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
 </main>
