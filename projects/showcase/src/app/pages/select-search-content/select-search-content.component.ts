@@ -3,6 +3,7 @@ import {
   CygnusMenuSearchSelectComponent,
   CygnusSearchSelectComponent,
   CygnusCatSectionSearchSelectComponent,
+  CygnusOneLevelCatSectionSearchComponent,
 } from 'ngx-cygnus-ui/components/search-select';
 import {
   SelectCollectOptions,
@@ -21,6 +22,7 @@ import * as OPTGROUPDATA from '../../../json/postulaqui-categorias-secciones.jso
     CygnusSearchSelectComponent,
     CygnusMenuSearchSelectComponent,
     CygnusCatSectionSearchSelectComponent,
+    CygnusOneLevelCatSectionSearchComponent,
     Highlight, HighlightLineNumbers,
   ],
   templateUrl: './select-search-content.component.html',

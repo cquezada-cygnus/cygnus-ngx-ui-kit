@@ -1,0 +1,108 @@
+@if (arrSelection.length > 0) {
+<div class="w-full">
+  @for (cargo of arrSelection; track cargo[categoryIdItem()]) {
+  <cygnus-alert-simple
+    [alertTypes]="alertType()"
+    [alertIcon]="''"
+    [alertEquis]="true"
+    [alertTitle]="cargo[categoryItem()]"
+    [alertContent]="''"
+    (isClosed)="cargoDeleted($event, cargo)"
+  />
+  }
+</div>
+}
+
+<div #targetSelectSearchDiv class="relative"  [id]="selectSearchId()">
+
+  @if (!isDisabled()) {
+
+  <input type="text"
+    [class]="
+      TW_CLASS.INPUT_BASE + ' !pr-9' + ' ' +
+      (inputStatusColor()==='success' ? TW_CLASS.INPUT_SUCCESS : '') + ' ' +
+      (inputStatusColor()==='error' ? TW_CLASS.INPUT_ERROR : '')
+    "
+    [placeholder]="placeholder()"
+    (click)="openUl()"
+    [formControl]="searchControl"
+    (blur)="outputBlur.emit(true)"
+  />
+
+  <span
+    class="hidden dark:flex items-center  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-500"
+    (click)="toggleInvisible()"
+    [id]="selectSearchId()+'-icon-white'"
+  >
+    <lib-ngx-cygnus-icons
+      class="pointer-events: none"
+      [size]="'xl'"
+      [textColor]="'white'"
+      [textRoute]="(this.isInvisible()) ? 'search-sm' : 'chevron-up'"
+    />
+  </span>
+  <span
+    class="flex items-center dark:hidden  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-500"
+    (click)="toggleInvisible()"
+    [id]="selectSearchId()+'-icon-gray'"
+  >
+    <lib-ngx-cygnus-icons
+      class="pointer-events: none"
+      [size]="'xl'"
+      [textColor]="'gray'"
+      [textRoute]="(this.isInvisible()) ? 'search-sm' : 'chevron-up'"
+    />
+  </span>
+
+  } @else {
+
+  <input type="text"
+    [class]="
+      TW_CLASS.INPUT_BASE + ' !pr-9' + ' ' +
+      TW_CLASS.INPUT_DISABLED
+    "
+    style="background-color: #eaecf0;"
+    [disabled]="true"
+  />
+
+  <lib-ngx-cygnus-icons
+    class="ml-2 absolute h-full flex items-center inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 bg-gray-200 cursor-not-allowed opacity-60 pointer-events-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none"
+    [size]="'xl'"
+    [textColor]="'gray'"
+    [textRoute]="'search-sm'"
+  />
+
+}
+</div>
+
+@if (!isDisabled()) {
+<ul
+  class="absolute mt-1 bg-white dark:bg-gray-700 border border-slate-200 dark:border-gray-600 focus:outline-none min-w-[180px] overflow-auto rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto"
+  [style.width.px]="targetSelectSearchDiv.offsetWidth"
+  [class.invisible]="isInvisible()"
+  [id]="ulShowSecOptId()"
+>
+
+  @for (cat of dataEntries | keyvalue; track $index) {
+    <!-- Agrupa dinámicamente -->
+    @for (sec of dataEntries[$any(cat.key)] | keyvalue; track $index) {
+
+      @if (setFilteredOptions(sec.value)) {
+        <li class="bg-gray-200 font-semibold p-1.5 dark:text-gray-600" >{{cat.key + ' / ' + sec.key }}</li>
+        @for (op of dataFilteredEntries; track op[categoryIdItem()]) {
+          <li
+            class="p-1.5"
+            [class]="markAsSelected(op) ? 'bg-cygnus-300' : 'dark:text-white hover:bg-gray-100 dark:hover:bg-gray-500'"
+            (click)="onItemSelected(op)"
+          >{{ op[categoryItem()] }}</li>
+        }
+      }
+
+    }
+  }
+
+
+</ul>
+}
+
+
