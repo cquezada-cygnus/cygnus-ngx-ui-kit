@@ -82,6 +82,9 @@ export class CygnusDropzoneInputComponent {
   // Mensaje personalizable para error de tamaño
   sizeErrorMsge = input<string>('El archivo excede el tamaño máximo permitido.');
 
+  // Nuevo Output para que el padre reciba el progreso en tiempo real
+  outputProgress = output<number>();
+
   onRemoveFile(event: Event): void {
     event.preventDefault();
     event.stopPropagation(); // Evita que el click llegue al label y abra el selector
@@ -196,15 +199,51 @@ export class CygnusDropzoneInputComponent {
   convertToBase64(file: File): void {
     const reader = new FileReader();
 
+    // Dado que tu límite máximo son 15MB, la lectura en disco siempre será extremadamente rápida. Para que el usuario realmente vea un progreso (y no un salto del 0 al 100 instantáneo): Si quieres que el usuario vea números subiendo (1, 2, 3... 100) aunque el archivo sea pequeño, debes añadir un pequeño intervalo artificial. Esto mejora mucho la experiencia de usuario (UX).
+
+    this.outputProgress.emit(0); // Forzamos el inicio en 0
+
+    // --- TRUCO DE UX: Simulador para archivos pequeños ---
+    let fakeProgress = 0;
+    const interval = setInterval(() => {
+      // Si el archivo es pequeño, aumentamos el progreso artificialmente
+      // hasta un 90%, el 100% lo dará el 'onload' real.
+      if (fakeProgress < 90) {
+        fakeProgress += Math.floor(Math.random() * 15) + 5;
+        if (fakeProgress > 90) fakeProgress = 90;
+        this.outputProgress.emit(fakeProgress);
+      }
+    }, 60); // Cada 50ms sube un poco
+    // -----------------------------------------------------
+
+    // Evento de progreso
+    reader.onprogress = (event) => {
+      if (event.lengthComputable) {
+        // Cálculo del porcentaje: (progreso actual / total) * 100
+        const realPercent = Math.round((event.loaded / event.total) * 100);
+        // Solo emitimos el real si es mayor al falso para no "retroceder"
+        if (realPercent > fakeProgress && realPercent != 100) {
+          this.outputProgress.emit(realPercent);
+        }
+      }
+    };
+
     reader.onload = () => {
-      this.base64 = reader.result as string; // El resultado incluye el prefijo, ejemplo "data:application/pdf;base64,"
-      this.isLoading = false;
-      // Enviar convertido
-      this.outputFileName.emit(this.fileName());
-      this.outputBase64.emit(this.base64);
+      // IMPORTANTE: Le damos un pequeño delay al éxito final
+      // para que el usuario vea que la barra llegó lejos
+      setTimeout(() => {
+        clearInterval(interval); // Detener el simulador
+        this.base64 = reader.result as string; // El resultado incluye el prefijo, ejemplo "data:application/pdf;base64,"
+        this.outputProgress.emit(100);
+        this.isLoading = false;
+        // Enviar convertido
+        this.outputFileName.emit(this.fileName());
+        this.outputBase64.emit(this.base64);
+      }, 300); // 300ms de "respiro" visual
     }
 
     reader.onerror = () => {
+      clearInterval(interval); // Detener el simulador
       this.errorMessage = 'Error al leer el archivo';
       this.outputErrorMsge.emit(this.errorMessage);
       this.outputTypeError.emit('READER');
