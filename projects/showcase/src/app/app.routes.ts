@@ -76,6 +76,10 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'progressbar',
+    loadComponent: () => import('./pages/progressbar-content/progressbar-content.component').then( (c) => c.ProgressbarContentComponent )
+  },
+  {
     path: 'pagination',
     loadComponent: () => import('./pages/pagination-content/pagination-content.component').then( (c) => c.PaginationContentComponent )
   },
