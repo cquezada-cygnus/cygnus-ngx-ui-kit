@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CygnusCarouselComponent } from 'ngx-cygnus-ui/components/carousel';
-import { CarouselItem } from 'ngx-cygnus-ui/interfaces/public-api';
+import { CarouselItem } from 'ngx-cygnus-ui/interfaces';
 
 @Component({
   selector: 'app-carousel-content',
