@@ -34,6 +34,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/card-content/card-content.component').then( (c) => c.CardContentComponent )
   },
   {
+    path: 'carousel',
+    loadComponent: () => import('./pages/carousel-content/carousel-content.component').then( (c) => c.CarouselContentComponent )
+  },
+  {
     path: 'collapsible',
     loadComponent: () => import('./pages/collapsible-content/collapsible-content.component').then( (c) => c.CollapsibleContentComponent )
   },

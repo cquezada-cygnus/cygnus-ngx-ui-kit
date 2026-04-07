@@ -1,0 +1,26 @@
+<div class="flex items-center justify-center">
+  <div class="relative max-w-2xs overflow-hidden">
+
+    <div class="flex transition-transform duration-700 ease-in-out"
+      (transitionend)="handleTransitionEnd()"
+      [style.transition]="isTransitioning() ? 'transform 700ms ease-in-out' : 'none'"
+      [style.transform]="'translateX(-' + (currentIndex() * 100) + '%)'"
+    >
+
+      @for (item of items(); track item.id) {
+        <div class="min-w-2xs flex flex-row justify-center">
+          <div class="max-w-sm flex pr-2" [innerHTML]="item.trustedSvg"></div>
+          <div class="flex flex-col space-y-2">
+            <h3 class="font-bold text-gray-700 text-sm font-medium leading-none tracking-tight">
+              {{ item.title }}
+            </h3>
+            <p class="text-xs text-gray-700 font-normal leading-tight">
+              {{ item.desc }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</div>
