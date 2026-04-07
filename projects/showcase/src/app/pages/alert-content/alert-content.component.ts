@@ -8,6 +8,7 @@ import {
 } from 'ngx-cygnus-ui/components/alert';
 
 import { CygnusButtonComponent, } from 'ngx-cygnus-ui/components/button';
+import { CygnusProgressbarComponent } from 'ngx-cygnus-ui/components/progressbar';
 
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
@@ -20,6 +21,7 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
     CygnusAlertCounterBlockedComponent,
     CygnusAlertModalComponent,
     CygnusButtonComponent,
+    CygnusProgressbarComponent,
     Highlight, HighlightLineNumbers,
   ],
   templateUrl: './alert-content.component.html',
@@ -30,6 +32,7 @@ export class AlertContentComponent {
   showModalAlert: boolean = false;
   showModalAlertError: boolean = false;
   showModalConfirm: boolean = false;
+  showModalWithoutTitle: boolean = false;
   showModalAnimado: boolean = false;
 
   importCygnusAlertSimple: string = `
@@ -393,6 +396,10 @@ export class AlertContentComponent {
 
   openAlertModalConfirm() {
     this.showModalConfirm = !this.showModalConfirm;
+  }
+
+  openAlertWithoutTitleConfirm() {
+    this.showModalWithoutTitle = !this.showModalWithoutTitle;
   }
 
   openAlertModalAnimado() {
