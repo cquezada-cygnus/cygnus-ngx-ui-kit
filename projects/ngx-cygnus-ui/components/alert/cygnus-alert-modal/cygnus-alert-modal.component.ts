@@ -1,4 +1,4 @@
-import { Component, computed, HostListener, input, model } from '@angular/core';
+import { Component, computed, HostListener, input, model, output } from '@angular/core';
 
 import { IconColorText, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 
@@ -32,6 +32,7 @@ export class CygnusAlertModalComponent {
   setAlertIconColor = input<IconColorText>();
   flexItemsPosition = input<'items-center' | 'items-end' | 'items-start'>('items-center'); // 'items-end'
   animationType = input<'bounce-right' | 'center-to-right'>('bounce-right');
+  emitCerrar = output<boolean>();
 
   // --- Lógica de Configuración Computada ---
 
@@ -113,6 +114,7 @@ export class CygnusAlertModalComponent {
   // Métodos
   toggleModal(): void {
     this.showModal.update(current => !current);
+    this.emitCerrar.emit(true);
   }
 
   handleBlurClick(event: MouseEvent): void {

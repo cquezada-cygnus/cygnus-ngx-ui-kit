@@ -22,9 +22,11 @@ export class CygnusModalComponent {
 
   closeOnBlur = input<boolean>(true); // si es true, se puede cerrar al hacer click afuera del modal
   closeOnEscape = input<boolean>(true); // permitir/bloquear el cierre con tecla Escape
+  emitCerrar = output<boolean>();
 
   toggleModal():void {
     this.showModal.update( current => !current );
+    this.emitCerrar.emit(true);
   }
 
   // sendData():void {
