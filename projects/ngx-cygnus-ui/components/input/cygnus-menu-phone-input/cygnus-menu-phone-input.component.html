@@ -25,7 +25,8 @@
               @for (item of menuSearchContentArr(); track $index; let i = $index;) {
                 <li role="menuitem" (click)="selectMenuPhoneDrop(item.value, i)"
                   [class]="TW_CLASS.LI_BASE">
-                  {{item.option}}
+                  <img [src]="item.icon" class="h-4 w-5 object-contain" alt="Bandera" />
+                  <span>{{item.option}}</span>
                 </li>
               }
             </ul>

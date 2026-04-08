@@ -1,3 +1,5 @@
+import { SafeHtml } from "@angular/platform-browser";
+
 export interface SelectGeneric {
   value: any,
   option: string,
@@ -11,4 +13,10 @@ export interface SelectCollection {
 export interface SelectCollectOptions {
   key: string,
   selects: SelectGeneric[],
+}
+
+export interface SelectIconOption {
+  value: any,
+  option: string,
+  icon: SafeHtml, // svg || svg url
 }

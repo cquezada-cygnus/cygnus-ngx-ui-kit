@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, effect, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
+import { AfterViewInit, Component, effect, ElementRef, inject, input, OnInit, output, signal, viewChild } from '@angular/core';
 import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
@@ -8,7 +8,8 @@ import {
   OnlyLettersDirective,
   CustomInputTextDirective,
 } from 'ngx-cygnus-ui/directives';
-import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
+import { CodePhone, SelectGeneric, SelectIconOption } from 'ngx-cygnus-ui/interfaces';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'cygnus-menu-phone-input',
@@ -43,7 +44,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
 
   isInvisiblePhoneDrop = signal<boolean>(true);
   menuSearchTextPhoneDrop = signal<string>('');
-  menuSearchContentArr = input<SelectGeneric[]>([]);
+  menuSearchContentArr = signal<SelectIconOption[]>([]);
 
   cygnusInput = viewChild<ElementRef>('cygnusInput');
   iconClicked = output<string>();
@@ -72,6 +73,9 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
   textEmpresaMaxLength = input<number>(100);
   textEmpresaMinLength = input<number>(2);
 
+  codeDataArr = input<CodePhone[]>([]);
+  private sanitizer = inject(DomSanitizer);
+
   constructor() {
     effect(() => {
       const val = this.initializeInputValue(); // señal reactiva
@@ -96,11 +100,39 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.inputId.set(`cg-input-${++CygnusMenuPhoneInputComponent.idCounter}`);
+    this.codeDataToSelect();
+    console.log('codeDataArr:',this.codeDataArr());
+    console.log('this.menuSearchContentArr():',this.menuSearchContentArr());
   }
 
   ngAfterViewInit() {
     this.cygnusInput()!.nativeElement.value  = this.initializeInputValue();
     this.cygnusInput()!.nativeElement.textContent = this.initializeInputValue();
+  }
+
+  prepareSvgUrl(svgString: string): SafeUrl {
+    // 1. Validamos si ya es un Data URI para no duplicar
+    if (svgString.startsWith('data:image')) {
+      return this.sanitizer.bypassSecurityTrustUrl(svgString);
+    }
+
+    // 2. Si es el string del SVG puro, lo convertimos
+    const dataUri = 'data:image/svg+xml;utf8,' + encodeURIComponent(svgString);
+
+    // 3. IMPORTANTÍSIMO: Usar el sanitizer para que Angular lo permita en el [src]
+    return this.sanitizer.bypassSecurityTrustUrl(dataUri);
+  }
+
+  codeDataToSelect() {
+    if (this.codeDataArr().length > 0) {
+      this.codeDataArr().forEach(elem => {
+        this.menuSearchContentArr.update(
+          currentItems => [
+            ...currentItems,
+            { option: elem.Nombre, value: elem.CodigoTelefonico, icon: this.prepareSvgUrl(elem.BanderaSvg)  }
+          ] )
+      });
+    }
   }
 
   toggleInvisiblePhoneDrop() {

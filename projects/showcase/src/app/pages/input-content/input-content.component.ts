@@ -7,6 +7,8 @@ import { cgPhone, cgRutValidator } from 'ngx-cygnus-ui/validators';
 import { Highlight } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 
+import * as CODPAISES from '../../../json/CODPAISES.json';
+
 @Component({
   selector: 'app-input-content',
   imports: [
@@ -39,7 +41,11 @@ export class InputContentComponent implements OnInit {
     ],
   });
 
+  CODPAISES = JSON.parse(JSON.stringify(CODPAISES)).default;
+
   ngOnInit() {
+    console.log('this.CODPAISES:',this.CODPAISES);
+
     this.inputStatusManager();
   }
 
