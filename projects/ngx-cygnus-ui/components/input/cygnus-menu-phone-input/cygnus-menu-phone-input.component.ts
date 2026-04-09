@@ -5,10 +5,9 @@ import { TW_CLASS } from '../const/tailwind.const';
 import { FormControl } from '@angular/forms';
 import {
   MaxLengthTruncateDirective,
-  OnlyLettersDirective,
   CustomInputTextDirective,
 } from 'ngx-cygnus-ui/directives';
-import { CodePhone, SelectGeneric, SelectIconOption } from 'ngx-cygnus-ui/interfaces';
+import { CodePhone, SelectIconOption } from 'ngx-cygnus-ui/interfaces';
 import { DomSanitizer, SafeHtml, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -16,7 +15,6 @@ import { DomSanitizer, SafeHtml, SafeUrl } from '@angular/platform-browser';
   imports: [
     NgxCygnusIconsComponent,
     MaxLengthTruncateDirective,
-    OnlyLettersDirective,
     CustomInputTextDirective,
   ],
   templateUrl: './cygnus-menu-phone-input.component.html',
@@ -52,6 +50,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
   iconClicked = output<string>();
 
   initializeInputValue = input<string>('');
+  inputCodeOutput = output<string>();
   inputValueOutput = output<string>();
   inputIsBlur = output<boolean>();
 
@@ -61,11 +60,6 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
   useTruncate = input<boolean>(false);
   truncateLength = input<number>(9);
   onlyNumbers = input<boolean>(true); // Para activar/desactivar la lógica
-
-  isLetterOnly = input<boolean>(false);
-  isLetterOnlyMaxChars = input<number>(50);
-  isLetterOnlyMinChars = input<number>(2);
-
 
   customInputTextEnabled = input<boolean>(false);
   customInputTextMaxLength = input<number>(200);
@@ -137,13 +131,6 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
 
   codeDataToSelect() {
     if (this.codeDataArr().length > 0) {
-      // this.codeDataArr().forEach(elem => {
-      //   this.menuSearchContentArr.update(
-      //     currentItems => [
-      //       ...currentItems,
-      //       { option: elem.Nombre, value: elem.CodigoTelefonico, icon: this.prepareSvgUrl(elem.BanderaSvg)  }
-      //     ] )
-      // });
 
       // Mapeamos los datos (es más eficiente que hacer múltiples updates en un loop)
       const mappedOptions: SelectIconOption[] = this.codeDataArr().map(elem => ({
@@ -184,6 +171,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
     this.control()?.markAsDirty();
     this.control()?.markAsTouched();
     this.inputValueOutput.emit(value);
+    this.inputCodeOutput.emit(this.menuSearchTextPhoneDrop());
   }
 
   inputGetSize():string {

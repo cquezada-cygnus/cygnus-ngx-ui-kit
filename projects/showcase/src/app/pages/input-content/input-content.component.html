@@ -392,18 +392,24 @@
       <div class="p-4 pb-4">
         <h2 class="mb-1 text-xl font-semibold">Input menuPhone</h2>
         <div class="flex items-center justify-center w-full gap-4 mb-4">
-          <div class="flex-col w-full max-w-sm space-y-4">
+          <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()" class="flex flex-col space-y-4 md:space-y-6 w-full items-center" action="#">
+            <div class="flex-col w-full max-w-sm space-y-4">
 
-            <cygnus-menu-phone-input
-              [textPlaceholder]="'Teléfono'"
-              [codeDataArr]="CODPAISES"
-            />
+              <cygnus-menu-phone-input
+                [textPlaceholder]="'Teléfono'"
+                [codeDataArr]="CODPAISES"
+                [inputColor]="inputPhoneIconColor()"
+                [textLabel]="''"
+                [hintColor]="true"
+                [textHint]="textPhoneIconHint()"
+                [control]="phoneIconForm.controls.phone"
+                [inputClearValue]="inputClearValue()"
+                (inputCodeOutput)="menuPhoneCodeInput($event)"
+                (inputValueOutput)="menuPhoneInput($event)"
+              />
 
-            <!-- <cygnus-menu-phone-input
-              [textPlaceholder]="'Teléfono'"
-            /> -->
-
-          </div>
+            </div>
+          </form>
         </div>
 
       </div>

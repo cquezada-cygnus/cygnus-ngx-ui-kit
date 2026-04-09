@@ -310,3 +310,21 @@ export function specificValueValidator(expectedValue: string): ValidatorFn {
     return value === expectedValue ? null : { specificValue: { expected: expectedValue, actual: value } };
   };
 }
+
+export function validadorCondicional(condicion: () => boolean): ValidatorFn {
+
+  return (control: AbstractControl): ValidationErrors | null => {
+
+    // ¿La condición es verdadera?
+    const tengoQueValidar = condicion();
+
+    // Si TENGO que validar y el campo está VACÍO...
+    if (tengoQueValidar && !control.value) {
+      // ...mandamos el error:
+      return { noCumpleCondicional: true };
+    }
+
+    // Si la condición es falsa, o el campo ya tiene texto, decimos "Todo bien" (null)
+    return null;
+  };
+}

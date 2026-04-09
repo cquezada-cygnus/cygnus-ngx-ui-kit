@@ -32,8 +32,17 @@ export class InputContentComponent implements OnInit {
     ],
   });
 
+  phoneIconForm = this.nonNullableFb.group({
+    phone: ['',
+      [Validators.required, cgPhone()]
+    ],
+  });
+
   textPhoneHint = signal<string>('');
   inputPhoneColor = signal<InputColor>('base');
+
+  textPhoneIconHint = signal<string>('');
+  inputPhoneIconColor = signal<InputColor>('base');
 
   RutForm = this.nonNullableFb.group({
     rut: ['',
@@ -44,9 +53,15 @@ export class InputContentComponent implements OnInit {
   CODPAISES = JSON.parse(JSON.stringify(CODPAISES)).default;
 
   ngOnInit() {
-    console.log('this.CODPAISES:',this.CODPAISES);
-
     this.inputStatusManager();
+  }
+
+  menuPhoneCodeInput(value:string) {
+    console.log('menuPhoneCodeInput value:',value);
+  }
+
+  menuPhoneInput(value:string) {
+    console.log('menuPhoneInput value:',value);
   }
 
   inputStatusManager() {
@@ -61,6 +76,20 @@ export class InputContentComponent implements OnInit {
       } else {
         this.inputPhoneColor.set('success');
         this.textPhoneHint.set('');
+      }
+    });
+
+    this.phoneIconForm.get('phone')?.statusChanges.subscribe(status => {
+      if (this.phoneIconForm.get('phone')?.errors) {
+        this.inputPhoneIconColor.set('error');
+        if (this.phoneIconForm.get('phone')?.errors!['required']) {
+          this.textPhoneIconHint.set('Debe indicar un teléfono');
+        } else if (this.phoneIconForm.get('phone')?.errors!['cgPhone']) {
+          this.textPhoneIconHint.set('El formato del teléfono es inválido');
+        }
+      } else {
+        this.inputPhoneIconColor.set('success');
+        this.textPhoneIconHint.set('');
       }
     });
   }
