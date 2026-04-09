@@ -15,7 +15,10 @@
               [class]="TW_CLASS.DROPDOWN_MENU_FILTER"
               (click)="toggleInvisiblePhoneDrop()" type="button"
             >
-              <span class="whitespace-nowrap"  >{{menuSearchTextPhoneDrop()}}</span>
+              <div class="flex items-center justify-center w-5 h-4 shrink-0">
+                <img [src]="menuSearchIconPhoneDrop()" class="h-4 w-5 object-contain" alt="Bandera" />
+              </div>
+              <span class="ml-1 whitespace-nowrap"  >{{menuSearchTextPhoneDrop()}}</span>
               <lib-ngx-cygnus-icons class="inline-flex items-center h-2.5 ms-2.5"
                 [size]="'lg'"
                 [textColor]="'black'"
@@ -26,7 +29,7 @@
               [class.invisible]="isInvisiblePhoneDrop()"
             >
               @for (item of menuSearchContentArr(); track $index; let i = $index;) {
-                <li role="menuitem" (click)="selectMenuPhoneDrop(item.value, i)"
+                <li role="menuitem" (click)="selectMenuPhoneDrop(item.value, item.icon, i)"
                   [class]="TW_CLASS.LI_BASE">
                   <img [src]="item.icon" class="h-4 w-5 mr-2 object-contain" alt="Bandera" />
                   <span>{{item.option}}</span>

@@ -9,7 +9,7 @@ import {
   CustomInputTextDirective,
 } from 'ngx-cygnus-ui/directives';
 import { CodePhone, SelectGeneric, SelectIconOption } from 'ngx-cygnus-ui/interfaces';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'cygnus-menu-phone-input',
@@ -45,6 +45,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
 
   isInvisiblePhoneDrop = signal<boolean>(true);
   menuSearchTextPhoneDrop = signal<string>('');
+  menuSearchIconPhoneDrop = signal<SafeHtml>('');
   menuSearchContentArr = signal<SelectIconOption[]>([]);
 
   cygnusInput = viewChild<ElementRef>('cygnusInput');
@@ -74,6 +75,8 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
   textEmpresaMaxLength = input<number>(100);
   textEmpresaMinLength = input<number>(2);
 
+  // input para definir qué código queremos por defecto
+  defaultCode = input<string>('+56');
   codeDataArr = input<CodePhone[]>([]);
   private sanitizer = inject(DomSanitizer);
 
@@ -94,6 +97,13 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
           input.nativeElement.textContent = '';
           input.nativeElement.value = '';
         }
+      }
+    });
+
+    // Este efecto se ejecutará cuando codeDataArr cambie
+    effect(() => {
+      if (this.codeDataArr().length > 0) {
+        this.codeDataToSelect();
       }
     });
   }
@@ -127,13 +137,30 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
 
   codeDataToSelect() {
     if (this.codeDataArr().length > 0) {
-      this.codeDataArr().forEach(elem => {
-        this.menuSearchContentArr.update(
-          currentItems => [
-            ...currentItems,
-            { option: elem.Nombre, value: elem.CodigoTelefonico, icon: this.prepareSvgUrl(elem.BanderaSvg)  }
-          ] )
-      });
+      // this.codeDataArr().forEach(elem => {
+      //   this.menuSearchContentArr.update(
+      //     currentItems => [
+      //       ...currentItems,
+      //       { option: elem.Nombre, value: elem.CodigoTelefonico, icon: this.prepareSvgUrl(elem.BanderaSvg)  }
+      //     ] )
+      // });
+
+      // Mapeamos los datos (es más eficiente que hacer múltiples updates en un loop)
+      const mappedOptions: SelectIconOption[] = this.codeDataArr().map(elem => ({
+        option: elem.Nombre,
+        value: elem.CodigoTelefonico,
+        icon: this.prepareSvgUrl(elem.BanderaSvg)
+      }));
+
+      this.menuSearchContentArr.set(mappedOptions);
+
+      // Buscar el país que coincida con el defaultCode
+      const found = mappedOptions.find(item => item.value === this.defaultCode()) || mappedOptions[0];
+
+      if (found) {
+        this.menuSearchTextPhoneDrop.set(found.value);
+        this.menuSearchIconPhoneDrop.set(found.icon as SafeHtml);
+      }
     }
   }
 
@@ -141,8 +168,9 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
     this.isInvisiblePhoneDrop.set(!this.isInvisiblePhoneDrop()); // invisibilizar opciones
   }
 
-  selectMenuPhoneDrop(selected: string, index: number) {
+  selectMenuPhoneDrop(selected: string, icon: SafeHtml, index: number) {
     this.menuSearchTextPhoneDrop.set(selected);
+    this.menuSearchIconPhoneDrop.set(icon);
     this.isInvisiblePhoneDrop.set(true); // invisibilizar opciones
   }
 
@@ -217,8 +245,6 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
       !(event.target == document.getElementById(this.inputSelectId())) && // si NO se hace click en dropdown
       !(document.getElementById(this.inputSelectId())?.contains(event.target as Node)) // si NO se hace click en hijos del dropdown
     ) {
-      console.log('input phone click HostListener');
-
       if (!this.isInvisiblePhoneDrop()) this.isInvisiblePhoneDrop.set(true); // invisibilizar opciones
     }
   }
