@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, effect, ElementRef, inject, input, OnInit, output, signal, viewChild } from '@angular/core';
+import { AfterViewInit, Component, effect, ElementRef, HostListener, inject, input, OnInit, output, signal, viewChild } from '@angular/core';
 import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { TW_CLASS } from '../const/tailwind.const';
@@ -29,6 +29,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
   control = input<FormControl<string>>();
 
   inputId = signal<string>('');
+  inputSelectId = signal<string>('');
   inputCustomType = input<InputCustomType>('base');
   inputColor = input<InputColor>('base');
   inputSize = input<InputSize>('');
@@ -100,6 +101,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.inputId.set(`cg-input-${++CygnusMenuPhoneInputComponent.idCounter}`);
+    this.inputSelectId.set(`cg-input-select-${++CygnusMenuPhoneInputComponent.idCounter}`);
     this.codeDataToSelect();
     console.log('codeDataArr:',this.codeDataArr());
     console.log('this.menuSearchContentArr():',this.menuSearchContentArr());
@@ -207,6 +209,18 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
       }
     }
     return '';
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) { // invisibilizar el menu cuando se haga click fuera de él
+    if (
+      !(event.target == document.getElementById(this.inputSelectId())) && // si NO se hace click en dropdown
+      !(document.getElementById(this.inputSelectId())?.contains(event.target as Node)) // si NO se hace click en hijos del dropdown
+    ) {
+      console.log('input phone click HostListener');
+
+      if (!this.isInvisiblePhoneDrop()) this.isInvisiblePhoneDrop.set(true); // invisibilizar opciones
+    }
   }
 
 }
