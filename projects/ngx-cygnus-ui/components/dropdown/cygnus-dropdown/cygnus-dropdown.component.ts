@@ -30,7 +30,8 @@ export class CygnusDropdownComponent implements OnInit {
   dropdownItemDataArr = input<DropdownItemData[]>([]);
   dropdownClosed = signal<boolean>(true);
   dropdownItemSelected = output<DropdownItemData | undefined>();
-
+  dropdownIconOnly = input<boolean>(false);
+  iconColor = input<IconColorText>('green');
   iconBGColor = signal<IconColorText>('thrgray');
   readonly alignment = input<'center' | 'left' | 'right'>('center');
 
