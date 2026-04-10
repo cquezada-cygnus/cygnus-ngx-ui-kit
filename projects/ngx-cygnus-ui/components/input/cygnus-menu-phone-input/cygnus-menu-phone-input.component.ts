@@ -147,7 +147,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
       if (found) {
         this.menuSearchTextPhoneDrop.set(found.value);
         this.menuSearchIconPhoneDrop.set(found.icon as SafeHtml);
-        this.inputCodeOutput.emit(this.menuSearchTextPhoneDrop());
+        this.inputCodeOutput.emit(found.value);
       }
     }
   }
@@ -158,6 +158,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
 
   selectMenuPhoneDrop(selected: string, icon: SafeHtml, index: number) {
     this.menuSearchTextPhoneDrop.set(selected);
+    this.inputCodeOutput.emit(selected);
     this.menuSearchIconPhoneDrop.set(icon);
     this.isInvisiblePhoneDrop.set(true); // invisibilizar opciones
   }
