@@ -147,6 +147,7 @@ export class CygnusMenuPhoneInputComponent implements OnInit, AfterViewInit {
       if (found) {
         this.menuSearchTextPhoneDrop.set(found.value);
         this.menuSearchIconPhoneDrop.set(found.icon as SafeHtml);
+        this.inputCodeOutput.emit(this.menuSearchTextPhoneDrop());
       }
     }
   }

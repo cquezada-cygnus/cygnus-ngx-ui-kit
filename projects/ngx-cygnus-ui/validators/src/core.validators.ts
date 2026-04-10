@@ -311,20 +311,18 @@ export function specificValueValidator(expectedValue: string): ValidatorFn {
   };
 }
 
-export function validadorCondicional(condicion: () => boolean): ValidatorFn {
-
+// Evaluar si una condición es verdadera
+// si es así, se ejecuta el validador especificado. Si no, está todo bien.
+export function validarSi(condicion: () => boolean, validador: ValidatorFn): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
 
-    // ¿La condición es verdadera?
-    const tengoQueValidar = condicion();
-
-    // Si TENGO que validar y el campo está VACÍO...
-    if (tengoQueValidar && !control.value) {
-      // ...mandamos el error:
-      return { noCumpleCondicional: true };
+    // 1. Verificamos la condición
+    if (condicion()) {
+      // 2. Si se cumple, ejecutamos el validador que ya tenías (cgPhone, otro validador)
+      return validador(control);
     }
 
-    // Si la condición es falsa, o el campo ya tiene texto, decimos "Todo bien" (null)
+    // 3. Si no se cumple, ignoramos todo y decimos que "está bien" (null)
     return null;
   };
 }
