@@ -5,8 +5,9 @@
     [class]="'relative flex flex-col items-center w-fit'"
   >
     @if (dropdownIconOnly()) {
-      <div class="bg-white" (click)="toggleDropdown()">
+      <div [class]="bgIconContainerClases()" (click)="toggleDropdown()">
         <lib-ngx-cygnus-icons
+          [class]="bgIconClases()"
           [size]="'xxxxl'"
           [textColor]="iconColor()"
           [textRoute]="dropdownRadioIconAsset()"

@@ -20,6 +20,8 @@ export class CygnusDropdownComponent implements OnInit {
   dropdownId = signal<string>('');
   control = input<FormControl<string>>();
 
+  bgIconClases = input<string>('');
+  bgIconContainerClases = input<string>('bg-white');
   dropdownMenuTitle = model<string>('');
   dropdownItemType = input<DropdownItemType>('simple');
   dropdownBtnType = input<string>('btn-primary');
