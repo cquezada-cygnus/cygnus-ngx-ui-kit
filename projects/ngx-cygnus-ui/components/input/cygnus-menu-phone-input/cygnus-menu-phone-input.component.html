@@ -19,11 +19,20 @@
                 <img [src]="menuSearchIconPhoneDrop()" class="h-4 w-5 object-contain" alt="Bandera" />
               </div>
               <span class="ml-1 whitespace-nowrap"  >{{menuSearchTextPhoneDrop()}}</span>
-              <lib-ngx-cygnus-icons class="inline-flex items-center h-2.5 ms-2.5"
+              <span class="inline-flex dark:hidden">
+                <lib-ngx-cygnus-icons class="inline-flex dark:hidden items-center h-2.5 ms-2.5"
                 [size]="'lg'"
                 [textColor]="'black'"
                 [textRoute]="'chevron-down'"
               />
+              </span>
+              <span class="hidden dark:inline-flex">
+                <lib-ngx-cygnus-icons class="hidden dark:inline-flex items-center h-2.5 ms-2.5"
+                [size]="'lg'"
+                [textColor]="'white'"
+                [textRoute]="'chevron-down'"
+              />
+              </span>
             </button>
             <ul [class]="TW_CLASS.UL_BASE + ' ' + ' max-h-60 overflow-y-auto'"
               [class.invisible]="isInvisiblePhoneDrop()"
@@ -43,7 +52,7 @@
             [id]="inputId()"
             type="text"
             [class]="
-              'rounded-r-lg border border-gray-300 bg-white focus:border-primary-700 focus:outline-none focus:ring-primary-700 active:border-primary-700 w-full px-4 py-2.5' + ' ' +
+              'rounded-r-lg border border-gray-300 bg-white dark:bg-gray-700 dark:text-white focus:border-primary-700 focus:outline-none focus:ring-primary-700 active:border-primary-700 w-full px-4 py-2.5' + ' ' +
               inputGetColor() + ' ' +
               inputGetTopColor() + ' ' +
               inputGetSize() + ' ' +
