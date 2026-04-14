@@ -217,6 +217,11 @@ export class CygnusButtonComponent implements OnInit {
         this.btnIconOnly = true;
         this.btnIconSize = 'xl';
         return this.TW_CLASS.BTN_ICON_ONLY_SIZE_XL;
+      case 'btn-icon-only-size-full':
+        this.btnIconExist = true;
+        this.btnIconOnly = true;
+        this.btnIconSize = 'xxxxl';
+        return this.TW_CLASS.BTN_ICON_ONLY_SIZE_FULL;
       case 'btn-group-left':
         return this.TW_CLASS.BTN_GROUP_LEFT;
       case 'btn-group-middle':

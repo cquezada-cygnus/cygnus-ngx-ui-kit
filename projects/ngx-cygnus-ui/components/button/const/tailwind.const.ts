@@ -35,6 +35,7 @@ export const TW_CLASS = {
   BTN_ICON_ONLY: '!px-0 !py-0 !inline-grid !min-h-[44px] !min-w-[44px] select-none !place-items-center align-middle leading-none',
   BTN_ICON_ONLY_SIZE_LG: '!px-0 !py-0 !inline-grid !min-h-[48px] !min-w-[48px] select-none !place-items-center align-middle leading-none',
   BTN_ICON_ONLY_SIZE_XL: '!px-0 !py-0 !inline-grid !min-h-[52px] !min-w-[52px] select-none !place-items-center align-middle leading-none',
+  BTN_ICON_ONLY_SIZE_FULL: '!px-0 !py-0 !inline-grid !min-h-[52px] !min-w-[52px] select-none !place-items-center align-middle leading-none',
   BTN_ICON_LOADING: 'animate-spin inline-block border-2 border-t-transparent rounded-full',
   BTN_GROUP_LEFT: 'border-r-0 inline-flex leading-none rounded-r-none',
   BTN_GROUP_MIDDLE: 'inline-flex leading-none rounded-none',
