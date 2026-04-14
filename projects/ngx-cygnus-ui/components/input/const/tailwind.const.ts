@@ -19,9 +19,9 @@ export const TW_CLASS = {
 
   INPUT_INTERACTIVE_BASE: 'px-4 py-3',
   INPUT_INTERACTIVE_GENERIC: '',
-  INPUT_INTERACTIVE_SUCCESS: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50  text-neutral-900 dark:text-white border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow active:bg-white',
-  INPUT_INTERACTIVE_WARNING: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50  text-neutral-900 dark:text-white border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow active:bg-white',
-  INPUT_INTERACTIVE_ERROR: 'placeholder:text-gray-300 dark:placeholder:text-gray-500 placeholder:bg-gray-50  text-neutral-900 dark:text-white border-error-600 !focus:ring-error-700 !focus:border-error-700 focus:shadow active:bg-white',
+  INPUT_INTERACTIVE_SUCCESS: 'placeholder:text-gray-300 dark:placeholder:text-gray-500  text-neutral-900 dark:text-white border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow',
+  INPUT_INTERACTIVE_WARNING: 'placeholder:text-gray-300 dark:placeholder:text-gray-500  text-neutral-900 dark:text-white border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow',
+  INPUT_INTERACTIVE_ERROR: 'placeholder:text-gray-300 dark:placeholder:text-gray-500  text-neutral-900 dark:text-white border-error-600 !focus:ring-error-700 !focus:border-error-700 focus:shadow',
 
   INPUT_FILE: '!px-0 !py-0 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 file:cursor-pointer cursor-pointer',
 
@@ -39,7 +39,7 @@ export const TW_CLASS = {
   LABEL_TOP_WARNING: 'text-warning-600',
   LABEL_TOP_ERROR: 'text-error-600',
 
-  LABEL_INTERACTIVE_BASE: 'absolute cursor-text bg-white px-1 left-2.5 -top-2 text-xs scale-90 transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:scale-90 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm',
+  LABEL_INTERACTIVE_BASE: 'absolute bg-white dark:bg-gray-700 cursor-text px-1 left-2.5 -top-2 text-xs scale-90 transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:scale-90 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm rounded-xl',
 
   LABEL_INTERACTIVE_COLOR_BASE   : 'text-gray-600 dark:text-white peer-focus:text-gray-600 dark:peer-focus:text-gray-50 peer-placeholder-shown:text-gray-600 dark:peer-placeholder-shown:text-gray-50',
   LABEL_INTERACTIVE_COLOR_SUCCESS: 'text-success-600 peer-focus:text-success-600 peer-placeholder-shown:text-success-700',
