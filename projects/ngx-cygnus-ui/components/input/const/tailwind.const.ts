@@ -17,7 +17,7 @@ export const TW_CLASS = {
   INPUT_TOP_WARNING: 'border-warning-500 focus:ring-warning-500 focus:border-warning-500',
   INPUT_TOP_ERROR: 'border-error-500 focus:ring-error-500 focus:border-error-500',
 
-  INPUT_INTERACTIVE_BASE: 'px-4 py-3',
+  INPUT_INTERACTIVE_BASE: 'px-4 py-3 placeholder:opacity-0 placeholder:transition-opacity placeholder:duration-200 focus:placeholder:opacity-100',
   INPUT_INTERACTIVE_GENERIC: '',
   INPUT_INTERACTIVE_SUCCESS: 'placeholder:text-gray-300 dark:placeholder:text-gray-500  text-neutral-900 dark:text-white border-success-600 !focus:ring-success-700 !focus:border-success-700 focus:shadow',
   INPUT_INTERACTIVE_WARNING: 'placeholder:text-gray-300 dark:placeholder:text-gray-500  text-neutral-900 dark:text-white border-warning-600 !focus:ring-warning-700 !focus:border-warning-700  focus:shadow',
