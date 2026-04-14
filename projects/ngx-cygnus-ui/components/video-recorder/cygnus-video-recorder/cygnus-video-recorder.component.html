@@ -1,4 +1,4 @@
-<div class="max-w-2xl mx-auto p-6">
+<div class="max-w-2xl mx-auto">
 
   <!-- Video Live -->
   @if (mostrarGrabacion && !videoParaRevisar) {
@@ -56,13 +56,13 @@
   }
 
   <!-- Botones -->
-  <div class="flex gap-4 justify-center items-center">
+  <div class="flex flex-wrap gap-4 justify-center items-center">
 
     @if (!videoParaRevisar) {
       <button
         (click)="iniciar()"
         [disabled]="grabando"
-        class="flex max-w-40 items-center bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
+        class="w-full md:w-auto flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
         <lib-ngx-cygnus-icons class="me-3"
           [size]="'xl'"
           [textColor]="grabando ? 'gray' : 'white'"
@@ -76,7 +76,7 @@
       <button
         (click)="detener()"
         [disabled]="!grabando"
-        class="flex max-w-40 items-center bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
+        class="w-full md:w-auto flex items-center justify-center bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg font-semibold transition-all disabled:border-gray-200 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed">
         <lib-ngx-cygnus-icons class="me-3"
           [size]="'xl'"
           [textColor]="!grabando ? 'gray' : 'white'"
