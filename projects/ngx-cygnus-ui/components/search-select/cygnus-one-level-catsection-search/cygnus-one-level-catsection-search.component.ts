@@ -38,6 +38,8 @@ export class CygnusOneLevelCatSectionSearchComponent implements OnInit {
   categoryItem = input<string>('');
   categoryIdItem = input<string>('');
   alertType = input<string>('alert-yellow');
+  inputSearchIcon = input<string>('search-sm');
+  inputSearchButtonOrIcon = input<'button' | 'icon'>('button');
   inputStatusColor = input<string>('');
   outputBlur = output<boolean>();
 

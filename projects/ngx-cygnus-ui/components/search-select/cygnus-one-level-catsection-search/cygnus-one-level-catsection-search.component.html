@@ -31,7 +31,12 @@
   />
 
   <span
-    class="hidden dark:flex items-center  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-500"
+    class="cursor-pointer"
+    [class]="
+    (inputSearchButtonOrIcon()==='button') ?
+    'hidden dark:flex items-center  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-500' :
+    'hidden dark:flex items-center  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border-t border-b border-r border-l-0 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
+    "
     (click)="toggleInvisible()"
     [id]="selectSearchId()+'-icon-white'"
   >
@@ -39,11 +44,16 @@
       class="pointer-events: none"
       [size]="'xl'"
       [textColor]="'white'"
-      [textRoute]="(this.isInvisible()) ? 'search-sm' : 'chevron-up'"
+      [textRoute]="(this.isInvisible()) ? inputSearchIcon() : 'chevron-up'"
     />
   </span>
   <span
-    class="flex items-center dark:hidden  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-500"
+    class="cursor-pointer"
+    [class]="
+    (inputSearchButtonOrIcon()==='button') ?
+    'flex items-center dark:hidden  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-500' :
+    'flex items-center dark:hidden  ml-2 absolute h-full  inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border-t border-b border-r border-l-0 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
+    "
     (click)="toggleInvisible()"
     [id]="selectSearchId()+'-icon-gray'"
   >
@@ -51,7 +61,7 @@
       class="pointer-events: none"
       [size]="'xl'"
       [textColor]="'gray'"
-      [textRoute]="(this.isInvisible()) ? 'search-sm' : 'chevron-up'"
+      [textRoute]="(this.isInvisible()) ? inputSearchIcon() : 'chevron-up'"
     />
   </span>
 
@@ -70,7 +80,7 @@
     class="ml-2 absolute h-full flex items-center inset-y-0 w-max !px-3 rounded-none rounded-r-lg element-right end-0 border border-gray-300 bg-gray-200 cursor-not-allowed opacity-60 pointer-events-none focus:ring-0 focus:bg-gray-50 focus:border-gray-300 focus:opacity-60 focus:shadow-none"
     [size]="'xl'"
     [textColor]="'gray'"
-    [textRoute]="'search-sm'"
+    [textRoute]="inputSearchIcon()"
   />
 
 }
