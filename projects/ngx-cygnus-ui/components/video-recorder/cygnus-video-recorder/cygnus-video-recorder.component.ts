@@ -21,6 +21,8 @@ export class CygnusVideoRecorderComponent implements OnDestroy {
   videoLiveElement = viewChild<ElementRef<HTMLVideoElement>>('videoLive');
 
   duracionMaxima = input<number>(60);
+  iniciaGrabacion = output<boolean>();
+  reiniciar = output<boolean>();
   videoListo = output<VideoGrabado>();
   noHayVideoGrabado = output<boolean>();
 
@@ -53,6 +55,7 @@ export class CygnusVideoRecorderComponent implements OnDestroy {
   }
 
   async iniciar() {
+    this.iniciaGrabacion.emit(true);
     this.resetearEstadoCompleto();
     this.mostrarGrabacion = true;
     this.cd.detectChanges();
@@ -170,10 +173,12 @@ export class CygnusVideoRecorderComponent implements OnDestroy {
       this.noHayVideoGrabado.emit(true);
     }
     this.resetearEstadoCompleto();
+    this.reiniciar.emit(true);
   }
 
   descartarGrabacion() {
     this.resetearEstadoCompleto();
+    this.reiniciar.emit(true);
   }
 
   private resetearEstadoCompleto() {
