@@ -1,18 +1,20 @@
 {
   "name": "ngx-cygnus-ui",
-  "version": "1.22.7-20260415",
+  "version": "1.22.8-20260415",
   "peerDependencies": {
     "@angular/common": "19.2.19",
     "@angular/core": "19.2.19",
     "@angular/cdk": "19.2.19",
     "@fontsource/nunito-sans": "^5.0.0",
-    "@fontsource/inter": "^5.0.0"
+    "@fontsource/inter": "^5.0.0",
+    "@fontsource/dm-sans": "^5.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },"devDependencies": {
     "@fontsource/nunito-sans": "^5.0.0",
-    "@fontsource/inter": "^5.0.0"
+    "@fontsource/inter": "^5.0.0",
+    "@fontsource/dm-sans": "^5.0.0"
   },
   "sideEffects": [
     "*.css"
