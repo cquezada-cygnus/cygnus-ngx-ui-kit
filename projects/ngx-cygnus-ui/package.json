@@ -1,6 +1,6 @@
 {
   "name": "ngx-cygnus-ui",
-  "version": "1.22.11-20260415",
+  "version": "1.22.12-20260416",
   "peerDependencies": {
     "@angular/common": "19.2.19",
     "@angular/core": "19.2.19",

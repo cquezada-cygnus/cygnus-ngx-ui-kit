@@ -11,7 +11,7 @@
   @if (alertIcon()!='') {
     <lib-ngx-cygnus-icons class="me-2"
       [size]="''"
-      [textColor]="alertIconColor()"
+      [textColor]="( (alertIconColor()==='indigo') ? 'white' : alertIconColor())"
       [textRoute]="alertIcon()"
     />
   }
@@ -31,6 +31,12 @@
             [textColor]="'#D0D5DD'"
             [textRoute]="'x-close'"
           />
+        } @else if (alertIconColor()==='indigo') {
+          <lib-ngx-cygnus-icons
+            [size]="'lg'"
+            [textColor]="'white'"
+            [textRoute]="'x-close'"
+          />
         } @else {
           <lib-ngx-cygnus-icons
             [size]="'lg'"
@@ -40,11 +46,11 @@
         }
       </span>
       <span class="flex dark:hidden">
-        <lib-ngx-cygnus-icons
-          [size]="'lg'"
-          [textColor]="alertIconColor()"
-          [textRoute]="'x-close'"
-        />
+          <lib-ngx-cygnus-icons
+            [size]="'lg'"
+            [textColor]="alertIconColor()"
+            [textRoute]="'x-close'"
+          />
       </span>
     </button>
   }
