@@ -14,19 +14,47 @@
     </div>
   }
   @if (btnIconExist && btnIconRouteLeft()!=='') {
-    <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
+    <div class="hidden dark:flex dark:justify-center">
+      <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
+        [size]="btnIconSize"
+        [textColor]="gradientButton() ? '#F6FEF9' : (btnIconColor()==='lightblack' ? 'white' : btnIconColor())"
+        [textRoute]="btnIconRouteLeft()"
+      />
+    </div>
+    <div class="flex dark:justify-center dark:hidden">
+      <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
+        [size]="btnIconSize"
+        [textColor]="gradientButton() ? '#F6FEF9' : btnIconColor()"
+        [textRoute]="btnIconRouteLeft()"
+      />
+    </div>
+    <!-- <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'mr-2' : ''"
       [size]="btnIconSize"
       [textColor]="gradientButton() ? '#F6FEF9' : btnIconColor()"
       [textRoute]="btnIconRouteLeft()"
-    />
+    /> -->
   }
     <ng-content></ng-content>
   @if (btnIconExist && btnIconRouteRight()!=='') {
-    <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
+    <div class="hidden dark:flex dark:justify-center">
+      <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
+        [size]="btnIconSize"
+        [textColor]="gradientButton() ? '#F6FEF9' : (btnIconColor()==='lightblack' ? 'white' : btnIconColor())"
+        [textRoute]="btnIconRouteRight()"
+      />
+    </div>
+    <div class="flex dark:justify-center dark:hidden">
+      <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
+        [size]="btnIconSize"
+        [textColor]="gradientButton() ? '#F6FEF9' : btnIconColor()"
+        [textRoute]="btnIconRouteRight()"
+      />
+    </div>
+    <!-- <lib-ngx-cygnus-icons [class]="!btnIconOnly ? 'ms-2' : ''"
       [size]="btnIconSize"
       [textColor]="gradientButton() ? '#F6FEF9' : btnIconColor()"
       [textRoute]="btnIconRouteRight()"
-    />
+    /> -->
   }
 
 </button>

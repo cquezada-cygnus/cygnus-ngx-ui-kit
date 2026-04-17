@@ -237,6 +237,9 @@ export class CygnusButtonComponent implements OnInit {
     if (this.btnIconOutlined()) {
       this.btnIconColor.set('white');
     }
+    if (this.btnIconColor()==='lightblack') {
+      this.btnIconColor.set('seclightblue');
+    }
   }
 
   onMouseLeave() {
@@ -260,6 +263,9 @@ export class CygnusButtonComponent implements OnInit {
     }
     if (this.btnIconOutlined() && this.btnIconOutlinedColor()==='postulaaqui-orange' ) {
       this.btnIconColor.set('postulaaqui-orange');
+    }
+    if (this.btnIconColor()==='lightblack') {
+      this.btnIconColor.set('white');
     }
   }
 }
