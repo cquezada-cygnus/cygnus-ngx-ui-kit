@@ -1,4 +1,5 @@
 import { Component, input, output, signal } from '@angular/core';
+import { NgClass, CommonModule } from '@angular/common'; // Importar NgClass
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 import { TW_CLASS } from '../const/tailwind.const';
 import { AutoWidthSelectDirective } from 'ngx-cygnus-ui/directives';
@@ -7,6 +8,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'cygnus-select',
   imports: [
+    NgClass,
+    CommonModule,
     AutoWidthSelectDirective,
     ReactiveFormsModule,
   ],
@@ -23,6 +26,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class CygnusSelectComponent {
   private static idCounter = 0;
+  // Necesitamos acceso al documento para verificar el focus en el template de forma reactiva
+  document = document;
 
   control = input<FormControl<string>>(new FormControl());
   isSelected = output<string>();
@@ -35,7 +40,7 @@ export class CygnusSelectComponent {
   isDisabled = input<boolean>(false);
   selState = input<string>('');
   selectLabel = input<string>('');
-  labelStyle = input<'fieldset-legend-label' | 'label-interactive'>('fieldset-legend-label');
+  labelStyle = input<'fieldset-legend-label' | 'label-interactive'| 'animated-legend-label'>('fieldset-legend-label');
   selectHint = input<string>('');
   selAutoWidth = input<boolean>(false);
   selInstructionOpDisabled = input<string>();
