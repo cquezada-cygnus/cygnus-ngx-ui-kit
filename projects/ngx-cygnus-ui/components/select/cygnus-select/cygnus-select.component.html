@@ -9,6 +9,8 @@
       <div
         [class]="gradientBorder() ? TW_CLASS.GRADIENT_INNER : ''"
         [class.relative]="labelStyle()==='label-interactive'"
+        [class.mt-6]="labelStyle() === 'animated-legend-label' && (control().value || isFocused())"
+        class="transition-all duration-200"
       >
 
         <select
@@ -25,6 +27,7 @@
           [disabled]="isDisabled()"
           [autoWidthSelectDirective]="selAutoWidth()"
           (change)="setValue(cygnusSelect.value)"
+          (focus)="onFocus()"
           (blur)="generateBlurEvent()"
           [formControl]="control()"
         >
@@ -53,7 +56,7 @@
           <label
             class="absolute transition-all duration-200 pointer-events-none origin-left
             peer-focus:-top-6 peer-focus:left-0 peer-focus:text-sm peer-focus:font-medium"
-            [class]="(control().value !== '' && control().value !== null)
+            [class]="((control().value !== '' && control().value !== null) || isFocused())
               ? '-top-6 left-0 text-sm font-medium text-gray-800 dark:text-white'
               : 'top-2.5 left-3 text-sm text-gray-400'"
           >

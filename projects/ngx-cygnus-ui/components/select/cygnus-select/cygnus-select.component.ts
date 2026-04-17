@@ -46,6 +46,7 @@ export class CygnusSelectComponent {
   selInstructionOpDisabled = input<string>();
   gradientBorder = input<boolean>(false);
   hintColor = input<boolean>(false);
+  isFocused = signal<boolean>(false);
 
   ngOnInit() {
     // Generar ID único si no se proporciona
@@ -96,7 +97,12 @@ export class CygnusSelectComponent {
   }
 
   generateBlurEvent() {
+    this.isFocused.set(false); // <--- Quitamos foco
     this.selectIsBlur.emit(true);
+  }
+
+  onFocus() {
+    this.isFocused.set(true); // <--- Marcamos foco
   }
 
 }
