@@ -1,17 +1,21 @@
 
   <fieldset class="fieldset">
-@if (selectLabel()!=='') {
+@if (labelStyle()==='fieldset-legend-label' && selectLabel()!=='') {
     <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-white" >{{selectLabel()}}</label>
 }
 
     <!-- Wrapper condicional para gradient border -->
     <div [class]="gradientBorder() ? TW_CLASS.GRADIENT_WRAPPER : TW_CLASS.NORMAL_WRAPPER">
-      <div [class]="gradientBorder() ? TW_CLASS.GRADIENT_INNER : ''">
+      <div
+        [class]="gradientBorder() ? TW_CLASS.GRADIENT_INNER : ''"
+        [class.relative]="labelStyle()==='label-interactive'"
+      >
 
         <select
           #cygnusSelect
           [id]="selId()"
           [class]="
+            'peer ' +
             TW_CLASS.SELECT + ' ' +
             selGetSize() + ' ' +
             selGetType() + ' ' +
@@ -31,6 +35,22 @@
             <option  class="text-gray-700 dark:text-gray-50" [value]="op.value">{{op.option}}</option>
           }
         </select>
+
+        @if (labelStyle()==='label-interactive'  && selectLabel()!=='') {
+          <label
+            class="absolute left-2.5 px-1 transition-all pointer-events-none origin-left bg-white dark:bg-gray-800 rounded
+            text-gray-500 dark:text-gray-400
+            peer-focus:-top-2 peer-focus:left-2 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:scale-90
+            "
+            [class]="(control().value !== '' && control().value !== null)
+              ? '-top-2 left-2 text-xs scale-90'
+              : 'top-1/2 -translate-y-1/2 text-sm scale-100'"
+          >
+            {{selectLabel()}}
+          </label>
+          <!-- <label class="font-base mb-1 text-gray-800 dark:text-white text-sm
+            absolute bg-white dark:bg-gray-700 cursor-text px-1 left-2.5 -top-2  scale-90 transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:scale-90 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm rounded-xl" >{{selectLabel()}}</label> -->
+        }
 
       </div><!-- Wrapper condicional para gradient border -->
     </div><!-- Wrapper condicional para gradient border -->

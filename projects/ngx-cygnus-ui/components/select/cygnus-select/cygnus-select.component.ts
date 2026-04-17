@@ -35,6 +35,7 @@ export class CygnusSelectComponent {
   isDisabled = input<boolean>(false);
   selState = input<string>('');
   selectLabel = input<string>('');
+  labelStyle = input<'fieldset-legend-label' | 'label-interactive'>('fieldset-legend-label');
   selectHint = input<string>('');
   selAutoWidth = input<boolean>(false);
   selInstructionOpDisabled = input<string>();
