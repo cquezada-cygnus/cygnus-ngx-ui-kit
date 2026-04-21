@@ -10,6 +10,7 @@
 ></cygnus-button>
 
 <br>
+<br>
 <hr>
 <br>
 
@@ -20,4 +21,18 @@
   [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-xs'"
   [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
   (click)="changeOneItemCarouselItem()"
+></cygnus-button>
+
+<br>
+<br>
+<hr>
+<br>
+
+
+<cygnus-one-item-carousel [item]="currentOneItemCarouselItem2()" [autoPlay]="true" />
+
+<cygnus-button
+  [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-xs'"
+  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+  (click)="changeOneItemCarouselItem2()"
 ></cygnus-button>

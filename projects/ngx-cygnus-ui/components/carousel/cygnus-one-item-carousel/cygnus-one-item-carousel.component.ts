@@ -12,6 +12,8 @@ export class CygnusOneItemCarouselComponent {
   // En lugar de manejar un array y un índice, el carousel recibe un item a la vez y anima la transición entre el anterior y el nuevo.
 
   item = input.required<CarouselItem>();
+  autoPlay = input<boolean>(false);
+  seconds = input<number>(5);
 
   private sanitizer = inject(DomSanitizer);
 
@@ -26,6 +28,7 @@ export class CygnusOneItemCarouselComponent {
   private pendingItem: (CarouselItem & { trustedSvg: any }) | null = null;
 
   constructor() {
+    // Reacciona a cambios del item externo
     effect(() => {
       const newItem = this.item();
 
@@ -49,6 +52,26 @@ export class CygnusOneItemCarouselComponent {
 
         this.startTransition(sanitized);
       });
+    });
+
+    // Reacciona a cambios de autoPlay y seconds
+    effect((onCleanup) => {
+      const active = this.autoPlay();
+      const intervalMs = this.seconds() * 1000;
+
+      if (!active) return;
+
+      const timer = setInterval(() => {
+        untracked(() => {
+          // Re-anima el item actual sin cambiar contenido
+          const current = this.currentItem();
+          if (!current || this.isTransitioning()) return;
+          this.startTransition(current);
+        });
+      }, intervalMs);
+
+      // Limpieza automática si autoPlay pasa a false o seconds cambia
+      onCleanup(() => clearInterval(timer));
     });
   }
 

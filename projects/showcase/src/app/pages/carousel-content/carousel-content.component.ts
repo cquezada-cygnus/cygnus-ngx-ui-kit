@@ -52,4 +52,16 @@ export class CarouselContentComponent {
     }
   }
 
+
+  currentOneItemCarouselItem2 = signal<CarouselItem>({ id: 0, title: '', desc: '', svg: `` });
+  counter2 = 0;
+
+  changeOneItemCarouselItem2() {
+    this.currentOneItemCarouselItem2.set(this.carouselItems[this.counter2]);
+    this.counter2 += 1;
+    if (this.counter2 === (this.carouselItems.length-1)) {
+      this.counter2 = 0;
+    }
+  }
+
 }
