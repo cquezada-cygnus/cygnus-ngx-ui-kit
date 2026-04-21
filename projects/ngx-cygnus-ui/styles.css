@@ -260,6 +260,9 @@
   /* breakpoint mobile */
   --breakpoint-samsung-galaxy: 391px;
 
+  /* breakpoint desktop */
+  --breakpoint-short-desktop: (min-width: 1024px) and (max-height: 800px);
+
   @keyframes slide-in {
     from {
       opacity: 0;
