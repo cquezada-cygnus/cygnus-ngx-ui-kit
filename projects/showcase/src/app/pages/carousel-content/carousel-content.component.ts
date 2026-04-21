@@ -1,12 +1,13 @@
 import { Component, input, signal } from '@angular/core';
 import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
-import { CygnusCarouselComponent } from 'ngx-cygnus-ui/components/carousel';
+import { CygnusCarouselComponent, CygnusOneItemCarouselComponent } from 'ngx-cygnus-ui/components/carousel';
 import { CarouselItem } from 'ngx-cygnus-ui/interfaces';
 
 @Component({
   selector: 'app-carousel-content',
   imports: [
     CygnusCarouselComponent,
+    CygnusOneItemCarouselComponent,
     CygnusButtonComponent,
   ],
   templateUrl: './carousel-content.component.html',
@@ -34,9 +35,21 @@ export class CarouselContentComponent {
 
   setCarouselItem = signal<number | null>(null); // <-- inicializa en null. Si no inicializa en null, puede que no detecte el cambio el carousel
 
+
   changeCarouselItem () {
     this.setCarouselItem.update(value => (value === null ? 1 : value + 1));
     console.log('click btn: ',this.setCarouselItem());
+  }
+
+  currentOneItemCarouselItem = signal<CarouselItem>({ id: 0, title: '', desc: '', svg: `` });
+  counter = 0;
+
+  changeOneItemCarouselItem() {
+    this.currentOneItemCarouselItem.set(this.carouselItems[this.counter]);
+    this.counter += 1;
+    if (this.counter === (this.carouselItems.length-1)) {
+      this.counter = 0;
+    }
   }
 
 }

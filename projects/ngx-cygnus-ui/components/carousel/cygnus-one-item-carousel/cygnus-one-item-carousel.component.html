@@ -1,0 +1,40 @@
+<div class="relative max-w-3xs overflow-hidden">
+
+  <!-- Item saliente -->
+  @if (previousItem()) {
+    <div
+      class="absolute inset-0 flex flex-row"
+      [class.animate-slide-out]="isTransitioning()"
+    >
+      <div class="max-w-sm flex pr-2" [innerHTML]="previousItem()!.trustedSvg"></div>
+      <div class="flex flex-col space-y-2">
+        <h3 class="font-bold text-gray-700 text-sm font-medium leading-none tracking-tight">
+          {{ previousItem()!.title }}
+        </h3>
+        <p class="text-xs text-gray-700 font-normal leading-tight">
+          {{ previousItem()!.desc }}
+        </p>
+      </div>
+    </div>
+  }
+
+  <!-- Item entrante -->
+  @if (currentItem()) {
+    <div
+      class="flex flex-row"
+      [class.animate-slide-in]="isTransitioning()"
+      (animationend)="handleAnimationEnd()"
+    >
+      <div class="max-w-sm flex pr-2" [innerHTML]="currentItem()!.trustedSvg"></div>
+      <div class="flex flex-col space-y-2">
+        <h3 class="font-bold text-gray-700 text-sm font-medium leading-none tracking-tight">
+          {{ currentItem()!.title }}
+        </h3>
+        <p class="text-xs text-gray-700 font-normal leading-tight">
+          {{ currentItem()!.desc }}
+        </p>
+      </div>
+    </div>
+  }
+
+</div>

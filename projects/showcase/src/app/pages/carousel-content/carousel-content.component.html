@@ -7,4 +7,17 @@
   [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-xs'"
   [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
   (click)="changeCarouselItem()"
->
+></cygnus-button>
+
+<br>
+<hr>
+<br>
+
+
+<cygnus-one-item-carousel [item]="currentOneItemCarouselItem()" />
+
+<cygnus-button
+  [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-xs'"
+  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+  (click)="changeOneItemCarouselItem()"
+></cygnus-button>
