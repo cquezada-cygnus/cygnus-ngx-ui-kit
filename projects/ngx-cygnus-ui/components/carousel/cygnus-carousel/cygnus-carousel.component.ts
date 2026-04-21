@@ -35,10 +35,11 @@ export class CygnusCarouselComponent {
   });
 
   currentIndex = signal(0);
-  isTransitioning = signal(true); // Controla si la animación CSS está activa
+  isTransitioning = signal(false); // Controla si la animación CSS está activa. Inicializar en false
 
   // Guardamos el último valor procesado para comparar
   private lastTriggerValue: any = null;
+  private pendingSlides = 0; // Cola de slides pendientes
 
 
   constructor() {
@@ -78,9 +79,25 @@ export class CygnusCarouselComponent {
       ) {
         this.lastTriggerValue = trigger;
         // untracked para que el next() no cree dependencias reactivas inesperadas
-        untracked(() => this.next());
+        // untracked(() => this.next());
+        untracked(() => this.enqueue()); // cola para permitir que se ejecuten cambios de slides más rápidos que lo que la animación permite
       }
     });
+  }
+
+  // Agrega a la cola e intenta procesar
+  private enqueue() {
+    this.pendingSlides++;
+    this.processQueue();
+  }
+
+  // Procesa el siguiente slide solo si no hay transición activa
+  private processQueue() {
+    if (this.pendingSlides === 0) return;
+    if (this.isTransitioning()) return; // espera que termine la animación actual
+
+    this.pendingSlides--;
+    this.next();
   }
 
   next() {
@@ -92,11 +109,46 @@ export class CygnusCarouselComponent {
   }
 
   handleTransitionEnd() {
-    // Cuando la transición termina y estamos en el clon (último elemento)
+
+    // if (this.currentIndex() === this.items().length - 1) {
+    //   this.isTransitioning.set(false); // Quitamos la animación
+    //   this.currentIndex.set(0);       // Saltamos al inicio real
+    // }
+
+
     if (this.currentIndex() === this.items().length - 1) {
+      // Reset infinito
+      // Cuando la transición termina y estamos en el clon (último elemento)
       this.isTransitioning.set(false); // Quitamos la animación
-      this.currentIndex.set(0);       // Saltamos al inicio real
+      this.currentIndex.set(0);        // Saltamos al inicio real
+      // Procesar siguiente pendiente después del reset
+      setTimeout(() => this.processQueue());
+    } else {
+      this.isTransitioning.set(false);
+      // Procesar siguiente pendiente
+      this.processQueue();
     }
   }
+
+  /*
+  Flujo con 3 clicks rápidos
+  Click ×3 rápido
+    → pendingSlides = 3
+    → processQueue() → isTransitioning=false → ejecuta next() → pendingSlides=2, isTransitioning=true
+
+  [700ms después - transitionEnd]
+    → isTransitioning=false
+    → processQueue() → pendingSlides=1 → ejecuta next() → isTransitioning=true
+
+  [700ms después - transitionEnd]
+    → isTransitioning=false
+    → processQueue() → pendingSlides=0 → ejecuta next() → isTransitioning=true
+
+  [700ms después - transitionEnd]
+    → isTransitioning=false
+    → processQueue() → pendingSlides=0 → no hace nada ✅
+  Los 3 clicks se ejecutan secuencialmente con 700ms entre cada uno, sin perder ninguno.
+
+  */
 
 }
