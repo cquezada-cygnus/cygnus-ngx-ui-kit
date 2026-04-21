@@ -1,1 +1,10 @@
 <cygnus-carousel [seconds]="5" [itemsInput]="carouselItems" />
+
+
+<cygnus-carousel [mode]="'manual'" [itemsInput]="carouselItems" [triggerNext]="setCarouselItem()" />
+
+<cygnus-button
+  [btnTypes]="'btn-primary btn-icon-xl btn-icon-only-size-xs'"
+  [btnIconRouteRight]="'assets/icons/svg/General/plus.svg'"
+  (click)="changeCarouselItem()"
+>

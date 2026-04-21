@@ -1,5 +1,5 @@
 import { Component, input, output, signal } from '@angular/core';
-import { NgClass, CommonModule } from '@angular/common'; // Importar NgClass
+import { CommonModule } from '@angular/common'; // Importar NgClass
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 import { TW_CLASS } from '../const/tailwind.const';
 import { AutoWidthSelectDirective } from 'ngx-cygnus-ui/directives';
@@ -8,7 +8,6 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'cygnus-select',
   imports: [
-    NgClass,
     CommonModule,
     AutoWidthSelectDirective,
     ReactiveFormsModule,

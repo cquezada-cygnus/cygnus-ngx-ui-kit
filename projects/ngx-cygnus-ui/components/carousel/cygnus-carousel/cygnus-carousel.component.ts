@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, input, signal } from '@angular/core';
+import { Component, computed, effect, inject, input, signal, untracked  } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CarouselItem } from 'ngx-cygnus-ui/interfaces';
 
@@ -8,8 +8,17 @@ import { CarouselItem } from 'ngx-cygnus-ui/interfaces';
   templateUrl: './cygnus-carousel.component.html',
 })
 export class CygnusCarouselComponent {
-  // Input estático (se asume que no cambia tras el render inicial)
+
+  // CONFIGURACIÓN
+  // 'auto' para temporizador, 'manual' para esperar la señal
+  mode = input<'auto' | 'manual'>('auto');
+
   seconds = input<number>(5);
+
+  // Esta es la señal que viene de fuera.
+  // Cada vez que el padre cambie este valor (ej. un timestamp o un contador), el carousel rotará.
+  triggerNext = input<any>(null);
+
   itemsInput = input.required<CarouselItem[]>();
 
   private sanitizer = inject(DomSanitizer);
@@ -28,22 +37,49 @@ export class CygnusCarouselComponent {
   currentIndex = signal(0);
   isTransitioning = signal(true); // Controla si la animación CSS está activa
 
+  // Guardamos el último valor procesado para comparar
+  private lastTriggerValue: any = null;
+
 
   constructor() {
     // El effect rastrea automáticamente seconds()
     // Cuando el input cambie, la función de limpieza (onCleanup) se ejecuta
     // y luego se vuelve a ejecutar el código del effect.
     effect((onCleanup) => {
-      const intervalMs = this.seconds() * 1000;
+      if (this.mode()==='auto') {
 
-      const timer = setInterval(() => {
-        this.next();
-      }, intervalMs);
+        const intervalMs = this.seconds() * 1000;
 
-      // Limpieza automática si el componente se destruye o el input cambia
-      onCleanup(() => {
-        clearInterval(timer);
-      });
+        const timer = setInterval(() => {
+          this.next();
+        }, intervalMs);
+
+        // Limpieza automática si el componente se destruye o el input cambia
+        onCleanup(() => {
+          clearInterval(timer);
+        });
+      }
+    });
+
+    // EFECTO 2: Reacciona a la señal externa (triggerNext)
+    effect(() => {
+      // Al "leer" triggerNext, este bloque se ejecuta cada vez que cambie
+      const trigger = this.triggerNext();
+
+      // Solo avanza si:
+      // 1. El modo es manual
+      // 2. El trigger no es el valor inicial (null)
+      // 3. El valor cambió respecto al último procesado
+      if (
+        this.mode() === 'manual' &&
+        trigger !== null &&
+        trigger !== undefined &&
+        trigger !== this.lastTriggerValue  // <-- evita disparos duplicados
+      ) {
+        this.lastTriggerValue = trigger;
+        // untracked para que el next() no cree dependencias reactivas inesperadas
+        untracked(() => this.next());
+      }
     });
   }
 
