@@ -8,6 +8,13 @@
 /* 1. Definimos la variante para que funcione con la clase .dark */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Define la variante personalizada manualmente */
+@custom-variant short-desktop {
+  @media (min-width: 1024px) and (max-height: 800px) {
+    & { @slot; }
+  }
+}
+
 
 @theme {
 
@@ -260,8 +267,6 @@
   /* breakpoint mobile */
   --breakpoint-samsung-galaxy: 391px;
 
-  /* breakpoint desktop */
-  --breakpoint-short-desktop: (min-width: 1024px) and (max-height: 800px);
 
   @keyframes slide-in {
     from {
