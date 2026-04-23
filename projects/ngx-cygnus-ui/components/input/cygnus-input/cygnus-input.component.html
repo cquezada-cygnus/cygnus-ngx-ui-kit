@@ -85,7 +85,10 @@
           [textEmpresaEnabled]="textEmpresaEnabled()"
           [textEmpresaMaxLength]="textEmpresaMaxLength()"
           [textEmpresaMinLength]="textEmpresaMinLength()"
-        >
+
+          [value]="inputClearValue() ? '' : (control()?.value ?? '')"
+          autocomplete="one-time-code"
+        > <!-- value al final de las directivas para evitar autocompletado involuntario de las directivas -->
         <!-- (focusout)="setValue(cygnusInput.value)" -->
         @if (inputCustomType()!=='base' && inputCustomType()!=='fieldset-legend-label' && inputCustomType()!=='file' ) {
           <label [for]="inputId()"

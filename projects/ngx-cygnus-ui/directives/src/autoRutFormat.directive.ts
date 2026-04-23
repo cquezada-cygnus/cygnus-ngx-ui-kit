@@ -31,12 +31,68 @@ export class RutFormatDirective {
     }
   }
 
+  // @HostListener('input', ['$event'])
+  // onInput(event: any) {
+  //   if (!this.appRutFormatEnabled()) return;
+
+  //   let value = event.target.value.toUpperCase().replace(/[^0-9K]/g, '');
+  //   // if (!value) return;
+  //   // CAMBIO: Si no hay valor, limpiamos el control y salimos
+  //   if (!value) {
+  //     if (this.control?.control) {
+  //       this.control.control.setValue('', { emitEvent: false });
+  //     }
+  //     return;
+  //   }
+
+  //   value = value.slice(0, 9);
+  //   let formatted = value;
+
+  //   if (value.length > 1) {
+  //     const cuerpo = value.slice(0, -1);
+  //     const dv = value.slice(-1);
+
+  //     if (this.withDots()) {
+  //       formatted = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + '-' + dv;
+  //     } else {
+  //       formatted = cuerpo + '-' + dv;
+  //     }
+  //   }
+
+  //   // Si hay un control de Angular (FormControl/ngModel), lo actualizamos
+  //   if (this.control?.control) {
+  //     this.control.control.setValue(formatted, { emitEvent: false });
+  //   } else {
+  //     // Si es un input nativo sin Angular Forms, actualizamos el valor del DOM directamente
+  //     this.el.nativeElement.value = formatted;
+  //   }
+  // }
+
   @HostListener('input', ['$event'])
   onInput(event: any) {
     if (!this.appRutFormatEnabled()) return;
 
-    let value = event.target.value.toUpperCase().replace(/[^0-9K]/g, '');
-    if (!value) return;
+    const input = event.target as HTMLInputElement;
+    const rawValue = input.value;
+
+    if (!rawValue || rawValue.trim() === '') {
+      if (this.control?.control) {
+        this.control.control.setValue('', { emitEvent: false });
+      }
+      // IMPORTANTE: Asegurar que el DOM de la directiva también se limpie
+      input.value = '';
+      return;
+    }
+
+
+    let value = rawValue.toUpperCase().replace(/[^0-9K]/g, '');
+
+    // Si después de limpiar símbolos no queda nada (ej: solo escribieron puntos)
+    if (!value) {
+      if (this.control?.control) this.control.control.setValue('', { emitEvent: false });
+      this.el.nativeElement.value = '';
+      return;
+    }
 
     value = value.slice(0, 9);
     let formatted = value;
@@ -44,20 +100,15 @@ export class RutFormatDirective {
     if (value.length > 1) {
       const cuerpo = value.slice(0, -1);
       const dv = value.slice(-1);
-
-      if (this.withDots()) {
-        formatted = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + '-' + dv;
-      } else {
-        formatted = cuerpo + '-' + dv;
-      }
+      formatted = this.withDots()
+        ? cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + '-' + dv
+        : cuerpo + '-' + dv;
     }
 
-    // Si hay un control de Angular (FormControl/ngModel), lo actualizamos
+    // Actualizamos el DOM y el Control
+    this.el.nativeElement.value = formatted;
     if (this.control?.control) {
       this.control.control.setValue(formatted, { emitEvent: false });
-    } else {
-      // Si es un input nativo sin Angular Forms, actualizamos el valor del DOM directamente
-      this.el.nativeElement.value = formatted;
     }
   }
 }

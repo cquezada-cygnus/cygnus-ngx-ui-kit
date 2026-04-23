@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, effect, ElementRef, input, OnInit, output, signal, viewChild } from '@angular/core';
+import { Renderer2, ChangeDetectorRef, inject } from '@angular/core';
+
 import { IconColorText, IconTextSize, NgxCygnusIconsComponent } from '@cygnus/ngx-cygnus-icons';
 import { InputColor, InputSize, InputCustomType } from 'ngx-cygnus-ui/types';
 import { IconPosition } from 'ngx-cygnus-ui/types';
@@ -27,7 +29,7 @@ import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
   ],
   templateUrl: './cygnus-input.component.html',
 })
-export class CygnusInputComponent implements OnInit, AfterViewInit {
+export class CygnusInputComponent implements OnInit {
   private static idCounter = 0;
 
   TW_CLASS = TW_CLASS; // esto fue creado para reemplazar @apply de tailwind, ya la documentación de tailwind 4 recomienda no usar @apply y se dice que no funciona muy bien en angular.
@@ -86,25 +88,146 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   textEmpresaMaxLength = input<number>(100);
   textEmpresaMinLength = input<number>(2);
 
+  private renderer = inject(Renderer2);
+  private cdr = inject(ChangeDetectorRef);
+
   constructor() {
     effect(() => {
-      const val = this.initializeInputValue(); // señal reactiva
-      const input = this.cygnusInput();
-      if (input) {
-        input.nativeElement.value = val;
-        input.nativeElement.textContent = val;
+      const debeLimpiar = this.inputClearValue();
+      const inputRef = this.cygnusInput();
+      const controlObj = this.control();
+
+      if (debeLimpiar && inputRef) {
+        const inputEl = inputRef.nativeElement as HTMLInputElement;
+
+        // 1. Limpiamos el modelo de Angular
+        controlObj?.setValue('', { emitEvent: false });
+        controlObj?.markAsPristine();
+
+        // 2. EL TRUCO NUCLEAR: "Jittering"
+        // Forzamos al navegador a ver un cambio real (de texto a espacio)
+        this.renderer.setProperty(inputEl, 'value', ' ');
+
+        // Usamos un micro-timeout para que el navegador procese el ' ' antes del ''
+        setTimeout(() => {
+          // 3. Ahora sí, limpiamos totalmente
+          this.renderer.setProperty(inputEl, 'value', '');
+          inputEl.value = '';
+
+          // 4. Forzamos la pérdida de foco momentánea
+          // Esto es CRUCIAL en Desktop para limpiar el buffer de "Undo"
+          const hadFocus = document.activeElement === inputEl;
+          if (hadFocus) inputEl.blur();
+
+          // 5. Notificamos a las directivas con un evento "limpio"
+          inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+          inputEl.dispatchEvent(new Event('change', { bubbles: true }));
+
+          // 6. Si tenía el foco, se lo devolvemos en el siguiente frame
+          if (hadFocus) {
+            setTimeout(() => inputEl.focus(), 0);
+          }
+
+          this.cdr.detectChanges();
+        }, 10); // 10ms es suficiente para que Desktop se dé cuenta
       }
     });
 
+    // effect(() => {
+    //   const debeLimpiar = this.inputClearValue();
+    //   const inputRef = this.cygnusInput();
+    //   const control = this.control();
+
+    //   if (debeLimpiar && inputRef) {
+    //     const inputEl = inputRef.nativeElement as HTMLInputElement;
+
+    //     // 1. Limpiamos el modelo de Angular inmediatamente
+    //     control?.setValue('', { emitEvent: true });
+
+    //     // 2. Usamos requestAnimationFrame para el DOM
+    //     // Esto le dice a Desktop: "Espera a que Angular procese el cambio y luego vacía el cuadro"
+    //     requestAnimationFrame(() => {
+    //       this.renderer.setProperty(inputEl, 'value', '');
+
+    //       // Disparar eventos para que las directivas se enteren del cambio a vacío
+    //       inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+    //       inputEl.dispatchEvent(new Event('change', { bubbles: true }));
+
+    //       this.cdr.markForCheck();
+    //     });
+
+    //     console.log('✨ Limpieza profunda ejecutada');
+    //   }
+
+
+
+    //   // // 1. Reaccionamos al trigger de limpieza
+    //   // const debeLimpiar = this.inputClearValue();
+    //   // const inputRef = this.cygnusInput();
+
+    //   // if (debeLimpiar && inputRef) {
+    //   //   const inputEl = inputRef.nativeElement as HTMLInputElement;
+
+    //   //   // 1. Limpiamos el modelo de Angular
+    //   //   this.control()?.setValue('', { emitEvent: true });
+
+    //   //   // 2. Limpiamos el DOM físico
+    //   //   this.renderer.setProperty(inputEl, 'value', '');
+
+    //   //   // 3. Disparamos el evento para que las directivas (RUT, letras, etc.) se enteren
+    //   //   inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+
+    //   //   // 4. FORZAR detección de cambios (Crucial para Desktop)
+    //   //   this.cdr.markForCheck();
+    //   //   // O incluso:
+    //   //   setTimeout(() => this.cdr.detectChanges(), 0);
+
+    //   //   console.log('Input reseteado y evento disparado');
+    //   // }
+    // });
+
     effect(() => {
-      if (!this.inputClearValue()) {
-        const input = this.cygnusInput();
-        if (input) {
-          input.nativeElement.textContent = '';
-          input.nativeElement.value = '';
-        }
+      // Reaccionar a valor inicial si cambia externamente
+      const val = this.initializeInputValue();
+      if (val !== undefined && val !== null) {
+        this.control()?.setValue(val);
       }
     });
+
+
+
+
+    // effect(() => {
+    //   const val = this.initializeInputValue(); // señal reactiva
+    //   const input = this.cygnusInput();
+    //   if (input) {
+    //     input.nativeElement.value = val;
+    //     input.nativeElement.textContent = val;
+    //     console.log('inicializado por initializeInputValue()');
+
+    //   }
+    // });
+
+    // effect(() => {
+    //   if (this.inputClearValue()) {
+
+    //     const input = this.cygnusInput();
+    //     if (input) {
+    //       input.nativeElement.textContent = '';
+    //       input.nativeElement.value = '';
+    //       console.log('limpiado por inputClearValue()');
+
+    //       const inputEl = input.nativeElement as HTMLInputElement;
+
+    //       // 2. Disparamos un evento 'input' para que las directivas
+    //       // y el (input)="setValue(...)" se enteren del cambio.
+    //       inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+
+    //       // 3. Forzamos la limpieza del control de Angular si existe
+    //       this.control()?.setValue('', { emitEvent: true });
+    //     }
+    //   }
+    // });
   }
 
   ngOnInit() {
@@ -112,10 +235,14 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
     this.inputId.set(`cg-input-${++CygnusInputComponent.idCounter}`);
   }
 
-  ngAfterViewInit() {
-    this.cygnusInput()!.nativeElement.value  = this.initializeInputValue();
-    this.cygnusInput()!.nativeElement.textContent = this.initializeInputValue();
-  }
+  // ngAfterViewInit() {
+  //   this.initializeInput();
+  // }
+
+  // initializeInput() {
+  //   this.cygnusInput()!.nativeElement.value  = this.initializeInputValue();
+  //   this.cygnusInput()!.nativeElement.textContent = this.initializeInputValue();
+  // }
 
   notifyIconClicked(): void {
     this.iconClicked.emit('iconClicked');
@@ -127,6 +254,9 @@ export class CygnusInputComponent implements OnInit, AfterViewInit {
   }
 
   setValue(value:string ) {
+    // Si el valor es el mismo, no hacemos nada para evitar bucles
+    if (this.control()?.value === value) return;
+
     this.control()?.setValue(value);
     this.control()?.markAsDirty();
     this.control()?.markAsTouched();
