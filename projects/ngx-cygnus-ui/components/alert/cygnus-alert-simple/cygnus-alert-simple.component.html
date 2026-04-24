@@ -9,11 +9,20 @@
     role="alert"
   >
   @if (alertIcon()!='') {
-    <lib-ngx-cygnus-icons class="me-2"
-      [size]="''"
-      [textColor]="( (alertIconColor()==='indigo') ? 'white' : alertIconColor())"
-      [textRoute]="alertIcon()"
-    />
+    <div class="hidden dark:flex">
+      <lib-ngx-cygnus-icons class="me-2"
+        [size]="''"
+        [textColor]="( (alertIconColor()==='indigo') ? 'white' : alertIconColor())"
+        [textRoute]="alertIcon()"
+      />
+    </div>
+    <div class="flex dark:hidden">
+      <lib-ngx-cygnus-icons class="me-2"
+        [size]="''"
+        [textColor]="alertIconColor()"
+        [textRoute]="alertIcon()"
+      />
+    </div>
   }
     <span class="font-bold">
       {{alertTitle()}}
