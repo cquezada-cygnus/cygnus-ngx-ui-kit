@@ -1,4 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { CygnusButtonComponent } from 'ngx-cygnus-ui/components/button';
 import { CygnusOptgroupSelectComponent, CygnusSelectComponent } from 'ngx-cygnus-ui/components/select';
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 
@@ -12,6 +13,7 @@ import { NonNullableFormBuilder } from '@angular/forms';
   selector: 'app-select-content',
   imports: [
     CygnusSelectComponent,
+    CygnusButtonComponent,
     CygnusOptgroupSelectComponent,
     Highlight, HighlightLineNumbers,
   ],
@@ -44,6 +46,8 @@ export class SelectContentComponent implements OnInit {
     sel: ['', [] ],
   });
 
+  sendReset = signal<boolean>(false);
+
   optgroupSelection(opt: any): void {
     console.log('optgroupSelection:', opt);
   }
@@ -52,6 +56,13 @@ export class SelectContentComponent implements OnInit {
     this.selectForm.patchValue({
       sel: '0005'
     });
+  }
+
+  reset() {
+    this.sendReset.set(true);
+    setTimeout(() => {
+      this.sendReset.set(false);
+    }, 100);
   }
 
   cygnusSelImportTs: string = `

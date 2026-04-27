@@ -274,6 +274,30 @@
       <cygnus-select
         [options]="options"
         [selectLabel]="'Nacionalidad (*)'"
+        [labelStyle]="'label-top'"
+      />
+    </div>
+  </section>
+
+  <section>
+
+    <div class="md:w-1/2 md:px-2  pt-3 ">
+      <cygnus-select
+        [options]="options"
+        [selectLabel]="'Nacionalidad (*)'"
+        [labelStyle]="'fake-placeholder'"
+        [inputReset]="sendReset()"
+      />
+    </div>
+    <cygnus-button [btnTypes]="'btn-primary btn-block'" (click)="reset()"  >resetear fake-placeholder select</cygnus-button>
+  </section>
+
+  <section>
+
+    <div class="md:w-1/2 md:px-2  pt-3 ">
+      <cygnus-select
+        [options]="options"
+        [selectLabel]="'Nacionalidad (*)'"
         [labelStyle]="'label-interactive'"
       />
     </div>

@@ -1,4 +1,4 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, effect, input, model, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Importar NgClass
 import { SelectGeneric } from 'ngx-cygnus-ui/interfaces';
 import { TW_CLASS } from '../const/tailwind.const';
@@ -31,6 +31,7 @@ export class CygnusSelectComponent {
   control = input<FormControl<string>>(new FormControl());
   isSelected = output<string>();
   selectIsBlur = output<boolean>();
+  inputReset = model<boolean>(false);
 
   TW_CLASS = TW_CLASS;
   selId = signal<string>('');
@@ -39,7 +40,7 @@ export class CygnusSelectComponent {
   isDisabled = input<boolean>(false);
   selState = input<string>('');
   selectLabel = input<string>('');
-  labelStyle = input<'fieldset-legend-label' | 'label-interactive'| 'animated-legend-label'>('fieldset-legend-label');
+  labelStyle = input<'fieldset-legend-label' | 'label-interactive'| 'animated-legend-label' | 'fake-placeholder' | 'label-top'>('fieldset-legend-label');
   selectHint = input<string>('');
   selAutoWidth = input<boolean>(false);
   selInstructionOpDisabled = input<string>();
@@ -47,16 +48,30 @@ export class CygnusSelectComponent {
   hintColor = input<boolean>(false);
   isFocused = signal<boolean>(false);
 
+  constructor() {
+    effect(() => {
+      if (this.inputReset()) {
+        this.reset();
+      }
+    });
+  }
+
   ngOnInit() {
     // Generar ID único si no se proporciona
     this.selId.set(`cg-select-${++CygnusSelectComponent.idCounter}`);
   }
 
   setValue(value:string ) {
+
     this.control()?.setValue(value);
     this.control()?.markAsDirty();
     this.control()?.markAsTouched();
     this.isSelected.emit(value);
+  }
+
+  reset() {
+    this.control()?.setValue('');
+    this.inputReset.set(false);
   }
 
   selGetSize():string {
